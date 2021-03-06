@@ -1,0 +1,1058 @@
+#shaders/lang/ja_JP.lang
+
+#Profiles
+#profile.LOW=Low
+#profile.MEDIUM=Medium
+#profile.HIGH=High
+#profile.ULTRA=Ultra
+#profile.comment=Low : low shadows, no extra effects. Medium : medium shadows, no extra effects. High : medium shadows, AO and light shafts. Ultra : high shadows, AO, and light shafts.
+#profile.LOW=低
+profile.MEDIUM=中
+profile.HIGH=高
+profile.ULTRA=ウルトラ
+profile.comment=低 : 粗い影、その他の効果なし。  中 : 中精度の影、 その他の効果なし。  高 : 中精度の影、 AOと光の柱。  ウルトラ : 高精度の影、 AOと光の柱。
+
+#Screens
+#screen.LIGHTING=Lighting
+#screen.SHADOW=Extra Shadow Config
+screen.LIGHTING=ライティング
+screen.SHADOW=詳細な影の設定
+
+#screen.MATERIAL=Material
+#screen.REFLECTION=Reflections
+#screen.PARALLAX=Parallax
+screen.MATERIAL=質感
+screen.REFLECTION=反射
+screen.PARALLAX=視差
+
+#screen.ATMOSPHERICS=Atmospherics
+#screen.SKY=Sky Config
+#screen.CLOUDS=Cloud Config
+screen.ATMOSPHERICS=天球(太陽など)の設定
+screen.SKY=空の設定
+screen.CLOUDS=雲の設定
+
+#screen.WATER=Water
+screen.WATER=水の設定
+
+#screen.POST_EFFECTS=Post Effects
+screen.POST_EFFECTS=ポストエフェクト
+
+#screen.CGT=Color Grading & Tonemap
+#screen.COLOR_GRADING=Color Grading Config
+#screen.CG_R=Red Channel
+#screen.CG_G=Green Channel
+#screen.CG_B=Blue Channel
+#screen.CG_T=Tint
+screen.CGT=カラーグレーディング & トーンマップ
+screen.COLOR_GRADING=カラーグレーディングの設定
+screen.CG_R=赤(R)
+screen.CG_G=緑(G)
+screen.CG_B=青(B)
+screen.CG_T=色合い
+
+#screen.COLOR=Color
+#screen.LIGHT_COLOR=Lighting Color
+#screen.LIGHT_M=Light (Morning)
+#screen.AMBIENT_M=Ambient (Morning)
+#screen.LIGHT_D=Light (Day)
+#screen.AMBIENT_D=Ambient (Day)
+#screen.LIGHT_E=Light (Evening)
+#screen.AMBIENT_E=Ambient (Evening)
+#screen.LIGHT_N=Light (Night)
+#screen.AMBIENT_N=Ambient (Night)
+#screen.MINLIGHT=Minimum Light
+#screen.BLOCKLIGHT_COLOR=Blocklight Color
+#screen.SKY_COLOR=Sky Color
+#screen.WATER_COLOR=Water Color
+#screen.WEATHER_COLOR=Weather Color
+#screen.WEATHER_R=Rain (Normal)
+#screen.WEATHER_C=Snowfall
+#screen.WEATHER_D=Desert Sandstorm
+#screen.WEATHER_B=Mesa Sandstorm
+#screen.WEATHER_S=Swamp Rain
+#screen.WEATHER_M=Mushroom Island Rain
+#screen.WEATHER_V=Savanna Cloudy
+#screen.AURORA_COLOR=Aurora Color
+#screen.AURORA_L=Low Section Color
+#screen.AURORA_H=High Section Color
+#screen.DIMENSION_COLOR=Dimension Color
+#screen.NETHER_COLOR=Nether Color
+#screen.NETHER_N=Nether Wastes
+#screen.NETHER_V=Soul Sand Valley
+#screen.NETHER_C=Crimson Forest
+#screen.NETHER_W=Warped Forest
+#screen.NETHER_B=Basalt Deltas
+#screen.END_COLOR=End Color
+screen.COLOR=色
+screen.LIGHT_COLOR=光の色
+screen.LIGHT_M=光の色(朝)
+screen.AMBIENT_M=空気の色(朝)
+screen.LIGHT_D=光の色(昼)
+screen.AMBIENT_D=空気の色 (昼)
+screen.LIGHT_E=光の色(夕)
+screen.AMBIENT_E=空気の色 (夕)
+screen.LIGHT_N=光の色(夜)
+screen.AMBIENT_N=空気の色(夜)
+screen.MINLIGHT=最低限の光
+screen.BLOCKLIGHT_COLOR=ブロックの光の色
+screen.SKY_COLOR=空の色
+screen.WATER_COLOR=水の色
+screen.WEATHER_COLOR=天気別の色
+screen.WEATHER_R=雨 (Normal)
+screen.WEATHER_C=降雪
+screen.WEATHER_D=砂漠の砂嵐
+screen.WEATHER_B=メサの砂嵐
+screen.WEATHER_S=沼地の雨
+screen.WEATHER_M=キノコ島の雨
+screen.WEATHER_V=サバンナの曇天
+screen.AURORA_COLOR=オーロラの色
+screen.AURORA_L=下方の色
+screen.AURORA_H=上方の色
+screen.DIMENSION_COLOR=ディメンジョンの色
+screen.NETHER_COLOR=ネザーの色
+screen.NETHER_N=ネザーの荒野
+screen.NETHER_V=ソウルサンドの谷
+screen.NETHER_C=深紅の森
+screen.NETHER_W=捻れた森
+screen.NETHER_B=玄武岩のデルタ
+screen.END_COLOR=エンドの色
+
+#screen.WORLD=World
+#screen.WAVING=Waving Blocks
+#screen.CURVATURE=Curvature
+screen.WORLD=世界
+screen.WAVING=揺れるオブジェクト
+screen.CURVATURE=世界の曲率
+
+#Settings
+option.ABOUT=BSL v8.0.01
+option.ABOUT.comment=by Capt Tatsu. bitslablab.com
+value.ABOUT.0=by Capt Tatsu
+
+#Lighting
+#option.shadowMapResolution=Shadowmap Quality
+#option.shadowMapResolution.comment=Adjusts shadowmap size. §e[*]§rHigher resolution gives sharper shadows, but reduces performance.
+#value.shadowMapResolution.512=Very Low (512)
+#value.shadowMapResolution.1024=Low (1024)
+#value.shadowMapResolution.2048=Medium (2048)
+#value.shadowMapResolution.3072=High (3072)
+#value.shadowMapResolution.4096=Very High (4096)
+#value.shadowMapResolution.8192=Ultra High (8192)
+option.shadowMapResolution=シャドウマップの解像度
+option.shadowMapResolution.comment=シャドウマップのサイズを調整します。 §e[*]§r高解像度にするほど影がシャープになりますが、パフォーマンスは低下します。
+value.shadowMapResolution.512=超低解像度(512)
+value.shadowMapResolution.1024=低解像度 (1024)
+value.shadowMapResolution.2048=中解像度 (2048)
+value.shadowMapResolution.3072=高解像度 (3072)
+value.shadowMapResolution.4096=超高解像度 (4096)
+value.shadowMapResolution.8192=最大解像度(8192)
+
+#option.shadowDistance=Shadow Distance
+#option.shadowDIstance.comment=Adsusts shadow distance.
+option.shadowDistance=影の距離
+option.shadowDIstance.comment=影の距離を調整します。
+
+#option.SHADOW_COLOR=Colored Shadow
+#option.SHADOW_COLOR.comment=Enables tinted shadow from translucents. §a[+]§rUsed for colored volumetric light shafts. §c[-]§rSlightly higher performance cost when using shadow filtering.
+option.SHADOW_COLOR=色付きの影
+option.SHADOW_COLOR.comment=半透明の物体からの色付きの影。 §a[+]§r色付きの太いライトシャフトで使われます。 §c[-]§rシャドウフィルタリングを使用した場合、パフォーマンスコストが若干高くなります。
+
+#option.SHADOW_FILTER=Shadow Filtering
+#option.SHADOW_FILTER.comment=Enables shadow filtering. §a[+]§rThis effect benefits from TAA.
+option.SHADOW_FILTER=シャドウフィルタリング
+option.SHADOW_FILTER.comment=シャドウフィルタリングを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
+
+#option.sunPathRotation=Sun Path Rotation
+#option.sunPathRotation.comment=Adjusts sun angle.
+option.sunPathRotation=太陽の軌道角度
+option.sunPathRotation.comment=陽射しの角度を設定します。
+
+#option.SHADOW_SUBSURFACE=Subsurface Scattering
+#option.SHADOW_SUBSURFACE.comment=Allows light to penetrate and scatter through foliages.
+option.SHADOW_SUBSURFACE=サブサーフェススキャッタリング
+option.SHADOW_SUBSURFACE.comment=光が木の葉を通過して散乱するのを設定します。
+
+#option.SHADOW_PIXEL=Pixel Locked Shadows
+#option.SHADOW_PIXEL.comment=Applies pixelation effect on shadows.
+#value.SHADOW_PIXEL.0=OFF
+option.SHADOW_PIXEL=ピクセル固定の影
+option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
+value.SHADOW_PIXEL.0=オフ
+
+#option.AO=Ambient Occlusion
+#option.AO.comment=Adds soft shadows around surface contact or intersection.
+option.AO=アンビエントオクルージョン(AO)
+option.AO.comment=接触している表面や交差した部分に柔らかな影を与えます。
+
+#option.AO_STRENGTH=AO Strength
+#option.AO_STRENGTH.comment=Adjusts ambient occlusion strength.
+option.AO_STRENGTH=AOの強さ
+option.AO_STRENGTH.comment=アンビエントオクルージョン(AO)の強さを調整します。
+
+#option.DESATURATION=Desaturation
+#option.DESATURATION.comment=Reduces saturation while adding some tint in darker areas.
+option.DESATURATION=低彩度化(desaturation)
+option.DESATURATION.comment=彩度を低下させながら、暗い部分に色合いを追加します。
+
+#option.DESATURATION_FACTOR=Max Desaturation Factor
+#option.DESATURATION_FACTOR.comment=Adjusts the maximum amount of desaturation applied.
+#value.DESATURATION_FACTOR.2.0=Very Low
+#value.DESATURATION_FACTOR.1.5=Low
+#value.DESATURATION_FACTOR.1.0=Medium
+#value.DESATURATION_FACTOR.0.5=High
+#value.DESATURATION_FACTOR.0.0=Very High
+option.DESATURATION_FACTOR=最大低彩度化度合い
+option.DESATURATION_FACTOR.comment=低彩度化の最大値を調整します。
+value.DESATURATION_FACTOR.2.0=微小
+value.DESATURATION_FACTOR.1.5=小
+value.DESATURATION_FACTOR.1.0=中
+value.DESATURATION_FACTOR.0.5=大
+value.DESATURATION_FACTOR.0.0=最大
+
+#option.TOON_LIGHTMAP=Toon Lightmap
+#option.TOON_LIGHTMAP.comment=Reduces the quality of vanilla lighting for cel shading. §e[*]§rThis option is known for making your game "look bad", only enable this when you need it.
+option.TOON_LIGHTMAP=トゥーンライトマップ
+option.TOON_LIGHTMAP.comment=セルシェーディング用にバニラの照明品質を低くします。 §e[*]§rこのオプションを指定するとゲームの見た目が非常に悪くなるので、必要な時のみ設定してください。
+
+#option.WHITE_WORLD=White World
+#option.WHITE_WORLD.comment=Replaces textures with flat white color.
+option.WHITE_WORLD=ホワイトワールド
+option.WHITE_WORLD.comment=テクスチャを真っ白にします。
+
+#Material
+#option.ADVANCED_MATERIALS=Advanced Materials
+#option.ADVANCED_MATERIALS.comment=Enables the use of specular and normal mapping which allows for more detail on various things.  §e[*]§rThis option requires a resource pack which contains specular and/or normal maps, disable this if you don't use one.
+option.ADVANCED_MATERIALS=質感の強化
+option.ADVANCED_MATERIALS.comment=鏡面・法線マッピングを有効にすると、いろいろな物体のディティールが上がります。 §e[*]§rこのオプションは、リソースパックが鏡面か法線(またはその両方)マッピングに対応している必要があります。使用しない場合はオフにしてください。
+
+#option.MATERIAL_FORMAT=Material Format
+#option.MATERIAL_FORMAT.comment=Determines the specular and normal map format used by the resourcepack. §e[*]§rTexture artists usually tell which format is used in their resourcepack, using the wrong format may give weird results.
+#value.MATERIAL_FORMAT.0=SEUS PBR
+#value.MATERIAL_FORMAT.1=labPBR 1.3
+option.MATERIAL_FORMAT=質感のフォーマット
+option.MATERIAL_FORMAT.comment=リソースパックに含まれる鏡面・法線マッピングのマッピングのフォーマットを設定します。 §e[*]§rリソースパックの作者が指定したフォーマットをフォーマットを設定してください。間違ったフォーマットを使用すると奇妙な結果になります。
+value.MATERIAL_FORMAT.0=SEUS PBR
+value.MATERIAL_FORMAT.1=labPBR 1.3
+
+#Reflections
+#option.REFLECTION=Reflections
+#option.REFLECTION.comment=Enables screen space reflection. §e[*]§rThis toggle only affects water and translucent reflection, rain and specular reflection won't be affected.
+option.REFLECTION=反射
+option.REFLECTION.comment=映りこみ反射を有効にします。 §e[*]§rこのオプションは水面と半透明オブジェクトの反射にのみ反映され、雨や法線反射には影響しません。
+
+#option.REFLECTION_TRANSLUCENT=Translucent Reflections
+#option.REFLECTION_TRANSLUCENT.comment=Allows reflection to be rendered on translucent surfaces, such as stained glass, ice, slime blocks, and more.
+option.REFLECTION_TRANSLUCENT=半透明オブジェクトの反射
+option.REFLECTION_TRANSLUCENT.comment=半透明オブジェクト(色付きガラス、氷、スライムブロックなど)表面の反射を描画します。
+
+#option.REFLECTION_SPECULAR=Specular Reflection
+#option.REFLECTION_SPECULAR.comment=Enables reflection on smooth or metallic surfaces.
+option.REFLECTION_SPECULAR=鏡面反射
+option.REFLECTION_SPECULAR.comment=滑らかな、または金属の表面の反射を有効にします。
+
+#option.REFLECTION_RAIN=Rain Reflection
+#option.REFLECTION_RAIN.comment=Allows surfaces to be wet while raining.  §e[*]§rRequires specular reflection.
+#value.REFLECTION_RAIN.0=OFF
+#value.REFLECTION_RAIN.1=Puddles
+#value.REFLECTION_RAIN.2=Full
+option.REFLECTION_RAIN=雨の反射
+option.REFLECTION_RAIN.comment=雨が降っているとき、表面をぬれた状態にします。 §e[*]§r鏡面反射を有効にする必要があります。
+value.REFLECTION_RAIN.0=オフ
+value.REFLECTION_RAIN.1=水滴
+value.REFLECTION_RAIN.2=全て
+
+#option.REFLECTION_ROUGH=Rough Reflection
+#option.REFLECTION_ROUGH.comment=Allows surfaces with lower smoothness to render blurry reflections. §c[-]§rMay contain minor artifacts.
+option.REFLECTION_ROUGH=粗い反射
+option.REFLECTION_ROUGH.comment=粗いオブジェクトの表面にぼやけた反射を描写します。 §c[-]§r小さな歪みが含まれるでしょう。
+
+#option.REFLECTION_PREVIOUS=Previous Frame Reflection
+#option.REFLECTION_PREVIOUS.comment=Allows translucents to be reflected by using previous frame information. §c[-]§rMay cause missing reflection on screenshot (caused by screenshot size setting). §c[-]§rIncompatible with some GPUs.
+option.REFLECTION_PREVIOUS=直前フレームの反射
+option.REFLECTION_PREVIOUS.comment=半透明オブジェクトの反射に直前のフレーム情報を利用します。 §c[-]§rスクリーンショットでは反射が失われます(スクリーンショットの解像度設定による)。 §c[-]§r一部のGPUと互換性がありません。
+
+#option.ALBEDO_METAL=Albedo Tinted Hardcoded Metal
+#option.ALBEDO_METAL.comment=Applies base texture as tint on hardcoded metallic surfaces. §e[*]§rWorks on labPBR material format only.
+option.ALBEDO_METAL=組み込みの金属反射
+option.ALBEDO_METAL.comment=組み込みの金属表面を色合いとしてベーステクスチャに使用します。 §e[*]§rlabPBR準拠の(リソースパック)でのみ動作します。
+
+#Parallax
+#option.PARALLAX=Parallax Occlusion Mapping
+#option.PARALLAX.comment=Adds displacement on a surface using height map.
+option.PARALLAX=視差遮蔽マッピング(POM)
+option.PARALLAX.comment=高さ情報を使用してオブジェクト表面に凹凸を加えます。
+
+#option.PARALLAX_DEPTH=Parallax Depth
+#option.PARALLAX_DEPTH.comment=Adjusts parallax deepness.
+option.PARALLAX_DEPTH=視差深度
+option.PARALLAX_DEPTH.comment=視差の深度を調整します。
+value.PARALLAX_DEPTH.0.05=5 cm
+value.PARALLAX_DEPTH.0.10=10 cm
+value.PARALLAX_DEPTH.0.15=15 cm
+value.PARALLAX_DEPTH.0.20=20 cm
+value.PARALLAX_DEPTH.0.25=25 cm
+value.PARALLAX_DEPTH.0.30=30 cm
+value.PARALLAX_DEPTH.0.35=35 cm
+value.PARALLAX_DEPTH.0.40=40 cm
+value.PARALLAX_DEPTH.0.45=45 cm
+value.PARALLAX_DEPTH.0.50=50 cm
+
+#option.SELF_SHADOW=Self Shadows
+#option.SELF_SHADOW.comment=Allows a surface to cast shadow to itself using heightmap.
+option.SELF_SHADOW=セルフシャドウ
+option.SELF_SHADOW.comment=高さ情報を使用して自身の影をオブジェクト表面に投影します。
+
+#option.SELF_SHADOW_ANGLE=Self Shadowing Angle
+#option.SELF_SHADOW_ANGLE.comment=Adjusts the self shadowing angle, higher value allows the shadow to travel further.
+option.SELF_SHADOW_ANGLE=セルフシャドウ角度
+option.SELF_SHADOW_ANGLE.comment=セルフシャドウの角度を調整します。高い値では、影がさらに移動します。
+
+#option.PARALLAX_QUALITY=Parallax Quality
+#option.PARALLAX_QUALITY.comment=Adjusts the quality of parallax occlusion mapping and self shadows.
+option.PARALLAX_QUALITY=視差品質
+option.PARALLAX_QUALITY.comment=POMとセルフシャドウの品質を調整します。
+
+#option.PARALLAX_DISTANCE=Parallax Distance
+#option.PARALLAX_DISTANCE.comment=Adjusts how far parallax occlusion mapping and self shadows can be rendered.
+option.PARALLAX_DISTANCE=POM表示距離
+option.PARALLAX_DISTANCE.comment=POMとセルフシャドウが表示される距離を調整します。
+
+#option.DIRECTIONAL_LIGHTMAP=Directional Lightmap
+#option.DIRECTIONAL_LIGHTMAP.comment=Adds normal mapping to vanilla lighting. §c[-]§rLightmap may glitch with this effect enabled.
+option.DIRECTIONAL_LIGHTMAP=指向性ライトマップ
+option.DIRECTIONAL_LIGHTMAP.comment=バニラの照明に鏡面マッピングを加えます。 §c[-]§rこの効果を有効にするとライトマップにグリッチが発生します。
+
+#option.DIRECTIONAL_LIGHTMAP_STRENGTH=Dir. Lightmap Strength
+#option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=Adjusts the intensity of Directional Lightmap.
+#value.DIRECTIONAL_LIGHTMAP_STRENGTH.2.0=Very Low
+#value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.4=Low
+#value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.0=Medium
+#value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.7=High
+#value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.5=Very High
+option.DIRECTIONAL_LIGHTMAP_STRENGTH=指向性ライトマップの強さ
+option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=指向性ライトマップの強度を調整します。
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.2.0=超低
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.4=低
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.0=中
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.7=高
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.5=超高
+
+#Atmospherics
+#option.CLOUDS=Clouds
+#option.CLOUDS.comment=Enables clouds. §a[+]§rDefault clouds benefits from TAA. §e[*]§rVanilla clouds requires vanilla cloud setting set to default or on.
+#value.CLOUDS.0=§cOFF
+#value.CLOUDS.1=Default
+#value.CLOUDS.2=Vanilla
+option.CLOUDS=雲
+option.CLOUDS.comment=雲を有効にします。 §a[+]§rデフォルトの雲はTAAの恩恵を受けます。 §e[*]§rバニラの雲はバニラの雲設定をデフォルトかオンにする必要があります。
+value.CLOUDS.0=§cオフ
+value.CLOUDS.1=デフォルト
+value.CLOUDS.2=バニラ
+
+#option.SKY_DESATURATION=Sky Desaturation
+#option.SKY_DESATURATION.comment=Reduces saturation while adding some tint to the skybox at night
+option.SKY_DESATURATION=空の低彩度化
+option.SKY_DESATURATION.comment=夜空に少し色合いを加えながら彩度を下げます。
+
+#option.AURORA=Aurora
+#option.AURORA.comment=Enables aurora. §a[+]§rThis effect benefits from TAA.
+option.AURORA=オーロラ
+option.AURORA.comment=オーロラを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
+
+#option.ROUND_SUN_MOON=Round Sun & Moon
+#option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon
+option.ROUND_SUN_MOON=丸い太陽と月
+option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月
+
+#option.DISTANT_FADE=Distant Fade
+#option.DISTANT_FADE.comment=Fades far chunk borders. Spherical works like vanilla fog. Cylindrical ignores Y axis. §e[*]§rThis option is affected by fog density.
+#value.DISTANT_FADE.0=OFF
+#value.DISTANT_FADE.1=Spherical
+#value.DISTANT_FADE.2=Cylindrical
+option.DISTANT_FADE=遠距離描写
+option.DISTANT_FADE.comment=離れたチャンク境界をぼやけさせます。球面はバニラの霧のように働きます。円筒面はY軸を無視します。 §e[*]§rこのオプションは霧の密度に影響されます。
+value.DISTANT_FADE.0=オフ
+value.DISTANT_FADE.1=球面
+value.DISTANT_FADE.2=円筒面
+
+#option.WEATHER_PERBIOME=Per Biome Weather
+#option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. §c[-]§rMay not work under unknown conditions.
+option.WEATHER_PERBIOME=バイオーム毎の天候
+option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を使用します。 §c[-]§r未知の条件下では動作しない可能性があります。
+
+#option.LIGHT_SHAFT=Light Shafts
+#option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis effect benefits from TAA. §e[*]§rPerformance depends on Shadowmap Resolution.
+option.LIGHT_SHAFT=ライトシャフト
+option.LIGHT_SHAFT.comment=太陽/月からの太さのある光の柱を追加します。 §a[+]§rこの効果はTAAの恩恵を受けます。 §e[*]§rパフォーマンスはシャドウマップの解像度に依存します。
+
+#option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
+#option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
+option.LIGHT_SHAFT_STRENGTH=ライトシャフトの強さ
+option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。
+
+#option.FOG_DENSITY=Fog Density
+#option.FOG_DENSITY.comment=Adjusts fog density. §e[*]§rThis option is ignored in the nether.
+option.FOG_DENSITY=霧の密度
+option.FOG_DENSITY.comment=霧の密度を調整します。 §e[*]§rこのオプションはネザーでは無視されます。
+
+#option.WEATHER_OPACITY=Weather Opacity
+#option.WEATHER_OPACITY.comment=Adjusts weather opacity.
+option.WEATHER_OPACITY=天候の不透明度
+option.WEATHER_OPACITY.comment=天候の不透明度を調整します。
+
+#Sky Config
+#option.SKY_GROUND=Sky Ground
+#option.SKY_GROUND.comment=Darkens the bottom part of the sky. §e[*]§rThis option is affected by fog density.
+#value.SKY_GROUND.0=§cOFF
+#value.SKY_GROUND.1=Reflections Only
+#value.SKY_GROUND.2=Full
+option.SKY_GROUND=地平線下の描写
+option.SKY_GROUND.comment=地平線以下の空を暗くします。 §e[*]§rこのオプションは霧の密度に影響されます。
+value.SKY_GROUND.0=§cオフ
+value.SKY_GROUND.1=反射のみ
+value.SKY_GROUND.2=フル
+
+#option.HORIZON_DISTANCE=Horizon Distance
+#option.HORIZON_DISTANCE.comment=Adjusts sky gradient. Nearer horizon gives slightly brighter sky, further horizon gives slightly darker sky.
+#value.HORIZON_DISTANCE.1.0=Very Near
+#value.HORIZON_DISTANCE.1.5=Near
+#value.HORIZON_DISTANCE.2.0=Medium
+#value.HORIZON_DISTANCE.2.5=Far
+#value.HORIZON_DISTANCE.3.0=Very Far
+option.HORIZON_DISTANCE=地平線距離
+option.HORIZON_DISTANCE.comment=空のグラデーションを調整します。地平線に近いほど、空は少し明るく、遠くなればやや暗くなります。
+value.HORIZON_DISTANCE.1.0=超近距離
+value.HORIZON_DISTANCE.1.5=近距離
+value.HORIZON_DISTANCE.2.0=中距離
+value.HORIZON_DISTANCE.2.5=遠距離
+value.HORIZON_DISTANCE.3.0=超遠距離
+
+#option.SKYBOX_BRIGHTNESS=Skybox Brightness
+#option.SKYBOX_BRIGHTNESS.comment=Adjusts skybox brightness. §e[*]§rSet to 1.00 when subtractive skybox exists.
+option.SKYBOX_BRIGHTNESS=空の明るさ
+option.SKYBOX_BRIGHTNESS.comment=空の明るさを調整します。 §e[*]§r減算の空が存在する場合には1.00に設定します。
+
+#Cloud Config
+#option.CLOUD_THICKNESS=Thickness
+#option.CLOUD_THICKNESS.comment=Adjusts cloud thickness, higher thickness makes artifacts more visible.
+#value.CLOUD_THICKNESS.1 =Very Low
+#value.CLOUD_THICKNESS.2 =Low
+#value.CLOUD_THICKNESS.4 =Medium
+#value.CLOUD_THICKNESS.8 =High
+#value.CLOUD_THICKNESS.16=Very High
+option.CLOUD_THICKNESS=厚み
+option.CLOUD_THICKNESS.comment=雲の厚みを調整します。高い値を設定するとアーティファクト(ノイズ)が表れやすくなります。
+value.CLOUD_THICKNESS.1 =とても薄い
+value.CLOUD_THICKNESS.2 =薄い
+value.CLOUD_THICKNESS.4 =中程度
+value.CLOUD_THICKNESS.8 =厚い
+value.CLOUD_THICKNESS.16=とても暑い
+
+#option.CLOUD_AMOUNT=Amount
+#option.CLOUD_AMOUNT.comment=Adjusts cloud amount.
+#value.CLOUD_AMOUNT.12.0=Very Low
+#value.CLOUD_AMOUNT.11.0=Low
+#value.CLOUD_AMOUNT.10.0=Medium
+#value.CLOUD_AMOUNT.9.0=High
+#value.CLOUD_AMOUNT.8.0 =Very High
+option.CLOUD_AMOUNT=量
+option.CLOUD_AMOUNT.comment=雲の量を調整します。
+value.CLOUD_AMOUNT.12.0=とても少ない
+value.CLOUD_AMOUNT.11.0=少ない
+value.CLOUD_AMOUNT.10.0=中程度
+value.CLOUD_AMOUNT.9.0=多い
+value.CLOUD_AMOUNT.8.0=とても多い
+
+#option.CLOUD_HEIGHT=Height
+#option.CLOUD_HEIGHT.comment=Adjusts cloud height.
+#value.CLOUD_HEIGHT.5.0 =Very Low
+#value.CLOUD_HEIGHT.7.5=Low
+#value.CLOUD_HEIGHT.10.0=Medium
+#value.CLOUD_HEIGHT.12.5=High
+#value.CLOUD_HEIGHT.15.0=Very High
+option.CLOUD_HEIGHT=高度
+option.CLOUD_HEIGHT.comment=雲の高度を調整します。
+value.CLOUD_HEIGHT.5.0 =とても低い
+value.CLOUD_HEIGHT.7.5=低い
+value.CLOUD_HEIGHT.10.0=中程度
+value.CLOUD_HEIGHT.12.5=高い
+value.CLOUD_HEIGHT.15.0=とても高い
+
+#option.CLOUD_SPEED=Speed
+#option.CLOUD_SPEED.comment=Adjusts cloud speed.
+option.CLOUD_SPEED=速度
+option.CLOUD_SPEED.comment=雲の流れる速度を調整します。
+
+#option.CLOUD_OPACITY=Opacity
+#option.CLOUD_OPACITY.comment=Adjusts cloud opacity.
+option.CLOUD_OPACITY=不透明度
+option.CLOUD_OPACITY.comment=雲の不透明度を調整します。
+
+#option.CLOUD_BRIGHTNESS=Brightness
+#option.CLOUD_BRIGHTNESS.comment=Adjusts cloud brightness.
+option.CLOUD_BRIGHTNESS=輝度
+option.CLOUD_BRIGHTNESS.comment=雲の輝度を調整します。
+
+#Water
+#option.WATER_MODE=Water Mode
+#option.WATER_MODE.comment=Determine whether vanilla water texture should be used. Default : shader's flat water color, no texture. Vanilla : vanilla texture. Tinted Vanilla : vanilla texture with shader's water color. Flat Vanilla : vanilla's flat water color.
+#value.WATER_MODE.0=Default
+#value.WATER_MODE.1=Vanilla
+#value.WATER_MODE.2=Tinted Vanilla
+#value.WATER_MODE.3=Flat Vanilla
+
+option.WATER_MODE=水の表示
+option.WATER_MODE.comment=バニラの水のテクスチャを使用するかどうか設定します。 デフォルト : シェーダーのフラットな水の色、テクスチャ無し。 バニラ : バニラのテクスチャ。 色付きのバニラ : バニラのテクスチャ、シェーダーの色。 フラットバニラ : バニラのフラットな水の色。
+value.WATER_MODE.0=デフォルト
+value.WATER_MODE.1=バニラ
+value.WATER_MODE.2=色付きのバニラ
+value.WATER_MODE.3=フラットバニラ
+
+#option.WATER_FOG_DENSITY=Water Fog Density
+#option.WATER_FOG_DENSITY.comment=Adjusts water fog density.
+option.WATER_FOG_DENSITY=水中の視距離
+option.WATER_FOG_DENSITY.comment=水中の視距離(霧の濃さ)を調整します。
+
+#option.WATER_NORMALS=Normals
+#option.WATER_NORMALS.comment=Enables realtime-generated normal mapping for water.
+#value.WATER_NORMALS.0=§cOFF
+#value.WATER_NORMALS.1=Worley
+#value.WATER_NORMALS.2=Perlin
+option.WATER_NORMALS=水の法線マッピング
+option.WATER_NORMALS.comment=リアルタイムに生成される水の法線マッピングを有効にします。
+value.WATER_NORMALS.0=§cオフ
+value.WATER_NORMALS.1=Worleyノイズ
+value.WATER_NORMALS.2=Perlinノイズ
+
+#option.WATER_PARALLAX=Parallax
+#option.WATER_PARALLAX.comment=Enables water displacement.
+option.WATER_PARALLAX=視差
+option.WATER_PARALLAX.comment=水面の置換を有効にします。
+
+#option.WATER_DETAIL=Detail
+#option.WATER_DETAIL.comment=Adjusts the ratio between large and small water normals.
+option.WATER_DETAIL=ディテール
+option.WATER_DETAIL.comment=水面の法線マッピングにおける大小の比率を調整します。
+value.WATER_DETAIL.0.05=5%
+value.WATER_DETAIL.0.10=10%
+value.WATER_DETAIL.0.15=15%
+value.WATER_DETAIL.0.20=20%
+value.WATER_DETAIL.0.25=25%
+value.WATER_DETAIL.0.30=30%
+value.WATER_DETAIL.0.35=35%
+value.WATER_DETAIL.0.40=40%
+value.WATER_DETAIL.0.45=45%
+value.WATER_DETAIL.0.50=50%
+
+#option.WATER_BUMP=Bumpiness
+#option.WATER_BUMP.comment=Adjusts the intensity of water normals.
+option.WATER_BUMP=バンプ
+option.WATER_BUMP.comment=水面の法線マッピングの強度を調整します。
+
+#option.WATER_SHARPNESS=Sharpness
+#option.WATER_SHARPNESS.comment=Adjusts the sharpness of water normals.
+#value.WATER_SHARPNESS.0.8=Low
+#value.WATER_SHARPNESS.0.5=Medium
+#value.WATER_SHARPNESS.0.2=High
+option.WATER_SHARPNESS=シャープさ
+option.WATER_SHARPNESS.comment=水面の法線マッピングのシャープさを調整します。
+value.WATER_SHARPNESS.0.8=低
+value.WATER_SHARPNESS.0.5=中
+value.WATER_SHARPNESS.0.2=高
+
+#option.WATER_SPEED=Speed
+#option.WATER_SPEED.comment=Adjusts the noise speed for water normals.
+option.WATER_SPEED=速度
+option.WATER_SPEED.comment=水面の法線マッピングのノイズの速度を調整します。
+
+#option.WATER_PIXEL=Pixel Lock
+#option.WATER_PIXEL.comment=Applies pixelation effect on water normals.
+#value.WATER_PIXEL.0=OFF
+option.WATER_PIXEL=ピクセル化
+option.WATER_PIXEL.comment=水面の法線マッピングにピクセル化エフェクトを適用します。
+value.WATER_PIXEL.0=オフ
+
+#Post Effects
+#option.DOF=Depth of Field
+#options.DOF.comment=Enables camera focus effect.
+#option.DOF_STRENGTH=DoF Strength
+#option.DOF_STRENGTH.comment=Adjusts the focus strength, higher value blurs quicker.
+option.DOF=被写界深度(DoF)
+options.DOF.comment=カメラフォーカスのエフェクトを有効にします。
+option.DOF_STRENGTH=DoF強度
+option.DOF_STRENGTH.comment=フォーカスの強度を調整します。強くすればより素早くぼけます。
+
+#option.MOTION_BLUR=Motion Blur
+#option.MOTION_BLUR.comment=Enables camera motion based blurring.
+option.MOTION_BLUR=モーションブラー
+option.MOTION_BLUR.comment=カメラモーションによるぼけを有効にします。
+
+#option.MOTION_BLUR_STRENGTH=Motion Blur Strength
+#option.MOTION_BLUR_STRENGTH.comment=Adjusts motion blur intensity.
+option.MOTION_BLUR_STRENGTH=モーションブラーの強度
+option.MOTION_BLUR_STRENGTH.comment=モーションブラーの強度を調整します。
+
+#option.BLOOM=Bloom
+#option.BLOOM.comment=Allows bright areas to glow.
+option.BLOOM=ブルーム効果
+option.BLOOM.comment=明るい部分から光を拡散させる効果を有効にします。
+
+#option.BLOOM_STRENGTH=Bloom Strength
+#option.BLOOM_STRENGTH.comment=Adjusts bloom intensity.
+option.BLOOM_STRENGTH=ブルーム強度
+option.BLOOM_STRENGTH.comment=ブルーム効果の強度を調整します。
+
+#option.LENS_FLARE=Lens Flare
+#option.LENS_FLARE.comment=Enables lens flare.
+option.LENS_FLARE=レンズフレア
+option.LENS_FLARE.comment=レンズフレアを有効にします。
+
+#option.LENS_FLARE_STRENGTH=Lens Flare Strength
+#option.LENS_FLARE_STRENGTH.comment=Adjusts lens flare intensity.
+option.LENS_FLARE_STRENGTH=レンスフレア強度
+option.LENS_FLARE_STRENGTH.comment=レンズフレアの強度を調整します。
+
+#option.AA=Anti-aliasing
+#option.AA.comment=Enables anti-aliasing. FXAA : Faster, works properly with screenshot size. TAA : Slower, captures subpixel detail and improves some effects. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
+#value.AA.0=§cOFF
+option.AA=アンチエイリアシング
+option.AA.comment=アンチエイリアシングを有効にします。 FXAA : より速く、スクリーンショットのサイズで確実に動作します。 TAA : 遅いですが、サブピクセルの詳細をとらえ、いくつかの効果を改善します。 §e[*]§rこの項目を有効にしているとき、シェーダーメニューのアンチエイリアシングは無効にしてください。
+value.AA.0=§cオフ
+value.AA.1=FXAA
+value.AA.2=TAA
+
+#option.SHARPEN=Image Sharpening
+#option.SHARPEN.comment=Adds sharpening filter. §a[+]§rGreat for those who dislike softened image due to antialiasing. §c[-]§rSharper image causes dithering artifact and some aliasing to reappear.
+option.SHARPEN=イメージシャーペン
+option.SHARPEN.comment=鮮鋭化フィルタを調整します。 §a[+]§rアンチエイリアシングで画像がぼやけるのを気にする人に最適です。 §c[-]§rより強くすると、ディザリングやエイリアシングによるノイズが再度現れます。
+value.SHARPEN.0=0.00
+value.SHARPEN.1=0.10
+value.SHARPEN.2=0.20
+value.SHARPEN.3=0.30
+value.SHARPEN.4=0.40
+value.SHARPEN.5=0.50
+
+#option.VIGNETTE=Vignette
+#option.Vignette.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging.
+option.VIGNETTE=視界端の影(Vignette)
+option.Vignette.comment=画面の端の方を徐々に暗くします。 §e[*]§r360°イメージングを無効にします。
+
+#option.DIRTY_LENS=Dirty Lens
+#option.DIRTY_LENS.comment=Adds dusty particle effect to bloom. §e[*]§rRequires bloom.
+option.DIRTY_LENS=汚れたレンズ
+option.DIRTY_LENS.comment=ブルームに汚れた粒子のエフェクトを加えます。 §e[*]§rブルームが必要です。
+
+#option.RETRO_FILTER=Retro Filter
+#option.RETRO_FILTER.comment=Adds pixelation and dithering. §e[*]§rLower render quality for stronger pixelation. §c[-]§rIncompatible with anti-aliasing.
+option.RETRO_FILTER=レトロフィルター
+option.RETRO_FILTER.comment=ピクセル化とディザリングを加えます。 §e[*]§rピクセル化をより強くするためにレンダリング品質を下げます。 §c[-]§rアンチエイリアシングと互換性がありません。
+
+#option.OUTLINE=Outline
+#option.OUTLINE.comment=Enables outline effect.
+#value.OUTLINE.0=OFF
+#value.OUTLINE.1=Black
+#value.OUTLINE.2=Colored
+#value.OUTLINE.3=Promo Double
+#value.OUTLINE.4=Dungeons
+#value.OUTLINE.5=Promo Bevel
+option.OUTLINE=アウトライン
+option.OUTLINE.comment=アウトラインのエフェクトを有効にします。
+value.OUTLINE.0=オフ
+value.OUTLINE.1=黒
+value.OUTLINE.2=色付き
+value.OUTLINE.3=1.12アップデートアート
+value.OUTLINE.4=ダンジョンズ
+
+#Color Grading & Tonemap
+#option.EXPOSURE=Exposure
+#option.TonemapExposure.comment=Adjusts overall brightness.
+option.EXPOSURE=露出補正
+option.TonemapExposure.comment=全体の明るさを調整します。
+
+#option.AUTO_EXPOSURE=Auto Exposure
+#option.AUTO_EXPOSURE.comment=Enables automatic adjustment to overall brightness.
+option.AUTO_EXPOSURE=自動露出
+option.AUTO_EXPOSURE.comment=全体の明るさの自動調整を有効にします。
+
+#option.COLOR_GRADING=Color Grading
+#option.COLOR_GRADING.comment=Enables color grading. §e[*]§rThis option doesn't need to be enabled to change tonemap, saturation, and vibrance sliders.
+option.COLOR_GRADING=カラーグレーディング
+option.COLOR_GRADING.comment=カラーグレーディングを有効にします。 §e[*]§rこのオプションを有効にしなくても、トーンマップ、彩度、鮮やかさのスライダーを調整できます。
+
+#option.TONEMAP_WHITE_CURVE=Tonemap White Curve
+#option.TONEMAP_WHITE_CURVE.comment=Adjusts how quickly the tonemap can reach white.
+option.TONEMAP_WHITE_CURVE=トーンマップホワイトカーブ
+option.TONEMAP_WHITE_CURVE.comment=トーンマップが白になるまでの速度を調整します。
+
+#option.TONEMAP_LOWER_CURVE=Tonemap Lower Curve
+#option.TONEMAP_LOWER_CURVE.comment=Adjusts contrast of darker colors.
+option.TONEMAP_LOWER_CURVE=トーンマップ下部のカーブ
+option.TONEMAP_LOWER_CURVE.comment=暗い色のコントラストを調整します。
+
+#option.TONEMAP_UPPER_CURVE=Tonemap Upper Curve
+#option.TONEMAP_UPPER_CURVE.comment=Adjusts contrast of brighter colors.
+option.TONEMAP_UPPER_CURVE=トーンマップ上部のカーブ
+option.TONEMAP_UPPER_CURVE.comment=明るい色のコントラストを調整します。
+
+#option.SATURATION=Saturation
+#option.SATURATION.comment=Adjusts saturation of all colors.
+option.SATURATION=彩度
+option.SATURATION.comment=すべての色の彩度を調整します。
+
+#option.VIBRANCE=Vibrance
+#option.VIBRANCE.comment=Adjusts saturation of less saturated colors, well saturated colors are less affected.
+option.VIBRANCE=鮮やかさ
+option.VIBRANCE.comment=彩度が低い色の彩度を調整します。彩度の高い色は影響を受けにくいです。
+
+#Color Grading Config
+#option.CG_RR=Red - Red Value
+#option.CG_RG=Red - Green Value
+#option.CG_RB=Red - Blue Value
+#option.CG_RI=Red Strength Value
+#option.CG_RM=Minimal Red Value
+#option.CG_RC=Red Curve Value
+option.CG_RR=赤 - 赤 の値
+option.CG_RG=赤 - 緑 の値
+option.CG_RB=赤 - 青 の値
+option.CG_RI=赤の強さ
+option.CG_RM=赤の最少値
+option.CG_RC=赤のカーブの値
+
+#option.CG_GR=Green - Red Value
+#option.CG_GG=Green - Green Value
+#option.CG_GB=Green - Blue Value
+#option.CG_GI=Green Strength Value
+#option.CG_GM=Minimal Green Value
+#option.CG_GC=Green Curve Value
+option.CG_GR=緑 - 赤 の値
+option.CG_GG=緑 - 緑 の値
+option.CG_GB=緑 - 青 の値
+option.CG_GI=緑の強さ
+option.CG_GM=緑の最少値
+option.CG_GC=緑のカーブの値
+
+#option.CG_BR=Blue - Red Value
+#option.CG_BG=Blue - Green Value
+#option.CG_BB=Blue - Blue Value
+#option.CG_BI=Blue Strength Value
+#option.CG_BM=Minimal Blue Value
+#option.CG_BC=Blue Curve Value
+option.CG_BR=青 - 赤 の値
+option.CG_BG=青 - 緑 の値
+option.CG_BB=青 - 青 の値
+option.CG_BI=青の強さ
+option.CG_BM=青の最少値
+option.CG_BC=青のカーブの値
+
+#option.CG_TR=Tint - Red Value
+#option.CG_TG=Tint - Green Value
+#option.CG_TB=Tint - Blue Value
+#option.CG_TI=Tint Strength Value
+#option.CG_TM=Tint Mix Value
+option.CG_TR=色合い - 赤 の値
+option.CG_TG=色合い - 緑 の値
+option.CG_TB=色合い - 青 の値
+option.CG_TI=色合いの強さ
+option.CG_TM=色合いのミックス値
+
+#Color
+#option.LIGHT_MR=Red
+#option.LIGHT_MG=Green
+#option.LIGHT_MB=Blue
+#option.LIGHT_MI=Intensity
+option.LIGHT_MR=赤
+option.LIGHT_MG=緑
+option.LIGHT_MB=青
+option.LIGHT_MI=強さ
+
+#option.LIGHT_DR=Red
+#option.LIGHT_DG=Green
+#option.LIGHT_DB=Blue
+#option.LIGHT_DI=Intensity
+option.LIGHT_DR=赤
+option.LIGHT_DG=緑
+option.LIGHT_DB=青
+option.LIGHT_DI=強さ
+
+#option.LIGHT_ER=Red
+#option.LIGHT_EG=Green
+#option.LIGHT_EB=Blue
+#option.LIGHT_EI=Intensity
+option.LIGHT_ER=赤
+option.LIGHT_EG=緑
+option.LIGHT_EB=青
+option.LIGHT_EI=強さ
+
+#option.LIGHT_NR=Red
+#option.LIGHT_NG=Green
+#option.LIGHT_NB=Blue
+#option.LIGHT_NI=Intensity
+option.LIGHT_NR=赤
+option.LIGHT_NG=緑
+option.LIGHT_NB=青
+option.LIGHT_NI=強さ
+
+#option.AMBIENT_MR=Red
+#option.AMBIENT_MG=Green
+#option.AMBIENT_MB=Blue
+#option.AMBIENT_MI=Intensity
+option.AMBIENT_MR=赤
+option.AMBIENT_MG=緑
+option.AMBIENT_MB=青
+option.AMBIENT_MI=強さ
+
+#option.AMBIENT_DR=Red
+#option.AMBIENT_DG=Green
+#option.AMBIENT_DB=Blue
+#option.AMBIENT_DI=Intensity
+option.AMBIENT_DR=赤
+option.AMBIENT_DG=緑
+option.AMBIENT_DB=青
+option.AMBIENT_DI=強さ
+
+#option.AMBIENT_ER=Red
+#option.AMBIENT_EG=Green
+#option.AMBIENT_EB=Blue
+#option.AMBIENT_EI=Intensity
+option.AMBIENT_ER=赤
+option.AMBIENT_EG=緑
+option.AMBIENT_EB=青
+option.AMBIENT_EI=強さ
+
+#option.AMBIENT_NR=Red
+#option.AMBIENT_NG=Green
+#option.AMBIENT_NB=Blue
+#option.AMBIENT_NI=Intensity
+option.AMBIENT_NR=赤
+option.AMBIENT_NG=緑
+option.AMBIENT_NB=青
+option.AMBIENT_NI=強さ
+
+#option.MINLIGHT_R=Red
+#option.MINLIGHT_G=Green
+#option.MINLIGHT_B=Blue
+#option.MINLIGHT_I=Brightness
+option.MINLIGHT_R=赤
+option.MINLIGHT_G=緑
+option.MINLIGHT_B=青
+option.MINLIGHT_I=明るさ
+
+#option.BLOCKLIGHT_R=Red
+#option.BLOCKLIGHT_G=Green
+#option.BLOCKLIGHT_B=Blue
+#option.BLOCKLIGHT_I=Intensity
+option.BLOCKLIGHT_R=赤
+option.BLOCKLIGHT_G=緑
+option.BLOCKLIGHT_B=青
+option.BLOCKLIGHT_I=強さ
+
+#option.SKY_R=Red
+#option.SKY_G=Green
+#option.SKY_B=Blue
+#option.SKY_I=Intensity
+option.SKY_R=赤
+option.SKY_G=緑
+option.SKY_B=青
+option.SKY_I=強さ
+
+#option.WATER_R=Red
+#option.WATER_G=Green
+#option.WATER_B=Blue
+#option.WATER_I=Intensity
+#option.WATER_A=Alpha
+option.WATER_R=赤
+option.WATER_G=緑
+option.WATER_B=青
+option.WATER_I=強さ
+option.WATER_A=アルファ
+
+#option.WEATHER_RR=Red
+#option.WEATHER_RG=Green
+#option.WEATHER_RB=Blue
+#option.WEATHER_RI=Intensity
+option.WEATHER_RR=赤
+option.WEATHER_RG=緑
+option.WEATHER_RB=青
+option.WEATHER_RI=強さ
+
+#option.WEATHER_CR=Red
+#option.WEATHER_CG=Green
+#option.WEATHER_CB=Blue
+#option.WEATHER_CI=Intensity
+option.WEATHER_CR=赤
+option.WEATHER_CG=緑
+option.WEATHER_CB=青
+option.WEATHER_CI=強さ
+
+#option.WEATHER_DR=Red
+#option.WEATHER_DG=Green
+#option.WEATHER_DB=Blue
+#option.WEATHER_DI=Intensity
+option.WEATHER_DR=赤
+option.WEATHER_DG=緑
+option.WEATHER_DB=青
+option.WEATHER_DI=強さ
+
+#option.WEATHER_BR=Red
+#option.WEATHER_BG=Green
+#option.WEATHER_BB=Blue
+#option.WEATHER_BI=Intensity
+option.WEATHER_BR=赤
+option.WEATHER_BG=緑
+option.WEATHER_BB=青
+option.WEATHER_BI=強さ
+
+#option.WEATHER_SR=Red
+#option.WEATHER_SG=Green
+#option.WEATHER_SB=Blue
+#option.WEATHER_SI=Intensity
+option.WEATHER_SR=赤
+option.WEATHER_SG=緑
+option.WEATHER_SB=青
+option.WEATHER_SI=強さ
+
+#option.WEATHER_MR=Red
+#option.WEATHER_MG=Green
+#option.WEATHER_MB=Blue
+#option.WEATHER_MI=Intensity
+option.WEATHER_MR=赤
+option.WEATHER_MG=緑
+option.WEATHER_MB=青
+option.WEATHER_MI=強さ
+
+#option.WEATHER_VR=Red
+#option.WEATHER_VG=Green
+#option.WEATHER_VB=Blue
+#option.WEATHER_VI=Intensity
+option.WEATHER_VR=赤
+option.WEATHER_VG=緑
+option.WEATHER_VB=青
+option.WEATHER_VI=強さ
+
+#option.AURORA_LR=Red
+#option.AURORA_LG=Green
+#option.AURORA_LB=Blue
+#option.AURORA_LI=Intensity
+option.AURORA_LR=赤
+option.AURORA_LG=緑
+option.AURORA_LB=青
+option.AURORA_LI=強さ
+
+#option.AURORA_HR=Red
+#option.AURORA_HG=Green
+#option.AURORA_HB=Blue
+#option.AURORA_HI=Intensity
+option.AURORA_HR=赤
+option.AURORA_HG=緑
+option.AURORA_HB=青
+option.AURORA_HI=強さ
+
+#option.NETHER_NR=Red
+#option.NETHER_NG=Green
+#option.NETHER_NB=Blue
+#option.NETHER_NI=Intensity
+option.NETHER_NR=赤
+option.NETHER_NG=緑
+option.NETHER_NB=青
+option.NETHER_NI=強さ
+
+#option.NETHER_VR=Red
+#option.NETHER_VG=Green
+#option.NETHER_VB=Blue
+#option.NETHER_VI=Intensity
+option.NETHER_VR=赤
+option.NETHER_VG=緑
+option.NETHER_VB=青
+option.NETHER_VI=強さ
+
+#option.NETHER_CR=Red
+#option.NETHER_CG=Green
+#option.NETHER_CB=Blue
+#option.NETHER_CI=Intensity
+option.NETHER_CR=赤
+option.NETHER_CG=緑
+option.NETHER_CB=青
+option.NETHER_CI=強さ
+
+#option.NETHER_WR=Red
+#option.NETHER_WG=Green
+#option.NETHER_WB=Blue
+#option.NETHER_WI=Intensity
+option.NETHER_WR=赤
+option.NETHER_WG=緑
+option.NETHER_WB=青
+option.NETHER_WI=強さ
+
+#option.NETHER_BR=Red
+#option.NETHER_BG=Green
+#option.NETHER_BB=Blue
+#option.NETHER_BI=Intensity
+option.NETHER_BR=赤
+option.NETHER_BG=緑
+option.NETHER_BB=青
+option.NETHER_BI=強さ
+
+#option.END_R=Red
+#option.END_G=Green
+#option.END_B=Blue
+#option.END_I=Intensity
+option.END_R=赤
+option.END_G=緑
+option.END_B=青
+option.END_I=強さ
+
+#option.EMISSIVE_RECOLOR=Emissive Recolor
+#option.EMISSIVE_RECOLOR.comment=Tints certain emissive blocks with blocklight color.
+option.EMISSIVE_RECOLOR=発光ブロックの色
+option.EMISSIVE_RECOLOR.comment=ブロックライトの色で特定の発光ブロックに色を付けます。
+
+#option.SKY_VANILLA=Vanilla Sky
+#option.SKY_VANILLA.comment=Use vanilla sky color.
+option.SKY_VANILLA=バニラスカイ
+option.SKY_VANILLA.comment=バニラの空の色を使用します。
+
+#option.NETHER_VANILLA=Vanilla Nether
+#option.NETHER_VANILLA.comment=Use vanilla nether color.
+option.NETHER_VANILLA=バニラネザー
+option.NETHER_VANILLA.comment=バニラのネザーの色を使用します。
+
+#World
+#option.WORLD_TIME_ANIMATION=World Time Animation
+#option.WORLD_TIME_ANIMATION.comment=Use ingame time for moving objects. §e[*]§rThis option is mostly used when making cinematics.
+option.WORLD_TIME_ANIMATION=世界時間アニメーション
+option.WORLD_TIME_ANIMATION.comment=移動するオブジェクトにゲーム内時間を使用します。 §e[*]§rこのオプションは動画撮影時によく使われます。
+
+#option.ANIMATION_SPEED=Animation Speed
+#option.ANIMATION_SPEED.comment=Adjusts animation speed.
+option.ANIMATION_SPEED=アニメーション速度
+option.ANIMATION_SPEED.comment=アニメーション速度を調整します。
+
+#Waving Blocks
+#option.WAVING_PLANT=Plants
+#option.WAVING_PLANT.comment=Allows various plants to wave.
+#option.WAVING_LEAF=Leaves
+#option.WAVING_LEAF.comment=Allows leaves to wave.
+#option.WAVING_LIQUID=Liquids
+#option.WAVING_LIQUID.comment=Allows water and lava to wave.
+#option.WAVING_EXTRA=Extras
+#option.WAVING_EXTRA.comment=Allows fire and lantern to wave.
+option.WAVING_PLANT=植物
+option.WAVING_PLANT.comment=いろいろな植物が揺れるのを許可します。
+option.WAVING_LEAF=木の葉
+option.WAVING_LEAF.comment=木の葉が揺れるのを許可します。
+option.WAVING_LIQUID=液体
+option.WAVING_LIQUID.comment=水や溶岩が揺れるのを許可します。
+option.WAVING_EXTRA=その他
+option.WAVING_EXTRA.comment=炎やランタンが揺れるのを許可します。
+
+#Curvature
+#option.WORLD_CURVATURE=World Curvature
+#option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §e[*]§rMissing chunks are handled by Minecraft itself which I can't fix.
+option.WORLD_CURVATURE=世界の曲率
+option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[*]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。
+
+#option.WORLD_CURVATURE_SIZE=World Curvature Size
+#option.WORLD_CURVATURE_SIZE.comment=Adjusts world curvature size. Negative values will bend the world upwards.
+option.WORLD_CURVATURE_SIZE=世界球のサイズ
+option.WORLD_CURVATURE_SIZE.comment=世界球のサイズを設定します。負の値では世界が逆に曲がります(球の内側になります)。
