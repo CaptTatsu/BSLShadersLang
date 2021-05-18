@@ -5,7 +5,7 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=最高
-profile.comment=低：少量陰影，無額外效果. 中：中等陰影，無額外效果. 高：中等陰影、AO和光束. 超高：高陰影、AO和光束. 
+profile.comment=低：少量陰影，無額外效果. 中：中等陰影，無額外效果. 高：中等陰影、AO和光束. 最高：高陰影、AO和光束. 
 
 #Screens
 screen.LIGHTING=光照
