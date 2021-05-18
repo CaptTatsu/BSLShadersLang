@@ -3,7 +3,9 @@ A collection of translation files for BSL Shaders v8.0 and above.
 ## Available languages
 - English (US) (en_US by Capt Tatsu, pre-installed in every version)
 - Japanese (ja_JP by tyukara)
+- Russian (ru_RU by vanja-san)
 - Simplified Chinese (zh_CN by kaniol-lck)
+- Traditional Chinese (zh_TW by DLAfvr)
 ## Installation
 - Click the green button named `Code`, then press Download ZIP.
 - Open the downloaded zip, then open the `BSLShadersLang-main` directory.
