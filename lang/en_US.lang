@@ -9,11 +9,10 @@ profile.comment=Low : low shadows, no extra effects. Medium : medium shadows, no
 
 #Screens
 screen.LIGHTING=Lighting
-screen.SHADOW=Extra Shadow Config
 
 screen.MATERIAL=Material
-screen.REFLECTION=Reflections
-screen.PARALLAX=Parallax
+screen.SPECULAR=Specular & Reflections
+screen.NORMALS=Normals & Parallax
 
 screen.ATMOSPHERICS=Atmospherics
 screen.SKY=Sky Config
@@ -69,7 +68,7 @@ screen.WAVING=Waving Blocks
 screen.CURVATURE=Curvature
 
 #Settings
-option.ABOUT=BSL v8.0.01
+option.ABOUT=BSL v8.1p1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -94,9 +93,6 @@ option.SHADOW_FILTER.comment=Enables shadow filtering. §a[+]§rThis effect bene
 
 option.sunPathRotation=Sun Path Rotation
 option.sunPathRotation.comment=Adjusts sun angle.
-
-option.SHADOW_SUBSURFACE=Subsurface Scattering
-option.SHADOW_SUBSURFACE.comment=Allows light to penetrate and scatter through foliages.
 
 option.SHADOW_PIXEL=Pixel Locked Shadows
 option.SHADOW_PIXEL.comment=Applies pixelation effect on shadows.
@@ -127,43 +123,60 @@ option.WHITE_WORLD.comment=Replaces textures with flat white color.
 
 #Material
 option.ADVANCED_MATERIALS=Advanced Materials
-option.ADVANCED_MATERIALS.comment=Enables the use of specular and normal mapping which allows for more detail on various things.  §e[*]§rThis option requires a resource pack which contains specular and/or normal maps, disable this if you don't use one.
+option.ADVANCED_MATERIALS.comment=Enables the use of specular and normal mapping which allows for more detail on various things.  §e[*]§rThis option requires a resource pack which contains specular and/or normal maps, disable this if you don't use one. §e[*]§rOptions which requires advanced materials are indicated by *, changing these options won't affect the visuals or performance while advanced materials is disabled.
 
-option.MATERIAL_FORMAT=Material Format
+option.MATERIAL_FORMAT=Material Format*
 option.MATERIAL_FORMAT.comment=Determines the specular and normal map format used by the resourcepack. §e[*]§rTexture artists usually tell which format is used in their resourcepack, using the wrong format may give weird results.
-value.MATERIAL_FORMAT.0=SEUS PBR
+value.MATERIAL_FORMAT.0=SEUS/Old PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
-#Reflections
+option.SSS=Subsurface Scattering
+option.SSS.comment=Allows light to penetrate and scatter through certain blocks.
+value.SSS.0=§cOFF
+value.SSS.1=AdvMat Only*
+value.SSS.2=Full
+
+option.SSS_QUALITY=SSS Quality
+option.SSS_QUALITY.comment=Adjusts subsurface scattering quality.
+value.SSS_QUALITY.0=Low
+value.SSS_QUALITY.1=High
+
+option.EMISSIVE=Emissive
+option.EMISSIVE.comment=Allows certain surfaces to be brighter.
+value.EMISSIVE.0=§cOFF
+value.EMISSIVE.1=AdvMat Only*
+value.EMISSIVE.2=Full
+
+#Specular & Reflections
 option.REFLECTION=Reflections
 option.REFLECTION.comment=Enables screen space reflection. §e[*]§rThis toggle only affects water and translucent reflection, rain and specular reflection won't be affected.
 
 option.REFLECTION_TRANSLUCENT=Translucent Reflections
 option.REFLECTION_TRANSLUCENT.comment=Allows reflection to be rendered on translucent surfaces, such as stained glass, ice, slime blocks, and more.
 
-option.REFLECTION_SPECULAR=Specular Reflection
+option.REFLECTION_SPECULAR=Specular Reflection*
 option.REFLECTION_SPECULAR.comment=Enables reflection on smooth or metallic surfaces.
 
-option.REFLECTION_RAIN=Rain Reflection
+option.REFLECTION_RAIN=Rain Reflection*
 option.REFLECTION_RAIN.comment=Allows surfaces to be wet while raining.  §e[*]§rRequires specular reflection.
-value.REFLECTION_RAIN.0=OFF
-value.REFLECTION_RAIN.1=Puddles
-value.REFLECTION_RAIN.2=Full
 
-option.REFLECTION_ROUGH=Rough Reflection
+option.REFLECTION_ROUGH=Rough Reflection*
 option.REFLECTION_ROUGH.comment=Allows surfaces with lower smoothness to render blurry reflections. §c[-]§rMay contain minor artifacts.
 
 option.REFLECTION_PREVIOUS=Previous Frame Reflection
-option.REFLECTION_PREVIOUS.comment=Allows translucents to be reflected by using previous frame information. §c[-]§rMay cause missing reflection on screenshot (caused by screenshot size setting). §c[-]§rIncompatible with some GPUs.
+option.REFLECTION_PREVIOUS.comment=Allows translucents to be reflected by using previous frame information. §c[-]§rMay cause missing reflection on screenshot (caused by screenshot size setting). §c[-]§rIncompatible with some GPUs. §c[-]§rBugged in 1.7.10.
 
-option.ALBEDO_METAL=Albedo Tinted Hardcoded Metal
+option.SPECULAR_HIGHLIGHT_ROUGH=Rough Specular Highlight
+option.SPECULAR_HIGHLIGHT_ROUGH.comment=Allows rough surfaces to have weak gloss.
+
+option.ALBEDO_METAL=Albedo Tinted Hardcoded Metal*
 option.ALBEDO_METAL.comment=Applies base texture as tint on hardcoded metallic surfaces. §e[*]§rWorks on labPBR material format only.
 
-#Parallax
-option.PARALLAX=Parallax Occlusion Mapping
+#Normals & Parallax
+option.PARALLAX=Parallax Occlusion Mapping*
 option.PARALLAX.comment=Adds displacement on a surface using height map.
 
-option.PARALLAX_DEPTH=Parallax Depth
+option.PARALLAX_DEPTH=Parallax Depth*
 option.PARALLAX_DEPTH.comment=Adjusts parallax deepness.
 value.PARALLAX_DEPTH.0.05=5 cm
 value.PARALLAX_DEPTH.0.10=10 cm
@@ -176,28 +189,37 @@ value.PARALLAX_DEPTH.0.40=40 cm
 value.PARALLAX_DEPTH.0.45=45 cm
 value.PARALLAX_DEPTH.0.50=50 cm
 
-option.SELF_SHADOW=Self Shadows
-option.SELF_SHADOW.comment=Allows a surface to cast shadow to itself using heightmap.
+option.PARALLAX_QUALITY=Parallax Samples*
+option.PARALLAX_QUALITY.comment=Adjusts the quality of parallax occlusion mapping.
 
-option.SELF_SHADOW_ANGLE=Self Shadowing Angle
-option.SELF_SHADOW_ANGLE.comment=Adjusts the self shadowing angle, higher value allows the shadow to travel further.
-
-option.PARALLAX_QUALITY=Parallax Quality
-option.PARALLAX_QUALITY.comment=Adjusts the quality of parallax occlusion mapping and self shadows.
-
-option.PARALLAX_DISTANCE=Parallax Distance
+option.PARALLAX_DISTANCE=Parallax Distance*
 option.PARALLAX_DISTANCE.comment=Adjusts how far parallax occlusion mapping and self shadows can be rendered.
 
-option.DIRECTIONAL_LIGHTMAP=Directional Lightmap
+option.SELF_SHADOW=Self Shadows*
+option.SELF_SHADOW.comment=Allows a surface to cast shadow to itself using heightmap.
+
+option.SELF_SHADOW_ANGLE=Self Shadows Angle*
+option.SELF_SHADOW_ANGLE.comment=Adjusts the self shadowing angle, higher value allows the shadow to travel further.
+
+option.SELF_SHADOW_QUALITY=Self Shadows Samples*
+option.SELF_SHADOW_QUALITY.comment=Adjusts the quality of self shadowing.
+
+option.DIRECTIONAL_LIGHTMAP=Directional Lightmap*
 option.DIRECTIONAL_LIGHTMAP.comment=Adds normal mapping to vanilla lighting. §c[-]§rLightmap may glitch with this effect enabled.
 
-option.DIRECTIONAL_LIGHTMAP_STRENGTH=Dir. Lightmap Strength
+option.DIRECTIONAL_LIGHTMAP_STRENGTH=Dir. Lightmap Strength*
 option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=Adjusts the intensity of Directional Lightmap.
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.2.0=Very Low
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.4=Low
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.0=Medium
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.7=High
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.5=Very High
+
+option.NORMAL_DAMPENING=Normal Dampening*
+option.NORMAL_DAMPENING.comment=Reduces normal map strength to prevent reflections being too noisy.
+
+option.NORMAL_PLANTS=Up-facing Plants
+option.NORMAL_PLANTS.comment=Adjusts plant shading. §e[*]§rDisable this if non-flat plant model is used or normal map applied on plants.
 
 #Atmospherics
 option.CLOUDS=Clouds
@@ -216,10 +238,16 @@ option.ROUND_SUN_MOON=Round Sun & Moon
 option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon
 
 option.DISTANT_FADE=Distant Fade
-option.DISTANT_FADE.comment=Fades far chunk borders. Spherical works like vanilla fog. Cylindrical ignores Y axis. §e[*]§rThis option is affected by fog density.
-value.DISTANT_FADE.0=OFF
-value.DISTANT_FADE.1=Spherical
-value.DISTANT_FADE.2=Cylindrical
+option.DISTANT_FADE.comment=Fades far chunk borders. §e[*]§rThis option is affected by fog density.
+value.DISTANT_FADE.0=§cOFF
+value.DISTANT_FADE.1=Overworld Only
+value.DISTANT_FADE.2=Nether & End Only
+value.DISTANT_FADE.3=Full
+
+option.DISTANT_FADE_STYLE=Distant Fade Style
+option.DISTANT_FADE_STYLE.comment=Spherical works like vanilla fog. Cylindrical ignores Y axis.
+value.DISTANT_FADE_STYLE.0=Spherical
+value.DISTANT_FADE_STYLE.1=Cylindrical
 
 option.WEATHER_PERBIOME=Per Biome Weather
 option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. §c[-]§rMay not work under unknown conditions.
@@ -237,19 +265,19 @@ option.WEATHER_OPACITY=Weather Opacity
 option.WEATHER_OPACITY.comment=Adjusts weather opacity.
 
 #Sky Config
+option.SKY_DENSITY_D=Day Density
+option.SKY_EXPOSURE_D=Day Exposure
+option.SKY_DENSITY_N=Night Density
+option.SKY_EXPOSURE_N=Night Exposure
+option.SKY_DENSITY_W=Weather Density
+option.SKY_EXPOSURE_W=Weather Exposure
+option.SKY_HORIZON_N=Near Horizon
+option.SKY_HORIZON_F=Far Horizon
 option.SKY_GROUND=Sky Ground
 option.SKY_GROUND.comment=Darkens the bottom part of the sky. §e[*]§rThis option is affected by fog density.
 value.SKY_GROUND.0=§cOFF
 value.SKY_GROUND.1=Reflections Only
 value.SKY_GROUND.2=Full
-
-option.HORIZON_DISTANCE=Horizon Distance
-option.HORIZON_DISTANCE.comment=Adjusts sky gradient. Nearer horizon gives slightly brighter sky, further horizon gives slightly darker sky.
-value.HORIZON_DISTANCE.1.0=Very Near
-value.HORIZON_DISTANCE.1.5=Near
-value.HORIZON_DISTANCE.2.0=Medium
-value.HORIZON_DISTANCE.2.5=Far
-value.HORIZON_DISTANCE.3.0=Very Far
 
 option.SKYBOX_BRIGHTNESS=Skybox Brightness
 option.SKYBOX_BRIGHTNESS.comment=Adjusts skybox brightness. §e[*]§rSet to 1.00 when subtractive skybox exists.
@@ -361,20 +389,11 @@ option.LENS_FLARE.comment=Enables lens flare.
 option.LENS_FLARE_STRENGTH=Lens Flare Strength
 option.LENS_FLARE_STRENGTH.comment=Adjusts lens flare intensity.
 
-option.AA=Anti-aliasing
-option.AA.comment=Enables anti-aliasing. FXAA : Faster, works properly with screenshot size. TAA : Slower, captures subpixel detail and improves some effects. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
-value.AA.0=§cOFF
-value.AA.1=FXAA
-value.AA.2=TAA
+option.FXAA=FXAA
+option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
 
-option.SHARPEN=Image Sharpening
-option.SHARPEN.comment=Adds sharpening filter. §a[+]§rGreat for those who dislike softened image due to antialiasing. §c[-]§rSharper image causes dithering artifact and some aliasing to reappear.
-value.SHARPEN.0=0.00
-value.SHARPEN.1=0.10
-value.SHARPEN.2=0.20
-value.SHARPEN.3=0.30
-value.SHARPEN.4=0.40
-value.SHARPEN.5=0.50
+option.TAA=TAA
+option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
 
 option.VIGNETTE=Vignette
 option.Vignette.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging.
@@ -490,7 +509,7 @@ option.AMBIENT_NI=Intensity
 option.MINLIGHT_R=Red
 option.MINLIGHT_G=Green
 option.MINLIGHT_B=Blue
-option.MINLIGHT_I=Brightness
+option.MINLIGHT_I=Intensity
 
 option.BLOCKLIGHT_R=Red
 option.BLOCKLIGHT_G=Green
