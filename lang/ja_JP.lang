@@ -9,11 +9,10 @@ profile.comment=低 : 粗い影、その他の効果なし。 中 : 中精度の
 
 #Screens
 screen.LIGHTING=ライティング
-screen.SHADOW=詳細な影の設定
 
 screen.MATERIAL=質感
-screen.REFLECTION=反射
-screen.PARALLAX=視差
+screen.SPECULAR=鏡面と反射
+screen.NORMALS=法線と視差
 
 screen.ATMOSPHERICS=天球(太陽など)の設定
 screen.SKY=空の設定
@@ -69,7 +68,7 @@ screen.WAVING=揺れるオブジェクト
 screen.CURVATURE=世界の曲率
 
 #Settings
-option.ABOUT=BSL v8.0.01
+option.ABOUT=BSL v8.1p1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -94,9 +93,6 @@ option.SHADOW_FILTER.comment=シャドウフィルタリングを有効にしま
 
 option.sunPathRotation=太陽の軌道角度
 option.sunPathRotation.comment=陽射しの角度を設定します。
-
-option.SHADOW_SUBSURFACE=サブサーフェススキャッタリング
-option.SHADOW_SUBSURFACE.comment=光が木の葉を通過して散乱するのを設定します。
 
 option.SHADOW_PIXEL=ピクセル固定の影
 option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
@@ -127,43 +123,63 @@ option.WHITE_WORLD.comment=テクスチャを真っ白にします。
 
 #Material
 option.ADVANCED_MATERIALS=質感の強化
-option.ADVANCED_MATERIALS.comment=鏡面・法線マッピングを有効にすると、いろいろな物体のディティールが上がります。 §e[*]§rこのオプションは、リソースパックが鏡面か法線(またはその両方)マッピングに対応している必要があります。使用しない場合はオフにしてください。
+option.ADVANCED_MATERIALS.comment=鏡面・法線マッピングを有効にすると、いろいろな物体のディティールが上がります。 §e[*]§rこのオプションは、リソースパックが鏡面か法線(またはその両方)マッピングに対応している必要があります。使用しない場合はオフにしてください。 §e[*]§r質感の強化が必要なオプションには * が表示されています。これらのオプションを変更しても、質感の強化がオフになっているときには、映像やパフォーマンスへの影響はありません。
 
 option.MATERIAL_FORMAT=質感のフォーマット
 option.MATERIAL_FORMAT.comment=リソースパックに含まれる鏡面・法線マッピングのマッピングのフォーマットを設定します。 §e[*]§rリソースパックの作者が指定したフォーマットを設定してください。間違ったフォーマットを使用すると奇妙な結果になります。
-value.MATERIAL_FORMAT.0=SEUS PBR
+value.MATERIAL_FORMAT.0=SEUS/Old PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
-#Reflections
+option.SSS=サブサーフェススキャッタリング
+option.SSS.comment=光が特定のブロックを通過して散乱するのを設定します。
+value.SSS.0=§オフ
+value.SSS.1=質感の強化のみ*
+value.SSS.2=全て
+
+option.SSS_QUALITY=SSS品質
+option.SSS_QUALITY.comment=サブサーフェススキャッタリングの品質を設定します。
+value.SSS_QUALITY.0=低
+value.SSS_QUALITY.1=高
+
+option.EMISSIVE=発光
+option.EMISSIVE.comment=特定のブロックの表面を明るくします。
+value.EMISSIVE.0=§cオフ
+value.EMISSIVE.1=質感の強化のみ*
+value.EMISSIVE.2=全て
+
+#Specular & Reflections
 option.REFLECTION=反射
 option.REFLECTION.comment=映りこみ反射を有効にします。 §e[*]§rこのオプションは水面と半透明オブジェクトの反射にのみ反映され、雨や法線反射には影響しません。
 
 option.REFLECTION_TRANSLUCENT=半透明オブジェクトの反射
 option.REFLECTION_TRANSLUCENT.comment=半透明オブジェクト(色付きガラス、氷、スライムブロックなど)表面の反射を描画します。
 
-option.REFLECTION_SPECULAR=鏡面反射
+option.REFLECTION_SPECULAR=鏡面反射*
 option.REFLECTION_SPECULAR.comment=滑らかな、または金属の表面の反射を有効にします。
 
-option.REFLECTION_RAIN=雨の反射
+option.REFLECTION_RAIN=雨の反射*
 option.REFLECTION_RAIN.comment=雨が降っているとき、表面をぬれた状態にします。 §e[*]§r鏡面反射を有効にする必要があります。
 value.REFLECTION_RAIN.0=オフ
 value.REFLECTION_RAIN.1=水滴
 value.REFLECTION_RAIN.2=全て
 
-option.REFLECTION_ROUGH=粗い反射
+option.REFLECTION_ROUGH=粗い反射*
 option.REFLECTION_ROUGH.comment=粗いオブジェクトの表面にぼやけた反射を描写します。 §c[-]§r小さな歪みが含まれるでしょう。
 
 option.REFLECTION_PREVIOUS=直前フレームの反射
-option.REFLECTION_PREVIOUS.comment=半透明オブジェクトの反射に直前のフレーム情報を利用します。 §c[-]§rスクリーンショットでは反射が失われます(スクリーンショットの解像度設定による)。 §c[-]§r一部のGPUと互換性がありません。
+option.REFLECTION_PREVIOUS.comment=半透明オブジェクトの反射に直前のフレーム情報を利用します。 §c[-]§rスクリーンショットでは反射が失われます(スクリーンショットの解像度設定による)。 §c[-]§r一部のGPUと互換性がありません。§c[-]§r1.7.10のバグ。
 
-option.ALBEDO_METAL=組み込みの金属反射
+option.SPECULAR_HIGHLIGHT_ROUGH=粗い反射のハイライト
+option.SPECULAR_HIGHLIGHT_ROUGH.comment=粗い反射面に弱い光沢を加えます
+
+option.ALBEDO_METAL=組み込みの金属反射*
 option.ALBEDO_METAL.comment=組み込みの金属表面を色合いとしてベーステクスチャに使用します。 §e[*]§rlabPBR準拠の(リソースパック)でのみ動作します。
 
 #Parallax
-option.PARALLAX=視差遮蔽マッピング(POM)
+option.PARALLAX=視差遮蔽マッピング(POM)*
 option.PARALLAX.comment=高さ情報を使用してオブジェクト表面に凹凸を加えます。
 
-option.PARALLAX_DEPTH=視差深度
+option.PARALLAX_DEPTH=視差深度*
 option.PARALLAX_DEPTH.comment=視差の深度を調整します。
 value.PARALLAX_DEPTH.0.05=5 cm
 value.PARALLAX_DEPTH.0.10=10 cm
@@ -176,28 +192,31 @@ value.PARALLAX_DEPTH.0.40=40 cm
 value.PARALLAX_DEPTH.0.45=45 cm
 value.PARALLAX_DEPTH.0.50=50 cm
 
-option.SELF_SHADOW=セルフシャドウ
+option.SELF_SHADOW=セルフシャドウ*
 option.SELF_SHADOW.comment=高さ情報を使用して自身の影をオブジェクト表面に投影します。
 
-option.SELF_SHADOW_ANGLE=セルフシャドウ角度
+option.SELF_SHADOW_ANGLE=セルフシャドウ角度*
 option.SELF_SHADOW_ANGLE.comment=セルフシャドウの角度を調整します。高い値では、影がさらに移動します。
 
-option.PARALLAX_QUALITY=視差品質
-option.PARALLAX_QUALITY.comment=POMとセルフシャドウの品質を調整します。
+ption.SELF_SHADOW_QUALITY=セルフシャドウ品質*
+option.SELF_SHADOW_QUALITY.comment=セルフシャドウの品質を調整します。
 
-option.PARALLAX_DISTANCE=POM表示距離
-option.PARALLAX_DISTANCE.comment=POMとセルフシャドウが表示される距離を調整します。
-
-option.DIRECTIONAL_LIGHTMAP=指向性ライトマップ
+option.DIRECTIONAL_LIGHTMAP=指向性ライトマップ*
 option.DIRECTIONAL_LIGHTMAP.comment=バニラの照明に鏡面マッピングを加えます。 §c[-]§rこの効果を有効にするとライトマップにグリッチが発生します。
 
-option.DIRECTIONAL_LIGHTMAP_STRENGTH=指向性ライトマップの強さ
+option.DIRECTIONAL_LIGHTMAP_STRENGTH=指向性ライトマップの強さ*
 option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=指向性ライトマップの強度を調整します。
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.2.0=超低
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.4=低
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.0=中
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.7=高
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.5=超高
+
+option.NORMAL_DAMPENING=法線マッピングを弱める*
+option.NORMAL_DAMPENING.comment=法線マッピングの強度を下げて、反射がうるさくなるのを防ぎます。
+
+option.NORMAL_PLANTS=植物の影
+option.NORMAL_PLANTS.comment=植物の影を調整します。 §e[*]§r平坦でない植物のモデルや、法線マップを持つ植物のモデルを使用している場合には、これをオフにしてください。
 
 #Atmospherics
 option.CLOUDS=雲
@@ -216,10 +235,16 @@ option.ROUND_SUN_MOON=丸い太陽と月
 option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月
 
 option.DISTANT_FADE=遠距離描写
-option.DISTANT_FADE.comment=離れたチャンク境界をぼやけさせます。球面はバニラの霧のように働きます。円筒面はY軸を無視します。 §e[*]§rこのオプションは霧の密度に影響されます。
+option.DISTANT_FADE.comment=離れたチャンク境界をぼやけさせます。§e[*]§rこのオプションは霧の密度に影響されます。
 value.DISTANT_FADE.0=オフ
-value.DISTANT_FADE.1=球面
-value.DISTANT_FADE.2=円筒面
+value.DISTANT_FADE.1=オーバーワールドのみ
+value.DISTANT_FADE.2=ネザーとエンドのみ
+value.DISTANT_FADE.3=全て
+
+option.DISTANT_FADE_STYLE=遠距離描写のスタイル
+option.DISTANT_FADE_STYLE.comment=球面はバニラの霧のように働きます。円筒面はY軸を無視します。
+value.DISTANT_FADE_STYLE.0=球面
+value.DISTANT_FADE_STYLE.1=円筒面
 
 option.WEATHER_PERBIOME=バイオーム毎の天候
 option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を使用します。 §c[-]§r未知の条件下では動作しない可能性があります。
@@ -237,19 +262,19 @@ option.WEATHER_OPACITY=天候の不透明度
 option.WEATHER_OPACITY.comment=天候の不透明度を調整します。
 
 #Sky Config
+option.SKY_DENSITY_D=日中の空の深度
+option.SKY_EXPOSURE_D=日中の空の露出
+option.SKY_DENSITY_N=夜空の深度
+option.SKY_EXPOSURE_N=夜空の露出
+option.SKY_DENSITY_W=天候の深度
+option.SKY_EXPOSURE_W=天候の露出
+option.SKY_HORIZON_N=近くの地平線
+option.SKY_HORIZON_F=遠くの地平線
 option.SKY_GROUND=地平線下の描写
 option.SKY_GROUND.comment=地平線以下の空を暗くします。 §e[*]§rこのオプションは霧の密度に影響されます。
 value.SKY_GROUND.0=§cオフ
 value.SKY_GROUND.1=反射のみ
 value.SKY_GROUND.2=フル
-
-option.HORIZON_DISTANCE=地平線距離
-option.HORIZON_DISTANCE.comment=空のグラデーションを調整します。地平線に近いほど、空は少し明るく、遠くなればやや暗くなります。
-value.HORIZON_DISTANCE.1.0=超近距離
-value.HORIZON_DISTANCE.1.5=近距離
-value.HORIZON_DISTANCE.2.0=中距離
-value.HORIZON_DISTANCE.2.5=遠距離
-value.HORIZON_DISTANCE.3.0=超遠距離
 
 option.SKYBOX_BRIGHTNESS=空の明るさ
 option.SKYBOX_BRIGHTNESS.comment=空の明るさを調整します。 §e[*]§r減算の空が存在する場合には1.00に設定します。
@@ -362,20 +387,11 @@ option.LENS_FLARE.comment=レンズフレアを有効にします。
 option.LENS_FLARE_STRENGTH=レンスフレア強度
 option.LENS_FLARE_STRENGTH.comment=レンズフレアの強度を調整します。
 
-option.AA=アンチエイリアシング
-option.AA.comment=アンチエイリアシングを有効にします。 FXAA : より速く、スクリーンショットのサイズで確実に動作します。 TAA : 遅いですが、サブピクセルの詳細をとらえ、いくつかの効果を改善します。 §e[*]§rこの項目を有効にしているとき、シェーダーメニューのアンチエイリアシングは無効にしてください。
-value.AA.0=§cオフ
-value.AA.1=FXAA
-value.AA.2=TAA
+option.FXAA=FXAA
+option.FXAA.comment=高速な近似アンチエイリアシングを有効にします。パフォーマンスへの影響を抑えながら映像のエッジを滑らかにします。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
 
-option.SHARPEN=イメージシャーペン
-option.SHARPEN.comment=鮮鋭化フィルタを調整します。 §a[+]§rアンチエイリアシングで画像がぼやけるのを気にする人に最適です。 §c[-]§rより強くすると、ディザリングやエイリアシングによるノイズが再度現れます。
-value.SHARPEN.0=0.00
-value.SHARPEN.1=0.10
-value.SHARPEN.2=0.20
-value.SHARPEN.3=0.30
-value.SHARPEN.4=0.40
-value.SHARPEN.5=0.50
+option.TAA=TAA
+option.TAA.comment=TAA(Temporal Anti-Aliasing)を有効にします。高度なフレームブレンディングによって、微細なディティールやいくつかの高価を改善します。 §e[*]§rイメージシャーペン(鮮鋭化)が含まれています。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
 
 option.VIGNETTE=視界端の影(Vignette)
 option.Vignette.comment=画面の端の方を徐々に暗くします。 §e[*]§r360°イメージングを無効にします。
@@ -491,7 +507,7 @@ option.AMBIENT_NI=強さ
 option.MINLIGHT_R=赤
 option.MINLIGHT_G=緑
 option.MINLIGHT_B=青
-option.MINLIGHT_I=明るさ
+option.MINLIGHT_I=強さ
 
 option.BLOCKLIGHT_R=赤
 option.BLOCKLIGHT_G=緑
