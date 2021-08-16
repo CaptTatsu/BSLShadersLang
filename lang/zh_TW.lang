@@ -11,8 +11,8 @@ profile.comment=低：少量陰影，無額外效果。 中：中等陰影，無
 screen.LIGHTING=光照
 
 screen.MATERIAL=材質
-screen.REFLECTION=反射
-screen.PARALLAX=視差
+screen.SPECULAR=高光＆反射
+screen.NORMALS=法線＆視差
 
 screen.ATMOSPHERICS=氛圍
 screen.SKY=天空設定
@@ -22,7 +22,7 @@ screen.WATER=水
 
 screen.POST_EFFECTS=後期效果
 
-screen.CGT=色彩校正 & 色調圖
+screen.CGT=色彩校正＆色調圖
 screen.COLOR_GRADING=色彩校正設定
 screen.CG_R=紅色通道
 screen.CG_G=綠色通道
@@ -64,7 +64,7 @@ screen.NETHER_B=玄武岩三角洲
 screen.END_COLOR=終界顏色
 
 screen.WORLD=世界
-screen.WAVING=搖擺的方塊
+screen.WAVING=搖動的方塊
 screen.CURVATURE=曲率
 
 #Settings
