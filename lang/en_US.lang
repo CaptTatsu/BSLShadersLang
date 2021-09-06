@@ -68,7 +68,7 @@ screen.WAVING=Waving Blocks
 screen.CURVATURE=Curvature
 
 #Settings
-option.ABOUT=BSL v8.1p1
+option.ABOUT=BSL v8.1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -115,6 +115,9 @@ value.DESATURATION_FACTOR.1.0=Medium
 value.DESATURATION_FACTOR.0.5=High
 value.DESATURATION_FACTOR.0.0=Very High
 
+option.DYNAMIC_HANDLIGHT=Dynamic Handlight
+option.DYNAMIC_HANDLIGHT.comment=Allows blocklight to be emitted from view when holding certain objects.
+
 option.TOON_LIGHTMAP=Toon Lightmap
 option.TOON_LIGHTMAP.comment=Reduces the quality of vanilla lighting for cel shading. §e[*]§rThis option is known for making your game "look bad", only enable this when you need it.
 
@@ -147,9 +150,20 @@ value.EMISSIVE.0=§cOFF
 value.EMISSIVE.1=AdvMat Only*
 value.EMISSIVE.2=Full
 
+option.ALBEDO_BALANCING=Albedo Balancing
+option.ALBEDO_BALANCING.comment=Reduces brightness of very bright colored surfaces.
+
+option.ALPHA_BLEND=Alpha Blending
+option.ALPHA_BLEND.comment=TBA. 
+value.ALPHA_BLEND.0=Gamma
+value.ALPHA_BLEND.1=Linear
+
 #Specular & Reflections
 option.REFLECTION=Reflections
-option.REFLECTION.comment=Enables screen space reflection. §e[*]§rThis toggle only affects water and translucent reflection, rain and specular reflection won't be affected.
+option.REFLECTION.comment=Enables reflections on water and translucents.
+value.REFLECTION.0=§cOFF
+value.REFLECTION.1=Sky & Specular Only
+value.REFLECTION.2=Full
 
 option.REFLECTION_TRANSLUCENT=Translucent Reflections
 option.REFLECTION_TRANSLUCENT.comment=Allows reflection to be rendered on translucent surfaces, such as stained glass, ice, slime blocks, and more.
@@ -317,15 +331,17 @@ option.CLOUD_BRIGHTNESS=Brightness
 option.CLOUD_BRIGHTNESS.comment=Adjusts cloud brightness.
 
 #Water
-option.WATER_MODE=Water Mode
+option.WATER_MODE=Water Texture Mode
 option.WATER_MODE.comment=Determine whether vanilla water texture should be used. Default : shader's flat water color, no texture. Vanilla : vanilla texture. Tinted Vanilla : vanilla texture with shader's water color. Flat Vanilla : vanilla's flat water color.
 value.WATER_MODE.0=Default
 value.WATER_MODE.1=Vanilla
 value.WATER_MODE.2=Tinted Vanilla
 value.WATER_MODE.3=Flat Vanilla
 
-option.WATER_FOG_DENSITY=Water Fog Density
-option.WATER_FOG_DENSITY.comment=Adjusts water fog density.
+option.WATER_ALPHA_MODE=Water Alpha Mode
+option.WATER_ALPHA_MODE.comment=Determine whether the water uses shader based or texture alpha value. §e[*]§rSome effect will keep using shader based alpha value.
+value.WATER_ALPHA_MODE.0=Flat
+value.WATER_ALPHA_MODE.1=Vanilla
 
 option.WATER_NORMALS=Normals
 option.WATER_NORMALS.comment=Enables realtime-generated normal mapping for water.
@@ -360,6 +376,9 @@ value.WATER_SHARPNESS.0.2=High
 
 option.WATER_SPEED=Speed
 option.WATER_SPEED.comment=Adjusts the noise speed for water normals.
+
+option.WATER_FOG_DENSITY=Water Fog Density
+option.WATER_FOG_DENSITY.comment=Adjusts water fog density.
 
 option.WATER_PIXEL=Pixel Lock
 option.WATER_PIXEL.comment=Applies pixelation effect on water normals.
@@ -557,6 +576,11 @@ option.WEATHER_MG=Green
 option.WEATHER_MB=Blue
 option.WEATHER_MI=Intensity
 
+option.WEATHER_VR=Red
+option.WEATHER_VG=Green
+option.WEATHER_VB=Blue
+option.WEATHER_VI=Intensity
+
 option.AURORA_LR=Red
 option.AURORA_LG=Green
 option.AURORA_LB=Blue
@@ -625,7 +649,7 @@ option.WAVING_EXTRA.comment=Allows fire and lantern to wave.
 
 #Curvature
 option.WORLD_CURVATURE=World Curvature
-option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §e[*]§rMissing chunks are handled by Minecraft itself which I can't fix.
+option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §c[-]§rMissing chunks are handled by Minecraft itself which I can't fix. §c[-]§rMay break block selection highlight on 1.17.
 
 option.WORLD_CURVATURE_SIZE=World Curvature Size
 option.WORLD_CURVATURE_SIZE.comment=Adjusts world curvature size. Negative values will bend the world upwards.
