@@ -11,8 +11,8 @@ profile.comment=低 : 粗い影、その他の効果なし。 中 : 中精度の
 screen.LIGHTING=ライティング
 
 screen.MATERIAL=質感
-screen.SPECULAR=鏡面と反射
-screen.NORMALS=法線と視差
+screen.SPECULAR=反射
+screen.NORMALS=視差
 
 screen.ATMOSPHERICS=天球(太陽など)の設定
 screen.SKY=空の設定
@@ -68,7 +68,7 @@ screen.WAVING=揺れるオブジェクト
 screen.CURVATURE=世界の曲率
 
 #Settings
-option.ABOUT=BSL v8.1p1
+option.ABOUT=BSL v8.1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -555,11 +555,6 @@ option.WEATHER_MG=緑
 option.WEATHER_MB=青
 option.WEATHER_MI=強さ
 
-option.WEATHER_VR=赤
-option.WEATHER_VG=緑
-option.WEATHER_VB=青
-option.WEATHER_VI=強さ
-
 option.AURORA_LR=赤
 option.AURORA_LG=緑
 option.AURORA_LB=青
@@ -628,7 +623,7 @@ option.WAVING_EXTRA.comment=炎やランタンが揺れるのを許可します�
 
 #Curvature
 option.WORLD_CURVATURE=世界の曲率
-option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[*]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。
+option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[*]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[*]§r1．17でブロック選択のハイライトを壊すことがあります。
 
 option.WORLD_CURVATURE_SIZE=世界球のサイズ
 option.WORLD_CURVATURE_SIZE.comment=世界球のサイズを設定します。負の値では世界が逆に曲がります(球の内側になります)。
