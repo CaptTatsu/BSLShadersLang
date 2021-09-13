@@ -381,8 +381,8 @@ value.WATER_SHARPNESS.0.2=高
 option.WATER_SPEED=速度
 option.WATER_SPEED.comment=水面の法線マッピングのノイズの速度を調整します。
 
-option.WATER_FOG_DENSITY=水中の霧の濃さ
-option.WATER_FOG_DENSITY.comment=水中の霧の濃さを調整します。
+option.WATER_FOG_DENSITY=水中の視距離
+option.WATER_FOG_DENSITY.comment=水中の視距離(霧の濃さ)を調整します。
 
 option.WATER_PIXEL=ピクセル化
 option.WATER_PIXEL.comment=水面の法線マッピングにピクセル化エフェクトを適用します。
