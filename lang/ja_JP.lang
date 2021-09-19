@@ -115,6 +115,9 @@ value.DESATURATION_FACTOR.1.0=中
 value.DESATURATION_FACTOR.0.5=大
 value.DESATURATION_FACTOR.0.0=最大
 
+option.DYNAMIC_HANDLIGHT=ダイナミックハンドライト
+option.DYNAMIC_HANDLIGHT.comment=特定のオブジェクトを手に持った場合、視界を光で照らします。
+
 option.TOON_LIGHTMAP=トゥーンライトマップ
 option.TOON_LIGHTMAP.comment=セルシェーディング用にバニラの照明品質を低くします。 §e[*]§rこのオプションを指定するとゲームの見た目が非常に悪くなるので、必要な時のみ設定してください。
 
@@ -132,7 +135,7 @@ value.MATERIAL_FORMAT.1=labPBR 1.3
 
 option.SSS=サブサーフェススキャッタリング
 option.SSS.comment=光が特定のブロックを通過して散乱するのを設定します。
-value.SSS.0=§オフ
+value.SSS.0=§cオフ
 value.SSS.1=質感の強化のみ*
 value.SSS.2=全て
 
@@ -147,9 +150,20 @@ value.EMISSIVE.0=§cオフ
 value.EMISSIVE.1=質感の強化のみ*
 value.EMISSIVE.2=全て
 
+option.ALBEDO_BALANCING=アルベドバランス
+option.ALBEDO_BALANCING.comment=非常に明るい表面のまぶしさを低減します。
+
+option.ALPHA_BLEND=アルファブレンディング
+option.ALPHA_BLEND.comment=後日記載 
+value.ALPHA_BLEND.0=ガンマ
+value.ALPHA_BLEND.1=リニア
+
 #Specular & Reflections
 option.REFLECTION=反射
-option.REFLECTION.comment=映りこみ反射を有効にします。 §e[*]§rこのオプションは水面と半透明オブジェクトの反射にのみ反映され、雨や法線反射には影響しません。
+option.REFLECTION.comment=水面と半透明オブジェクトの反射を有効にします。
+value.REFLECTION.0=§cオフ
+value.REFLECTION.1=空と鏡面反射のみ
+value.REFLECTION.2=フル
 
 option.REFLECTION_TRANSLUCENT=半透明オブジェクトの反射
 option.REFLECTION_TRANSLUCENT.comment=半透明オブジェクト(色付きガラス、氷、スライムブロックなど)表面の反射を描画します。
@@ -192,13 +206,19 @@ value.PARALLAX_DEPTH.0.40=40 cm
 value.PARALLAX_DEPTH.0.45=45 cm
 value.PARALLAX_DEPTH.0.50=50 cm
 
+option.PARALLAX_QUALITY=視差サンプル数*
+option.PARALLAX_QUALITY.comment=視差遮蔽マッピング(POM)の品質を調整します。
+
+option.PARALLAX_DISTANCE=視差距離*
+option.PARALLAX_DISTANCE.comment=視差遮蔽マッピング(POM)とセルフシャドウのレンダリング可能な距離を調整します。
+
 option.SELF_SHADOW=セルフシャドウ*
 option.SELF_SHADOW.comment=高さ情報を使用して自身の影をオブジェクト表面に投影します。
 
 option.SELF_SHADOW_ANGLE=セルフシャドウ角度*
 option.SELF_SHADOW_ANGLE.comment=セルフシャドウの角度を調整します。高い値では、影がさらに移動します。
 
-ption.SELF_SHADOW_QUALITY=セルフシャドウ品質*
+option.SELF_SHADOW_QUALITY=セルフシャドウ品質*
 option.SELF_SHADOW_QUALITY.comment=セルフシャドウの品質を調整します。
 
 option.DIRECTIONAL_LIGHTMAP=指向性ライトマップ*
@@ -315,15 +335,17 @@ option.CLOUD_BRIGHTNESS.comment=雲の輝度を調整します。
 
 #Water
 
-option.WATER_MODE=水の表示
+option.WATER_MODE=水のテクスチャ表示
 option.WATER_MODE.comment=バニラの水のテクスチャを使用するかどうか設定します。 デフォルト : シェーダーのフラットな水の色、テクスチャ無し。 バニラ : バニラのテクスチャ。 色付きのバニラ : バニラのテクスチャ、シェーダーの色。 フラットバニラ : バニラのフラットな水の色。
 value.WATER_MODE.0=デフォルト
 value.WATER_MODE.1=バニラ
 value.WATER_MODE.2=色付きのバニラ
 value.WATER_MODE.3=フラットバニラ
 
-option.WATER_FOG_DENSITY=水中の視距離
-option.WATER_FOG_DENSITY.comment=水中の視距離(霧の濃さ)を調整します。
+option.WATER_ALPHA_MODE=水のアルファモード
+option.WATER_ALPHA_MODE.comment=水がシェーダーのアルファ値か、テクスチャのアルファ値を使うかを設定します。 §e[*]§rいくつかのアルファ値はシェーダーによるアルファ値を使い続けます。
+value.WATER_ALPHA_MODE.0=フラット
+value.WATER_ALPHA_MODE.1=バニラ
 
 option.WATER_NORMALS=水の法線マッピング
 option.WATER_NORMALS.comment=リアルタイムに生成される水の法線マッピングを有効にします。
@@ -358,6 +380,9 @@ value.WATER_SHARPNESS.0.2=高
 
 option.WATER_SPEED=速度
 option.WATER_SPEED.comment=水面の法線マッピングのノイズの速度を調整します。
+
+option.WATER_FOG_DENSITY=水中の視距離
+option.WATER_FOG_DENSITY.comment=水中の視距離(霧の濃さ)を調整します。
 
 option.WATER_PIXEL=ピクセル化
 option.WATER_PIXEL.comment=水面の法線マッピングにピクセル化エフェクトを適用します。
@@ -555,6 +580,11 @@ option.WEATHER_MG=緑
 option.WEATHER_MB=青
 option.WEATHER_MI=強さ
 
+option.WEATHER_VR=赤
+option.WEATHER_VG=緑
+option.WEATHER_VB=青
+option.WEATHER_VI=強さ
+
 option.AURORA_LR=赤
 option.AURORA_LG=緑
 option.AURORA_LB=青
@@ -623,7 +653,7 @@ option.WAVING_EXTRA.comment=炎やランタンが揺れるのを許可します�
 
 #Curvature
 option.WORLD_CURVATURE=世界の曲率
-option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[*]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[*]§r1．17でブロック選択のハイライトを壊すことがあります。
+option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[*]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[*]§r1.17でブロック選択のハイライトを壊すことがあります。
 
 option.WORLD_CURVATURE_SIZE=世界球のサイズ
 option.WORLD_CURVATURE_SIZE.comment=世界球のサイズを設定します。負の値では世界が逆に曲がります(球の内側になります)。
