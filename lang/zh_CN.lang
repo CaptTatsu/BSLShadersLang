@@ -68,7 +68,7 @@ screen.WAVING=摇摆的方块
 screen.CURVATURE=曲率
 
 #Settings
-option.ABOUT=BSL v8.1p1
+option.ABOUT=BSL v8.1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -115,6 +115,9 @@ value.DESATURATION_FACTOR.1.0=中
 value.DESATURATION_FACTOR.0.5=高
 value.DESATURATION_FACTOR.0.0=非常高
 
+option.DYNAMIC_HANDLIGHT=动态手部光源
+option.DYNAMIC_HANDLIGHT.comment=允许手持特定物品时从视角发出方块光.
+
 option.TOON_LIGHTMAP=卡通光照贴图
 option.TOON_LIGHTMAP.comment=为卡通着色（cel-shading）减少原版光照质量. §e[*]§r该选项因让游戏看起来“很糟”所周知，只在你需要的时候启用它.
 
@@ -135,19 +138,32 @@ option.SSS.comment=允许光照从穿透并在某些方块上散射.
 value.SSS.0=§c关闭
 value.SSS.1=仅高级材质*
 value.SSS.2=完全
+
 option.SSS_QUALITY=SSS质量
 option.SSS_QUALITY.comment=调整次表面散射质量.
 value.SSS_QUALITY.0=低
 value.SSS_QUALITY.1=高
+
 option.EMISSIVE=自发光
 option.EMISSIVE.comment=允许某些表面更亮一些.
 value.EMISSIVE.0=§c关闭
 value.EMISSIVE.1=仅高级材质*
 value.EMISSIVE.2=关闭
 
+option.ALBEDO_BALANCING=Albedo平衡
+option.ALBEDO_BALANCING.comment=降低高亮度有色表面的亮度.
+
+option.ALPHA_BLEND=Alpha混合
+option.ALPHA_BLEND.comment=TBA.
+value.ALPHA_BLEND.0=Gamma
+value.ALPHA_BLEND.1=线性
+
 #Specular & Reflections
 option.REFLECTION=反射
-option.REFLECTION.comment=启用屏幕空间反射. §e[*]§r该项只会影响水或透明反射，雨和高光反射不受影响.
+option.REFLECTION.comment=启用水和透明物体上的反射.
+value.REFLECTION.0=§c关闭
+value.REFLECTION.1=仅天空和高光
+value.REFLECTION.2=完全
 
 option.REFLECTION_TRANSLUCENT=透明反射
 option.REFLECTION_TRANSLUCENT.comment=允许反射在透明表面上渲染（如染色玻璃、冰、史莱姆块等）.
@@ -163,6 +179,7 @@ option.REFLECTION_ROUGH.comment=允许不太平滑的表面渲染模糊反射. �
 
 option.REFLECTION_PREVIOUS=前帧反射
 option.REFLECTION_PREVIOUS.comment=允许透明物使用前一帧的信息进行反射. §c[-]§r也许会导致截图中丢失反射（由于截图尺寸设置导致）. §c[-]§r与一些GPU不兼容. §c[-]§r在1.7.10中存在漏洞.
+
 option.SPECULAR_HIGHLIGHT_ROUGH=粗糙高光高亮
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=允许粗糙表面显示微弱的光泽.
 
@@ -188,6 +205,7 @@ value.PARALLAX_DEPTH.0.50=50 cm
 
 option.PARALLAX_QUALITY=视差采样*
 option.PARALLAX_QUALITY.comment=调整视差遮挡贴图质量.
+
 option.PARALLAX_DISTANCE=视差距离*
 option.PARALLAX_DISTANCE.comment=调整视差遮挡贴图和自阴影的渲染距离.
 
@@ -213,7 +231,8 @@ value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.5=非常高
 
 option.NORMAL_DAMPENING=法线阻尼*
 option.NORMAL_DAMPENING.comment=通过降低法线贴图强度来防止反射过于杂乱.
-option.NORMAL_PLANTS=Up-facing Plants
+
+option.NORMAL_PLANTS=朝上的植物
 option.NORMAL_PLANTS.comment=调整植物着色. §e[*]§r如果使用了非平面的植物模型或植物法线贴图.
 
 #Atmospherics
@@ -238,6 +257,7 @@ value.DISTANT_FADE.0=§c关闭
 value.DISTANT_FADE.1=仅主世界
 value.DISTANT_FADE.2=仅下界 & 末地
 value.DISTANT_FADE.3=完全
+
 option.DISTANT_FADE_STYLE=远距淡出样式
 option.DISTANT_FADE_STYLE.comment=球形会像原版雾一样. 柱形忽略Y轴.
 value.DISTANT_FADE_STYLE.0=球形
@@ -311,15 +331,17 @@ option.CLOUD_BRIGHTNESS=亮度
 option.CLOUD_BRIGHTNESS.comment=调整云亮度.
 
 #Water
-option.WATER_MODE=水模式
+option.WATER_MODE=水材质模式
 option.WATER_MODE.comment=确定是否应该使用原版水纹理. 默认：光影的扁平水颜色，无纹理. 原版：原版纹理. 着色原版：带有光影水颜色的原版纹理. 扁平原版：原版的扁平水颜色.
 value.WATER_MODE.0=默认
 value.WATER_MODE.1=原版
 value.WATER_MODE.2=着色原版
 value.WATER_MODE.3=扁平原版
 
-option.WATER_FOG_DENSITY=水雾密度
-option.WATER_FOG_DENSITY.comment=调整水雾密度.
+option.WATER_ALPHA_MODE=水Alpha模式
+option.WATER_ALPHA_MODE.comment=确定水使用基于光影还是基于材质的alpha值. §e[*]§r一些效果会继续使用基于光影的alpha值.
+value.WATER_ALPHA_MODE.0=平坦
+value.WATER_ALPHA_MODE.1=原版
 
 option.WATER_NORMALS=法线
 option.WATER_NORMALS.comment=启用实时生成的法线贴图用于水.
@@ -355,6 +377,9 @@ value.WATER_SHARPNESS.0.2=高
 option.WATER_SPEED=速度
 option.WATER_SPEED.comment=调整用于水法线的噪波速度.
 
+option.WATER_FOG_DENSITY=水雾密度
+option.WATER_FOG_DENSITY.comment=调整水雾密度.
+
 option.WATER_PIXEL=像素化水
 option.WATER_PIXEL.comment=向水面法线应用像素化效果.
 value.WATER_PIXEL.0=OFF
@@ -388,12 +413,6 @@ option.FXAA.comment=启用快速近似抗锯齿，以最小性能开销平滑边
 
 option.TAA=TAA
 option.TAA.comment=启用时间抗锯齿，使用智能帧混合捕获微小细节及一些效果. §e[*]§r包含锐化. §e[*]§r在该选项启用时请禁用光影菜单中的抗锯齿.
-
-option.AA=抗锯齿
-option.AA.comment=启用抗锯齿. FXAA：较快，可在截图尺寸中正常工作. TAA：较慢，捕获子像素细节并改善一些效果. §e[*]§r在该选项启用时请禁用光影菜单中的抗锯齿.
-value.AA.0=§c关闭
-value.AA.1=FXAA
-value.AA.2=TAA
 
 option.VIGNETTE=暗角
 option.Vignette.comment=将屏幕边缘淡化至黑色§e[*]§r在360图像中禁用.
@@ -557,6 +576,11 @@ option.WEATHER_MG=绿色
 option.WEATHER_MB=蓝色
 option.WEATHER_MI=强度
 
+option.WEATHER_VR=红色
+option.WEATHER_VG=绿色
+option.WEATHER_VB=蓝色
+option.WEATHER_VI=强度
+
 option.AURORA_LR=红色
 option.AURORA_LG=绿色
 option.AURORA_LB=蓝色
@@ -625,7 +649,7 @@ option.WAVING_EXTRA.comment=允许火焰和灯笼摇摆.
 
 #Curvature
 option.WORLD_CURVATURE=世界曲率
-option.WORLD_CURVATURE.comment=启用世界曲率. §e[*]§r仅在主世界中工作. §e[*]§r丢失区块是Minecraft自己的问题，我没法修复.
+option.WORLD_CURVATURE.comment=启用世界曲率. §e[*]§r仅在主世界中工作. §c[*]§r丢失区块是Minecraft自己的问题，我没法修复. §c[-]§r在1.17中可能会使方块选择高亮出现问题.
 
 option.WORLD_CURVATURE_SIZE=世界曲率大小
 option.WORLD_CURVATURE_SIZE.comment=调整世界曲率大小. 负值会将世界向上弯曲.
