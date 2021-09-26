@@ -21,6 +21,7 @@ screen.CLOUDS=雲の設定
 screen.WATER=水の設定
 
 screen.POST_EFFECTS=ポストエフェクト
+screen.BLOOM=ブルーム設定
 
 screen.CGT=カラーグレーディング & トーンマップ
 screen.COLOR_GRADING=カラーグレーディングの設定
@@ -68,7 +69,7 @@ screen.WAVING=揺れるオブジェクト
 screen.CURVATURE=世界の曲率
 
 #Settings
-option.ABOUT=BSL v8.1
+option.ABOUT=BSL v8.1.01
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -403,9 +404,6 @@ option.MOTION_BLUR_STRENGTH.comment=モーションブラーの強度を調整�
 option.BLOOM=ブルーム効果
 option.BLOOM.comment=明るい部分から光を拡散させる効果を有効にします。
 
-option.BLOOM_STRENGTH=ブルーム強度
-option.BLOOM_STRENGTH.comment=ブルーム効果の強度を調整します。
-
 option.LENS_FLARE=レンズフレア
 option.LENS_FLARE.comment=レンズフレアを有効にします。
 
@@ -434,6 +432,38 @@ value.OUTLINE.1=黒
 value.OUTLINE.2=色付き
 value.OUTLINE.3=1.12アップデートアート
 value.OUTLINE.4=ダンジョンズ
+
+option.CHROMATIC_ABERRATION=色収差
+option.CHROMATIC_ABERRATION.comment=
+value.CHROMATIC_ABERRATION.0=オフ
+value.CHROMATIC_ABERRATION.1=弱い
+value.CHROMATIC_ABERRATION.2=強い
+
+#Bloom
+option.BLOOM_STRENGTH=ブルームの強さ
+option.BLOOM_STRENGTH.comment=ブルームの強度を設定します
+
+option.BLOOM_CONTRAST=ブルームのコントラスト
+option.BLOOM_CONTRAST.comment=高い値に設定するとコントラストが低くなります。
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=ブルーム半径
+option.BLOOM_RADIUS.comment=輝きの広がりがどれだけ遠いかを設定します
+value.BLOOM_RADIUS.1=最低
+value.BLOOM_RADIUS.2=超低
+value.BLOOM_RADIUS.3=低
+value.BLOOM_RADIUS.4=中
+value.BLOOM_RADIUS.5=高
+value.BLOOM_RADIUS.6=超高
+value.BLOOM_RADIUS.7=最高
 
 #Color Grading & Tonemap
 option.EXPOSURE=露出補正
