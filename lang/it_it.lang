@@ -22,7 +22,7 @@ screen.WATER=Acqua
 
 screen.POST_EFFECTS=Post Effetti
 
-screen.CGT=Gradazione del Colore & Tonalità
+screen.CGT=Grad. del Colore & Tonalità della Mappa
 screen.COLOR_GRADING=Config. della Gradazione del Colore
 screen.CG_R=Canale Rosso
 screen.CG_G=Canale Verde
@@ -68,7 +68,7 @@ screen.WAVING=Blocchi Onde
 screen.CURVATURE=Curvatura
 
 #Settings
-#Tradotto da Lorenzo Giannini (traduzione originale) V.1.0                                                                      --------------
+#Tradotto da Lorenzo Giannini (traduzione originale) V.1.1                                                                      --------------
 option.ABOUT=BSL v8.1.01
 option.ABOUT.comment=Creato da Capt Tatsu. bitslablab.com
 value.ABOUT.0=Creato da Capt Tatsu
@@ -95,7 +95,7 @@ option.SHADOW_FILTER.comment=Abilità il Filtro ombra. §a[+]§rQuesto effetto b
 option.sunPathRotation=Rotazione del percorso del sole
 option.sunPathRotation.comment=Regola l'angolo del sole.
 
-option.SHADOW_PIXEL=Ombre pixel
+option.SHADOW_PIXEL=Ombre Pixel
 option.SHADOW_PIXEL.comment=Applica l'effetto pixel sulle ombre.
 value.SHADOW_PIXEL.0=OFF
 
