@@ -69,7 +69,7 @@ screen.WAVING=揺れるオブジェクト
 screen.CURVATURE=世界の曲率
 
 #Settings
-option.ABOUT=BSL v8.1.01
+option.ABOUT=BSL v8.1.02
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -222,6 +222,9 @@ option.SELF_SHADOW_ANGLE.comment=セルフシャドウの角度を調整しま�
 option.SELF_SHADOW_QUALITY=セルフシャドウ品質*
 option.SELF_SHADOW_QUALITY.comment=セルフシャドウの品質を調整します。
 
+option.SELF_SHADOW_STRENGTH=セルフシャドウの強さ*
+option.SELF_SHADOW_STRENGTH.comment=セルフシャドウの強さを調整します。
+
 option.DIRECTIONAL_LIGHTMAP=指向性ライトマップ*
 option.DIRECTIONAL_LIGHTMAP.comment=バニラの照明に鏡面マッピングを加えます。 §c[-]§rこの効果を有効にするとライトマップにグリッチが発生します。
 
@@ -253,7 +256,7 @@ option.AURORA=オーロラ
 option.AURORA.comment=オーロラを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
 
 option.ROUND_SUN_MOON=丸い太陽と月
-option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月
+option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月(1.15.2以前)
 
 option.DISTANT_FADE=遠距離描写
 option.DISTANT_FADE.comment=離れたチャンク境界をぼやけさせます。§e[*]§rこのオプションは霧の密度に影響されます。
@@ -269,6 +272,9 @@ value.DISTANT_FADE_STYLE.1=円筒面
 
 option.WEATHER_PERBIOME=バイオーム毎の天候
 option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を使用します。 §c[-]§r未知の条件下では動作しない可能性があります。
+
+option.UNDERGROUND_SKY=地下の空の修正
+option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
 
 option.LIGHT_SHAFT=ライトシャフト
 option.LIGHT_SHAFT.comment=太陽/月からの太さのある光の柱を追加します。 §a[+]§rこの効果はTAAの恩恵を受けます。 §e[*]§rパフォーマンスはシャドウマップの解像度に依存します。
@@ -563,6 +569,9 @@ option.MINLIGHT_R=赤
 option.MINLIGHT_G=緑
 option.MINLIGHT_B=青
 option.MINLIGHT_I=強さ
+value.MINLIGHT_I.0.30=0.30 (暗い)
+value.MINLIGHT_I.0.50=0.50 (デフォルト)
+value.MINLIGHT_I.0.70=0.70 (明るい)
 
 option.BLOCKLIGHT_R=赤
 option.BLOCKLIGHT_G=緑
