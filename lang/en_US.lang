@@ -21,6 +21,7 @@ screen.CLOUDS=Cloud Config
 screen.WATER=Water
 
 screen.POST_EFFECTS=Post Effects
+screen.BLOOM=Bloom Config
 
 screen.CGT=Color Grading & Tonemap
 screen.COLOR_GRADING=Color Grading Config
@@ -68,7 +69,7 @@ screen.WAVING=Waving Blocks
 screen.CURVATURE=Curvature
 
 #Settings
-option.ABOUT=BSL v8.1
+option.ABOUT=BSL v8.1.02.1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -218,6 +219,9 @@ option.SELF_SHADOW_ANGLE.comment=Adjusts the self shadowing angle, higher value 
 option.SELF_SHADOW_QUALITY=Self Shadows Samples*
 option.SELF_SHADOW_QUALITY.comment=Adjusts the quality of self shadowing.
 
+option.SELF_SHADOW_STRENGTH=Self Shadows Strength*
+option.SELF_SHADOW_STRENGTH.comment=Adjusts the intensity of self shadowing.
+
 option.DIRECTIONAL_LIGHTMAP=Directional Lightmap*
 option.DIRECTIONAL_LIGHTMAP.comment=Adds normal mapping to vanilla lighting. §c[-]§rLightmap may glitch with this effect enabled.
 
@@ -249,7 +253,7 @@ option.AURORA=Aurora
 option.AURORA.comment=Enables aurora. §a[+]§rThis effect benefits from TAA.
 
 option.ROUND_SUN_MOON=Round Sun & Moon
-option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon
+option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.15.2 or below.
 
 option.DISTANT_FADE=Distant Fade
 option.DISTANT_FADE.comment=Fades far chunk borders. §e[*]§rThis option is affected by fog density.
@@ -265,6 +269,9 @@ value.DISTANT_FADE_STYLE.1=Cylindrical
 
 option.WEATHER_PERBIOME=Per Biome Weather
 option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. §c[-]§rMay not work under unknown conditions.
+
+option.UNDERGROUND_SKY=Underground Sky Fix
+option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
 
 option.LIGHT_SHAFT=Light Shafts
 option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis effect benefits from TAA. §e[*]§rPerformance depends on Shadowmap Resolution.
@@ -399,9 +406,6 @@ option.MOTION_BLUR_STRENGTH.comment=Adjusts motion blur intensity.
 option.BLOOM=Bloom
 option.BLOOM.comment=Allows bright areas to glow.
 
-option.BLOOM_STRENGTH=Bloom Strength
-option.BLOOM_STRENGTH.comment=Adjusts bloom intensity.
-
 option.LENS_FLARE=Lens Flare
 option.LENS_FLARE.comment=Enables lens flare.
 
@@ -430,6 +434,38 @@ value.OUTLINE.1=Black
 value.OUTLINE.2=Colored
 value.OUTLINE.3=1.12 Update Art
 value.OUTLINE.4=Dungeons
+
+option.CHROMATIC_ABERRATION=Chromatic Aberration
+option.CHROMATIC_ABERRATION.comment=Adds color distortion around the borders.
+value.CHROMATIC_ABERRATION.0=OFF
+value.CHROMATIC_ABERRATION.1=Weak
+value.CHROMATIC_ABERRATION.2=Strong
+
+#Bloom
+option.BLOOM_STRENGTH=Strength
+option.BLOOM_STRENGTH.comment=Adjusts bloom intensity.
+
+option.BLOOM_CONTRAST=Contrast
+option.BLOOM_CONTRAST.comment=Adjusts whether the bloom should preserve color contrast or detail visibility. Higher value preserves color contrast while lower value preserves detail visibility.
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=Radius
+option.BLOOM_RADIUS.comment=Adjusts how far the glow spreads.
+value.BLOOM_RADIUS.1=Minimum
+value.BLOOM_RADIUS.2=Very Low
+value.BLOOM_RADIUS.3=Low
+value.BLOOM_RADIUS.4=Medium
+value.BLOOM_RADIUS.5=High
+value.BLOOM_RADIUS.6=Very High
+value.BLOOM_RADIUS.7=Maximum
 
 #Color Grading & Tonemap
 option.EXPOSURE=Exposure
@@ -529,6 +565,9 @@ option.MINLIGHT_R=Red
 option.MINLIGHT_G=Green
 option.MINLIGHT_B=Blue
 option.MINLIGHT_I=Intensity
+value.MINLIGHT_I.0.30=0.30 (Moody)
+value.MINLIGHT_I.0.50=0.50 (Default)
+value.MINLIGHT_I.0.70=0.70 (Bright)
 
 option.BLOCKLIGHT_R=Red
 option.BLOCKLIGHT_G=Green
