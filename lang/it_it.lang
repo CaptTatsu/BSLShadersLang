@@ -5,7 +5,7 @@ profile.LOW=Basso
 profile.MEDIUM=Medio
 profile.HIGH=Alto
 profile.ULTRA=Ultra
-profile.comment=Basso : ombre basse, nessun effetto extra. Medio : ombre medie, nessun effetto extra. Alto : ombre medie, AO e alberi luminosi. Ultra : ombre alte, AO e alberi luminosi.
+profile.comment=Basso: ombre basse, nessun effetto extra. Medio: ombre medie, nessun effetto extra. Alto: ombre medie, AO e alberi luminosi. Ultra: ombre alte, AO e alberi luminosi.
 
 #Screens
 screen.LIGHTING=Illuminazione
@@ -21,9 +21,10 @@ screen.CLOUDS=Configurazione delle Nuvole
 screen.WATER=Acqua
 
 screen.POST_EFFECTS=Post Effetti
+screen.BLOOM=Configura Bloom
 
-screen.CGT=Grad. del Colore & Tonalità della Mappa
-screen.COLOR_GRADING=Config. della Gradazione del Colore
+screen.CGT=Grad. del Colore & Tonal. della Map.
+screen.COLOR_GRADING=Config. della Grad. del Colore
 screen.CG_R=Canale Rosso
 screen.CG_G=Canale Verde
 screen.CG_B=Canale Blu
@@ -68,8 +69,8 @@ screen.WAVING=Blocchi Onde
 screen.CURVATURE=Curvatura
 
 #Settings
-#Tradotto da Lorenzo Giannini (traduzione originale) V.1.1                                                                      --------------
-option.ABOUT=BSL v8.1.01
+#Tradotto da Lorenzo Giannini (Traduzione Originale) Versione - BUILDING:18.01.2022a                                        ----------------------
+option.ABOUT=BSL v8.1.02.1
 option.ABOUT.comment=Creato da Capt Tatsu. bitslablab.com
 value.ABOUT.0=Creato da Capt Tatsu
 
@@ -218,6 +219,8 @@ option.SELF_SHADOW_ANGLE.comment=Regola l'angolo del auto-ombra, un valore più 
 
 option.SELF_SHADOW_QUALITY=Campioni del Auto-ombra*
 option.SELF_SHADOW_QUALITY.comment=Regola la qualità dell'auto-ombra.
+option.SELF_SHADOW_STRENGTH=Forza del Auto-ombra*
+option.SELF_SHADOW_STRENGTH.comment=Regola l'intensità dell'auto-ombra.
 
 option.DIRECTIONAL_LIGHTMAP=Lightmap Direzionale*
 option.DIRECTIONAL_LIGHTMAP.comment=Aggiunge la mappatura normale all'illuminazione pRossoefinita. §c[-]§rLa Lightmap potrebbe avere un glitch con questo effetto abilitato.
@@ -250,7 +253,7 @@ option.AURORA=Aurora
 option.AURORA.comment=Attiva l'aurora. §a[+]§rQuesto effetto beneficia di TAA.
 
 option.ROUND_SUN_MOON=Sole e Luna Rotondi
-option.ROUND_SUN_MOON.comment=Abilità il sole & la luna basati su shader. §e[*]§rDisabilità il sole e la luna Predefinito in Grafica > Dettagli > Sole/luna: No
+option.ROUND_SUN_MOON.comment=Abilità il sole & la luna basati su shader. §e[*]§rDisabilità il sole e la luna Predefinito in Grafica > Dettagli > Sole/luna solo 1.15.2 o inferiore
 
 option.DISTANT_FADE=Diss. Lontana
 option.DISTANT_FADE.comment=Svanisce lontano i confini dei chunk. §e[*]§rQuesta opzione è influenzata dalla densità della nebbia.
@@ -266,6 +269,9 @@ value.DISTANT_FADE_STYLE.1=Cilindrico
 
 option.WEATHER_PERBIOME=Bioma Colore Diverso
 option.WEATHER_PERBIOME.comment=Usa un colore del tempo diverso per i diversi biomi. §c[-]§rPuò non funzionare in condizioni sconosciute.
+
+option.UNDERGROUND_SKY=Correzione del Cielo Sotterraneo
+option.UNDERGROUND_SKY.comment=Nasconde il cielo quando il giocatore è in un'area buia e sotto il livello del mare (Y:62). §c[-]§rNon adatto per mondi superpiatti bassi.
 
 option.LIGHT_SHAFT=Alberi leggeri
 option.LIGHT_SHAFT.comment=Aggiunge raggi volumetrici dal sole / luna. §a[+]§rQuesto effetto beneficia del TAA. §e[*]§rLe prestazioni dipendono dalla risoluzione della shadowmap.
@@ -332,8 +338,8 @@ option.CLOUD_BRIGHTNESS=Luminosità
 option.CLOUD_BRIGHTNESS.comment=Regola la luminosità delle nuvole.
 
 #Water
-option.WATER_MODE=Modalità di Texture dell'Acqua
-option.WATER_MODE.comment=Determina se la texture dell'acqua pRossoefinita deve essere usata. Normale : colore piatto dell'acqua dello shader, nessuna texture. Predefinito : texture Di Minecraft. Predefinito Tinto : texture Predefinito con il colore dell'acqua dello shader. Predefinito Piatto : colore piatto dell'acqua Predefinito.
+option.WATER_MODE=Mod. Texture Acqua
+option.WATER_MODE.comment=Determina se la texture dell'acqua predefinita deve essere usata. Normale: colore piatto dell'acqua dello shader, nessuna texture. Predefinito: texture Di Minecraft. Predefinito Tinto: texture predefinita con il colore dell'acqua dello shader. Predefinito Piatto: colore piatto dell'acqua predefinita.
 value.WATER_MODE.0=Normale
 value.WATER_MODE.1=Predefinito
 value.WATER_MODE.2=Predefinito Tinto
@@ -400,9 +406,6 @@ option.MOTION_BLUR_STRENGTH.comment=Regola l'Intensità della Sfocatura del Movi
 option.BLOOM=Bloom
 option.BLOOM.comment=Permette alle aree luminose di brillare.
 
-option.BLOOM_STRENGTH=Forza del Bloom
-option.BLOOM_STRENGTH.comment=Regola l'intensità del bloom.
-
 option.LENS_FLARE=Riflesso della Lente
 option.LENS_FLARE.comment=Abilità il bagliore della lente.
 
@@ -433,10 +436,35 @@ value.OUTLINE.3=1.12 Aggiorn. Arte
 value.OUTLINE.4=Dungeons
 
 option.CHROMATIC_ABERRATION=Aberrazione Cromatica
-option.CHROMATIC_ABERRATION.comment=...
+option.CHROMATIC_ABERRATION.comment=Aggiunge la distorsione del colore attorno ai bordi.
 value.CHROMATIC_ABERRATION.0=OFF
 value.CHROMATIC_ABERRATION.1=Debole
 value.CHROMATIC_ABERRATION.2=Forte
+
+#Bloom
+option.BLOOM_STRENGTH=Forza
+option.BLOOM_STRENGTH.comment=Regola l'intensità del Bloom.
+option.BLOOM_CONTRAST=Contrasto
+option.BLOOM_CONTRAST.comment=Regola se il bloom deve preservare il contrasto del colore o la visibilità dei dettagli. Un valore più alto preserva il contrasto del colore mentre un valore più basso preserva la visibilità dei dettagli.
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=Raggio
+option.BLOOM_RADIUS.comment=Regola la distanza di diffusione del bagliore.
+value.BLOOM_RADIUS.1=Minimo
+value.BLOOM_RADIUS.2=Molto Basso
+value.BLOOM_RADIUS.3=Basso
+value.BLOOM_RADIUS.4=Medio
+value.BLOOM_RADIUS.5=Alto
+value.BLOOM_RADIUS.6=Molto Alto
+value.BLOOM_RADIUS.7=Massimo
 
 #Color Grading & Tonemap
 option.EXPOSURE=Esposizione
@@ -526,6 +554,10 @@ option.AMBIENT_ER=Rosso
 option.AMBIENT_EG=Verde
 option.AMBIENT_EB=Blu
 option.AMBIENT_EI=Intensità
+
+value.MINLIGHT_I.0.30=0.30 (Lunatico)
+value.MINLIGHT_I.0.50=0.50 (Default)
+value.MINLIGHT_I.0.70=0.70 (Luminoso)
 
 option.AMBIENT_NR=Rosso
 option.AMBIENT_NG=Verde
