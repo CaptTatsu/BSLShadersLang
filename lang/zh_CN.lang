@@ -21,6 +21,7 @@ screen.CLOUDS=云配置
 screen.WATER=水
 
 screen.POST_EFFECTS=后期效果
+screen.BLOOM=泛光配置
 
 screen.CGT=色彩校正 & 色调图
 screen.COLOR_GRADING=色彩校正配置
@@ -68,7 +69,7 @@ screen.WAVING=摇摆的方块
 screen.CURVATURE=曲率
 
 #Settings
-option.ABOUT=BSL v8.1
+option.ABOUT=BSL v8.1.02.1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -150,12 +151,12 @@ value.EMISSIVE.0=§c关闭
 value.EMISSIVE.1=仅高级材质*
 value.EMISSIVE.2=关闭
 
-option.ALBEDO_BALANCING=Albedo平衡
+option.ALBEDO_BALANCING=反射率平衡
 option.ALBEDO_BALANCING.comment=降低高亮度有色表面的亮度.
 
 option.ALPHA_BLEND=Alpha混合
 option.ALPHA_BLEND.comment=TBA.
-value.ALPHA_BLEND.0=Gamma
+value.ALPHA_BLEND.0=伽马
 value.ALPHA_BLEND.1=线性
 
 #Specular & Reflections
@@ -183,8 +184,8 @@ option.REFLECTION_PREVIOUS.comment=允许透明物使用前一帧的信息进行
 option.SPECULAR_HIGHLIGHT_ROUGH=粗糙高光高亮
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=允许粗糙表面显示微弱的光泽.
 
-option.ALBEDO_METAL=Albedo色调硬编码金属*
-option.ALBEDO_METAL.comment=在硬编码金属表面上以色调应用基础材质. §e[*]§r仅适用于labPBR金属格式.
+option.ALBEDO_METAL=反射着色硬编码金属*
+option.ALBEDO_METAL.comment=将基础材质以着色应用在硬编码金属表面上. §e[*]§r仅适用于labPBR金属格式.
 
 #Normals & Parallax
 option.PARALLAX=视差遮挡贴图*
@@ -218,6 +219,9 @@ option.SELF_SHADOW_ANGLE.comment=调整自阴影的角度，较高的值会允�
 option.SELF_SHADOW_QUALITY=自阴影采样*
 option.SELF_SHADOW_QUALITY.comment=调整自阴影质量.
 
+option.SELF_SHADOW_STRENGTH=自阴影强度*
+option.SELF_SHADOW_STRENGTH.comment=调整自阴影的强度.
+
 option.DIRECTIONAL_LIGHTMAP=方向性光照贴图*
 option.DIRECTIONAL_LIGHTMAP.comment=向原版光照添加法线贴图. §c[-]§r启用此效果后，光照贴图可能会出现故障.
 
@@ -249,7 +253,7 @@ option.AURORA=极光
 option.AURORA.comment=极光§a[+]§r启用TAA对该效果有帮助
 
 option.ROUND_SUN_MOON=圆形日月
-option.ROUND_SUN_MOON.comment=启用基于太阳和月亮的着色. §e[*]§r在 视频设置 > 细节 > 日月 中禁用原版日月
+option.ROUND_SUN_MOON.comment=启用基于太阳和月亮的着色. §e[*]§r1.15.2及以下，在 视频设置 > 细节 > 日月 中禁用原版日月
 
 option.DISTANT_FADE=远距淡出
 option.DISTANT_FADE.comment=淡出较远的区块边界. §e[*]§r该选项受雾浓度影响.
@@ -265,6 +269,9 @@ value.DISTANT_FADE_STYLE.1=柱形
 
 option.WEATHER_PERBIOME=群系特定天气
 option.WEATHER_PERBIOME.comment=为不同的生物群系使用可变的天气颜色. §c[-]§r也许在未知的条件下不能工作.
+
+option.UNDERGROUND_SKY=地下天空修复
+option.UNDERGROUND_SKY.comment=当玩家在海平面（Y: 62）以下的暗处时隐藏天空、). §c[-]§r不适用于较低的超平坦世界.
 
 option.LIGHT_SHAFT=光束
 option.LIGHT_SHAFT.comment=添加来自太阳/月亮的体积射线. §a[+]§r启用TAA对该效果有帮助. §e[*]§r性能由阴影贴图分辨率决定.
@@ -331,7 +338,7 @@ option.CLOUD_BRIGHTNESS=亮度
 option.CLOUD_BRIGHTNESS.comment=调整云亮度.
 
 #Water
-option.WATER_MODE=水材质模式
+option.WATER_MODE=水纹理模式
 option.WATER_MODE.comment=确定是否应该使用原版水纹理. 默认：光影的扁平水颜色，无纹理. 原版：原版纹理. 着色原版：带有光影水颜色的原版纹理. 扁平原版：原版的扁平水颜色.
 value.WATER_MODE.0=默认
 value.WATER_MODE.1=原版
@@ -399,9 +406,6 @@ option.MOTION_BLUR_STRENGTH.comment=调整运动模糊的强度.
 option.BLOOM=泛光
 option.BLOOM.comment=允许较亮的区域发光.
 
-option.BLOOM_STRENGTH=泛光强度
-option.BLOOM_STRENGTH.comment=调整泛光强度.
-
 option.LENS_FLARE=镜头光晕
 option.LENS_FLARE.comment=启用镜头光晕.
 
@@ -430,6 +434,38 @@ value.OUTLINE.1=黑色
 value.OUTLINE.2=着色
 value.OUTLINE.3=1.12更新艺术效果
 value.OUTLINE.4=地下城
+
+option.CHROMATIC_ABERRATION=色彩偏移
+option.CHROMATIC_ABERRATION.comment=在边缘添加色彩扭曲.
+value.CHROMATIC_ABERRATION.0=关闭
+value.CHROMATIC_ABERRATION.1=弱
+value.CHROMATIC_ABERRATION.2=强
+
+#Bloom
+option.BLOOM_STRENGTH=强度
+option.BLOOM_STRENGTH.comment=调整泛光强度.
+
+option.BLOOM_CONTRAST=对比度
+option.BLOOM_CONTRAST.comment=调整泛光的保留色彩对比度或细节可见性. 较高的值保留色彩对比度而较低的值保留细节可见性.
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=半径
+option.BLOOM_RADIUS.comment=调整发光扩散的距离.
+value.BLOOM_RADIUS.1=最小
+value.BLOOM_RADIUS.2=非常低
+value.BLOOM_RADIUS.3=低
+value.BLOOM_RADIUS.4=中等
+value.BLOOM_RADIUS.5=高
+value.BLOOM_RADIUS.6=非常高
+value.BLOOM_RADIUS.7=最大
 
 #Color Grading & Tonemap
 option.EXPOSURE=曝光
@@ -534,6 +570,9 @@ option.BLOCKLIGHT_R=红色
 option.BLOCKLIGHT_G=绿色
 option.BLOCKLIGHT_B=蓝色
 option.BLOCKLIGHT_I=强度
+value.MINLIGHT_I.0.30=0.30 (昏暗)
+value.MINLIGHT_I.0.50=0.50 (默认)
+value.MINLIGHT_I.0.70=0.70 (明亮)
 
 option.SKY_R=红色
 option.SKY_G=绿色
