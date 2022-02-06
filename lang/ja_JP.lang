@@ -69,7 +69,7 @@ screen.WAVING=揺れるオブジェクト
 screen.CURVATURE=世界の曲率
 
 #Settings
-option.ABOUT=BSL v8.1.02
+option.ABOUT=BSL v8.1.02.1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -440,7 +440,7 @@ value.OUTLINE.3=1.12アップデートアート
 value.OUTLINE.4=ダンジョンズ
 
 option.CHROMATIC_ABERRATION=色収差
-option.CHROMATIC_ABERRATION.comment=
+option.CHROMATIC_ABERRATION.comment=境界線に色のゆがみを追加します。
 value.CHROMATIC_ABERRATION.0=オフ
 value.CHROMATIC_ABERRATION.1=弱い
 value.CHROMATIC_ABERRATION.2=強い
@@ -450,7 +450,7 @@ option.BLOOM_STRENGTH=ブルームの強さ
 option.BLOOM_STRENGTH.comment=ブルームの強度を設定します
 
 option.BLOOM_CONTRAST=ブルームのコントラスト
-option.BLOOM_CONTRAST.comment=高い値に設定するとコントラストが低くなります。
+option.BLOOM_CONTRAST.comment=ブルームで色のコントラストを維持するか、ディテールの視認性を維持するかを調整します。設定値が高いほど色のコントラストが保たれ、低いとディティールの視認性が保たれます。
 value.BLOOM_CONTRAST.-4=-1.00
 value.BLOOM_CONTRAST.-3=-0.75
 value.BLOOM_CONTRAST.-2=-0.50
