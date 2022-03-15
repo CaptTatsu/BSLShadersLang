@@ -43,7 +43,7 @@ screen.AMBIENT_N=Ambiente (Notte)
 screen.MINLIGHT=Luce Minima
 screen.BLOCKLIGHT_COLOR=Colore Chiaro dei Blocchi
 screen.SKY_COLOR=Colore del Cielo
-screen.WATER_COLOR=Colore del Acqua
+screen.WATER_COLOR=Colore dell'Acqua
 screen.WEATHER_COLOR=Colore del Tempo
 screen.WEATHER_R=Pioggia (Normale)
 screen.WEATHER_C=Nevicata
@@ -61,7 +61,7 @@ screen.NETHER_N=Distesa del Nether
 screen.NETHER_V=Valle delle Anime
 screen.NETHER_C=Foresta Cremisi
 screen.NETHER_W=Foresta Distorta
-screen.NETHER_B=Delta di Basalto
+screen.NETHER_B=Delta Basalto
 screen.END_COLOR=Colore del L'End
 
 screen.WORLD=Mondo
@@ -69,7 +69,7 @@ screen.WAVING=Blocchi Onde
 screen.CURVATURE=Curvatura
 
 #Settings
-#Tradotto da Lorenzo Giannini (Traduzione Originale) Versione - BUILDING:18.01.2022a                                        ----------------------
+#Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:18.01.2022b
 option.ABOUT=BSL v8.1.02.1
 option.ABOUT.comment=Creato da Capt Tatsu. bitslablab.com
 value.ABOUT.0=Creato da Capt Tatsu
@@ -124,7 +124,7 @@ option.TOON_LIGHTMAP=Lightmap Cartone
 option.TOON_LIGHTMAP.comment=Riduce la qualità dell'illuminazione predefinito per il cel shading. §e[*]§rQuesta opzione è nota per rendere il vostro gioco "brutto", abilitatela solo quando ne avete bisogno.
 
 option.WHITE_WORLD=Mondo Bianco
-option.WHITE_WORLD.comment=Sostituisce le texture con il colore bianco piatto.
+option.WHITE_WORLD.comment=Sostituisce le texture con il colore bianco.
 
 #Material
 option.ADVANCED_MATERIALS=Materiali Avanzati
@@ -174,7 +174,7 @@ option.REFLECTION_SPECULAR=Riflessione Speculare*
 option.REFLECTION_SPECULAR.comment=Permette la riflessione su superfici lisce o metalliche.
 
 option.REFLECTION_RAIN=Riflessione della Pioggia*
-option.REFLECTION_RAIN.comment=Permette alle superfici di essere bagnate mentre piove.  §e[*]§rRichiede la riflessione speculare.
+option.REFLECTION_RAIN.comment=Permette alle superfici di essere bagnate mentre piove. §e[*]§rRichiede la riflessione speculare.
 
 option.REFLECTION_ROUGH=Riflessione Grezza*
 option.REFLECTION_ROUGH.comment=Permette alle superfici con minore scorrevolezza di rendere i riflessi sfocati. §c[-]§rPuò contenere artefatti minori.
@@ -258,8 +258,8 @@ option.ROUND_SUN_MOON.comment=Abilità il sole & la luna basati su shader. §e[*
 option.DISTANT_FADE=Diss. Lontana
 option.DISTANT_FADE.comment=Svanisce lontano i confini dei chunk. §e[*]§rQuesta opzione è influenzata dalla densità della nebbia.
 value.DISTANT_FADE.0=§cOFF
-value.DISTANT_FADE.1=Solo Overworld
-value.DISTANT_FADE.2=Solo Nether & End
+value.DISTANT_FADE.1=Solo l'Overworld
+value.DISTANT_FADE.2=Solo il Nether & l'End
 value.DISTANT_FADE.3=Completo
 
 option.DISTANT_FADE_STYLE=Stile Diss. Lontana
@@ -274,13 +274,13 @@ option.UNDERGROUND_SKY=Correzione del Cielo Sotterraneo
 option.UNDERGROUND_SKY.comment=Nasconde il cielo quando il giocatore è in un'area buia e sotto il livello del mare (Y:62). §c[-]§rNon adatto per mondi superpiatti bassi.
 
 option.LIGHT_SHAFT=Alberi leggeri
-option.LIGHT_SHAFT.comment=Aggiunge raggi volumetrici dal sole / luna. §a[+]§rQuesto effetto beneficia del TAA. §e[*]§rLe prestazioni dipendono dalla risoluzione della shadowmap.
+option.LIGHT_SHAFT.comment=Aggiunge raggi volumetrici dal sole/luna. §a[+]§rQuesto effetto beneficia del TAA. §e[*]§rLe prestazioni dipendono dalla risoluzione della shadowmap.
 
 option.LIGHT_SHAFT_STRENGTH=Forza dell'Albero Leggero
 option.LIGHT_SHAFT_STRENGTH.comment=Regola la forza dell'albero leggero.
 
 option.FOG_DENSITY=Densità della Nebbia
-option.FOG_DENSITY.comment=Regola la densità della nebbia. §e[*]§rQuesta opzione è ignoratatà nel nether.
+option.FOG_DENSITY.comment=Regola la densità della nebbia. §e[*]§rQuesta opzione è ignoratà nel Nether.
 
 option.WEATHER_OPACITY=Opacità del Tempo
 option.WEATHER_OPACITY.comment=Regola l'opacità del tempo.
@@ -339,7 +339,7 @@ option.CLOUD_BRIGHTNESS.comment=Regola la luminosità delle nuvole.
 
 #Water
 option.WATER_MODE=Mod. Texture Acqua
-option.WATER_MODE.comment=Determina se la texture dell'acqua predefinita deve essere usata. Normale: colore piatto dell'acqua dello shader, nessuna texture. Predefinito: texture Di Minecraft. Predefinito Tinto: texture predefinita con il colore dell'acqua dello shader. Predefinito Piatto: colore piatto dell'acqua predefinita.
+option.WATER_MODE.comment=Determina se la texture dell'acqua predefinita deve essere usata. Normale: colore piatto dell'acqua, nessuna texture. Predefinito: texture Di Minecraft. Predefinito Tinto: texture predefinita con il colore dell'acqua. Predefinito Piatto: colore piatto dell'acqua predefinita.
 value.WATER_MODE.0=Normale
 value.WATER_MODE.1=Predefinito
 value.WATER_MODE.2=Predefinito Tinto
@@ -360,7 +360,7 @@ option.WATER_PARALLAX=Parallasse
 option.WATER_PARALLAX.comment=Permette lo spostamento dell'acqua.
 
 option.WATER_DETAIL=Dettaglio
-option.WATER_DETAIL.comment=Regola il rapporto tra acqua grande e piccola normale.
+option.WATER_DETAIL.comment=Regola il rapporto tra acqua grande e piccola.
 value.WATER_DETAIL.0.05=5%
 value.WATER_DETAIL.0.10=10%
 value.WATER_DETAIL.0.15=15%
@@ -384,8 +384,8 @@ value.WATER_SHARPNESS.0.2=Alto
 option.WATER_SPEED=Velocità
 option.WATER_SPEED.comment=Regola la velocità del rumore per l'acqua normale.
 
-option.WATER_FOG_DENSITY=Densità della Nebbia del Acqua
-option.WATER_FOG_DENSITY.comment=Regola la densità della nebbia del acqua.
+option.WATER_FOG_DENSITY=Densità della Nebbia dell'Acqua
+option.WATER_FOG_DENSITY.comment=Regola la densità della nebbia dell'acqua.
 
 option.WATER_PIXEL=Pixel Bloccato
 option.WATER_PIXEL.comment=Applica l'effetto di pixelatura dell'acqua normale.
