@@ -103,7 +103,7 @@ option.AO=Occlusion ambiante
 option.AO.comment=Ajoute des ombres douces autour du contact de surface ou d'intersection.
 
 option.AO_STRENGTH=Force de l'AO
-option.AO_STRENGTH.comment=Règle la force de l'occlusion ambiante.
+option.AO_STRENGTH.comment=Ajuste la force de l'occlusion ambiante.
 
 option.DESATURATION=Désaturation
 option.DESATURATION.comment=Réduit la saturation tout en ajoutant une certaine teinte dans les zones plus sombres.
@@ -192,7 +192,7 @@ option.PARALLAX=Cartographie d'occlusion de parallaxe
 option.PARALLAX.comment=Ajoute un déplacement sur une surface à l'aide de la carte de hauteur.
 
 option.PARALLAX_DEPTH=Profondeur du parallaxe
-option.PARALLAX_DEPTH.comment=Règle la profondeur du parallaxe.
+option.PARALLAX_DEPTH.comment=Ajuste la profondeur du parallaxe.
 value.PARALLAX_DEPTH.0.05=5 cm
 value.PARALLAX_DEPTH.0.10=10 cm
 value.PARALLAX_DEPTH.0.15=15 cm
@@ -205,7 +205,7 @@ value.PARALLAX_DEPTH.0.45=45 cm
 value.PARALLAX_DEPTH.0.50=50 cm
 
 option.PARALLAX_QUALITY=Qualité du parallaxe
-option.PARALLAX_QUALITY.comment=Règle la qualité du mappage d'occlusion du parallaxe.
+option.PARALLAX_QUALITY.comment=Ajuste la qualité du mappage d'occlusion du parallaxe.
 
 option.PARALLAX_DISTANCE=Distance du parallaxe
 option.PARALLAX_DISTANCE.comment=Ajuste la distance à laquelle le mappage d'occlusion de parallaxe et les ombres de soi peuvent être rendus.
@@ -214,7 +214,7 @@ option.SELF_SHADOW=Ombres de soi
 option.SELF_SHADOW.comment=Permet à une surface de projeter une ombre sur elle-même à l'aide de la carte de hauteur.
 
 option.SELF_SHADOW_ANGLE=Angle d'ombres de soi
-option.SELF_SHADOW_ANGLE.comment=Règle l'angle d'auto-ombrage, une valeur plus élevée permet à l'ombre de se déplacer plus loin.
+option.SELF_SHADOW_ANGLE.comment=Ajuste l'angle d'auto-ombrage, une valeur plus élevée permet à l'ombre de se déplacer plus loin.
 
 option.SELF_SHADOW_QUALITY=Échantillons d'ombres de soi
 option.SELF_SHADOW_QUALITY.comment=Ajuste la qualité des ombres de soi.
@@ -226,7 +226,7 @@ option.DIRECTIONAL_LIGHTMAP=Lightmap directionnelle
 option.DIRECTIONAL_LIGHTMAP.comment=Ajoute une cartographie normale à l'éclairage vanilla. §c[-]§rLes lightmap peuvent mal fonctionner avec cet effet activé.
 
 option.DIRECTIONAL_LIGHTMAP_STRENGTH=Force des Lightmap Dir.
-option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=Règle l'intensité de la Lightmap directionnelle.
+option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=Ajuste l'intensité de la Lightmap directionnelle.
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.2.0=Très faible
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.4=Faible
 value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.0=Moyen
@@ -280,7 +280,7 @@ option.LIGHT_SHAFT_STRENGTH=Force des rayons de lumière
 option.LIGHT_SHAFT_STRENGTH.comment=Ajuste la force des rayons lumineux.
 
 option.FOG_DENSITY=Densité du brouillard
-option.FOG_DENSITY.comment=Règle la densité du brouillard. §e[*]§rCette option est ignorée dans le Nether.
+option.FOG_DENSITY.comment=Ajuste la densité du brouillard. §e[*]§rCette option est ignorée dans le Nether.
 
 option.WEATHER_OPACITY=Opacité de la météo
 option.WEATHER_OPACITY.comment=Ajuste l'opacité de la météo.
@@ -301,7 +301,7 @@ value.SKY_GROUND.1=Réflections seulement
 value.SKY_GROUND.2=Complet
 
 option.SKYBOX_BRIGHTNESS=Luminosité de la Skybox
-option.SKYBOX_BRIGHTNESS.comment=Règle la luminosité de la skybox. §e[*]§rDéfini sur 1.00 lorsqu'il existe une skybox soustractive.
+option.SKYBOX_BRIGHTNESS.comment=Ajuste la luminosité de la skybox. §e[*]§rDéfini sur 1.00 lorsqu'il existe une skybox soustractive.
 
 #Cloud Config
 option.CLOUD_THICKNESS=Épaisseur
@@ -329,13 +329,13 @@ value.CLOUD_HEIGHT.12.5=Élevé
 value.CLOUD_HEIGHT.15.0=Très élevé
 
 option.CLOUD_SPEED=Vitesse
-option.CLOUD_SPEED.comment=Règle la vitesse des nuages.
+option.CLOUD_SPEED.comment=Ajuste la vitesse des nuages.
 
 option.CLOUD_OPACITY=Opacité
-option.CLOUD_OPACITY.comment=Règle l'opacité des nuages.
+option.CLOUD_OPACITY.comment=Ajuste l'opacité des nuages.
 
 option.CLOUD_BRIGHTNESS=Luminosité
-option.CLOUD_BRIGHTNESS.comment=Règle la luminosité des nuages.
+option.CLOUD_BRIGHTNESS.comment=Ajuste la luminosité des nuages.
 
 #Water
 option.WATER_MODE=Mode de texture de l'eau
@@ -392,25 +392,25 @@ value.WATER_PIXEL.0=DÉSACTIVÉ
 option.DOF=Profondeur de champ (DoF)
 options.DOF.comment=Active l'effet de mise au point de la caméra.
 option.DOF_STRENGTH=Force du DoF
-option.DOF_STRENGTH.comment=Règle la force de la mise au point, une valeur plus élevée estompe plus rapidement.
+option.DOF_STRENGTH.comment=Ajuste la force de la mise au point, une valeur plus élevée estompe plus rapidement.
 
 option.BLOOM=Flou lumineux
 option.BLOOM.comment=Permet aux zones claires de briller.
 
 option.BLOOM_STRENGTH=Force du flou lumineux.
-option.BLOOM_STRENGTH.comment=Règle l'intensité du flou lumineux.
+option.BLOOM_STRENGTH.comment=Ajuste l'intensité du flou lumineux.
 
 option.MOTION_BLUR=Flou de mouvement
 option.MOTION_BLUR.comment=Active le flou basé sur le mouvement de la caméra.
 
 option.MOTION_BLUR_STRENGTH=Force du flou de mouvement
-option.MOTION_BLUR_STRENGTH.comment=Règle l'intensité du flou de mouvement.
+option.MOTION_BLUR_STRENGTH.comment=Ajuste l'intensité du flou de mouvement.
 
 option.LENS_FLARE=Lumière parasite
 option.LENS_FLARE.comment=Active la lumière parasite.
 
 option.LENS_FLARE_STRENGTH=Force de la lumière parasite
-option.LENS_FLARE_STRENGTH.comment=Règle l'intensité de la lumière parasite.
+option.LENS_FLARE_STRENGTH.comment=Ajuste l'intensité de la lumière parasite.
 
 option.FXAA=FXAA
 option.FXAA.comment=Active l'anticrénelage approximatif rapide, en lissant les bords avec un coût de performance minimal. §e[*]§rVeuillez désactiver l'anticrénelage dans le menu Shaders lorsque cette option est activée.
@@ -458,7 +458,7 @@ value.BLOOM_CONTRAST.3=0.75
 value.BLOOM_CONTRAST.4=1.00
 
 option.BLOOM_RADIUS=Rayon
-option.BLOOM_RADIUS.comment=Règle la distance à laquelle le floux lumineux se propage.
+option.BLOOM_RADIUS.comment=Ajuste la distance à laquelle le floux lumineux se propage.
 value.BLOOM_RADIUS.1=Minimum
 value.BLOOM_RADIUS.2=Très faible
 value.BLOOM_RADIUS.3=Faible
@@ -469,7 +469,7 @@ value.BLOOM_RADIUS.7=Maximum
 
 #Color Grading & Tonemap
 option.EXPOSURE=Exposition
-option.TonemapExposure.comment=Règle la luminosité générale.
+option.TonemapExposure.comment=Ajuste la luminosité générale.
 
 option.AUTO_EXPOSURE=Exposition automatique
 option.AUTO_EXPOSURE.comment=Active le réglage automatique de la luminosité globale.
@@ -487,10 +487,10 @@ option.TONEMAP_UPPER_CURVE=Courbe supérieure du tonemap
 option.TONEMAP_UPPER_CURVE.comment=Ajuste le contraste des couleurs plus vives.
 
 option.SATURATION=Saturation
-option.SATURATION.comment=Règle la saturation de toutes les couleurs.
+option.SATURATION.comment=Ajuste la saturation de toutes les couleurs.
 
 option.VIBRANCE=Vibrance
-option.VIBRANCE.comment=Règle la saturation des couleurs moins saturées, les couleurs bien saturées sont moins affectées.
+option.VIBRANCE.comment=Ajuste la saturation des couleurs moins saturées, les couleurs bien saturées sont moins affectées.
 
 #Color Grading Config
 option.CG_RR=Rouge - Valeur rouge
@@ -615,6 +615,11 @@ option.WEATHER_MG=Vert
 option.WEATHER_MB=Bleu
 option.WEATHER_MI=Intensité
 
+option.WEATHER_VR=Rouge
+option.WEATHER_VG=Vert
+option.WEATHER_VB=Bleu
+option.WEATHER_VI=Intensité
+
 option.AURORA_LR=Rouge
 option.AURORA_LG=Vert
 option.AURORA_LB=Bleu
@@ -686,4 +691,4 @@ option.WORLD_CURVATURE=Courbure du monde
 option.WORLD_CURVATURE.comment=Active la courbure du monde. §e[*]§rFonctionne uniquement dans l'Overworld. §e[*]§rLes tronçons manquants sont gérés par Minecraft lui-même, ce que je ne peux pas réparer. §c[-]§rPeut rompre la sélection de bloc en surbrillance en 1.17.
 
 option.WORLD_CURVATURE_SIZE=Taille de courbure du monde
-option.WORLD_CURVATURE_SIZE.comment=Règle la taille de la courbure du monde. Les valeurs négatives feront plier le monde vers le haut.
+option.WORLD_CURVATURE_SIZE.comment=Ajuste la taille de la courbure du monde. Les valeurs négatives feront plier le monde vers le haut.
