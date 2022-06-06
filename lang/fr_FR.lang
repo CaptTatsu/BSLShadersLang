@@ -384,6 +384,9 @@ value.WATER_SHARPNESS.0.2=Élevé
 option.WATER_SPEED=Vitesse
 option.WATER_SPEED.comment=Ajuste la vitesse du bruit pour les normales de l'eau.
 
+option.WATER_FOG_DENSITY=Densité du brouillard d'eau
+option.WATER_FOG_DENSITY.comment=Ajuste la densité du brouillard d'eau.
+
 option.WATER_PIXEL=Verrouillage des pixels
 option.WATER_PIXEL.comment=Applique un effet de pixellisation aux normales de l'eau.
 value.WATER_PIXEL.0=DÉSACTIVÉ
@@ -394,17 +397,14 @@ options.DOF.comment=Active l'effet de mise au point de la caméra.
 option.DOF_STRENGTH=Force du DoF
 option.DOF_STRENGTH.comment=Ajuste la force de la mise au point, une valeur plus élevée estompe plus rapidement.
 
-option.BLOOM=Flou lumineux
-option.BLOOM.comment=Permet aux zones claires de briller.
-
-option.BLOOM_STRENGTH=Force du flou lumineux.
-option.BLOOM_STRENGTH.comment=Ajuste l'intensité du flou lumineux.
-
 option.MOTION_BLUR=Flou de mouvement
 option.MOTION_BLUR.comment=Active le flou basé sur le mouvement de la caméra.
 
 option.MOTION_BLUR_STRENGTH=Force du flou de mouvement
 option.MOTION_BLUR_STRENGTH.comment=Ajuste l'intensité du flou de mouvement.
+
+option.BLOOM=Flou lumineux
+option.BLOOM.comment=Permet aux zones claires de briller.
 
 option.LENS_FLARE=Lumière parasite
 option.LENS_FLARE.comment=Active la lumière parasite.
