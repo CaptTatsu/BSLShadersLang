@@ -80,8 +80,8 @@ value.shadowMapResolution.512=Très faible (512)
 value.shadowMapResolution.1024=Faible (1024)
 value.shadowMapResolution.2048=Moyen (2048)
 value.shadowMapResolution.3072=Élevé (3072)
-value.shadowMapResolution.4096=Très Élevé (4096)
-value.shadowMapResolution.8192=Ultra Élevé (8192)
+value.shadowMapResolution.4096=Très élevé (4096)
+value.shadowMapResolution.8192=Extrêmement élevé (8192)
 
 option.shadowDistance=Distance des ombres
 option.shadowDIstance.comment=Ajuste la distance des ombres.
