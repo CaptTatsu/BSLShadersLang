@@ -120,7 +120,7 @@ option.DYNAMIC_HANDLIGHT=Lumière dynamique
 option.DYNAMIC_HANDLIGHT.comment=Permet d'émettre de la lumière lorsque vous tenez certains objets.
 
 option.TOON_LIGHTMAP=Carte lumineuse cel.
-option.TOON_LIGHTMAP.comment=Réduit la qualité de l'éclairage vanilla pour l'ombrage de celluoïde. §e[*]§rCette option est connue pour rendre votre rendu de jeu "mauvais", ne l'activez que lorsque vous en avez besoin.
+option.TOON_LIGHTMAP.comment=Réduit la qualité de l'éclairage vanilla pour l'ombrage de celluoïd. §e[*]§rCette option est connue pour rendre votre rendu de jeu "mauvais", ne l'activez que lorsque vous en avez besoin.
 
 option.WHITE_WORLD=Monde blanc
 option.WHITE_WORLD.comment=Remplace les textures par une couleur blanche plate.
