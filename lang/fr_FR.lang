@@ -20,7 +20,7 @@ screen.CLOUDS=Nuages
 
 screen.WATER=Eau
 
-screen.POST_EFFECTS=Effets secondaires
+screen.POST_EFFECTS=Effets postérieurs
 screen.BLOOM=Flou lumineux
 
 screen.CGT=Étalonnage des couleurs et tonemap
