@@ -74,8 +74,8 @@ option.ABOUT.comment=par Capt Tatsu. bitslablab.com
 value.ABOUT.0=par Capt Tatsu
 
 #Lighting
-option.shadowMapResolution=Résolution de la carte d'ombre
-option.shadowMapResolution.comment=Ajuste la résolution de la carte d'ombre. §e[*]§rUne résolution plus élevée donne des ombres plus nettes, mais réduit les performances.
+option.shadowMapResolution=Qualité de la shadowmap
+option.shadowMapResolution.comment=Ajuste la taille de la carte d'ombre. §e[*]§rUne résolution plus élevée donne des ombres plus nettes, mais réduit les performances.
 value.shadowMapResolution.512=Très faible (512)
 value.shadowMapResolution.1024=Faible (1024)
 value.shadowMapResolution.2048=Moyen (2048)
@@ -92,7 +92,7 @@ option.SHADOW_COLOR.comment=Active les ombres teintées des translucides. §a[+]
 option.SHADOW_FILTER=Filtrage des ombres
 option.SHADOW_FILTER.comment=Active le filtrage des ombres. §a[+]§rCet effet bénéficie du TAA.
 
-option.sunPathRotation=Rotation de la trajectoire du soleil
+option.sunPathRotation=Rotation du chemin du soleil
 option.sunPathRotation.comment=Ajuste l'angle du soleil.
 
 option.SHADOW_PIXEL=Ombres verrouillées en pixels
@@ -108,7 +108,7 @@ option.AO_STRENGTH.comment=Ajuste la force de l'occlusion ambiante.
 option.DESATURATION=Désaturation
 option.DESATURATION.comment=Réduit la saturation tout en ajoutant une certaine teinte dans les zones plus sombres.
 
-option.DESATURATION_FACTOR=Facteur de désaturation maximum
+option.DESATURATION_FACTOR=Facteur de désaturation max.
 option.DESATURATION_FACTOR.comment=Ajuste la quantité maximale de désaturation appliquée.
 value.DESATURATION_FACTOR.2.0=Très faible
 value.DESATURATION_FACTOR.1.5=Faible
