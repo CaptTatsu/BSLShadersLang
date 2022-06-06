@@ -69,7 +69,7 @@ screen.WAVING=Waving Blocks
 screen.CURVATURE=Curvature
 
 #Settings
-option.ABOUT=BSL v8.1.02.1
+option.ABOUT=BSL v8.1.02.3
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
