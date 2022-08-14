@@ -69,7 +69,7 @@ screen.WAVING=揺れるオブジェクト
 screen.CURVATURE=世界の曲率
 
 #Settings
-option.ABOUT=BSL v8.1.02.1
+option.ABOUT=BSL v8.1.03
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -189,6 +189,12 @@ option.SPECULAR_HIGHLIGHT_ROUGH.comment=粗い反射面に弱い光沢を加え�
 
 option.ALBEDO_METAL=組み込みの金属反射*
 option.ALBEDO_METAL.comment=組み込みの金属表面を色合いとしてベーステクスチャに使用します。 §e[*]§rlabPBR準拠の(リソースパック)でのみ動作します。
+
+option.REFLECTION_MODE=反射モード
+option.REFLECTION_MODE.comment=反射のふるまいを調整します。
+value.REFLECTION_MODE.0=二重像を減らす
+value.REFLECTION_MODE.1=バランス
+value.REFLECTION_MODE.2=よりギャップを埋める
 
 #Parallax
 option.PARALLAX=視差遮蔽マッピング(POM)*
