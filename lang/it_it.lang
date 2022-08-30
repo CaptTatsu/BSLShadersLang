@@ -69,8 +69,8 @@ screen.WAVING=Blocchi Onde
 screen.CURVATURE=Curvatura
 
 #Settings
-#Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:13.06.2022a
-option.ABOUT=BSL v8.1.02.3
+#Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:30.08.2022a
+option.ABOUT=BSL v8.1.03
 option.ABOUT.comment=Creato da Capt Tatsu. bitslablab.com
 value.ABOUT.0=Creato da Capt Tatsu
 
@@ -187,6 +187,12 @@ option.SPECULAR_HIGHLIGHT_ROUGH.comment=Permette alle superfici ruvide di avere 
 
 option.ALBEDO_METAL=Metallo Tinto e codificate Albedo*
 option.ALBEDO_METAL.comment=Applica la texture di base come tinta su superfici metalliche codificate. §e[*]§rFunziona solo sul formato di materiale labPBR.
+
+option.REFLECTION_MODE=Modalità di riflessione
+option.REFLECTION_MODE.comment=Regola il comportamento di riflessione.
+value.REFLECTION_MODE.0=Meno duplicati
+value.REFLECTION_MODE.1=Equilibrato
+value.REFLECTION_MODE.2=Più riempimento degli spazi vuoti
 
 #Normals & Parallax
 option.PARALLAX=Mappatura dell'Occlusione del Parallasse*
