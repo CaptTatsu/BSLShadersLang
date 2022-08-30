@@ -69,7 +69,7 @@ screen.WAVING=Waving Blocks
 screen.CURVATURE=Curvature
 
 #Settings
-option.ABOUT=BSL v8.1.02.3
+option.ABOUT=BSL v8.1.03
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -186,6 +186,12 @@ option.SPECULAR_HIGHLIGHT_ROUGH.comment=Allows rough surfaces to have weak gloss
 
 option.ALBEDO_METAL=Albedo Tinted Hardcoded Metal*
 option.ALBEDO_METAL.comment=Applies base texture as tint on hardcoded metallic surfaces. §e[*]§rWorks on labPBR material format only.
+
+option.REFLECTION_MODE=Reflection Mode
+option.REFLECTION_MODE.comment=Adjusts reflection behavior.
+value.REFLECTION_MODE.0=Less Duplicates
+value.REFLECTION_MODE.1=Balanced
+value.REFLECTION_MODE.2=More Gap Filling
 
 #Normals & Parallax
 option.PARALLAX=Parallax Occlusion Mapping*
