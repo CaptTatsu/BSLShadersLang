@@ -20,15 +20,9 @@ screen.CLOUDS=Cloud Config
 
 screen.WATER=Water
 
-screen.POST_EFFECTS=Post Effects
-screen.BLOOM=Bloom Config
+screen.CAMERA=Camera
 
-screen.CGT=Color Grading & Tonemap
-screen.COLOR_GRADING=Color Grading Config
-screen.CG_R=Red Channel
-screen.CG_G=Green Channel
-screen.CG_B=Blue Channel
-screen.CG_T=Tint
+screen.ANTIALIASING=Anti-aliasing
 
 screen.COLOR=Color
 screen.LIGHT_COLOR=Lighting Color
@@ -64,12 +58,19 @@ screen.NETHER_W=Warped Forest
 screen.NETHER_B=Basalt Deltas
 screen.END_COLOR=End Color
 
-screen.WORLD=World
-screen.WAVING=Waving Blocks
-screen.CURVATURE=Curvature
+screen.CGT=Color Grading & Tonemap
+screen.COLOR_GRADING=Color Grading Config
+screen.CG_R=Red Channel
+screen.CG_G=Green Channel
+screen.CG_B=Blue Channel
+screen.CG_T=Tint
+
+screen.EXTRAS=Extras
+
+screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.1.03
+option.ABOUT=BSL v8.2
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -90,14 +91,17 @@ option.SHADOW_COLOR=Colored Shadow
 option.SHADOW_COLOR.comment=Enables tinted shadow from translucents. §a[+]§rUsed for colored volumetric light shafts. §c[-]§rSlightly higher performance cost when using shadow filtering.
 
 option.SHADOW_FILTER=Shadow Filtering
-option.SHADOW_FILTER.comment=Enables shadow filtering. §a[+]§rThis effect benefits from TAA.
+option.SHADOW_FILTER.comment=Enables shadow filtering.
 
-option.sunPathRotation=Sun Path Rotation
-option.sunPathRotation.comment=Adjusts sun angle.
+option.SHADOW_ENTITY=Entity Shadow
+option.SHADOW_ENTITY.comment=Enables shadow on entities. §e[*]§rDisable this when a huge amount of entities are loaded. §e[*]§rOnly works on 1.16.5 and above.
 
 option.SHADOW_PIXEL=Pixel Locked Shadows
 option.SHADOW_PIXEL.comment=Applies pixelation effect on shadows.
 value.SHADOW_PIXEL.0=OFF
+
+option.sunPathRotation=Sun Path Rotation
+option.sunPathRotation.comment=Adjusts sun angle.
 
 option.AO=Ambient Occlusion
 option.AO.comment=Adds soft shadows around surface contact or intersection.
@@ -108,7 +112,7 @@ option.AO_STRENGTH.comment=Adjusts ambient occlusion strength.
 option.DESATURATION=Desaturation
 option.DESATURATION.comment=Reduces saturation while adding some tint in darker areas.
 
-option.DESATURATION_FACTOR=Max Desaturation Factor
+option.DESATURATION_FACTOR=Desaturation Factor
 option.DESATURATION_FACTOR.comment=Adjusts the maximum amount of desaturation applied.
 value.DESATURATION_FACTOR.2.0=Very Low
 value.DESATURATION_FACTOR.1.5=Low
@@ -119,31 +123,23 @@ value.DESATURATION_FACTOR.0.0=Very High
 option.DYNAMIC_HANDLIGHT=Dynamic Handlight
 option.DYNAMIC_HANDLIGHT.comment=Allows blocklight to be emitted from view when holding certain objects.
 
-option.TOON_LIGHTMAP=Toon Lightmap
-option.TOON_LIGHTMAP.comment=Reduces the quality of vanilla lighting for cel shading. §e[*]§rThis option is known for making your game "look bad", only enable this when you need it.
-
 option.WHITE_WORLD=White World
 option.WHITE_WORLD.comment=Replaces textures with flat white color.
 
 #Material
 option.ADVANCED_MATERIALS=Advanced Materials
-option.ADVANCED_MATERIALS.comment=Enables the use of specular and normal mapping which allows for more detail on various things.  §e[*]§rThis option requires a resource pack which contains specular and/or normal maps, disable this if you don't use one. §e[*]§rOptions which requires advanced materials are indicated by *, changing these options won't affect the visuals or performance while advanced materials is disabled.
+option.ADVANCED_MATERIALS.comment=Enables the use of specular and normal mapping which allows for more detail on various things.  §e[*]§rThis option requires a resource pack which contains specular and/or normal maps, disable if none is currently used. §e[*]§rOptions which requires advanced materials are indicated by *, changing these options won't affect the visuals or performance while advanced materials is disabled.
 
 option.MATERIAL_FORMAT=Material Format*
 option.MATERIAL_FORMAT.comment=Determines the specular and normal map format used by the resourcepack. §e[*]§rTexture artists usually tell which format is used in their resourcepack, using the wrong format may give weird results.
 value.MATERIAL_FORMAT.0=SEUS/Old PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
-option.SSS=Subsurface Scattering
-option.SSS.comment=Allows light to penetrate and scatter through certain blocks.
-value.SSS.0=§cOFF
-value.SSS.1=AdvMat Only*
-value.SSS.2=Full
+option.SSS=Subsurface Scattering*
+option.SSS.comment=Allows light to penetrate and scatter through blocks. §a[+]§rThis effect benefits from TAA.
 
-option.SSS_QUALITY=SSS Quality
-option.SSS_QUALITY.comment=Adjusts subsurface scattering quality.
-value.SSS_QUALITY.0=Low
-value.SSS_QUALITY.1=High
+option.BASIC_SSS=Basic Scattering
+option.BASIC_SSS.comment=Enables a simplified version of subsurface scattering to certain blocks.
 
 option.EMISSIVE=Emissive
 option.EMISSIVE.comment=Allows certain surfaces to be brighter.
@@ -158,6 +154,9 @@ option.ALPHA_BLEND=Alpha Blending
 option.ALPHA_BLEND.comment=TBA. 
 value.ALPHA_BLEND.0=Gamma
 value.ALPHA_BLEND.1=Linear
+
+option.ENTITY_FLASH=Entity Flash
+option.ENTITY_FLASH.comment=Enables damaged entities and nearby creeper to flash.
 
 #Specular & Reflections
 option.REFLECTION=Reflections
@@ -192,6 +191,14 @@ option.REFLECTION_MODE.comment=Adjusts reflection behavior.
 value.REFLECTION_MODE.0=Less Duplicates
 value.REFLECTION_MODE.1=Balanced
 value.REFLECTION_MODE.2=More Gap Filling
+
+option.REFLECTION_SKY_FALLOFF=Sky Reflection Falloff
+option.REFLECTION_SKY_FALLOFF.comment=Adjusts how far sky reflection fades out under low skylight.
+value.REFLECTION_SKY_FALLOFF.1=Very Weak
+value.REFLECTION_SKY_FALLOFF.2=Weak
+value.REFLECTION_SKY_FALLOFF.4=Balanced
+value.REFLECTION_SKY_FALLOFF.8=Strong
+value.REFLECTION_SKY_FALLOFF.16=Very Strong
 
 #Normals & Parallax
 option.PARALLAX=Parallax Occlusion Mapping*
@@ -397,7 +404,7 @@ option.WATER_PIXEL=Pixel Lock
 option.WATER_PIXEL.comment=Applies pixelation effect on water normals.
 value.WATER_PIXEL.0=OFF
 
-#Post Effects
+#Camera
 option.DOF=Depth of Field
 options.DOF.comment=Enables camera focus effect.
 option.DOF_STRENGTH=DoF Strength
@@ -412,46 +419,10 @@ option.MOTION_BLUR_STRENGTH.comment=Adjusts motion blur intensity.
 option.BLOOM=Bloom
 option.BLOOM.comment=Allows bright areas to glow.
 
-option.LENS_FLARE=Lens Flare
-option.LENS_FLARE.comment=Enables lens flare.
-
-option.LENS_FLARE_STRENGTH=Lens Flare Strength
-option.LENS_FLARE_STRENGTH.comment=Adjusts lens flare intensity.
-
-option.FXAA=FXAA
-option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
-
-option.TAA=TAA
-option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
-
-option.VIGNETTE=Vignette
-option.Vignette.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging.
-
-option.DIRTY_LENS=Dirty Lens
-option.DIRTY_LENS.comment=Adds dusty particle effect to bloom. §e[*]§rRequires bloom.
-
-option.RETRO_FILTER=Retro Filter
-option.RETRO_FILTER.comment=Adds pixelation and dithering. §e[*]§rLower render quality for stronger pixelation. §c[-]§rIncompatible with anti-aliasing.
-
-option.OUTLINE=Outline
-option.OUTLINE.comment=Enables outline effect.
-value.OUTLINE.0=OFF
-value.OUTLINE.1=Black
-value.OUTLINE.2=Colored
-value.OUTLINE.3=1.12 Update Art
-value.OUTLINE.4=Dungeons
-
-option.CHROMATIC_ABERRATION=Chromatic Aberration
-option.CHROMATIC_ABERRATION.comment=Adds color distortion around the borders.
-value.CHROMATIC_ABERRATION.0=OFF
-value.CHROMATIC_ABERRATION.1=Weak
-value.CHROMATIC_ABERRATION.2=Strong
-
-#Bloom
-option.BLOOM_STRENGTH=Strength
+option.BLOOM_STRENGTH=Bloom Strength
 option.BLOOM_STRENGTH.comment=Adjusts bloom intensity.
 
-option.BLOOM_CONTRAST=Contrast
+option.BLOOM_CONTRAST=Bloom Contrast
 option.BLOOM_CONTRAST.comment=Adjusts whether the bloom should preserve color contrast or detail visibility. Higher value preserves color contrast while lower value preserves detail visibility.
 value.BLOOM_CONTRAST.-4=-1.00
 value.BLOOM_CONTRAST.-3=-0.75
@@ -463,7 +434,7 @@ value.BLOOM_CONTRAST.2=0.50
 value.BLOOM_CONTRAST.3=0.75
 value.BLOOM_CONTRAST.4=1.00
 
-option.BLOOM_RADIUS=Radius
+option.BLOOM_RADIUS=Bloom Radius
 option.BLOOM_RADIUS.comment=Adjusts how far the glow spreads.
 value.BLOOM_RADIUS.1=Minimum
 value.BLOOM_RADIUS.2=Very Low
@@ -473,58 +444,47 @@ value.BLOOM_RADIUS.5=High
 value.BLOOM_RADIUS.6=Very High
 value.BLOOM_RADIUS.7=Maximum
 
-#Color Grading & Tonemap
-option.EXPOSURE=Exposure
-option.TonemapExposure.comment=Adjusts overall brightness.
+option.LENS_FLARE=Lens Flare
+option.LENS_FLARE.comment=Enables lens flare.
 
-option.AUTO_EXPOSURE=Auto Exposure
-option.AUTO_EXPOSURE.comment=Enables automatic adjustment to overall brightness.
+option.LENS_FLARE_STRENGTH=Lens Flare Strength
+option.LENS_FLARE_STRENGTH.comment=Adjusts lens flare intensity.
 
-option.COLOR_GRADING=Color Grading
-option.COLOR_GRADING.comment=Enables color grading. §e[*]§rThis option doesn't need to be enabled to change tonemap, saturation, and vibrance sliders.
+option.VIGNETTE=Vignette
+option.Vignette.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging.
 
-option.TONEMAP_WHITE_CURVE=Tonemap White Curve
-option.TONEMAP_WHITE_CURVE.comment=Adjusts how quickly the tonemap can reach white.
+option.VIGNETTE_STRENGTH=Vignette Strength
+option.VIGNETTE_STRENGTH.comment=Adjusts vignette intensity.
+value.VIGNETTE_STRENGTH.0.26=0.1
+value.VIGNETTE_STRENGTH.0.51=0.2
+value.VIGNETTE_STRENGTH.0.72=0.3
+value.VIGNETTE_STRENGTH.0.91=0.4
+value.VIGNETTE_STRENGTH.1.06=0.5
+value.VIGNETTE_STRENGTH.1.19=0.6
+value.VIGNETTE_STRENGTH.1.28=0.7
+value.VIGNETTE_STRENGTH.1.36=0.8
+value.VIGNETTE_STRENGTH.1.40=0.9
+value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.TONEMAP_LOWER_CURVE=Tonemap Lower Curve
-option.TONEMAP_LOWER_CURVE.comment=Adjusts contrast of darker colors.
+option.DIRTY_LENS=Dirty Lens
+option.DIRTY_LENS.comment=Adds dusty particle effect to bloom. §e[*]§rRequires bloom.
 
-option.TONEMAP_UPPER_CURVE=Tonemap Upper Curve
-option.TONEMAP_UPPER_CURVE.comment=Adjusts contrast of brighter colors.
+option.CHROMATIC_ABERRATION=Chromatic Aberration
+option.CHROMATIC_ABERRATION.comment=Adds color distortion around the borders.
+value.CHROMATIC_ABERRATION.0=OFF
+value.CHROMATIC_ABERRATION.1=Weak
+value.CHROMATIC_ABERRATION.2=Strong
 
-option.SATURATION=Saturation
-option.SATURATION.comment=Adjusts saturation of all colors.
 
-option.VIBRANCE=Vibrance
-option.VIBRANCE.comment=Adjusts saturation of less saturated colors, well saturated colors are less affected.
+option.UNDERWATER_DISTORTION=Underwater Distortion
+option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater.
 
-#Color Grading Config
-option.CG_RR=Red - Red Value
-option.CG_RG=Red - Green Value
-option.CG_RB=Red - Blue Value
-option.CG_RI=Red Strength Value
-option.CG_RM=Minimal Red Value
-option.CG_RC=Red Curve Value
+#Anti-aliasing
+option.FXAA=FXAA
+option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
 
-option.CG_GR=Green - Red Value
-option.CG_GG=Green - Green Value
-option.CG_GB=Green - Blue Value
-option.CG_GI=Green Strength Value
-option.CG_GM=Minimal Green Value
-option.CG_GC=Green Curve Value
-
-option.CG_BR=Blue - Red Value
-option.CG_BG=Blue - Green Value
-option.CG_BB=Blue - Blue Value
-option.CG_BI=Blue Strength Value
-option.CG_BM=Minimal Blue Value
-option.CG_BC=Blue Curve Value
-
-option.CG_TR=Tint - Red Value
-option.CG_TG=Tint - Green Value
-option.CG_TB=Tint - Blue Value
-option.CG_TI=Tint Strength Value
-option.CG_TM=Tint Mix Value
+option.TAA=TAA
+option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
 
 #Color
 option.LIGHT_MR=Red
@@ -675,7 +635,84 @@ option.SKY_VANILLA.comment=Use vanilla sky color.
 option.NETHER_VANILLA=Vanilla Nether
 option.NETHER_VANILLA.comment=Use vanilla nether color.
 
-#World
+#Color Grading & Tonemap
+option.EXPOSURE=Exposure
+option.TonemapExposure.comment=Adjusts overall brightness.
+
+option.AUTO_EXPOSURE=Auto Exposure
+option.AUTO_EXPOSURE.comment=Enables automatic adjustment to overall brightness.
+
+option.CLASSIC_EXPOSURE=Classic Exposure
+option.CLASSIC_EXPOSURE.comment=Enables increased exposure when going indoors.
+
+option.COLOR_GRADING=Color Grading
+option.COLOR_GRADING.comment=Enables color grading. §e[*]§rThis option doesn't need to be enabled to change tonemap, saturation, and vibrance sliders.
+
+option.TONEMAP_WHITE_CURVE=Tonemap White Curve
+option.TONEMAP_WHITE_CURVE.comment=Adjusts how quickly the tonemap can reach white.
+
+option.TONEMAP_LOWER_CURVE=Tonemap Lower Curve
+option.TONEMAP_LOWER_CURVE.comment=Adjusts contrast of darker colors.
+
+option.TONEMAP_UPPER_CURVE=Tonemap Upper Curve
+option.TONEMAP_UPPER_CURVE.comment=Adjusts contrast of brighter colors.
+
+option.SATURATION=Saturation
+option.SATURATION.comment=Adjusts saturation of all colors.
+
+option.VIBRANCE=Vibrance
+option.VIBRANCE.comment=Adjusts saturation of less saturated colors, well saturated colors are less affected.
+
+#Color Grading Config
+option.CG_RR=Red - Red Value
+option.CG_RG=Red - Green Value
+option.CG_RB=Red - Blue Value
+option.CG_RI=Red Strength Value
+option.CG_RM=Minimal Red Value
+option.CG_RC=Red Curve Value
+
+option.CG_GR=Green - Red Value
+option.CG_GG=Green - Green Value
+option.CG_GB=Green - Blue Value
+option.CG_GI=Green Strength Value
+option.CG_GM=Minimal Green Value
+option.CG_GC=Green Curve Value
+
+option.CG_BR=Blue - Red Value
+option.CG_BG=Blue - Green Value
+option.CG_BB=Blue - Blue Value
+option.CG_BI=Blue Strength Value
+option.CG_BM=Minimal Blue Value
+option.CG_BC=Blue Curve Value
+
+option.CG_TR=Tint - Red Value
+option.CG_TG=Tint - Green Value
+option.CG_TB=Tint - Blue Value
+option.CG_TI=Tint Strength Value
+option.CG_TM=Tint Mix Value
+
+#Extras
+option.OUTLINE=Outline
+option.OUTLINE.comment=Enables outline effect.
+value.OUTLINE.0=OFF
+value.OUTLINE.1=Black
+value.OUTLINE.2=Colored
+value.OUTLINE.3=1.12 Update Art
+value.OUTLINE.4=Dungeons
+
+option.TOON_LIGHTMAP=Toon Lightmap
+option.TOON_LIGHTMAP.comment=Reduces the quality of vanilla lighting for cel shading. §e[*]§rThis option is known for making the game "look bad", only enable this when needed.
+
+option.RETRO_FILTER=Retro Filter
+option.RETRO_FILTER.comment=Adds pixelation and dithering. §e[*]§rLower render quality for stronger pixelation. §c[-]§rIncompatible with anti-aliasing.
+
+option.WORLD_CURVATURE=World Curvature
+option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §c[-]§rMissing chunks are handled by Minecraft itself which I can't fix. §c[-]§rMay break block selection highlight on 1.17.
+
+option.WORLD_CURVATURE_SIZE=World Curvature Size
+option.WORLD_CURVATURE_SIZE.comment=Adjusts world curvature size. Negative values will bend the world upwards.
+
+#Animations
 option.WORLD_TIME_ANIMATION=World Time Animation
 option.WORLD_TIME_ANIMATION.comment=Use ingame time for moving objects. §e[*]§rThis option is mostly used when making cinematics.
 
@@ -683,18 +720,23 @@ option.ANIMATION_SPEED=Animation Speed
 option.ANIMATION_SPEED.comment=Adjusts animation speed.
 
 #Waving Blocks
+option.WAVING_GRASS=Grass
+option.WAVING_PLANT.comment=Allows grass to wave.
+option.WAVING_CROP=Crops
+option.WAVING_CROP.comment=Allows plants on farmlands to wave.
 option.WAVING_PLANT=Plants
 option.WAVING_PLANT.comment=Allows various plants to wave.
+option.WAVING_TALL_PLANT=Tall Plants
+option.WAVING_PLANT.comment=Allows 2 block height plants to wave.
 option.WAVING_LEAF=Leaves
 option.WAVING_LEAF.comment=Allows leaves to wave.
-option.WAVING_LIQUID=Liquids
-option.WAVING_LIQUID.comment=Allows water and lava to wave.
-option.WAVING_EXTRA=Extras
-option.WAVING_EXTRA.comment=Allows fire and lantern to wave.
-
-#Curvature
-option.WORLD_CURVATURE=World Curvature
-option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §c[-]§rMissing chunks are handled by Minecraft itself which I can't fix. §c[-]§rMay break block selection highlight on 1.17.
-
-option.WORLD_CURVATURE_SIZE=World Curvature Size
-option.WORLD_CURVATURE_SIZE.comment=Adjusts world curvature size. Negative values will bend the world upwards.
+option.WAVING_VINE=Vines
+option.WAVING_VINE.comment=Allows vines to wave.
+option.WAVING_WATER=Water
+option.WAVING_WATER.comment=Allows water to wave.
+option.WAVING_LAVA=Lava
+option.WAVING_LAVA.comment=Allows lava to wave.
+option.WAVING_FIRE=Fire
+option.WAVING_FIRE.comment=Allows fire to wave.
+option.WAVING_LANTERN=Lantern
+option.WAVING_LANTERN.comment=Allows lantern to wave.
