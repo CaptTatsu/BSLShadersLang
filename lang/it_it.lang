@@ -718,7 +718,12 @@ option.NETHER_VANILLA=Nether Predefinito
 option.NETHER_VANILLA.comment=Usa il colore del Nether Predefinito.
 
 #World ?-
-#Color Grading & Tonemap (aggiungere tutto)
+#Color Grading & Tonemap (aggiungere tutto) ------------------------------------------------------
+option.EXPOSURE=Esposizione
+option.TonemapExposure.comment=Regola la luminosità generale.
+
+option.AUTO_EXPOSURE=Auto Esposizione
+option.AUTO_EXPOSURE.comment=Consente la regolazione automatica della luminosità generale.
 
 option.WORLD_TIME_ANIMATION=Animazione del Tempo del Mondo
 option.WORLD_TIME_ANIMATION.comment=Usa nel tempo del gioco per gli oggetti in movimento. §e[*]§rQuesta opzione è usata soprattutto quando si fanno i filmati.
