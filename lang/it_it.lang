@@ -113,7 +113,7 @@ option.AO_STRENGTH.comment=Regola la forza dell'occlusione ambientale.
 option.DESATURATION=Desaturazione
 option.DESATURATION.comment=Riduce la saturazione mentre aggiunge un po' di tinta nelle aree più scure.
 
-option.DESATURATION_FACTOR=Fatt. di Desaturazion.
+option.DESATURATION_FACTOR=Fatt. di Desaturazione
 option.DESATURATION_FACTOR.comment=Regola la quantità massima di desaturazione applicata.
 value.DESATURATION_FACTOR.2.0=Molto Basso
 value.DESATURATION_FACTOR.1.5=Basso
@@ -123,9 +123,6 @@ value.DESATURATION_FACTOR.0.0=Molto Alto
 
 option.DYNAMIC_HANDLIGHT=Luce Manuale Dinamica
 option.DYNAMIC_HANDLIGHT.comment=Permette l'emissione del colore chiaro dei blocchi dalla vista quando si tengono certi oggetti.
-
-option.TOON_LIGHTMAP=Lightmap Cartone
-option.TOON_LIGHTMAP.comment=Riduce la qualità dell'illuminazione predefinito per il cel shading. §e[*]§rQuesta opzione è nota per rendere il vostro gioco "brutto", abilitatela solo quando ne avete bisogno.
 
 option.WHITE_WORLD=Mondo Bianco
 option.WHITE_WORLD.comment=Sostituisce le texture con il colore bianco.
