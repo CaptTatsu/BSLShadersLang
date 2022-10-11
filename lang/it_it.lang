@@ -139,16 +139,11 @@ option.MATERIAL_FORMAT.comment=Determina il formato della mappa speculare e norm
 value.MATERIAL_FORMAT.0=SEUS/Old PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
-option.SSS=Diffusione Superficiale
+option.SSS=Diffusione Superficiale*
 option.SSS.comment=Permette alla luce di penetrare e disperdersi attraverso alcuni blocchi.
-value.SSS.0=§cOFF
-value.SSS.1=Solo AdvMat*
-value.SSS.2=Completo
 
-option.SSS_QUALITY=Qualita SSS
-option.SSS_QUALITY.comment=Regola la qualità della diffusione del sottosuolo.
-value.SSS_QUALITY.0=Basso
-value.SSS_QUALITY.1=Alto
+option.BASIC_SSS=Diffusione base
+option.BASIC_SSS.comment=Abilità una versione semplificata della dispersione del sottosuolo su determinati blocchi.
 
 option.EMISSIVE=Emissivo
 option.EMISSIVE.comment=Permette a certe superfici di essere più luminose.
@@ -163,6 +158,9 @@ option.ALPHA_BLEND=Fusione Alfa
 option.ALPHA_BLEND.comment=TBA. 
 value.ALPHA_BLEND.0=Gamma
 value.ALPHA_BLEND.1=Lineare
+
+option.ENTITY_FLASH=Entità Flash
+option.ENTITY_FLASH.comment=Consente alle entità danneggiate e hai creeper vicino di lampeggiare.
 
 #Specular & Reflections
 option.REFLECTION=Riflessi
@@ -191,6 +189,20 @@ option.SPECULAR_HIGHLIGHT_ROUGH.comment=Permette alle superfici ruvide di avere 
 
 option.ALBEDO_METAL=Metallo Tinto e codificate Albedo*
 option.ALBEDO_METAL.comment=Applica la texture di base come tinta su superfici metalliche codificate. §e[*]§rFunziona solo sul formato di materiale labPBR.
+
+option.REFLECTION_MODE=Modalità di riflessione
+option.REFLECTION_MODE.comment=Regola il comportamento di riflessione.
+value.REFLECTION_MODE.0=Meno duplicati
+value.REFLECTION_MODE.1=Bilanciato
+value.REFLECTION_MODE.2=Più riempimento degli spazi vuoti
+
+option.REFLECTION_SKY_FALLOFF=Decadimento del riflesso del cielo
+option.REFLECTION_SKY_FALLOFF.comment=Regola la distanza di dissolvenza del riflesso del cielo in condizioni di luce solare bassa.
+value.REFLECTION_SKY_FALLOFF.1=Molto debole
+value.REFLECTION_SKY_FALLOFF.2=Debole
+value.REFLECTION_SKY_FALLOFF.4=Bilanciato
+value.REFLECTION_SKY_FALLOFF.8=Forte
+value.REFLECTION_SKY_FALLOFF.16=Fortissimo
 
 #Normals & Parallax
 option.PARALLAX=Mappatura dell'Occlusione del Parallasse*
