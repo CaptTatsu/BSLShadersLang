@@ -20,15 +20,9 @@ screen.CLOUDS=Configurazione delle Nuvole
 
 screen.WATER=Acqua
 
-screen.POST_EFFECTS=Post Effetti
-screen.BLOOM=Configura Bloom
+screen.CAMERA=Camera
 
-screen.CGT=Grad. del Colore & Tonal. della Map.
-screen.COLOR_GRADING=Config. della Grad. del Colore
-screen.CG_R=Canale Rosso
-screen.CG_G=Canale Verde
-screen.CG_B=Canale Blu
-screen.CG_T=Tonalità
+screen.ANTIALIASING=Anti-aliasing
 
 screen.COLOR=Colore
 screen.LIGHT_COLOR=Colore dell'Illuminazione
@@ -64,9 +58,16 @@ screen.NETHER_W=Foresta Distorta
 screen.NETHER_B=Delta Basalto
 screen.END_COLOR=Colore del L'End
 
-screen.WORLD=Mondo
-screen.WAVING=Blocchi Onde
-screen.CURVATURE=Curvatura
+screen.CGT=Grad. del Colore & Tonal. della Mappa
+screen.COLOR_GRADING=Config. della Grad. del Colore
+screen.CG_R=Canale Rosso
+screen.CG_G=Canale Verde
+screen.CG_B=Canale Blu
+screen.CG_T=Tonalità
+
+screen.EXTRAS=Extra
+
+screen.ANIMATION=Animazioni
 
 #Settings
 ##Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:11.10.2022a##
@@ -91,14 +92,17 @@ option.SHADOW_COLOR=Ombra Colorata
 option.SHADOW_COLOR.comment=Abilità l'ombra colorata dai traslucidi. §a[+]§rUtilizzatà per Fasci luminosi volumetrici colorati. §c[-]§rCosto delle prestazioni leggermente più elevato quando si utilizza il Filtro ombra.
 
 option.SHADOW_FILTER=Filtro ombra
-option.SHADOW_FILTER.comment=Abilità il Filtro ombra. §a[+]§rQuesto effetto beneficia del TAA.
+option.SHADOW_FILTER.comment=Abilità il Filtro ombra.
 
-option.sunPathRotation=Rotazione del percorso del sole
-option.sunPathRotation.comment=Regola l'angolo del sole.
+option.SHADOW_ENTITY=Ombre entità
+option.SHADOW_ENTITY.comment=Abilita l'ombreggiatura sulle entità. §E[*] §rDisattiva questa opzione quando viene caricata un'enorme quantità di entità. §E[*] §rFunziona solo su 1.16.5 e versioni successive.
 
 option.SHADOW_PIXEL=Ombre Pixel
 option.SHADOW_PIXEL.comment=Applica l'effetto pixel sulle ombre.
 value.SHADOW_PIXEL.0=OFF
+
+option.sunPathRotation=Rotazione del percorso del sole
+option.sunPathRotation.comment=Regola l'angolo del sole.
 
 option.AO=Occlusione Ambientale
 option.AO.comment=Aggiunge ombre morbide intorno al contatto o all'intersezione della superficie.
