@@ -69,8 +69,8 @@ screen.WAVING=Blocchi Onde
 screen.CURVATURE=Curvatura
 
 #Settings
-#Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:18.01.2022b
-option.ABOUT=BSL v8.1.02.1
+##Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:11.10.2022a##
+option.ABOUT=BSL v8.2
 option.ABOUT.comment=Creato da Capt Tatsu. bitslablab.com
 value.ABOUT.0=Creato da Capt Tatsu
 
