@@ -407,7 +407,7 @@ option.WATER_PIXEL=Pixel Bloccato
 option.WATER_PIXEL.comment=Applica l'effetto di pixelatura dell'acqua normale.
 value.WATER_PIXEL.0=OFF
 
-#Post Effetti
+#Camera
 option.DOF=Profondità di Campo
 options.DOF.comment=Abilita l'effetto di messa a fuoco della telecamera.
 option.DOF_STRENGTH=DoF Forza
@@ -458,7 +458,7 @@ value.CHROMATIC_ABERRATION.1=Debole
 value.CHROMATIC_ABERRATION.2=Forte
 
 #Bloom
-option.BLOOM_STRENGTH=Forza
+option.BLOOM_STRENGTH=Forza bloom
 option.BLOOM_STRENGTH.comment=Regola l'intensità del Bloom.
 option.BLOOM_CONTRAST=Contrasto
 option.BLOOM_CONTRAST.comment=Regola se il bloom deve preservare il contrasto del colore o la visibilità dei dettagli. Un valore più alto preserva il contrasto del colore mentre un valore più basso preserva la visibilità dei dettagli.
@@ -472,7 +472,7 @@ value.BLOOM_CONTRAST.2=0.50
 value.BLOOM_CONTRAST.3=0.75
 value.BLOOM_CONTRAST.4=1.00
 
-option.BLOOM_RADIUS=Raggio
+option.BLOOM_RADIUS=Raggio bloom
 option.BLOOM_RADIUS.comment=Regola la distanza di diffusione del bagliore.
 value.BLOOM_RADIUS.1=Minimo
 value.BLOOM_RADIUS.2=Molto Basso
