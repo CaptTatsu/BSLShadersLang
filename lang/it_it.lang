@@ -124,12 +124,15 @@ value.DESATURATION_FACTOR.0.0=Molto Alto
 option.DYNAMIC_HANDLIGHT=Luce Manuale Dinamica
 option.DYNAMIC_HANDLIGHT.comment=Permette l'emissione del colore chiaro dei blocchi dalla vista quando si tengono certi oggetti.
 
+option.TOON_LIGHTMAP=Lightmap Cartone
+option.TOON_LIGHTMAP.comment=Riduce la qualità dell'illuminazione predefinito per il cel shading. §e[*]§rQuesta opzione è nota per rendere il vostro gioco "brutto", abilitatela solo quando ne avete bisogno.
+
 option.WHITE_WORLD=Mondo Bianco
 option.WHITE_WORLD.comment=Sostituisce le texture con il colore bianco.
 
 #Material
 option.ADVANCED_MATERIALS=Materiali Avanzati
-option.ADVANCED_MATERIALS.comment=Abilità l'uso della mappatura speculare e normale che permette un maggiore dettaglio su varie cose. §e[*]§rQuesta opzione richiede un pacchetto di risorse che contenga mappe speculari e/o normali, disabilitatelo se non ne usate uno. §e[*]§rLe opzioni che richiedono materiali avanzati sono indicate con *, cambiare queste opzioni non influenzerà la grafica o le prestazioni mentre i materiali avanzati sono disabilitati.
+option.ADVANCED_MATERIALS.comment=Abilità l'uso della mappatura speculare e normale che permette un maggiore dettaglio su varie cose. §e[*]§rQuesta opzione richiede un pacchetto di risorse che contenga mappe speculari e/o normali, disabilitatelo se nessuno è attualmente utilizzato. §e[*]§rLe opzioni che richiedono materiali avanzati sono indicate con *, cambiare queste opzioni non influenzerà la grafica o le prestazioni mentre i materiali avanzati sono disabilitati.
 
 option.MATERIAL_FORMAT=Formato Materiale*
 option.MATERIAL_FORMAT.comment=Determina il formato della mappa speculare e normale usato dal resourcepack. §e[*]§rGli artisti di solito dicono quale formato è usato nel loro resourcepack, usare il formato sbagliato può dare risultati strani.
