@@ -70,6 +70,9 @@ screen.EXTRAS=Extra
 screen.ANIMATION=Animazioni
 
 #Settings
+##Template##
+## ? (aggiungere o aggiustare la stringa)
+## ?- (Rimuovere la stringa)
 ##Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:11.10.2022a##
 option.ABOUT=BSL v8.2
 option.ABOUT.comment=Creato da Capt Tatsu. bitslablab.com
@@ -422,30 +425,30 @@ option.MOTION_BLUR_STRENGTH.comment=Regola l'Intensità della Sfocatura del Movi
 option.BLOOM=Bloom
 option.BLOOM.comment=Permette alle aree luminose di brillare.
 
-option.LENS_FLARE=Riflesso della Lente
-option.LENS_FLARE.comment=Abilità il bagliore della lente.
+option.LENS_FLARE=Riflesso della Lente ?-
+option.LENS_FLARE.comment=Abilità il bagliore della lente. ?-
 
-option.LENS_FLARE_STRENGTH=Forza del Riflesso della Lente
-option.LENS_FLARE_STRENGTH.comment=Regola l'intensità del bagliore della lente.
+option.LENS_FLARE_STRENGTH=Forza del Riflesso della Lente ?-
+option.LENS_FLARE_STRENGTH.comment=Regola l'intensità del bagliore della lente. ?-
 
-option.FXAA=FXAA
-option.FXAA.comment=Abilità l'anti-aliasing approssimativo veloce, smussando i bordi con un costo minimo di prestazioni. §e[*]§rDisabilità l'anti-aliasing nel menu Shaders mentre questa opzione è abilitata.
+option.FXAA=FXAA ?-
+option.FXAA.comment=Abilità l'anti-aliasing approssimativo veloce, smussando i bordi con un costo minimo di prestazioni. §e[*]§rDisabilità l'anti-aliasing nel menu Shaders mentre questa opzione è abilitata. ?-
 
-option.TAA=TAA
+option.TAA=TAA ?-
 option.TAA.comment=Abilità l'anti-aliasing temporale, Il smart frame blending cattura e migliora i piccoli dettagli e alcuni effetti. §e[*]§rSharpening incluso. §e[*]§rSi prega di disabilitare l'anti-aliasing nel menu Shaders mentre questa opzione è abilitata.
 
-option.VIGNETTE=Vignette
-option.Vignette.comment=Dissolve il bordo dello schermo in nero. §e[*]§rDisabilita per le immagini a 360.
+option.VIGNETTE=Vignette ?-
+option.Vignette.comment=Dissolve il bordo dello schermo in nero. §e[*]§rDisabilita per le immagini a 360. ?-
 
-option.DIRTY_LENS=Lente Sporca
-option.DIRTY_LENS.comment=Aggiunge l'effetto di particelle polverose al bloom. §e[*]§rRichiede il bloom.
+option.DIRTY_LENS=Lente Sporca ?-
+option.DIRTY_LENS.comment=Aggiunge l'effetto di particelle polverose al bloom. §e[*]§rRichiede il bloom. ?-
 
-option.RETRO_FILTER=Filtro retrò
+option.RETRO_FILTER=Filtro retrò ?-
 option.RETRO_FILTER.comment=Aggiunge pixelatura e dithering. §e[*]§rQualità di rendering più bassa per una maggiore pixelatura. §c[-]§rIncompatibile con l'anti-aliasing.
 
-option.OUTLINE=Contorno
-option.OUTLINE.comment=Abilità l'effetto di contorno.
-value.OUTLINE.0=OFF
+option.OUTLINE=Contorno ?-
+option.OUTLINE.comment=Abilità l'effetto di contorno. ?-
+value.OUTLINE.0=OFF ?-
 value.OUTLINE.1=Nero
 value.OUTLINE.2=Colorato
 value.OUTLINE.3=1.12 Aggiorn. Arte
@@ -455,12 +458,12 @@ option.CHROMATIC_ABERRATION=Aberrazione Cromatica
 option.CHROMATIC_ABERRATION.comment=Aggiunge la distorsione del colore attorno ai bordi.
 value.CHROMATIC_ABERRATION.0=OFF
 value.CHROMATIC_ABERRATION.1=Debole
-value.CHROMATIC_ABERRATION.2=Forte
+value.CHROMATIC_ABERRATION.2=Forte ?-
 
-#Bloom
+#Bloom ?-
 option.BLOOM_STRENGTH=Forza bloom
 option.BLOOM_STRENGTH.comment=Regola l'intensità del Bloom.
-option.BLOOM_CONTRAST=Contrasto
+option.BLOOM_CONTRAST=Contrasto bloom
 option.BLOOM_CONTRAST.comment=Regola se il bloom deve preservare il contrasto del colore o la visibilità dei dettagli. Un valore più alto preserva il contrasto del colore mentre un valore più basso preserva la visibilità dei dettagli.
 value.BLOOM_CONTRAST.-4=-1.00
 value.BLOOM_CONTRAST.-3=-0.75
@@ -482,58 +485,87 @@ value.BLOOM_RADIUS.5=Alto
 value.BLOOM_RADIUS.6=Molto Alto
 value.BLOOM_RADIUS.7=Massimo
 
-#Color Grading & Tonemap
-option.EXPOSURE=Esposizione
-option.TonemapExposure.comment=Regola la luminosità generale.
+option.LENS_FLARE=Lens Flare ?
+option.LENS_FLARE.comment=Enables lens flare. ?
+option.EXPOSURE=Esposizione ?-
+option.TonemapExposure.comment=Regola la luminosità generale. ?-
 
-option.AUTO_EXPOSURE=Auto Esposizione
-option.AUTO_EXPOSURE.comment=Consente la regolazione automatica della luminosità generale.
+option.LENS_FLARE_STRENGTH=Lens Flare Strength ?
+option.LENS_FLARE_STRENGTH.comment=Adjusts lens flare intensity. ?
 
-option.COLOR_GRADING=Classificazione del Colore
-option.COLOR_GRADING.comment=Abilita il color grading. §e[*]§rQuesta opzione non ha bisogno di essere abilitata per cambiare i cursori di tonalità, saturazione e vibrazione.
+option.VIGNETTE=Vignette ?-
+option.Vignette.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging. ?-
 
-option.TONEMAP_WHITE_CURVE=Tonalità Curva Bianca
-option.TONEMAP_WHITE_CURVE.comment=Regola quanto velocemente la mappa della tonalità può raggiungere il bianco.
+option.TONEMAP_WHITE_CURVE=Tonalità Curva Bianca ?-
+option.TONEMAP_WHITE_CURVE.comment=Regola quanto velocemente la mappa della tonalità può raggiungere il bianco. ?-
+option.VIGNETTE_STRENGTH=Vignette Strength ?
+option.VIGNETTE_STRENGTH.comment=Adjusts vignette intensity. ?
+value.VIGNETTE_STRENGTH.0.26=0.1
+value.VIGNETTE_STRENGTH.0.51=0.2
+value.VIGNETTE_STRENGTH.0.72=0.3
+value.VIGNETTE_STRENGTH.0.91=0.4
+value.VIGNETTE_STRENGTH.1.06=0.5
+value.VIGNETTE_STRENGTH.1.19=0.6
+value.VIGNETTE_STRENGTH.1.28=0.7
+value.VIGNETTE_STRENGTH.1.36=0.8
+value.VIGNETTE_STRENGTH.1.40=0.9
+value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.TONEMAP_LOWER_CURVE=Tonalità Curva Inferiore
-option.TONEMAP_LOWER_CURVE.comment=Regola il contrasto dei colori più scuri.
+option.TONEMAP_LOWER_CURVE=Tonalità Curva Inferiore ?-
+option.TONEMAP_LOWER_CURVE.comment=Regola il contrasto dei colori più scuri. ?-
 
-option.TONEMAP_UPPER_CURVE=Tonalità Curva Superiore
-option.TONEMAP_UPPER_CURVE.comment=Regola il contrasto dei colori più luminosi.
+option.TONEMAP_UPPER_CURVE=Tonalità Curva Superiore ?-
+option.TONEMAP_UPPER_CURVE.comment=Regola il contrasto dei colori più luminosi. ?-
+option.DIRTY_LENS=Dirty Lens ?
+option.DIRTY_LENS.comment=Adds dusty particle effect to bloom. §e[*]§rRequires bloom. ?
 
-option.SATURATION=Saturazione
-option.SATURATION.comment=Regola la saturazione di tutti i colori.
+option.SATURATION=Saturazione ?-
+option.SATURATION.comment=Regola la saturazione di tutti i colori. ?-
+option.CHROMATIC_ABERRATION=Chromatic Aberration ?
+option.CHROMATIC_ABERRATION.comment=Adds color distortion around the borders. ?
+value.CHROMATIC_ABERRATION.0=OFF ?
+value.CHROMATIC_ABERRATION.1=Weak ?
+value.CHROMATIC_ABERRATION.2=Strong ?
 
-option.VIBRANCE=Vibrazione
-option.VIBRANCE.comment=Regola la saturazione dei colori meno saturi, i colori ben saturi sono meno influenzati.
+option.VIBRANCE=Vibrazione ?-
+option.VIBRANCE.comment=Regola la saturazione dei colori meno saturi, i colori ben saturi sono meno influenzati. ?-
 
-#Color Grading Config
-option.CG_RR=Rosso - Valore Rosso
-option.CG_RG=Rosso - Valore Verde
-option.CG_RB=Rosso - Valore Blu
-option.CG_RI=Valore di Forza Rosso
-option.CG_RM=Valore Rosso Minimo
-option.CG_RC=Valore della Curva Rossa
+#Color Grading Config ?-
+option.CG_RR=Rosso - Valore Rosso ?-
+option.CG_RG=Rosso - Valore Verde ?-
+option.CG_RB=Rosso - Valore Blu ?-
+option.CG_RI=Valore di Forza Rosso ?-
+option.CG_RM=Valore Rosso Minimo ?-
+option.CG_RC=Valore della Curva Rossa ?-
+option.UNDERWATER_DISTORTION=Underwater Distortion ?
+option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater. ?
 
-option.CG_GR=Verde - Valore Rosso
-option.CG_GG=Verde - Valore Verde
-option.CG_GB=Verde - Valore Blu
-option.CG_GI=Valore di Forza Verde
-option.CG_GM=Valore Verde Minimo
-option.CG_GC=Valore della Curva Verde
+option.CG_GR=Verde - Valore Rosso ?-
+option.CG_GG=Verde - Valore Verde ?-
+option.CG_GB=Verde - Valore Blu ?-
+option.CG_GI=Valore di Forza Verde ?-
+option.CG_GM=Valore Verde Minimo ?-
+option.CG_GC=Valore della Curva Verde ?-
 
-option.CG_BR=Blu - Valore Rosso
-option.CG_BG=Blu - Valore Verde
-option.CG_BB=Blu - Valore Blu
-option.CG_BI=Valore di Forza Blu
-option.CG_BM=Valore Blu Minimo
-option.CG_BC=Valore della Curva Blu
+option.CG_BR=Blu - Valore Rosso ?-
+option.CG_BG=Blu - Valore Verde ?-
+option.CG_BB=Blu - Valore Blu ?-
+option.CG_BI=Valore di Forza Blu ?-
+option.CG_BM=Valore Blu Minimo ?-
+option.CG_BC=Valore della Curva Blu ?-
 
-option.CG_TR=Colorato - Valore Rosso
-option.CG_TG=Colorato - Valore Verde
-option.CG_TB=Colorato - Valore Blu
-option.CG_TI=Valore di Forza della Colorazione
-option.CG_TM=Valore della Miscela della Colorazione
+#Anti-aliasing
+option.FXAA=FXAA ?
+option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled. ?
+
+option.CG_TR=Colorato - Valore Rosso ?-
+option.CG_TG=Colorato - Valore Verde ?-
+option.CG_TB=Colorato - Valore Blu ?-
+option.CG_TI=Valore di Forza della Colorazione ?-
+option.CG_TM=Valore della Miscela della Colorazione ?-
+
+option.TAA=TAA ?
+option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled. ?
 
 #Color
 option.LIGHT_MR=Rosso
@@ -685,7 +717,9 @@ option.SKY_VANILLA.comment=Usa il colore del cielo Predefinito.
 option.NETHER_VANILLA=Nether Predefinito
 option.NETHER_VANILLA.comment=Usa il colore del Nether Predefinito.
 
-#World
+#World ?-
+#Color Grading & Tonemap (aggiungere tutto)
+
 option.WORLD_TIME_ANIMATION=Animazione del Tempo del Mondo
 option.WORLD_TIME_ANIMATION.comment=Usa nel tempo del gioco per gli oggetti in movimento. §e[*]§rQuesta opzione è usata soprattutto quando si fanno i filmati.
 
