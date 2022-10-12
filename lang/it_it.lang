@@ -73,7 +73,7 @@ screen.ANIMATION=Animazioni
 ##Template##
 ## ? (aggiungere o aggiustare la stringa)
 ## ?- (Rimuovere la stringa)
-##Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:11.10.2022a##
+##Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:11.10.2022a ##
 option.ABOUT=BSL v8.2
 option.ABOUT.comment=Creato da Capt Tatsu. bitslablab.com
 value.ABOUT.0=Creato da Capt Tatsu
@@ -354,7 +354,7 @@ option.CLOUD_BRIGHTNESS=Luminosità
 option.CLOUD_BRIGHTNESS.comment=Regola la luminosità delle nuvole.
 
 #Water
-option.WATER_MODE=Mod. Texture Acqua
+option.WATER_MODE=Modalità Texture Acqua
 option.WATER_MODE.comment=Determina se la texture dell'acqua predefinita deve essere usata. Normale: colore piatto dell'acqua, nessuna texture. Predefinito: texture Di Minecraft. Predefinito Tinto: texture predefinita con il colore dell'acqua. Predefinito Piatto: colore piatto dell'acqua predefinita.
 value.WATER_MODE.0=Normale
 value.WATER_MODE.1=Predefinito
@@ -422,31 +422,6 @@ option.MOTION_BLUR_STRENGTH.comment=Regola l'Intensità della Sfocatura del Movi
 option.BLOOM=Bloom
 option.BLOOM.comment=Permette alle aree luminose di brillare.
 
-option.LENS_FLARE=Riflesso della Lente ?-
-option.LENS_FLARE.comment=Abilità il bagliore della lente. ?-
-
-option.LENS_FLARE_STRENGTH=Forza del Riflesso della Lente ?-
-option.LENS_FLARE_STRENGTH.comment=Regola l'intensità del bagliore della lente. ?-
-
-option.FXAA=FXAA ?-
-option.FXAA.comment=Abilità l'anti-aliasing approssimativo veloce, smussando i bordi con un costo minimo di prestazioni. §e[*]§rDisabilità l'anti-aliasing nel menu Shaders mentre questa opzione è abilitata. ?-
-
-option.TAA=TAA ?-
-option.TAA.comment=Abilità l'anti-aliasing temporale, Il smart frame blending cattura e migliora i piccoli dettagli e alcuni effetti. §e[*]§rSharpening incluso. §e[*]§rSi prega di disabilitare l'anti-aliasing nel menu Shaders mentre questa opzione è abilitata.
-
-option.VIGNETTE=Vignette ?-
-option.Vignette.comment=Dissolve il bordo dello schermo in nero. §e[*]§rDisabilita per le immagini a 360. ?-
-
-option.DIRTY_LENS=Lente Sporca ?-
-option.DIRTY_LENS.comment=Aggiunge l'effetto di particelle polverose al bloom. §e[*]§rRichiede il bloom. ?-
-
-option.CHROMATIC_ABERRATION=Aberrazione Cromatica
-option.CHROMATIC_ABERRATION.comment=Aggiunge la distorsione del colore attorno ai bordi.
-value.CHROMATIC_ABERRATION.0=OFF
-value.CHROMATIC_ABERRATION.1=Debole
-value.CHROMATIC_ABERRATION.2=Forte ?-
-
-#Bloom ?-
 option.BLOOM_STRENGTH=Forza bloom
 option.BLOOM_STRENGTH.comment=Regola l'intensità del Bloom.
 option.BLOOM_CONTRAST=Contrasto bloom
@@ -471,16 +446,14 @@ value.BLOOM_RADIUS.5=Alto
 value.BLOOM_RADIUS.6=Molto Alto
 value.BLOOM_RADIUS.7=Massimo
 
-option.LENS_FLARE=Lens Flare ?
-option.LENS_FLARE.comment=Enables lens flare. ?
-option.EXPOSURE=Esposizione ?-
-option.TonemapExposure.comment=Regola la luminosità generale. ?-
+option.LENS_FLARE=Riflesso della Lente
+option.LENS_FLARE.comment=Abilità il bagliore della lente.
 
-option.LENS_FLARE_STRENGTH=Lens Flare Strength ?
-option.LENS_FLARE_STRENGTH.comment=Adjusts lens flare intensity. ?
+option.LENS_FLARE_STRENGTH=Forza del Riflesso della Lente
+option.LENS_FLARE_STRENGTH.comment=Regola l'intensità del bagliore della lente.
 
-option.VIGNETTE=Vignette ?-
-option.Vignette.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging. ?-
+option.VIGNETTE=Vignetta
+option.Vignette.comment=Dissolve il bordo dello schermo in nero. §e[*]§rDisabilita per le immagini a 360.
 
 option.VIGNETTE_STRENGTH=Vignette Strength ?
 option.VIGNETTE_STRENGTH.comment=Adjusts vignette intensity. ?
@@ -495,24 +468,24 @@ value.VIGNETTE_STRENGTH.1.36=0.8
 value.VIGNETTE_STRENGTH.1.40=0.9
 value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.DIRTY_LENS=Dirty Lens ?
-option.DIRTY_LENS.comment=Adds dusty particle effect to bloom. §e[*]§rRequires bloom. ?
+option.DIRTY_LENS=Lente Sporca
+option.DIRTY_LENS.comment=Aggiunge l'effetto di particelle polverose al bloom. §e[*]§rRichiede il bloom.
 
-option.CHROMATIC_ABERRATION=Chromatic Aberration ?
-option.CHROMATIC_ABERRATION.comment=Adds color distortion around the borders. ?
-value.CHROMATIC_ABERRATION.0=OFF ?
-value.CHROMATIC_ABERRATION.1=Weak ?
-value.CHROMATIC_ABERRATION.2=Strong ?
+option.CHROMATIC_ABERRATION=Aberrazione Cromatica
+option.CHROMATIC_ABERRATION.comment=Aggiunge la distorsione del colore attorno ai bordi.
+value.CHROMATIC_ABERRATION.0=OFF
+value.CHROMATIC_ABERRATION.1=Debole
+value.CHROMATIC_ABERRATION.2=Forte
 
 option.UNDERWATER_DISTORTION=Underwater Distortion ?
 option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater. ?
 
 #Anti-aliasing
-option.FXAA=FXAA ?
-option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled. ?
+option.FXAA=FXAA
+option.FXAA.comment=Abilità l'anti-aliasing approssimativo veloce, smussando i bordi con un costo minimo di prestazioni. §e[*]§rDisabilità l'anti-aliasing nel menu Shaders mentre questa opzione è abilitata.
 
-option.TAA=TAA ?
-option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled. ?
+option.TAA=TAA
+option.TAA.comment=Abilità l'anti-aliasing temporale, Il smart frame blending cattura e migliora i piccoli dettagli e alcuni effetti. §e[*]§rSharpening incluso. §e[*]§rSi prega di disabilitare l'anti-aliasing nel menu Shaders mentre questa opzione è abilitata.
 
 #Color
 option.LIGHT_MR=Rosso
