@@ -127,9 +127,6 @@ value.DESATURATION_FACTOR.0.0=Molto Alto
 option.DYNAMIC_HANDLIGHT=Luce Manuale Dinamica
 option.DYNAMIC_HANDLIGHT.comment=Permette l'emissione del colore chiaro dei blocchi dalla vista quando si tengono certi oggetti.
 
-option.TOON_LIGHTMAP=Lightmap Cartone
-option.TOON_LIGHTMAP.comment=Riduce la qualità dell'illuminazione predefinito per il cel shading. §e[*]§rQuesta opzione è nota per rendere il vostro gioco "brutto", abilitatela solo quando ne avete bisogno.
-
 option.WHITE_WORLD=Mondo Bianco
 option.WHITE_WORLD.comment=Sostituisce le texture con il colore bianco.
 
@@ -443,17 +440,6 @@ option.Vignette.comment=Dissolve il bordo dello schermo in nero. §e[*]§rDisabi
 option.DIRTY_LENS=Lente Sporca ?-
 option.DIRTY_LENS.comment=Aggiunge l'effetto di particelle polverose al bloom. §e[*]§rRichiede il bloom. ?-
 
-option.RETRO_FILTER=Filtro retrò ?-
-option.RETRO_FILTER.comment=Aggiunge pixelatura e dithering. §e[*]§rQualità di rendering più bassa per una maggiore pixelatura. §c[-]§rIncompatibile con l'anti-aliasing.
-
-option.OUTLINE=Contorno ?-
-option.OUTLINE.comment=Abilità l'effetto di contorno. ?-
-value.OUTLINE.0=OFF ?-
-value.OUTLINE.1=Nero
-value.OUTLINE.2=Colorato
-value.OUTLINE.3=1.12 Aggiorn. Arte
-value.OUTLINE.4=Dungeons
-
 option.CHROMATIC_ABERRATION=Aberrazione Cromatica
 option.CHROMATIC_ABERRATION.comment=Aggiunge la distorsione del colore attorno ai bordi.
 value.CHROMATIC_ABERRATION.0=OFF
@@ -496,8 +482,6 @@ option.LENS_FLARE_STRENGTH.comment=Adjusts lens flare intensity. ?
 option.VIGNETTE=Vignette ?-
 option.Vignette.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging. ?-
 
-option.TONEMAP_WHITE_CURVE=Tonalità Curva Bianca ?-
-option.TONEMAP_WHITE_CURVE.comment=Regola quanto velocemente la mappa della tonalità può raggiungere il bianco. ?-
 option.VIGNETTE_STRENGTH=Vignette Strength ?
 option.VIGNETTE_STRENGTH.comment=Adjusts vignette intensity. ?
 value.VIGNETTE_STRENGTH.0.26=0.1
@@ -511,58 +495,21 @@ value.VIGNETTE_STRENGTH.1.36=0.8
 value.VIGNETTE_STRENGTH.1.40=0.9
 value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.TONEMAP_LOWER_CURVE=Tonalità Curva Inferiore ?-
-option.TONEMAP_LOWER_CURVE.comment=Regola il contrasto dei colori più scuri. ?-
-
-option.TONEMAP_UPPER_CURVE=Tonalità Curva Superiore ?-
-option.TONEMAP_UPPER_CURVE.comment=Regola il contrasto dei colori più luminosi. ?-
 option.DIRTY_LENS=Dirty Lens ?
 option.DIRTY_LENS.comment=Adds dusty particle effect to bloom. §e[*]§rRequires bloom. ?
 
-option.SATURATION=Saturazione ?-
-option.SATURATION.comment=Regola la saturazione di tutti i colori. ?-
 option.CHROMATIC_ABERRATION=Chromatic Aberration ?
 option.CHROMATIC_ABERRATION.comment=Adds color distortion around the borders. ?
 value.CHROMATIC_ABERRATION.0=OFF ?
 value.CHROMATIC_ABERRATION.1=Weak ?
 value.CHROMATIC_ABERRATION.2=Strong ?
 
-option.VIBRANCE=Vibrazione ?-
-option.VIBRANCE.comment=Regola la saturazione dei colori meno saturi, i colori ben saturi sono meno influenzati. ?-
-
-#Color Grading Config ?-
-option.CG_RR=Rosso - Valore Rosso ?-
-option.CG_RG=Rosso - Valore Verde ?-
-option.CG_RB=Rosso - Valore Blu ?-
-option.CG_RI=Valore di Forza Rosso ?-
-option.CG_RM=Valore Rosso Minimo ?-
-option.CG_RC=Valore della Curva Rossa ?-
 option.UNDERWATER_DISTORTION=Underwater Distortion ?
 option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater. ?
-
-option.CG_GR=Verde - Valore Rosso ?-
-option.CG_GG=Verde - Valore Verde ?-
-option.CG_GB=Verde - Valore Blu ?-
-option.CG_GI=Valore di Forza Verde ?-
-option.CG_GM=Valore Verde Minimo ?-
-option.CG_GC=Valore della Curva Verde ?-
-
-option.CG_BR=Blu - Valore Rosso ?-
-option.CG_BG=Blu - Valore Verde ?-
-option.CG_BB=Blu - Valore Blu ?-
-option.CG_BI=Valore di Forza Blu ?-
-option.CG_BM=Valore Blu Minimo ?-
-option.CG_BC=Valore della Curva Blu ?-
 
 #Anti-aliasing
 option.FXAA=FXAA ?
 option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled. ?
-
-option.CG_TR=Colorato - Valore Rosso ?-
-option.CG_TG=Colorato - Valore Verde ?-
-option.CG_TB=Colorato - Valore Blu ?-
-option.CG_TI=Valore di Forza della Colorazione ?-
-option.CG_TM=Valore della Miscela della Colorazione ?-
 
 option.TAA=TAA ?
 option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled. ?
@@ -717,14 +664,84 @@ option.SKY_VANILLA.comment=Usa il colore del cielo Predefinito.
 option.NETHER_VANILLA=Nether Predefinito
 option.NETHER_VANILLA.comment=Usa il colore del Nether Predefinito.
 
-#World ?-
-#Color Grading & Tonemap (aggiungere tutto) ------------------------------------------------------
+#Color Grading & Tonemap
 option.EXPOSURE=Esposizione
 option.TonemapExposure.comment=Regola la luminosità generale.
 
 option.AUTO_EXPOSURE=Auto Esposizione
 option.AUTO_EXPOSURE.comment=Consente la regolazione automatica della luminosità generale.
 
+option.CLASSIC_EXPOSURE=Classic Exposure ?
+option.CLASSIC_EXPOSURE.comment=Enables increased exposure when going indoors. ?
+
+option.COLOR_GRADING=Color Grading ?
+option.COLOR_GRADING.comment=Enables color grading. §e[*]§rThis option doesn't need to be enabled to change tonemap, saturation, and vibrance sliders. ?
+
+option.TONEMAP_WHITE_CURVE=Tonalità Curva Bianca
+option.TONEMAP_WHITE_CURVE.comment=Regola quanto velocemente la mappa della tonalità può raggiungere il bianco.
+
+option.TONEMAP_LOWER_CURVE=Tonalità Curva Inferiore
+option.TONEMAP_LOWER_CURVE.comment=Regola il contrasto dei colori più scuri.
+
+option.TONEMAP_UPPER_CURVE=Tonalità Curva Superiore
+option.TONEMAP_UPPER_CURVE.comment=Regola il contrasto dei colori più luminosi.
+
+option.SATURATION=Saturazione
+option.SATURATION.comment=Regola la saturazione di tutti i colori.
+
+option.VIBRANCE=Vibrazione
+option.VIBRANCE.comment=Regola la saturazione dei colori meno saturi, i colori ben saturi sono meno influenzati.
+
+#Color Grading Config
+option.CG_RR=Rosso - Valore Rosso
+option.CG_RG=Rosso - Valore Verde
+option.CG_RB=Rosso - Valore Blu
+option.CG_RI=Valore di Forza Rosso
+option.CG_RM=Valore Rosso Minimo
+option.CG_RC=Valore della Curva Rossa
+
+option.CG_GR=Verde - Valore Rosso
+option.CG_GG=Verde - Valore Verde
+option.CG_GB=Verde - Valore Blu
+option.CG_GI=Valore di Forza Verde
+option.CG_GM=Valore Verde Minimo
+option.CG_GC=Valore della Curva Verde
+
+option.CG_BR=Blu - Valore Rosso
+option.CG_BG=Blu - Valore Verde
+option.CG_BB=Blu - Valore Blu
+option.CG_BI=Valore di Forza Blu
+option.CG_BM=Valore Blu Minimo
+option.CG_BC=Valore della Curva Blu
+
+option.CG_TR=Colorato - Valore Rosso
+option.CG_TG=Colorato - Valore Verde
+option.CG_TB=Colorato - Valore Blu
+option.CG_TI=Valore di Forza della Colorazione
+option.CG_TM=Valore della Miscela della Colorazione
+
+#Extras
+option.OUTLINE=Contorno
+option.OUTLINE.comment=Abilità l'effetto di contorno.
+value.OUTLINE.0=OFF
+value.OUTLINE.1=Nero
+value.OUTLINE.2=Colorato
+value.OUTLINE.3=1.12 Aggiorn. Arte
+value.OUTLINE.4=Dungeons
+
+option.TOON_LIGHTMAP=Lightmap Cartone
+option.TOON_LIGHTMAP.comment=Riduce la qualità dell'illuminazione predefinito per il cel shading. §e[*]§rQuesta opzione è nota per rendere il vostro gioco "brutto", abilitatela solo quando ne avete bisogno.
+
+option.RETRO_FILTER=Filtro retrò
+option.RETRO_FILTER.comment=Aggiunge pixelatura e dithering. §e[*]§rQualità di rendering più bassa per una maggiore pixelatura. §c[-]§rIncompatibile con l'anti-aliasing.
+
+option.WORLD_CURVATURE=Curvatura del Mondo
+option.WORLD_CURVATURE.comment=Abilita la curvatura del mondo. §e[*]§rFunziona solo nel Overworld. §c[-]§rI blocchi mancanti sono gestiti da Minecraft stesso, cosa che non posso risolvere. §c[-]§rPuò interrompere la selezione dei blocchi nella 1.17.
+
+option.WORLD_CURVATURE_SIZE=Dimensione della Curvatura del Mondo
+option.WORLD_CURVATURE_SIZE.comment=Regola la dimensione della curvatura del mondo. Valori negativi piegheranno il mondo verso l'alto.
+
+#Animations
 option.WORLD_TIME_ANIMATION=Animazione del Tempo del Mondo
 option.WORLD_TIME_ANIMATION.comment=Usa nel tempo del gioco per gli oggetti in movimento. §e[*]§rQuesta opzione è usata soprattutto quando si fanno i filmati.
 
@@ -732,18 +749,23 @@ option.ANIMATION_SPEED=Velocità di Animazione
 option.ANIMATION_SPEED.comment=Regola la velocità dell'animazione.
 
 #Waving Blocks
+option.WAVING_GRASS=Grass ?
+option.WAVING_PLANT.comment=Allows grass to wave. ?
+option.WAVING_CROP=Crops ?
+option.WAVING_CROP.comment=Allows plants on farmlands to wave. ?
 option.WAVING_PLANT=Legno
 option.WAVING_PLANT.comment=Permette a vari legni di ondulare.
+option.WAVING_TALL_PLANT=Tall Plants ?
+option.WAVING_PLANT.comment=Allows 2 block height plants to wave. ?
 option.WAVING_LEAF=Foglie
 option.WAVING_LEAF.comment=Permette a varie foglie di ondulare.
-option.WAVING_LIQUID=Liquidi
-option.WAVING_LIQUID.comment=Permette a vari liquidi di ondulare.
-option.WAVING_EXTRA=Extra
-option.WAVING_EXTRA.comment=Permette al fuoco e alla lanterna di ondulare.
-
-#Curvature
-option.WORLD_CURVATURE=Curvatura del Mondo
-option.WORLD_CURVATURE.comment=Abilita la curvatura del mondo. §e[*]§rFunziona solo nel Overworld. §c[-]§rI blocchi mancanti sono gestiti da Minecraft stesso, cosa che non posso risolvere. §c[-]§rPuò interrompere la selezione dei blocchi nella 1.17.
-
-option.WORLD_CURVATURE_SIZE=Dimensione della Curvatura del Mondo
-option.WORLD_CURVATURE_SIZE.comment=Regola la dimensione della curvatura del mondo. Valori negativi piegheranno il mondo verso l'alto.
+option.WAVING_VINE=Vines ?
+option.WAVING_VINE.comment=Allows vines to wave. ?
+option.WAVING_WATER=Water ?
+option.WAVING_WATER.comment=Allows water to wave. ?
+option.WAVING_LAVA=Lava ?
+option.WAVING_LAVA.comment=Allows lava to wave. ?
+option.WAVING_FIRE=Fire ?
+option.WAVING_FIRE.comment=Allows fire to wave. ?
+option.WAVING_LANTERN=Lantern ?
+option.WAVING_LANTERN.comment=Allows lantern to wave. ?
