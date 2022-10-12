@@ -20,15 +20,9 @@ screen.CLOUDS=雲の設定
 
 screen.WATER=水の設定
 
-screen.POST_EFFECTS=ポストエフェクト
-screen.BLOOM=ブルーム設定
+screen.CAMERA=カメラ
 
-screen.CGT=カラーグレーディング & トーンマップ
-screen.COLOR_GRADING=カラーグレーディングの設定
-screen.CG_R=赤(R)
-screen.CG_G=緑(G)
-screen.CG_B=青(B)
-screen.CG_T=色合い
+screen.ANTIALIASING=アンチエイリアス
 
 screen.COLOR=色
 screen.LIGHT_COLOR=光の色
@@ -57,19 +51,26 @@ screen.AURORA_L=下方の色
 screen.AURORA_H=上方の色
 screen.DIMENSION_COLOR=ディメンジョンの色
 screen.NETHER_COLOR=ネザーの色
-screen.NETHER_N=ネザーの荒野
+screen.NETHER_N=ネザーの荒地
 screen.NETHER_V=ソウルサンドの谷
-screen.NETHER_C=深紅の森
-screen.NETHER_W=捻れた森
-screen.NETHER_B=玄武岩のデルタ
+screen.NETHER_C=真紅の森
+screen.NETHER_W=歪んだ森
+screen.NETHER_B=玄武岩の三角州
 screen.END_COLOR=エンドの色
 
-screen.WORLD=世界
-screen.WAVING=揺れるオブジェクト
-screen.CURVATURE=世界の曲率
+screen.CGT=カラーグレーディング & トーンマップ
+screen.COLOR_GRADING=カラーグレーディングの設定
+screen.CG_R=赤(R)
+screen.CG_G=緑(G)
+screen.CG_B=青(B)
+screen.CG_T=色合い
+
+screen.EXTRAS=その他の設定
+
+screen.ANIMATION=アニメーション設定
 
 #Settings
-option.ABOUT=BSL v8.1.03
+option.ABOUT=BSL v8.2
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -84,20 +85,23 @@ value.shadowMapResolution.4096=超高解像度 (4096)
 value.shadowMapResolution.8192=最大解像度(8192)
 
 option.shadowDistance=影の距離
-option.shadowDIstance.comment=影の距離を調整します。
+option.shadowDistance.comment=影の距離を調整します。
 
 option.SHADOW_COLOR=色付きの影
 option.SHADOW_COLOR.comment=半透明の物体からの色付きの影。 §a[+]§r色付きの太いライトシャフトで使われます。 §c[-]§rシャドウフィルタリングを使用した場合、パフォーマンスコストが若干高くなります。
 
 option.SHADOW_FILTER=シャドウフィルタリング
-option.SHADOW_FILTER.comment=シャドウフィルタリングを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
+option.SHADOW_FILTER.comment=シャドウフィルタリングを有効にします。
 
-option.sunPathRotation=太陽の軌道角度
-option.sunPathRotation.comment=陽射しの角度を設定します。
+option.SHADOW_ENTITY=エンティティの影
+option.SHADOW_ENTITY.comment=エンティティの影を有効にします。 §e[*]§r大量のエンティティを読み込む時は無効にしてください。 §e[*]§r1.16.5以降でのみ動作します。
 
 option.SHADOW_PIXEL=ピクセル固定の影
 option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
 value.SHADOW_PIXEL.0=オフ
+
+option.sunPathRotation=太陽の軌道角度
+option.sunPathRotation.comment=陽射しの角度を設定します。
 
 option.AO=アンビエントオクルージョン(AO)
 option.AO.comment=接触している表面や交差した部分に柔らかな影を与えます。
@@ -119,9 +123,6 @@ value.DESATURATION_FACTOR.0.0=最大
 option.DYNAMIC_HANDLIGHT=ダイナミックハンドライト
 option.DYNAMIC_HANDLIGHT.comment=特定のオブジェクトを手に持った場合、視界を光で照らします。
 
-option.TOON_LIGHTMAP=トゥーンライトマップ
-option.TOON_LIGHTMAP.comment=セルシェーディング用にバニラの照明品質を低くします。 §e[*]§rこのオプションを指定するとゲームの見た目が非常に悪くなるので、必要な時のみ設定してください。
-
 option.WHITE_WORLD=ホワイトワールド
 option.WHITE_WORLD.comment=テクスチャを真っ白にします。
 
@@ -134,16 +135,11 @@ option.MATERIAL_FORMAT.comment=リソースパックに含まれる鏡面・法�
 value.MATERIAL_FORMAT.0=SEUS/Old PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
-option.SSS=サブサーフェススキャッタリング
-option.SSS.comment=光が特定のブロックを通過して散乱するのを設定します。
-value.SSS.0=§cオフ
-value.SSS.1=質感の強化のみ*
-value.SSS.2=全て
+option.SSS=サブサーフェススキャッタリング*
+option.SSS.comment=光がブロックを通過して散乱するのを設定します。§a[+]§rこの効果はTAAの恩恵を受けます。
 
-option.SSS_QUALITY=SSS品質
-option.SSS_QUALITY.comment=サブサーフェススキャッタリングの品質を設定します。
-value.SSS_QUALITY.0=低
-value.SSS_QUALITY.1=高
+option.BASIC_SSS=簡易スキャッタリング
+option.BASIC_SSS.comment=特定のブロックに対しての簡易的なサブサーフェススキャッタリングを有効にします。
 
 option.EMISSIVE=発光
 option.EMISSIVE.comment=特定のブロックの表面を明るくします。
@@ -158,6 +154,9 @@ option.ALPHA_BLEND=アルファブレンディング
 option.ALPHA_BLEND.comment=後日記載 
 value.ALPHA_BLEND.0=ガンマ
 value.ALPHA_BLEND.1=リニア
+
+option.ENTITY_FLASH=エンティティの点滅
+option.ENTITY_FLASH.comment=ダメージを受けたエンティティや近づいたクリーパーを点滅させます。
 
 #Specular & Reflections
 option.REFLECTION=反射
@@ -174,9 +173,6 @@ option.REFLECTION_SPECULAR.comment=滑らかな、または金属の表面の反
 
 option.REFLECTION_RAIN=雨の反射*
 option.REFLECTION_RAIN.comment=雨が降っているとき、表面をぬれた状態にします。 §e[*]§r鏡面反射を有効にする必要があります。
-value.REFLECTION_RAIN.0=オフ
-value.REFLECTION_RAIN.1=水滴
-value.REFLECTION_RAIN.2=全て
 
 option.REFLECTION_ROUGH=粗い反射*
 option.REFLECTION_ROUGH.comment=粗いオブジェクトの表面にぼやけた反射を描写します。 §c[-]§r小さな歪みが含まれるでしょう。
@@ -196,7 +192,15 @@ value.REFLECTION_MODE.0=二重像を減らす
 value.REFLECTION_MODE.1=バランス
 value.REFLECTION_MODE.2=よりギャップを埋める
 
-#Parallax
+option.REFLECTION_SKY_FALLOFF=空の光の反射の低下
+option.REFLECTION_SKY_FALLOFF.comment=空の光が弱い場合に、空の反射をどの程度フェードアウトさせるかを調整します。
+value.REFLECTION_SKY_FALLOFF.1=とても弱い
+value.REFLECTION_SKY_FALLOFF.2=弱い
+value.REFLECTION_SKY_FALLOFF.4=バランス
+value.REFLECTION_SKY_FALLOFF.8=強い
+value.REFLECTION_SKY_FALLOFF.16=とても強い
+
+#Normals & Parallax
 option.PARALLAX=視差遮蔽マッピング(POM)*
 option.PARALLAX.comment=高さ情報を使用してオブジェクト表面に凹凸を加えます。
 
@@ -347,7 +351,6 @@ option.CLOUD_BRIGHTNESS=輝度
 option.CLOUD_BRIGHTNESS.comment=雲の輝度を調整します。
 
 #Water
-
 option.WATER_MODE=水のテクスチャ表示
 option.WATER_MODE.comment=バニラの水のテクスチャを使用するかどうか設定します。 デフォルト : シェーダーのフラットな水の色、テクスチャ無し。 バニラ : バニラのテクスチャ。 色付きのバニラ : バニラのテクスチャ、シェーダーの色。 フラットバニラ : バニラのフラットな水の色。
 value.WATER_MODE.0=デフォルト
@@ -367,7 +370,7 @@ value.WATER_NORMALS.1=Worleyノイズ
 value.WATER_NORMALS.2=Perlinノイズ
 
 option.WATER_PARALLAX=視差
-option.WATER_PARALLAX.comment=水面の置換を有効にします。
+option.WATER_PARALLAX.comment=水の変位を有効にします。
 
 option.WATER_DETAIL=ディテール
 option.WATER_DETAIL.comment=水面の法線マッピングにおける大小の比率を調整します。
@@ -401,9 +404,9 @@ option.WATER_PIXEL=ピクセル化
 option.WATER_PIXEL.comment=水面の法線マッピングにピクセル化エフェクトを適用します。
 value.WATER_PIXEL.0=オフ
 
-#Post Effects
+#Camera
 option.DOF=被写界深度(DoF)
-options.DOF.comment=カメラフォーカスのエフェクトを有効にします。
+option.DOF.comment=カメラフォーカスのエフェクトを有効にします。
 option.DOF_STRENGTH=DoF強度
 option.DOF_STRENGTH.comment=フォーカスの強度を調整します。強くすればより素早くぼけます。
 
@@ -416,42 +419,6 @@ option.MOTION_BLUR_STRENGTH.comment=モーションブラーの強度を調整�
 option.BLOOM=ブルーム効果
 option.BLOOM.comment=明るい部分から光を拡散させる効果を有効にします。
 
-option.LENS_FLARE=レンズフレア
-option.LENS_FLARE.comment=レンズフレアを有効にします。
-
-option.LENS_FLARE_STRENGTH=レンスフレア強度
-option.LENS_FLARE_STRENGTH.comment=レンズフレアの強度を調整します。
-
-option.FXAA=FXAA
-option.FXAA.comment=高速な近似アンチエイリアシングを有効にします。パフォーマンスへの影響を抑えながら映像のエッジを滑らかにします。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
-
-option.TAA=TAA
-option.TAA.comment=TAA(Temporal Anti-Aliasing)を有効にします。高度なフレームブレンディングによって、微細なディティールやいくつかの高価を改善します。 §e[*]§rイメージシャーペン(鮮鋭化)が含まれています。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
-
-option.VIGNETTE=視界端の影(Vignette)
-option.Vignette.comment=画面の端の方を徐々に暗くします。 §e[*]§r360°イメージングを無効にします。
-
-option.DIRTY_LENS=汚れたレンズ
-option.DIRTY_LENS.comment=ブルームに汚れた粒子のエフェクトを加えます。 §e[*]§rブルームが必要です。
-
-option.RETRO_FILTER=レトロフィルター
-option.RETRO_FILTER.comment=ピクセル化とディザリングを加えます。 §e[*]§rピクセル化をより強くするためにレンダリング品質を下げます。 §c[-]§rアンチエイリアシングと互換性がありません。
-
-option.OUTLINE=アウトライン
-option.OUTLINE.comment=アウトラインのエフェクトを有効にします。
-value.OUTLINE.0=オフ
-value.OUTLINE.1=黒
-value.OUTLINE.2=色付き
-value.OUTLINE.3=1.12アップデートアート
-value.OUTLINE.4=ダンジョンズ
-
-option.CHROMATIC_ABERRATION=色収差
-option.CHROMATIC_ABERRATION.comment=境界線に色のゆがみを追加します。
-value.CHROMATIC_ABERRATION.0=オフ
-value.CHROMATIC_ABERRATION.1=弱い
-value.CHROMATIC_ABERRATION.2=強い
-
-#Bloom
 option.BLOOM_STRENGTH=ブルームの強さ
 option.BLOOM_STRENGTH.comment=ブルームの強度を設定します
 
@@ -477,58 +444,47 @@ value.BLOOM_RADIUS.5=高
 value.BLOOM_RADIUS.6=超高
 value.BLOOM_RADIUS.7=最高
 
-#Color Grading & Tonemap
-option.EXPOSURE=露出補正
-option.TonemapExposure.comment=全体の明るさを調整します。
+option.LENS_FLARE=レンズフレア
+option.LENS_FLARE.comment=レンズフレアを有効にします。
 
-option.AUTO_EXPOSURE=自動露出
-option.AUTO_EXPOSURE.comment=全体の明るさの自動調整を有効にします。
+option.LENS_FLARE_STRENGTH=レンスフレア強度
+option.LENS_FLARE_STRENGTH.comment=レンズフレアの強度を調整します。
 
-option.COLOR_GRADING=カラーグレーディング
-option.COLOR_GRADING.comment=カラーグレーディングを有効にします。 §e[*]§rこのオプションを有効にしなくても、トーンマップ、彩度、鮮やかさのスライダーを調整できます。
+option.VIGNETTE=視界端の影(Vignette)
+option.VIGNETTE.comment=画面の端の方を徐々に暗くします。 §e[*]§r360°イメージングを無効にします。
 
-option.TONEMAP_WHITE_CURVE=トーンマップホワイトカーブ
-option.TONEMAP_WHITE_CURVE.comment=トーンマップが白になるまでの速度を調整します。
+option.VIGNETTE_STRENGTH=視界端の影の強さ
+option.VIGNETTE_STRENGTH.comment=視界端の影の強さを調整します。
+value.VIGNETTE_STRENGTH.0.26=0.1
+value.VIGNETTE_STRENGTH.0.51=0.2
+value.VIGNETTE_STRENGTH.0.72=0.3
+value.VIGNETTE_STRENGTH.0.91=0.4
+value.VIGNETTE_STRENGTH.1.06=0.5
+value.VIGNETTE_STRENGTH.1.19=0.6
+value.VIGNETTE_STRENGTH.1.28=0.7
+value.VIGNETTE_STRENGTH.1.36=0.8
+value.VIGNETTE_STRENGTH.1.40=0.9
+value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.TONEMAP_LOWER_CURVE=トーンマップ下部のカーブ
-option.TONEMAP_LOWER_CURVE.comment=暗い色のコントラストを調整します。
+option.DIRTY_LENS=汚れたレンズ
+option.DIRTY_LENS.comment=ブルームに汚れた粒子のエフェクトを加えます。 §e[*]§rブルームが必要です。
 
-option.TONEMAP_UPPER_CURVE=トーンマップ上部のカーブ
-option.TONEMAP_UPPER_CURVE.comment=明るい色のコントラストを調整します。
+option.CHROMATIC_ABERRATION=色収差
+option.CHROMATIC_ABERRATION.comment=境界線に色のゆがみを追加します。
+value.CHROMATIC_ABERRATION.0=オフ
+value.CHROMATIC_ABERRATION.1=弱い
+value.CHROMATIC_ABERRATION.2=強い
 
-option.SATURATION=彩度
-option.SATURATION.comment=すべての色の彩度を調整します。
 
-option.VIBRANCE=鮮やかさ
-option.VIBRANCE.comment=彩度が低い色の彩度を調整します。彩度の高い色は影響を受けにくいです。
+option.UNDERWATER_DISTORTION=水中でのゆがみ
+option.UNDERWATER_DISTORTION.comment=水中での画面のゆがみを適用します
 
-#Color Grading Config
-option.CG_RR=赤 - 赤 の値
-option.CG_RG=赤 - 緑 の値
-option.CG_RB=赤 - 青 の値
-option.CG_RI=赤の強さ
-option.CG_RM=赤の最少値
-option.CG_RC=赤のカーブの値
+#Anti-aliasing
+option.FXAA=FXAA
+option.FXAA.comment=高速な近似アンチエイリアシングを有効にします。パフォーマンスへの影響を抑えながら映像のエッジを滑らかにします。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
 
-option.CG_GR=緑 - 赤 の値
-option.CG_GG=緑 - 緑 の値
-option.CG_GB=緑 - 青 の値
-option.CG_GI=緑の強さ
-option.CG_GM=緑の最少値
-option.CG_GC=緑のカーブの値
-
-option.CG_BR=青 - 赤 の値
-option.CG_BG=青 - 緑 の値
-option.CG_BB=青 - 青 の値
-option.CG_BI=青の強さ
-option.CG_BM=青の最少値
-option.CG_BC=青のカーブの値
-
-option.CG_TR=色合い - 赤 の値
-option.CG_TG=色合い - 緑 の値
-option.CG_TB=色合い - 青 の値
-option.CG_TI=色合いの強さ
-option.CG_TM=色合いのミックス値
+option.TAA=TAA
+option.TAA.comment=TAA(Temporal Anti-Aliasing)を有効にします。高度なフレームブレンディングによって、微細なディティールやいくつかの高価を改善します。 §e[*]§rイメージシャーペン(鮮鋭化)が含まれています。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
 
 #Color
 option.LIGHT_MR=赤
@@ -679,7 +635,84 @@ option.SKY_VANILLA.comment=バニラの空の色を使用します。
 option.NETHER_VANILLA=バニラネザー
 option.NETHER_VANILLA.comment=バニラのネザーの色を使用します。
 
-#World
+#Color Grading & Tonemap
+option.EXPOSURE=露出
+option.TonemapExposure.comment=全体の明るさを調整します。
+
+option.AUTO_EXPOSURE=自動露出
+option.AUTO_EXPOSURE.comment=全体の明るさの自動調整を有効にします。
+
+option.CLASSIC_EXPOSURE=クラシック露出
+option.CLASSIC_EXPOSURE.comment=室内に入るときに画面を明るくするのを有効にします。
+
+option.COLOR_GRADING=カラーグレーディングの設定
+option.COLOR_GRADING.comment=カラーグレーディングを有効にします。 §e[*]§rこのオプションは、トーンマップ、彩度、鮮やかさのスライダーを変更するために有効化する必要はありません。
+
+option.TONEMAP_WHITE_CURVE=トーンマップホワイトカーブ
+option.TONEMAP_WHITE_CURVE.comment=トーンマップが白に達する速さを調整します。
+
+option.TONEMAP_LOWER_CURVE=トーンマップ下方カーブ
+option.TONEMAP_LOWER_CURVE.comment=暗い色のコントラストを調整します。
+
+option.TONEMAP_UPPER_CURVE=トーンマップ上方カーブ
+option.TONEMAP_UPPER_CURVE.comment=明るい色のコントラストを調整します。
+
+option.SATURATION=彩度
+option.SATURATION.comment=全ての色の彩度を調整します。
+
+option.VIBRANCE=鮮やかさ
+option.VIBRANCE.comment=低彩度の色の彩度を調整します。彩度が高い色ほど影響を受けません。
+
+#Color Grading Config
+option.CG_RR=赤 - 赤 の値
+option.CG_RG=赤 - 緑 の値
+option.CG_RB=赤 - 青 の値
+option.CG_RI=赤の強さ
+option.CG_RM=赤の最少値
+option.CG_RC=赤のカーブの値
+
+option.CG_GR=緑 - 赤 の値
+option.CG_GG=緑 - 緑 の値
+option.CG_GB=緑 - 青 の値
+option.CG_GI=緑の強さ
+option.CG_GM=緑の最少値
+option.CG_GC=緑のカーブの値
+
+option.CG_BR=青 - 赤 の値
+option.CG_BG=青 - 緑 の値
+option.CG_BB=青 - 青 の値
+option.CG_BI=青の強さ
+option.CG_BM=青の最少値
+option.CG_BC=青のカーブの値
+
+option.CG_TR=色合い - 赤 の値
+option.CG_TG=色合い - 緑 の値
+option.CG_TB=色合い - 青 の値
+option.CG_TI=色合いの強さ
+option.CG_TM=色合いのミックス値
+
+#Extras
+option.OUTLINE=アウトライン
+option.OUTLINE.comment=アウトラインのエフェクトを有効にします。
+value.OUTLINE.0=オフ
+value.OUTLINE.1=黒
+value.OUTLINE.2=色付き
+value.OUTLINE.3=1.12アップデートアート
+value.OUTLINE.4=ダンジョンズ
+
+option.TOON_LIGHTMAP=トゥーンライトマップ
+option.TOON_LIGHTMAP.comment=セルシェーディング用にバニラの照明品質を低くします。 §e[*]§rこのオプションを指定するとゲームの見た目が非常に悪くなるので、必要な時のみ設定してください。
+
+option.RETRO_FILTER=レトロフィルター
+option.RETRO_FILTER.comment=ピクセル化とディザリングを加えます。 §e[*]§rピクセル化をより強くするためにレンダリング品質を下げます。 §c[-]§rアンチエイリアシングと互換性がありません。
+
+option.WORLD_CURVATURE=世界の曲率
+option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[-]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[-]§r1.17でブロック選択のハイライトを壊すことがあります。
+
+option.WORLD_CURVATURE_SIZE=世界球のサイズ
+option.WORLD_CURVATURE_SIZE.comment=世界球のサイズを設定します。負の値では世界が逆に曲がります(球の内側になります)。
+
+#Animations
 option.WORLD_TIME_ANIMATION=世界時間アニメーション
 option.WORLD_TIME_ANIMATION.comment=移動するオブジェクトにゲーム内時間を使用します。 §e[*]§rこのオプションは動画撮影時によく使われます。
 
@@ -687,18 +720,23 @@ option.ANIMATION_SPEED=アニメーション速度
 option.ANIMATION_SPEED.comment=アニメーション速度を調整します。
 
 #Waving Blocks
+option.WAVING_GRASS=草
+option.WAVING_GRASS.comment=草が揺れるのを許可します。
+option.WAVING_CROP=作物
+option.WAVING_CROP.comment=畑の作物が揺れるのを許可します。
 option.WAVING_PLANT=植物
 option.WAVING_PLANT.comment=いろいろな植物が揺れるのを許可します。
+option.WAVING_TALL_PLANT=背の高い植物
+option.WAVING_TALL_PLANT.comment=2ブロックの高さの植物が揺れるのを許可します。
 option.WAVING_LEAF=木の葉
 option.WAVING_LEAF.comment=木の葉が揺れるのを許可します。
-option.WAVING_LIQUID=液体
-option.WAVING_LIQUID.comment=水や溶岩が揺れるのを許可します。
-option.WAVING_EXTRA=その他
-option.WAVING_EXTRA.comment=炎やランタンが揺れるのを許可します。
-
-#Curvature
-option.WORLD_CURVATURE=世界の曲率
-option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[*]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[*]§r1.17でブロック選択のハイライトを壊すことがあります。
-
-option.WORLD_CURVATURE_SIZE=世界球のサイズ
-option.WORLD_CURVATURE_SIZE.comment=世界球のサイズを設定します。負の値では世界が逆に曲がります(球の内側になります)。
+option.WAVING_VINE=ツタ
+option.WAVING_VINE.comment=ツタが揺れるのを許可します。
+option.WAVING_WATER=水面
+option.WAVING_WATER.comment=水面が揺れるのを許可します。
+option.WAVING_LAVA=溶岩
+option.WAVING_LAVA.comment=溶岩が揺れるのを許可します。
+option.WAVING_FIRE=炎
+option.WAVING_FIRE.comment=炎が揺れるのを許可します。
+option.WAVING_LANTERN=ランタン
+option.WAVING_LANTERN.comment=ランタンが揺れるのを許可します。
