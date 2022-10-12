@@ -59,7 +59,7 @@ screen.NETHER_B=Delta Basalto
 screen.END_COLOR=Colore del L'End
 
 screen.CGT=Grad. del Colore & Tonal. della Mappa
-screen.COLOR_GRADING=Config. della Grad. del Colore
+screen.COLOR_GRADING=Config. della Gradazione del Colore
 screen.CG_R=Canale Rosso
 screen.CG_G=Canale Verde
 screen.CG_B=Canale Blu
@@ -70,10 +70,11 @@ screen.EXTRAS=Extra
 screen.ANIMATION=Animazioni
 
 #Settings
-##Template##
+## Template ##
 ## ? (aggiungere o aggiustare la stringa)
 ## ?- (Rimuovere la stringa)
-##Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:11.10.2022a ##
+## Tradotto da Lorenzo Giannini (Traduzione Originale) - Versione: BUILDING:11.10.2022a ##
+
 option.ABOUT=BSL v8.2
 option.ABOUT.comment=Creato da Capt Tatsu. bitslablab.com
 value.ABOUT.0=Creato da Capt Tatsu
@@ -271,14 +272,14 @@ option.AURORA.comment=Attiva l'aurora. §a[+]§rQuesto effetto beneficia di TAA.
 option.ROUND_SUN_MOON=Sole e Luna Rotondi
 option.ROUND_SUN_MOON.comment=Abilità il sole & la luna basati su shader. §e[*]§rDisabilità il sole e la luna Predefinito in Grafica > Dettagli > Sole/luna solo 1.15.2 o inferiore
 
-option.DISTANT_FADE=Diss. Lontana
+option.DISTANT_FADE=Dist. Lontana
 option.DISTANT_FADE.comment=Svanisce lontano i confini dei chunk. §e[*]§rQuesta opzione è influenzata dalla densità della nebbia.
 value.DISTANT_FADE.0=§cOFF
 value.DISTANT_FADE.1=Solo l'Overworld
 value.DISTANT_FADE.2=Solo il Nether & l'End
 value.DISTANT_FADE.3=Completo
 
-option.DISTANT_FADE_STYLE=Stile Diss. Lontana
+option.DISTANT_FADE_STYLE=Stile Dist. Lontana
 option.DISTANT_FADE_STYLE.comment=Sferico funziona come la nebbia predefinito. Cilindrico ignora l'asse Y.
 value.DISTANT_FADE_STYLE.0=Sferico
 value.DISTANT_FADE_STYLE.1=Cilindrico
@@ -289,7 +290,7 @@ option.WEATHER_PERBIOME.comment=Usa un colore del tempo diverso per i diversi bi
 option.UNDERGROUND_SKY=Correzione del Cielo Sotterraneo
 option.UNDERGROUND_SKY.comment=Nasconde il cielo quando il giocatore è in un'area buia e sotto il livello del mare (Y:62). §c[-]§rNon adatto per mondi superpiatti bassi.
 
-option.LIGHT_SHAFT=Alberi leggeri
+option.LIGHT_SHAFT=Alberi Leggeri
 option.LIGHT_SHAFT.comment=Aggiunge raggi volumetrici dal sole/luna. §a[+]§rQuesto effetto beneficia del TAA. §e[*]§rLe prestazioni dipendono dalla risoluzione della shadowmap.
 
 option.LIGHT_SHAFT_STRENGTH=Forza dell'Albero Leggero
@@ -354,7 +355,7 @@ option.CLOUD_BRIGHTNESS=Luminosità
 option.CLOUD_BRIGHTNESS.comment=Regola la luminosità delle nuvole.
 
 #Water
-option.WATER_MODE=Modalità Texture Acqua
+option.WATER_MODE=Modalità Texture dell'Acqua
 option.WATER_MODE.comment=Determina se la texture dell'acqua predefinita deve essere usata. Normale: colore piatto dell'acqua, nessuna texture. Predefinito: texture Di Minecraft. Predefinito Tinto: texture predefinita con il colore dell'acqua. Predefinito Piatto: colore piatto dell'acqua predefinita.
 value.WATER_MODE.0=Normale
 value.WATER_MODE.1=Predefinito
@@ -422,9 +423,9 @@ option.MOTION_BLUR_STRENGTH.comment=Regola l'Intensità della Sfocatura del Movi
 option.BLOOM=Bloom
 option.BLOOM.comment=Permette alle aree luminose di brillare.
 
-option.BLOOM_STRENGTH=Forza bloom
+option.BLOOM_STRENGTH=Forza Bloom
 option.BLOOM_STRENGTH.comment=Regola l'intensità del Bloom.
-option.BLOOM_CONTRAST=Contrasto bloom
+option.BLOOM_CONTRAST=Contrasto Bloom
 option.BLOOM_CONTRAST.comment=Regola se il bloom deve preservare il contrasto del colore o la visibilità dei dettagli. Un valore più alto preserva il contrasto del colore mentre un valore più basso preserva la visibilità dei dettagli.
 value.BLOOM_CONTRAST.-4=-1.00
 value.BLOOM_CONTRAST.-3=-0.75
@@ -436,7 +437,7 @@ value.BLOOM_CONTRAST.2=0.50
 value.BLOOM_CONTRAST.3=0.75
 value.BLOOM_CONTRAST.4=1.00
 
-option.BLOOM_RADIUS=Raggio bloom
+option.BLOOM_RADIUS=Raggio Bloom
 option.BLOOM_RADIUS.comment=Regola la distanza di diffusione del bagliore.
 value.BLOOM_RADIUS.1=Minimo
 value.BLOOM_RADIUS.2=Molto Basso
@@ -455,8 +456,8 @@ option.LENS_FLARE_STRENGTH.comment=Regola l'intensità del bagliore della lente.
 option.VIGNETTE=Vignetta
 option.Vignette.comment=Dissolve il bordo dello schermo in nero. §e[*]§rDisabilita per le immagini a 360.
 
-option.VIGNETTE_STRENGTH=Vignette Strength ?
-option.VIGNETTE_STRENGTH.comment=Adjusts vignette intensity. ?
+option.VIGNETTE_STRENGTH=Forza Vignettatura
+option.VIGNETTE_STRENGTH.comment=Regola l'intensità della vignettatura.
 value.VIGNETTE_STRENGTH.0.26=0.1
 value.VIGNETTE_STRENGTH.0.51=0.2
 value.VIGNETTE_STRENGTH.0.72=0.3
@@ -477,8 +478,8 @@ value.CHROMATIC_ABERRATION.0=OFF
 value.CHROMATIC_ABERRATION.1=Debole
 value.CHROMATIC_ABERRATION.2=Forte
 
-option.UNDERWATER_DISTORTION=Underwater Distortion ?
-option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater. ?
+option.UNDERWATER_DISTORTION=Distorsione Subacquea
+option.UNDERWATER_DISTORTION.comment=Applica la distorsione dello schermo sott'acqua.
 
 #Anti-aliasing
 option.FXAA=FXAA
@@ -524,7 +525,7 @@ option.AMBIENT_EB=Blu
 option.AMBIENT_EI=Intensità
 
 value.MINLIGHT_I.0.30=0.30 (Lunatico)
-value.MINLIGHT_I.0.50=0.50 (Default)
+value.MINLIGHT_I.0.50=0.50 (Predefinito)
 value.MINLIGHT_I.0.70=0.70 (Luminoso)
 
 option.AMBIENT_NR=Rosso
@@ -644,11 +645,11 @@ option.TonemapExposure.comment=Regola la luminosità generale.
 option.AUTO_EXPOSURE=Auto Esposizione
 option.AUTO_EXPOSURE.comment=Consente la regolazione automatica della luminosità generale.
 
-option.CLASSIC_EXPOSURE=Classic Exposure ?
-option.CLASSIC_EXPOSURE.comment=Enables increased exposure when going indoors. ?
+option.CLASSIC_EXPOSURE=Esposizione Classica
+option.CLASSIC_EXPOSURE.comment=Consente una maggiore esposizione quando si va all'interno.
 
-option.COLOR_GRADING=Color Grading ?
-option.COLOR_GRADING.comment=Enables color grading. §e[*]§rThis option doesn't need to be enabled to change tonemap, saturation, and vibrance sliders. ?
+option.COLOR_GRADING=Gradazione del Colore
+option.COLOR_GRADING.comment=Abilita la gradazione del colore. §e[*]§rQuesta opzione non deve essere abilitata per cambiare i cursori di tonalità, saturazione e vibrazione.
 
 option.TONEMAP_WHITE_CURVE=Tonalità Curva Bianca
 option.TONEMAP_WHITE_CURVE.comment=Regola quanto velocemente la mappa della tonalità può raggiungere il bianco.
@@ -705,7 +706,7 @@ value.OUTLINE.4=Dungeons
 option.TOON_LIGHTMAP=Lightmap Cartone
 option.TOON_LIGHTMAP.comment=Riduce la qualità dell'illuminazione predefinito per il cel shading. §e[*]§rQuesta opzione è nota per rendere il vostro gioco "brutto", abilitatela solo quando ne avete bisogno.
 
-option.RETRO_FILTER=Filtro retrò
+option.RETRO_FILTER=Filtro Retrò
 option.RETRO_FILTER.comment=Aggiunge pixelatura e dithering. §e[*]§rQualità di rendering più bassa per una maggiore pixelatura. §c[-]§rIncompatibile con l'anti-aliasing.
 
 option.WORLD_CURVATURE=Curvatura del Mondo
@@ -722,23 +723,23 @@ option.ANIMATION_SPEED=Velocità di Animazione
 option.ANIMATION_SPEED.comment=Regola la velocità dell'animazione.
 
 #Waving Blocks
-option.WAVING_GRASS=Grass ?
-option.WAVING_PLANT.comment=Allows grass to wave. ?
-option.WAVING_CROP=Crops ?
-option.WAVING_CROP.comment=Allows plants on farmlands to wave. ?
+option.WAVING_GRASS=Erba
+option.WAVING_PLANT.comment=Permette all'erba di ondeggiare.
+option.WAVING_CROP=Coltivazione
+option.WAVING_CROP.comment=Consente alle piante sui terreni agricoli di ondeggiare.
 option.WAVING_PLANT=Legno
-option.WAVING_PLANT.comment=Permette a vari legni di ondulare.
-option.WAVING_TALL_PLANT=Tall Plants ?
-option.WAVING_PLANT.comment=Allows 2 block height plants to wave. ?
+option.WAVING_PLANT.comment=Permette a vari legni di ondeggiare.
+option.WAVING_TALL_PLANT=Erba Alta
+option.WAVING_PLANT.comment=Consente a l'erba alta di ondeggiare.
 option.WAVING_LEAF=Foglie
-option.WAVING_LEAF.comment=Permette a varie foglie di ondulare.
-option.WAVING_VINE=Vines ?
-option.WAVING_VINE.comment=Allows vines to wave. ?
+option.WAVING_LEAF.comment=Permette a varie foglie di ondeggiare.
+option.WAVING_VINE=Vines
+option.WAVING_VINE.comment=Allows vines to wave.
 option.WAVING_WATER=Water ?
-option.WAVING_WATER.comment=Allows water to wave. ?
+option.WAVING_WATER.comment=Allows water to wave.
 option.WAVING_LAVA=Lava ?
-option.WAVING_LAVA.comment=Allows lava to wave. ?
+option.WAVING_LAVA.comment=Allows lava to wave.
 option.WAVING_FIRE=Fire ?
-option.WAVING_FIRE.comment=Allows fire to wave. ?
-option.WAVING_LANTERN=Lantern ?
-option.WAVING_LANTERN.comment=Allows lantern to wave. ?
+option.WAVING_FIRE.comment=Allows fire to wave.
+option.WAVING_LANTERN=Lantern
+option.WAVING_LANTERN.comment=Allows lantern to wave.
