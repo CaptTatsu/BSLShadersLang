@@ -25,3 +25,5 @@ Any language can be contributed by any amount of contributor, and I'm currently 
 - Add your translated lang file to the repository.
 - Commit and push your repository changes.
 - Create a pull request from your forked repository to the main repository.
+## Contact
+I don't check this project often, however you can contact me through my [discord server](https://discord.com/invite/ZJd7jjA) when you need your changes to be reviewed.
