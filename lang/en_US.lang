@@ -70,7 +70,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2
+option.ABOUT=BSL v8.2.01
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -151,7 +151,7 @@ option.ALBEDO_BALANCING=Albedo Balancing
 option.ALBEDO_BALANCING.comment=Reduces brightness of very bright colored surfaces.
 
 option.ALPHA_BLEND=Alpha Blending
-option.ALPHA_BLEND.comment=TBA. 
+option.ALPHA_BLEND.comment=Determines how transparency blending is done.
 value.ALPHA_BLEND.0=Gamma
 value.ALPHA_BLEND.1=Linear
 
@@ -317,13 +317,18 @@ option.SKYBOX_BRIGHTNESS=Skybox Brightness
 option.SKYBOX_BRIGHTNESS.comment=Adjusts skybox brightness. §e[*]§rSet to 1.00 when subtractive skybox exists.
 
 #Cloud Config
-option.CLOUD_THICKNESS=Thickness
-option.CLOUD_THICKNESS.comment=Adjusts cloud thickness, higher thickness makes artifacts more visible.
-value.CLOUD_THICKNESS.1 =Very Low
-value.CLOUD_THICKNESS.2 =Low
-value.CLOUD_THICKNESS.4 =Medium
-value.CLOUD_THICKNESS.8 =High
-value.CLOUD_THICKNESS.16=Very High
+option.CLOUD_BASE=Base Shape
+option.CLOUD_BASE.comment=Determines which noise type used for the cloud's base shape.
+value.CLOUD_BASE.0=Perlin
+value.CLOUD_BASE.1=Worley
+
+option.CLOUD_DENSITY=Density
+option.CLOUD_DENSITY.comment=Adjusts cloud density, higher density makes artifacts more visible.
+value.CLOUD_DENSITY.1=Very Low
+value.CLOUD_DENSITY.2=Low
+value.CLOUD_DENSITY.4=Medium
+value.CLOUD_DENSITY.6=High
+value.CLOUD_DENSITY.8=Very High
 
 option.CLOUD_AMOUNT=Amount
 option.CLOUD_AMOUNT.comment=Adjusts cloud amount.
@@ -331,15 +336,31 @@ value.CLOUD_AMOUNT.12.0=Very Low
 value.CLOUD_AMOUNT.11.0=Low
 value.CLOUD_AMOUNT.10.0=Medium
 value.CLOUD_AMOUNT.9.0=High
-value.CLOUD_AMOUNT.8.0 =Very High
+value.CLOUD_AMOUNT.8.0=Very High
 
 option.CLOUD_HEIGHT=Height
 option.CLOUD_HEIGHT.comment=Adjusts cloud height.
-value.CLOUD_HEIGHT.5.0 =Very Low
+value.CLOUD_HEIGHT.5.0=Very Low
 value.CLOUD_HEIGHT.7.5=Low
 value.CLOUD_HEIGHT.10.0=Medium
 value.CLOUD_HEIGHT.12.5=High
 value.CLOUD_HEIGHT.15.0=Very High
+
+option.CLOUD_THICKNESS=Thickness
+option.CLOUD_THICKNESS.comment=Adjusts cloud thickness.
+value.CLOUD_THICKNESS.2=Very Low
+value.CLOUD_THICKNESS.4=Low
+value.CLOUD_THICKNESS.5=Medium
+value.CLOUD_THICKNESS.7=High
+value.CLOUD_THICKNESS.10=Very High
+
+option.CLOUD_DETAIL=Detail
+option.CLOUD_DETAIL.comment=Adjusts cloud detail.
+value.CLOUD_DETAIL.0.3=Very Low
+value.CLOUD_DETAIL.0.7=Low
+value.CLOUD_DETAIL.1.0=Medium
+value.CLOUD_DETAIL.1.3=High
+value.CLOUD_DETAIL.1.7=Very High
 
 option.CLOUD_SPEED=Speed
 option.CLOUD_SPEED.comment=Adjusts cloud speed.
@@ -352,14 +373,14 @@ option.CLOUD_BRIGHTNESS.comment=Adjusts cloud brightness.
 
 #Water
 option.WATER_MODE=Water Texture Mode
-option.WATER_MODE.comment=Determine whether vanilla water texture should be used. Default : shader's flat water color, no texture. Vanilla : vanilla texture. Tinted Vanilla : vanilla texture with shader's water color. Flat Vanilla : vanilla's flat water color.
+option.WATER_MODE.comment=Determines whether vanilla water texture should be used. Default : shader's flat water color, no texture. Vanilla : vanilla texture. Tinted Vanilla : vanilla texture with shader's water color. Flat Vanilla : vanilla's flat water color.
 value.WATER_MODE.0=Default
 value.WATER_MODE.1=Vanilla
 value.WATER_MODE.2=Tinted Vanilla
 value.WATER_MODE.3=Flat Vanilla
 
 option.WATER_ALPHA_MODE=Water Alpha Mode
-option.WATER_ALPHA_MODE.comment=Determine whether the water uses shader based or texture alpha value. §e[*]§rSome effect will keep using shader based alpha value.
+option.WATER_ALPHA_MODE.comment=Determines whether the water uses shader based or texture alpha value. §e[*]§rSome effect will keep using shader based alpha value.
 value.WATER_ALPHA_MODE.0=Flat
 value.WATER_ALPHA_MODE.1=Vanilla
 
