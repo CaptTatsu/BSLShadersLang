@@ -70,7 +70,7 @@ screen.EXTRAS=その他の設定
 screen.ANIMATION=アニメーション設定
 
 #Settings
-option.ABOUT=BSL v8.2
+option.ABOUT=BSL v8.2.01
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -151,7 +151,7 @@ option.ALBEDO_BALANCING=アルベドバランス
 option.ALBEDO_BALANCING.comment=非常に明るい表面のまぶしさを低減します。
 
 option.ALPHA_BLEND=アルファブレンディング
-option.ALPHA_BLEND.comment=後日記載 
+option.ALPHA_BLEND.comment=透明度のブレンドをどのように処理するかを設定します。 
 value.ALPHA_BLEND.0=ガンマ
 value.ALPHA_BLEND.1=リニア
 
@@ -317,13 +317,18 @@ option.SKYBOX_BRIGHTNESS=空の明るさ
 option.SKYBOX_BRIGHTNESS.comment=空の明るさを調整します。 §e[*]§r減算の空が存在する場合には1.00に設定します。
 
 #Cloud Config
-option.CLOUD_THICKNESS=厚み
-option.CLOUD_THICKNESS.comment=雲の厚みを調整します。高い値を設定するとアーティファクト(ノイズ)が表れやすくなります。
-value.CLOUD_THICKNESS.1 =とても薄い
-value.CLOUD_THICKNESS.2 =薄い
-value.CLOUD_THICKNESS.4 =中程度
-value.CLOUD_THICKNESS.8 =厚い
-value.CLOUD_THICKNESS.16=とても厚い
+option.CLOUD_BASE=ベース形状
+option.CLOUD_BASE.comment=雲のベースに使用するノイズの種類を設定します。
+value.CLOUD_BASE.0=Perlin
+value.CLOUD_BASE.1=Worley
+
+option.CLOUD_DENSITY=密度
+option.CLOUD_DENSITY.comment=雲の密度を設定します。密度が高いほどアーティファクトが目立ちます。
+value.CLOUD_DENSITY.1=とても薄い
+value.CLOUD_DENSITY.2=薄い
+value.CLOUD_DENSITY.4=中程度
+value.CLOUD_DENSITY.6=厚い
+value.CLOUD_DENSITY.8=とても厚い
 
 option.CLOUD_AMOUNT=量
 option.CLOUD_AMOUNT.comment=雲の量を調整します。
@@ -335,11 +340,27 @@ value.CLOUD_AMOUNT.8.0=とても多い
 
 option.CLOUD_HEIGHT=高度
 option.CLOUD_HEIGHT.comment=雲の高度を調整します。
-value.CLOUD_HEIGHT.5.0 =とても低い
+value.CLOUD_HEIGHT.5.0=とても低い
 value.CLOUD_HEIGHT.7.5=低い
 value.CLOUD_HEIGHT.10.0=中程度
 value.CLOUD_HEIGHT.12.5=高い
 value.CLOUD_HEIGHT.15.0=とても高い
+
+option.CLOUD_THICKNESS=厚み
+option.CLOUD_THICKNESS.comment=雲の厚みを調整します。
+value.CLOUD_THICKNESS.1 =とても薄い
+value.CLOUD_THICKNESS.2 =薄い
+value.CLOUD_THICKNESS.4 =中程度
+value.CLOUD_THICKNESS.8 =厚い
+value.CLOUD_THICKNESS.16=とても厚い
+
+option.CLOUD_DETAIL=ディティール
+option.CLOUD_DETAIL.comment=雲のディティールを設定します
+value.CLOUD_DETAIL.0.3=とても粗い
+value.CLOUD_DETAIL.0.7=粗い
+value.CLOUD_DETAIL.1.0=中程度
+value.CLOUD_DETAIL.1.3=細かい
+value.CLOUD_DETAIL.1.7=とても細かい
 
 option.CLOUD_SPEED=速度
 option.CLOUD_SPEED.comment=雲の流れる速度を調整します。
