@@ -70,7 +70,7 @@ screen.EXTRAS=额外
 screen.ANIMATION=动画
 
 #Settings
-option.ABOUT=BSL v8.2
+option.ABOUT=BSL v8.2.01
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -151,7 +151,7 @@ option.ALBEDO_BALANCING=反射率平衡
 option.ALBEDO_BALANCING.comment=降低高亮度有色表面的亮度.
 
 option.ALPHA_BLEND=Alpha混合
-option.ALPHA_BLEND.comment=TBA.
+option.ALPHA_BLEND.comment=确定透明度混合的方式.
 value.ALPHA_BLEND.0=伽马
 value.ALPHA_BLEND.1=线性
 
@@ -317,13 +317,18 @@ option.SKYBOX_BRIGHTNESS=天空盒亮度
 option.SKYBOX_BRIGHTNESS.comment=调整天空盒亮度. §e[*]§r当存在减性天空盒时调整至1.00.
 
 #Cloud Config
-option.CLOUD_THICKNESS=厚度
-option.CLOUD_THICKNESS.comment=调整云的厚度，较高的厚度会导致虚影更可见.
-value.CLOUD_THICKNESS.1 =非常低
-value.CLOUD_THICKNESS.2 =低
-value.CLOUD_THICKNESS.4 =中
-value.CLOUD_THICKNESS.8 =高
-value.CLOUD_THICKNESS.16=非常高
+option.CLOUD_BASE=基础形状
+option.CLOUD_BASE.comment=确定用于生成云基本形状的噪声类型.
+value.CLOUD_BASE.0=Perlin
+value.CLOUD_BASE.1=Worley
+
+option.CLOUD_DENSITY=密度
+option.CLOUD_DENSITY.comment=调整云的密度，更高的密度会导致虚影更可见.
+value.CLOUD_DENSITY.1=非常低
+value.CLOUD_DENSITY.2=低
+value.CLOUD_DENSITY.4=中
+value.CLOUD_DENSITY.6=高
+value.CLOUD_DENSITY.8=非常高
 
 option.CLOUD_AMOUNT=量
 option.CLOUD_AMOUNT.comment=调整云量.
@@ -331,15 +336,31 @@ value.CLOUD_AMOUNT.12.0=非常低
 value.CLOUD_AMOUNT.11.0=低
 value.CLOUD_AMOUNT.10.0=中
 value.CLOUD_AMOUNT.9.0=高
-value.CLOUD_AMOUNT.8.0 =非常高
+value.CLOUD_AMOUNT.8.0=非常高
 
 option.CLOUD_HEIGHT=高度
 option.CLOUD_HEIGHT.comment=调整云高度.
-value.CLOUD_HEIGHT.5.0 =非常低
+value.CLOUD_HEIGHT.5.0=非常低
 value.CLOUD_HEIGHT.7.5=低
 value.CLOUD_HEIGHT.10.0=中
 value.CLOUD_HEIGHT.12.5=高
 value.CLOUD_HEIGHT.15.0=非常高
+
+option.CLOUD_THICKNESS=厚度
+option.CLOUD_THICKNESS.comment=调整云的厚度.
+value.CLOUD_THICKNESS.2=非常低
+value.CLOUD_THICKNESS.4=低
+value.CLOUD_THICKNESS.5=中等
+value.CLOUD_THICKNESS.7=高
+value.CLOUD_THICKNESS.10=非常高
+
+option.CLOUD_DETAIL=细节
+option.CLOUD_DETAIL.comment=调整云的细节.
+value.CLOUD_DETAIL.0.3=非常低
+value.CLOUD_DETAIL.0.7=低
+value.CLOUD_DETAIL.1.0=中等
+value.CLOUD_DETAIL.1.3=高
+value.CLOUD_DETAIL.1.7=非常高
 
 option.CLOUD_SPEED=速度
 option.CLOUD_SPEED.comment=调整云速度.
