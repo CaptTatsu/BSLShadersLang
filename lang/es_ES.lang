@@ -1,0 +1,761 @@
+#shaders/lang/en_us.lang
+
+#Profiles
+profile.LOW=Bajo
+profile.MEDIUM=Medio
+profile.HIGH=Alto
+profile.ULTRA=Ultra
+profile.comment=Bajo : Menos detalle de Sombra, sin efectos extras. Medio : Sombras medio detalladas, sin efectos extras. Alto : Sombras detalladas, AO y Rayos. Ultra : Sombras MUY detalladas, AO y Rayos.
+
+#Screens
+screen.LIGHTING=Iluminación
+
+screen.MATERIAL=Material
+screen.SPECULAR=Reflejos de espejo
+screen.NORMALS=Normales y paralaje
+
+screen.ATMOSPHERICS=Atmósfera
+screen.SKY=Conf. Cielo
+screen.CLOUDS=Conf. Nubes
+
+screen.WATER=Agua
+
+screen.CAMERA=Camara
+
+screen.ANTIALIASING=Anti-aliasing
+
+screen.COLOR=Color
+screen.LIGHT_COLOR=Iluminación Colorida
+screen.LIGHT_M=Luz (Mañana)
+screen.AMBIENT_M=Ambiente (Mañana)
+screen.LIGHT_D=Luz (Día)
+screen.AMBIENT_D=Ambiente (Día)
+screen.LIGHT_E=Luz (Anochecer)
+screen.AMBIENT_E=Ambiente (Anochecer)
+screen.LIGHT_N=Luz (Noche)
+screen.AMBIENT_N=Ambiente (Noche)
+screen.MINLIGHT=Luz Mínima
+screen.BLOCKLIGHT_COLOR=Color del Bloque de Luz
+screen.SKY_COLOR=Color del Cielo
+screen.WATER_COLOR=Color del Agua
+screen.WEATHER_COLOR=Color del Clima
+screen.WEATHER_R=Lluvia (Normal)
+screen.WEATHER_C=Nevazón
+screen.WEATHER_D=Tomenta Arenosa del Desierto
+screen.WEATHER_B=Tomenta Arenosa del Valle
+screen.WEATHER_S=Lluvia en Pantano
+screen.WEATHER_M=Lluvia en la Champi-isla
+screen.WEATHER_V=Savanna Nubes
+screen.AURORA_COLOR=Color del Aurora
+screen.AURORA_L=Color de la sección inferior
+screen.AURORA_H=Color de la sección superior
+screen.DIMENSION_COLOR=Color de la Dimensión
+screen.NETHER_COLOR=Color del Nether
+screen.NETHER_N=Baldíos del Nether
+screen.NETHER_V=Valle de arena del alma
+screen.NETHER_C=Bosque Carmesí
+screen.NETHER_W=Bosque Distorsionado
+screen.NETHER_B=Deltas de basalto
+screen.END_COLOR=Color del End
+
+screen.CGT=Escala de Color y Tono del Mapa
+screen.COLOR_GRADING=Conf. Escala de Color
+screen.CG_R=Rojo Canal
+screen.CG_G=Verde Canal
+screen.CG_B=Azul Canal
+screen.CG_T=Tinte
+
+screen.EXTRAS=Extras
+
+screen.ANIMATION=Animaciones
+
+#Settings
+option.ABOUT=BSL v8.2.01
+option.ABOUT.comment=by Capt Tatsu. bitslablab.com
+value.ABOUT.0=by Capt Tatsu
+
+#Lighting
+option.shadowMapResolution=Calidad del mapa de sombras
+option.shadowMapResolution.comment=Ajusta el tamaño del mapa de sombras. §e[*]§rUna resolución más alta da sombras más nítidas, pero reduce el rendimiento.
+value.shadowMapResolution.512=Muy Bajo (512)
+value.shadowMapResolution.1024=Bajo (1024)
+value.shadowMapResolution.2048=Medio (2048)
+value.shadowMapResolution.3072=Alto (3072)
+value.shadowMapResolution.4096=Muy Alto (4096)
+value.shadowMapResolution.8192=Ultra Alto (8192)
+
+option.shadowDistance=Distancia de sombra.
+option.shadowDIstance.comment=Ajusta la distancia de la sombra.
+
+option.SHADOW_COLOR=Sombra de color
+option.SHADOW_COLOR.comment=Permite sombra teñida de translúcidos. §a[+]§rUtilizado para haces de luz volumétricos coloreados. §c[-]§rCosto de rendimiento ligeramente mayor cuando se usa el filtrado de sombras.
+
+option.SHADOW_FILTER=Filtrado de sombras
+option.SHADOW_FILTER.comment=Habilita el filtrado de sombras.
+
+option.SHADOW_ENTITY=Sombra de entidad
+option.SHADOW_ENTITY.comment=Habilita la sombra en las entidades. §e[*]§rDeshabilitar esto cuando se cargue una gran cantidad de entidades. §e[*]§rSolo funciona en 1.16.5 y superior.
+
+option.SHADOW_PIXEL=Sombras de píxeles bloqueados
+option.SHADOW_PIXEL.comment=Aplica efecto de pixelado en las sombras.
+valor.SHADOW_PIXEL.0=DESACTIVADO
+
+option.sunPathRotation=Rotación del camino del sol
+option.sunPathRotation.comment=Ajusta el ángulo del sol.
+
+option.AO=Oclusión ambiental
+option.AO.comment=Agrega sombras suaves alrededor del contacto o intersección de la superficie.
+
+option.AO_STRENGTH=Fuerza AO
+option.AO_STRENGTH.comment=Ajusta la fuerza de oclusión ambiental.
+
+option.DESATURATION=Desaturación
+option.DESATURATION.comment=Reduce la saturación mientras agrega algo de tinte en las áreas más oscuras.
+
+option.DESATURATION_FACTOR=Factor de desaturación
+option.DESATURATION_FACTOR.comment=Ajusta la cantidad máxima de desaturación aplicada.
+value.DESATURATION_FACTOR.2.0=Muy bajo
+value.DESATURATION_FACTOR.1.5=Bajo
+value.DESATURATION_FACTOR.1.0=Medio
+value.DESATURATION_FACTOR.0.5=Alto
+value.DESATURATION_FACTOR.0.0=Muy alto
+
+option.DYNAMIC_HANDLIGHT=Luz manual dinámica
+option.DYNAMIC_HANDLIGHT.comment=Permite que la luz de bloqueo se emita desde la vista cuando se sostienen ciertos objetos.
+
+option.WHITE_WORLD=Mundo Blanco
+option.WHITE_WORLD.comment=Reemplaza texturas con color blanco mate.
+#Material
+option.ADVANCED_MATERIALS=Materiales Avanzados
+option.ADVANCED_MATERIALS.comment=Habilita el uso de mapeo especular y normal que permite más detalles sobre varias cosas. §e[*]§rEsta opción requiere un paquete de recursos que contenga mapas especulares y/o normales, deshabilítelo si no se usa ninguno actualmente. §e[*]§rLas opciones que requieren materiales avanzados se indican con *, cambiar estas opciones no afectará las imágenes o el rendimiento mientras los materiales avanzados estén deshabilitados.
+
+option.MATERIAL_FORMAT=Formato de material*
+option.MATERIAL_FORMAT.comment=Determina el formato de mapa especular y normal usado por el paquete de recursos. §e[*]§rLos artistas de texturas generalmente dicen qué formato se usa en su paquete de recursos, usar el formato incorrecto puede dar resultados extraños.
+value.MATERIAL_FORMAT.0=SEUS/PBR antiguo
+valor.MATERIAL_FORMAT.1=labPBR 1.3
+
+option.SSS=Dispersión del subsuelo*
+option.SSS.comment=Permite que la luz penetre y se disperse a través de los bloques. §a[+]§rEste efecto se beneficia de TAA.
+
+option.BASIC_SSS=Dispersión básica
+option.BASIC_SSS.comment=Habilita una versión simplificada de la dispersión del subsuelo a ciertos bloques.
+
+option.EMISIVE=Emisiva
+option.EMISSIVE.comment=Permite que ciertas superficies sean más brillantes.
+value.EMISIVE.0=§cOFF
+value.EMISIVE.1=Solo AdvMat*
+value.EMISIVE.2=Lleno
+
+option.ALBEDO_BALANCING=Equilibrio de Albedo
+option.ALBEDO_BALANCING.comment=Reduce el brillo de las superficies de colores muy brillantes.
+
+option.ALPHA_BLEND=Fusión alfa
+option.ALPHA_BLEND.comment=Determina cómo se realiza la combinación de transparencias.
+valor.ALPHA_BLEND.0=Gamma
+value.ALPHA_BLEND.1=Lineal
+
+option.ENTITY_FLASH=Entidad Flash
+option.ENTITY_FLASH.comment=Permite que las entidades dañadas y los creepers cercanos parpadeen.
+
+#Especular y Reflexiones
+option.REFLECTION=Reflejos
+option.REFLECTION.comment=Habilita los reflejos en el agua y los translúcidos.
+value.REFLECTION.0=§cDesactivado
+value.REFLECTION.1=Solo cielo y especular
+value.REFLECTION.2=Completo
+
+option.REFLECTION_TRANSLUCENT=Reflejos translúcidos
+option.REFLECTION_TRANSLUCENT.comment=Permite generar reflejos en superficies translúcidas, como vidrieras, hielo, bloques de limo y más.
+
+option.REFLECTION_SPECULAR=Reflejo especular*
+option.REFLECTION_SPECULAR.comment=Habilita la reflexión en superficies lisas o metálicas.
+
+option.REFLECTION_RAIN=Reflejo de lluvia*
+option.REFLECTION_RAIN.comment=Permite que las superficies se mojen mientras llueve. §e[*]§rRequiere reflexión especular.
+
+option.REFLECTION_ROUGH=Reflejo aproximado*
+option.REFLECTION_ROUGH.comment=Permite que las superficies con menos suavidad generen reflejos borrosos. §c[-]§rPuede contener artefactos menores.
+
+option.REFLECTION_PREVIOUS=Reflexión del cuadro anterior
+option.REFLECTION_PREVIOUS.comment=Permite que los translúcidos se reflejen utilizando la información del marco anterior. §c[-]§rPuede causar que falte un reflejo en la captura de pantalla (causado por la configuración del tamaño de la captura de pantalla). §c[-]§rIncompatible con algunas GPU. §c[-]§rBugged en 1.7.10.
+
+option.SPECULAR_HIGHLIGHT_ROUGH=Resalte especular aproximado
+option.SPECULAR_HIGHLIGHT_ROUGH.comment=Permite que las superficies rugosas tengan un brillo débil.
+
+option.ALBEDO_METAL=Albedo teñido de metal codificado*
+option.ALBEDO_METAL.comment=Aplica textura base como tinte en superficies metálicas codificadas. §e[*]§rFunciona solo en formato de material labPBR.
+
+option.REFLECTION_MODE=Modo de reflexión
+option.REFLECTION_MODE.comment=Ajusta el comportamiento de reflexión.
+value.REFLECTION_MODE.0=Menos duplicados
+value.REFLECTION_MODE.1=Equilibrado
+value.REFLECTION_MODE.2=Más relleno de huecos
+
+option.REFLECTION_SKY_FALLOFF=Descenso del reflejo del cielo
+option.REFLECTION_SKY_FALLOFF.comment=Ajusta cuánto se desvanece el reflejo del cielo bajo una claraboya baja.
+value.REFLECTION_SKY_FALLOFF.1=Muy débil
+value.REFLECTION_SKY_FALLOFF.2=Débil
+value.REFLECTION_SKY_FALLOFF.4=Equilibrado
+value.REFLECTION_SKY_FALLOFF.8=Fuerte
+value.REFLECTION_SKY_FALLOFF.16=Muy Fuerte
+
+#Normales y paralaje
+option.PARALLAX=Asignación de oclusión de paralaje*
+option.PARALLAX.comment=Agrega desplazamiento en una superficie usando el mapa de altura.
+
+option.PARALLAX_DEPTH=Profundidad de paralaje*
+option.PARALLAX_DEPTH.comment=Ajusta la profundidad de paralaje.
+valor.PARALLAX_DEPTH.0.05=5 cm
+valor.PARALLAX_DEPTH.0.10=10 cm
+valor.PARALLAX_DEPTH.0.15=15 cm
+valor.PARALLAX_DEPTH.0.20=20 cm
+valor.PARALLAX_DEPTH.0.25=25 cm
+valor.PARALLAX_DEPTH.0.30=30 cm
+valor.PARALLAX_DEPTH.0.35=35 cm
+valor.PARALLAX_DEPTH.0.40=40 cm
+valor.PARALLAX_DEPTH.0.45=45 cm
+valor.PARALLAX_DEPTH.0.50=50 cm
+
+option.PARALLAX_QUALITY=Muestras de paralaje*
+option.PARALLAX_QUALITY.comment=Ajusta la calidad del mapeo de oclusión de paralaje.
+
+option.PARALLAX_DISTANCE=Distancia de paralaje*
+option.PARALLAX_DISTANCE.comment=Ajusta hasta qué punto se pueden renderizar el mapeo de oclusión de paralaje y las sombras propias.
+
+option.SELF_SHADOW=Sombras propias*
+option.SELF_SHADOW.comment=Permite que una superficie proyecte sombra sobre sí misma usando un mapa de altura.
+
+option.SELF_SHADOW_ANGLE=Ángulo de sombras propias*
+option.SELF_SHADOW_ANGLE.comment=Ajusta el ángulo del sombreado automático, un valor más alto permite que la sombra viaje más lejos.
+
+option.SELF_SHADOW_QUALITY=Ejemplos de sombras propias*
+option.SELF_SHADOW_QUALITY.comment=Ajusta la calidad del sombreado propio.
+
+option.SELF_SHADOW_STRENGTH=Fuerza de las sombras propias*
+option.SELF_SHADOW_STRENGTH.comment=Ajusta la intensidad del sombreado propio.
+
+option.DIRECTIONAL_LIGHTMAP=Mapa de luz direccional*
+option.DIRECTIONAL_LIGHTMAP.comment=Agrega mapeo normal a la iluminación vainilla. §c[-]§rLightmap puede fallar con este efecto habilitado.
+
+option.DIRECTIONAL_LIGHTMAP_STRENGTH=Dir. Fuerza del mapa de luz*
+option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=Ajusta la intensidad del mapa de luz direccional.
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.2.0=Muy bajo
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.4=Bajo
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.0=Medio
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.7=Alto
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.5=Muy alta
+option.NORMAL_DAMPENING=Amortiguación normal*
+option.NORMAL_DAMPENING.comment=Reduce la intensidad normal del mapa para evitar que los reflejos sean demasiado ruidosos.
+
+option.NORMAL_PLANTS=Plantas hacia arriba
+option.NORMAL_PLANTS.comment=Ajusta el sombreado de la planta. §e[*]§rDesactive esto si se usa un modelo de planta no plana o se aplica un mapa normal a las plantas.
+
+#Interferencias
+option.CLOUDS=Nubes
+option.CLOUDS.comment=Habilita las nubes. §a[+]§rLas nubes predeterminadas se benefician de TAA. §e[*]§rLas nubes Vanilla requieren que la configuración de la nube Vanilla esté configurada como predeterminada o activada.
+valor.NUBES.0=§cDESACTIVADO
+value.CLOUDS.1=Predeterminado
+value.CLOUDS.2=Vainilla
+
+option.SKY_DESATURATION=Desaturación del cielo
+option.SKY_DESATURATION.comment=Reduce la saturación mientras agrega algo de tinte al palco por la noche
+
+opción.AURORA=Aurora
+option.AURORA.comment=Habilita aurora. §a[+]§rEste efecto se beneficia de TAA.
+
+option.ROUND_SUN_MOON=Redondo Sol y Luna
+option.ROUND_SUN_MOON.comment=Habilita el sol y la luna basados en shaders. §e[*]§rDesactive vanilla sun & moon en Configuración de video > Detalles > Sun & Moon en 1.15.2 o anterior.
+
+option.DISTANT_FADE=Desvanecimiento distante
+option.DISTANT_FADE.comment=Desvanece los bordes de los fragmentos lejanos. §e[*]§rEsta opción se ve afectada por la densidad de la niebla.
+value.DISTANT_FADE.0=§cOFF
+value.DISTANT_FADE.1=Solo supramundo
+value.DISTANT_FADE.2=Solo inferior y final
+value.DISTANT_FADE.3=Completo
+
+option.DISTANT_FADE_STYLE=Estilo de fundido distante
+option.DISTANT_FADE_STYLE.comment=Esférica funciona como niebla vainilla. Cilíndrico ignora el eje Y.
+value.DISTANT_FADE_STYLE.0=Esférico
+value.DISTANT_FADE_STYLE.1=Cilíndrico
+
+option.WEATHER_PERBIOME=Clima por bioma
+option.WEATHER_PERBIOME.comment=Usar colores de clima variados para diferentes biomas. §c[-]§rPuede no funcionar en condiciones desconocidas.
+
+option.UNDERGROUND_SKY=Corrección del cielo subterráneo
+option.UNDERGROUND_SKY.comment=Oculta el cielo cuando el jugador está en un área oscura y bajo el nivel del mar (Y: 62). §c[-]§rNo apto para mundos superplanos bajos.
+
+option.LIGHT_SHAFT=Haces de luz
+option.LIGHT_SHAFT.comment=Agrega rayos volumétricos del sol/luna. §a[+]§rEste efecto se beneficia de TAA. §e[*]§rEl rendimiento depende de la resolución del mapa de sombras.
+
+option.LIGHT_SHAFT_STRENGTH=Fuerza del haz de luz
+option.LIGHT_SHAFT_STRENGTH.comment=Ajusta la fuerza del haz de luz.
+
+option.FOG_DENSITY=Densidad de niebla
+option.FOG_DENSITY.comment=Ajusta la densidad de la niebla. §e[*]§rEsta opción se ignora en el nether.
+
+option.WEATHER_OPACITY=Opacidad del tiempo
+option.WEATHER_OPACITY.comment=Ajusta la opacidad del clima.
+
+#Configuración del cielo
+option.SKY_DENSITY_D=Día Densidad
+option.SKY_EXPOSURE_D=Exposición diurna
+option.SKY_DENSITY_N=Densidad nocturna
+option.SKY_EXPOSURE_N=Exposición nocturna
+option.SKY_DENSITY_W=Densidad del clima
+option.SKY_EXPOSURE_W=Exposición climática
+option.SKY_HORIZON_N=Horizonte cercano
+option.SKY_HORIZON_F=Horizonte lejano
+option.SKY_GROUND=Suelo del cielo
+option.SKY_GROUND.comment=Oscurece la parte inferior del cielo. §e[*]§rEsta opción se ve afectada por la densidad de la niebla.
+value.SKY_GROUND.0=§cOFF
+value.SKY_GROUND.1=Solo reflejos
+valor.SKY_GROUND.2=Completo
+
+option.SKYBOX_BRIGHTNESS=Brillo Skybox
+option.SKYBOX_BRIGHTNESS.comment=Ajusta el brillo del skybox. §e[*]§rEstablecido en 1.00 cuando existe palco sustractivo.
+
+#Configuración en la nube
+option.CLOUD_BASE=Forma base
+option.CLOUD_BASE.comment=Determina qué tipo de ruido se usa para la forma base de la nube.
+value.CLOUD_BASE.0=Perlín
+valor.CLOUD_BASE.1=Worley
+
+option.CLOUD_DENSITY=Densidad
+option.CLOUD_DENSITY.comment=Ajusta la densidad de la nube, una mayor densidad hace que los artefactos sean más visibles.
+value.CLOUD_DENSITY.1=Muy baja
+value.CLOUD_DENSITY.2=Baja
+value.CLOUD_DENSITY.4=Medio
+value.CLOUD_DENSITY.6=Alto
+value.CLOUD_DENSITY.8=Muy alta
+
+option.CLOUD_AMOUNT=Cantidad
+option.CLOUD_AMOUNT.comment=Ajusta la cantidad de nubes.
+value.CLOUD_AMOUNT.12.0=Muy bajo
+value.CLOUD_AMOUNT.11.0=Bajo
+value.CLOUD_AMOUNT.10.0=Medio
+value.CLOUD_AMOUNT.9.0=Alto
+value.CLOUD_AMOUNT.8.0=Muy alto
+
+option.CLOUD_HEIGHT=Altura
+option.CLOUD_HEIGHT.comment=Ajusta la altura de las nubes.
+value.CLOUD_HEIGHT.5.0=Muy bajo
+value.CLOUD_HEIGHT.7.5=Bajo
+value.CLOUD_HEIGHT.10.0=Medio
+value.CLOUD_HEIGHT.12.5=Alto
+value.CLOUD_HEIGHT.15.0=Muy alto
+
+option.CLOUD_THICKNESS=Espesor
+option.CLOUD_THICKNESS.comment=Ajusta el grosor de la nube.
+value.CLOUD_THICKNESS.2=Muy bajo
+value.CLOUD_THICKNESS.4=Bajo
+value.CLOUD_THICKNESS.5=Medio
+value.CLOUD_THICKNESS.7=Alto
+value.CLOUD_THICKNESS.10=Muy alto
+
+option.CLOUD_DETAIL=Detalle
+option.CLOUD_DETAIL.comment=Ajusta el detalle de la nube.
+value.CLOUD_DETAIL.0.3=Muy bajo
+value.CLOUD_DETAIL.0.7=Bajo
+value.CLOUD_DETAIL.1.0=Medio
+value.CLOUD_DETAIL.1.3=Alto
+value.CLOUD_DETAIL.1.7=Muy alto
+
+option.CLOUD_SPEED=Velocidad
+option.CLOUD_SPEED.comment=Ajusta la velocidad de la nube.
+
+option.CLOUD_OPACITY=Opacidad
+option.CLOUD_OPACITY.comment=Ajusta la opacidad de la nube.
+
+option.CLOUD_BRIGHTNESS=Brillo
+option.CLOUD_BRIGHTNESS.comment=Ajusta el brillo de la nube.
+
+#Agua
+option.WATER_MODE=Modo de textura de agua
+option.WATER_MODE.comment=Determina si se debe usar la textura de agua de vainilla. Predeterminado: color de agua plano del sombreador, sin textura. Vainilla: textura de vainilla. Tinted Vanilla: textura de vainilla con color de agua de shader. Flat Vanilla : color de agua plano de vainilla.
+value.WATER_MODE.0=Predeterminado
+value.WATER_MODE.1=Vainilla
+value.WATER_MODE.2=Tinte Vainilla
+value.WATER_MODE.3=Vainilla plana
+
+option.WATER_ALPHA_MODE=Modo alfa de agua
+option.WATER_ALPHA_MODE.comment=Determina si el agua usa un valor alfa de textura o basado en sombreadores. §e[*]§rAlgunos efectos seguirán usando el valor alfa basado en el sombreador.
+value.WATER_ALPHA_MODE.0=Plano
+value.WATER_ALPHA_MODE.1=Vainilla
+
+option.WATER_NORMALS=Normales
+option.WATER_NORMALS.comment=Habilita el mapeo normal generado en tiempo real para el agua.
+value.WATER_NORMALS.0=§cOFF
+value.WATER_NORMALS.1=Worley
+value.WATER_NORMALS.2=Perlín
+
+option.WATER_PARALLAX=Paralaje
+option.WATER_PARALLAX.comment=Habilita el desplazamiento de agua.
+
+option.WATER_DETAIL=Detalle
+option.WATER_DETAIL.comment=Ajusta la relación entre las normales de agua grandes y pequeñas.
+valor.DETALLE_AGUA.0.05=5%
+valor.DETALLE_AGUA.0.10=10%
+valor.DETALLE_AGUA.0.15=15%
+valor.DETALLE_AGUA.0.20=20%
+valor.DETALLE_AGUA.0.25=25%
+valor.DETALLE_AGUA.0.30=30%
+valor.DETALLE_AGUA.0.35=35%
+valor.DETALLE_AGUA.0.40=40%
+valor.DETALLE_AGUA.0.45=45%
+valor.DETALLE_AGUA.0.50=50%
+
+option.WATER_BUMP=Bumpiness
+option.WATER_BUMP.comment=Ajusta la intensidad de las normales de agua.
+
+option.WATER_SHARPNESS=Nitidez
+option.WATER_SHARPNESS.comment=Ajusta la nitidez de las normales del agua.
+value.WATER_SHARPNESS.0.8=Bajo
+value.WATER_SHARPNESS.0.5=Medio
+value.WATER_SHARPNESS.0.2=Alto
+
+option.WATER_SPEED=Velocidad
+option.WATER_SPEED.comment=Ajusta la velocidad del ruido para las normales del agua.
+
+option.WATER_FOG_DENSITY=Densidad de niebla de agua
+option.WATER_FOG_DENSITY.comment=Ajusta la densidad de la niebla de agua.
+
+option.WATER_PIXEL=Bloqueo de píxeles
+option.WATER_PIXEL.comment=Aplica un efecto de pixelado en las normales del agua.
+valor.AGUA_PIXEL.0=DESACTIVADO
+
+#Cámara
+option.DOF=Profundidad de campo
+options.DOF.comment=Habilita el efecto de enfoque de la cámara.
+option.DOF_STRENGTH=Fuerza DoF
+option.DOF_STRENGTH.comment=Ajusta la intensidad del enfoque, los valores más altos se desenfocan más rápido.
+
+option.MOTION_BLUR=Desenfoque de movimiento
+option.MOTION_BLUR.comment=Habilita el desenfoque basado en el movimiento de la cámara.
+
+option.MOTION_BLUR_STRENGTH=Fuerza de desenfoque de movimiento
+option.MOTION_BLUR_STRENGTH.comment=Ajusta la intensidad del desenfoque de movimiento.
+
+option.BLOOM=Florecer
+option.BLOOM.comment=Permite que las áreas brillantes brillen.
+
+option.BLOOM_STRENGTH=Fuerza de la floración
+option.BLOOM_STRENGTH.comment=Ajusta la intensidad de la floración.
+
+option.BLOOM_CONTRAST=Bloom Contraste
+option.BLOOM_CONTRAST.comment=Ajusta si la floración debe conservar el contraste de color o la visibilidad de los detalles. Un valor más alto conserva el contraste de color, mientras que un valor más bajo conserva la visibilidad de los detalles.
+valor.BLOOM_CONTRAST.-4=-1.00
+valor.BLOOM_CONTRAST.-3=-0.75
+valor.BLOOM_CONTRAST.-2=-0.50
+valor.BLOOM_CONTRAST.-1=-0.25
+valor.BLOOM_CONTRAST.0=0.00
+valor.BLOOM_CONTRAST.1=0.25
+valor.BLOOM_CONTRAST.2=0.50
+valor.BLOOM_CONTRAST.3=0.75
+valor.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=Radio de floración
+option.BLOOM_RADIUS.comment=Ajusta hasta dónde se propaga el brillo.
+value.BLOOM_RADIUS.1=Mínimo
+value.BLOOM_RADIUS.2=Muy bajo
+value.BLOOM_RADIUS.3=Bajo
+value.BLOOM_RADIUS.4=Medio
+valor.BLOOM_RADIUS.5=Alto
+value.BLOOM_RADIUS.6=Muy alto
+value.BLOOM_RADIUS.7=Máximo
+
+option.LENS_FLARE=Reflejo de lente
+option.LENS_FLARE.comment=Habilita el destello de lente.
+
+option.LENS_FLARE_STRENGTH=Intensidad del destello de la lente
+option.LENS_FLARE_STRENGTH.comment=Ajusta la intensidad del destello de la lente.
+
+option.VIGNETTE=Viñeta
+option.Vignette.comment=Desvanece el borde de la pantalla a negro. §e[*]§rDeshabilitar para imágenes 360.
+
+option.VIGNETTE_STRENGTH=Intensidad de viñeta
+option.VIGNETTE_STRENGTH.comment=Ajusta la intensidad de la viñeta.
+valor.VIGNETTE_STRENGTH.0.26=0.1
+valor.VIGNETTE_STRENGTH.0.51=0.2
+valor.VIGNETTE_STRENGTH.0.72=0.3
+valor.VIGNETTE_STRENGTH.0.91=0.4
+valor.VIGNETTE_STRENGTH.1.06=0.5
+valor.VIGNETTE_STRENGTH.1.19=0.6
+valor.VIGNETTE_STRENGTH.1.28=0.7
+valor.VIGNETTE_STRENGTH.1.36=0.8
+valor.VIGNETTE_STRENGTH.1.40=0.9
+valor.VIGNETTE_STRENGTH.1.41=1.0
+
+option.DIRTY_LENS=Lente sucia
+option.DIRTY_LENS.comment=Añade un efecto de partículas de polvo a la floración. §e[*]§rRequiere floración.
+
+option.CHROMATIC_ABERRATION=Aberración cromática
+option.CHROMATIC_ABERRATION.comment=Agrega distorsión de color alrededor de los bordes.
+value.CHROMATIC_ABERRATION.0=NO
+value.CHROMATIC_ABERRATION.1=Débil
+value.CHROMATIC_ABERRATION.2=Fuerte
+
+
+option.UNDERWATER_DISTORTION=Distorsión submarina
+option.UNDERWATER_DISTORTION.comment=Aplica distorsión de pantalla bajo el agua.
+
+#Anti-aliasing
+opción.FXAA=FXAA
+option.FXAA.comment=Habilita el suavizado aproximado rápido, hecho suavizando los bordes con un costo de rendimiento mínimo. §e[*]§rDesactive Antialiasing en el menú Shaders mientras esta opción está habilitada.
+
+opción.TAA=TAA
+option.TAA.comment=Habilita el anti-aliasing temporal, realizado mediante la fusión inteligente de fotogramas que captura y mejora los pequeños detalles y algunos efectos. §e[*]§rAfilado incluido. §e[*]§rDesactive Antialiasing en el menú Shaders mientras esta opción está habilitada.
+
+#Color
+option.LIGHT_MR=Rojo
+option.LIGHT_MG=Verde
+option.LIGHT_MB=Azul
+option.LIGHT_MI=Intensidad
+
+option.LIGHT_DR=Rojo
+option.LIGHT_DG=Verde
+opción.LIGHT_DB=Azul
+option.LIGHT_DI=Intensidad
+
+option.LIGHT_ER=Rojo
+option.LIGHT_EG=Verde
+opción.LIGHT_EB=Azul
+option.LIGHT_EI=Intensidad
+
+option.LIGHT_NR=Rojo
+option.LIGHT_NG=Verde
+opción.LIGHT_NB=Azul
+option.LIGHT_NI=Intensidad
+
+option.AMBIENT_MR=Rojo
+option.AMBIENT_MG=Verde
+option.AMBIENT_MB=Azul
+option.AMBIENT_MI=Intensidad
+
+option.AMBIENT_DR=Rojo
+option.AMBIENT_DG=Verde
+opción.AMBIENT_DB=Azul
+option.AMBIENT_DI=Intensidad
+
+option.AMBIENT_ER=Rojo
+option.AMBIENT_EG=Verde
+option.AMBIENT_EB=Azul
+option.AMBIENT_EI=Intensidad
+
+option.AMBIENT_NR=Rojo
+option.AMBIENT_NG=Verde
+option.AMBIENT_NB=Azul
+option.AMBIENT_NI=Intensidad
+
+option.MINLIGHT_R=Rojo
+option.MINLIGHT_G=Verde
+opción.MINLIGHT_B=Azul
+option.MINLIGHT_I=Intensidad
+valor.MINLIGHT_I.0.30=0.30 (Moody)
+valor.MINLIGHT_I.0.50=0.50 (Predeterminado)
+valor.MINLIGHT_I.0.70=0.70 (Brillante)
+
+opción.BLOCKLIGHT_R=Rojo
+option.BLOCKLIGHT_G=Verde
+opción.BLOCKLIGHT_B=Azul
+option.BLOCKLIGHT_I=Intensidad
+
+opción.SKY_R=Rojo
+opción.SKY_G=Verde
+opción.SKY_B=Azul
+option.SKY_I=Intensidad
+
+option.WATER_R=Rojo
+option.WATER_G=Verde
+option.WATER_B=Azul
+option.WATER_I=Intensidad
+option.WATER_A=Alfa
+
+option.WEATHER_RR=Rojo
+option.WEATHER_RG=Verde
+option.WEATHER_RB=Azul
+option.WEATHER_RI=Intensidad
+
+option.WEATHER_CR=Rojo
+option.WEATHER_CG=Verde
+option.WEATHER_CB=Azul
+option.WEATHER_CI=Intensidad
+
+option.WEATHER_DR=Rojo
+option.WEATHER_DG=Verde
+option.WEATHER_DB=Azul
+option.WEATHER_DI=Intensidad
+
+option.WEATHER_BR=Rojo
+option.WEATHER_BG=Verde
+option.WEATHER_BB=Azul
+option.WEATHER_BI=Intensidad
+
+option.WEATHER_SR=Rojo
+option.WEATHER_SG=Verde
+option.WEATHER_SB=Azul
+option.WEATHER_SI=Intensidad
+
+option.WEATHER_MR=Rojo
+option.WEATHER_MG=Verde
+option.WEATHER_MB=Azul
+option.WEATHER_MI=Intensidad
+
+option.WEATHER_VR=Rojo
+option.WEATHER_VG=Verde
+option.WEATHER_VB=Azul
+option.WEATHER_VI=Intensidad
+
+opción.AURORA_LR=Rojo
+option.AURORA_LG=Verde
+opción.AURORA_LB=Azul
+option.AURORA_LI=Intensidad
+
+option.AURORA_HR=Rojo
+opción.AURORA_HG=Verde
+opción.AURORA_HB=Azul
+option.AURORA_HI=Intensidad
+
+option.NETHER_NR=Rojo
+option.NETHER_NG=Verde
+option.NETHER_NB=Azul
+option.NETHER_NI=Intensidad
+
+option.NETHER_VR=Rojo
+option.NETHER_VG=Verde
+option.NETHER_VB=Azul
+option.NETHER_VI=Intensidad
+
+option.NETHER_CR=Rojo
+option.NETHER_CG=Verde
+option.NETHER_CB=Azul
+option.NETHER_CI=Intensidad
+
+option.NETHER_WR=Rojo
+option.NETHER_WG=Verde
+option.NETHER_WB=Azul
+option.NETHER_WI=Intensidad
+
+option.NETHER_BR=Rojo
+option.NETHER_BG=Verde
+option.NETHER_BB=Azul
+option.NETHER_BI=Intensidad
+
+opción.END_R=Rojo
+opción.END_G=Verde
+opción.END_B=Azul
+option.END_I=Intensidad
+
+option.EMISIVE_RECOLOR=Cambiar color emisivo
+option.EMISSIVE_RECOLOR.comment=Tiñe ciertos bloques emisivos con color blocklight.
+
+option.SKY_VANILLA=Cielo Vainilla
+option.SKY_VANILLA.comment=Usar color cielo vainilla.
+
+option.NETHER_VANILLA=Vainilla Nether
+option.NETHER_VANILLA.comment=Usar color vainilla inferior.
+
+#Egradación de color y mapa de tonos
+option.EXPOSURE=Exposición
+option.TonemapExposure.comment=Ajusta el brillo general.
+
+option.AUTO_EXPOSURE=Exposición automática
+option.AUTO_EXPOSURE.comment=Habilita el ajuste automático del brillo general.
+
+option.CLASSIC_EXPOSURE=Exposición clásica
+option.CLASSIC_EXPOSURE.comment=Habilita una mayor exposición al entrar en interiores.
+
+option.COLOR_GRADING=Escala de Color
+option.COLOR_GRADING.comment=Activa la Escala de Colores. §e[*]§rNo es necesario habilitar esta opción para cambiar los controles deslizantes de mapa de tonos, saturación e intensidad.
+
+option.TONEMAP_WHITE_CURVE=Mapa de tonos White Curva
+option.TONEMAP_WHITE_CURVE.comment=Ajusta la rapidez con la que el mapa de tonos puede alcanzar el blanco.
+
+option.TONEMAP_LOWER_CURVE=Mapa de tonos Curva inferior
+option.TONEMAP_LOWER_CURVE.comment=Ajusta el contraste de los colores más oscuros.
+
+option.TONEMAP_UPPER_CURVE=Mapa de tonos Curva superior
+option.TONEMAP_UPPER_CURVE.comment=Ajusta el contraste de los colores más brillantes.
+
+option.SATURATION=Saturación
+option.SATURATION.comment=Ajusta la saturación de todos los colores.
+
+option.VIBRANCE=Vibrancia
+option.VIBRANCE.comment=Ajusta la saturación de los colores menos saturados, los colores bien saturados se ven menos afectados.
+
+#Configuración de clasificación de color
+option.CG_RR=Rojo - Rojo (Cantidad)
+option.CG_RG=Rojo - Verde (Cantidad)
+option.CG_RB=Rojo - Azul (Cantidad)
+option.CG_RI=Fuerza Roja (Cantidad)
+option.CG_RM=Minimal Rojo (Cantidad)
+option.CG_RC=Rojo Curva (Cantidad)
+
+option.CG_GR=Verde - Rojo (Cantidad)
+option.CG_GG=Verde - Verde (Cantidad)
+option.CG_GB=Verde - Azul (Cantidad)
+option.CG_GI=Fuerza Verde (Cantidad)
+option.CG_GM=Minimal Verde (Cantidad)
+option.CG_GC=Verde Curva (Cantidad)
+
+option.CG_BR=Azul - Rojo (Cantidad)
+option.CG_BG=Azul - Verde (Cantidad)
+option.CG_BB=Azul - Azul (Cantidad)
+option.CG_BI=Fuerza Azul (Cantidad)
+option.CG_BM=Minimal Azul (Cantidad)
+option.CG_BC=Azul Curva (Cantidad)
+
+option.CG_TR=Tinte - Rojo (Cantidad)
+option.CG_TG=Tinte - Verde (Cantidad)
+option.CG_TB=Tinte - Azul (Cantidad)
+option.CG_TI=Intensidad del Tinte (Cantidad)
+option.CG_TM=Valor de mezcla de tinte
+
+#Extras
+option.OUTLINE=Contorno
+option.OUTLINE.comment=Habilita el efecto de contorno.
+value.OUTLINE.0=DESACTIVADO
+value.OUTLINE.1=Negro
+value.OUTLINE.2=Coloreado
+value.OUTLINE.3=1.12 Actualizar arte
+value.OUTLINE.4=Mazmorras
+
+option.TOON_LIGHTMAP=Mapa de luz de Toon
+option.TOON_LIGHTMAP.comment=Reduce la calidad de la iluminación vainilla para cel shading. §e[*]§rEsta opción es conocida por hacer que el juego "se vea mal", habilítala solo cuando sea necesario.
+
+option.RETRO_FILTER=Filtro retro
+option.RETRO_FILTER.comment=Agrega pixelado y tramado. §e[*]§rCalidad de renderizado más baja para una pixelación más fuerte. §c[-]§rIncompatible con suavizado.
+
+option.WORLD_CURVATURE=Curvatura mundial
+option.WORLD_CURVATURE.comment=Habilita la curvatura mundial. §e[*]§rFunciona solo en el supramundo. §c[-]§rMinecraft se encarga de los fragmentos que faltan y no puedo solucionarlos. §c[-]§rPuede romper el resaltado de selección de bloque en 1.17.
+
+option.WORLD_CURVATURE_SIZE=Tamaño de curvatura mundial
+option.WORLD_CURVATURE_SIZE.comment=Ajusta el tamaño de la curvatura mundial. Los valores negativos doblarán el mundo hacia arriba.
+
+#Animaciones
+option.WORLD_TIME_ANIMATION=Animación de hora mundial
+option.WORLD_TIME_ANIMATION.comment=Utiliza el tiempo dentro del juego para mover objetos. §e[*]§rEsta opción se usa principalmente al hacer cinemáticas.
+
+option.ANIMATION_SPEED=Velocidad de animación
+option.ANIMATION_SPEED.comment=Ajusta la velocidad de la animación.
+
+#Bloques ondulantes
+option.WAVING_GRASS=Césped
+option.WAVING_PLANT.comment=Permite que la hierba se mueva.
+option.WAVING_CROP=Cultivos
+option.WAVING_CROP.comment=Permite que las plantas de las tierras de cultivo se muevan.
+option.WAVING_PLANT=Plantas
+option.WAVING_PLANT.comment=Permite agitar varias plantas.
+option.WAVING_TALL_PLANT=Plantas altas
+option.WAVING_PLANT.comment=Permite agitar plantas de 2 bloques de altura.
+option.WAVING_LEAF=Hojas
+option.WAVING_LEAF.comment=Permite que las hojas se muevan.
+option.WAVING_VINE=Vides
+option.WAVING_VINE.comment=Permite que las enredaderas se muevan.
+option.WAVING_WATER=Agua
+option.WAVING_WATER.comment=Permite que el agua se mueva.
+option.WAVING_LAVA=Lava
+option.WAVING_LAVA.comment=Permite que la lava se mueva.
+option.WAVING_FIRE=Fuego
+option.WAVING_FIRE.comment=Permite que el fuego fluya.
+option.WAVING_LANTERN=Linterna
+option.WAVING_LANTERN.comment=Permite que la linterna se mueva.
