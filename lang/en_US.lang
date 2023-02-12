@@ -9,6 +9,7 @@ profile.comment=Low : low shadows, no extra effects. Medium : medium shadows, no
 
 #Screens
 screen.LIGHTING=Lighting
+screen.SHADOW=More Shadow Config
 
 screen.MATERIAL=Material
 screen.SPECULAR=Specular & Reflections
@@ -70,7 +71,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.01
+option.ABOUT=BSL v8.2.02
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -92,13 +93,6 @@ option.SHADOW_COLOR.comment=Enables tinted shadow from translucents. §a[+]§rUs
 
 option.SHADOW_FILTER=Shadow Filtering
 option.SHADOW_FILTER.comment=Enables shadow filtering.
-
-option.SHADOW_ENTITY=Entity Shadow
-option.SHADOW_ENTITY.comment=Enables shadow on entities. §e[*]§rDisable this when a huge amount of entities are loaded. §e[*]§rOnly works on 1.16.5 and above.
-
-option.SHADOW_PIXEL=Pixel Locked Shadows
-option.SHADOW_PIXEL.comment=Applies pixelation effect on shadows.
-value.SHADOW_PIXEL.0=OFF
 
 option.sunPathRotation=Sun Path Rotation
 option.sunPathRotation.comment=Adjusts sun angle.
@@ -126,6 +120,20 @@ option.DYNAMIC_HANDLIGHT.comment=Allows blocklight to be emitted from view when 
 option.WHITE_WORLD=White World
 option.WHITE_WORLD.comment=Replaces textures with flat white color.
 
+#More Shadow Config
+option.SHADOW_ENTITY=Entity Shadow
+option.SHADOW_ENTITY.comment=Enables shadow on mobs. §e[*]§rDisable this when a huge amount of mobs are loaded. §e[*]§rOnly works on 1.16.5 and above.
+
+option.SHADOW_BLOCK_ENTITY=Block Entity Shadow
+option.SHADOW_BLOCK_ENTITY.comment=Enables shadow on block entities. §e[*]§rDisable this when a huge amount of block entities are loaded. §e[*]§rOnly works on 1.16.5 and above.
+
+option.SHADOW_VEGETATION=Vegetation Shadow
+option.SHADOW_VEGETATION.comment=Enables shadow on grass, crops, and most other plants.
+
+option.SHADOW_PIXEL=Pixel Locked Shadows
+option.SHADOW_PIXEL.comment=Applies pixelation effect on shadows.
+value.SHADOW_PIXEL.0=OFF
+
 #Material
 option.ADVANCED_MATERIALS=Advanced Materials
 option.ADVANCED_MATERIALS.comment=Enables the use of specular and normal mapping which allows for more detail on various things.  §e[*]§rThis option requires a resource pack which contains specular and/or normal maps, disable if none is currently used. §e[*]§rOptions which requires advanced materials are indicated by *, changing these options won't affect the visuals or performance while advanced materials is disabled.
@@ -146,6 +154,12 @@ option.EMISSIVE.comment=Allows certain surfaces to be brighter.
 value.EMISSIVE.0=§cOFF
 value.EMISSIVE.1=AdvMat Only*
 value.EMISSIVE.2=Full
+
+option.REFRACTION=Refraction
+option.REFRACTION.comment=Enables distortion behind normal mapped transparent surfaces. §c[-]§rThe transparent surface itself will be distorted. §c[-]§rSome other features may not work properly with this effect enabled.
+value.REFRACTION.0=OFF
+value.REFRACTION.1=Water Only
+value.REFRACTION.2=Full
 
 option.ALBEDO_BALANCING=Albedo Balancing
 option.ALBEDO_BALANCING.comment=Reduces brightness of very bright colored surfaces.
@@ -393,6 +407,12 @@ value.WATER_NORMALS.2=Perlin
 option.WATER_PARALLAX=Parallax
 option.WATER_PARALLAX.comment=Enables water displacement.
 
+option.WATER_SHADOW_COLOR=Water Colored Shadows
+option.WATER_SHADOW_COLOR.comment=Determines whether water should cast colored shadows for tinting.§e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged.
+
+option.WATER_CAUSTICS=Water Caustics
+option.WATER_CAUSTICS.comment=Determines whether water should cast caustics.§e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged.
+
 option.WATER_DETAIL=Detail
 option.WATER_DETAIL.comment=Adjusts the ratio between large and small water normals.
 value.WATER_DETAIL.0.05=5%
@@ -410,7 +430,7 @@ option.WATER_BUMP=Bumpiness
 option.WATER_BUMP.comment=Adjusts the intensity of water normals.
 
 option.WATER_SHARPNESS=Sharpness
-option.WATER_SHARPNESS.comment=Adjusts the sharpness of water normals.
+option.WATER_SHARPNESS.comment=Adjusts the sharpness of water normals and the amount of caustics.
 value.WATER_SHARPNESS.0.8=Low
 value.WATER_SHARPNESS.0.5=Medium
 value.WATER_SHARPNESS.0.2=High
@@ -418,8 +438,16 @@ value.WATER_SHARPNESS.0.2=High
 option.WATER_SPEED=Speed
 option.WATER_SPEED.comment=Adjusts the noise speed for water normals.
 
+option.WATER_FOG=Water Fog
+option.WATER_FOG.comment=Determines whether water fog is only visible while underwater or at all times.
+value.WATER_FOG.0=Underwater Only
+value.WATER_FOG.1=Full
+
 option.WATER_FOG_DENSITY=Water Fog Density
 option.WATER_FOG_DENSITY.comment=Adjusts water fog density.
+
+option.WATER_CAUSTICS_STRENGTH=Caustics Strength
+option.WATER_CAUSTICS_STRENGTH.comment=Adjusts water caustics strength.
 
 option.WATER_PIXEL=Pixel Lock
 option.WATER_PIXEL.comment=Applies pixelation effect on water normals.
@@ -506,6 +534,20 @@ option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing ou
 
 option.TAA=TAA
 option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
+
+option.FXAA_SUBPIXEL=FXAA Subpixel Smoothing
+option.FXAA_SUBPIXEL.comment=Adjusts how much smoothing should FXAA apply to tiny details.
+value.FXAA_SUBPIXEL.0.00=§cOFF
+value.FXAA_SUBPIXEL.0.25=Low
+value.FXAA_SUBPIXEL.0.50=Medium
+value.FXAA_SUBPIXEL.0.75=High
+value.FXAA_SUBPIXEL.1.00=Very High
+
+option.FXAA_EDGE_SENSITIVITY=FXAA Edge Sensitivity
+option.FXAA_EDGE_SENSITIVITY.comment=Adjusts how much edge contrast and brightness required to apply FXAA.
+value.FXAA_EDGE_SENSITIVITY.0=Low
+value.FXAA_EDGE_SENSITIVITY.1=Medium
+value.FXAA_EDGE_SENSITIVITY.2=High
 
 #Color
 option.LIGHT_MR=Red
