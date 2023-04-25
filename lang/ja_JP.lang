@@ -9,6 +9,7 @@ profile.comment=低 : 粗い影、その他の効果なし。 中 : 中精度の
 
 #Screens
 screen.LIGHTING=ライティング
+screen.SHADOW=追加の影設定
 
 screen.MATERIAL=質感
 screen.SPECULAR=反射
@@ -70,7 +71,7 @@ screen.EXTRAS=その他の設定
 screen.ANIMATION=アニメーション設定
 
 #Settings
-option.ABOUT=BSL v8.2.01
+option.ABOUT=BSL v8.2.03
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -93,15 +94,8 @@ option.SHADOW_COLOR.comment=半透明の物体からの色付きの影。 §a[+]
 option.SHADOW_FILTER=シャドウフィルタリング
 option.SHADOW_FILTER.comment=シャドウフィルタリングを有効にします。
 
-option.SHADOW_ENTITY=エンティティの影
-option.SHADOW_ENTITY.comment=エンティティの影を有効にします。 §e[*]§r大量のエンティティを読み込む時は無効にしてください。 §e[*]§r1.16.5以降でのみ動作します。
-
-option.SHADOW_PIXEL=ピクセル固定の影
-option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
-value.SHADOW_PIXEL.0=オフ
-
-option.sunPathRotation=太陽の軌道角度
-option.sunPathRotation.comment=陽射しの角度を設定します。
+option.sunPathRotation=黄道角度
+option.sunPathRotation.comment=太陽がめぐる軌道の角度を設定します。
 
 option.AO=アンビエントオクルージョン(AO)
 option.AO.comment=接触している表面や交差した部分に柔らかな影を与えます。
@@ -123,8 +117,25 @@ value.DESATURATION_FACTOR.0.0=最大
 option.DYNAMIC_HANDLIGHT=ダイナミックハンドライト
 option.DYNAMIC_HANDLIGHT.comment=特定のオブジェクトを手に持った場合、視界を光で照らします。
 
+option.MULTICOLORED_BLOCKLIGHT=マルチカラーブロックライト
+option.MULTICOLORED_BLOCKLIGHT.comment=スクリーンスペースのマルチカラーブロックライトを有効にします。 §e[*]§rMac以外の1.16.5以上で動作
+
 option.WHITE_WORLD=ホワイトワールド
 option.WHITE_WORLD.comment=テクスチャを真っ白にします。
+
+#More Shadow Config
+option.SHADOW_ENTITY=エンティティの影
+option.SHADOW_ENTITY.comment=モブの影を有効にします。 §e[*]§r大量のモブを読み込む時は無効にしてください。 §e[*]§r1.16.5以降でのみ動作します。
+
+option.SHADOW_BLOCK_ENTITY=ブロックエンティティの影
+option.SHADOW_BLOCK.comment=ブロックエンティティの影を有効にします。 §e[*]§r大量のブロックエンティティを読み込む時は無効にしてください。 §e[*]§r1.16.5以降でのみ動作します。
+
+option.SHADOW_VEGETATION=植物の影
+option.SHADOW_VEGETATION.comment=草や小麦、その他の植物の影を有効にします。
+
+option.SHADOW_PIXEL=ピクセル固定の影
+option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
+value.SHADOW_PIXEL.0=オフ
 
 #Material
 option.ADVANCED_MATERIALS=質感の強化
@@ -146,6 +157,12 @@ option.EMISSIVE.comment=特定のブロックの表面を明るくします。
 value.EMISSIVE.0=§cオフ
 value.EMISSIVE.1=質感の強化のみ*
 value.EMISSIVE.2=全て
+
+option.REFRACTION=屈折
+option.REFRACTION.comment=法線マッピングを持つ透明な面の向こう側のゆがみを有効にします。 §c[-]§r透明な面そのものがゆがんでしまいます。 §c[-]§rこのエフェクトを有効にすると、他の一部の機能が正しく動作しない場合があります。
+value.REFRACTION.0=オフ
+value.REFRACTION.1=水面のみ
+value.REFRACTION.2=全て
 
 option.ALBEDO_BALANCING=アルベドバランス
 option.ALBEDO_BALANCING.comment=非常に明るい表面のまぶしさを低減します。
@@ -393,6 +410,12 @@ value.WATER_NORMALS.2=Perlinノイズ
 option.WATER_PARALLAX=視差
 option.WATER_PARALLAX.comment=水の変位を有効にします。
 
+option.WATER_SHADOW_COLOR=水の色付きの影
+option.WATER_SHADOW_COLOR.comment=水が色の付いた影を落とすかどうかを設定します。§e[*]§rこのオプションを有効にすると、透明なオブジェクトが水没したときに色の付いた影を落とすのを防ぐことができます。
+
+option.WATER_CAUSTICS=水のコースティクス影
+option.WATER_CAUSTICS.comment=水がコースティクス模様の影を落とすかどうかを設定します。§e[*]§rこのオプションを有効にすると、透明なオブジェクトが水没したときに色の付いた影を落とすのを防ぐことができます。
+
 option.WATER_DETAIL=ディテール
 option.WATER_DETAIL.comment=水面の法線マッピングにおける大小の比率を調整します。
 value.WATER_DETAIL.0.05=5%
@@ -410,7 +433,7 @@ option.WATER_BUMP=バンプ
 option.WATER_BUMP.comment=水面の法線マッピングの強度を調整します。
 
 option.WATER_SHARPNESS=シャープさ
-option.WATER_SHARPNESS.comment=水面の法線マッピングのシャープさを調整します。
+option.WATER_SHARPNESS.comment=水面の法線マッピングのシャープさとコースティクス影の量を調整します。
 value.WATER_SHARPNESS.0.8=低
 value.WATER_SHARPNESS.0.5=中
 value.WATER_SHARPNESS.0.2=高
@@ -418,8 +441,16 @@ value.WATER_SHARPNESS.0.2=高
 option.WATER_SPEED=速度
 option.WATER_SPEED.comment=水面の法線マッピングのノイズの速度を調整します。
 
+option.WATER_FOG=水中の霧
+option.WATER_FOG.comment=水中の霧を水中のみで見えるようにするか、常時見えるようにするかを設定します。
+value.WATER_FOG.0=水中のみ
+value.WATER_FOG.1=全て
+
 option.WATER_FOG_DENSITY=水中の視距離
 option.WATER_FOG_DENSITY.comment=水中の視距離(霧の濃さ)を調整します。
+
+option.WATER_CAUSTICS_STRENGTH=コースティクスの強さ
+option.WATER_CAUSTICS_STRENGTH.comment=コースティクスの強さを調整します。
 
 option.WATER_PIXEL=ピクセル化
 option.WATER_PIXEL.comment=水面の法線マッピングにピクセル化エフェクトを適用します。
@@ -506,6 +537,23 @@ option.FXAA.comment=高速な近似アンチエイリアシングを有効にし
 
 option.TAA=TAA
 option.TAA.comment=TAA(Temporal Anti-Aliasing)を有効にします。高度なフレームブレンディングによって、微細なディティールやいくつかの高価を改善します。 §e[*]§rイメージシャーペン(鮮鋭化)が含まれています。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
+
+option.FXAA_SUBPIXEL=FXAAサブピクセルスムージング
+option.FXAA_SUBPIXEL.comment=FXAAが微少なディテールに適用するスムージングの度合いを調整します。
+value.FXAA_SUBPIXEL.0.00=§cオフ
+value.FXAA_SUBPIXEL.0.25=弱
+value.FXAA_SUBPIXEL.0.50=中
+value.FXAA_SUBPIXEL.0.75=強
+value.FXAA_SUBPIXEL.1.00=最大
+
+option.FXAA_EDGE_SENSITIVITY=FXAAエッジ感度
+option.FXAA_EDGE_SENSITIVITY.comment=FXAAを適用するために必要なエッジのコントラストと明るさの量を調整します。
+value.FXAA_EDGE_SENSITIVITY.0=弱
+value.FXAA_EDGE_SENSITIVITY.1=中
+value.FXAA_EDGE_SENSITIVITY.2=強
+
+option.TAA_SELECTIVE=選択的TAA
+option.TAA_SELECTIVE.comment=エンティティ、パーティクル、手をTAAから除外し、ゴーストを低減します。 §c[-]§r除外されたオブジェクトはFXAAでの処理が必要です。
 
 #Color
 option.LIGHT_MR=赤
