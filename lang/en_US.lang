@@ -71,7 +71,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.02
+option.ABOUT=BSL v8.2.03
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -116,6 +116,9 @@ value.DESATURATION_FACTOR.0.0=Very High
 
 option.DYNAMIC_HANDLIGHT=Dynamic Handlight
 option.DYNAMIC_HANDLIGHT.comment=Allows blocklight to be emitted from view when holding certain objects.
+
+option.MULTICOLORED_BLOCKLIGHT=Multi-Colored Blocklight
+option.MULTICOLORED_BLOCKLIGHT.comment=Enables screen space multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above, non-Mac devices.
 
 option.WHITE_WORLD=White World
 option.WHITE_WORLD.comment=Replaces textures with flat white color.
@@ -548,6 +551,9 @@ option.FXAA_EDGE_SENSITIVITY.comment=Adjusts how much edge contrast and brightne
 value.FXAA_EDGE_SENSITIVITY.0=Low
 value.FXAA_EDGE_SENSITIVITY.1=Medium
 value.FXAA_EDGE_SENSITIVITY.2=High
+
+option.TAA_SELECTIVE=Selective TAA
+option.TAA_SELECTIVE.comment=Exclude entities, particles, and hand from temporal anti aliasing to reduce ghosting. §c[-]§rExcluded objects will need to rely on FXAA.
 
 #Color
 option.LIGHT_MR=Red
