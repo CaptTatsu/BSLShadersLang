@@ -9,6 +9,7 @@ profile.comment=低：少量阴影，无额外效果. 中：中等阴影，无�
 
 #Screens
 screen.LIGHTING=光照
+screen.SHADOW=更多阴影设置
 
 screen.MATERIAL=材质
 screen.SPECULAR=高光 & 反射
@@ -70,7 +71,7 @@ screen.EXTRAS=额外
 screen.ANIMATION=动画
 
 #Settings
-option.ABOUT=BSL v8.2.01
+option.ABOUT=BSL v8.2.03
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -92,13 +93,6 @@ option.SHADOW_COLOR.comment=启用从透明物的着色阴影. §a[+]§r用于�
 
 option.SHADOW_FILTER=阴影滤镜
 option.SHADOW_FILTER.comment=启用阴影滤镜.
-
-option.SHADOW_ENTITY=实体阴影
-option.SHADOW_ENTITY.comment=启用实体的阴影. §e[*]§r当大量实体被加载时关闭此项. §e[*]§r尽在1.16.5及以上有效.
-
-option.SHADOW_PIXEL=像素化阴影
-option.SHADOW_PIXEL.comment=在阴影上应用像素化效果.
-value.SHADOW_PIXEL.0=关闭
 
 option.sunPathRotation=太阳轨迹旋转
 option.sunPathRotation.comment=调整太阳角.
@@ -123,8 +117,25 @@ value.DESATURATION_FACTOR.0.0=非常高
 option.DYNAMIC_HANDLIGHT=动态手部光源
 option.DYNAMIC_HANDLIGHT.comment=允许手持特定物品时从视角发出方块光.
 
+option.MULTICOLORED_BLOCKLIGHT=多彩方块光
+option.MULTICOLORED_BLOCKLIGHT.comment=启用屏幕空间多彩方块光. §e[*]§r仅适用于1.16.5及以上版本，Mac设备不可用. 
+
 option.WHITE_WORLD=白色世界
 option.WHITE_WORLD.comment=将纹理替换成扁平的白色.
+
+#More Shadow Config
+option.SHADOW_ENTITY=实体阴影
+option.SHADOW_ENTITY.comment=启用实体的阴影. §e[*]§r当加载大量实体时请关闭此功能. §e[*]§r仅在1.16.5及以上有效.
+
+option.SHADOW_BLOCK_ENTITY=方块实体阴影
+option.SHADOW_BLOCK_ENTITY.comment=启用方块实体的阴影. §e[*]§r当加载大量方块实体时，请禁用此功能. §e[*]§r仅适用于1.16.5及以上版本. 
+
+option.SHADOW_VEGETATION=植被阴影
+option.SHADOW_VEGETATION.comment=启用草地、庄稼和大多数其他植物的阴影. 
+
+option.SHADOW_PIXEL=像素化阴影
+option.SHADOW_PIXEL.comment=在阴影上应用像素化效果.
+value.SHADOW_PIXEL.0=关闭
 
 #Material
 option.ADVANCED_MATERIALS=高级材质
@@ -146,6 +157,12 @@ option.EMISSIVE.comment=允许某些表面更亮一些.
 value.EMISSIVE.0=§c关闭
 value.EMISSIVE.1=仅高级材质*
 value.EMISSIVE.2=关闭
+
+option.REFRACTION=反射
+option.REFRACTION.comment=使正常映射的透明表面后面产生扭曲. §c[-]§r透明表面本身将被扭曲. §c[-]§r启用此效果可能会导致某些其他功能无法正常工作. 
+value.REFRACTION.0=关
+value.REFRACTION.1=仅水面
+value.REFRACTION.2=所有
 
 option.ALBEDO_BALANCING=反射率平衡
 option.ALBEDO_BALANCING.comment=降低高亮度有色表面的亮度.
@@ -284,7 +301,7 @@ option.WEATHER_PERBIOME=群系特定天气
 option.WEATHER_PERBIOME.comment=为不同的生物群系使用可变的天气颜色. §c[-]§r也许在未知的条件下不能工作.
 
 option.UNDERGROUND_SKY=地下天空修复
-option.UNDERGROUND_SKY.comment=当玩家在海平面（Y: 62）以下的暗处时隐藏天空、). §c[-]§r不适用于较低的超平坦世界.
+option.UNDERGROUND_SKY.comment=当玩家在海平面(Y: 62)以下的暗处时隐藏天空. §c[-]§r不适用于较低的超平坦世界.
 
 option.LIGHT_SHAFT=光束
 option.LIGHT_SHAFT.comment=添加来自太阳/月亮的体积射线. §a[+]§r启用TAA对该效果有帮助. §e[*]§r性能由阴影贴图分辨率决定.
@@ -393,6 +410,12 @@ value.WATER_NORMALS.2=Perlin
 option.WATER_PARALLAX=视差
 option.WATER_PARALLAX.comment=启用水置换.
 
+option.WATER_SHADOW_COLOR=有色水体阴影
+option.WATER_SHADOW_COLOR.comment=确定水是否应该投射彩色阴影进行着色. §e[*]§r启用此选项将防止透明物体在浸入水中时投射彩色阴影. 
+
+option.WATER_CAUSTICS=水体光折射效应
+option.WATER_CAUSTICS.comment=确定水是否应该投射焦散光. §e[*]§r启用此功能将防止透明物体在浸入水中时投射有色阴影. 
+
 option.WATER_DETAIL=细节
 option.WATER_DETAIL.comment=调整大和小水法线之间的比率.
 value.WATER_DETAIL.0.05=5%
@@ -410,16 +433,24 @@ option.WATER_BUMP=凹凸
 option.WATER_BUMP.comment=调整水法线的密度.
 
 option.WATER_SHARPNESS=锐度
-option.WATER_SHARPNESS.comment=调整水法线的锐度.
+option.WATER_SHARPNESS.comment=调整水面法线的锐度和焦散的数量.
 value.WATER_SHARPNESS.0.8=低
 value.WATER_SHARPNESS.0.5=中
 value.WATER_SHARPNESS.0.2=高
 
 option.WATER_SPEED=速度
-option.WATER_SPEED.comment=调整用于水法线的噪波速度.
+option.WATER_SPEED.comment=调整水面法线的噪声速度.
+
+option.WATER_FOG=水雾
+option.WATER_FOG.comment=决定水雾是否只在水下可见还是始终可见
+value.WATER_FOG.0=仅在水下
+value.WATER_FOG.1=始终可见
 
 option.WATER_FOG_DENSITY=水雾密度
 option.WATER_FOG_DENSITY.comment=调整水雾密度.
+
+option.WATER_CAUSTICS_STRENGTH=光线折射强度
+option.WATER_CAUSTICS_STRENGTH.comment=调整水体光线折射强度.
 
 option.WATER_PIXEL=像素化水
 option.WATER_PIXEL.comment=向水面法线应用像素化效果.
@@ -506,6 +537,23 @@ option.FXAA.comment=启用快速近似抗锯齿，以最小性能开销平滑边
 
 option.TAA=TAA
 option.TAA.comment=启用时间抗锯齿，使用智能帧混合捕获微小细节及一些效果. §e[*]§r包含锐化. §e[*]§r在该选项启用时请禁用光影菜单中的抗锯齿.
+
+option.FXAA_SUBPIXEL=FXAA亚像素平滑处理
+option.FXAA_SUBPIXEL.comment=调整FXAA应用于微小细节的平滑程度.
+value.FXAA_SUBPIXEL.0.00=§c关
+value.FXAA_SUBPIXEL.0.25=低
+value.FXAA_SUBPIXEL.0.50=中
+value.FXAA_SUBPIXEL.0.75=高
+value.FXAA_SUBPIXEL.1.00=非常高
+
+option.FXAA_EDGE_SENSITIVITY=FXAA边缘灵敏度
+option.FXAA_EDGE_SENSITIVITY.comment=调整应用FXAA所需的边缘对比度和亮度.
+value.FXAA_EDGE_SENSITIVITY.0=低
+value.FXAA_EDGE_SENSITIVITY.1=中
+value.FXAA_EDGE_SENSITIVITY.2=高
+
+option.TAA_SELECTIVE=有选择的TAA
+option.TAA_SELECTIVE.comment=排除实体、粒子和手部，以减少时间反锯齿的残影. §c[-]§r被排除的对象将需要依赖FXAA.
 
 #Color
 option.LIGHT_MR=红色
