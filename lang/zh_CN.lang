@@ -90,7 +90,7 @@ option.shadowDistance=阴影距离
 option.shadowDIstance.comment=调整阴影距离.
 
 option.SHADOW_COLOR=有色阴影
-option.SHADOW_COLOR.comment=使阴影能从半透明的状态变得具有色调. §a[+]§r用于有色体积光束. §c[-]§r略微更高的性能消耗于使用阴影滤镜之时. 
+option.SHADOW_COLOR.comment=使阴影能从半透明的状态变得具有色调. §a[+]§r用于有色体积光束. §c[-]§r会消耗略加高的性能于使用阴影滤镜之时. 
 
 option.SHADOW_FILTER=阴影滤镜
 option.SHADOW_FILTER.comment=启用阴影滤镜. 
@@ -364,7 +364,7 @@ value.CLOUD_AMOUNT.8.0 =非常高
 
 option.CLOUD_HEIGHT=高度
 option.CLOUD_HEIGHT.comment=调整云层高度.
-value.CLOUD_HEIGHT.5.0 =非常低
+value.CLOUD_HEIGHT.5.0=非常低
 value.CLOUD_HEIGHT.7.5=低
 value.CLOUD_HEIGHT.10.0=中
 value.CLOUD_HEIGHT.12.5=高
@@ -482,7 +482,7 @@ option.BLOOM_STRENGTH=辉光强度
 option.BLOOM_STRENGTH.comment=调整辉光强度.
 
 option.BLOOM_CONTRAST=辉光对比度
-option.BLOOM_CONTRAST.comment=调整该辉光是否应该保留颜色对比度或能见度.
+option.BLOOM_CONTRAST.comment=调整该辉光是否应该保留颜色对比度或能见度. 更高的值保留颜色对比度, 而更低的值保留细节能见度.
 value.BLOOM_CONTRAST.-4=-1.00
 value.BLOOM_CONTRAST.-3=-0.75
 value.BLOOM_CONTRAST.-2=-0.50
