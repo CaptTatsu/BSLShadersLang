@@ -28,14 +28,14 @@ screen.ANTIALIASING=抗锯齿
 
 screen.COLOR=颜色
 screen.LIGHT_COLOR=光照颜色
-screen.LIGHT_M=光（清晨）
-screen.AMBIENT_M=氛围光（清晨）
-screen.LIGHT_D=光（白天）
-screen.AMBIENT_D=氛围光（白天）
-screen.LIGHT_E=光（黄昏）
-screen.AMBIENT_E=氛围光（黄昏）
-screen.LIGHT_N=光（夜晚）
-screen.AMBIENT_N=氛围光（夜晚）
+screen.LIGHT_M=光照（清晨）
+screen.AMBIENT_M=氛围光照（清晨）
+screen.LIGHT_D=光照（白天）
+screen.AMBIENT_D=氛围光照（白天）
+screen.LIGHT_E=光照（黄昏）
+screen.AMBIENT_E=氛围光照（黄昏）
+screen.LIGHT_N=光照（夜晚）
+screen.AMBIENT_N=氛围光照（夜晚）
 screen.MINLIGHT=最小光量
 screen.BLOCKLIGHT_COLOR=方块光颜色
 screen.SKY_COLOR=天空颜色
@@ -90,7 +90,7 @@ option.shadowDistance=阴影距离
 option.shadowDIstance.comment=调整阴影距离.
 
 option.SHADOW_COLOR=有色阴影
-option.SHADOW_COLOR.comment=使阴影能从半透明的状态变得具有色调. §a[+]§r用于有色体积光束. §c[-]§r会消耗略加高的性能于使用阴影滤镜之时. 
+option.SHADOW_COLOR.comment=启用透光物体的有色阴影. §a[+]§r用于有色体积光束. §c[-]§r会消耗略加高的性能于使用阴影滤镜之时. 
 
 option.SHADOW_FILTER=阴影滤镜
 option.SHADOW_FILTER.comment=启用阴影滤镜. 
@@ -140,7 +140,7 @@ value.SHADOW_PIXEL.0=关
 
 #Colored Blocklight Config
 option.MCBL_ANTI_BLEED=抗渗色
-option.MCBL_ANTI_BLEED.comment=减少不需要的方块光颜色扩散. §c[-]§r可能导致欠采样误差变得更显眼.
+option.MCBL_ANTI_BLEED.comment=减少不需要的方块光颜色扩散. §c[-]§r可能导致欠采样虚影变得更显眼.
 option.MCBL_LEGACY_COLOR=遗留颜色
 option.MCBL_LEGACY_COLOR.comment=使用旧方法来计算方块光颜色.
 
@@ -161,12 +161,12 @@ option.BASIC_SSS.comment=启用一个次表面散射的简化版本到特定方�
 
 option.EMISSIVE=自发光
 option.EMISSIVE.comment=允许一些特定表面变得更亮.
-value.EMISSIVE.0=§c关闭
+value.EMISSIVE.0=§c关
 value.EMISSIVE.1=仅高级材质*
 value.EMISSIVE.2=全部
 
 option.REFRACTION=折射
-option.REFRACTION.comment=启用法面贴图透明表面后面的形变. §c[-]§r该透明表面自身也会形变. §c[-]§r开了这个效果，有些其他特性无法正确工作.
+option.REFRACTION.comment=在法面贴图所映的透明表面背后启用扭曲. §c[-]§r该透明表面自身也会扭曲. §c[-]§r开了这个效果，有些其他特性无法正确工作.
 value.REFRACTION.0=关
 value.REFRACTION.1=只有水
 value.REFRACTION.2=全部
@@ -175,22 +175,22 @@ option.ALBEDO_BALANCING=反照率平衡
 option.ALBEDO_BALANCING.comment=使非常亮的有色表面暗化.
 
 option.ALPHA_BLEND=透明度混合
-option.ALPHA_BLEND.comment=TBA.
+option.ALPHA_BLEND.comment=决定透明度混合如何完成.
 value.ALPHA_BLEND.0=伽马
 value.ALPHA_BLEND.1=线性
 
-option.ENTITY_FLASH=实体刷新
-option.ENTITY_FLASH.comment=让受伤实体和附近的苦力怕刷新.
+option.ENTITY_FLASH=实体闪光
+option.ENTITY_FLASH.comment=使受伤实体和附近的苦力怕可以闪光.
 
 #Specular & Reflections
 option.REFLECTION=反射
-option.REFLECTION.comment=启用水和半透明物体上的反射.
-value.REFLECTION.0=§c关闭
+option.REFLECTION.comment=在水和透光物体的面上启用反射.
+value.REFLECTION.0=§c关
 value.REFLECTION.1=仅天空和镜式
 value.REFLECTION.2=全部
 
-option.REFLECTION_TRANSLUCENT=半透明反射
-option.REFLECTION_TRANSLUCENT.comment=允许反射被渲染在半透明表面上, 比如染色玻璃、冰、史莱姆块等等.
+option.REFLECTION_TRANSLUCENT=透光反射
+option.REFLECTION_TRANSLUCENT.comment=允许反射被渲染在透光表面上, 比如染色玻璃、冰、史莱姆块等等.
 
 option.REFLECTION_SPECULAR=镜式反射*
 option.REFLECTION_SPECULAR.comment=在平滑或金属质感的表面上启用反射.
@@ -202,7 +202,7 @@ option.REFLECTION_ROUGH=粗糙反射*
 option.REFLECTION_ROUGH.comment=允许平滑度较低的表面渲染模糊反射. §c[-]§r可能会包含一点虚影.
 
 option.REFLECTION_PREVIOUS=前帧反射
-option.REFLECTION_PREVIOUS.comment=通过使用前一帧的信息, 允许半透明物体受到反射. §c[-]§r可能会导致截图上的反射丢失(由于截图尺寸的设置造成). §c[-]§r与一些GPU不兼容. §c[-]§r在1.7.10中存在漏洞.
+option.REFLECTION_PREVIOUS.comment=允许透光物体被前一帧的信息映出. §c[-]§r可能会导致截图上的反射丢失(由于截图尺寸的设置造成). §c[-]§r与一些GPU不兼容. §c[-]§r在1.7.10中存在漏洞.
 
 option.SPECULAR_HIGHLIGHT_ROUGH=粗糙镜式高亮
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=允许粗糙表面有微弱的光泽.
@@ -274,12 +274,12 @@ option.NORMAL_DAMPENING=法线抑制*
 option.NORMAL_DAMPENING.comment=降低法线贴图强度来防止反射会太杂乱.
 
 option.NORMAL_PLANTS=朝上的植物
-option.NORMAL_PLANTS.comment=调整植物明暗着色. §e[*]§r如果已使用非平面的植物模型或已把法线贴图应用到植物上，请禁用此选项.
+option.NORMAL_PLANTS.comment=调整植物光影渲染. §e[*]§r如果已使用非平面的植物模型或已把法线贴图应用到植物上，请禁用此选项.
 
 #Atmospherics
 option.CLOUDS=云
-option.CLOUDS.comment=启用云. §a[+]§r默认的云会受益于TAA启用.  §e[*]§r原版云需要将原版云设置设为默认或开启
-value.CLOUDS.0=§c关闭
+option.CLOUDS.comment=启用云. §a[+]§r默认的云会受益于TAA的启用.  §e[*]§r原版云需要将原版云设置设为默认或开启
+value.CLOUDS.0=§c关
 value.CLOUDS.1=默认
 value.CLOUDS.2=原版
 
@@ -290,11 +290,11 @@ option.AURORA=极光
 option.AURORA.comment=启用极光. §a[+]§r此效果会受益于TAA的启用.
 
 option.ROUND_SUN_MOON=圆形日月
-option.ROUND_SUN_MOON.comment=启用基于太阳和月亮的明暗着色器. §e[*]§r请禁用1.15.2及以下的原版日月，设置位置在 视频设置 > 细节 > 日月 中. 
+option.ROUND_SUN_MOON.comment=启用基于太阳和月亮的光影. §e[*]§r请禁用1.15.2及以下的原版日月，设置位置在 视频设置 > 细节 > 日月 . 
 
 option.DISTANT_FADE=远距淡出
 option.DISTANT_FADE.comment=淡出到远区块边界. §e[*]§r此选项受雾气密度影响.
-value.DISTANT_FADE.0=§c关闭
+value.DISTANT_FADE.0=§c关
 value.DISTANT_FADE.1=仅主世界
 value.DISTANT_FADE.2=仅下界和末地
 value.DISTANT_FADE.3=全部
@@ -333,7 +333,7 @@ option.SKY_HORIZON_N=近地平线
 option.SKY_HORIZON_F=远地平线
 option.SKY_GROUND=天空底部
 option.SKY_GROUND.comment=暗化天空的底部. §e[*]§r该选项会受到雾气密度的影响.
-value.SKY_GROUND.0=§c关闭
+value.SKY_GROUND.0=§c关
 value.SKY_GROUND.1=仅反射
 value.SKY_GROUND.2=完全
 
@@ -346,13 +346,13 @@ option.CLOUD_BASE.comment=决定哪种噪音类型用于云的基础形状.
 value.CLOUD_BASE.0=烟鬼(Perlin) 
 value.CLOUD_BASE.1=直男(Worley) 
 
-option.CLOUD_THICKNESS=厚度
-option.CLOUD_THICKNESS.comment=调整云层厚度,更高的厚度会使得虚影更加明显.
-value.CLOUD_THICKNESS.1 =非常低
-value.CLOUD_THICKNESS.2 =低
-value.CLOUD_THICKNESS.4 =中
-value.CLOUD_THICKNESS.8 =高
-value.CLOUD_THICKNESS.16=非常高
+option.CLOUD_DENSITY=密度
+option.CLOUD_DENSITY.comment=调整云的密度，更高的密度会让虚影更明显.
+value.CLOUD_DENSITY.1=非常低
+value.CLOUD_DENSITY.2=低
+value.CLOUD_DENSITY.4=中等
+value.CLOUD_DENSITY.6=高
+value.CLOUD_DENSITY.8=非常高
 
 option.CLOUD_AMOUNT=数量
 option.CLOUD_AMOUNT.comment=调整云层数量.
@@ -360,7 +360,7 @@ value.CLOUD_AMOUNT.12.0=非常低
 value.CLOUD_AMOUNT.11.0=低
 value.CLOUD_AMOUNT.10.0=中
 value.CLOUD_AMOUNT.9.0=高
-value.CLOUD_AMOUNT.8.0 =非常高
+value.CLOUD_AMOUNT.8.0=非常高
 
 option.CLOUD_HEIGHT=高度
 option.CLOUD_HEIGHT.comment=调整云层高度.
@@ -370,13 +370,13 @@ value.CLOUD_HEIGHT.10.0=中
 value.CLOUD_HEIGHT.12.5=高
 value.CLOUD_HEIGHT.15.0=非常高
 
-option.CLOUD_THICKNESS=浓厚度
-option.CLOUD_THICKNESS.comment=调整云的浓厚度.
-value.CLOUD_THICKNESS.2=特低
+option.CLOUD_THICKNESS=厚度
+option.CLOUD_THICKNESS.comment=调整云的厚度.
+value.CLOUD_THICKNESS.2=非常低
 value.CLOUD_THICKNESS.4=低
 value.CLOUD_THICKNESS.5=中等
 value.CLOUD_THICKNESS.7=高
-value.CLOUD_THICKNESS.10=特高
+value.CLOUD_THICKNESS.10=非常高
 
 option.CLOUD_DETAIL=细节
 option.CLOUD_DETAIL.comment=调整云朵细节.
@@ -396,21 +396,21 @@ option.CLOUD_BRIGHTNESS=亮度
 option.CLOUD_BRIGHTNESS.comment=调整云层亮度.
 
 #Water
-option.WATER_MODE=水纹理模式
-option.WATER_MODE.comment=决定是否应该使用原版水纹理. 默认：明暗着色器的扁平水颜色,无纹理. 原版：原版纹理. 着色原版：原版纹理且带有明暗着色器的水颜色. 扁平原版：原版的扁平水颜色.
+option.WATER_MODE=水体纹理模式
+option.WATER_MODE.comment=决定是否应该使用原版水纹理. 默认：光影的扁平水颜色,无纹理. 原版：原版纹理. 着色原版：原版纹理且带有光影的水颜色. 扁平原版：原版的扁平水颜色.
 value.WATER_MODE.0=默认
 value.WATER_MODE.1=原版
 value.WATER_MODE.2=着色原版
 value.WATER_MODE.3=扁平原版
 
-option.WATER_ALPHA_MODE=水透明模式
-option.WATER_ALPHA_MODE.comment=决定水使用的是基于明暗着色器的透明度值，还是基于纹理的透明度值. §e[*]§r一些效果将会继续使用基于明暗着色器的透明度值.
+option.WATER_ALPHA_MODE=水体透明度模式
+option.WATER_ALPHA_MODE.comment=决定水使用的是光影为主的透明度值，还是纹理的透明度值. §e[*]§r一些效果将会继续使用光影为主的透明度值.
 value.WATER_ALPHA_MODE.0=平坦
 value.WATER_ALPHA_MODE.1=原版
 
 option.WATER_NORMALS=法线
 option.WATER_NORMALS.comment=启用实时生成的法线贴图映射用于水.
-value.WATER_NORMALS.0=§c关闭
+value.WATER_NORMALS.0=§c关
 value.WATER_NORMALS.1=直男(Worley) 
 value.WATER_NORMALS.2=烟鬼(Perlin) 
 
@@ -529,25 +529,25 @@ option.DIRTY_LENS=脏镜头
 option.DIRTY_LENS.comment=添加脏粒子效果到辉光. §e[*]§r此选项需要启用辉光.
 
 option.CHROMATIC_ABERRATION=色散
-option.CHROMATIC_ABERRATION.comment=添加颜色失真到其边缘周围.
-value.CHROMATIC_ABERRATION.0=关闭
+option.CHROMATIC_ABERRATION.comment=添加颜色扭曲到其边缘周围.
+value.CHROMATIC_ABERRATION.0=关
 value.CHROMATIC_ABERRATION.1=弱
 value.CHROMATIC_ABERRATION.2=强
 
 
-option.UNDERWATER_DISTORTION=水下失真
-option.UNDERWATER_DISTORTION.comment=当在水下时应用屏幕失真.
+option.UNDERWATER_DISTORTION=水下扭曲
+option.UNDERWATER_DISTORTION.comment=当在水下时应用屏幕扭曲失真.
 
 #Anti-aliasing
 option.FXAA=FXAA
-option.FXAA.comment=启用快速近似抗锯齿, 以最小性能开销使边缘平滑. §e[*]§r请禁用明暗着色器菜单中的抗锯齿于此选项启用之时. 
+option.FXAA.comment=启用快速近似抗锯齿, 以最小性能开销使边缘平滑. §e[*]§r请禁用光影菜单中的抗锯齿于此选项启用之时. 
 
 option.TAA=TAA
-option.TAA.comment=启用时间相关抗锯齿, 以智能帧混合来进行, 它会捕获并提高微小细节及一些效果. §e[*]§r包含锐化. §e[*]§r请禁用明暗着色器菜单中的抗锯齿于此选项启用之时.
+option.TAA.comment=启用时然抗锯齿, 以智能帧混合来进行, 它会捕获并提高微小细节及一些效果. §e[*]§r包含锐化. §e[*]§r请禁用光影菜单中的抗锯齿于此选项启用之时.
 
 option.FXAA_SUBPIXEL=FXAA亚像素平滑
 option.FXAA_SUBPIXEL.comment=调整FXAA该应用多少平滑到微小细节上.
-value.FXAA_SUBPIXEL.0.00=§c关闭
+value.FXAA_SUBPIXEL.0.00=§c关
 value.FXAA_SUBPIXEL.0.25=低
 value.FXAA_SUBPIXEL.0.50=中
 value.FXAA_SUBPIXEL.0.75=高
@@ -560,7 +560,7 @@ value.FXAA_EDGE_SENSITIVITY.1=中
 value.FXAA_EDGE_SENSITIVITY.2=高
 
 option.TAA_SELECTIVE=选择性TAA
-option.TAA_SELECTIVE.comment=排除实体，粒子，并交由时间抗锯齿来减少重影. §c[-]§r排除的物体得依靠FXAA才行.
+option.TAA_SELECTIVE.comment=排除实体，粒子，并交由时然抗锯齿来减少重影. §c[-]§r排除的物体得依靠FXAA才行.
 
 #Color
 option.LIGHT_MR=红色
@@ -722,7 +722,7 @@ option.CLASSIC_EXPOSURE=经典曝光
 option.CLASSIC_EXPOSURE.comment=启用增量的曝光到进门时.
 
 option.COLOR_GRADING=颜色分级
-option.COLOR_GRADING.comment=启用颜色分级. §e[*]§r此选项无需启用即可更改色调图、饱和度和自然饱和度滑块.
+option.COLOR_GRADING.comment=启用颜色分级. §e[*]§r此选项无需启用即可更改色调图、饱和度和鲜艳度滑块.
 
 option.TONEMAP_WHITE_CURVE=色调图白色曲线
 option.TONEMAP_WHITE_CURVE.comment=调整色调图能多快达到白色.
@@ -736,8 +736,8 @@ option.TONEMAP_UPPER_CURVE.comment=调整更亮颜色的对比度.
 option.SATURATION=饱和度
 option.SATURATION.comment=调整所有颜色的饱和度.
 
-option.VIBRANCE=自然饱和度
-option.VIBRANCE.comment=对较少饱和的颜色调整饱和度, 饱和很好的颜色受的影响较少.
+option.VIBRANCE=鲜艳度
+option.VIBRANCE.comment=(一译为自然饱和度.) 对饱和较少的颜色调整饱和度, 饱和得很好的颜色受的影响较少.
 
 #Color Grading Config
 option.CG_RR=红色 - 红色值
@@ -771,22 +771,22 @@ option.CG_TM=色调混合值
 option.OUTLINE=轮廓
 option.OUTLINE.comment=启用轮廓效果.
 value.OUTLINE.0=关
-value.OUTLINE.1=黑色
-value.OUTLINE.2=着色
+value.OUTLINE.1=黑
+value.OUTLINE.2=有色
 value.OUTLINE.3=1.12更新艺术效果
 value.OUTLINE.4=地下城
 
 option.TOON_LIGHTMAP=卡通光照贴图
-option.TOON_LIGHTMAP.comment=为卡通明暗着色(cel-shading)降低原版光照质量. §e[*]§r此选项被知道会使游戏“看起来很糟”, 倘若需要才启用它.
+option.TOON_LIGHTMAP.comment=降低原版光照质量，进行卡通光影渲染(cel-shading). §e[*]§r此选项被知道会使游戏“看起来很糟”, 倘若需要才启用它.
 
 option.RETRO_FILTER=复古滤镜
-option.RETRO_FILTER.comment=添加像素感和颤动. §e[*]§r更低的渲染质量可获得更强的像素感. §c[-]§r与抗锯齿不兼容.
+option.RETRO_FILTER.comment=添加像素感和颤动. §e[*]§r更低的渲染质量可获得更强的像素感. §c[-]§r不兼容抗锯齿.
 
 option.WORLD_CURVATURE=世界曲率
 option.WORLD_CURVATURE.comment=启用世界曲率. §e[*]§r仅在主世界中灵用. §c[*]§r丢失区块由Minecraft自身处置, 我没法修复. §c[-]§r在1.17上可能会使方块选择框出现问题.
 
 option.WORLD_CURVATURE_SIZE=世界曲率大小
-option.WORLD_CURVATURE_SIZE.comment=调整世界曲率大小. 负值会把世界掰弯上去.
+option.WORLD_CURVATURE_SIZE.comment=调整世界曲率大小. 负值会把世界向上弯曲.
 
 #Animations
 option.WORLD_TIME_ANIMATION=世界时间动画
