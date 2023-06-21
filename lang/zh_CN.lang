@@ -5,7 +5,7 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=超高
-profile.comment=低:低等质量阴影,无额外效果. 中:中等质量阴影,无额外效果. 高:中等质量阴影,氛围光遮蔽和光束. 超高:高质量阴影,氛围光遮蔽和光束.
+profile.comment=低:低等质量阴影,无额外效果. 中:中等质量阴影,无额外效果. 高:中等质量阴影,氛围光遮蔽和光束. 超高:高等质量阴影,氛围光遮蔽和光束.
 
 #Screens
 screen.LIGHTING=光照
@@ -93,7 +93,7 @@ option.SHADOW_COLOR=有色阴影
 option.SHADOW_COLOR.comment=启用透光物体的有色阴影. §a[+]§r用于有色体积光束. §c[-]§r会消耗略加高的性能于使用阴影滤镜之时. 
 
 option.SHADOW_FILTER=阴影滤镜
-option.SHADOW_FILTER.comment=启用阴影滤镜. 
+option.SHADOW_FILTER.comment=启用阴影滤镜.
 
 option.sunPathRotation=太阳路径旋转
 option.sunPathRotation.comment=调整太阳斜角.
@@ -146,7 +146,7 @@ option.MCBL_LEGACY_COLOR.comment=使用旧方法来计算方块光颜色.
 
 #Material
 option.ADVANCED_MATERIALS=高级材质
-option.ADVANCED_MATERIALS.comment=启用镜式和法线贴图映射, 这可顾及各种事物上的更多细节.  §e[*]§r此选项需要资源包之包含镜式和/或法线贴图者, 如果没有使用这种资源包, 请禁用它. §e[*]§r一些需要高级材质的选项用 * 指示, 变动这些选项不会影响效果或性能于高级材质被禁用之时.
+option.ADVANCED_MATERIALS.comment=启用镜式和法线贴图映射, 这可顾及各种事物上的更多细节.  §e[*]§r此选项需要资源包之包含镜式和/或法线贴图者, 如果没有使用这种资源包, 请禁用它. §e[*]§r一些需要高级材质的选项用 * 指示, 变动这些选项不会影响视效或性能于高级材质被禁用之时.
 
 option.MATERIAL_FORMAT=材质格式*
 option.MATERIAL_FORMAT.comment=决定资源包所使用的镜式和法线贴图格式. §e[*]§r材质作者通常会告知哪个格式是资源包里所使用的, 使用错误的格式可能会导致奇怪的结果.
@@ -172,7 +172,7 @@ value.REFRACTION.1=只有水
 value.REFRACTION.2=全部
 
 option.ALBEDO_BALANCING=反照率平衡
-option.ALBEDO_BALANCING.comment=使非常亮的有色表面暗化.
+option.ALBEDO_BALANCING.comment=使非常亮的有色表面亮度降低.
 
 option.ALPHA_BLEND=透明度混合
 option.ALPHA_BLEND.comment=决定透明度混合如何完成.
@@ -202,7 +202,7 @@ option.REFLECTION_ROUGH=粗糙反射*
 option.REFLECTION_ROUGH.comment=允许平滑度较低的表面渲染模糊反射. §c[-]§r可能会包含一点虚影.
 
 option.REFLECTION_PREVIOUS=前帧反射
-option.REFLECTION_PREVIOUS.comment=允许透光物体被前一帧的信息映出. §c[-]§r可能会导致截图上的反射丢失(由于截图尺寸的设置造成). §c[-]§r与一些GPU不兼容. §c[-]§r在1.7.10中存在漏洞.
+option.REFLECTION_PREVIOUS.comment=允许透光物体被用前一帧的信息映出. §c[-]§r可能会导致截图上的反射丢失(由于截图尺寸的设置造成). §c[-]§r与一些GPU不兼容. §c[-]§r在1.7.10中存在漏洞.
 
 option.SPECULAR_HIGHLIGHT_ROUGH=粗糙镜式高亮
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=允许粗糙表面有微弱的光泽.
@@ -404,7 +404,7 @@ value.WATER_MODE.2=着色原版
 value.WATER_MODE.3=扁平原版
 
 option.WATER_ALPHA_MODE=水体透明度模式
-option.WATER_ALPHA_MODE.comment=决定水使用的是光影为主的透明度值，还是纹理的透明度值. §e[*]§r一些效果将会继续使用光影为主的透明度值.
+option.WATER_ALPHA_MODE.comment=决定水使用的是光影为主的透明度值，还是纹理的透明度值. §e[*]§r有些效果会继续使用光影为主的透明度值.
 value.WATER_ALPHA_MODE.0=平坦
 value.WATER_ALPHA_MODE.1=原版
 
@@ -424,7 +424,7 @@ option.WATER_CAUSTICS=水体光斑
 option.WATER_CAUSTICS.comment=决定水是否要投射焦散光斑.§e[*]§r启用此选项会阻止透明物体在浸入水下时投射有色阴影.
 
 option.WATER_DETAIL=细节
-option.WATER_DETAIL.comment=调整水法线或粗或细的比率.
+option.WATER_DETAIL.comment=调整水法线或大或小的比率.
 value.WATER_DETAIL.0.05=5%
 value.WATER_DETAIL.0.10=10%
 value.WATER_DETAIL.0.15=15%
@@ -437,10 +437,10 @@ value.WATER_DETAIL.0.45=45%
 value.WATER_DETAIL.0.50=50%
 
 option.WATER_BUMP=凹凸
-option.WATER_BUMP.comment=调整水面法线的密度.
+option.WATER_BUMP.comment=调整水体法线的密度.
 
 option.WATER_SHARPNESS=锐度
-option.WATER_SHARPNESS.comment=调整水面法线的锐度.
+option.WATER_SHARPNESS.comment=调整水体法线的锐度.
 value.WATER_SHARPNESS.0.8=低
 value.WATER_SHARPNESS.0.5=中
 value.WATER_SHARPNESS.0.2=高
@@ -457,7 +457,7 @@ option.WATER_FOG_DENSITY=水雾密度
 option.WATER_FOG_DENSITY.comment=调整水雾密度.
 
 option.WATER_CAUSTICS_STRENGTH=光斑强度
-option.WATER_CAUSTICS_STRENGTH.comment=调整水体光斑强度.
+option.WATER_CAUSTICS_STRENGTH.comment=调整水体焦散光斑强度.
 
 option.WATER_PIXEL=像素化
 option.WATER_PIXEL.comment=应用像素化效果到水面法线上.
@@ -482,7 +482,7 @@ option.BLOOM_STRENGTH=辉光强度
 option.BLOOM_STRENGTH.comment=调整辉光强度.
 
 option.BLOOM_CONTRAST=辉光对比度
-option.BLOOM_CONTRAST.comment=调整该辉光是否应该保留颜色对比度或能见度. 更高的值保留颜色对比度, 而更低的值保留细节能见度.
+option.BLOOM_CONTRAST.comment=调整该辉光是否应该保留颜色对比度或可见度. 更高的值保留颜色对比度, 而更低的值保留细节可见度.
 value.BLOOM_CONTRAST.-4=-1.00
 value.BLOOM_CONTRAST.-3=-0.75
 value.BLOOM_CONTRAST.-2=-0.50
@@ -495,22 +495,22 @@ value.BLOOM_CONTRAST.4=1.00
 
 option.BLOOM_RADIUS=辉光半径
 option.BLOOM_RADIUS.comment=调整辉光扩散的距离.
-value.BLOOM_RADIUS.1=最近
-value.BLOOM_RADIUS.2=很近
-value.BLOOM_RADIUS.3=近
+value.BLOOM_RADIUS.1=最小
+value.BLOOM_RADIUS.2=很低
+value.BLOOM_RADIUS.3=低
 value.BLOOM_RADIUS.4=中等
-value.BLOOM_RADIUS.5=远
-value.BLOOM_RADIUS.6=很远
-value.BLOOM_RADIUS.7=最远
+value.BLOOM_RADIUS.5=高
+value.BLOOM_RADIUS.6=很高
+value.BLOOM_RADIUS.7=最大
 
 option.LENS_FLARE=镜头光晕
 option.LENS_FLARE.comment=启用镜头光晕.
 
-option.LENS_FLARE_STRENGTH=光晕强度
-option.LENS_FLARE_STRENGTH.comment=调整光晕强度.
+option.LENS_FLARE_STRENGTH=镜头光晕强度
+option.LENS_FLARE_STRENGTH.comment=调整镜头光晕强度.
 
 option.VIGNETTE=柔边
-option.Vignette.comment=使屏幕的边缘淡化为黑色. §e[*]§r360度成像禁用.
+option.Vignette.comment=（一译为暗角）使屏幕的边缘淡化为黑色. §e[*]§r360度成像禁用.
 
 option.VIGNETTE_STRENGTH=柔边强度
 option.VIGNETTE_STRENGTH.comment=调整柔边强度.
@@ -528,7 +528,7 @@ value.VIGNETTE_STRENGTH.1.41=1.0
 option.DIRTY_LENS=脏镜头
 option.DIRTY_LENS.comment=添加脏粒子效果到辉光. §e[*]§r此选项需要启用辉光.
 
-option.CHROMATIC_ABERRATION=色散
+option.CHROMATIC_ABERRATION=色差
 option.CHROMATIC_ABERRATION.comment=添加颜色扭曲到其边缘周围.
 value.CHROMATIC_ABERRATION.0=关
 value.CHROMATIC_ABERRATION.1=弱
@@ -737,7 +737,7 @@ option.SATURATION=饱和度
 option.SATURATION.comment=调整所有颜色的饱和度.
 
 option.VIBRANCE=鲜艳度
-option.VIBRANCE.comment=(一译为自然饱和度.) 对饱和较少的颜色调整饱和度, 饱和得很好的颜色受的影响较少.
+option.VIBRANCE.comment=(一译为自然饱和度) 对饱和较少的颜色调整饱和度, 饱和得很好的颜色受的影响较少.
 
 #Color Grading Config
 option.CG_RR=红色 - 红色值
@@ -780,10 +780,10 @@ option.TOON_LIGHTMAP=卡通光照贴图
 option.TOON_LIGHTMAP.comment=降低原版光照质量，进行卡通光影渲染(cel-shading). §e[*]§r此选项被知道会使游戏“看起来很糟”, 倘若需要才启用它.
 
 option.RETRO_FILTER=复古滤镜
-option.RETRO_FILTER.comment=添加像素感和颤动. §e[*]§r更低的渲染质量可获得更强的像素感. §c[-]§r不兼容抗锯齿.
+option.RETRO_FILTER.comment=添加像素感和抖色. §e[*]§r更低的渲染质量可获得更强的像素感. §c[-]§r不兼容抗锯齿.
 
 option.WORLD_CURVATURE=世界曲率
-option.WORLD_CURVATURE.comment=启用世界曲率. §e[*]§r仅在主世界中灵用. §c[*]§r丢失区块由Minecraft自身处置, 我没法修复. §c[-]§r在1.17上可能会使方块选择框出现问题.
+option.WORLD_CURVATURE.comment=启用世界曲率. §e[*]§r仅在主世界中灵用. §c[*]§r丢失区块由Minecraft自身处置, 我没法修复. §c[-]§r可能会破坏方块选择高亮于1.17版本.
 
 option.WORLD_CURVATURE_SIZE=世界曲率大小
 option.WORLD_CURVATURE_SIZE.comment=调整世界曲率大小. 负值会把世界向上弯曲.
