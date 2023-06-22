@@ -5,7 +5,7 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=超高
-profile.comment=低:低等质量阴影,无额外效果. 中:中等质量阴影,无额外效果. 高:中等质量阴影,氛围光遮蔽和光束. 超高:高等质量阴影,氛围光遮蔽和光束.
+profile.comment=低:低等质量阴影,无额外效果. 中:中等质量阴影,无额外效果. 高:中等质量阴影,氛围光遮蔽（AO）和光束. 超高:高等质量阴影,氛围光遮蔽（AO）和光束.
 
 #Screens
 screen.LIGHTING=光照
@@ -98,7 +98,7 @@ option.SHADOW_FILTER.comment=启用阴影滤镜.
 option.sunPathRotation=太阳路径旋转
 option.sunPathRotation.comment=调整太阳斜角.
 
-option.AO=氛围光遮蔽
+option.AO=氛围光遮蔽（AO）
 option.AO.comment=添加柔和阴影于表面接触点或交叉处周围.
 
 option.AO_STRENGTH=氛围光遮蔽强度
@@ -146,7 +146,7 @@ option.MCBL_LEGACY_COLOR.comment=使用旧方法来计算方块光颜色.
 
 #Material
 option.ADVANCED_MATERIALS=高级材质
-option.ADVANCED_MATERIALS.comment=启用镜式和法线贴图映射, 这可顾及各种事物上的更多细节.  §e[*]§r此选项需要资源包之包含镜式和/或法线贴图者, 如果没有使用这种资源包, 请禁用它. §e[*]§r一些需要高级材质的选项用 * 指示, 变动这些选项不会影响视效或性能于高级材质被禁用之时.
+option.ADVANCED_MATERIALS.comment=启用镜式和法线贴图映射, 这可顾及各种事物上的更多细节.  §e[*]§r此选项需要资源包之包含镜式和/或法线贴图者, 如果没有使用这种资源包, 请禁用它. §e[*]§r选项之须要高级材质者示以 * 号, 变动这些选项不会影响视效或性能于高级材质被禁用之时.
 
 option.MATERIAL_FORMAT=材质格式*
 option.MATERIAL_FORMAT.comment=决定资源包所使用的镜式和法线贴图格式. §e[*]§r材质作者通常会告知哪个格式是资源包里所使用的, 使用错误的格式可能会导致奇怪的结果.
