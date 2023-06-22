@@ -79,12 +79,12 @@ value.ABOUT.0=作者： Capt Tatsu
 #Lighting
 option.shadowMapResolution=阴影贴图质量
 option.shadowMapResolution.comment=调整阴影贴图分辨率. §e[*]§r更高分辨率会给出更锐利的阴影, 但是会降低性能.
-value.shadowMapResolution.512=非常低(512)
-value.shadowMapResolution.1024=低(1024)
-value.shadowMapResolution.2048=中(2048)
-value.shadowMapResolution.3072=高(3072)
-value.shadowMapResolution.4096=非常高(4096)
-value.shadowMapResolution.8192=极高(8192)
+value.shadowMapResolution.512=非常低（512）
+value.shadowMapResolution.1024=低（1024）
+value.shadowMapResolution.2048=中（2048）
+value.shadowMapResolution.3072=高（3072）
+value.shadowMapResolution.4096=非常高（4096）
+value.shadowMapResolution.8192=极高（8192）
 
 option.shadowDistance=阴影距离
 option.shadowDIstance.comment=调整阴影距离.
@@ -510,7 +510,7 @@ option.LENS_FLARE_STRENGTH=镜头光晕强度
 option.LENS_FLARE_STRENGTH.comment=调整镜头光晕强度.
 
 option.VIGNETTE=柔边
-option.Vignette.comment=（一译为暗角）使屏幕的边缘淡化为黑色. §e[*]§r360度成像禁用.
+option.VIGNETTE.comment=（一译为暗角）使屏幕的边缘淡化为黑色. §e[*]§r360度成像禁用.
 
 option.VIGNETTE_STRENGTH=柔边强度
 option.VIGNETTE_STRENGTH.comment=调整柔边强度.
