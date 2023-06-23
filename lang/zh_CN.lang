@@ -154,7 +154,7 @@ value.MATERIAL_FORMAT.0=SEUS/Old PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
 option.SSS=次表面散射(SSS)*
-option.SSS.comment=允许光线透过方块穿出并散射. §a[+]§r此效果会受益于TAA的启用.
+option.SSS.comment=允许光线穿入并散射过方块. §a[+]§r此效果会受益于TAA的启用.
 
 option.BASIC_SSS=基本散射
 option.BASIC_SSS.comment=启用一个次表面散射的简化版本到特定方块上.
@@ -166,7 +166,7 @@ value.EMISSIVE.1=仅高级材质*
 value.EMISSIVE.2=全部
 
 option.REFRACTION=折射
-option.REFRACTION.comment=在法面贴图所映的透明表面背后启用扭曲. §c[-]§r该透明表面自身也会扭曲. §c[-]§r开了这个效果，有些其他特性无法正确工作.
+option.REFRACTION.comment=在法面贴图所映的透明表面背后启用扭曲失真. §c[-]§r该透明表面自身也会扭曲失真. §c[-]§r开了这个效果，有些其他特性无法正确工作.
 value.REFRACTION.0=关
 value.REFRACTION.1=只有水
 value.REFRACTION.2=全部
@@ -207,7 +207,7 @@ option.REFLECTION_PREVIOUS.comment=允许透光物体被用前一帧的信息映
 option.SPECULAR_HIGHLIGHT_ROUGH=粗糙镜式高亮
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=允许粗糙表面有微弱的光泽.
 
-option.ALBEDO_METAL=反照式着色且硬编码的金属*
+option.ALBEDO_METAL=反照式上色且硬编码的金属*
 option.ALBEDO_METAL.comment=将基础纹理作为色调，应用在硬编码金属的表面上. §e[*]§r仅在labPBR材质格式上灵用.
 
 option.REFLECTION_MODE=反射模式
@@ -216,7 +216,7 @@ value.REFLECTION_MODE.0=少些复样
 value.REFLECTION_MODE.1=平衡
 value.REFLECTION_MODE.2=多些裂缝填补
 
-option.REFLECTION_SKY_FALLOFF=天空反射落失
+option.REFLECTION_SKY_FALLOFF=天空反射落却
 option.REFLECTION_SKY_FALLOFF.comment=调整天空反射在低天空光照下淡出有多远.
 value.REFLECTION_SKY_FALLOFF.1=特弱
 value.REFLECTION_SKY_FALLOFF.2=弱
@@ -300,9 +300,9 @@ value.DISTANT_FADE.2=仅下界和末地
 value.DISTANT_FADE.3=全部
 
 option.DISTANT_FADE_STYLE=远距淡出样式
-option.DISTANT_FADE_STYLE.comment=球体会像原版雾一样. 柱体会忽略Y轴.
-value.DISTANT_FADE_STYLE.0=球体
-value.DISTANT_FADE_STYLE.1=柱体
+option.DISTANT_FADE_STYLE.comment=球形像原版雾. 柱形忽略Y轴.
+value.DISTANT_FADE_STYLE.0=球形
+value.DISTANT_FADE_STYLE.1=柱形
 
 option.WEATHER_PERBIOME=群系特定天气
 option.WEATHER_PERBIOME.comment=为不同的生物群系使用多种天气颜色. §c[-]§r可能不灵用于未知的条件下.
@@ -509,11 +509,11 @@ option.LENS_FLARE.comment=启用镜头光晕.
 option.LENS_FLARE_STRENGTH=镜头光晕强度
 option.LENS_FLARE_STRENGTH.comment=调整镜头光晕强度.
 
-option.VIGNETTE=柔边
+option.VIGNETTE=边饰
 option.VIGNETTE.comment=（一译为暗角）使屏幕的边缘淡化为黑色. §e[*]§r360度成像禁用.
 
-option.VIGNETTE_STRENGTH=柔边强度
-option.VIGNETTE_STRENGTH.comment=调整柔边强度.
+option.VIGNETTE_STRENGTH=边饰强度
+option.VIGNETTE_STRENGTH.comment=调整边饰强度.
 value.VIGNETTE_STRENGTH.0.26=0.1
 value.VIGNETTE_STRENGTH.0.51=0.2
 value.VIGNETTE_STRENGTH.0.72=0.3
@@ -783,7 +783,7 @@ option.RETRO_FILTER=复古滤镜
 option.RETRO_FILTER.comment=添加像素感和抖色. §e[*]§r更低的渲染质量可获得更强的像素感. §c[-]§r不兼容抗锯齿.
 
 option.WORLD_CURVATURE=世界曲率
-option.WORLD_CURVATURE.comment=启用世界曲率. §e[*]§r仅在主世界中灵用. §c[*]§r丢失区块由Minecraft自身处置, 我没法修复. §c[-]§r可能会破坏方块选择高亮于1.17版本.
+option.WORLD_CURVATURE.comment=启用世界曲率. §e[*]§r仅在主世界中灵用. §c[*]§r丢失区块是由Minecraft自己掌控的, 这我没法修复. §c[-]§r可能会破坏方块选择高亮于1.17版本.
 
 option.WORLD_CURVATURE_SIZE=世界曲率大小
 option.WORLD_CURVATURE_SIZE.comment=调整世界曲率大小. 负值会把世界向上弯曲.
