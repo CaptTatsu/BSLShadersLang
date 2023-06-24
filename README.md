@@ -8,7 +8,7 @@ A collection of translation files for BSL Shaders v8.0 and above.
 - Japanese (ja_JP by tyukara)
 - Brazilian Portuguese (pt_BR by Erikk02)
 - Russian (ru_RU by vanja-san)
-- Simplified Chinese (zh_CN by kaniol-lck, TerraceCN)
+- Simplified Chinese (zh_CN by kaniol-lck, TerraceCN, AIDA64S)
 - Traditional Chinese (zh_TW by DLAfvr)
 ## Installation
 - Click the green button named `Code`, then press Download ZIP.
