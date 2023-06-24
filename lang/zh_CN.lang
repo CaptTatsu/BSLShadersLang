@@ -96,7 +96,7 @@ option.SHADOW_FILTER=阴影滤镜
 option.SHADOW_FILTER.comment=启用阴影滤镜.
 
 option.sunPathRotation=太阳路径旋转
-option.sunPathRotation.comment=调整太阳斜角.
+option.sunPathRotation.comment=调整太阳角度.
 
 option.AO=氛围光遮蔽（AO）
 option.AO.comment=添加柔和阴影于表面接触点或交叉处周围.
@@ -121,6 +121,9 @@ option.DYNAMIC_HANDLIGHT.comment=使方块光可从手持特定物品时的视�
 option.MULTICOLORED_BLOCKLIGHT=多色方块光
 option.MULTICOLORED_BLOCKLIGHT.comment=启用屏幕空间多色方块光. §e[*]§r只在1.16.5及以上版本工作，以及非Mac设备.
 
+option.MULTICOLORED_BLOCKLIGHT=多色方块光
+option.MULTICOLORED_BLOCKLIGHT.comment=启用多色方块光. §e[*]§r仅适用于1.16.5及更高版本,不支持MAC设备.
+
 option.WHITE_WORLD=白色世界
 option.WHITE_WORLD.comment=将纹理替换成扁平白色.
 
@@ -144,6 +147,20 @@ option.MCBL_ANTI_BLEED.comment=减少不需要的方块光颜色扩散. §c[-]§
 option.MCBL_LEGACY_COLOR=遗留颜色
 option.MCBL_LEGACY_COLOR.comment=使用旧方法来计算方块光颜色.
 
+#More Shadow Config
+option.SHADOW_ENTITY=实体阴影
+option.SHADOW_ENTITY.comment=启用实体的阴影. §e[*]§r当大量实体被加载时关闭此项. §e[*]§r仅适用于1.16.5及更高版本.
+
+option.SHADOW_BLOCK_ENTITY=方块实体阴影
+option.SHADOW_BLOCK_ENTITY.comment=为方块实体开启阴影. §e[*]§r当加载大量的方块实体时请禁用此功能. §e[*]§r仅适用于1.16.5及更高版本.
+
+option.SHADOW_VEGETATION=植被阴影
+option.SHADOW_VEGETATION.comment=在草地,农作物和大多数其他植物上启用阴影.
+
+option.SHADOW_PIXEL=像素化阴影
+option.SHADOW_PIXEL.comment=在阴影上应用像素化效果.
+value.SHADOW_PIXEL.0=关闭
+
 #Material
 option.ADVANCED_MATERIALS=高级材质
 option.ADVANCED_MATERIALS.comment=启用镜式和法线贴图映射, 这可顾及各种事物上的更多细节.  §e[*]§r此选项需要资源包之包含镜式和/或法线贴图者, 如果没有使用这种资源包, 请禁用它. §e[*]§r选项之须要高级材质者示以 * 号, 变动这些选项不会影响视效或性能于高级材质被禁用之时.
@@ -166,9 +183,9 @@ value.EMISSIVE.1=仅高级材质*
 value.EMISSIVE.2=全部
 
 option.REFRACTION=折射
-option.REFRACTION.comment=在法面贴图所映的透明表面背后启用扭曲失真. §c[-]§r该透明表面自身也会扭曲失真. §c[-]§r开了这个效果，有些其他特性无法正确工作.
+option.REFRACTION.comment=在受法线贴图映射的透明表面背后启用扭曲失真. §c[-]§r该透明表面自身也会扭曲失真. §c[-]§r此效果启用后，有些其他特性可能不会正确工作.
 value.REFRACTION.0=关
-value.REFRACTION.1=只有水
+value.REFRACTION.1=仅水方块
 value.REFRACTION.2=全部
 
 option.ALBEDO_BALANCING=反照率平衡
@@ -260,7 +277,7 @@ option.SELF_SHADOW_STRENGTH=自阴影强度*
 option.SELF_SHADOW_STRENGTH.comment=调整自阴影的强度.
 
 option.DIRECTIONAL_LIGHTMAP=有向光照贴图*
-option.DIRECTIONAL_LIGHTMAP.comment=对原版光照添加法线贴图映射. §c[-]§r此效果启用后,光照贴图可能会故障.
+option.DIRECTIONAL_LIGHTMAP.comment=添加法线贴图映射到原版光照中. §c[-]§r此效果启用后,光照贴图可能会故障.
 
 option.DIRECTIONAL_LIGHTMAP_STRENGTH=有向光照贴图强度*
 option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=调整有向光照贴图的强度.
@@ -409,7 +426,7 @@ value.WATER_ALPHA_MODE.0=平坦
 value.WATER_ALPHA_MODE.1=原版
 
 option.WATER_NORMALS=法线
-option.WATER_NORMALS.comment=启用实时生成的法线贴图映射用于水.
+option.WATER_NORMALS.comment=启用实时生成的法线贴图映射给水用.
 value.WATER_NORMALS.0=§c关
 value.WATER_NORMALS.1=直男(Worley) 
 value.WATER_NORMALS.2=烟鬼(Perlin) 
@@ -422,6 +439,12 @@ option.WATER_SHADOW_COLOR.comment=决定水是否要投射有色阴影到着色�
 
 option.WATER_CAUSTICS=水体光斑
 option.WATER_CAUSTICS.comment=决定水是否要投射焦散光斑.§e[*]§r启用此选项会阻止透明物体在浸入水下时投射有色阴影.
+
+option.WATER_SHADOW_COLOR=水颜色阴影
+option.WATER_SHADOW_COLOR.comment=确定水是否应投射彩色阴影以进行着色.§e[*]§r启用此功能将防止透明物体在被水淹没时投射彩色阴影.
+
+option.WATER_CAUSTICS=水焦散(波光粼粼的样子)
+option.WATER_CAUSTICS.comment=确定水是否应应用焦散.§e[*]§r启用此功能将防止透明物体在被水淹没时投射彩色阴影.
 
 option.WATER_DETAIL=细节
 option.WATER_DETAIL.comment=调整水法线或大或小的比率.
@@ -453,15 +476,20 @@ option.WATER_FOG.comment=决定水雾是只在水下看得到还是到处都能.
 value.WATER_FOG.0=只在水下
 value.WATER_FOG.1=全部
 
+option.WATER_FOG=水雾
+option.WATER_FOG.comment=确定水雾是仅在水下可见还是始终可见.
+value.WATER_FOG.0=仅水下
+value.WATER_FOG.1=始终可见
+
 option.WATER_FOG_DENSITY=水雾密度
 option.WATER_FOG_DENSITY.comment=调整水雾密度.
 
-option.WATER_CAUSTICS_STRENGTH=光斑强度
+option.WATER_CAUSTICS_STRENGTH=焦散光斑强度
 option.WATER_CAUSTICS_STRENGTH.comment=调整水体焦散光斑强度.
 
-option.WATER_PIXEL=像素化
+option.WATER_PIXEL=像素锁定
 option.WATER_PIXEL.comment=应用像素化效果到水面法线上.
-value.WATER_PIXEL.0=OFF
+value.WATER_PIXEL.0=关
 
 #Camera
 option.DOF=景深
@@ -561,6 +589,23 @@ value.FXAA_EDGE_SENSITIVITY.2=高
 
 option.TAA_SELECTIVE=选择性TAA
 option.TAA_SELECTIVE.comment=排除实体，粒子，并交由时然抗锯齿来减少重影. §c[-]§r排除的物体得依靠FXAA才行.
+
+option.FXAA_SUBPIXEL=FXAA 亚像素平滑
+option.FXAA_SUBPIXEL.comment=调整 FXAA 应用于微小细节的平滑程度.
+value.FXAA_SUBPIXEL.0.00=§c关闭
+value.FXAA_SUBPIXEL.0.25=低
+value.FXAA_SUBPIXEL.0.50=中
+value.FXAA_SUBPIXEL.0.75=高
+value.FXAA_SUBPIXEL.1.00=非常高
+
+option.FXAA_EDGE_SENSITIVITY=FXAA 边缘对比度
+option.FXAA_EDGE_SENSITIVITY.comment=调整应用FXAA所需的边缘对比度和亮度.
+value.FXAA_EDGE_SENSITIVITY.0=低
+value.FXAA_EDGE_SENSITIVITY.1=中
+value.FXAA_EDGE_SENSITIVITY.2=高
+
+option.TAA_SELECTIVE=选择性TAA
+option.TAA_SELECTIVE.comment=从临时抗锯齿中排除实体、粒子和手以减少重影. §c[-]§r排除对象依赖FXAA.
 
 #Color
 option.LIGHT_MR=红色

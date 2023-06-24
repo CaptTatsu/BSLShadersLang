@@ -10,6 +10,7 @@ profile.comment=低 : 粗い影、その他の効果なし。 中 : 中精度の
 #Screens
 screen.LIGHTING=ライティング
 screen.SHADOW=追加の影設定
+screen.MCBL=ブロックライト色設定
 
 screen.MATERIAL=質感
 screen.SPECULAR=反射
@@ -71,7 +72,7 @@ screen.EXTRAS=その他の設定
 screen.ANIMATION=アニメーション設定
 
 #Settings
-option.ABOUT=BSL v8.2.03
+option.ABOUT=BSL v8.2.04
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -136,6 +137,12 @@ option.SHADOW_VEGETATION.comment=草や小麦、その他の植物の影を有�
 option.SHADOW_PIXEL=ピクセル固定の影
 option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
 value.SHADOW_PIXEL.0=オフ
+
+#Colored Blocklight Config
+option.MCBL_ANTI_BLEED=アンチブリード
+option.MCBL_ANTI_BLEED.comment=望まないブロックライト色の拡散を低減します。 §c[-]§rアンダーサンプリングのアーティファクトがより目立つようになることがあります。
+option.MCBL_LEGACY_COLOR=レガシーカラー
+option.MCBL_LEGACY_COLOR.comment=ブロックライトの色を従来の方法で計算します。
 
 #Material
 option.ADVANCED_MATERIALS=質感の強化
