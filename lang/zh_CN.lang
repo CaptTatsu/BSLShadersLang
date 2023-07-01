@@ -10,6 +10,7 @@ profile.comment=低：少量阴影，无额外效果. 中：中等阴影，无�
 #Screens
 screen.LIGHTING=光照
 screen.SHADOW=更多阴影设置
+screen.MCBL=方块光颜色设置
 
 screen.MATERIAL=材质
 screen.SPECULAR=高光 & 反射
@@ -71,7 +72,7 @@ screen.EXTRAS=额外
 screen.ANIMATION=动画
 
 #Settings
-option.ABOUT=BSL v8.2.03
+option.ABOUT=BSL v8.2.04
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -136,6 +137,12 @@ option.SHADOW_VEGETATION.comment=在草地,农作物和大多数其他植物上�
 option.SHADOW_PIXEL=像素化阴影
 option.SHADOW_PIXEL.comment=在阴影上应用像素化效果.
 value.SHADOW_PIXEL.0=关闭
+
+#Colored Blocklight Config
+option.MCBL_ANTI_BLEED=防溢出
+option.MCBL_ANTI_BLEED.comment=减少方块光颜色溢出. §c[-]§r可能导致欠采样伪影效应更加明显.
+option.MCBL_LEGACY_COLOR=旧版色彩
+option.MCBL_LEGACY_COLOR.comment=使用旧方法来计算方块光颜色.
 
 #Material
 option.ADVANCED_MATERIALS=高级材质
