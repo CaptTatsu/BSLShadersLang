@@ -222,8 +222,8 @@ value.REFLECTION_MODE.0=Меньше дубликатов
 value.REFLECTION_MODE.1=Сбалансированный
 value.REFLECTION_MODE.2=Больше заполнения пробелов
 
-option.REFLECTION_SKY_FALLOFF=Снижение отражения неба
-option.REFLECTION_SKY_FALLOFF.comment=Регулирует, насколько исчезает отражение далекого неба при низком свете неба.
+option.REFLECTION_SKY_FALLOFF=Подавление отражения неба
+option.REFLECTION_SKY_FALLOFF.comment=Регулирует, насколько исчезает отражение неба при низком уровне света.
 value.REFLECTION_SKY_FALLOFF.1=Очень слабое
 value.REFLECTION_SKY_FALLOFF.2=Слабое
 value.REFLECTION_SKY_FALLOFF.4=Сбалансированное
@@ -332,14 +332,14 @@ option.WEATHER_OPACITY=Непрозрачность погоды
 option.WEATHER_OPACITY.comment=Регулирует непрозрачность погоды.
 
 #Настройки неба
-option.SKY_DENSITY_D=Day Density
-option.SKY_EXPOSURE_D=Day Exposure
-option.SKY_DENSITY_N=Night Density
-option.SKY_EXPOSURE_N=Night Exposure
-option.SKY_DENSITY_W=Weather Density
-option.SKY_EXPOSURE_W=Weather Exposure
-option.SKY_HORIZON_N=Near Horizon
-option.SKY_HORIZON_F=Far Horizon
+option.SKY_DENSITY_D=Плотность днем
+option.SKY_EXPOSURE_D=Экспозиция днем
+option.SKY_DENSITY_N=Плотность ночью
+option.SKY_EXPOSURE_N=Экспозиция ночью
+option.SKY_DENSITY_W=Плотность погоды
+option.SKY_EXPOSURE_W=Экспозиция погоды
+option.SKY_HORIZON_N=Ближний горизонт
+option.SKY_HORIZON_F=Дальний горизонт
 option.SKY_GROUND=Поверхность неба
 option.SKY_GROUND.comment=Затемняет нижнюю часть неба. §e[*]§rНа этот параметр влияет плотность тумана.
 value.SKY_GROUND.0=§cВыключена
@@ -412,10 +412,10 @@ value.WATER_MODE.1=Ванильный
 value.WATER_MODE.2=Ванильный оттенок
 value.WATER_MODE.3=Ванильный плоский
 
-option.WATER_ALPHA_MODE=Water Alpha Mode
-option.WATER_ALPHA_MODE.comment=Determines whether the water uses shader based or texture alpha value. §e[*]§rSome effect will keep using shader based alpha value.
-value.WATER_ALPHA_MODE.0=Flat
-value.WATER_ALPHA_MODE.1=Vanilla
+option.WATER_ALPHA_MODE=Альфа-режим воды
+option.WATER_ALPHA_MODE.comment=Определяет, использует ли вода альфа-значение на основе шейдера или текстуры. §e[*]§rНекоторые эффекты будут продолжать использовать альфа-значение на основе шейдера.
+value.WATER_ALPHA_MODE.0=Плоский
+value.WATER_ALPHA_MODE.1=Ванильный
 
 option.WATER_NORMALS=Карта нормалей
 option.WATER_NORMALS.comment=Включает генерируемое в реальном времени отображение нормалей для воды.
