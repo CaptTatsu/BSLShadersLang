@@ -763,7 +763,7 @@ value.AUTO_EXPOSURE_SPEED.0.0033=Очень низкая
 value.AUTO_EXPOSURE_SPEED.0.01=Медленная
 value.AUTO_EXPOSURE_SPEED.0.033=Средняя
 value.AUTO_EXPOSURE_SPEED.0.1=Быстрая
-value.AUTO_EXPOSURE_SPEED.0.33=ОЛчень быстрая
+value.AUTO_EXPOSURE_SPEED.0.33=Очень быстрая
 
 #Настройки цветовой градации
 option.CG_RR=Красный - Значение красного
