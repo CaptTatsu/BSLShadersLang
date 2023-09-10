@@ -1,15 +1,17 @@
 #shaders/lang/en_us.lang
 
 #Profiles
+profile.MINIMUM=Minimum
 profile.LOW=Low
 profile.MEDIUM=Medium
 profile.HIGH=High
 profile.ULTRA=Ultra
-profile.comment=Low : low shadows, no extra effects. Medium : medium shadows, no extra effects. High : medium shadows, AO and light shafts. Ultra : high shadows, AO, and light shafts.
+profile.comment=Minimum: no shadows, no extra effects. Low : low shadows, no extra effects. Medium : low-medium shadows, no extra effects. High : medium shadows, AO and light shafts. Ultra : high shadows, AO, and light shafts.
 
 #Screens
 screen.LIGHTING=Lighting
-screen.SHADOW=More Shadow Config
+screen.SHADOW_CONFIG=More Shadow Config
+screen.MCBL=Colored Blocklight Config
 
 screen.MATERIAL=Material
 screen.SPECULAR=Specular & Reflections
@@ -60,7 +62,8 @@ screen.NETHER_B=Basalt Deltas
 screen.END_COLOR=End Color
 
 screen.CGT=Color Grading & Tonemap
-screen.COLOR_GRADING=Color Grading Config
+screen.EXPOSURE_CONFIG=More Exposure Config
+screen.COLOR_GRADING_CONFIG=Color Grading Config
 screen.CG_R=Red Channel
 screen.CG_G=Green Channel
 screen.CG_B=Blue Channel
@@ -71,31 +74,32 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.03
+option.ABOUT=BSL v8.2.05
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
 #Lighting
+option.SHADOW=Realtime Shadows
+option.SHADOW.comment=Enables realtime, dynamic shadow mapping.
+
 option.shadowMapResolution=Shadowmap Quality
 option.shadowMapResolution.comment=Adjusts shadowmap size. §e[*]§rHigher resolution gives sharper shadows, but reduces performance.
 value.shadowMapResolution.512=Very Low (512)
 value.shadowMapResolution.1024=Low (1024)
+value.shadowMapResolution.1536=Low Medium (1536)
 value.shadowMapResolution.2048=Medium (2048)
 value.shadowMapResolution.3072=High (3072)
 value.shadowMapResolution.4096=Very High (4096)
 value.shadowMapResolution.8192=Ultra High (8192)
 
 option.shadowDistance=Shadow Distance
-option.shadowDIstance.comment=Adsusts shadow distance.
+option.shadowDistance.comment=Adsusts shadow distance.
 
 option.SHADOW_COLOR=Colored Shadow
 option.SHADOW_COLOR.comment=Enables tinted shadow from translucents. §a[+]§rUsed for colored volumetric light shafts. §c[-]§rSlightly higher performance cost when using shadow filtering.
 
 option.SHADOW_FILTER=Shadow Filtering
 option.SHADOW_FILTER.comment=Enables shadow filtering.
-
-option.sunPathRotation=Sun Path Rotation
-option.sunPathRotation.comment=Adjusts sun angle.
 
 option.AO=Ambient Occlusion
 option.AO.comment=Adds soft shadows around surface contact or intersection.
@@ -133,9 +137,18 @@ option.SHADOW_BLOCK_ENTITY.comment=Enables shadow on block entities. §e[*]§rDi
 option.SHADOW_VEGETATION=Vegetation Shadow
 option.SHADOW_VEGETATION.comment=Enables shadow on grass, crops, and most other plants.
 
+option.sunPathRotation=Sun Path Rotation
+option.sunPathRotation.comment=Adjusts sun angle.
+
 option.SHADOW_PIXEL=Pixel Locked Shadows
 option.SHADOW_PIXEL.comment=Applies pixelation effect on shadows.
 value.SHADOW_PIXEL.0=OFF
+
+#Colored Blocklight Config
+option.MCBL_ANTI_BLEED=Anti Bleed
+option.MCBL_ANTI_BLEED.comment=Reduce unwanted blocklight color spread. §c[-]§rMay cause undersampling artifact to be more noticeable.
+option.MCBL_LEGACY_COLOR=Legacy Color
+option.MCBL_LEGACY_COLOR.comment=Use the old method of calculating blocklight color.
 
 #Material
 option.ADVANCED_MATERIALS=Advanced Materials
@@ -217,6 +230,9 @@ value.REFLECTION_SKY_FALLOFF.4=Balanced
 value.REFLECTION_SKY_FALLOFF.8=Strong
 value.REFLECTION_SKY_FALLOFF.16=Very Strong
 
+option.REFLECTION_SKYBOX=Allow Skybox
+option.REFLECTION_SKYBOX.comment=Allows resourcepack skybox to be included in reflections. §c[-]§rSkybox is only applied to transparent surfaces.
+
 #Normals & Parallax
 option.PARALLAX=Parallax Occlusion Mapping*
 option.PARALLAX.comment=Adds displacement on a surface using height map.
@@ -271,10 +287,11 @@ option.NORMAL_PLANTS.comment=Adjusts plant shading. §e[*]§rDisable this if non
 
 #Atmospherics
 option.CLOUDS=Clouds
-option.CLOUDS.comment=Enables clouds. §a[+]§rDefault clouds benefits from TAA. §e[*]§rVanilla clouds requires vanilla cloud setting set to default or on.
+option.CLOUDS.comment=Enables clouds. §a[+]§rSkybox and volumetric clouds benefit from TAA. §e[*]§rVanilla clouds requires vanilla cloud setting set to default or on.
 value.CLOUDS.0=§cOFF
-value.CLOUDS.1=Default
-value.CLOUDS.2=Vanilla
+value.CLOUDS.1=Skybox
+value.CLOUDS.2=Volumetric
+value.CLOUDS.3=Vanilla
 
 option.SKY_DESATURATION=Sky Desaturation
 option.SKY_DESATURATION.comment=Reduces saturation while adding some tint to the skybox at night
@@ -304,7 +321,7 @@ option.UNDERGROUND_SKY=Underground Sky Fix
 option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
 
 option.LIGHT_SHAFT=Light Shafts
-option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis effect benefits from TAA. §e[*]§rPerformance depends on Shadowmap Resolution.
+option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis effect benefits from TAA. §e[*]§rRequires realtime shadows. §e[*]§rPerformance depends on Shadowmap Resolution.
 
 option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
 option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
@@ -388,6 +405,12 @@ option.CLOUD_OPACITY.comment=Adjusts cloud opacity.
 option.CLOUD_BRIGHTNESS=Brightness
 option.CLOUD_BRIGHTNESS.comment=Adjusts cloud brightness.
 
+option.CLOUD_VOLUMETRIC_SCALE=Volumetric Scale
+option.CLOUD_VOLUMETRIC_SCALE.comment=Adjusts volumetric cloud altitude and size
+value.CLOUD_VOLUMETRIC_SCALE.6.0=Old Vanilla
+value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
+value.CLOUD_VOLUMETRIC_SCALE.16.0=Original Skybox
+
 #Water
 option.WATER_MODE=Water Texture Mode
 option.WATER_MODE.comment=Determines whether vanilla water texture should be used. Default : shader's flat water color, no texture. Vanilla : vanilla texture. Tinted Vanilla : vanilla texture with shader's water color. Flat Vanilla : vanilla's flat water color.
@@ -414,7 +437,7 @@ option.WATER_SHADOW_COLOR=Water Colored Shadows
 option.WATER_SHADOW_COLOR.comment=Determines whether water should cast colored shadows for tinting.§e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged.
 
 option.WATER_CAUSTICS=Water Caustics
-option.WATER_CAUSTICS.comment=Determines whether water should cast caustics.§e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged.
+option.WATER_CAUSTICS.comment=Determines whether water should cast caustics.§e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged.§e[*]§rRequires realtime shadows.
 
 option.WATER_DETAIL=Detail
 option.WATER_DETAIL.comment=Adjusts the ratio between large and small water normals.
@@ -458,7 +481,7 @@ value.WATER_PIXEL.0=OFF
 
 #Camera
 option.DOF=Depth of Field
-options.DOF.comment=Enables camera focus effect.
+option.DOF.comment=Enables camera focus effect.
 option.DOF_STRENGTH=DoF Strength
 option.DOF_STRENGTH.comment=Adjusts the focus strength, higher value blurs quicker.
 
@@ -503,7 +526,7 @@ option.LENS_FLARE_STRENGTH=Lens Flare Strength
 option.LENS_FLARE_STRENGTH.comment=Adjusts lens flare intensity.
 
 option.VIGNETTE=Vignette
-option.Vignette.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging.
+option.VIGNETTE.comment=Fades the edge of the screen to black. §e[*]§rDisable for 360 imaging.
 
 option.VIGNETTE_STRENGTH=Vignette Strength
 option.VIGNETTE_STRENGTH.comment=Adjusts vignette intensity.
@@ -550,7 +573,12 @@ option.FXAA_EDGE_SENSITIVITY=FXAA Edge Sensitivity
 option.FXAA_EDGE_SENSITIVITY.comment=Adjusts how much edge contrast and brightness required to apply FXAA.
 value.FXAA_EDGE_SENSITIVITY.0=Low
 value.FXAA_EDGE_SENSITIVITY.1=Medium
-value.FXAA_EDGE_SENSITIVITY.2=High
+value.FXAA_EDGE_SENSITIVITY.2=High'
+
+option.TAA_MODE=TAA Mode
+option.TAA_MODE.comment=Determines how TAA should be done. Smooth allows some effects to look better at the cost of ghosting. Coarse have less ghosting but barely improves other effects.
+value.TAA_MODE.0=Smooth
+value.TAA_MODE.1=Coarse
 
 option.TAA_SELECTIVE=Selective TAA
 option.TAA_SELECTIVE.comment=Exclude entities, particles, and hand from temporal anti aliasing to reduce ghosting. §c[-]§rExcluded objects will need to rely on FXAA.
@@ -732,6 +760,23 @@ option.SATURATION.comment=Adjusts saturation of all colors.
 option.VIBRANCE=Vibrance
 option.VIBRANCE.comment=Adjusts saturation of less saturated colors, well saturated colors are less affected.
 
+#More Exposure Config
+option.AUTO_EXPOSURE_RADIUS=Auto Exposure Radius
+option.AUTO_EXPOSURE_RADIUS.comment=Adjusts how much of the screen being used for exposure calculation.
+value.AUTO_EXPOSURE_RADIUS.0.002=Very Low
+value.AUTO_EXPOSURE_RADIUS.0.04=Low
+value.AUTO_EXPOSURE_RADIUS.0.18=Medium
+value.AUTO_EXPOSURE_RADIUS.0.35=High
+value.AUTO_EXPOSURE_RADIUS.0.7=Very High
+
+option.AUTO_EXPOSURE_SPEED=Auto Exposure Speed
+option.AUTO_EXPOSURE_SPEED.comment=Adjusts how fast the exposure change occurs. §c[-]§rFast speed or above may cause flashing in combination with low radius.
+value.AUTO_EXPOSURE_SPEED.0.0033=Very Slow
+value.AUTO_EXPOSURE_SPEED.0.01=Slow
+value.AUTO_EXPOSURE_SPEED.0.033=Medium
+value.AUTO_EXPOSURE_SPEED.0.1=Fast
+value.AUTO_EXPOSURE_SPEED.0.33=Very Fast
+
 #Color Grading Config
 option.CG_RR=Red - Red Value
 option.CG_RG=Red - Green Value
@@ -762,7 +807,7 @@ option.CG_TM=Tint Mix Value
 
 #Extras
 option.OUTLINE=Outline
-option.OUTLINE.comment=Enables outline effect.
+option.OUTLINE.comment=Enables outline effect. §c[-]§rBlack, Colored, and 1.12 Update Art are not fully compatible with volumetric clouds.
 value.OUTLINE.0=OFF
 value.OUTLINE.1=Black
 value.OUTLINE.2=Colored
@@ -790,22 +835,31 @@ option.ANIMATION_SPEED.comment=Adjusts animation speed.
 
 #Waving Blocks
 option.WAVING_GRASS=Grass
-option.WAVING_PLANT.comment=Allows grass to wave.
+option.WAVING_GRASS.comment=Allows grass to wave.
+
 option.WAVING_CROP=Crops
 option.WAVING_CROP.comment=Allows plants on farmlands to wave.
+
 option.WAVING_PLANT=Plants
 option.WAVING_PLANT.comment=Allows various plants to wave.
+
 option.WAVING_TALL_PLANT=Tall Plants
-option.WAVING_PLANT.comment=Allows 2 block height plants to wave.
+option.WAVING_TALL_PLANT.comment=Allows 2 block height plants to wave.
+
 option.WAVING_LEAF=Leaves
 option.WAVING_LEAF.comment=Allows leaves to wave.
+
 option.WAVING_VINE=Vines
 option.WAVING_VINE.comment=Allows vines to wave.
+
 option.WAVING_WATER=Water
 option.WAVING_WATER.comment=Allows water to wave.
+
 option.WAVING_LAVA=Lava
 option.WAVING_LAVA.comment=Allows lava to wave.
+
 option.WAVING_FIRE=Fire
 option.WAVING_FIRE.comment=Allows fire to wave.
+
 option.WAVING_LANTERN=Lantern
 option.WAVING_LANTERN.comment=Allows lantern to wave.
