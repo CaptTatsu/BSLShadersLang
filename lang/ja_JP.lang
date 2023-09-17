@@ -1,15 +1,16 @@
 #shaders/lang/ja_JP.lang
 
 #Profiles
+profile.MINIMUM=ミニマム
 profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=ウルトラ
-profile.comment=低 : 粗い影、その他の効果なし。 中 : 中精度の影、 その他の効果なし。 高 : 中精度の影、 AOと光の柱。 ウルトラ : 高精度の影、 AOと光の柱。
+profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影、その他の効果なし。 中 : 中低精度の影、 その他の効果なし。 高 : 中精度の影、 AOと光の柱。 ウルトラ : 高精度の影、 AOと光の柱。
 
 #Screens
 screen.LIGHTING=ライティング
-screen.SHADOW=追加の影設定
+screen.SHADOW_CONFIG=追加の影設定
 screen.MCBL=ブロックライト色設定
 
 screen.MATERIAL=質感
@@ -61,6 +62,7 @@ screen.NETHER_B=玄武岩の三角州
 screen.END_COLOR=エンドの色
 
 screen.CGT=カラーグレーディング & トーンマップ
+screen.EXPOSURE_CONFIG=追加の露出設定
 screen.COLOR_GRADING=カラーグレーディングの設定
 screen.CG_R=赤(R)
 screen.CG_G=緑(G)
@@ -72,7 +74,10 @@ screen.EXTRAS=その他の設定
 screen.ANIMATION=アニメーション設定
 
 #Settings
-option.ABOUT=BSL v8.2.04
+option.SHADOW=リアルタイムの影
+option.SHADOW.comment=リアルタイムの動的影マッピングを有効にします。
+
+option.ABOUT=BSL v8.2.05
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -81,6 +86,7 @@ option.shadowMapResolution=シャドウマップの解像度
 option.shadowMapResolution.comment=シャドウマップのサイズを調整します。 §e[*]§r高解像度にするほど影がシャープになりますが、パフォーマンスは低下します。
 value.shadowMapResolution.512=超低解像度(512)
 value.shadowMapResolution.1024=低解像度 (1024)
+value.shadowMapResolution.1536=低中解像度 (1536)
 value.shadowMapResolution.2048=中解像度 (2048)
 value.shadowMapResolution.3072=高解像度 (3072)
 value.shadowMapResolution.4096=超高解像度 (4096)
@@ -94,9 +100,6 @@ option.SHADOW_COLOR.comment=半透明の物体からの色付きの影。 §a[+]
 
 option.SHADOW_FILTER=シャドウフィルタリング
 option.SHADOW_FILTER.comment=シャドウフィルタリングを有効にします。
-
-option.sunPathRotation=黄道角度
-option.sunPathRotation.comment=太陽がめぐる軌道の角度を設定します。
 
 option.AO=アンビエントオクルージョン(AO)
 option.AO.comment=接触している表面や交差した部分に柔らかな影を与えます。
@@ -133,6 +136,9 @@ option.SHADOW_BLOCK.comment=ブロックエンティティの影を有効にし�
 
 option.SHADOW_VEGETATION=植物の影
 option.SHADOW_VEGETATION.comment=草や小麦、その他の植物の影を有効にします。
+
+option.sunPathRotation=黄道角度
+option.sunPathRotation.comment=太陽がめぐる軌道の角度を設定します。
 
 option.SHADOW_PIXEL=ピクセル固定の影
 option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
@@ -224,6 +230,9 @@ value.REFLECTION_SKY_FALLOFF.4=バランス
 value.REFLECTION_SKY_FALLOFF.8=強い
 value.REFLECTION_SKY_FALLOFF.16=とても強い
 
+option.REFLECTION_SKYBOX=スカイボックスの反射
+option.REFLECTION_SKYBOX.comment=リソースパックのスカイボックスを空の反射に含める。§c[-]§rスカイボックスは、透明な表面にのみ適用されます。
+
 #Normals & Parallax
 option.PARALLAX=視差遮蔽マッピング(POM)*
 option.PARALLAX.comment=高さ情報を使用してオブジェクト表面に凹凸を加えます。
@@ -278,10 +287,11 @@ option.NORMAL_PLANTS.comment=植物の影を調整します。 §e[*]§r平坦�
 
 #Atmospherics
 option.CLOUDS=雲
-option.CLOUDS.comment=雲を有効にします。 §a[+]§rデフォルトの雲はTAAの恩恵を受けます。 §e[*]§rバニラの雲はバニラの雲設定をデフォルトかオンにする必要があります。
+option.CLOUDS.comment=雲を有効にします。 §a[+]§rスカイボックスと立体的な雲はTAAの恩恵を受けます。 §e[*]§rバニラの雲はバニラの雲設定をデフォルトかオンにする必要があります。
 value.CLOUDS.0=§cオフ
-value.CLOUDS.1=デフォルト
-value.CLOUDS.2=バニラ
+value.CLOUDS.1=スカイボックス
+value.CLOUDS.2=立体的な雲
+value.CLOUDS.3=バニラ
 
 option.SKY_DESATURATION=空の低彩度化
 option.SKY_DESATURATION.comment=夜空に少し色合いを加えながら彩度を下げます。
@@ -311,7 +321,7 @@ option.UNDERGROUND_SKY=地下の空の修正
 option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
 
 option.LIGHT_SHAFT=ライトシャフト
-option.LIGHT_SHAFT.comment=太陽/月からの太さのある光の柱を追加します。 §a[+]§rこの効果はTAAの恩恵を受けます。 §e[*]§rパフォーマンスはシャドウマップの解像度に依存します。
+option.LIGHT_SHAFT.comment=太陽/月からの立体的な光の柱を追加します。 §a[+]§rこの効果はTAAの恩恵を受けます。 §e[*]§rリアルタイムの影が必要です §e[*]§rパフォーマンスはシャドウマップの解像度に依存します。
 
 option.LIGHT_SHAFT_STRENGTH=ライトシャフトの強さ
 option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。
@@ -395,6 +405,12 @@ option.CLOUD_OPACITY.comment=雲の不透明度を調整します。
 option.CLOUD_BRIGHTNESS=輝度
 option.CLOUD_BRIGHTNESS.comment=雲の輝度を調整します。
 
+option.CLOUD_VOLUMETRIC_SCALE=立体的な雲の規模
+option.CLOUD_VOLUMETRIC_SCALE.comment=立体的な雲の高度とサイズを調整します。
+value.CLOUD_VOLUMETRIC_SCALE.6.0=旧バニラ
+value.CLOUD_VOLUMETRIC_SCALE.12.4=バニラ
+value.CLOUD_VOLUMETRIC_SCALE.16.0=オリジナルスカイボックス
+
 #Water
 option.WATER_MODE=水のテクスチャ表示
 option.WATER_MODE.comment=バニラの水のテクスチャを使用するかどうか設定します。 デフォルト : シェーダーのフラットな水の色、テクスチャ無し。 バニラ : バニラのテクスチャ。 色付きのバニラ : バニラのテクスチャ、シェーダーの色。 フラットバニラ : バニラのフラットな水の色。
@@ -421,7 +437,7 @@ option.WATER_SHADOW_COLOR=水の色付きの影
 option.WATER_SHADOW_COLOR.comment=水が色の付いた影を落とすかどうかを設定します。§e[*]§rこのオプションを有効にすると、透明なオブジェクトが水没したときに色の付いた影を落とすのを防ぐことができます。
 
 option.WATER_CAUSTICS=水のコースティクス影
-option.WATER_CAUSTICS.comment=水がコースティクス模様の影を落とすかどうかを設定します。§e[*]§rこのオプションを有効にすると、透明なオブジェクトが水没したときに色の付いた影を落とすのを防ぐことができます。
+option.WATER_CAUSTICS.comment=水がコースティクス模様の影を落とすかどうかを設定します。§e[*]§rこのオプションを有効にすると、透明なオブジェクトが水没したときに色の付いた影を落とすのを防ぐことができます。§e[*]§rリアルタイムの影が必要です
 
 option.WATER_DETAIL=ディテール
 option.WATER_DETAIL.comment=水面の法線マッピングにおける大小の比率を調整します。
@@ -557,7 +573,12 @@ option.FXAA_EDGE_SENSITIVITY=FXAAエッジ感度
 option.FXAA_EDGE_SENSITIVITY.comment=FXAAを適用するために必要なエッジのコントラストと明るさの量を調整します。
 value.FXAA_EDGE_SENSITIVITY.0=弱
 value.FXAA_EDGE_SENSITIVITY.1=中
-value.FXAA_EDGE_SENSITIVITY.2=強
+value.FXAA_EDGE_SENSITIVITY.2=強'
+
+option.TAA_MODE=TAAモード
+option.TAA_MODE.comment=TAAの動作を設定します。細かいに設定するとゴーストがでますが、いくつかのエフェクトはよりよくなります。粗い設定では、ゴーストを少なくしますが、他のエフェクトは改善されません。
+value.TAA_MODE.0=細かい
+value.TAA_MODE.1=粗い
 
 option.TAA_SELECTIVE=選択的TAA
 option.TAA_SELECTIVE.comment=エンティティ、パーティクル、手をTAAから除外し、ゴーストを低減します。 §c[-]§r除外されたオブジェクトはFXAAでの処理が必要です。
@@ -739,6 +760,23 @@ option.SATURATION.comment=全ての色の彩度を調整します。
 option.VIBRANCE=鮮やかさ
 option.VIBRANCE.comment=低彩度の色の彩度を調整します。彩度が高い色ほど影響を受けません。
 
+#More Exposure Config
+option.AUTO_EXPOSURE_RADIUS=自動露出半径
+option.AUTO_EXPOSURE_RADIUS.comment=自動露出の計算に使用する画面の半径を設定します。
+value.AUTO_EXPOSURE_RADIUS.0.002=極小
+value.AUTO_EXPOSURE_RADIUS.0.04=小
+value.AUTO_EXPOSURE_RADIUS.0.18=中
+value.AUTO_EXPOSURE_RADIUS.0.35=大
+value.AUTO_EXPOSURE_RADIUS.0.7=極大
+
+option.AUTO_EXPOSURE_SPEED=自動露出の速度
+option.AUTO_EXPOSURE_SPEED.comment=自動露出の変化の速度を調整します。 §c[-]§r速い以上の速度では、半径小と組み合わせるとフラッシュを起こす可能性があります。
+value.AUTO_EXPOSURE_SPEED.0.0033=とても遅い
+value.AUTO_EXPOSURE_SPEED.0.01=遅い
+value.AUTO_EXPOSURE_SPEED.0.033=中
+value.AUTO_EXPOSURE_SPEED.0.1=速い
+value.AUTO_EXPOSURE_SPEED.0.33=とても速い
+
 #Color Grading Config
 option.CG_RR=赤 - 赤 の値
 option.CG_RG=赤 - 緑 の値
@@ -769,7 +807,7 @@ option.CG_TM=色合いのミックス値
 
 #Extras
 option.OUTLINE=アウトライン
-option.OUTLINE.comment=アウトラインのエフェクトを有効にします。
+option.OUTLINE.comment=アウトラインのエフェクトを有効にします。§c[-]§r黒、色付き、1.12アップデートは立体的な雲と互換性がありません。
 value.OUTLINE.0=オフ
 value.OUTLINE.1=黒
 value.OUTLINE.2=色付き
@@ -798,21 +836,30 @@ option.ANIMATION_SPEED.comment=アニメーション速度を調整します。
 #Waving Blocks
 option.WAVING_GRASS=草
 option.WAVING_GRASS.comment=草が揺れるのを許可します。
+
 option.WAVING_CROP=作物
 option.WAVING_CROP.comment=畑の作物が揺れるのを許可します。
+
 option.WAVING_PLANT=植物
 option.WAVING_PLANT.comment=いろいろな植物が揺れるのを許可します。
+
 option.WAVING_TALL_PLANT=背の高い植物
 option.WAVING_TALL_PLANT.comment=2ブロックの高さの植物が揺れるのを許可します。
+
 option.WAVING_LEAF=木の葉
 option.WAVING_LEAF.comment=木の葉が揺れるのを許可します。
+
 option.WAVING_VINE=ツタ
 option.WAVING_VINE.comment=ツタが揺れるのを許可します。
+
 option.WAVING_WATER=水面
 option.WAVING_WATER.comment=水面が揺れるのを許可します。
+
 option.WAVING_LAVA=溶岩
 option.WAVING_LAVA.comment=溶岩が揺れるのを許可します。
+
 option.WAVING_FIRE=炎
 option.WAVING_FIRE.comment=炎が揺れるのを許可します。
+
 option.WAVING_LANTERN=ランタン
 option.WAVING_LANTERN.comment=ランタンが揺れるのを許可します。
