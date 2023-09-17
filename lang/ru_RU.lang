@@ -382,11 +382,11 @@ value.CLOUD_HEIGHT.15.0=Очень высокая
 
 option.CLOUD_THICKNESS=Толщина
 option.CLOUD_THICKNESS.comment=Регулирует толщину облаков, большая толщина делает дефекты более заметными.
-value.CLOUD_THICKNESS.1=Очень низкая
-value.CLOUD_THICKNESS.2=Низкая
-value.CLOUD_THICKNESS.4=Средняя
-value.CLOUD_THICKNESS.8=Высокая
-value.CLOUD_THICKNESS.16=Очень высокая
+value.CLOUD_THICKNESS.2=Очень низкая
+value.CLOUD_THICKNESS.4=Низкая
+value.CLOUD_THICKNESS.5=Средняя
+value.CLOUD_THICKNESS.7=Высокая
+value.CLOUD_THICKNESS.10=Очень высокая
 
 option.CLOUD_DETAIL=Детализация
 option.CLOUD_DETAIL.comment=Регулирует детализацию облаков.
