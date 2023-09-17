@@ -74,14 +74,14 @@ screen.EXTRAS=その他の設定
 screen.ANIMATION=アニメーション設定
 
 #Settings
-option.SHADOW=リアルタイムの影
-option.SHADOW.comment=リアルタイムの動的影マッピングを有効にします。
-
 option.ABOUT=BSL v8.2.05
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
 #Lighting
+option.SHADOW=リアルタイムの影
+option.SHADOW.comment=リアルタイムの動的影マッピングを有効にします。
+
 option.shadowMapResolution=シャドウマップの解像度
 option.shadowMapResolution.comment=シャドウマップのサイズを調整します。 §e[*]§r高解像度にするほど影がシャープになりますが、パフォーマンスは低下します。
 value.shadowMapResolution.512=超低解像度(512)
