@@ -1,11 +1,12 @@
 #shaders/lang/zh_cn.lang
 
 #Profiles
+profile.MINIMUM=最小
 profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=超高
-profile.comment=低:低等质量阴影,无额外效果. 中:中等质量阴影,无额外效果. 高:中等质量阴影,氛围光遮蔽（AO）和光束. 超高:高等质量阴影,氛围光遮蔽（AO）和光束.
+profile.comment=最小:无阴影. 低:低等质量阴影,无额外效果. 中:中等质量阴影,无额外效果. 高:中等质量阴影,氛围光遮蔽（AO）和光束. 超高:高等质量阴影,氛围光遮蔽（AO）和光束.
 
 #Screens
 screen.LIGHTING=光照
@@ -61,6 +62,7 @@ screen.NETHER_B=玄武岩三角洲
 screen.END_COLOR=末地颜色
 
 screen.CGT=颜色分级和色调图
+screen.EXPOSURE_CONFIG=更多曝光设置
 screen.COLOR_GRADING=颜色分级配置
 screen.CG_R=红通道
 screen.CG_G=绿通道
@@ -72,31 +74,32 @@ screen.EXTRAS=额外设置
 screen.ANIMATION=动画
 
 #Settings
-option.ABOUT=BSL v8.2.04
+option.ABOUT=BSL v8.2.05
 option.ABOUT.comment=作者：Capt Tatsu. bitslablab.com
 value.ABOUT.0=作者： Capt Tatsu
 
 #Lighting
+option.SHADOW=实时阴影
+option.SHADOW.comment=启用实时动态阴影映射.
+
 option.shadowMapResolution=阴影贴图质量
 option.shadowMapResolution.comment=调整阴影贴图分辨率. §e[*]§r更高分辨率会给出更锐利的阴影, 但是会降低性能.
 value.shadowMapResolution.512=非常低（512）
 value.shadowMapResolution.1024=低（1024）
+value.shadowMapResolution.1536=中低 (1536)
 value.shadowMapResolution.2048=中（2048）
 value.shadowMapResolution.3072=高（3072）
 value.shadowMapResolution.4096=非常高（4096）
 value.shadowMapResolution.8192=极高（8192）
 
 option.shadowDistance=阴影距离
-option.shadowDIstance.comment=调整阴影距离.
+option.shadowDistance.comment=调整阴影距离.
 
 option.SHADOW_COLOR=有色阴影
 option.SHADOW_COLOR.comment=启用透光物体的有色阴影. §a[+]§r用于有色体积光束. §c[-]§r会消耗略加高的性能于使用阴影滤镜之时. 
 
 option.SHADOW_FILTER=阴影滤镜
 option.SHADOW_FILTER.comment=启用阴影滤镜.
-
-option.sunPathRotation=太阳路径旋转
-option.sunPathRotation.comment=调整太阳角度.
 
 option.AO=氛围光遮蔽（AO）
 option.AO.comment=添加柔和阴影于表面接触点或交叉处周围.
@@ -119,15 +122,12 @@ option.DYNAMIC_HANDLIGHT=动态手部光源
 option.DYNAMIC_HANDLIGHT.comment=使方块光可从手持特定物品时的视角发射出去.
 
 option.MULTICOLORED_BLOCKLIGHT=多色方块光
-option.MULTICOLORED_BLOCKLIGHT.comment=启用屏幕空间多色方块光. §e[*]§r只在1.16.5及以上版本工作，以及非Mac设备.
-
-option.MULTICOLORED_BLOCKLIGHT=多色方块光
 option.MULTICOLORED_BLOCKLIGHT.comment=启用多色方块光. §e[*]§r仅适用于1.16.5及更高版本,不支持MAC设备.
 
 option.WHITE_WORLD=白色世界
 option.WHITE_WORLD.comment=将纹理替换成扁平白色.
 
-#更多阴影配置
+#More Shadow Config
 option.SHADOW_ENTITY=实体阴影
 option.SHADOW_ENTITY.comment=在怪物上启用阴影. §e[*]§r当一大堆怪物被加了载时禁用此选项. §e[*]§r只工作于1.16.5及以上版本.
 
@@ -136,6 +136,9 @@ option.SHADOW_BLOCK_ENTITY.comment=启用方块实体的阴影. §e[*]§r当一�
 
 option.SHADOW_VEGETATION=植被阴影
 option.SHADOW_VEGETATION.comment=启用阴影到草, 作物, 和几乎所有植物上.
+
+option.sunPathRotation=太阳路径旋转
+option.sunPathRotation.comment=调整太阳角度.
 
 option.SHADOW_PIXEL=像素化阴影
 option.SHADOW_PIXEL.comment=应用像素化效果于阴影之上.
@@ -146,20 +149,6 @@ option.MCBL_ANTI_BLEED=抗渗色
 option.MCBL_ANTI_BLEED.comment=减少不需要的方块光颜色扩散. §c[-]§r可能导致欠采样虚影变得更显眼.
 option.MCBL_LEGACY_COLOR=遗留颜色
 option.MCBL_LEGACY_COLOR.comment=使用旧方法来计算方块光颜色.
-
-#More Shadow Config
-option.SHADOW_ENTITY=实体阴影
-option.SHADOW_ENTITY.comment=启用实体的阴影. §e[*]§r当大量实体被加载时关闭此项. §e[*]§r仅适用于1.16.5及更高版本.
-
-option.SHADOW_BLOCK_ENTITY=方块实体阴影
-option.SHADOW_BLOCK_ENTITY.comment=为方块实体开启阴影. §e[*]§r当加载大量的方块实体时请禁用此功能. §e[*]§r仅适用于1.16.5及更高版本.
-
-option.SHADOW_VEGETATION=植被阴影
-option.SHADOW_VEGETATION.comment=在草地,农作物和大多数其他植物上启用阴影.
-
-option.SHADOW_PIXEL=像素化阴影
-option.SHADOW_PIXEL.comment=在阴影上应用像素化效果.
-value.SHADOW_PIXEL.0=关闭
 
 #Material
 option.ADVANCED_MATERIALS=高级材质
@@ -233,13 +222,16 @@ value.REFLECTION_MODE.0=少些复样
 value.REFLECTION_MODE.1=平衡
 value.REFLECTION_MODE.2=多些裂缝填补
 
-option.REFLECTION_SKY_FALLOFF=天空反射落却
+option.REFLECTION_SKY_FALLOFF=天空反射衰减
 option.REFLECTION_SKY_FALLOFF.comment=调整天空反射在低天空光照下淡出有多远.
 value.REFLECTION_SKY_FALLOFF.1=特弱
 value.REFLECTION_SKY_FALLOFF.2=弱
 value.REFLECTION_SKY_FALLOFF.4=平衡
 value.REFLECTION_SKY_FALLOFF.8=强
 value.REFLECTION_SKY_FALLOFF.16=特强
+
+option.REFLECTION_SKYBOX=开启天空盒
+option.REFLECTION_SKYBOX.comment=允许材质包的天空盒被包括在反射中. §c[-]§r天空盒只被应用于透明表面上.
 
 #Normals & Parallax
 option.PARALLAX=视差遮蔽贴图映射*
@@ -272,7 +264,7 @@ option.SELF_SHADOW_ANGLE.comment=调整自阴影的角度, 更高的值会允许
 
 option.SELF_SHADOW_QUALITY=自阴影采样量*
 option.SELF_SHADOW_QUALITY.comment=调整自阴影质量.
-#
+
 option.SELF_SHADOW_STRENGTH=自阴影强度*
 option.SELF_SHADOW_STRENGTH.comment=调整自阴影的强度.
 
@@ -295,10 +287,11 @@ option.NORMAL_PLANTS.comment=调整植物光影渲染. §e[*]§r如果已使用�
 
 #Atmospherics
 option.CLOUDS=云
-option.CLOUDS.comment=启用云. §a[+]§r默认的云会受益于TAA的启用.  §e[*]§r原版云需要将原版云设置设为默认或开启
+option.CLOUDS.comment=启用云. §a[+]§r默认的云会受益于TAA的启用.  §e[*]§r原版云需要将原版云设置设为默认或开启.
 value.CLOUDS.0=§c关
 value.CLOUDS.1=默认
-value.CLOUDS.2=原版
+value.CLOUDS.2=立体的
+value.CLOUDS.3=原版
 
 option.SKY_DESATURATION=天空去饱合度
 option.SKY_DESATURATION.comment=降低饱和度于添加一些色调到夜晚的天空盒之时.
@@ -412,6 +405,12 @@ option.CLOUD_OPACITY.comment=调整云层不透明度.
 option.CLOUD_BRIGHTNESS=亮度
 option.CLOUD_BRIGHTNESS.comment=调整云层亮度.
 
+option.CLOUD_VOLUMETRIC_SCALE=立体系数
+option.CLOUD_VOLUMETRIC_SCALE.comment=调整立体云的高度和大小
+value.CLOUD_VOLUMETRIC_SCALE.6.0=原版（旧版本）
+value.CLOUD_VOLUMETRIC_SCALE.12.4=原版
+value.CLOUD_VOLUMETRIC_SCALE.16.0=原始天空盒
+
 #Water
 option.WATER_MODE=水体纹理模式
 option.WATER_MODE.comment=决定是否应该使用原版水纹理. 默认：光影的扁平水颜色,无纹理. 原版：原版纹理. 着色原版：原版纹理且带有光影的水颜色. 扁平原版：原版的扁平水颜色.
@@ -440,12 +439,6 @@ option.WATER_SHADOW_COLOR.comment=决定水是否要投射有色阴影到着色�
 option.WATER_CAUSTICS=水体光斑
 option.WATER_CAUSTICS.comment=决定水是否要投射焦散光斑.§e[*]§r启用此选项会阻止透明物体在浸入水下时投射有色阴影.
 
-option.WATER_SHADOW_COLOR=水颜色阴影
-option.WATER_SHADOW_COLOR.comment=确定水是否应投射彩色阴影以进行着色.§e[*]§r启用此功能将防止透明物体在被水淹没时投射彩色阴影.
-
-option.WATER_CAUSTICS=水焦散(波光粼粼的样子)
-option.WATER_CAUSTICS.comment=确定水是否应应用焦散.§e[*]§r启用此功能将防止透明物体在被水淹没时投射彩色阴影.
-
 option.WATER_DETAIL=细节
 option.WATER_DETAIL.comment=调整水法线或大或小的比率.
 value.WATER_DETAIL.0.05=5%
@@ -472,12 +465,7 @@ option.WATER_SPEED=速度
 option.WATER_SPEED.comment=调整用于水面法线的噪波速度.
 
 option.WATER_FOG=水雾
-option.WATER_FOG.comment=决定水雾是只在水下看得到还是到处都能.
-value.WATER_FOG.0=只在水下
-value.WATER_FOG.1=全部
-
-option.WATER_FOG=水雾
-option.WATER_FOG.comment=确定水雾是仅在水下可见还是始终可见.
+option.WATER_FOG.comment=决定水雾是只在水下可见还是始终可见.
 value.WATER_FOG.0=仅水下
 value.WATER_FOG.1=始终可见
 
@@ -493,7 +481,7 @@ value.WATER_PIXEL.0=关
 
 #Camera
 option.DOF=景深
-options.DOF.comment=启用镜头对焦效果.
+option.DOF.comment=启用镜头对焦效果.
 option.DOF_STRENGTH=景深强度
 option.DOF_STRENGTH.comment=调整聚焦强度,更高的值会模糊得更快.
 
@@ -587,22 +575,10 @@ value.FXAA_EDGE_SENSITIVITY.0=低
 value.FXAA_EDGE_SENSITIVITY.1=中
 value.FXAA_EDGE_SENSITIVITY.2=高
 
-option.TAA_SELECTIVE=选择性TAA
-option.TAA_SELECTIVE.comment=排除实体，粒子，并交由时然抗锯齿来减少重影. §c[-]§r排除的物体得依靠FXAA才行.
-
-option.FXAA_SUBPIXEL=FXAA 亚像素平滑
-option.FXAA_SUBPIXEL.comment=调整 FXAA 应用于微小细节的平滑程度.
-value.FXAA_SUBPIXEL.0.00=§c关闭
-value.FXAA_SUBPIXEL.0.25=低
-value.FXAA_SUBPIXEL.0.50=中
-value.FXAA_SUBPIXEL.0.75=高
-value.FXAA_SUBPIXEL.1.00=非常高
-
-option.FXAA_EDGE_SENSITIVITY=FXAA 边缘对比度
-option.FXAA_EDGE_SENSITIVITY.comment=调整应用FXAA所需的边缘对比度和亮度.
-value.FXAA_EDGE_SENSITIVITY.0=低
-value.FXAA_EDGE_SENSITIVITY.1=中
-value.FXAA_EDGE_SENSITIVITY.2=高
+option.TAA_MODE=TAA 模式
+option.TAA_MODE.comment=决定TTA的处理方式. 平滑下一些效果看起来更好但是会有鬼影. 粗糙鬼影更少但是对其他效果的提示很少. 
+value.TAA_MODE.0=平滑
+value.TAA_MODE.1=粗糙
 
 option.TAA_SELECTIVE=选择性TAA
 option.TAA_SELECTIVE.comment=从临时抗锯齿中排除实体、粒子和手以减少重影. §c[-]§r排除对象依赖FXAA.
@@ -652,14 +628,14 @@ option.MINLIGHT_R=红色
 option.MINLIGHT_G=绿色
 option.MINLIGHT_B=蓝色
 option.MINLIGHT_I=强度
+value.MINLIGHT_I.0.30=0.30 (昏暗)
+value.MINLIGHT_I.0.50=0.50 (默认)
+value.MINLIGHT_I.0.70=0.70 (明亮)
 
 option.BLOCKLIGHT_R=红色
 option.BLOCKLIGHT_G=绿色
 option.BLOCKLIGHT_B=蓝色
 option.BLOCKLIGHT_I=强度
-value.MINLIGHT_I.0.30=0.30 (昏暗)
-value.MINLIGHT_I.0.50=0.50 (默认)
-value.MINLIGHT_I.0.70=0.70 (明亮)
 
 option.SKY_R=红色
 option.SKY_G=绿色
@@ -784,6 +760,23 @@ option.SATURATION.comment=调整所有颜色的饱和度.
 option.VIBRANCE=鲜艳度
 option.VIBRANCE.comment=(一译为自然饱和度) 对饱和较少的颜色调整饱和度, 饱和得很好的颜色受的影响较少.
 
+#More Exposure Config
+option.AUTO_EXPOSURE_RADIUS=自动曝光设置
+option.AUTO_EXPOSURE_RADIUS.comment=调整参与曝光计算的屏幕大小.
+value.AUTO_EXPOSURE_RADIUS.0.002=非常低
+value.AUTO_EXPOSURE_RADIUS.0.04=低
+value.AUTO_EXPOSURE_RADIUS.0.18=中
+value.AUTO_EXPOSURE_RADIUS.0.35=高
+value.AUTO_EXPOSURE_RADIUS.0.7=非常低
+
+option.AUTO_EXPOSURE_SPEED=自动曝光速度
+option.AUTO_EXPOSURE_SPEED.comment=调整曝光改变的速度. §c[-]§r快速速度或以上可能会与低半径结合导致闪烁。
+value.AUTO_EXPOSURE_SPEED.0.0033=非常慢
+value.AUTO_EXPOSURE_SPEED.0.01=慢
+value.AUTO_EXPOSURE_SPEED.0.033=中
+value.AUTO_EXPOSURE_SPEED.0.1=快
+value.AUTO_EXPOSURE_SPEED.0.33=很快
+
 #Color Grading Config
 option.CG_RR=红色 - 红色值
 option.CG_RG=红色 - 绿色值
@@ -818,7 +811,7 @@ option.OUTLINE.comment=启用轮廓效果.
 value.OUTLINE.0=关
 value.OUTLINE.1=黑
 value.OUTLINE.2=有色
-value.OUTLINE.3=1.12更新艺术效果
+value.OUTLINE.3=1.12 更新艺术效果
 value.OUTLINE.4=地下城
 
 option.TOON_LIGHTMAP=卡通光照贴图
