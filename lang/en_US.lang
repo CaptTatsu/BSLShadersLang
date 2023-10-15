@@ -74,7 +74,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.05
+option.ABOUT=BSL v8.2.06
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -140,6 +140,11 @@ option.SHADOW_VEGETATION.comment=Enables shadow on grass, crops, and most other 
 option.sunPathRotation=Sun Path Rotation
 option.sunPathRotation.comment=Adjusts sun angle.
 
+option.SHADOW_BIAS=Shadow Bias Mode
+option.SHADOW_BIAS.comment=Determines how shadow mapping bias is done. Light direction mode preserves most shadow edges, but shadows look floaty at a distance. Surface normal mode preserves contact point, but shadows look shorter at a distance.
+value.SHADOW_BIAS.0=Light Direction
+value.SHADOW_BIAS.1=Surface Normal
+
 option.SHADOW_PIXEL=Pixel Locked Shadows
 option.SHADOW_PIXEL.comment=Applies pixelation effect on shadows.
 value.SHADOW_PIXEL.0=OFF
@@ -155,7 +160,7 @@ option.ADVANCED_MATERIALS=Advanced Materials
 option.ADVANCED_MATERIALS.comment=Enables the use of specular and normal mapping which allows for more detail on various things.  §e[*]§rThis option requires a resource pack which contains specular and/or normal maps, disable if none is currently used. §e[*]§rOptions which requires advanced materials are indicated by *, changing these options won't affect the visuals or performance while advanced materials is disabled.
 
 option.MATERIAL_FORMAT=Material Format*
-option.MATERIAL_FORMAT.comment=Determines the specular and normal map format used by the resourcepack. §e[*]§rTexture artists usually tell which format is used in their resourcepack, using the wrong format may give weird results.
+option.MATERIAL_FORMAT.comment=Determines the specular and normal map format used by the resource pack. §e[*]§rTexture artists usually tell which format is used in their resource pack, using the wrong format may give weird results.
 value.MATERIAL_FORMAT.0=SEUS/Old PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
@@ -230,8 +235,8 @@ value.REFLECTION_SKY_FALLOFF.4=Balanced
 value.REFLECTION_SKY_FALLOFF.8=Strong
 value.REFLECTION_SKY_FALLOFF.16=Very Strong
 
-option.REFLECTION_SKYBOX=Allow Skybox
-option.REFLECTION_SKYBOX.comment=Allows resourcepack skybox to be included in reflections. §c[-]§rSkybox is only applied to transparent surfaces.
+option.REFLECTION_SKYBOX=Reflect Skybox
+option.REFLECTION_SKYBOX.comment=Allows resource pack skybox to be included in reflections. §c[-]§rSkybox is only applied to transparent surfaces.
 
 #Normals & Parallax
 option.PARALLAX=Parallax Occlusion Mapping*
@@ -341,14 +346,27 @@ option.SKY_DENSITY_W=Weather Density
 option.SKY_EXPOSURE_W=Weather Exposure
 option.SKY_HORIZON_N=Near Horizon
 option.SKY_HORIZON_F=Far Horizon
+
+option.SKY_DEFERRED=Deferred Sky
+option.SKY_DEFERRED.comment=Renders sky after opaque surfaces are drawn instead of at the beginning. §e[*]§rThis affects resource pack sky rendering.
+
 option.SKY_GROUND=Sky Ground
 option.SKY_GROUND.comment=Darkens the bottom part of the sky. §e[*]§rThis option is affected by fog density.
 value.SKY_GROUND.0=§cOFF
 value.SKY_GROUND.1=Reflections Only
 value.SKY_GROUND.2=Full
 
-option.SKYBOX_BRIGHTNESS=Skybox Brightness
-option.SKYBOX_BRIGHTNESS.comment=Adjusts skybox brightness. §e[*]§rSet to 1.00 when subtractive skybox exists.
+option.SKYBOX_INTENSITY=Skybox Intensity
+option.SKYBOX_INTENSITY.comment=Adjusts skybox intensity.
+
+option.SKYBOX_OPACITY=Skybox Opacity
+option.SKYBOX_OPACITY.comment=Adjusts skybox opacity. §c[-]§rOnly available for 1.16.5 or above.
+
+option.SUN_INTENSITY=Sun Intensity
+option.SUN_INTENSITY.comment=Adjusts skybox sun intensity. §c[-]§rOnly available for 1.16.5 or above.
+
+option.MOON_INTENSITY=Moon Intensity
+option.MOON_INTENSITY.comment=Adjusts skybox moon intensity. §c[-]§rOnly available for 1.16.5 or above.
 
 #Cloud Config
 option.CLOUD_BASE=Base Shape
@@ -573,7 +591,7 @@ option.FXAA_EDGE_SENSITIVITY=FXAA Edge Sensitivity
 option.FXAA_EDGE_SENSITIVITY.comment=Adjusts how much edge contrast and brightness required to apply FXAA.
 value.FXAA_EDGE_SENSITIVITY.0=Low
 value.FXAA_EDGE_SENSITIVITY.1=Medium
-value.FXAA_EDGE_SENSITIVITY.2=High'
+value.FXAA_EDGE_SENSITIVITY.2=High
 
 option.TAA_MODE=TAA Mode
 option.TAA_MODE.comment=Determines how TAA should be done. Smooth allows some effects to look better at the cost of ghosting. Coarse have less ghosting but barely improves other effects.
@@ -745,14 +763,17 @@ option.CLASSIC_EXPOSURE.comment=Enables increased exposure when going indoors.
 option.COLOR_GRADING=Color Grading
 option.COLOR_GRADING.comment=Enables color grading. §e[*]§rThis option doesn't need to be enabled to change tonemap, saturation, and vibrance sliders.
 
-option.TONEMAP_WHITE_CURVE=Tonemap White Curve
-option.TONEMAP_WHITE_CURVE.comment=Adjusts how quickly the tonemap can reach white.
-
 option.TONEMAP_LOWER_CURVE=Tonemap Lower Curve
 option.TONEMAP_LOWER_CURVE.comment=Adjusts contrast of darker colors.
 
 option.TONEMAP_UPPER_CURVE=Tonemap Upper Curve
 option.TONEMAP_UPPER_CURVE.comment=Adjusts contrast of brighter colors.
+
+option.TONEMAP_WHITE_CURVE=Tonemap White Curve
+option.TONEMAP_WHITE_CURVE.comment=Adjusts how quickly the tonemapped color can reach maximum brightness.
+
+option.TONEMAP_WHITE_PATH=Tonemap White Path
+option.TONEMAP_WHITE_PATH.comment=Adjusts how quickly bright and saturated color turns into white.
 
 option.SATURATION=Saturation
 option.SATURATION.comment=Adjusts saturation of all colors.
