@@ -74,7 +74,7 @@ screen.EXTRAS=その他の設定
 screen.ANIMATION=アニメーション設定
 
 #Settings
-option.ABOUT=BSL v8.2.05
+option.ABOUT=BSL v8.2.06
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -122,7 +122,7 @@ option.DYNAMIC_HANDLIGHT=ダイナミックハンドライト
 option.DYNAMIC_HANDLIGHT.comment=特定のオブジェクトを手に持った場合、視界を光で照らします。
 
 option.MULTICOLORED_BLOCKLIGHT=マルチカラーブロックライト
-option.MULTICOLORED_BLOCKLIGHT.comment=スクリーンスペースのマルチカラーブロックライトを有効にします。 §e[*]§rMac以外の1.16.5以上で動作
+option.MULTICOLORED_BLOCKLIGHT.comment=スクリーンスペースのマルチカラーブロックライトを有効にします。 §e[*]§rMac以外の1.16.5以降でのみ動作します。
 
 option.WHITE_WORLD=ホワイトワールド
 option.WHITE_WORLD.comment=テクスチャを真っ白にします。
@@ -132,13 +132,18 @@ option.SHADOW_ENTITY=エンティティの影
 option.SHADOW_ENTITY.comment=モブの影を有効にします。 §e[*]§r大量のモブを読み込む時は無効にしてください。 §e[*]§r1.16.5以降でのみ動作します。
 
 option.SHADOW_BLOCK_ENTITY=ブロックエンティティの影
-option.SHADOW_BLOCK.comment=ブロックエンティティの影を有効にします。 §e[*]§r大量のブロックエンティティを読み込む時は無効にしてください。 §e[*]§r1.16.5以降でのみ動作します。
+option.SHADOW_BLOCK_ENTITY.comment=ブロックエンティティの影を有効にします。 §e[*]§r大量のブロックエンティティを読み込む時は無効にしてください。 §e[*]§r1.16.5以降でのみ動作します。
 
 option.SHADOW_VEGETATION=植物の影
 option.SHADOW_VEGETATION.comment=草や小麦、その他の植物の影を有効にします。
 
 option.sunPathRotation=黄道角度
 option.sunPathRotation.comment=太陽がめぐる軌道の角度を設定します。
+
+option.SHADOW_BIAS=影の向き
+option.SHADOW_BIAS.comment=シャドウマッピングの方向を設定します。光の方向に設定すると、ほとんどの影のエッジは維持されますが、遠景では影が浮いて見えます。表面の法線方向に設定すると、影の接点は維持されますが、遠景では影が短く見えます。
+value.SHADOW_BIAS.0=光の方向
+value.SHADOW_BIAS.1=表面の法線方向
 
 option.SHADOW_PIXEL=ピクセル固定の影
 option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
@@ -341,20 +346,33 @@ option.SKY_DENSITY_W=天候の深度
 option.SKY_EXPOSURE_W=天候の露出
 option.SKY_HORIZON_N=近くの地平線
 option.SKY_HORIZON_F=遠くの地平線
+
+option.SKY_DEFERRED=空の遅延レンダリング
+option.SKY_DEFERRED.comment=最初から不透明な面が描画されたあとに、空がレンダリングされます。 §e[*]§rこのオプションはリソースパックの空のレンダリングに影響します。
+
 option.SKY_GROUND=地平線下の描写
 option.SKY_GROUND.comment=地平線以下の空を暗くします。 §e[*]§rこのオプションは霧の密度に影響されます。
 value.SKY_GROUND.0=§cオフ
 value.SKY_GROUND.1=反射のみ
 value.SKY_GROUND.2=フル
 
-option.SKYBOX_BRIGHTNESS=空の明るさ
-option.SKYBOX_BRIGHTNESS.comment=空の明るさを調整します。 §e[*]§r減算の空が存在する場合には1.00に設定します。
+option.SKYBOX_INTENSITY=スカイボックスの強度
+option.SKYBOX_INTENSITY.comment=スカイボックスの強度を調整します。
+
+option.SKYBOX_OPACITY=スカイボックスの不透明度
+option.SKYBOX_OPACITY.comment=スカイボックスの不透明度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
+
+option.SUN_INTENSITY=太陽の強度
+option.SUN_INTENSITY.comment=スカイボックスの太陽の強度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
+
+option.MOON_INTENSITY=月の強度
+option.MOON_INTENSITY.comment=スカイボックスの月の強度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
 
 #Cloud Config
 option.CLOUD_BASE=ベース形状
 option.CLOUD_BASE.comment=雲のベースに使用するノイズの種類を設定します。
-value.CLOUD_BASE.0=Perlin
-value.CLOUD_BASE.1=Worley
+value.CLOUD_BASE.0=Perlinノイズ
+value.CLOUD_BASE.1=Worleyノイズ
 
 option.CLOUD_DENSITY=密度
 option.CLOUD_DENSITY.comment=雲の密度を設定します。密度が高いほどアーティファクトが目立ちます。
@@ -431,7 +449,7 @@ value.WATER_NORMALS.1=Worleyノイズ
 value.WATER_NORMALS.2=Perlinノイズ
 
 option.WATER_PARALLAX=視差
-option.WATER_PARALLAX.comment=水の変位を有効にします。
+option.WATER_PARALLAX.comment=水の視差変位を有効にします。
 
 option.WATER_SHADOW_COLOR=水の色付きの影
 option.WATER_SHADOW_COLOR.comment=水が色の付いた影を落とすかどうかを設定します。§e[*]§rこのオプションを有効にすると、透明なオブジェクトが水没したときに色の付いた影を落とすのを防ぐことができます。
@@ -573,10 +591,10 @@ option.FXAA_EDGE_SENSITIVITY=FXAAエッジ感度
 option.FXAA_EDGE_SENSITIVITY.comment=FXAAを適用するために必要なエッジのコントラストと明るさの量を調整します。
 value.FXAA_EDGE_SENSITIVITY.0=弱
 value.FXAA_EDGE_SENSITIVITY.1=中
-value.FXAA_EDGE_SENSITIVITY.2=強'
+value.FXAA_EDGE_SENSITIVITY.2=強
 
 option.TAA_MODE=TAAモード
-option.TAA_MODE.comment=TAAの動作を設定します。細かいに設定するとゴーストがでますが、いくつかのエフェクトはよりよくなります。粗い設定では、ゴーストを少なくしますが、他のエフェクトは改善されません。
+option.TAA_MODE.comment=TAAの動作を設定します。細かいに設定するとゴーストがでますが、いくつかのエフェクトはより良くなります。粗い設定では、ゴーストを少なくしますが、他のエフェクトは改善されません。
 value.TAA_MODE.0=細かい
 value.TAA_MODE.1=粗い
 
@@ -745,14 +763,17 @@ option.CLASSIC_EXPOSURE.comment=室内に入るときに画面を明るくする
 option.COLOR_GRADING=カラーグレーディングの設定
 option.COLOR_GRADING.comment=カラーグレーディングを有効にします。 §e[*]§rこのオプションは、トーンマップ、彩度、鮮やかさのスライダーを変更するために有効化する必要はありません。
 
-option.TONEMAP_WHITE_CURVE=トーンマップホワイトカーブ
-option.TONEMAP_WHITE_CURVE.comment=トーンマップが白に達する速さを調整します。
-
 option.TONEMAP_LOWER_CURVE=トーンマップ下方カーブ
 option.TONEMAP_LOWER_CURVE.comment=暗い色のコントラストを調整します。
 
 option.TONEMAP_UPPER_CURVE=トーンマップ上方カーブ
 option.TONEMAP_UPPER_CURVE.comment=明るい色のコントラストを調整します。
+
+option.TONEMAP_WHITE_CURVE=トーンマップホワイトカーブ
+option.TONEMAP_WHITE_CURVE.comment=トーンマップされた色が最大の明るさに達する速さを調整します。
+
+option.TONEMAP_WHITE_PATH=トーンマップホワイトパス
+option.TONEMAP_WHITE_PATH.comment=明るく飽和した色が白に変わる速さを調整します。
 
 option.SATURATION=彩度
 option.SATURATION.comment=全ての色の彩度を調整します。
