@@ -74,7 +74,7 @@ screen.EXTRAS=Дополнительно
 screen.ANIMATION=Анимации
 
 #Настройки
-option.ABOUT=BSL v8.2.04
+option.ABOUT=BSL v8.2.06
 option.ABOUT.comment=От Capt Tatsu. bitslablab.com
 value.ABOUT.0=От Capt Tatsu
 
@@ -96,7 +96,7 @@ option.shadowDistance=Расстояние теней
 option.shadowDistance.comment=Регулировка расстояния теней.
 
 option.SHADOW_COLOR=Цветные тени
-option.SHADOW_COLOR.comment=Включает тонирование теней из полупрозрачных. §a[+]§rИспользуется для цветных объёмных световых лучей. §c[-]§rЧуть более высокие затраты на производительность при использовании теневой фильтрации.
+option.SHADOW_COLOR.comment=Включает тонирование теней из полупрозрачных. §a[+]§rИспользуется для цветных объёмных световых лучей. §c[-]§rЧуть более высокие затраты на производительность при использовании фильтрация теней.
 
 option.SHADOW_FILTER=Фильтрация теней
 option.SHADOW_FILTER.comment=Включает фильтрацию теней.
@@ -139,6 +139,11 @@ option.SHADOW_VEGETATION.comment=Включает тени от травы и б
 
 option.sunPathRotation=Путь вращения солнца
 option.sunPathRotation.comment=Регулирует угол солнца.
+
+option.SHADOW_BIAS=Режим смещения тени
+option.SHADOW_BIAS.comment=Определяет, как осуществляется смещение карты теней. В режиме направления света сохраняется большинство краев теней, но на расстоянии тени смещаются. В режиме нормальной поверхности сохраняется точка контакта, но на расстоянии тени выглядят короче.
+value.SHADOW_BIAS.0=Направление света
+value.SHADOW_BIAS.1=Нормальная поверхность
 
 option.SHADOW_PIXEL=Тени с заблокированным количеством пикселей
 option.SHADOW_PIXEL.comment=Применяет эффект пикселизации к теням.
@@ -230,7 +235,7 @@ value.REFLECTION_SKY_FALLOFF.4=Сбалансированное
 value.REFLECTION_SKY_FALLOFF.8=Сильное
 value.REFLECTION_SKY_FALLOFF.16=Очень сильное
 
-option.REFLECTION_SKYBOX=Включить скайбокс
+option.REFLECTION_SKYBOX=Отражение скайбокса
 option.REFLECTION_SKYBOX.comment=Позволяет применить скайбокс пакета ресурсов к отражениям. §c[-]§rСкайбокс применяется только к прозрачным поверхностям.
 
 #Параллакс
@@ -341,14 +346,27 @@ option.SKY_DENSITY_W=Плотность погоды
 option.SKY_EXPOSURE_W=Экспозиция погоды
 option.SKY_HORIZON_N=Ближний горизонт
 option.SKY_HORIZON_F=Дальний горизонт
+
+option.SKY_DEFERRED=Отложенное небо
+option.SKY_DEFERRED.comment=Отрисовывает небо после отрисовки непрозрачных поверхностей, а не в начале. §e[*]§rЭто влияет на рендеринг неба в пакете ресурсов.
+
 option.SKY_GROUND=Поверхность неба
 option.SKY_GROUND.comment=Затемняет нижнюю часть неба. §e[*]§rНа этот параметр влияет плотность тумана.
 value.SKY_GROUND.0=§cВыключена
 value.SKY_GROUND.1=Только отражение
 value.SKY_GROUND.2=Полная
 
-option.SKYBOX_BRIGHTNESS=Яркость скайбокса
-option.SKYBOX_BRIGHTNESS.comment=Регулирует яркость скайбокса. §e[*]§rУстановите на 1.00, когда присутствует субтрактивный скайбокс.
+option.SKYBOX_INTENSITY=Интенсивность скайбокса
+option.SKYBOX_INTENSITY.comment=Регулирует интенсивность скайбокса.
+
+option.SKYBOX_OPACITY=Непрозрачность скайбокса
+option.SKYBOX_OPACITY.comment=Регулирует непрозрачность скайбокса. §c[-]§rРаботает только на 1.16.5 и выше.
+
+option.SUN_INTENSITY=Интенсивность Солнца
+option.SUN_INTENSITY.comment=Регулирует интенсивность солнца в скайбоксе. §c[-]§rРаботает только на 1.16.5 и выше.
+
+option.MOON_INTENSITY=Интенсивность Луны
+option.MOON_INTENSITY.comment=Регулирует интенсивность луны в скайбоксе. §c[-]§rРаботает только на 1.16.5 и выше.
 
 #Настройка облаков
 option.CLOUD_BASE=Базовая форма
@@ -739,14 +757,17 @@ option.TonemapExposure.comment=Регулирует общую яркость.
 option.COLOR_GRADING=Цветовая градация
 option.COLOR_GRADING.comment=Включает цветовую градацию. §e[*]§rЭтот параметр не нужно включать, чтобы изменить ползунки карты тона, насыщенности и сочности.
 
-option.TONEMAP_WHITE_CURVE=Белая кривая карта тона
-option.TONEMAP_WHITE_CURVE.comment=Регулирует, как быстро карта тона может достичь белого цвета.
-
 option.TONEMAP_LOWER_CURVE=Нижняя кривая карта тона
 option.TONEMAP_LOWER_CURVE.comment=Регулирует контрастность более тёмных цветов.
 
 option.TONEMAP_UPPER_CURVE=Верхняя кривая карта тона
 option.TONEMAP_UPPER_CURVE.comment=Регулирует контрастность более ярких цветов.
+
+option.TONEMAP_WHITE_CURVE=Белая кривая карта тона
+option.TONEMAP_WHITE_CURVE.comment=Регулирует, как быстро карта тона может достичь белого цвета.
+
+option.TONEMAP_WHITE_PATH=Белый путь карты тона
+option.TONEMAP_WHITE_PATH.comment=Регулирует, насколько быстро яркий и насыщенный цвет превращается в белый.
 
 option.SATURATION=Насыщенность
 option.SATURATION.comment=Регулирует насыщенность всех цветов.
