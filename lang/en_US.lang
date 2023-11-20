@@ -20,6 +20,7 @@ screen.NORMALS=Normals & Parallax
 screen.ATMOSPHERICS=Atmospherics
 screen.SKY=Sky Config
 screen.CLOUDS=Cloud Config
+screen.FOG=Fog Config
 
 screen.WATER=Water
 
@@ -49,6 +50,7 @@ screen.WEATHER_B=Mesa Sandstorm
 screen.WEATHER_S=Swamp Rain
 screen.WEATHER_M=Mushroom Island Rain
 screen.WEATHER_V=Savanna Cloudy
+screen.WEATHER_J=Jungle Rain
 screen.AURORA_COLOR=Aurora Color
 screen.AURORA_L=Low Section Color
 screen.AURORA_H=High Section Color
@@ -74,7 +76,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.06
+option.ABOUT=BSL v8.2.07.1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -301,29 +303,8 @@ value.CLOUDS.3=Vanilla
 option.SKY_DESATURATION=Sky Desaturation
 option.SKY_DESATURATION.comment=Reduces saturation while adding some tint to the skybox at night
 
-option.AURORA=Aurora
-option.AURORA.comment=Enables aurora. §a[+]§rThis effect benefits from TAA.
-
-option.ROUND_SUN_MOON=Round Sun & Moon
-option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.15.2 or below.
-
-option.DISTANT_FADE=Distant Fade
-option.DISTANT_FADE.comment=Fades far chunk borders. §e[*]§rThis option is affected by fog density.
-value.DISTANT_FADE.0=§cOFF
-value.DISTANT_FADE.1=Overworld Only
-value.DISTANT_FADE.2=Nether & End Only
-value.DISTANT_FADE.3=Full
-
-option.DISTANT_FADE_STYLE=Distant Fade Style
-option.DISTANT_FADE_STYLE.comment=Spherical works like vanilla fog. Cylindrical ignores Y axis.
-value.DISTANT_FADE_STYLE.0=Spherical
-value.DISTANT_FADE_STYLE.1=Cylindrical
-
-option.WEATHER_PERBIOME=Per Biome Weather
-option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. §c[-]§rMay not work under unknown conditions.
-
-option.UNDERGROUND_SKY=Underground Sky Fix
-option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
+option.FOG_DENSITY=Fog Density
+option.FOG_DENSITY.comment=Adjusts fog density. §e[*]§rThis option is ignored in the nether.
 
 option.LIGHT_SHAFT=Light Shafts
 option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis effect benefits from TAA. §e[*]§rRequires realtime shadows. §e[*]§rPerformance depends on Shadowmap Resolution.
@@ -331,8 +312,20 @@ option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis e
 option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
 option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
 
-option.FOG_DENSITY=Fog Density
-option.FOG_DENSITY.comment=Adjusts fog density. §e[*]§rThis option is ignored in the nether.
+option.ROUND_SUN_MOON=Round Sun & Moon
+option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.16.4 or below.
+
+option.ROUND_SUN_MOON_SIZE=Sun & Moon Size
+option.ROUND_SUN_MOON.comment=Adjusts size for round sun & moon and specular highlight.
+
+option.AURORA=Aurora
+option.AURORA.comment=Enables aurora. §a[+]§rThis effect benefits from TAA.
+
+option.WEATHER_PERBIOME=Per Biome Weather
+option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. §c[-]§rMay not work under unknown conditions.
+
+option.UNDERGROUND_SKY=Underground Sky Fix
+option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
 
 option.WEATHER_OPACITY=Weather Opacity
 option.WEATHER_OPACITY.comment=Adjusts weather opacity.
@@ -428,6 +421,44 @@ option.CLOUD_VOLUMETRIC_SCALE.comment=Adjusts volumetric cloud altitude and size
 value.CLOUD_VOLUMETRIC_SCALE.6.0=Old Vanilla
 value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
 value.CLOUD_VOLUMETRIC_SCALE.16.0=Original Skybox
+
+#Fog Config
+option.FOG_DENSITY_NIGHT=Night - Weather Density
+option.FOG_DENSITY_NIGHT.comment=Adjusts fog density multiplier at night and while raining.
+
+option.FOG_DENSITY_WEATHER=Weather Density
+option.FOG_DENSITY_WEATHER.comment=Adjusts fog density multiplier while raining.
+
+option.FOG_DENSITY_COLD=Cold Density
+option.FOG_DENSITY_COLD.comment=Adjusts fog density multiplier while standing on cold biomes. §e[*]§rRequires Per Biome Weather.
+
+option.FOG_DENSITY_DRY=Dry Density
+option.FOG_DENSITY_DRY.comment=Adjusts fog density multiplier while standing on dry biomes. §e[*]§rRequires Per Biome Weather.
+
+option.FOG_DENSITY_DAMP=Damp Density
+option.FOG_DENSITY_DAMP.comment=Adjusts fog density multiplier while standing on damp biomes. §e[*]§rRequires Per Biome Weather.
+
+option.FAR_VANILLA_FOG=Far Vanilla Fog
+option.FAR_VANILLA_FOG.comment=Enables vanilla-like fog. §e[*]§rThis option is affected by fog density.
+value.FAR_VANILLA_FOG.0=§cOFF
+value.FAR_VANILLA_FOG.1=Overworld Only
+value.FAR_VANILLA_FOG.2=Nether & End Only
+value.FAR_VANILLA_FOG.3=Full
+
+option.FAR_VANILLA_FOG_STYLE=Far Vanilla Fog Style
+option.FAR_VANILLA_FOG_STYLE.comment=Spherical works like vanilla fog. Cylindrical ignores Y axis.
+value.FAR_VANILLA_FOG_STYLE.0=Spherical
+value.FAR_VANILLA_FOG_STYLE.1=Cylindrical
+
+option.FOG_DENSITY_VANILLA=Vanilla Density
+option.FOG_DENSITY_VANILLA.comment=Adjusts fog density for vanilla fog.
+
+option.FOG_VANILLA_CLOUD=Vanilla Cloud Fog
+option.FOG_VANILLA_CLOUD.comment=Enables fog on vanilla cloud.
+value.FOG_VANILLA_CLOUD.0=§cOFF
+value.FOG_VANILLA_CLOUD.1=Minimal
+value.FOG_VANILLA_CLOUD.2=Reduced
+value.FOG_VANILLA_CLOUD.3=Full
 
 #Water
 option.WATER_MODE=Water Texture Mode
@@ -665,6 +696,7 @@ option.WATER_G=Green
 option.WATER_B=Blue
 option.WATER_I=Intensity
 option.WATER_A=Alpha
+option.WATER_F=Fog Intensity
 
 option.WEATHER_RR=Red
 option.WEATHER_RG=Green
@@ -700,6 +732,11 @@ option.WEATHER_VR=Red
 option.WEATHER_VG=Green
 option.WEATHER_VB=Blue
 option.WEATHER_VI=Intensity
+
+option.WEATHER_JR=Red
+option.WEATHER_JG=Green
+option.WEATHER_JB=Blue
+option.WEATHER_JI=Intensity
 
 option.AURORA_LR=Red
 option.AURORA_LG=Green
@@ -746,6 +783,9 @@ option.EMISSIVE_RECOLOR.comment=Tints certain emissive blocks with blocklight co
 
 option.SKY_VANILLA=Vanilla Sky
 option.SKY_VANILLA.comment=Use vanilla sky color.
+
+option.SKY_VANILLA_USE_FOG=Use Vanilla Fog Color
+option.SKY_VANILLA.comment=Allows vanilla fog color to be used while Vanilla Sky is enabled.
 
 option.NETHER_VANILLA=Vanilla Nether
 option.NETHER_VANILLA.comment=Use vanilla nether color.
