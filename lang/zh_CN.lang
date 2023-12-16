@@ -873,7 +873,7 @@ value.OUTLINE.0=关
 value.OUTLINE.1=黑色
 value.OUTLINE.2=彩色
 value.OUTLINE.3=1.12更新艺术
-value.OUTLINE.4=Dungeons
+value.OUTLINE.4=地下城
 
 option.TOON_LIGHTMAP=卡通光照图
 option.TOON_LIGHTMAP.comment=为卡通渲染降低原版光照的质量. §e[*]§r已知该选项会让你的游戏“看上去很糟糕”, 仅在你需要的时候启用它.
