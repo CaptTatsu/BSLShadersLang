@@ -316,7 +316,7 @@ option.ROUND_SUN_MOON=Круглые солнце и луна
 option.ROUND_SUN_MOON.comment=Включает шейдер на основе солнца и луны. §e[*]§rНе забудьте отключить ванильные солнце/луну в Настройки видео > Подробности > Солнце и луна, на 1.16.4 или ниже.
 
 option.ROUND_SUN_MOON_SIZE=Размер Солнца и Луны
-option.ROUND_SUN_MOON.comment=Регулирует размер круглого солнца и луны, а также зеркальных блесков.
+option.ROUND_SUN_MOON_SIZE.comment=Регулирует размер круглого солнца и луны, а также зеркальных блесков.
 
 option.AURORA=Северное сияние
 option.AURORA.comment=Включает северное сияние. §a[+]§rИмеет лучший эффект при использовании с TAA.
@@ -785,14 +785,14 @@ option.SKY_VANILLA=Ванильное небо
 option.SKY_VANILLA.comment=Использование цвета ванильного неба.
 
 option.SKY_VANILLA_USE_FOG=Использовать цвет ванильного тумана
-option.SKY_VANILLA.comment=Позволяет использовать цвет ванильного тумана, пока включено ванильное небо.
+option.SKY_VANILLA_USE_FOG.comment=Позволяет использовать цвет ванильного тумана, пока включено ванильное небо.
 
 option.NETHER_VANILLA=Ванильный Нижний мир
 option.NETHER_VANILLA.comment=Используйте ванильный цвет Нижнего мира.
 
 #Цветовая градация и карта тона
 option.EXPOSURE=Экспозиция
-option.TonemapExposure.comment=Регулирует общую яркость.
+option.EXPOSURE.comment=Регулирует общую яркость.
 
 option.COLOR_GRADING=Цветовая градация
 option.COLOR_GRADING.comment=Включает цветовую градацию. §e[*]§rЭтот параметр не нужно включать, чтобы изменить ползунки карты тона, насыщенности и сочности.
