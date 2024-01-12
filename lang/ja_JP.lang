@@ -316,7 +316,7 @@ option.ROUND_SUN_MOON=丸い太陽と月
 option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月(1.16.4以前)
 
 option.ROUND_SUN_MOON_SIZE=太陽と月のサイズ
-option.ROUND_SUN_MOON.comment=丸い太陽と月のサイズと、鏡面反射のハイライトを調整します。
+option.ROUND_SUN_MOON_SIZE.comment=丸い太陽と月のサイズと、鏡面反射のハイライトを調整します。
 
 option.AURORA=オーロラ
 option.AURORA.comment=オーロラを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
@@ -792,7 +792,7 @@ option.NETHER_VANILLA.comment=バニラのネザーの色を使用します。
 
 #Color Grading & Tonemap
 option.EXPOSURE=露出
-option.TonemapExposure.comment=全体の明るさを調整します。
+option.EXPOSURE.comment=全体の明るさを調整します。
 
 option.AUTO_EXPOSURE=自動露出
 option.AUTO_EXPOSURE.comment=全体の明るさの自動調整を有効にします。
