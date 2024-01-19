@@ -65,7 +65,7 @@ screen.END_COLOR=エンドの色
 
 screen.CGT=カラーグレーディング & トーンマップ
 screen.EXPOSURE_CONFIG=追加の露出設定
-screen.COLOR_GRADING=カラーグレーディングの設定
+screen.COLOR_GRADING_CONFIG=カラーグレーディングの設定
 screen.CG_R=赤(R)
 screen.CG_G=緑(G)
 screen.CG_B=青(B)
