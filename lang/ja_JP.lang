@@ -20,6 +20,7 @@ screen.NORMALS=視差
 screen.ATMOSPHERICS=天球(太陽など)の設定
 screen.SKY=空の設定
 screen.CLOUDS=雲の設定
+screen.FOG=霧の設定
 
 screen.WATER=水の設定
 
@@ -49,6 +50,7 @@ screen.WEATHER_B=メサの砂嵐
 screen.WEATHER_S=沼地の雨
 screen.WEATHER_M=キノコ島の雨
 screen.WEATHER_V=サバンナの曇天
+screen.WEATHER_J=ジャングルの雨
 screen.AURORA_COLOR=オーロラの色
 screen.AURORA_L=下方の色
 screen.AURORA_H=上方の色
@@ -63,7 +65,7 @@ screen.END_COLOR=エンドの色
 
 screen.CGT=カラーグレーディング & トーンマップ
 screen.EXPOSURE_CONFIG=追加の露出設定
-screen.COLOR_GRADING=カラーグレーディングの設定
+screen.COLOR_GRADING_CONFIG=カラーグレーディングの設定
 screen.CG_R=赤(R)
 screen.CG_G=緑(G)
 screen.CG_B=青(B)
@@ -74,7 +76,7 @@ screen.EXTRAS=その他の設定
 screen.ANIMATION=アニメーション設定
 
 #Settings
-option.ABOUT=BSL v8.2.06
+option.ABOUT=BSL v8.2.07.1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -236,7 +238,7 @@ value.REFLECTION_SKY_FALLOFF.8=強い
 value.REFLECTION_SKY_FALLOFF.16=とても強い
 
 option.REFLECTION_SKYBOX=スカイボックスの反射
-option.REFLECTION_SKYBOX.comment=リソースパックのスカイボックスを空の反射に含める。§c[-]§rスカイボックスは、透明な表面にのみ適用されます。
+option.REFLECTION_SKYBOX.comment=リソースパックのスカイボックスを空の反射に含めます。§c[-]§rスカイボックスは、透明な表面にのみ適用されます。
 
 #Normals & Parallax
 option.PARALLAX=視差遮蔽マッピング(POM)*
@@ -301,29 +303,8 @@ value.CLOUDS.3=バニラ
 option.SKY_DESATURATION=空の低彩度化
 option.SKY_DESATURATION.comment=夜空に少し色合いを加えながら彩度を下げます。
 
-option.AURORA=オーロラ
-option.AURORA.comment=オーロラを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
-
-option.ROUND_SUN_MOON=丸い太陽と月
-option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月(1.15.2以前)
-
-option.DISTANT_FADE=遠距離描写
-option.DISTANT_FADE.comment=離れたチャンク境界をぼやけさせます。§e[*]§rこのオプションは霧の密度に影響されます。
-value.DISTANT_FADE.0=オフ
-value.DISTANT_FADE.1=オーバーワールドのみ
-value.DISTANT_FADE.2=ネザーとエンドのみ
-value.DISTANT_FADE.3=全て
-
-option.DISTANT_FADE_STYLE=遠距離描写のスタイル
-option.DISTANT_FADE_STYLE.comment=球面はバニラの霧のように働きます。円筒面はY軸を無視します。
-value.DISTANT_FADE_STYLE.0=球面
-value.DISTANT_FADE_STYLE.1=円筒面
-
-option.WEATHER_PERBIOME=バイオーム毎の天候
-option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を使用します。 §c[-]§r未知の条件下では動作しない可能性があります。
-
-option.UNDERGROUND_SKY=地下の空の修正
-option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
+option.FOG_DENSITY=霧の密度
+option.FOG_DENSITY.comment=霧の密度（深さ）を調整します。 §e[*]§rこのオプションはネザーでは無視されます。
 
 option.LIGHT_SHAFT=ライトシャフト
 option.LIGHT_SHAFT.comment=太陽/月からの立体的な光の柱を追加します。 §a[+]§rこの効果はTAAの恩恵を受けます。 §e[*]§rリアルタイムの影が必要です §e[*]§rパフォーマンスはシャドウマップの解像度に依存します。
@@ -331,8 +312,20 @@ option.LIGHT_SHAFT.comment=太陽/月からの立体的な光の柱を追加し�
 option.LIGHT_SHAFT_STRENGTH=ライトシャフトの強さ
 option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。
 
-option.FOG_DENSITY=霧の密度
-option.FOG_DENSITY.comment=霧の密度を調整します。 §e[*]§rこのオプションはネザーでは無視されます。
+option.ROUND_SUN_MOON=丸い太陽と月
+option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月(1.16.4以前)
+
+option.ROUND_SUN_MOON_SIZE=太陽と月のサイズ
+option.ROUND_SUN_MOON_SIZE.comment=丸い太陽と月のサイズと、鏡面反射のハイライトを調整します。
+
+option.AURORA=オーロラ
+option.AURORA.comment=オーロラを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
+
+option.WEATHER_PERBIOME=バイオーム毎の天候
+option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を使用します。 §c[-]§r未知の条件下では動作しない可能性があります。
+
+option.UNDERGROUND_SKY=地下の空の修正
+option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
 
 option.WEATHER_OPACITY=天候の不透明度
 option.WEATHER_OPACITY.comment=天候の不透明度を調整します。
@@ -428,6 +421,44 @@ option.CLOUD_VOLUMETRIC_SCALE.comment=立体的な雲の高度とサイズを調
 value.CLOUD_VOLUMETRIC_SCALE.6.0=旧バニラ
 value.CLOUD_VOLUMETRIC_SCALE.12.4=バニラ
 value.CLOUD_VOLUMETRIC_SCALE.16.0=オリジナルスカイボックス
+
+#Fog Config
+option.FOG_DENSITY_NIGHT=夜間 - 霧の密度
+option.FOG_DENSITY_NIGHT.comment=夜間に雨が降っているときの霧の密度係数を調整します。
+
+option.FOG_DENSITY_WEATHER=霧の密度
+option.FOG_DENSITY_WEATHER.comment=雨が降っているときの霧の密度係数を調整します。
+
+option.FOG_DENSITY_COLD=寒冷地での霧の密度
+option.FOG_DENSITY_COLD.comment=寒いバイオームにいるときの霧の密度係数を調整します。 §e[*]§rバイオーム毎の天候オプションが必要です。
+
+option.FOG_DENSITY_DRY=乾燥地での霧の密度
+option.FOG_DENSITY_DRY.comment=乾燥したバイオームにいるときの霧の密度係数を調整します。 §e[*]§rバイオーム毎の天候オプションが必要です。
+
+option.FOG_DENSITY_DAMP=多湿地での霧の密度
+option.FOG_DENSITY_DAMP.comment=湿ったバイオームにいるときの霧の密度係数を調整します。 §e[*]§rバイオーム毎の天候オプションが必要です。
+
+option.FAR_VANILLA_FOG=遠距離の霧
+option.FAR_VANILLA_FOG.comment=バニラライクな霧を有効にするワールドを設定します。 §e[*]§rこのオプションは霧の密度に影響されます。
+value.FAR_VANILLA_FOG.0=§cオフ
+value.FAR_VANILLA_FOG.1=オーバーワールドのみ
+value.FAR_VANILLA_FOG.2=ネザーとエンドのみ
+value.FAR_VANILLA_FOG.3=全て
+
+option.FAR_VANILLA_FOG_STYLE=遠距離の霧のスタイル
+option.FAR_VANILLA_FOG_STYLE.comment=球面はバニラの霧のように働きます。円筒面はY軸を無視します。
+value.FAR_VANILLA_FOG_STYLE.0=球面
+value.FAR_VANILLA_FOG_STYLE.1=円筒面
+
+option.FOG_DENSITY_VANILLA=バニラの霧の密度
+option.FOG_DENSITY_VANILLA.comment=バニラの霧の密度を調整します。
+
+option.FOG_VANILLA_CLOUD=バニラ雲の霧の密度
+option.FOG_VANILLA_CLOUD.comment=バニラ雲の中にいるときの霧を有効にします。
+value.FOG_VANILLA_CLOUD.0=§cオフ
+value.FOG_VANILLA_CLOUD.1=最小限
+value.FOG_VANILLA_CLOUD.2=少なめ
+value.FOG_VANILLA_CLOUD.3=フル
 
 #Water
 option.WATER_MODE=水のテクスチャ表示
@@ -577,7 +608,7 @@ option.FXAA=FXAA
 option.FXAA.comment=高速な近似アンチエイリアシングを有効にします。パフォーマンスへの影響を抑えながら映像のエッジを滑らかにします。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
 
 option.TAA=TAA
-option.TAA.comment=TAA(Temporal Anti-Aliasing)を有効にします。高度なフレームブレンディングによって、微細なディティールやいくつかの高価を改善します。 §e[*]§rイメージシャーペン(鮮鋭化)が含まれています。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
+option.TAA.comment=TAA(Temporal Anti-Aliasing)を有効にします。高度なフレームブレンディングによって、微細なディティールやいくつかの効果を改善します。 §e[*]§rイメージシャーペン(鮮鋭化)が含まれています。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
 
 option.FXAA_SUBPIXEL=FXAAサブピクセルスムージング
 option.FXAA_SUBPIXEL.comment=FXAAが微少なディテールに適用するスムージングの度合いを調整します。
@@ -665,6 +696,7 @@ option.WATER_G=緑
 option.WATER_B=青
 option.WATER_I=強さ
 option.WATER_A=アルファ
+option.WATER_F=霧の強さ
 
 option.WEATHER_RR=赤
 option.WEATHER_RG=緑
@@ -700,6 +732,11 @@ option.WEATHER_VR=赤
 option.WEATHER_VG=緑
 option.WEATHER_VB=青
 option.WEATHER_VI=強さ
+
+option.WEATHER_JR=赤
+option.WEATHER_JG=緑
+option.WEATHER_JB=青
+option.WEATHER_JI=強さ
 
 option.AURORA_LR=赤
 option.AURORA_LG=緑
@@ -747,12 +784,15 @@ option.EMISSIVE_RECOLOR.comment=ブロックライトの色で特定の発光ブ
 option.SKY_VANILLA=バニラスカイ
 option.SKY_VANILLA.comment=バニラの空の色を使用します。
 
+option.SKY_VANILLA_USE_FOG=バニラの霧の色
+option.SKY_VANILLA_USE_FOG.comment=バニラスカイが有効な時、バニラの霧の色を使用します。
+
 option.NETHER_VANILLA=バニラネザー
 option.NETHER_VANILLA.comment=バニラのネザーの色を使用します。
 
 #Color Grading & Tonemap
 option.EXPOSURE=露出
-option.TonemapExposure.comment=全体の明るさを調整します。
+option.EXPOSURE.comment=全体の明るさを調整します。
 
 option.AUTO_EXPOSURE=自動露出
 option.AUTO_EXPOSURE.comment=全体の明るさの自動調整を有効にします。
