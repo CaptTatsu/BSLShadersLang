@@ -21,6 +21,7 @@ screen.ATMOSPHERICS=Atmospherics
 screen.SKY=Sky Config
 screen.CLOUDS=Cloud Config
 screen.FOG=Fog Config
+screen.SKYBOX=Skybox Config
 
 screen.WATER=Water
 
@@ -76,7 +77,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.07.1
+option.ABOUT=BSL v8.2.08
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -95,7 +96,7 @@ value.shadowMapResolution.4096=Very High (4096)
 value.shadowMapResolution.8192=Ultra High (8192)
 
 option.shadowDistance=Shadow Distance
-option.shadowDistance.comment=Adsusts shadow distance.
+option.shadowDistance.comment=Adjusts shadow distance.
 
 option.SHADOW_COLOR=Colored Shadow
 option.SHADOW_COLOR.comment=Enables tinted shadow from translucents. §a[+]§rUsed for colored volumetric light shafts. §c[-]§rSlightly higher performance cost when using shadow filtering.
@@ -300,9 +301,6 @@ value.CLOUDS.1=Skybox
 value.CLOUDS.2=Volumetric
 value.CLOUDS.3=Vanilla
 
-option.SKY_DESATURATION=Sky Desaturation
-option.SKY_DESATURATION.comment=Reduces saturation while adding some tint to the skybox at night
-
 option.FOG_DENSITY=Fog Density
 option.FOG_DENSITY.comment=Adjusts fog density. §e[*]§rThis option is ignored in the nether.
 
@@ -312,20 +310,8 @@ option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis e
 option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
 option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
 
-option.ROUND_SUN_MOON=Round Sun & Moon
-option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.16.4 or below.
-
-option.ROUND_SUN_MOON_SIZE=Sun & Moon Size
-option.ROUND_SUN_MOON.comment=Adjusts size for round sun & moon and specular highlight.
-
-option.AURORA=Aurora
-option.AURORA.comment=Enables aurora. §a[+]§rThis effect benefits from TAA.
-
 option.WEATHER_PERBIOME=Per Biome Weather
 option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. §c[-]§rMay not work under unknown conditions.
-
-option.UNDERGROUND_SKY=Underground Sky Fix
-option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
 
 option.WEATHER_OPACITY=Weather Opacity
 option.WEATHER_OPACITY.comment=Adjusts weather opacity.
@@ -340,8 +326,8 @@ option.SKY_EXPOSURE_W=Weather Exposure
 option.SKY_HORIZON_N=Near Horizon
 option.SKY_HORIZON_F=Far Horizon
 
-option.SKY_DEFERRED=Deferred Sky
-option.SKY_DEFERRED.comment=Renders sky after opaque surfaces are drawn instead of at the beginning. §e[*]§rThis affects resource pack sky rendering.
+option.SKY_DESATURATION=Sky Desaturation
+option.SKY_DESATURATION.comment=Reduces saturation while adding some tint to the skybox at night
 
 option.SKY_GROUND=Sky Ground
 option.SKY_GROUND.comment=Darkens the bottom part of the sky. §e[*]§rThis option is affected by fog density.
@@ -349,17 +335,14 @@ value.SKY_GROUND.0=§cOFF
 value.SKY_GROUND.1=Reflections Only
 value.SKY_GROUND.2=Full
 
-option.SKYBOX_INTENSITY=Skybox Intensity
-option.SKYBOX_INTENSITY.comment=Adjusts skybox intensity.
+option.UNDERGROUND_SKY=Underground Sky Fix
+option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
 
-option.SKYBOX_OPACITY=Skybox Opacity
-option.SKYBOX_OPACITY.comment=Adjusts skybox opacity. §c[-]§rOnly available for 1.16.5 or above.
+option.SHADER_END_SKY=Shader End Sky
+option.SHADER_END_SKY.comment=Replaces vanilla/modded end skybox with shader based end skybox.
 
-option.SUN_INTENSITY=Sun Intensity
-option.SUN_INTENSITY.comment=Adjusts skybox sun intensity. §c[-]§rOnly available for 1.16.5 or above.
-
-option.MOON_INTENSITY=Moon Intensity
-option.MOON_INTENSITY.comment=Adjusts skybox moon intensity. §c[-]§rOnly available for 1.16.5 or above.
+option.SKY_DEFERRED=Deferred Sky
+option.SKY_DEFERRED.comment=Renders sky after opaque surfaces are drawn instead of at the beginning. §e[*]§rThis affects resource pack sky rendering.
 
 #Cloud Config
 option.CLOUD_BASE=Base Shape
@@ -459,6 +442,31 @@ value.FOG_VANILLA_CLOUD.0=§cOFF
 value.FOG_VANILLA_CLOUD.1=Minimal
 value.FOG_VANILLA_CLOUD.2=Reduced
 value.FOG_VANILLA_CLOUD.3=Full
+
+#Skybox Config
+option.ROUND_SUN_MOON=Round Sun & Moon
+option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.16.4 or below.
+
+option.ROUND_SUN_MOON_SIZE=Sun & Moon Size
+option.ROUND_SUN_MOON_SIZE.comment=Adjusts size for round sun & moon and specular highlight.
+
+option.STARS=Stars
+option.STARS.comment=Enables stars.
+
+option.AURORA=Aurora
+option.AURORA.comment=Enables aurora. §a[+]§rThis effect benefits from TAA.
+
+option.SKYBOX_INTENSITY=Skybox Intensity
+option.SKYBOX_INTENSITY.comment=Adjusts skybox intensity.
+
+option.SKYBOX_OPACITY=Skybox Opacity
+option.SKYBOX_OPACITY.comment=Adjusts skybox opacity. §c[-]§rOnly available for 1.16.5 or above.
+
+option.SUN_INTENSITY=Sun Intensity
+option.SUN_INTENSITY.comment=Adjusts skybox sun intensity. §c[-]§rOnly available for 1.16.5 or above.
+
+option.MOON_INTENSITY=Moon Intensity
+option.MOON_INTENSITY.comment=Adjusts skybox moon intensity. §c[-]§rOnly available for 1.16.5 or above.
 
 #Water
 option.WATER_MODE=Water Texture Mode
@@ -785,14 +793,14 @@ option.SKY_VANILLA=Vanilla Sky
 option.SKY_VANILLA.comment=Use vanilla sky color.
 
 option.SKY_VANILLA_USE_FOG=Use Vanilla Fog Color
-option.SKY_VANILLA.comment=Allows vanilla fog color to be used while Vanilla Sky is enabled.
+option.SKY_VANILLA_USE_FOG.comment=Allows vanilla fog color to be used while Vanilla Sky is enabled.
 
 option.NETHER_VANILLA=Vanilla Nether
 option.NETHER_VANILLA.comment=Use vanilla nether color.
 
 #Color Grading & Tonemap
 option.EXPOSURE=Exposure
-option.TonemapExposure.comment=Adjusts overall brightness.
+option.EXPOSURE.comment=Adjusts overall brightness.
 
 option.AUTO_EXPOSURE=Auto Exposure
 option.AUTO_EXPOSURE.comment=Enables automatic adjustment to overall brightness.
@@ -879,7 +887,10 @@ option.TOON_LIGHTMAP=Toon Lightmap
 option.TOON_LIGHTMAP.comment=Reduces the quality of vanilla lighting for cel shading. §e[*]§rThis option is known for making the game "look bad", only enable this when needed.
 
 option.RETRO_FILTER=Retro Filter
-option.RETRO_FILTER.comment=Adds pixelation and dithering. §e[*]§rLower render quality for stronger pixelation. §c[-]§rIncompatible with anti-aliasing.
+option.RETRO_FILTER.comment=Adds pixelation and dithering. §c[-]§rIncompatible with anti-aliasing.
+
+option.RETRO_FILTER_SIZE=Retro Filter Size
+option.RETRO_FILTER_SIZE.comment=Adjusts pixel size for retro filter.
 
 option.WORLD_CURVATURE=World Curvature
 option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §c[-]§rMissing chunks are handled by Minecraft itself which I can't fix. §c[-]§rMay break block selection highlight on 1.17.
