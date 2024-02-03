@@ -338,8 +338,8 @@ value.SKY_GROUND.2=フル
 option.UNDERGROUND_SKY=地下の空の修正
 option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
 
-option.SHADER_END_SKY=Shader End Sky
-option.SHADER_END_SKY.comment=Replaces vanilla/modded end skybox with shader based end skybox.
+option.SHADER_END_SKY=エンドの空のシェーダー
+option.SHADER_END_SKY.comment=バニラ・MODによるエンドのスカイボックスをシェーダーベースドのものに置換えます。
 
 option.SKY_DEFERRED=空の遅延レンダリング
 option.SKY_DEFERRED.comment=最初から不透明な面が描画されたあとに、空がレンダリングされます。 §e[*]§rこのオプションはリソースパックの空のレンダリングに影響します。
