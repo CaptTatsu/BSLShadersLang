@@ -3,7 +3,7 @@ A collection of translation files for BSL Shaders v8.0 and above.
 ## Available languages
 - English (US) (en_US by Capt Tatsu, pre-installed in every version)
 - European Spanish (es_ES by Bksp)
-- French (fr_FR by Raphoulfifou, SiphoxR)
+- French (fr_FR by Raphoulfifou, IkaOverride)
 - Italian (it_IT by Loweredgames)
 - Japanese (ja_JP by tyukara)
 - Brazilian Portuguese (pt_BR by Erikk02)
