@@ -89,6 +89,7 @@ option.shadowMapResolution=Qualité shadowmap
 option.shadowMapResolution.comment=Ajuste la taille de la carte d'ombre. §e[*]§rUne résolution plus élevée donne des ombres plus nettes, mais réduit les performances.
 value.shadowMapResolution.512=Très faible (512)
 value.shadowMapResolution.1024=Faible (1024)
+value.shadowMapResolution.1536=Faible moyen (1536)
 value.shadowMapResolution.2048=Moyen (2048)
 value.shadowMapResolution.3072=Élevé (3072)
 value.shadowMapResolution.4096=Très élevé (4096)
