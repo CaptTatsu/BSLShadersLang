@@ -6,7 +6,7 @@ profile.LOW=Faible
 profile.MEDIUM=Moyen
 profile.HIGH=Élevé
 profile.ULTRA=Ultra
-profile.comment=Minimum: aucune ombre, aucun effet supplémentaire. Faible : ombres faibles, aucun effet supplémentaire. Moyen : ombres faible-moyennes, aucun effet supplémentaire. Élevé : ombres moyennes, occlusion ambiante et puits de lumière. Ultra : ombres élevées, occlusion ambiante et puits de lumière.
+profile.comment=Minimum: aucune ombre, aucun effet supplémentaire. Faible : ombres faibles, aucun effet supplémentaire. Moyen : ombres faibles-moyennes, aucun effet supplémentaire. Élevé : ombres moyennes, occlusion ambiante et puits de lumière. Ultra : ombres élevées, occlusion ambiante et puits de lumière.
 
 #Screens
 screen.LIGHTING=Éclairage
@@ -14,7 +14,7 @@ screen.SHADOW_CONFIG=Ombres
 screen.MCBL=Lumière colorée de bloc
 
 screen.MATERIAL=Matériel
-screen.SPECULAR=Spéculaire & réflections
+screen.SPECULAR=Spéculaire & réflexions
 screen.NORMALS=Normales & parallaxe
 
 screen.ATMOSPHERICS=Atmosphère
@@ -232,7 +232,7 @@ value.REFLECTION_MODE.0=Moins de doublons
 value.REFLECTION_MODE.1=Équilibré
 value.REFLECTION_MODE.2=Plus de remplissage de lacunes
 
-option.REFLECTION_SKY_FALLOFF=Chute de la réflexion du ciel
+option.REFLECTION_SKY_FALLOFF=Chute réflexion du ciel
 option.REFLECTION_SKY_FALLOFF.comment=Ajuste la distance d'atténuation des reflets du ciel en cas de faible lumière.
 value.REFLECTION_SKY_FALLOFF.1=Très faible
 value.REFLECTION_SKY_FALLOFF.2=Faible
