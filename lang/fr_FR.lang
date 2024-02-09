@@ -168,9 +168,6 @@ value.MATERIAL_FORMAT.1=labPBR 1.3
 
 option.SSS=Diffusion souterraine*
 option.SSS.comment=Permet à la lumière de pénétrer et de se disperser à travers certains blocs. §a[+]§rCet effet bénéficie du TAA.
-value.SSS.0=§cNon
-value.SSS.1=AdvMat*
-value.SSS.2=Complet
 
 option.BASIC_SSS=Diffusion basique
 option.BASIC_SSS.comment=Active une version simplifiée de la diffusion souterraine sur certains blocs.
