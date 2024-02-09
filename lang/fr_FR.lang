@@ -792,6 +792,9 @@ option.EMISSIVE_RECOLOR.comment=Teint certains blocs émissifs avec une couleur 
 option.SKY_VANILLA=Ciel vanilla
 option.SKY_VANILLA.comment=Utilise la couleur du ciel vanilla.
 
+option.SKY_VANILLA_USE_FOG=Couleur brouillard vanilla
+option.SKY_VANILLA_USE_FOG.comment=Utilise la couleur du brouillard vanilla lorsque l'option ciel vanilla est activée.
+
 option.NETHER_VANILLA=Nether vanilla
 option.NETHER_VANILLA.comment=Utilise la couleur du Nether vanilla.
 
