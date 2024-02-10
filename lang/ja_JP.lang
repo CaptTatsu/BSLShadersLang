@@ -21,6 +21,7 @@ screen.ATMOSPHERICS=天球(太陽など)の設定
 screen.SKY=空の設定
 screen.CLOUDS=雲の設定
 screen.FOG=霧の設定
+screen.SKYBOX=スカイボックスの設定
 
 screen.WATER=水の設定
 
@@ -76,7 +77,7 @@ screen.EXTRAS=その他の設定
 screen.ANIMATION=アニメーション設定
 
 #Settings
-option.ABOUT=BSL v8.2.07.1
+option.ABOUT=BSL v8.2.08
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -300,9 +301,6 @@ value.CLOUDS.1=スカイボックス
 value.CLOUDS.2=立体的な雲
 value.CLOUDS.3=バニラ
 
-option.SKY_DESATURATION=空の低彩度化
-option.SKY_DESATURATION.comment=夜空に少し色合いを加えながら彩度を下げます。
-
 option.FOG_DENSITY=霧の密度
 option.FOG_DENSITY.comment=霧の密度（深さ）を調整します。 §e[*]§rこのオプションはネザーでは無視されます。
 
@@ -312,20 +310,8 @@ option.LIGHT_SHAFT.comment=太陽/月からの立体的な光の柱を追加し�
 option.LIGHT_SHAFT_STRENGTH=ライトシャフトの強さ
 option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。
 
-option.ROUND_SUN_MOON=丸い太陽と月
-option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月(1.16.4以前)
-
-option.ROUND_SUN_MOON_SIZE=太陽と月のサイズ
-option.ROUND_SUN_MOON_SIZE.comment=丸い太陽と月のサイズと、鏡面反射のハイライトを調整します。
-
-option.AURORA=オーロラ
-option.AURORA.comment=オーロラを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
-
 option.WEATHER_PERBIOME=バイオーム毎の天候
 option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を使用します。 §c[-]§r未知の条件下では動作しない可能性があります。
-
-option.UNDERGROUND_SKY=地下の空の修正
-option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
 
 option.WEATHER_OPACITY=天候の不透明度
 option.WEATHER_OPACITY.comment=天候の不透明度を調整します。
@@ -340,8 +326,8 @@ option.SKY_EXPOSURE_W=天候の露出
 option.SKY_HORIZON_N=近くの地平線
 option.SKY_HORIZON_F=遠くの地平線
 
-option.SKY_DEFERRED=空の遅延レンダリング
-option.SKY_DEFERRED.comment=最初から不透明な面が描画されたあとに、空がレンダリングされます。 §e[*]§rこのオプションはリソースパックの空のレンダリングに影響します。
+option.SKY_DESATURATION=空の低彩度化
+option.SKY_DESATURATION.comment=夜空に少し色合いを加えながら彩度を下げます。
 
 option.SKY_GROUND=地平線下の描写
 option.SKY_GROUND.comment=地平線以下の空を暗くします。 §e[*]§rこのオプションは霧の密度に影響されます。
@@ -349,17 +335,14 @@ value.SKY_GROUND.0=§cオフ
 value.SKY_GROUND.1=反射のみ
 value.SKY_GROUND.2=フル
 
-option.SKYBOX_INTENSITY=スカイボックスの強度
-option.SKYBOX_INTENSITY.comment=スカイボックスの強度を調整します。
+option.UNDERGROUND_SKY=地下の空の修正
+option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
 
-option.SKYBOX_OPACITY=スカイボックスの不透明度
-option.SKYBOX_OPACITY.comment=スカイボックスの不透明度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
+option.SHADER_END_SKY=エンドの空のシェーダー
+option.SHADER_END_SKY.comment=バニラ・MODによるエンドのスカイボックスをシェーダーベースドのものに置換えます。
 
-option.SUN_INTENSITY=太陽の強度
-option.SUN_INTENSITY.comment=スカイボックスの太陽の強度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
-
-option.MOON_INTENSITY=月の強度
-option.MOON_INTENSITY.comment=スカイボックスの月の強度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
+option.SKY_DEFERRED=空の遅延レンダリング
+option.SKY_DEFERRED.comment=最初から不透明な面が描画されたあとに、空がレンダリングされます。 §e[*]§rこのオプションはリソースパックの空のレンダリングに影響します。
 
 #Cloud Config
 option.CLOUD_BASE=ベース形状
@@ -459,6 +442,31 @@ value.FOG_VANILLA_CLOUD.0=§cオフ
 value.FOG_VANILLA_CLOUD.1=最小限
 value.FOG_VANILLA_CLOUD.2=少なめ
 value.FOG_VANILLA_CLOUD.3=フル
+
+#Skybox Config
+option.ROUND_SUN_MOON=丸い太陽と月
+option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月(1.16.4以前)
+
+option.ROUND_SUN_MOON_SIZE=太陽と月のサイズ
+option.ROUND_SUN_MOON_SIZE.comment=丸い太陽と月のサイズと、鏡面反射のハイライトを調整します。
+
+option.STARS=星
+option.STARS.comment=星の表示を有効にします。
+
+option.AURORA=オーロラ
+option.AURORA.comment=オーロラを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
+
+option.SKYBOX_INTENSITY=スカイボックスの強度
+option.SKYBOX_INTENSITY.comment=スカイボックスの強度を調整します。
+
+option.SKYBOX_OPACITY=スカイボックスの不透明度
+option.SKYBOX_OPACITY.comment=スカイボックスの不透明度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
+
+option.SUN_INTENSITY=太陽の強度
+option.SUN_INTENSITY.comment=スカイボックスの太陽の強度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
+
+option.MOON_INTENSITY=月の強度
+option.MOON_INTENSITY.comment=スカイボックスの月の強度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
 
 #Water
 option.WATER_MODE=水のテクスチャ表示
@@ -880,6 +888,8 @@ option.TOON_LIGHTMAP.comment=セルシェーディング用にバニラの照明
 
 option.RETRO_FILTER=レトロフィルター
 option.RETRO_FILTER.comment=ピクセル化とディザリングを加えます。 §e[*]§rピクセル化をより強くするためにレンダリング品質を下げます。 §c[-]§rアンチエイリアシングと互換性がありません。
+option.RETRO_FILTER_SIZE=レトロフィルターのサイズ
+option.RETRO_FILTER_SIZE.comment=レトロフィルターのピクセルサイズを調整します。
 
 option.WORLD_CURVATURE=世界の曲率
 option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[-]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[-]§r1.17でブロック選択のハイライトを壊すことがあります。
