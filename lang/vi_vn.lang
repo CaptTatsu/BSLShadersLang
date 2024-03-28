@@ -496,8 +496,7 @@ value.WATER_ALPHA_MODE.0=Phẳng
 value.WATER_ALPHA_MODE.1=Vanilla
 
 option.WATER_NORMALS=Bản đồ Bình thường Nước
-option.WATER_NORMALS.comment=Kích hoạGPT
-t ánh xạ bình thường được tạo trong thời gian thực cho nước.
+option.WATER_NORMALS.comment=Kích hoạt ánh xạ bình thường được tạo trong thời gian thực cho nước.
 value.WATER_NORMALS.0=§cTẮT
 value.WATER_NORMALS.1=Worley
 value.WATER_NORMALS.2=Perlin
