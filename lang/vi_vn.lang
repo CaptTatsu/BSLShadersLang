@@ -1,0 +1,953 @@
+#shaders/lang/vi_vn.lang
+
+#Hồ sơ
+profile.MINIMUM=Tối thiểu
+profile.LOW=Thấp
+profile.MEDIUM=Trung bình
+profile.HIGH=Cao
+profile.ULTRA=Siêu
+profile.comment=Tối thiểu: không có bóng, không có hiệu ứng phụ. Thấp: bóng thấp, không có hiệu ứng phụ. Trung bình: bóng thấp-trung bình, không có hiệu ứng phụ. Cao: bóng trung bình, AO và tia sáng. Siêu: bóng cao, AO, và tia sáng.
+
+#Màn hình
+screen.LIGHTING=Chiếu sáng
+screen.SHADOW_CONFIG=Cấu hình Bóng Râm Thêm
+screen.MCBL=Cấu hình Ánh sáng Màu Khối
+
+screen.MATERIAL=Vật liệu
+screen.SPECULAR=Phản chiếu & Bóng loáng
+screen.NORMALS=Bình thường & Hiệu ứng Parallax
+
+screen.ATMOSPHERICS=Khí quyển
+screen.SKY=Cấu hình Bầu trời
+screen.CLOUDS=Cấu hình Mây
+screen.FOG=Cấu hình Sương mù
+screen.SKYBOX=Cấu hình Hộp trời
+
+screen.WATER=Nước
+
+screen.CAMERA=Camera
+
+screen.ANTIALIASING=Chống răng cưa
+
+screen.COLOR=Màu sắc
+screen.LIGHT_COLOR=Màu sắc Ánh sáng
+screen.LIGHT_M=Ánh sáng (Buổi sáng)
+screen.AMBIENT_M=Môi trường (Buổi sáng)
+screen.LIGHT_D=Ánh sáng (Ban ngày)
+screen.AMBIENT_D=Môi trường (Ban ngày)
+screen.LIGHT_E=Ánh sáng (Buổi tối)
+screen.AMBIENT_E=Môi trường (Buổi tối)
+screen.LIGHT_N=Ánh sáng (Đêm)
+screen.AMBIENT_N=Môi trường (Đêm)
+screen.MINLIGHT=Ánh sáng Tối thiểu
+screen.BLOCKLIGHT_COLOR=Màu Ánh sáng Khối
+screen.SKY_COLOR=Màu Bầu trời
+screen.WATER_COLOR=Màu Nước
+screen.WEATHER_COLOR=Màu Thời tiết
+screen.WEATHER_R=Mưa (Bình thường)
+screen.WEATHER_C=Tuyết rơi
+screen.WEATHER_D=Bão cát Sa mạc
+screen.WEATHER_B=Bão cát Mesa
+screen.WEATHER_S=Mưa Đầm lầy
+screen.WEATHER_M=Mưa Đảo Nấm
+screen.WEATHER_V=May mù Savanna
+screen.WEATHER_J=Mưa Rừng nhiệt đới
+screen.AURORA_COLOR=Màu Aurora
+screen.AURORA_L=Màu Đoạn thấp
+screen.AURORA_H=Màu Đoạn cao
+screen.DIMENSION_COLOR=Màu Kích thước
+screen.NETHER_COLOR=Màu Nether
+screen.NETHER_N=Hoang mạc Nether
+screen.NETHER_V=Thung lũng Cát hồn
+screen.NETHER_C=Rừng Đỏ
+screen.NETHER_W=Rừng Xanh lè
+screen.NETHER_B=Đồng bằng Basalt
+screen.END_COLOR=Màu Kết thúc
+
+screen.CGT=Điều chỉnh Màu sắc & Tông màu
+screen.EXPOSURE_CONFIG=Cấu hình Phơi sáng Thêm
+screen.COLOR_GRADING_CONFIG=Cấu hình Điều chỉnh Màu sắc
+screen.CG_R=Kênh Đỏ
+screen.CG_G=Kênh Xanh lá
+screen.CG_B=Kênh Xanh dương
+screen.CG_T=Màu nhuộm
+
+screen.EXTRAS=Phụ
+
+screen.ANIMATION=Hoạt ảnh
+
+#Cài đặt
+option.ABOUT=BSL v8.2.09p1
+option.ABOUT.comment=của Capt Tatsu. bitslablab.com
+value.ABOUT.0=của Capt Tatsu
+
+#Chiếu sáng
+option.SHADOW=Bóng Động
+option.SHADOW.comment=Kích hoạt ánh sáng động và bản đồ bóng động.
+
+option.shadowMapResolution=Chất lượng Bản đồ bóng
+option.shadowMapResolution.comment=Điều chỉnh kích thước bản đồ bóng. §e[*]§rĐộ phân giải cao hơn cho bóng nét hơn, nhưng giảm hiệu suất.
+value.shadowMapResolution.512=Rất Thấp (512)
+value.shadowMapResolution.1024=Thấp (1024)
+value.shadowMapResolution.1536=Trung bình Thấp (1536)
+value.shadowMapResolution.2048=Trung bình (2048)
+value.shadowMapResolution.3072=Cao (3072)
+value.shadowMapResolution.4096=Rất Cao (4096)
+value.shadowMapResolution.8192=Siêu Cao (8192)
+
+option.shadowDistance=Khoảng cách Bóng
+option.shadowDistance.comment=Điều chỉnh khoảng cách bóng.
+
+option.SHADOW_COLOR=Bóng Màu
+option.SHADOW_COLOR.comment=Kích hoạt bóng nhuộm từ vật liệu trong suốt. §a[+]§rDùng cho tia sáng khối lượng màu. §c[-]§rChi phí hiệu suất cao hơn khi sử dụng lọc bóng.
+
+option.SHADOW_FILTER=Lọc Bóng
+option.SHADOW_FILTER.comment=Kích hoạt lọc bóng.
+
+option.AO=Che khuất Môi trường
+option.AO.comment=Thêm bóng mềm xung quanh tiếp xúc hoặc giao nhau bề mặt.
+
+option.AO_STRENGTH=Cường độ AO
+option.AO_STRENGTH.comment=Điều chỉnh cường độ che khuất môi trường.
+
+option.DESATURATION=Giảm bão hòa
+option.DESATURATION.comment=Giảm bão hòa trong khi thêm một số màu nhuộm ở khu vực tối.
+
+option.DESATURATION_FACTOR=Hệ số Giảm bão hòa
+option.DESATURATION_FACTOR.comment=Điều chỉnh lượng giảm bão hòa tối đa áp dụng.
+value.DESATURATION_FACTOR.2.0=Rất Thấp
+value.DESATURATION_FACTOR.1.5=Thấp
+value.DESATURATION_FACTOR.1.0=Trung bình
+value.DESATURATION_FACTOR.0.5=Cao
+value.DESATURATION_FACTOR.0.0=Rất Cao
+
+option.DYNAMIC_HANDLIGHT=Ánh sáng Tay Động
+option.DYNAMIC_HANDLIGHT.comment=Cho phép ánh sáng khối được phát ra từ quan điểm khi cầm một số vật phẩm.
+
+option.MULTICOLORED_BLOCKLIGHT=Ánh sáng Khối Đa màu
+option.MULTICOLORED_BLOCKLIGHT.comment=Kích hoạt ánh sáng khối đa màu trên màn hình. §e[*]§rChỉ hoạt động trên 1.16.5 trở lên, trừ thiết bị Mac.
+
+option.WHITE_WORLD=Thế giới Trắng
+option.WHITE_WORLD.comment=Thay thế texture bằng màu trắng đồng nhất.
+
+#Cấu hình Bóng Râm Thêm
+option.SHADOW_ENTITY=Bóng của Sinh vật
+option.SHADOW_ENTITY.comment=Kích hoạt bóng cho quái vật. §e[]§rTắt điều này khi có số lượng lớn quái vật được tải. §e[]§rChỉ hoạt động trên 1.16.5 trở lên.
+
+option.SHADOW_BLOCK_ENTITY=Bóng của Khối Sinh vật
+option.SHADOW_BLOCK_ENTITY.comment=Kích hoạt bóng trên các khối sinh vật. §e[]§rTắt điều này khi có số lượng lớn khối sinh vật được tải. §e[]§rChỉ hoạt động trên 1.16.5 trở lên.
+
+option.SHADOW_VEGETATION=Bóng của Thực vật
+option.SHADOW_VEGETATION.comment=Kích hoạt bóng trên cỏ, cây trồng, và hầu hết các loại thực vật khác.
+
+option.sunPathRotation=Quay Đường đi của Mặt trời
+option.sunPathRotation.comment=Điều chỉnh góc của mặt trời.
+
+option.SHADOW_BIAS=Chế độ Bias Bóng
+option.SHADOW_BIAS.comment=Xác định cách thực hiện bias ánh sáng bóng. Chế độ hướng ánh sáng giữ hầu hết các cạnh bóng, nhưng bóng trông nổi ở khoảng cách xa. Chế độ bề mặt bình thường giữ điểm tiếp xúc, nhưng bóng trông ngắn hơn ở khoảng cách xa.
+value.SHADOW_BIAS.0=Hướng Ánh sáng
+value.SHADOW_BIAS.1=Bề mặt Bình thường
+
+option.SHADOW_PIXEL=Bóng Pixel Hóa
+option.SHADOW_PIXEL.comment=Áp dụng hiệu ứng pixel hóa trên bóng.
+value.SHADOW_PIXEL.0=TẮT
+
+#Cấu hình Ánh sáng Màu Khối
+option.MCBL_ANTI_BLEED=Chống Phai màu
+option.MCBL_ANTI_BLEED.comment=Giảm sự lan truyền màu ánh sáng khối không mong muốn. §c[-]§rCó thể khiến lỗi undersampling trở nên dễ nhận thấy hơn.
+option.MCBL_LEGACY_COLOR=Màu Cổ điển
+option.MCBL_LEGACY_COLOR.comment=Sử dụng phương pháp cũ để tính toán màu ánh sáng khối.
+
+#Vật liệu
+option.ADVANCED_MATERIALS=Vật liệu Nâng cao
+option.ADVANCED_MATERIALS.comment=Kích hoạt việc sử dụng bản đồ phản chiếu và bình thường, cho phép hiển thị chi tiết hơn trên nhiều vật thể. §e[]§rTùy chọn này yêu cầu gói tài nguyên chứa bản đồ phản chiếu và/hoặc bản đồ bình thường, tắt nếu không sử dụng. §e[]§rCác tùy chọn yêu cầu vật liệu nâng cao được chỉ định bởi *, thay đổi các tùy chọn này không ảnh hưởng đến hình ảnh hoặc hiệu suất trong khi vật liệu nâng cao bị vô hiệu.
+
+option.MATERIAL_FORMAT=Định dạng Vật liệu*
+option.MATERIAL_FORMAT.comment=Xác định định dạng bản đồ phản chiếu và bản đồ bình thường được sử dụng bởi gói tài nguyên. §e[*]§rCác nghệ sĩ texture thường chỉ ra định dạng nào được sử dụng trong gói tài nguyên của họ, sử dụng định dạng sai có thể dẫn đến kết quả kỳ lạ.
+value.MATERIAL_FORMAT.0=SEUS/Old PBR
+value.MATERIAL_FORMAT.1=labPBR 1.3
+
+option.SSS=Lan truyền Dưới bề mặt*
+option.SSS.comment=Cho phép ánh sáng xuyên qua và lan truyền qua các khối. §a[+]§rHiệu ứng này được hưởng lợi từ TAA.
+
+option.BASIC_SSS=Lan truyền Cơ bản
+option.BASIC_SSS.comment=Kích hoạt phiên bản đơn giản của lan truyền dưới bề mặt đối với một số khối.
+
+option.EMISSIVE=Phát quang
+option.EMISSIVE.comment=Cho phép một số bề mặt sáng hơn.
+value.EMISSIVE.0=§cTẮT
+value.EMISSIVE.1=Chỉ Vật liệu Nâng cao*
+value.EMISSIVE.2=Toàn bộ
+
+option.REFRACTION=Khúc xạ
+option.REFRACTION.comment=Kích hoạt sự méo mó phía sau bề mặt trong suốt có bản đồ bình thường. §c[-]§rBề mặt trong suốt sẽ bị méo mó. §c[-]§rMột số tính năng khác có thể không hoạt động đúng cách với hiệu ứng này được kích hoạt.
+value.REFRACTION.0=TẮT
+value.REFRACTION.1=Chỉ Nước
+value.REFRACTION.2=Toàn bộ
+
+option.ALBEDO_BALANCING=Cân bằng Albedo
+option.ALBEDO_BALANCING.comment=Giảm độ sáng của các bề mặt màu sáng rực rỡ.
+
+option.ALPHA_BLEND=Pha Trộn Alpha
+option.ALPHA_BLEND.comment=Xác định cách thực hiện pha trộn trong suốt.
+value.ALPHA_BLEND.0=Gamma
+value.ALPHA_BLEND.1=Tuyến tính
+
+option.ENTITY_FLASH=Chớp sáng Sinh vật
+option.ENTITY_FLASH.comment=Kích hoạt hiệu ứng chớp sáng cho sinh vật bị hại và creeper gần đó.
+
+#Phản chiếu & Bóng loáng
+option.REFLECTION=Phản chiếu
+option.REFLECTION.comment=Kích hoạt phản chiếu trên nước và bề mặt trong suốt.
+value.REFLECTION.0=§cTẮT
+value.REFLECTION.1=Chỉ Bầu trời & Phản chiếu Đặc biệt
+value.REFLECTION.2=Toàn bộ
+
+option.REFLECTION_TRANSLUCENT=Phản chiếu Trong suốt
+option.REFLECTION_TRANSLUCENT.comment=Cho phép phản chiếu được hiển thị trên các bề mặt trong suốt, như kính màu, băng, khối slime và hơn thế nữa.
+
+option.REFLECTION_SPECULAR=Phản chiếu Đặc biệt*
+option.REFLECTION_SPECULAR.comment=Kích hoạt phản chiếu trên các bề mặt nhẵn hoặc kim loại.
+
+option.REFLECTION_ROUGH=Phản chiếu Thô*
+option.REFLECTION_ROUGH.comment=Cho phép các bề mặt có độ nhẵn thấp hiển thị phản chiếu mờ. §c[-]§rCó thể chứa một số lỗi nhỏ.
+
+option.REFLECTION_RAIN=Phản chiếu Mưa*
+option.REFLECTION_RAIN.comment=Cho phép các bề mặt trở nên ướt khi mưa. §e[*]§rYêu cầu phản chiếu đặc biệt.
+
+option.REFLECTION_RAIN_AMOUNT=Lượng Vũng nước
+option.REFLECTION_RAIN_AMOUNT.comment=Điều chỉnh lượng vũng nước được tạo ra khi mưa.
+value.REFLECTION_RAIN_AMOUNT.0.4=Rất Thấp
+value.REFLECTION_RAIN_AMOUNT.0.5=Thấp
+value.REFLECTION_RAIN_AMOUNT.0.6=Trung bình
+value.REFLECTION_RAIN_AMOUNT.0.7=Cao
+value.REFLECTION_RAIN_AMOUNT.1.0=Rất Cao
+
+option.REFLECTION_PREVIOUS=Phản chiếu Khung hình Trước
+option.REFLECTION_PREVIOUS.comment=Cho phép các bề mặt trong suốt được phản chiếu bằng cách sử dụng thông tin khung hình trước. §c[-]§rCó thể gây thiếu phản chiếu trong ảnh chụp màn hình (do cài đặt kích thước ảnh chụp). §c[-]§rKhông tương thích với một số GPU. §c[-]§rLỗi trong 1.7.10.
+
+option.SPECULAR_HIGHLIGHT_ROUGH=Điểm sáng Đặc biệt Thô
+option.SPECULAR_HIGHLIGHT_ROUGH.comment=Cho phép các bề mặt thô có độ bóng yếu.
+
+option.ALBEDO_METAL=Màu Albedo Kim loại Cố định*
+option.ALBEDO_METAL.comment=Áp dụng màu texture cơ bản như màu nhuộm trên các bề mặt kim loại cố định. §e[*]§rChỉ hoạt động với định dạng vật liệu labPBR.
+
+option.REFLECTION_MODE=Chế độ Phản chiếu
+option.REFLECTION_MODE.comment=Điều chỉnh hành vi phản chiếu.
+value.REFLECTION_MODE.0=Ít Trùng lặp
+value.REFLECTION_MODE.1=Cân bằng
+value.REFLECTION_MODE.2=Điền vào khoảng trống Nhiều hơn
+
+option.REFLECTION_SKY_FALLOFF=Suy giảm Phản chiếu Bầu trời
+option.REFLECTION_SKY_FALLOFF.comment=Điều chỉnh mức độ xa mà phản chiếu bầu trời mờ dần dưới ánh sáng trời yếu.
+value.REFLECTION_SKY_FALLOFF.1=Rất Yếu
+value.REFLECTION_SKY_FALLOFF.2=Yếu
+value.REFLECTION_SKY_FALLOFF.4=Cân bằng
+value.REFLECTION_SKY_FALLOFF.8=Mạnh
+value.REFLECTION_SKY_FALLOFF.16=Rất Mạnh
+
+option.REFLECTION_SKYBOX=Phản chiếu Hộp trời
+option.REFLECTION_SKYBOX.comment=Cho phép hộp trời của gói tài nguyên được bao gồm trong phản chiếu. §c[-]§rHộp trời chỉ được áp dụng cho các bề mặt trong suốt.
+
+#Bản đồ bình thường & Parallax
+option.PARALLAX=Ánh xạ Parallax*
+option.PARALLAX.comment=Thêm sự lồi lõm trên bề mặt sử dụng bản đồ độ cao.
+
+option.PARALLAX_DEPTH=Độ sâu Parallax*
+option.PARALLAX_DEPTH.comment=Điều chỉnh độ sâu của parallax.
+value.PARALLAX_DEPTH.0.05=5 cm
+value.PARALLAX_DEPTH.0.10=10 cm
+value.PARALLAX_DEPTH.0.15=15 cm
+value.PARALLAX_DEPTH.0.20=20 cm
+value.PARALLAX_DEPTH.0.25=25 cm
+value.PARALLAX_DEPTH.0.30=30 cm
+value.PARALLAX_DEPTH.0.35=35 cm
+value.PARALLAX_DEPTH.0.40=40 cm
+value.PARALLAX_DEPTH.0.45=45 cm
+value.PARALLAX_DEPTH.0.50=50 cm
+
+option.PARALLAX_QUALITY=Mẫu Parallax*
+option.PARALLAX_QUALITY.comment=Điều chỉnh chất lượng của ánh xạ parallax.
+
+option.PARALLAX_DISTANCE=Khoảng cách Parallax*
+option.PARALLAX_DISTANCE.comment=Điều chỉnh khoảng cách mà ánh xạ parallax và bóng tự thân có thể được hiển thị.
+
+option.SELF_SHADOW=Bóng Tự thân*
+option.SELF_SHADOW.comment=Cho phép bề mặt tự tạo bóng cho chính mình sử dụng bản đồ độ cao.
+
+option.SELF_SHADOW_ANGLE=Góc Bóng Tự thân*
+option.SELF_SHADOW_ANGLE.comment=Điều chỉnh góc tạo bóng tự thân, giá trị cao hơn cho phép bóng di chuyển xa hơn.
+
+option.SELF_SHADOW_QUALITY=Mẫu Bóng Tự thân*
+option.SELF_SHADOW_QUALITY.comment=Điều chỉnh chất lượng của bóng tự thân.
+
+option.SELF_SHADOW_STRENGTH=Cường độ Bóng Tự thân*
+option.SELF_SHADOW_STRENGTH.comment=Điều chỉnh độ mạnh của bóng tự thân.
+
+option.DIRECTIONAL_LIGHTMAP=Ánh sáng hướng*
+option.DIRECTIONAL_LIGHTMAP.comment=Thêm bản đồ bình thường vào ánh sáng vanilla. §c[-]§rBản đồ ánh sáng có thể bị lỗi với hiệu ứng này được kích hoạt.
+
+option.DIRECTIONAL_LIGHTMAP_STRENGTH=Cường độ Ánh sáng hướng*
+option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=Điều chỉnh độ mạnh của Ánh sáng Hướng.
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.2.0=Rất Thấp
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.4=Thấp
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.1.0=Trung bình
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.7=Cao
+value.DIRECTIONAL_LIGHTMAP_STRENGTH.0.5=Rất Cao
+
+option.NORMAL_DAMPENING=Giảm Bản đồ Bình thường*
+option.NORMAL_DAMPENING.comment=Giảm cường độ bản đồ bình thường để ngăn chặn phản chiếu quá nhiều nhiễu.
+
+option.NORMAL_PLANTS=Cây Hướng lên*
+option.NORMAL_PLANTS.comment=Điều chỉnh độ sáng cây. §e[*]§rTắt điều này nếu mô hình cây không phẳng hoặc áp dụng bản đồ bình thường trên cây.
+
+#Khí quyển
+option.CLOUDS=Mây
+option.CLOUDS.comment=Kích hoạt mây. §a[+]§rHộp trời và mây thể tích được hưởng lợi từ TAA. §e[*]§rMây vanilla yêu cầu cài đặt mây vanilla được thiết lập mặc định hoặc bật.
+value.CLOUDS.0=§cTẮT
+value.CLOUDS.1=Hộp trời
+value.CLOUDS.2=Thể tích
+value.CLOUDS.3=Vanilla
+
+option.FOG_DENSITY=Mật độ Sương mù
+option.FOG_DENSITY.comment=Điều chỉnh mật độ sương mù. §e[*]§rTùy chọn này bị bỏ qua ở nether.
+
+option.LIGHT_SHAFT=Tia sáng
+option.LIGHT_SHAFT.comment=Thêm tia sáng thể tích từ mặt trời / mặt trăng. §a[+]§rHiệu ứng này được hưởng lợi từ TAA. §e[]§rYêu cầu bóng động thời gian thực. §e[]§rHiệu suất phụ thuộc vào Độ phân giải Bản đồ Bóng.
+
+option.LIGHT_SHAFT_STRENGTH=Cường độ Tia sáng
+option.LIGHT_SHAFT_STRENGTH.comment=Điều chỉnh cường độ tia sáng.
+
+option.WEATHER_PERBIOME=Thời tiết Theo Biome
+option.WEATHER_PERBIOME.comment=Sử dụng màu sắc thời tiết đa dạng cho các biome khác nhau. §c[-]§rCó thể không hoạt động trong một số trường hợp không xác định.
+
+option.WEATHER_OPACITY=Độ mờ Thời tiết
+option.WEATHER_OPACITY.comment=Điều chỉnh độ mờ thời tiết.
+
+#Cấu hình Bầu trời
+option.SKY_DENSITY_D=Mật độ Ban ngày
+option.SKY_EXPOSURE_D=Phơi sáng Ban ngày
+option.SKY_DENSITY_N=Mật độ Ban đêm
+option.SKY_EXPOSURE_N=Phơi sáng Ban đêm
+option.SKY_DENSITY_W=Mật độ Thời tiết
+option.SKY_EXPOSURE_W=Phơi sáng Thời tiết
+option.SKY_HORIZON_N=Gần Chân trời
+option.SKY_HORIZON_F=Xa Chân trời
+
+option.SKY_DESATURATION=Giảm Bão hòa Bầu trời
+option.SKY_DESATURATION.comment=Giảm bão hòa trong khi thêm một số màu nhuộm vào hộp trời vào ban đêm
+
+option.SKY_GROUND=Bầu trời Đất
+option.SKY_GROUND.comment=Làm tối phần dưới của bầu trời. §e[*]§rTùy chọn này bị ảnh hưởng bởi mật độ sương mù.
+value.SKY_GROUND.0=§cTẮT
+value.SKY_GROUND.1=Chỉ Phản chiếu
+value.SKY_GROUND.2=Toàn bộ
+
+option.UNDERGROUND_SKY=Sửa Chữa Bầu trời Dưới lòng đất
+option.UNDERGROUND_SKY.comment=Ẩn bầu trời khi người chơi ở trong khu vực tối và dưới mực nước biển (Y: 62). §c[-]§rKhông phù hợp với các thế giới siêu phẳng thấp.
+
+option.SHADER_END_SKY=Bầu trời Kết thúc Shader
+option.SHADER_END_SKY.comment=Thay thế bầu trời kết thúc vanilla/mod bằng bầu trời kết thúc dựa trên shader.
+
+option.SKY_DEFERRED=Trì hoãn Bầu trời
+option.SKY_DEFERRED.comment=Vẽ bầu trời sau khi các bề mặt không trong suốt được vẽ thay vì ở đầu. §e[*]§rẢnh hưởng đến việc render bầu trời của gói tài nguyên.
+
+#Cấu hình Mây
+option.CLOUD_BASE=Cơ sở Hình dạng
+option.CLOUD_BASE.comment=Xác định loại nhiễu sử dụng cho hình dạng cơ sở của mây.
+value.CLOUD_BASE.0=Perlin
+value.CLOUD_BASE.1=Worley
+
+option.CLOUD_DENSITY=Mật độ
+option.CLOUD_DENSITY.comment=Điều chỉnh mật độ mây, mật độ cao hơn làm cho các lỗi trở nên rõ ràng hơn.
+value.CLOUD_DENSITY.1=Rất Thấp
+value.CLOUD_DENSITY.2=Thấp
+value.CLOUD_DENSITY.4=Trung bình
+value.CLOUD_DENSITY.6=Cao
+value.CLOUD_DENSITY.8=Rất Cao
+
+option.CLOUD_AMOUNT=Số lượng
+option.CLOUD_AMOUNT.comment=Điều chỉnh số lượng mây.
+value.CLOUD_AMOUNT.12.0=Rất Thấp
+value.CLOUD_AMOUNT.11.0=Thấp
+value.CLOUD_AMOUNT.10.0=Trung bình
+value.CLOUD_AMOUNT.9.0=Cao
+value.CLOUD_AMOUNT.8.0=Rất Cao
+
+option.CLOUD_HEIGHT=Độ cao
+option.CLOUD_HEIGHT.comment=Điều chỉnh độ cao của mây.
+value.CLOUD_HEIGHT.5.0=Rất Thấp
+value.CLOUD_HEIGHT.7.5=Thấp
+value.CLOUD_HEIGHT.10.0=Trung bình
+value.CLOUD_HEIGHT.12.5=Cao
+value.CLOUD_HEIGHT.15.0=Rất Cao
+
+option.CLOUD_THICKNESS=Độ dày
+option.CLOUD_THICKNESS.comment=Điều chỉnh độ dày của mây.
+value.CLOUD_THICKNESS.2=Rất Thấp
+value.CLOUD_THICKNESS.4=Thấp
+value.CLOUD_THICKNESS.5=Trung bình
+value.CLOUD_THICKNESS.7=Cao
+value.CLOUD_THICKNESS.10=Rất Cao
+
+option.CLOUD_DETAIL=Chi tiết
+option.CLOUD_DETAIL.comment=Điều chỉnh chi tiết của mây.
+value.CLOUD_DETAIL.0.3=Rất Thấp
+value.CLOUD_DETAIL.0.7=Thấp
+value.CLOUD_DETAIL.1.0=Trung bình
+value.CLOUD_DETAIL.1.3=Cao
+value.CLOUD_DETAIL.1.7=Rất Cao
+
+option.CLOUD_SPEED=Tốc độ
+option.CLOUD_SPEED.comment=Điều chỉnh tốc độ của mây.
+
+option.CLOUD_OPACITY=Độ mờ
+option.CLOUD_OPACITY.comment=Điều chỉnh độ mờ của mây.
+
+option.CLOUD_BRIGHTNESS=Độ sáng
+option.CLOUD_BRIGHTNESS.comment=Điều chỉnh độ sáng của mây.
+
+option.CLOUD_VOLUMETRIC_SCALE=Thang đo Thể tích
+option.CLOUD_VOLUMETRIC_SCALE.comment=Điều chỉnh độ cao và kích thước của mây thể tích
+value.CLOUD_VOLUMETRIC_SCALE.6.0=Vanilla Cũ
+value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
+value.CLOUD_VOLUMETRIC_SCALE.16.0=Hộp trời Gốc
+
+#Cấu hình Sương mù
+option.FOG_DENSITY_NIGHT=Mật độ Ban đêm - Thời tiết
+option.FOG_DENSITY_NIGHT.comment=Điều chỉnh bội số mật độ sương mù vào ban đêm và khi mưa.
+
+option.FOG_DENSITY_WEATHER=Mật độ Thời tiết
+option.FOG_DENSITY_WEATHER.comment=Điều chỉnh bội số mật độ sương mù khi mưa.
+
+option.FOG_DENSITY_COLD=Mật độ Lạnh
+option.FOG_DENSITY_COLD.comment=Điều chỉnh bội số mật độ sương mù khi đứng trên các biome lạnh. Biome lạnh bao gồm bất kỳ biome nào có tuyết xuất hiện. §e[*]§rYêu cầu Thời tiết Theo Biome.
+
+option.FOG_DENSITY_DRY=Mật độ Khô
+option.FOG_DENSITY_DRY.comment=Điều chỉnh bội số mật độ sương mù khi đứng trên các biome khô. Biome khô bao gồm sa mạc, badlands/mesa và savanna. §e[*]§rYêu cầu Thời tiết Theo Biome.
+
+option.FOG_DENSITY_DAMP=Mật độ Ẩm
+option.FOG_DENSITY_DAMP.comment=Điều chỉnh bội số mật độ sương mù khi đứng trên các biome ẩm. Biome ẩm bao gồm đầm lầy, đảo nấm và rừng nhiệt đới. §e[*]§rYêu cầu Thời tiết Theo Biome.
+
+option.FOG_DENSITY_INDOOR=Mật độ Trong nhà
+option.FOG_DENSITY_INDOOR.comment=Điều chỉnh bội số mật độ sương mù khi ở trong nhà.
+
+option.FOG_DENSITY_DH=Mật độ Chân trời Xa
+option.FOG_DENSITY_DH.comment=Điều chỉnh bội số mật độ sương mù ở thế giới trên mặt đất khi Chân trời Xa được kích hoạt.
+
+option.FAR_VANILLA_FOG=Sương mù Vanilla Xa
+option.FAR_VANILLA_FOG.comment=Kích hoạt sương mù giống như vanilla. §e[*]§rTùy chọn này bị ảnh hưởng bởi mật độ sương mù.
+value.FAR_VANILLA_FOG.0=§cTẮT
+value.FAR_VANILLA_FOG.1=Chỉ Thế giới trên mặt đất
+value.FAR_VANILLA_FOG.2=Chỉ Nether & Kết thúc
+value.FAR_VANILLA_FOG.3=Toàn bộ
+
+option.FAR_VANILLA_FOG_STYLE=Phong cách Sương mù Vanilla Xa
+option.FAR_VANILLA_FOG_STYLE.comment=Spherical hoạt động giống như sương mù vanilla. Cylindrical bỏ qua trục Y.
+value.FAR_VANILLA_FOG_STYLE.0=Hình cầu
+value.FAR_VANILLA_FOG_STYLE.1=Hình trụ
+
+option.FOG_DENSITY_VANILLA=Mật độ Vanilla
+option.FOG_DENSITY_VANILLA.comment=Điều chỉnh mật độ cho sương mù vanilla.
+
+option.FOG_VANILLA_CLOUD=Sương mù Mây Vanilla
+option.FOG_VANILLA_CLOUD.comment=Kích hoạt sương mù trên mây vanilla.
+value.FOG_VANILLA_CLOUD.0=§cTẮT
+value.FOG_VANILLA_CLOUD.1=Tối thiểu
+value.FOG_VANILLA_CLOUD.2=Giảm bớt
+value.FOG_VANILLA_CLOUD.3=Toàn bộ
+
+#Cấu hình Hộp trời
+option.ROUND_SUN_MOON=Mặt trời & Mặt trăng Tròn
+option.ROUND_SUN_MOON.comment=Kích hoạt mặt trời & mặt trăng dựa trên shader. §e[*]§rTắt mặt trời & mặt trăng vanilla trong Cài đặt Video > Chi tiết > Mặt trời & Mặt trăng trên 1.16.4 hoặc thấp hơn.
+
+option.ROUND_SUN_MOON_SIZE=Kích thước Mặt trời & Mặt trăng
+option.ROUND_SUN_MOON_SIZE.comment=Điều chỉnh kích thước cho mặt trời & mặt trăng tròn và điểm sáng đặc biệt.
+
+option.STARS=Sao
+option.STARS.comment=Kích hoạt sao.
+
+option.AURORA=Aurora
+option.AURORA.comment=Kích hoạt aurora. §a[+]§rHiệu ứng này được hưởng lợi từ TAA.
+
+option.SKYBOX_INTENSITY=Cường độ Hộp trời
+option.SKYBOX_INTENSITY.comment=Điều chỉnh cường độ hộp trời.
+
+option.SKYBOX_OPACITY=Độ mờ Hộp trời
+option.SKYBOX_OPACITY.comment=Điều chỉnh độ mờ hộp trời. §c[-]§rChỉ có sẵn cho 1.16.5 trở lên.
+
+option.SUN_INTENSITY=Cường độ Mặt trời
+option.SUN_INTENSITY.comment=Điều chỉnh cường độ mặt trời hộp trời. §c[-]§rChỉ có sẵn cho 1.16.5 trở lên.
+
+option.MOON_INTENSITY=Cường độ Mặt trăng
+option.MOON_INTENSITY.comment=Điều chỉnh cường độ mặt trăng hộp trời. §c[-]§rChỉ có sẵn cho 1.16.5 trở lên.
+
+#Nước
+option.WATER_MODE=Chế độ Texture Nước
+option.WATER_MODE.comment=Xác định liệu texture nước vanilla có nên được sử dụng hay không. Mặc định: màu nước phẳng của shader, không có texture. Vanilla: texture vanilla. Vanilla Được Tô màu: texture vanilla với màu nước của shader. Vanilla Phẳng: màu nước phẳng của vanilla.
+value.WATER_MODE.0=Mặc định
+value.WATER_MODE.1=Vanilla
+value.WATER_MODE.2=Vanilla Được Tô màu
+value.WATER_MODE.3=Vanilla Phẳng
+
+option.WATER_ALPHA_MODE=Chế độ Alpha Nước
+option.WATER_ALPHA_MODE.comment=Xác định liệu nước sử dụng giá trị alpha dựa trên shader hay texture. §e[*]§rMột số hiệu ứng sẽ tiếp tục sử dụng giá trị alpha dựa trên shader.
+value.WATER_ALPHA_MODE.0=Phẳng
+value.WATER_ALPHA_MODE.1=Vanilla
+
+option.WATER_NORMALS=Bản đồ Bình thường Nước
+option.WATER_NORMALS.comment=Kích hoạt ánh xạ bình thường được tạo trong thời gian thực cho nước.
+value.WATER_NORMALS.0=§cTẮT
+value.WATER_NORMALS.1=Worley
+value.WATER_NORMALS.2=Perlin
+
+option.WATER_PARALLAX=Parallax Nước
+option.WATER_PARALLAX.comment=Kích hoạt sự dịch chuyển của nước.
+
+option.WATER_SHADOW_COLOR=Bóng Màu Nước
+option.WATER_SHADOW_COLOR.comment=Xác định liệu nước có nên tạo ra bóng màu để tô màu không. §e[*]§rKích hoạt điều này sẽ ngăn các đối tượng trong suốt tạo ra bóng màu khi ngập dưới nước.
+
+option.WATER_CAUSTICS=Caustic Nước
+option.WATER_CAUSTICS.comment=Xác định liệu nước có nên tạo caustic không. §e[]§rKích hoạt điều này sẽ ngăn các đối tượng trong suốt tạo ra bóng màu khi ngập dưới nước. §e[]§rYêu cầu bóng động thời gian thực.
+
+option.WATER_DETAIL=Chi tiết Nước
+option.WATER_DETAIL.comment=Điều chỉnh tỷ lệ giữa sóng nước lớn và nhỏ.
+value.WATER_DETAIL.0.05=5%
+value.WATER_DETAIL.0.10=10%
+value.WATER_DETAIL.0.15=15%
+value.WATER_DETAIL.0.20=20%
+value.WATER_DETAIL.0.25=25%
+value.WATER_DETAIL.0.30=30%
+value.WATER_DETAIL.0.35=35%
+value.WATER_DETAIL.0.40=40%
+value.WATER_DETAIL.0.45=45%
+value.WATER_DETAIL.0.50=50%
+
+option.WATER_BUMP=Độ Gợn
+option.WATER_BUMP.comment=Điều chỉnh cường độ của sóng nước.
+
+option.WATER_SHARPNESS=Độ Sắc nét
+option.WATER_SHARPNESS.comment=Điều chỉnh độ sắc nét của sóng nước và lượng caustic.
+value.WATER_SHARPNESS.0.8=Thấp
+value.WATER_SHARPNESS.0.5=Trung bình
+value.WATER_SHARPNESS.0.2=Cao
+
+option.WATER_SPEED=Tốc độ Nước
+option.WATER_SPEED.comment=Điều chỉnh tốc độ nhiễu cho sóng nước.
+
+option.WATER_FOG=Sương mù Nước
+option.WATER_FOG.comment=Xác định liệu sương mù nước chỉ hiển thị khi dưới nước hay mọi lúc.
+value.WATER_FOG.0=Chỉ dưới nước
+value.WATER_FOG.1=Toàn bộ
+
+option.WATER_FOG_DENSITY=Mật độ Sương mù Nước
+option.WATER_FOG_DENSITY.comment=Điều chỉnh mật độ sương mù nước.
+
+option.WATER_CAUSTICS_STRENGTH=Cường độ Caustic Nước
+option.WATER_CAUSTICS_STRENGTH.comment=Điều chỉnh cường độ caustic nước.
+
+option.WATER_PIXEL=Khóa Pixel Nước
+option.WATER_PIXEL.comment=Áp dụng hiệu ứng pixel hóa trên sóng nước.
+value.WATER_PIXEL.0=TẮT
+
+#Camera
+option.DOF=Độ Sâu Trường ảnh
+option.DOF.comment=Kích hoạt hiệu ứng lấy nét của camera.
+option.DOF_STRENGTH=Cường độ DoF
+option.DOF_STRENGTH.comment=Điều chỉnh độ mạnh của lấy nét, giá trị cao hơn làm mờ nhanh hơn.
+
+option.MOTION_BLUR=Mờ Chuyển động
+option.MOTION_BLUR.comment=Kích hoạt mờ dựa trên chuyển động của camera.
+
+option.MOTION_BLUR_STRENGTH=Cường độ Mờ Chuyển động
+option.MOTION_BLUR_STRENGTH.comment=Điều chỉnh độ mạnh của mờ chuyển động.
+
+option.BLOOM=Bóng Loá
+option.BLOOM.comment=Cho phép các khu vực sáng tỏa sáng.
+
+option.BLOOM_STRENGTH=Cường độ Bóng Loá
+option.BLOOM_STRENGTH.comment=Điều chỉnh độ mạnh của bóng loá.
+
+option.BLOOM_CONTRAST=Độ Tương phản Bóng Loá
+option.BLOOM_CONTRAST.comment=Điều chỉnh liệu bóng loá nên giữ nguyên độ tương phản màu sắc hay khả năng nhìn thấy chi tiết. Giá trị cao hơn giữ nguyên độ tương phản màu sắc trong khi giá trị thấp hơn giữ nguyên khả năng nhìn thấy chi tiết.
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=Bán kính Bóng Loá
+option.BLOOM_RADIUS.comment=Điều chỉnh độ rộng của ánh sáng lan tỏa.
+value.BLOOM_RADIUS.1=Tối thiểu
+value.BLOOM_RADIUS.2=Rất Thấp
+value.BLOOM_RADIUS.3=Thấp
+value.BLOOM_RADIUS.4=Trung bình
+value.BLOOM_RADIUS.5=Cao
+value.BLOOM_RADIUS.6=Rất Cao
+value.BLOOM_RADIUS.7=Tối đa
+
+option.LENS_FLARE=Loá Kính
+option.LENS_FLARE.comment=Kích hoạt hiệu ứng loá kính.
+
+option.LENS_FLARE_STRENGTH=Cường độ Loá Kính
+option.LENS_FLARE_STRENGTH.comment=Điều chỉnh cường độ loá kính.
+
+option.VIGNETTE=Họa Tiết
+option.VIGNETTE.comment=Làm mờ các cạnh của màn hình thành màu đen. §e[*]§rVô hiệu hóa cho hình ảnh 360 độ.
+
+option.VIGNETTE_STRENGTH=Cường độ Họa Tiết
+option.VIGNETTE_STRENGTH.comment=Điều chỉnh cường độ Họa Tiết.
+value.VIGNETTE_STRENGTH.0.26=0.1
+value.VIGNETTE_STRENGTH.0.51=0.2
+value.VIGNETTE_STRENGTH.0.72=0.3
+value.VIGNETTE_STRENGTH.0.91=0.4
+value.VIGNETTE_STRENGTH.1.06=0.5
+value.VIGNETTE_STRENGTH.1.19=0.6
+value.VIGNETTE_STRENGTH.1.28=0.7
+value.VIGNETTE_STRENGTH.1.36=0.8
+value.VIGNETTE_STRENGTH.1.40=0.9
+value.VIGNETTE_STRENGTH.1.41=1.0
+
+option.DIRTY_LENS=Ống kính Bẩn
+option.DIRTY_LENS.comment=Thêm hiệu ứng hạt bụi vào bóng loá. §e[*]§rYêu cầu bóng loá.
+
+option.CHROMATIC_ABERRATION=Biến dạng Sắc màu
+option.CHROMATIC_ABERRATION.comment=Thêm biến dạng màu ở các cạnh.
+value.CHROMATIC_ABERRATION.0=TẮT
+value.CHROMATIC_ABERRATION.1=Yếu
+value.CHROMATIC_ABERRATION.2=Mạnh
+
+option.UNDERWATER_DISTORTION=Biến dạng Dưới nước
+option.UNDERWATER_DISTORTION.comment=Áp dụng biến dạng màn hình khi dưới nước.
+
+#Chống răng cưa
+option.FXAA=FXAA
+option.FXAA.comment=Kích hoạt chống răng cưa xấp xỉ nhanh, được thực hiện bằng cách làm mượt các cạnh với chi phí hiệu suất tối thiểu. §e[*]§rVui lòng vô hiệu hóa Chống răng cưa trong menu Shaders khi tùy chọn này được kích hoạt.
+
+option.TAA=TAA
+option.TAA.comment=Kích hoạt chống răng cưa tạm thời, được thực hiện bằng cách pha trộn khung hình thông minh cải thiện chi tiết nhỏ và một số hiệu ứng. §e[]§rBao gồm cả làm sắc nét. §e[]§rVui lòng vô hiệu hóa Chống răng cưa trong menu Shaders khi tùy chọn này được kích hoạt.
+
+option.FXAA_SUBPIXEL=Làm mượt Subpixel FXAA
+option.FXAA_SUBPIXEL.comment=Điều chỉnh mức độ làm mượt mà FXAA áp dụng cho chi tiết nhỏ.
+value.FXAA_SUBPIXEL.0.00=§cTẮT
+value.FXAA_SUBPIXEL.0.25=Thấp
+value.FXAA_SUBPIXEL.0.50=Trung bình
+value.FXAA_SUBPIXEL.0.75=Cao
+value.FXAA_SUBPIXEL.1.00=Rất Cao
+
+option.FXAA_EDGE_SENSITIVITY=Độ nhạy Cạnh FXAA
+option.FXAA_EDGE_SENSITIVITY.comment=Điều chỉnh mức độ tương phản và độ sáng cạnh cần thiết để áp dụng FXAA.
+value.FXAA_EDGE_SENSITIVITY.0=Thấp
+value.FXAA_EDGE_SENSITIVITY.1=Trung bình
+value.FXAA_EDGE_SENSITIVITY.2=Cao
+
+option.TAA_MODE=Chế độ TAA
+option.TAA_MODE.comment=Xác định cách thực hiện TAA. Smooth cho phép một số hiệu ứng trông tốt hơn với chi phí là ghosting. Coarse có ít ghosting hơn nhưng hầu như không cải thiện các hiệu ứng khác.
+value.TAA_MODE.0=Mượt mà
+value.TAA_MODE.1=Thô
+
+option.TAA_SELECTIVE=TAA Lựa chọn
+option.TAA_SELECTIVE.comment=Loại trừ các sinh vật, hạt và tay khỏi chống răng cưa tạm thời để giảm ghosting. §c[-]§rCác đối tượng bị loại trừ sẽ cần phải dựa vào FXAA.
+
+#Màu sắc
+option.LIGHT_MR=Đỏ
+option.LIGHT_MG=Xanh lá
+option.LIGHT_MB=Xanh dương
+option.LIGHT_MI=Cường độ
+
+option.LIGHT_DR=Đỏ
+option.LIGHT_DG=Xanh lá
+option.LIGHT_DB=Xanh dương
+option.LIGHT_DI=Cường độ
+
+option.LIGHT_ER=Đỏ
+option.LIGHT_EG=Xanh lá
+option.LIGHT_EB=Xanh dương
+option.LIGHT_EI=Cường độ
+
+option.LIGHT_NR=Đỏ
+option.LIGHT_NG=Xanh lá
+option.LIGHT_NB=Xanh dương
+option.LIGHT_NI=Cường độ
+
+option.AMBIENT_MR=Đỏ
+option.AMBIENT_MG=Xanh lá
+option.AMBIENT_MB=Xanh dương
+option.AMBIENT_MI=Cường độ
+
+option.AMBIENT_DR=Đỏ
+option.AMBIENT_DG=Xanh lá
+option.AMBIENT_DB=Xanh dương
+option.AMBIENT_DI=Cường độ
+
+option.AMBIENT_ER=Đỏ
+option.AMBIENT_EG=Xanh lá
+option.AMBIENT_EB=Xanh dương
+option.AMBIENT_EI=Cường độ
+
+option.AMBIENT_NR=Đỏ
+option.AMBIENT_NG=Xanh lá
+option.AMBIENT_NB=Xanh dương
+option.AMBIENT_NI=Cường độ
+
+option.MINLIGHT_R=Đỏ
+option.MINLIGHT_G=Xanh lá
+option.MINLIGHT_B=Xanh dương
+option.MINLIGHT_I=Cường độ
+value.MINLIGHT_I.0.30=0.30 (U ám)
+value.MINLIGHT_I.0.50=0.50 (Mặc định)
+value.MINLIGHT_I.0.70=0.70 (Sáng)
+
+option.BLOCKLIGHT_R=Đỏ
+option.BLOCKLIGHT_G=Xanh lá
+option.BLOCKLIGHT_B=Xanh dương
+option.BLOCKLIGHT_I=Cường độ
+
+option.SKY_R=Đỏ
+option.SKY_G=Xanh lá
+option.SKY_B=Xanh dương
+option.SKY_I=Cường độ
+
+option.WATER_R=Đỏ
+option.WATER_G=Xanh lá
+option.WATER_B=Xanh dương
+option.WATER_I=Cường độ
+option.WATER_A=Alpha
+option.WATER_F=Mật độ Sương mù
+
+option.WEATHER_RR=Đỏ
+option.WEATHER_RG=Xanh lá
+option.WEATHER_RB=Xanh dương
+option.WEATHER_RI=Cường độ
+
+option.WEATHER_CR=Đỏ
+option.WEATHER_CG=Xanh lá
+option.WEATHER_CB=Xanh dương
+option.WEATHER_CI=Cường độ
+
+option.WEATHER_DR=Đỏ
+option.WEATHER_DG=Xanh lá
+option.WEATHER_DB=Xanh dương
+option.WEATHER_DI=Cường độ
+
+option.WEATHER_BR=Đỏ
+option.WEATHER_BG=Xanh lá
+option.WEATHER_BB=Xanh dương
+option.WEATHER_BI=Cường độ
+
+option.WEATHER_SR=Đỏ
+option.WEATHER_SG=Xanh lá
+option.WEATHER_SB=Xanh dương
+option.WEATHER_SI=Cường độ
+
+option.WEATHER_MR=Đỏ
+option.WEATHER_MG=Xanh lá
+option.WEATHER_MB=Xanh dương
+option.WEATHER_MI=Cường độ
+
+option.WEATHER_VR=Đỏ
+option.WEATHER_VG=Xanh lá
+option.WEATHER_VB=Xanh dương
+option.WEATHER_VI=Cường độ
+
+option.WEATHER_JR=Đỏ
+option.WEATHER_JG=Xanh lá
+option.WEATHER_JB=Xanh dương
+option.WEATHER_JI=Cường độ
+
+option.AURORA_LR=Đỏ
+option.AURORA_LG=Xanh lá
+option.AURORA_LB=Xanh dương
+option.AURORA_LI=Cường độ
+
+option.AURORA_HR=Đỏ
+option.AURORA_HG=Xanh lá
+option.AURORA_HB=Xanh dương
+option.AURORA_HI=Cường độ
+
+option.NETHER_NR=Đỏ
+option.NETHER_NG=Xanh lá
+option.NETHER_NB=Xanh dương
+option.NETHER_NI=Cường độ
+
+option.NETHER_VR=Đỏ
+option.NETHER_VG=Xanh lá
+option.NETHER_VB=Xanh dương
+option.NETHER_VI=Cường độ
+
+option.NETHER_CR=Đỏ
+option.NETHER_CG=Xanh lá
+option.NETHER_CB=Xanh dương
+option.NETHER_CI=Cường độ
+
+option.NETHER_WR=Đỏ
+option.NETHER_WG=Xanh lá
+option.NETHER_WB=Xanh dương
+option.NETHER_WI=Cường độ
+
+option.NETHER_BR=Đỏ
+option.NETHER_BG=Xanh lá
+option.NETHER_BB=Xanh dương
+option.NETHER_BI=Cường độ
+
+option.END_R=Đỏ
+option.END_G=Xanh lá
+option.END_B=Xanh dương
+option.END_I=Cường độ
+
+option.EMISSIVE_RECOLOR=Tô màu Phát quang lại
+option.EMISSIVE_RECOLOR.comment=Tô màu một số khối phát quang với màu ánh sáng khối.
+
+option.SKY_VANILLA=Bầu trời Vanilla
+option.SKY_VANILLA.comment=Sử dụng màu bầu trời vanilla.
+
+option.SKY_VANILLA_USE_FOG=Sử dụng Màu Sương mù Vanilla
+option.SKY_VANILLA_USE_FOG.comment=Cho phép sử dụng màu sương mù vanilla trong khi Bầu trời Vanilla được kích hoạt.
+
+option.NETHER_VANILLA=Vanilla Nether
+option.NETHER_VANILLA.comment=Sử dụng màu nether vanilla.
+
+#Điều chỉnh Màu sắc & Tông màu
+option.EXPOSURE=Phơi sáng
+option.EXPOSURE.comment=Điều chỉnh độ sáng tổng thể.
+
+option.AUTO_EXPOSURE=Phơi sáng Tự động
+option.AUTO_EXPOSURE.comment=Kích hoạt điều chỉnh tự động độ sáng tổng thể.
+
+option.CLASSIC_EXPOSURE=Phơi sáng Cổ điển
+option.CLASSIC_EXPOSURE.comment=Kích hoạt tăng phơi sáng khi vào trong nhà.
+
+option.COLOR_GRADING=Điều chỉnh Màu sắc
+option.COLOR_GRADING.comment=Kích hoạt điều chỉnh màu sắc. §e[*]§rTùy chọn này không cần phải được kích hoạt để thay đổi các thanh trượt tông màu, bão hòa và độ rực rỡ.
+
+option.TONEMAP_LOWER_CURVE=Tông màu Đường cong Dưới
+option.TONEMAP_LOWER_CURVE.comment=Điều chỉnh độ tương phản của màu sắc tối hơn.
+
+option.TONEMAP_UPPER_CURVE=Tông màu Đường cong Trên
+option.TONEMAP_UPPER_CURVE.comment=Điều chỉnh độ tương phản của màu sắc sáng hơn.
+
+option.TONEMAP_WHITE_CURVE=Tông màu Đường cong Trắng
+option.TONEMAP_WHITE_CURVE.comment=Điều chỉnh mức độ nhanh chóng mà màu tông màu có thể đạt đến độ sáng tối đa.
+
+option.TONEMAP_WHITE_PATH=Tông màu Đường đi Trắng
+option.TONEMAP_WHITE_PATH.comment=Điều chỉnh mức độ nhanh chóng mà màu sáng và rực rỡ chuyển thành trắng.
+
+option.SATURATION=Bão hòa
+option.SATURATION.comment=Điều chỉnh độ bão hòa của tất cả màu sắc.
+
+option.VIBRANCE=Độ rực rỡ
+option.VIBRANCE.comment=Điều chỉnh độ bão hòa của màu sắc ít bão hòa, màu sắc đã bão hòa ít bị ảnh hưởng hơn.
+
+#Cấu hình Phơi sáng Thêm
+option.AUTO_EXPOSURE_RADIUS=Bán kính Phơi sáng Tự động
+option.AUTO_EXPOSURE_RADIUS.comment=Điều chỉnh phần màn hình được sử dụng cho tính toán phơi sáng.
+value.AUTO_EXPOSURE_RADIUS.0.002=Rất Thấp
+value.AUTO_EXPOSURE_RADIUS.0.04=Thấp
+value.AUTO_EXPOSURE_RADIUS.0.18=Trung bình
+value.AUTO_EXPOSURE_RADIUS.0.35=Cao
+value.AUTO_EXPOSURE_RADIUS.0.7=Rất Cao
+
+option.AUTO_EXPOSURE_SPEED=Tốc độ Phơi sáng Tự động
+option.AUTO_EXPOSURE_SPEED.comment=Điều chỉnh tốc độ thay đổi phơi sáng. §c[-]§rTốc độ Nhanh hoặc cao hơn có thể gây nhấp nháy khi kết hợp với bán kính thấp.
+value.AUTO_EXPOSURE_SPEED.0.0033=Rất Chậm
+value.AUTO_EXPOSURE_SPEED.0.01=Chậm
+value.AUTO_EXPOSURE_SPEED.0.033=Trung bình
+value.AUTO_EXPOSURE_SPEED.0.1=Nhanh
+value.AUTO_EXPOSURE_SPEED.0.33=Rất Nhanh
+
+#Cấu hình Điều chỉnh Màu sắc
+option.CG_RR=Đỏ - Giá trị Đỏ
+option.CG_RG=Đỏ - Giá trị Xanh lá
+option.CG_RB=Đỏ - Giá trị Xanh dương
+option.CG_RI=Giá trị Cường độ Đỏ
+option.CG_RM=Giá trị Đỏ Tối thiểu
+option.CG_RC=Giá trị Đường cong Đỏ
+
+option.CG_GR=Xanh lá - Giá trị Đỏ
+option.CG_GG=Xanh lá - Giá trị Xanh lá
+option.CG_GB=Xanh lá - Giá trị Xanh dương
+option.CG_GI=Giá trị Cường độ Xanh lá
+option.CG_GM=Giá trị Xanh lá Tối thiểu
+option.CG_GC=Giá trị Đường cong Xanh lá
+
+option.CG_BR=Xanh dương - Giá trị Đỏ
+option.CG_BG=Xanh dương - Giá trị Xanh lá
+option.CG_BB=Xanh dương - Giá trị Xanh dương
+option.CG_BI=Giá trị Cường độ Xanh dương
+option.CG_BM=Giá trị Xanh dương Tối thiểu
+option.CG_BC=Giá trị Đường cong Xanh dương
+
+option.CG_TR=Tông màu - Giá trị Đỏ
+option.CG_TG=Tông màu - Giá trị Xanh lá
+option.CG_TB=Tông màu - Giá trị Xanh dương
+option.CG_TI=Giá trị Cường độ Tông màu
+option.CG_TM=Giá trị Pha trộn Tông màu
+
+#Phụ
+option.OUTLINE=Đường viền
+option.OUTLINE.comment=Kích hoạt hiệu ứng đường viền. §c[-]§rĐen, Màu và Nghệ thuật Cập nhật 1.12 không hoàn toàn tương thích với mây thể tích.
+value.OUTLINE.0=TẮT
+value.OUTLINE.1=Đen
+value.OUTLINE.2=Màu
+value.OUTLINE.3=Nghệ thuật Cập nhật 1.12
+value.OUTLINE.4=Dungeons
+
+option.TOON_LIGHTMAP=Bản đồ Ánh sáng Kiểu Toon
+option.TOON_LIGHTMAP.comment=Giảm chất lượng ánh sáng vanilla cho hiệu ứng cel shading. §e[*]§rTùy chọn này được biết đến với việc "làm xấu" trò chơi, chỉ kích hoạt khi cần thiết.
+
+option.RETRO_FILTER=Bộ lọc Retro
+option.RETRO_FILTER.comment=Thêm hiệu ứng pixel hóa và dithering. §c[-]§rKhông tương thích với chống răng cưa.
+
+option.RETRO_FILTER_SIZE=Kích thước Bộ lọc Retro
+option.RETRO_FILTER_SIZE.comment=Điều chỉnh kích thước pixel cho bộ lọc retro.
+
+option.WORLD_CURVATURE=Độ Cong của Thế giới
+option.WORLD_CURVATURE.comment=Kích hoạt độ cong của thế giới. §e[*]§rChỉ hoạt động ở thế giới trên mặt đất. §c[-]§rCác chunk thiếu được xử lý bởi Minecraft mà tôi không thể sửa. §c[-]§rCó thể làm hỏng đánh dấu lựa chọn khối trên 1.17.
+
+option.WORLD_CURVATURE_SIZE=Kích thước Độ Cong của Thế giới
+option.WORLD_CURVATURE_SIZE.comment=Điều chỉnh kích thước độ cong của thế giới. Các giá trị âm sẽ cong thế giới lên trên.
+
+#Hoạt ảnh
+option.WORLD_TIME_ANIMATION=Hoạt ảnh Thời gian Thế giới
+option.WORLD_TIME_ANIMATION.comment=Sử dụng thời gian trong trò chơi cho các đối tượng di động. §e[*]§rTùy chọn này chủ yếu được sử dụng khi tạo các bản demo phim.
+
+option.ANIMATION_SPEED=Tốc độ Hoạt ảnh
+option.ANIMATION_SPEED.comment=Điều chỉnh tốc độ hoạt ảnh.
+
+#Các Khối Uốn lượn
+option.WAVING_GRASS=Cỏ
+option.WAVING_GRASS.comment=Cho phép cỏ uốn lượn.
+
+option.WAVING_CROP=Cây trồng
+option.WAVING_CROP.comment=Cho phép cây trồng trên ruộng uốn lượn.
+
+option.WAVING_PLANT=Thực vật
+option.WAVING_PLANT.comment=Cho phép các loại thực vật khác nhau uốn lượn.
+
+option.WAVING_TALL_PLANT=Thực vật cao
+option.WAVING_TALL_PLANT.comment=Cho phép các thực vật cao hai khối uốn lượn.
+
+option.WAVING_LEAF=Lá cây
+option.WAVING_LEAF.comment=Cho phép lá cây uốn lượn.
+
+option.WAVING_VINE=Dây leo
+option.WAVING_VINE.comment=Cho phép dây leo uốn lượn.
+
+option.WAVING_WATER=Nước
+option.WAVING_WATER.comment=Cho phép nước uốn lượn.
+
+option.WAVING_LAVA=Lava
+option.WAVING_LAVA.comment=Cho phép lava uốn lượn.
+
+option.WAVING_FIRE=Lửa
+option.WAVING_FIRE.comment=Cho phép lửa uốn lượn.
+
+option.WAVING_LANTERN=Đèn lồng
+option.WAVING_LANTERN.comment=Cho phép đèn lồng uốn lượn.
+
+
+
