@@ -77,7 +77,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.08
+option.ABOUT=BSL v8.2.09p1
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -209,11 +209,19 @@ option.REFLECTION_TRANSLUCENT.comment=Allows reflection to be rendered on transl
 option.REFLECTION_SPECULAR=Specular Reflection*
 option.REFLECTION_SPECULAR.comment=Enables reflection on smooth or metallic surfaces.
 
+option.REFLECTION_ROUGH=Rough Reflection*
+option.REFLECTION_ROUGH.comment=Allows surfaces with lower smoothness to render blurry reflections. §c[-]§rMay contain minor artifacts.
+
 option.REFLECTION_RAIN=Rain Reflection*
 option.REFLECTION_RAIN.comment=Allows surfaces to be wet while raining.  §e[*]§rRequires specular reflection.
 
-option.REFLECTION_ROUGH=Rough Reflection*
-option.REFLECTION_ROUGH.comment=Allows surfaces with lower smoothness to render blurry reflections. §c[-]§rMay contain minor artifacts.
+option.REFLECTION_RAIN_AMOUNT=Puddle Amount
+option.REFLECTION_RAIN_AMOUNT.comment=Adjusts the amount of puddles created while raining.
+value.REFLECTION_RAIN_AMOUNT.0.4=Very Low
+value.REFLECTION_RAIN_AMOUNT.0.5=Low
+value.REFLECTION_RAIN_AMOUNT.0.6=Medium
+value.REFLECTION_RAIN_AMOUNT.0.7=High
+value.REFLECTION_RAIN_AMOUNT.1.0=Very High
 
 option.REFLECTION_PREVIOUS=Previous Frame Reflection
 option.REFLECTION_PREVIOUS.comment=Allows translucents to be reflected by using previous frame information. §c[-]§rMay cause missing reflection on screenshot (caused by screenshot size setting). §c[-]§rIncompatible with some GPUs. §c[-]§rBugged in 1.7.10.
@@ -413,13 +421,19 @@ option.FOG_DENSITY_WEATHER=Weather Density
 option.FOG_DENSITY_WEATHER.comment=Adjusts fog density multiplier while raining.
 
 option.FOG_DENSITY_COLD=Cold Density
-option.FOG_DENSITY_COLD.comment=Adjusts fog density multiplier while standing on cold biomes. §e[*]§rRequires Per Biome Weather.
+option.FOG_DENSITY_COLD.comment=Adjusts fog density multiplier while standing on cold biomes. Cold biomes include any biome where snow occurs. §e[*]§rRequires Per Biome Weather.
 
 option.FOG_DENSITY_DRY=Dry Density
-option.FOG_DENSITY_DRY.comment=Adjusts fog density multiplier while standing on dry biomes. §e[*]§rRequires Per Biome Weather.
+option.FOG_DENSITY_DRY.comment=Adjusts fog density multiplier while standing on dry biomes. Dry biomes include desert, badlands/mesa, and savanna. §e[*]§rRequires Per Biome Weather.
 
 option.FOG_DENSITY_DAMP=Damp Density
-option.FOG_DENSITY_DAMP.comment=Adjusts fog density multiplier while standing on damp biomes. §e[*]§rRequires Per Biome Weather.
+option.FOG_DENSITY_DAMP.comment=Adjusts fog density multiplier while standing on damp biomes. Damp biomes include swamp, mushroom island, and jungle. §e[*]§rRequires Per Biome Weather.
+
+option.FOG_DENSITY_INDOOR=Indoor Density
+option.FOG_DENSITY_INDOOR.comment=Adjusts fog density multiplier while indoors.
+
+option.FOG_DENSITY_DH=Distant Horizons Density
+option.FOG_DENSITY_DH.comment=Adjusts overworld fog density multiplier while Distant Horizons is enabled.
 
 option.FAR_VANILLA_FOG=Far Vanilla Fog
 option.FAR_VANILLA_FOG.comment=Enables vanilla-like fog. §e[*]§rThis option is affected by fog density.
