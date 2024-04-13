@@ -77,7 +77,7 @@ screen.EXTRAS=Дополнительно
 screen.ANIMATION=Анимации
 
 #Настройки (Settings)
-option.ABOUT=BSL v8.2.08
+option.ABOUT=BSL v8.2.09p1
 option.ABOUT.comment=От Capt Tatsu. bitslablab.com
 value.ABOUT.0=От Capt Tatsu
 
@@ -209,11 +209,19 @@ option.REFLECTION_TRANSLUCENT.comment=Позволяет отображать о
 option.REFLECTION_SPECULAR=Зеркальное отражение*
 option.REFLECTION_SPECULAR.comment=Включает отражения на гладких или металлических поверхностях.
 
+option.REFLECTION_ROUGH=Грубые отражения
+option.REFLECTION_ROUGH.comment=Позволяет поверхностям с более низкой гладкостью визуализировать размытые отражения. §c[-]§rМожет содержать незначительные дефекты.
+
 option.REFLECTION_RAIN=Отражение во время дождя*
 option.REFLECTION_RAIN.comment=Позволяет поверхностям быть мокрыми во время дождя.  §e[*]§rТребуется зеркальное отражение.
 
-option.REFLECTION_ROUGH=Грубые отражения
-option.REFLECTION_ROUGH.comment=Позволяет поверхностям с более низкой гладкостью визуализировать размытые отражения. §c[-]§rМожет содержать незначительные дефекты.
+option.REFLECTION_RAIN_AMOUNT=Количество луж
+option.REFLECTION_RAIN_AMOUNT.comment=Регулирует количество луж, образующихся во время дождя.
+value.REFLECTION_RAIN_AMOUNT.0.4=Очень низкая
+value.REFLECTION_RAIN_AMOUNT.0.5=Низкая
+value.REFLECTION_RAIN_AMOUNT.0.6=Средняя
+value.REFLECTION_RAIN_AMOUNT.0.7=Высокая
+value.REFLECTION_RAIN_AMOUNT.1.0=Очень высокая
 
 option.REFLECTION_PREVIOUS=Отражение предыдущего кадра
 option.REFLECTION_PREVIOUS.comment=Позволяет отражать полупрозрачные изображения с помощью информации предыдущего кадра. §c[-]§rМожет привести к отсутствию отражений на скриншоте (вызвано настройкой размера скриншота). §c[-]§rНесовместимо с некоторыми графическими процессорами. §c[-]§rНе работает в 1.7.10.
@@ -413,13 +421,19 @@ option.FOG_DENSITY_WEATHER=Плотность погоды
 option.FOG_DENSITY_WEATHER.comment=Регулирует множитель плотности тумана во время дождя.
 
 option.FOG_DENSITY_COLD=Плотность в холодных биомах
-option.FOG_DENSITY_COLD.comment=Регулирует множитель плотности тумана, когда вы находитесь в холодных биомах. §e[*]§rТребуется погода в зависимости от биома.
+option.FOG_DENSITY_COLD.comment=Регулирует множитель плотности тумана, когда вы находитесь в холодных биомах. Холодные биомы включают любые биомы, где выпадает снег. §e[*]§rТребуется погода в зависимости от биома.
 
 option.FOG_DENSITY_DRY=Плотность в сухих биомах
-option.FOG_DENSITY_DRY.comment=Регулирует множитель плотности тумана, когда вы находитесь в сухих биомах. §e[*]§rТребуется погода в зависимости от биома.
+option.FOG_DENSITY_DRY.comment=Регулирует множитель плотности тумана, когда вы находитесь в сухих биомах. Сухие биомы включают пустыню, пустошь/мезу и саванну. §e[*]§rТребуется погода в зависимости от биома.
 
 option.FOG_DENSITY_DAMP=Плотность во влажных биомах
-option.FOG_DENSITY_DAMP.comment=Регулирует множитель плотности тумана, когда вы находитесь во влажных биомах. §e[*]§rТребуется погода в зависимости от биома.
+option.FOG_DENSITY_DAMP.comment=Регулирует множитель плотности тумана, когда вы находитесь во влажных биомах. Влажные биомы включают болото, грибной остров и джунгли. §e[*]§rТребуется погода в зависимости от биома.
+
+option.FOG_DENSITY_INDOOR=Плотность в помещении
+option.FOG_DENSITY_INDOOR.comment=Регулирует множитель плотности тумана в помещении.
+
+option.FOG_DENSITY_DH=Плотность "Distant Horizons"
+option.FOG_DENSITY_DH.comment=Регулирует множитель плотности тумана в мире, когда включен "Distant Horizons".
 
 option.FAR_VANILLA_FOG=Ванильный туман
 option.FAR_VANILLA_FOG.comment=Включает ванильный туман. §e[*]§rНа этот параметр влияет плотность тумана.
