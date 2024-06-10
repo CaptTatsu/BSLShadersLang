@@ -18,10 +18,13 @@ screen.SPECULAR=Specular & Reflections
 screen.NORMALS=Normals & Parallax
 
 screen.ATMOSPHERICS=Atmospherics
-screen.SKY=Sky Config
-screen.CLOUDS=Cloud Config
-screen.FOG=Fog Config
-screen.SKYBOX=Skybox Config
+screen.CLOUDS=Clouds
+screen.FOG=Fog
+screen.FOG_DENSITY=More Fog Density Config
+screen.FOG_HEIGHT=Height Fog Config
+screen.FOG_VANILLA=Far Vanilla Fog Config
+screen.SKY=Sky
+screen.SKYBOX=Skybox
 
 screen.WATER=Water
 
@@ -77,7 +80,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.09p1
+option.ABOUT=BSL v8.2.09
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -139,6 +142,9 @@ option.SHADOW_BLOCK_ENTITY.comment=Enables shadow on block entities. §e[*]§rDi
 
 option.SHADOW_VEGETATION=Vegetation Shadow
 option.SHADOW_VEGETATION.comment=Enables shadow on grass, crops, and most other plants.
+
+option.SHADOW_CLOUD=Cloud Shadow
+option.SHADOW_CLOUD.comment=Enables shadow casted by clouds.
 
 option.sunPathRotation=Sun Path Rotation
 option.sunPathRotation.comment=Adjusts sun angle.
@@ -302,16 +308,6 @@ option.NORMAL_PLANTS=Up-facing Plants
 option.NORMAL_PLANTS.comment=Adjusts plant shading. §e[*]§rDisable this if non-flat plant model is used or normal map applied on plants.
 
 #Atmospherics
-option.CLOUDS=Clouds
-option.CLOUDS.comment=Enables clouds. §a[+]§rSkybox and volumetric clouds benefit from TAA. §e[*]§rVanilla clouds requires vanilla cloud setting set to default or on.
-value.CLOUDS.0=§cOFF
-value.CLOUDS.1=Skybox
-value.CLOUDS.2=Volumetric
-value.CLOUDS.3=Vanilla
-
-option.FOG_DENSITY=Fog Density
-option.FOG_DENSITY.comment=Adjusts fog density. §e[*]§rThis option is ignored in the nether.
-
 option.LIGHT_SHAFT=Light Shafts
 option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis effect benefits from TAA. §e[*]§rRequires realtime shadows. §e[*]§rPerformance depends on Shadowmap Resolution.
 
@@ -324,7 +320,7 @@ option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. �
 option.WEATHER_OPACITY=Weather Opacity
 option.WEATHER_OPACITY.comment=Adjusts weather opacity.
 
-#Sky Config
+#Sky
 option.SKY_DENSITY_D=Day Density
 option.SKY_EXPOSURE_D=Day Exposure
 option.SKY_DENSITY_N=Night Density
@@ -352,7 +348,14 @@ option.SHADER_END_SKY.comment=Replaces vanilla/modded end skybox with shader bas
 option.SKY_DEFERRED=Deferred Sky
 option.SKY_DEFERRED.comment=Renders sky after opaque surfaces are drawn instead of at the beginning. §e[*]§rThis affects resource pack sky rendering.
 
-#Cloud Config
+#Cloud
+option.CLOUDS=Clouds
+option.CLOUDS.comment=Enables clouds. §a[+]§rSkybox and volumetric clouds benefit from TAA. §e[*]§rVanilla clouds requires vanilla cloud setting set to default or on.
+value.CLOUDS.0=§cOFF
+value.CLOUDS.1=Skybox
+value.CLOUDS.2=Volumetric
+value.CLOUDS.3=Vanilla
+
 option.CLOUD_BASE=Base Shape
 option.CLOUD_BASE.comment=Determines which noise type used for the cloud's base shape.
 value.CLOUD_BASE.0=Perlin
@@ -413,7 +416,21 @@ value.CLOUD_VOLUMETRIC_SCALE.6.0=Old Vanilla
 value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
 value.CLOUD_VOLUMETRIC_SCALE.16.0=Original Skybox
 
-#Fog Config
+#Fog
+option.FOG_DENSITY=Fog Density
+option.FOG_DENSITY.comment=Adjusts fog density. §e[*]§rThis option is ignored in the nether.
+
+option.FOG_HEIGHT=Height Fog
+option.FOG_HEIGHT.comment= Enables height fog, reducing fog amount based on height.
+
+option.FAR_VANILLA_FOG=Far Vanilla Fog
+option.FAR_VANILLA_FOG.comment=Enables vanilla-like fog. §e[*]§rThis option is affected by fog density.
+value.FAR_VANILLA_FOG.0=§cOFF
+value.FAR_VANILLA_FOG.1=Overworld Only
+value.FAR_VANILLA_FOG.2=Nether & End Only
+value.FAR_VANILLA_FOG.3=Full
+
+#Fog Density
 option.FOG_DENSITY_NIGHT=Night - Weather Density
 option.FOG_DENSITY_NIGHT.comment=Adjusts fog density multiplier at night and while raining.
 
@@ -435,13 +452,14 @@ option.FOG_DENSITY_INDOOR.comment=Adjusts fog density multiplier while indoors.
 option.FOG_DENSITY_DH=Distant Horizons Density
 option.FOG_DENSITY_DH.comment=Adjusts overworld fog density multiplier while Distant Horizons is enabled.
 
-option.FAR_VANILLA_FOG=Far Vanilla Fog
-option.FAR_VANILLA_FOG.comment=Enables vanilla-like fog. §e[*]§rThis option is affected by fog density.
-value.FAR_VANILLA_FOG.0=§cOFF
-value.FAR_VANILLA_FOG.1=Overworld Only
-value.FAR_VANILLA_FOG.2=Nether & End Only
-value.FAR_VANILLA_FOG.3=Full
+#Height Fog
+option.FOG_HEIGHT_Y=Base Height
+option.FOG_HEIGHT_Y.comment=Adjusts the height where height fog starts occuring.
 
+option.FOG_HEIGHT_FALLOFF=Height Falloff
+option.FOG_HEIGHT_FALLOFF.comment=Adjusts height fog's size.
+
+#Far Vanilla Fog
 option.FAR_VANILLA_FOG_STYLE=Far Vanilla Fog Style
 option.FAR_VANILLA_FOG_STYLE.comment=Spherical works like vanilla fog. Cylindrical ignores Y axis.
 value.FAR_VANILLA_FOG_STYLE.0=Spherical
@@ -457,7 +475,7 @@ value.FOG_VANILLA_CLOUD.1=Minimal
 value.FOG_VANILLA_CLOUD.2=Reduced
 value.FOG_VANILLA_CLOUD.3=Full
 
-#Skybox Config
+#Skybox
 option.ROUND_SUN_MOON=Round Sun & Moon
 option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.16.4 or below.
 
@@ -505,10 +523,10 @@ option.WATER_PARALLAX=Parallax
 option.WATER_PARALLAX.comment=Enables water displacement.
 
 option.WATER_SHADOW_COLOR=Water Colored Shadows
-option.WATER_SHADOW_COLOR.comment=Determines whether water should cast colored shadows for tinting.§e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged.
+option.WATER_SHADOW_COLOR.comment=Determines whether water should cast colored shadows for tinting. §e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged.
 
 option.WATER_CAUSTICS=Water Caustics
-option.WATER_CAUSTICS.comment=Determines whether water should cast caustics.§e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged.§e[*]§rRequires realtime shadows.
+option.WATER_CAUSTICS.comment=Determines whether water should cast caustics. §e[*]§rEnabling this will prevent transparent objects from casting colored shadows when submerged. §e[*]§rRequires realtime shadows.
 
 option.WATER_DETAIL=Detail
 option.WATER_DETAIL.comment=Adjusts the ratio between large and small water normals.
@@ -914,7 +932,7 @@ option.WORLD_CURVATURE_SIZE.comment=Adjusts world curvature size. Negative value
 
 #Animations
 option.WORLD_TIME_ANIMATION=World Time Animation
-option.WORLD_TIME_ANIMATION.comment=Use ingame time for moving objects. §e[*]§rThis option is mostly used when making cinematics.
+option.WORLD_TIME_ANIMATION.comment=Use ingame time for moving objects. §e[*]§rThis option is mostly used when making cinematics. §c[-]§rThis option completely stops animation in the Nether & End.
 
 option.ANIMATION_SPEED=Animation Speed
 option.ANIMATION_SPEED.comment=Adjusts animation speed.
