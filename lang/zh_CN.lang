@@ -357,9 +357,9 @@ value.CLOUDS.2=体积
 value.CLOUDS.3=原版
 
 option.CLOUD_BASE=基础形状
-option.CLOUD_BASE.comment=确定云的基础形状所使用的噪声类型。
-value.CLOUD_BASE.0=Perlin 噪声（平滑）
-value.CLOUD_BASE.1=Worley 噪声（纹理）
+option.CLOUD_BASE.comment=确定云的基础形状所使用的噪声类型。 Worley噪声：生成的效果更像是泡泡或细胞状的波纹。 Perlin噪声：生成的效果更加平滑,自然。
+value.CLOUD_BASE.0=Perlin
+value.CLOUD_BASE.1=Worley
 
 option.CLOUD_DENSITY=密度
 option.CLOUD_DENSITY.comment=调整云的密度，较高的密度使伪影更加明显。
@@ -514,10 +514,10 @@ value.WATER_ALPHA_MODE.0=平坦
 value.WATER_ALPHA_MODE.1=原版
 
 option.WATER_NORMALS=法线
-option.WATER_NORMALS.comment=启用实时生成的水法线贴图。
+option.WATER_NORMALS.comment=启用实时生成的水法线贴图。 Worley噪声：生成的效果更像是泡泡或细胞状的波纹。 Perlin噪声：生成的效果更加平滑,自然。
 value.WATER_NORMALS.0=§c关闭
-value.WATER_NORMALS.1=Worley 噪声（纹理）
-value.WATER_NORMALS.2=Perlin 噪声（平滑）
+value.WATER_NORMALS.1=Worley
+value.WATER_NORMALS.2=Perlin
 
 option.WATER_PARALLAX=视差
 option.WATER_PARALLAX.comment=启用水面视差。

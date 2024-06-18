@@ -357,7 +357,7 @@ value.CLOUDS.2=體積
 value.CLOUDS.3=原版
 
 option.CLOUD_BASE=基礎形狀
-option.CLOUD_BASE.comment=確定雲的基礎形狀所使用的噪聲類型。 Worley噪聲：生成的效果更像是泡泡或細胞狀的波紋。 Perlin噪聲：生成的效果更加平滑，自然。
+option.CLOUD_BASE.comment=決定用於雲的基礎形狀的噪聲類型。 Worley噪聲：生成的效果更像是泡泡或細胞狀的波紋。 Perlin噪聲：生成的效果更加平滑，自然。
 value.CLOUD_BASE.0=Perlin
 value.CLOUD_BASE.1=Worley
 
@@ -514,10 +514,10 @@ value.WATER_ALPHA_MODE.0=平坦
 value.WATER_ALPHA_MODE.1=原版
 
 option.WATER_NORMALS=法線
-option.WATER_NORMALS.comment=啟用實時生成的水法線貼圖。
+option.WATER_NORMALS.comment=啟用實時生成的水法線貼圖。 Worley噪聲：生成的效果更像是泡泡或細胞狀的波紋。 Perlin噪聲：生成的效果更加平滑，自然。
 value.WATER_NORMALS.0=§c關閉
-value.WATER_NORMALS.1=Worley 噪聲（紋理）
-value.WATER_NORMALS.2=Perlin 噪聲（平滑）
+value.WATER_NORMALS.1=Worley
+value.WATER_NORMALS.2=Perlin
 
 option.WATER_PARALLAX=視差
 option.WATER_PARALLAX.comment=啟用水面視差。
