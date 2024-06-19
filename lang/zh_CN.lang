@@ -1,12 +1,12 @@
 #shaders/lang/zh_cn.lang
 
 #Profiles
-profile.MINIMUM=最小
+profile.MINIMUM=最低
 profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
-profile.ULTRA=超高
-profile.comment=最小:无阴影. 低:低等质量阴影,无额外效果. 中:中等质量阴影,无额外效果. 高:中等质量阴影,氛围光遮蔽（AO）和光束. 超高:高等质量阴影,氛围光遮蔽（AO）和光束.
+profile.ULTRA=极致
+profile.comment=最低:无阴影，没有额外效果 低:低等质量阴影,无额外效果. 中:中等质量阴影,无额外效果. 高:中等质量阴影,氛围光遮蔽（AO）和光束. 超高:高等质量阴影,氛围光遮蔽（AO）和光束.
 
 #Screens
 screen.LIGHTING=光照
@@ -18,8 +18,13 @@ screen.SPECULAR=镜式和反射
 screen.NORMALS=法线和视差
 
 screen.ATMOSPHERICS=大气设置
-screen.SKY=天空配置
 screen.CLOUDS=云配置
+screen.FOG=迷雾
+screen.FOG_DENSITY=迷雾密度
+screen.FOG_HEIGHT=迷雾高度
+screen.FOG_VANILLA=原版迷雾
+screen.SKY=天空配置
+screen.SKYBOX=天空盒
 
 screen.WATER=水
 
@@ -49,6 +54,7 @@ screen.WEATHER_B=恶地沙尘暴
 screen.WEATHER_S=沼泽雨
 screen.WEATHER_M=蘑菇岛雨
 screen.WEATHER_V=热带草原多云
+screen.WEATHER_J=丛林雨
 screen.AURORA_COLOR=极光颜色
 screen.AURORA_L=下部颜色
 screen.AURORA_H=上部颜色
@@ -74,7 +80,7 @@ screen.EXTRAS=额外设置
 screen.ANIMATION=动画
 
 #Settings
-option.ABOUT=BSL v8.2.05
+option.ABOUT=BSL v8.2.09
 option.ABOUT.comment=作者：Capt Tatsu. bitslablab.com
 value.ABOUT.0=作者： Capt Tatsu
 
@@ -137,8 +143,16 @@ option.SHADOW_BLOCK_ENTITY.comment=启用方块实体的阴影. §e[*]§r当一�
 option.SHADOW_VEGETATION=植被阴影
 option.SHADOW_VEGETATION.comment=启用阴影到草, 作物, 和几乎所有植物上.
 
+option.SHADOW_CLOUD=云阴影
+option.SHADOW_CLOUD.comment=启用云投射的阴影
+
 option.sunPathRotation=太阳路径旋转
 option.sunPathRotation.comment=调整太阳角度.
+
+option.SHADOW_BIAS=阴影偏差模式
+option.SHADOW_BIAS.comment=确定阴影贴图偏差的实现方式。光方向模式可保留大部分阴影边缘，但阴影在远处看起来会飘浮。表面法线模式可保留接触点，但阴影在远处看起来会变短。
+value.SHADOW_BIAS.0=光方向模式
+value.SHADOW_BIAS.1=表面法线模式
 
 option.SHADOW_PIXEL=像素化阴影
 option.SHADOW_PIXEL.comment=应用像素化效果于阴影之上.
@@ -201,11 +215,19 @@ option.REFLECTION_TRANSLUCENT.comment=允许反射被渲染在透光表面上, �
 option.REFLECTION_SPECULAR=镜式反射*
 option.REFLECTION_SPECULAR.comment=在平滑或金属质感的表面上启用反射.
 
+option.REFLECTION_ROUGH=粗糙反射*
+option.REFLECTION_ROUGH.comment=允许平滑度较低的表面渲染模糊反射. §c[-]§r可能会包含一点虚影.
+
 option.REFLECTION_RAIN=雨反射*
 option.REFLECTION_RAIN.comment=允许表面在下雨时变湿. §e[*]§r需要镜式反射.
 
-option.REFLECTION_ROUGH=粗糙反射*
-option.REFLECTION_ROUGH.comment=允许平滑度较低的表面渲染模糊反射. §c[-]§r可能会包含一点虚影.
+option.REFLECTION_RAIN_AMOUNT=水坑数量
+option.REFLECTION_RAIN_AMOUNT.comment=调整下雨时形成的水坑的数量。
+value.REFLECTION_RAIN_AMOUNT.0.4=非常少
+value.REFLECTION_RAIN_AMOUNT.0.5=少
+value.REFLECTION_RAIN_AMOUNT.0.6=中等
+value.REFLECTION_RAIN_AMOUNT.0.7=较多
+value.REFLECTION_RAIN_AMOUNT.1.0=非常多
 
 option.REFLECTION_PREVIOUS=前帧反射
 option.REFLECTION_PREVIOUS.comment=允许透光物体被用前一帧的信息映出. §c[-]§r可能会导致截图上的反射丢失(由于截图尺寸的设置造成). §c[-]§r与一些GPU不兼容. §c[-]§r在1.7.10中存在漏洞.
@@ -286,53 +308,19 @@ option.NORMAL_PLANTS=朝上的植物
 option.NORMAL_PLANTS.comment=调整植物光影渲染. §e[*]§r如果已使用非平面的植物模型或已把法线贴图应用到植物上，请禁用此选项.
 
 #Atmospherics
-option.CLOUDS=云
-option.CLOUDS.comment=启用云. §a[+]§r默认的云会受益于TAA的启用.  §e[*]§r原版云需要将原版云设置设为默认或开启.
-value.CLOUDS.0=§c关
-value.CLOUDS.1=默认
-value.CLOUDS.2=立体的
-value.CLOUDS.3=原版
-
-option.SKY_DESATURATION=天空去饱合度
-option.SKY_DESATURATION.comment=降低饱和度于添加一些色调到夜晚的天空盒之时.
-
-option.AURORA=极光
-option.AURORA.comment=启用极光. §a[+]§r此效果会受益于TAA的启用.
-
-option.ROUND_SUN_MOON=圆形日月
-option.ROUND_SUN_MOON.comment=启用基于太阳和月亮的光影. §e[*]§r请禁用1.15.2及以下的原版日月，设置位置在 视频设置 > 细节 > 日月 . 
-
-option.DISTANT_FADE=远距淡出
-option.DISTANT_FADE.comment=淡出到远区块边界. §e[*]§r此选项受雾气密度影响.
-value.DISTANT_FADE.0=§c关
-value.DISTANT_FADE.1=仅主世界
-value.DISTANT_FADE.2=仅下界和末地
-value.DISTANT_FADE.3=全部
-
-option.DISTANT_FADE_STYLE=远距淡出样式
-option.DISTANT_FADE_STYLE.comment=球形像原版雾. 柱形忽略Y轴.
-value.DISTANT_FADE_STYLE.0=球形
-value.DISTANT_FADE_STYLE.1=柱形
-
-option.WEATHER_PERBIOME=群系特定天气
-option.WEATHER_PERBIOME.comment=为不同的生物群系使用多种天气颜色. §c[-]§r可能不灵用于未知的条件下.
-
-option.UNDERGROUND_SKY=地下天空修复
-option.UNDERGROUND_SKY.comment=隐藏天空，倘若玩家在暗处并处在海平面(Y: 62)以下. §c[-]§r不适用于低超平坦世界. 
-
 option.LIGHT_SHAFT=光束
 option.LIGHT_SHAFT.comment=添加来自太阳或月亮的体积射线. §a[+]§r此效果会受益于TAA的启用. §e[*]§r性能依赖于阴影贴图分辨率.
 
 option.LIGHT_SHAFT_STRENGTH=光束强度
 option.LIGHT_SHAFT_STRENGTH.comment=调整光束强度.
 
-option.FOG_DENSITY=雾气密度
-option.FOG_DENSITY.comment=调整雾气密度. §e[*]§r此选项在下界中被忽略.
+option.WEATHER_PERBIOME=群系特定天气
+option.WEATHER_PERBIOME.comment=为不同的生物群系使用多种天气颜色. §c[-]§r可能不灵用于未知的条件下.
 
 option.WEATHER_OPACITY=天气不透明度
 option.WEATHER_OPACITY.comment=调整天气不透明度.
 
-#Sky Config
+#sky
 option.SKY_DENSITY_D=白天密度
 option.SKY_EXPOSURE_D=白天曝光
 option.SKY_DENSITY_N=夜晚密度
@@ -341,20 +329,37 @@ option.SKY_DENSITY_W=天气密度
 option.SKY_EXPOSURE_W=天气曝光
 option.SKY_HORIZON_N=近地平线
 option.SKY_HORIZON_F=远地平线
+
+option.SKY_DESATURATION=天空去饱合度
+option.SKY_DESATURATION.comment=降低饱和度于添加一些色调到夜晚的天空盒之时.
+
 option.SKY_GROUND=天空底部
 option.SKY_GROUND.comment=暗化天空的底部. §e[*]§r该选项会受到雾气密度的影响.
 value.SKY_GROUND.0=§c关
 value.SKY_GROUND.1=仅反射
 value.SKY_GROUND.2=完全
 
-option.SKYBOX_BRIGHTNESS=天空盒亮度
-option.SKYBOX_BRIGHTNESS.comment=调整天空盒亮度. §e[*]§r调整至1.00于删减式天空盒存在之时.
+option.UNDERGROUND_SKY=地下天空修复
+option.UNDERGROUND_SKY.comment=隐藏天空，倘若玩家在暗处并处在海平面(Y: 62)以下. §c[-]§r不适用于低超平坦世界.
 
-#Cloud Config
+option.SHADER_END_SKY=摸底天空着色器
+option.SHADER_END_SKY.comment=使用基于着色器的末地天空盒替换原版/模组的末地天空盒。
+
+option.SKY_DEFERRED=天空延迟渲染
+option.SKY_DEFERRED.comment=在绘制不透明表面之后渲染天空而不是一开始渲染天空。§e[*]§r这会影响资源包天空的渲染。
+
+#Cloud
+option.CLOUDS=云
+option.CLOUDS.comment=启用云. §a[+]§r默认的云会受益于TAA的启用.  §e[*]§r原版云需要将原版云设置设为默认或开启.
+value.CLOUDS.0=§c关
+value.CLOUDS.1=默认
+value.CLOUDS.2=立体的
+value.CLOUDS.3=原版
+
 option.CLOUD_BASE=基础形状
 option.CLOUD_BASE.comment=决定哪种噪音类型用于云的基础形状.
-value.CLOUD_BASE.0=烟鬼(Perlin) 
-value.CLOUD_BASE.1=直男(Worley) 
+value.CLOUD_BASE.0=烟鬼(Perlin)
+value.CLOUD_BASE.1=直男(Worley)
 
 option.CLOUD_DENSITY=密度
 option.CLOUD_DENSITY.comment=调整云的密度，更高的密度会让虚影更明显.
@@ -410,6 +415,90 @@ option.CLOUD_VOLUMETRIC_SCALE.comment=调整立体云的高度和大小
 value.CLOUD_VOLUMETRIC_SCALE.6.0=原版（旧版本）
 value.CLOUD_VOLUMETRIC_SCALE.12.4=原版
 value.CLOUD_VOLUMETRIC_SCALE.16.0=原始天空盒
+
+#Fog
+option.FOG_DENSITY=迷雾密度
+option.FOG_DENSITY.comment=调整迷雾密度. §e[*]§r此选项在下界中被忽略.
+
+option.FOG_HEIGHT=迷雾高度
+option.FOG_HEIGHT.comment=启用迷雾高度，根据高度减少雾量。
+
+option.FAR_VANILLA_FOG=原版远处迷雾
+option.FAR_VANILLA_FOG.comment=启用类似原版的迷雾。§e[*]§r此选项受迷雾密度的影响。
+value.FAR_VANILLA_FOG.0=§c关闭
+value.FAR_VANILLA_FOG.1=仅主世界
+value.FAR_VANILLA_FOG.2=仅下界和末地
+value.FAR_VANILLA_FOG.3=全部
+
+#Fog Density
+option.FOG_DENSITY_NIGHT=夜晚 - 天气相关迷雾密度
+option.FOG_DENSITY_NIGHT.comment=调整夜间和下雨时的迷雾密度倍数。
+
+option.FOG_DENSITY_WEATHER=天气相关迷雾密度
+option.FOG_DENSITY_WEATHER.comment=调整下雨时迷雾的密度倍数。
+
+option.FOG_DENSITY_COLD=寒冷生物群系迷雾密度
+option.FOG_DENSITY_COLD.comment=站在寒冷生物群系时调整迷雾密度倍数。寒冷生物群系包括任何有雪的生物群系。§e[*]§r需要每个生物群系的天气。
+
+option.FOG_DENSITY_DRY=干燥生物群戏迷雾密度
+option.FOG_DENSITY_DRY.comment=站在干燥生物群系时调整迷雾密度倍数。干燥生物群系包括沙漠、荒地/台地和热带草原。§e[*]§r需要每个生物群系的天气。
+
+option.FOG_DENSITY_DAMP=潮湿生物群系迷雾密度
+option.FOG_DENSITY_DAMP.comment=站在潮湿的生物群系时调整迷雾密度倍数。潮湿的生物群系包括沼泽、蘑菇岛和丛林。§e[*]§r需要每个生物群系的天气。
+
+option.FOG_DENSITY_INDOOR=室内迷雾密度
+option.FOG_DENSITY_INDOOR.comment=在室内时调整迷雾密度倍数。
+
+option.FOG_DENSITY_DH=遥远地平线雾密度
+option.FOG_DENSITY_DH.comment=启用“遥远地平线”时调整世界雾密度乘数。
+
+#Height Fog
+option.FOG_HEIGHT_Y=基础高度
+option.FOG_HEIGHT_Y.comment=调整迷雾开始出现的高度。
+
+option.FOG_HEIGHT_FALLOFF=高度衰减
+option.FOG_HEIGHT_FALLOFF.comment=调整不同高度迷雾的大小。
+
+#Far Vanilla Fog
+option.FAR_VANILLA_FOG_STYLE=远处原版迷雾风格
+option.FAR_VANILLA_FOG_STYLE.comment=球形雾的效果与原版雾类似。圆柱形雾忽略 Y 轴。
+value.FAR_VANILLA_FOG_STYLE.0=球形
+value.FAR_VANILLA_FOG_STYLE.1=圆柱形
+
+option.FOG_DENSITY_VANILLA=原版迷雾密度
+option.FOG_DENSITY_VANILLA.comment=调整原版迷雾的雾密度。
+
+option.FOG_VANILLA_CLOUD=原版云层迷雾
+option.FOG_VANILLA_CLOUD.comment=启用原版云层迷雾
+value.FOG_VANILLA_CLOUD.0=§c关
+value.FOG_VANILLA_CLOUD.1=最低
+value.FOG_VANILLA_CLOUD.2=较少
+value.FOG_VANILLA_CLOUD.3=全部
+
+#Skybox
+option.ROUND_SUN_MOON=圆形日月
+option.ROUND_SUN_MOON.comment=启用基于太阳和月亮的光影. §e[*]§r请禁用1.15.2及以下的原版日月，设置位置在 视频设置 > 细节 > 日月 .
+
+option.ROUND_SUN_MOON_SIZE=日月大小
+option.ROUND_SUN_MOON_SIZE.comment=调整圆形太阳、月亮和镜面高光的尺寸。
+
+option.STARS=星星
+option.STARS.comment=启用星星.
+
+option.AURORA=极光
+option.AURORA.comment=启用极光. §a[+]§r此效果会受益于TAA的启用.
+
+option.SKYBOX_INTENSITY=天空盒强度
+option.SKYBOX_INTENSITY.comment=调整天空盒强度。
+
+option.SKYBOX_OPACITY=天空盒不透明度
+option.SKYBOX_OPACITY.comment=调整天空盒不透明度。§c[-]§r仅适用于 1.16.5 或更高版本。
+
+option.SUN_INTENSITY=太阳强度
+option.SUN_INTENSITY.comment=调整天空盒太阳强度。§c[-]§r仅适用于 1.16.5 或更高版本。
+
+option.MOON_INTENSITY=月亮强度
+option.MOON_INTENSITY.comment=调整天空盒月亮强度。§c[-]§r仅适用于 1.16.5 或更高版本。
 
 #Water
 option.WATER_MODE=水体纹理模式
@@ -647,6 +736,7 @@ option.WATER_G=绿色
 option.WATER_B=蓝色
 option.WATER_I=强度
 option.WATER_A=透明度
+option.WATER_F=迷雾强度
 
 option.WEATHER_RR=红色
 option.WEATHER_RG=绿色
@@ -682,6 +772,11 @@ option.WEATHER_VR=红色
 option.WEATHER_VG=绿色
 option.WEATHER_VB=蓝色
 option.WEATHER_VI=强度
+
+option.WEATHER_JR=红色
+option.WEATHER_JG=绿色
+option.WEATHER_JB=蓝色
+option.WEATHER_JI=强度
 
 option.AURORA_LR=红色
 option.AURORA_LG=绿色
@@ -729,6 +824,9 @@ option.EMISSIVE_RECOLOR.comment=使用方块光着色一些特定的自发光方
 option.SKY_VANILLA=原版天空
 option.SKY_VANILLA.comment=使用原版天空颜色.
 
+option.SKY_VANILLA_USE_FOG=使用原版迷雾颜色
+option.SKY_VANILLA_USE_FOG.comment=允许在启用原版天空时使用原版迷雾颜色。
+
 option.NETHER_VANILLA=原版下界
 option.NETHER_VANILLA.comment=使用原版下界颜色.
 
@@ -745,14 +843,17 @@ option.CLASSIC_EXPOSURE.comment=启用增量的曝光到进门时.
 option.COLOR_GRADING=颜色分级
 option.COLOR_GRADING.comment=启用颜色分级. §e[*]§r此选项无需启用即可更改色调图、饱和度和鲜艳度滑块.
 
-option.TONEMAP_WHITE_CURVE=色调图白色曲线
-option.TONEMAP_WHITE_CURVE.comment=调整色调图能多快达到白色.
-
 option.TONEMAP_LOWER_CURVE=色调图低值曲线
 option.TONEMAP_LOWER_CURVE.comment=调整更暗颜色的对比度.
 
 option.TONEMAP_UPPER_CURVE=色调图高值曲线
 option.TONEMAP_UPPER_CURVE.comment=调整更亮颜色的对比度.
+
+option.TONEMAP_WHITE_CURVE=色调图白色曲线
+option.TONEMAP_WHITE_CURVE.comment=调整色调图能多快达到白色.
+
+option.TONEMAP_WHITE_PATH=色调图白色路径
+option.TONEMAP_WHITE_PATH.comment=调整明亮饱和色能多块变为白色。
 
 option.SATURATION=饱和度
 option.SATURATION.comment=调整所有颜色的饱和度.
@@ -820,6 +921,9 @@ option.TOON_LIGHTMAP.comment=降低原版光照质量，进行卡通光影渲染
 option.RETRO_FILTER=复古滤镜
 option.RETRO_FILTER.comment=添加像素感和抖色. §e[*]§r更低的渲染质量可获得更强的像素感. §c[-]§r不兼容抗锯齿.
 
+option.RETRO_FILTER_SIZE=复古滤镜大小
+option.RETRO_FILTER_SIZE.comment=调整复古滤镜的像素大小。
+
 option.WORLD_CURVATURE=世界曲率
 option.WORLD_CURVATURE.comment=启用世界曲率. §e[*]§r仅在主世界中灵用. §c[*]§r丢失区块是由Minecraft自己掌控的, 这我没法修复. §c[-]§r可能会破坏方块选择高亮于1.17版本.
 
@@ -836,21 +940,30 @@ option.ANIMATION_SPEED.comment=调整动画速度.
 #Waving Blocks
 option.WAVING_GRASS=草
 option.WAVING_GRASS.comment=允许草摇摆.
+
 option.WAVING_CROP=作物
 option.WAVING_CROP.comment=允许耕地上的植物摇摆.
+
 option.WAVING_PLANT=植物
 option.WAVING_PLANT.comment=允许各种植物摇摆.
+
 option.WAVING_TALL_PLANT=高植物
 option.WAVING_TALL_PLANT.comment=允许两格方块高的植物摇摆.
+
 option.WAVING_LEAF=树叶
 option.WAVING_LEAF.comment=允许树叶摇摆.
+
 option.WAVING_VINE=藤蔓
 option.WAVING_VINE.comment=允许藤蔓摇摆.
+
 option.WAVING_WATER=水
 option.WAVING_WATER.comment=允许水摇摆.
+
 option.WAVING_LAVA=岩浆
 option.WAVING_LAVA.comment=允许岩浆摇摆.
+
 option.WAVING_FIRE=火
 option.WAVING_FIRE.comment=允许火摇摆.
+
 option.WAVING_LANTERN=灯笼
 option.WAVING_LANTERN.comment=允许灯笼摇摆.
