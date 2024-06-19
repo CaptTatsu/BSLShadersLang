@@ -89,7 +89,7 @@ option.SHADOW=实时阴影
 option.SHADOW.comment=启用实时动态阴影映射。
 
 option.shadowMapResolution=阴影贴图质量
-option.shadowMapResolution.comment=调整阴影贴图分辨率。§e[*]§r更高分辨率会使阴影更清晰（锐利），但会降低性能。
+option.shadowMapResolution.comment=调整阴影贴图分辨率。 §e[*]§r更高分辨率会使阴影更清晰（锐利），但会降低性能。
 value.shadowMapResolution.512=非常低（512）
 value.shadowMapResolution.1024=低（1024）
 value.shadowMapResolution.1536=中低（1536）
@@ -102,7 +102,7 @@ option.shadowDistance=阴影距离
 option.shadowDistance.comment=调整阴影距离。
 
 option.SHADOW_COLOR=彩色阴影
-option.SHADOW_COLOR.comment=启用半透明物体的彩色阴影。§a[+]§r用于彩色体积光束。§c[-]§r使用阴影过滤时性能略有下降。
+option.SHADOW_COLOR.comment=启用半透明物体的彩色阴影。 §a[+]§r用于彩色体积光束。 §c[-]§r使用阴影过滤时性能略有下降。
 
 option.SHADOW_FILTER=阴影过滤
 option.SHADOW_FILTER.comment=启用阴影过滤。
@@ -128,17 +128,17 @@ option.DYNAMIC_HANDLIGHT=动态手持光源
 option.DYNAMIC_HANDLIGHT.comment=当持有特定物体时，允许从视图中发出方块光。
 
 option.MULTICOLORED_BLOCKLIGHT=多彩方块光
-option.MULTICOLORED_BLOCKLIGHT.comment=启用屏幕空间多彩方块光。§e[*]§r仅适用于1.16.5及以上版本，非Mac设备。
+option.MULTICOLORED_BLOCKLIGHT.comment=启用屏幕空间多彩方块光。 §e[*]§r仅适用于1.16.5及以上版本，非Mac设备。
 
 option.WHITE_WORLD=白色世界
 option.WHITE_WORLD.comment=将纹理替换为纯白色。
 
 #More Shadow Config
 option.SHADOW_ENTITY=实体阴影
-option.SHADOW_ENTITY.comment=启用生物阴影。§e[*]§r加载大量生物时禁用此项。§e[*]§r仅适用于1.16.5及以上版本。
+option.SHADOW_ENTITY.comment=启用生物阴影。 §e[*]§r加载大量生物时禁用此项。 §e[*]§r仅适用于1.16.5及以上版本。
 
 option.SHADOW_BLOCK_ENTITY=方块实体阴影
-option.SHADOW_BLOCK_ENTITY.comment=启用方块实体阴影。§e[*]§r加载大量方块实体时禁用此项。§e[*]§r仅适用于1.16.5及以上版本。
+option.SHADOW_BLOCK_ENTITY.comment=启用方块实体阴影。 §e[*]§r加载大量方块实体时禁用此项。 §e[*]§r仅适用于1.16.5及以上版本。
 
 option.SHADOW_VEGETATION=植被阴影
 option.SHADOW_VEGETATION.comment=启用草、作物和大多数其他植物的阴影。
@@ -160,33 +160,33 @@ value.SHADOW_PIXEL.0=关闭
 
 #Colored Blocklight Config
 option.MCBL_ANTI_BLEED=防止溢出
-option.MCBL_ANTI_BLEED.comment=减少不需要的方块光颜色扩散。§c[-]§r可能会使欠采样伪影更加明显。
+option.MCBL_ANTI_BLEED.comment=减少不需要的方块光颜色扩散。 §c[-]§r可能会使欠采样伪影更加明显。
 option.MCBL_LEGACY_COLOR=旧版颜色
 option.MCBL_LEGACY_COLOR.comment=使用旧方法计算方块光颜色。
 
 #Material
 option.ADVANCED_MATERIALS=高级材质
-option.ADVANCED_MATERIALS.comment=启用镜面反射和法线贴图，可使各种物体具有更多细节。§e[*]§r此选项需要包含镜面反射和/或法线贴图的资源包，如果当前未使用资源包，请禁用此选项。§e[*]§r需要高级材质的选项用 * 标识，禁用高级材质时更改这些选项不会影响视觉效果或性能。
+option.ADVANCED_MATERIALS.comment=启用镜面反射和法线贴图，可使各种物体具有更多细节。 §e[*]§r此选项需要包含镜面反射和/或法线贴图的资源包，如果当前未使用资源包，请禁用此选项。 §e[*]§r需要高级材质的选项用 * 标识，禁用高级材质时更改这些选项不会影响视觉效果或性能。
 
 option.MATERIAL_FORMAT=材质格式*
-option.MATERIAL_FORMAT.comment=确定资源包使用的镜面反射和法线贴图格式。§e[*]§r纹理艺术家通常会告知其资源包使用的格式，使用错误的格式可能会产生奇怪的效果。
-value.MATERIAL_FORMAT.0=SEUS/旧版PBR
+option.MATERIAL_FORMAT.comment=确定资源包使用的镜面反射和法线贴图格式。 §e[*]§r纹理艺术家通常会告知其资源包使用的格式，使用错误的格式可能会产生奇怪的效果。
+value.MATERIAL_FORMAT.0=SEUS/旧版 PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
 option.SSS=次表面散射（SSS）*
-option.SSS.comment=允许光穿透并散射通过方块。§a[+]§r此效果受益于TAA。
+option.SSS.comment=允许光穿透并散射通过方块。 §a[+]§r此效果受益于TAA。
 
 option.BASIC_SSS=基本散射
 option.BASIC_SSS.comment=启用某些方块的简化次表面散射。
 
 option.EMISSIVE=发光
-option.EMISSIVE.comment=允许某些表面更亮。
+option.EMISSIVE.comment=允许某些特定表面变得更亮。
 value.EMISSIVE.0=§c关闭
 value.EMISSIVE.1=仅高级材质*
 value.EMISSIVE.2=完全启用
 
 option.REFRACTION=折射
-option.REFRACTION.comment=启用法线贴图透明表面后的失真。§c[-]§r透明表面本身会失真。§c[-]§r启用此效果时某些其他功能可能无法正常工作。
+option.REFRACTION.comment=启用法线贴图透明表面后的失真。 §c[-]§r透明表面本身会失真。 §c[-]§r启用此效果时某些其他功能可能无法正常工作。
 value.REFRACTION.0=关闭
 value.REFRACTION.1=仅水
 value.REFRACTION.2=完全启用
@@ -216,10 +216,10 @@ option.REFLECTION_SPECULAR=镜面反射*
 option.REFLECTION_SPECULAR.comment=启用光滑或金属表面的反射。
 
 option.REFLECTION_ROUGH=粗糙反射*
-option.REFLECTION_ROUGH.comment=允许较低光滑度的表面渲染模糊反射。§c[-]§r可能包含轻微伪影。
+option.REFLECTION_ROUGH.comment=允许较低光滑度的表面渲染模糊反射。 §c[-]§r可能包含轻微伪影。
 
 option.REFLECTION_RAIN=雨天反射*
-option.REFLECTION_RAIN.comment=允许下雨时表面变湿。§e[*]§r需要镜面反射。
+option.REFLECTION_RAIN.comment=允许下雨时表面变湿。 §e[*]§r需要镜面反射。
 
 option.REFLECTION_RAIN_AMOUNT=水坑数量
 option.REFLECTION_RAIN_AMOUNT.comment=调整下雨时生成的水坑数量。
@@ -230,13 +230,13 @@ value.REFLECTION_RAIN_AMOUNT.0.7=高
 value.REFLECTION_RAIN_AMOUNT.1.0=非常高
 
 option.REFLECTION_PREVIOUS=上一帧反射
-option.REFLECTION_PREVIOUS.comment=允许使用上一帧信息渲染透明物体反射。§c[-]§r可能导致截图中反射缺失（由截图大小设置引起）。§c[-]§r与某些GPU不兼容。§c[-]§r在1.7.10中存在Bug。
+option.REFLECTION_PREVIOUS.comment=允许使用上一帧信息渲染透明物体反射。 §c[-]§r可能导致截图中反射缺失（由截图大小设置引起）。 §c[-]§r与某些GPU不兼容。 §c[-]§r在1.7.10中存在Bug。
 
 option.SPECULAR_HIGHLIGHT_ROUGH=粗糙镜面高光
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=允许粗糙表面具有微弱光泽。
 
 option.ALBEDO_METAL=反照率染色硬编码金属*
-option.ALBEDO_METAL.comment=将基础纹理应用为硬编码金属表面的色调。§e[*]§r仅适用于labPBR材质格式。
+option.ALBEDO_METAL.comment=将基础纹理应用为硬编码金属表面的色调。 §e[*]§r仅适用于labPBR材质格式。
 
 option.REFLECTION_MODE=反射模式
 option.REFLECTION_MODE.comment=调整反射行为。
@@ -253,7 +253,7 @@ value.REFLECTION_SKY_FALLOFF.8=强
 value.REFLECTION_SKY_FALLOFF.16=非常强
 
 option.REFLECTION_SKYBOX=反射天空盒
-option.REFLECTION_SKYBOX.comment=允许资源包天空盒包含在反射中。§c[-]§r天空盒仅应用于透明表面。
+option.REFLECTION_SKYBOX.comment=允许资源包天空盒包含在反射中。 §c[-]§r天空盒仅应用于透明表面。
 
 #Normals & Parallax
 option.PARALLAX=视差遮蔽映射*
@@ -291,7 +291,7 @@ option.SELF_SHADOW_STRENGTH=自阴影强度*
 option.SELF_SHADOW_STRENGTH.comment=调整自阴影的强度。
 
 option.DIRECTIONAL_LIGHTMAP=定向光贴图*
-option.DIRECTIONAL_LIGHTMAP.comment=将法线贴图添加到原版光照中。§c[-]§r启用此效果时光贴图可能会出现故障。
+option.DIRECTIONAL_LIGHTMAP.comment=将法线贴图添加到原版光照中。 §c[-]§r启用此效果时光贴图可能会出现故障。
 
 option.DIRECTIONAL_LIGHTMAP_STRENGTH=定向光贴图强度*
 option.DIRECTIONAL_LIGHTMAP_STRENGTH.comment=调整定向光贴图的强度。
@@ -305,17 +305,17 @@ option.NORMAL_DAMPENING=法线抑制*
 option.NORMAL_DAMPENING.comment=减少法线贴图强度，以防止反射过于杂乱。
 
 option.NORMAL_PLANTS=朝上的植物
-option.NORMAL_PLANTS.comment=调整植物遮光。§e[*]§r如果使用非平面植物模型或在植物上应用法线贴图，请禁用此选项。
+option.NORMAL_PLANTS.comment=调整植物遮光。 §e[*]§r如果使用非平面植物模型或在植物上应用法线贴图，请禁用此选项。
 
 #Atmospherics
 option.LIGHT_SHAFT=光束
-option.LIGHT_SHAFT.comment=从太阳/月亮添加体积光线。§a[+]§r此效果受益于TAA。§e[*]§r需要实时阴影。§e[*]§r性能取决于阴影贴图分辨率。
+option.LIGHT_SHAFT.comment=从太阳/月亮添加体积光线。 §a[+]§r此效果受益于TAA。 §e[*]§r需要实时阴影。 §e[*]§r性能取决于阴影贴图分辨率。
 
 option.LIGHT_SHAFT_STRENGTH=光束强度
 option.LIGHT_SHAFT_STRENGTH.comment=调整光束强度。
 
 option.WEATHER_PERBIOME=群系特定天气
-option.WEATHER_PERBIOME.comment=为不同的生物群系使用不同的天气颜色。§c[-]§r在未知条件下可能无法正常工作。
+option.WEATHER_PERBIOME.comment=为不同的生物群系使用不同的天气颜色。 §c[-]§r在未知条件下可能无法正常工作。
 
 option.WEATHER_OPACITY=天气不透明度
 option.WEATHER_OPACITY.comment=调整天气的不透明度。
@@ -334,23 +334,23 @@ option.SKY_DESATURATION=天空去饱和
 option.SKY_DESATURATION.comment=在夜晚的天空盒中减少饱和度并增加一些色调
 
 option.SKY_GROUND=天空地面
-option.SKY_GROUND.comment=使天空的底部变暗。§e[*]§r此选项受雾密度影响。
+option.SKY_GROUND.comment=使天空的底部变暗。 §e[*]§r此选项受雾密度影响。
 value.SKY_GROUND.0=§c关闭
 value.SKY_GROUND.1=仅反射
 value.SKY_GROUND.2=完全启用
 
 option.UNDERGROUND_SKY=地下天空修复
-option.UNDERGROUND_SKY.comment=当玩家在海平面（Y：62）下的黑暗区域时隐藏天空。§c[-]§r不适用于低超平坦世界。
+option.UNDERGROUND_SKY.comment=当玩家在海平面（Y：62）下的黑暗区域时隐藏天空。 §c[-]§r不适用于低超平坦世界。
 
 option.SHADER_END_SKY=光影末地天空
 option.SHADER_END_SKY.comment=用光影替换原版/模组的末地天空盒。
 
 option.SKY_DEFERRED=延迟天空
-option.SKY_DEFERRED.comment=在不透明表面绘制之后渲染天空，而不是在开始时。§e[*]§r这会影响资源包天空渲染。
+option.SKY_DEFERRED.comment=在不透明表面绘制之后渲染天空，而不是在开始时。 §e[*]§r这会影响资源包天空渲染。
 
 #Cloud
 option.CLOUDS=云
-option.CLOUDS.comment=启用云。§a[+]§r天空盒和体积云受益于TAA。§e[*]§r原版云需要在视频设置 > 细节 > 云中设置为默认或启用。
+option.CLOUDS.comment=启用云。 §a[+]§r天空盒和体积云受益于TAA。 §e[*]§r原版云需要在视频设置 > 细节 > 云中设置为默认或启用。
 value.CLOUDS.0=§c关闭
 value.CLOUDS.1=天空盒
 value.CLOUDS.2=体积
@@ -418,13 +418,13 @@ value.CLOUD_VOLUMETRIC_SCALE.16.0=原始天空盒
 
 #Fog
 option.FOG_DENSITY=雾密度
-option.FOG_DENSITY.comment=调整雾的密度。§e[*]§r此选项在下界中无效。
+option.FOG_DENSITY.comment=调整雾的密度。 §e[*]§r此选项在下界中无效。
 
 option.FOG_HEIGHT=迷雾高度
 option.FOG_HEIGHT.comment=启用高度雾，基于高度减少雾量。
 
 option.FAR_VANILLA_FOG=远处原版雾
-option.FAR_VANILLA_FOG.comment=启用原版样式的雾。§e[*]§r此选项受雾密度影响。
+option.FAR_VANILLA_FOG.comment=启用原版样式的雾。 §e[*]§r此选项受雾密度影响。
 value.FAR_VANILLA_FOG.0=§c关闭
 value.FAR_VANILLA_FOG.1=仅主世界
 value.FAR_VANILLA_FOG.2=仅下界和末地
@@ -438,13 +438,13 @@ option.FOG_DENSITY_WEATHER=天气密度
 option.FOG_DENSITY_WEATHER.comment=调整下雨时的雾密度乘数。
 
 option.FOG_DENSITY_COLD=寒冷密度
-option.FOG_DENSITY_COLD.comment=调整站在寒冷生物群系时的雾密度乘数。寒冷生物群系包括任何会下雪的生物群系。§e[*]§r需要每个生物群系的天气。
+option.FOG_DENSITY_COLD.comment=调整站在寒冷生物群系时的雾密度乘数。寒冷生物群系包括任何会下雪的生物群系。 §e[*]§r需要每个生物群系的天气。
 
 option.FOG_DENSITY_DRY=干燥密度
-option.FOG_DENSITY_DRY.comment=调整站在干燥生物群系时的雾密度乘数。干燥生物群系包括沙漠、恶地/红砂石和热带草原。§e[*]§r需要每个生物群系的天气。
+option.FOG_DENSITY_DRY.comment=调整站在干燥生物群系时的雾密度乘数。干燥生物群系包括沙漠、恶地/红砂石和热带草原。 §e[*]§r需要每个生物群系的天气。
 
 option.FOG_DENSITY_DAMP=潮湿密度
-option.FOG_DENSITY_DAMP.comment=调整站在潮湿生物群系时的雾密度乘数。潮湿生物群系包括沼泽、蘑菇岛和丛林。§e[*]§r需要每个生物群系的天气。
+option.FOG_DENSITY_DAMP.comment=调整站在潮湿生物群系时的雾密度乘数。潮湿生物群系包括沼泽、蘑菇岛和丛林。 §e[*]§r需要每个生物群系的天气。
 
 option.FOG_DENSITY_INDOOR=室内密度
 option.FOG_DENSITY_INDOOR.comment=调整室内的雾密度乘数。
@@ -477,7 +477,7 @@ value.FOG_VANILLA_CLOUD.3=完全启用
 
 #Skybox
 option.ROUND_SUN_MOON=圆形太阳和月亮
-option.ROUND_SUN_MOON.comment=启用基于光影的太阳和月亮。§e[*]§r在视频设置 > 细节 > 太阳和月亮中禁用原版太阳和月亮（1.16.4或以下版本）。
+option.ROUND_SUN_MOON.comment=启用基于光影的太阳和月亮。 §e[*]§r在视频设置 > 细节 > 太阳和月亮中禁用原版太阳和月亮（1.16.4或以下版本）。
 
 option.ROUND_SUN_MOON_SIZE=太阳和月亮大小
 option.ROUND_SUN_MOON_SIZE.comment=调整圆形太阳和月亮的大小以及镜面高光。
@@ -486,19 +486,19 @@ option.STARS=星星
 option.STARS.comment=启用星星。
 
 option.AURORA=极光
-option.AURORA.comment=启用极光。§a[+]§r此效果受益于TAA。
+option.AURORA.comment=启用极光。 §a[+]§r此效果受益于TAA。
 
 option.SKYBOX_INTENSITY=天空盒强度
 option.SKYBOX_INTENSITY.comment=调整天空盒的强度。
 
 option.SKYBOX_OPACITY=天空盒不透明度
-option.SKYBOX_OPACITY.comment=调整天空盒的不透明度。§c[-]§r仅适用于1.16.5或以上版本。
+option.SKYBOX_OPACITY.comment=调整天空盒的不透明度。 §c[-]§r仅适用于1.16.5或以上版本。
 
 option.SUN_INTENSITY=太阳强度
-option.SUN_INTENSITY.comment=调整天空盒太阳的强度。§c[-]§r仅适用于1.16.5或以上版本。
+option.SUN_INTENSITY.comment=调整天空盒太阳的强度。 §c[-]§r仅适用于1.16.5或以上版本。
 
 option.MOON_INTENSITY=月亮强度
-option.MOON_INTENSITY.comment=调整天空盒月亮的强度。§c[-]§r仅适用于1.16.5或以上版本。
+option.MOON_INTENSITY.comment=调整天空盒月亮的强度。 §c[-]§r仅适用于1.16.5或以上版本。
 
 #Water
 option.WATER_MODE=水体纹理模式
@@ -509,7 +509,7 @@ value.WATER_MODE.2=染色原版
 value.WATER_MODE.3=平坦原版
 
 option.WATER_ALPHA_MODE=水透明度模式
-option.WATER_ALPHA_MODE.comment=决定水使用的是光影为主的透明度值，还是纹理的透明度值。§e[*]§r某些效果将继续使用基于光影的Alpha值。
+option.WATER_ALPHA_MODE.comment=决定水使用的是光影为主的透明度值，还是纹理的透明度值。 §e[*]§r某些效果将继续使用基于光影的Alpha值。
 value.WATER_ALPHA_MODE.0=平坦
 value.WATER_ALPHA_MODE.1=原版
 
@@ -523,10 +523,10 @@ option.WATER_PARALLAX=视差
 option.WATER_PARALLAX.comment=启用水面视差。
 
 option.WATER_SHADOW_COLOR=水的彩色阴影
-option.WATER_SHADOW_COLOR.comment=确定水是否投射彩色阴影以进行染色。§e[*]§r启用此项时，透明物体在水下时不会投射彩色阴影。
+option.WATER_SHADOW_COLOR.comment=确定水是否投射彩色阴影以进行染色。 §e[*]§r启用此项时，透明物体在水下时不会投射彩色阴影。
 
 option.WATER_CAUSTICS=水光斑
-option.WATER_CAUSTICS.comment=确定水是否投射焦散光斑。§e[*]§r启用此项时，透明物体在水下时不会投射彩色阴影。§e[*]§r需要实时阴影。
+option.WATER_CAUSTICS.comment=确定水是否投射焦散光斑。 §e[*]§r启用此项时，透明物体在水下时不会投射彩色阴影。 §e[*]§r需要实时阴影。
 
 option.WATER_DETAIL=细节
 option.WATER_DETAIL.comment=调整大法线和小法线的比例。
@@ -615,7 +615,7 @@ option.LENS_FLARE_STRENGTH=镜头光晕强度
 option.LENS_FLARE_STRENGTH.comment=调整镜头光晕的强度。
 
 option.VIGNETTE=渐晕
-option.VIGNETTE.comment=(边饰/暗角)使屏幕边缘变黑。§e[*]§r用于360度成像时禁用此项。
+option.VIGNETTE.comment=(边饰/暗角)使屏幕边缘变黑。 §e[*]§r用于360度成像时禁用此项。
 
 option.VIGNETTE_STRENGTH=渐晕强度
 option.VIGNETTE_STRENGTH.comment=调整渐晕的强度。
@@ -631,7 +631,7 @@ value.VIGNETTE_STRENGTH.1.40=0.9
 value.VIGNETTE_STRENGTH.1.41=1.0
 
 option.DIRTY_LENS=脏镜头
-option.DIRTY_LENS.comment=为泛光添加灰尘粒子效果。§e[*]§r此选项需要启用泛光。
+option.DIRTY_LENS.comment=为泛光添加灰尘粒子效果。 §e[*]§r此选项需要启用泛光。
 
 option.CHROMATIC_ABERRATION=色差
 option.CHROMATIC_ABERRATION.comment=在边界周围添加色彩失真。
@@ -645,10 +645,10 @@ option.UNDERWATER_DISTORTION.comment=在水下应用屏幕失真。
 
 #Anti-aliasing
 option.FXAA=FXAA
-option.FXAA.comment=启用快速近似抗锯齿，通过平滑边缘以最小的性能成本。§e[*]§r请在启用此选项时禁用光影菜单中的抗锯齿。
+option.FXAA.comment=启用快速近似抗锯齿，通过平滑边缘以最小的性能成本。 §e[*]§r请在启用此选项时禁用光影菜单中的抗锯齿。
 
 option.TAA=TAA
-option.TAA.comment=启用时间抗锯齿，通过智能帧融合捕获细节和一些效果。§e[*]§r包括锐化。§e[*]§r请在启用此选项时禁用光影菜单中的抗锯齿。
+option.TAA.comment=启用时间抗锯齿，通过智能帧融合捕获细节和一些效果。 §e[*]§r包括锐化。 §e[*]§r请在启用此选项时禁用光影菜单中的抗锯齿。
 
 option.FXAA_SUBPIXEL=FXAA 子像素平滑
 option.FXAA_SUBPIXEL.comment=调整FXAA对微小细节的平滑程度。
@@ -670,7 +670,7 @@ value.TAA_MODE.0=平滑
 value.TAA_MODE.1=粗糙
 
 option.TAA_SELECTIVE=选择性TAA
-option.TAA_SELECTIVE.comment=从时间抗锯齿中排除实体、粒子和手，以减少鬼影。§c[-]§r排除的物体需要依赖FXAA。
+option.TAA_SELECTIVE.comment=从时间抗锯齿中排除实体、粒子和手，以减少鬼影。 §c[-]§r排除的物体需要依赖FXAA。
 
 #Color
 option.LIGHT_MR=红色
@@ -841,7 +841,7 @@ option.CLASSIC_EXPOSURE=经典曝光
 option.CLASSIC_EXPOSURE.comment=进入室内时启用增加曝光。
 
 option.COLOR_GRADING=色彩分级
-option.COLOR_GRADING.comment=启用色彩分级。§e[*]§r此选项无需启用即可更改色调映射、饱和度和生动度滑块。
+option.COLOR_GRADING.comment=启用色彩分级。 §e[*]§r此选项无需启用即可更改色调映射、饱和度和生动度滑块。
 
 option.TONEMAP_LOWER_CURVE=色调映射低曲线
 option.TONEMAP_LOWER_CURVE.comment=调整较暗颜色的对比度。
@@ -871,7 +871,7 @@ value.AUTO_EXPOSURE_RADIUS.0.35=高
 value.AUTO_EXPOSURE_RADIUS.0.7=非常高
 
 option.AUTO_EXPOSURE_SPEED=自动曝光速度
-option.AUTO_EXPOSURE_SPEED.comment=调整曝光变化的速度。§c[-]§r快速速度或更快可能会导致与低半径组合时闪烁。
+option.AUTO_EXPOSURE_SPEED.comment=调整曝光变化的速度。 §c[-]§r快速速度或更快可能会导致与低半径组合时闪烁。
 value.AUTO_EXPOSURE_SPEED.0.0033=非常慢
 value.AUTO_EXPOSURE_SPEED.0.01=慢
 value.AUTO_EXPOSURE_SPEED.0.033=中
@@ -908,7 +908,7 @@ option.CG_TM=色调混合值
 
 #Extras
 option.OUTLINE=轮廓
-option.OUTLINE.comment=启用轮廓效果。§c[-]§r黑色、彩色和1.12更新艺术与体积云不完全兼容。
+option.OUTLINE.comment=启用轮廓效果。 §c[-]§r黑色、彩色和1.12更新艺术与体积云不完全兼容。
 value.OUTLINE.0=关闭
 value.OUTLINE.1=黑色
 value.OUTLINE.2=彩色
@@ -916,23 +916,23 @@ value.OUTLINE.3=1.12更新艺术
 value.OUTLINE.4=地牢
 
 option.TOON_LIGHTMAP=卡通光贴图
-option.TOON_LIGHTMAP.comment=降低原版光照质量以实现卡通渲染。§e[*]§r此选项已知会使游戏“看起来很糟糕”，仅在需要时启用。
+option.TOON_LIGHTMAP.comment=降低原版光照质量以实现卡通渲染。 §e[*]§r此选项已知会使游戏“看起来很糟糕”，仅在需要时启用。
 
 option.RETRO_FILTER=复古滤镜
-option.RETRO_FILTER.comment=添加像素化和抖动效果。§c[-]§r与抗锯齿不兼容。
+option.RETRO_FILTER.comment=添加像素化和抖动效果。 §c[-]§r与抗锯齿不兼容。
 
 option.RETRO_FILTER_SIZE=复古滤镜尺寸
 option.RETRO_FILTER_SIZE.comment=调整复古滤镜的像素尺寸。
 
 option.WORLD_CURVATURE=世界曲率
-option.WORLD_CURVATURE.comment=启用世界曲率。§e[*]§r仅适用于主世界。§c[-]§r丢失的区块由Minecraft本身处理，我无法修复。§c[-]§r在1.17中可能会破坏方块选择高亮。
+option.WORLD_CURVATURE.comment=启用世界曲率。 §e[*]§r仅适用于主世界。 §c[-]§r丢失的区块由Minecraft本身处理，我无法修复。 §c[-]§r在1.17中可能会破坏方块选择高亮。
 
 option.WORLD_CURVATURE_SIZE=世界曲率大小
 option.WORLD_CURVATURE_SIZE.comment=调整世界曲率大小。负值将使世界向上弯曲。
 
 #Animations
 option.WORLD_TIME_ANIMATION=世界时间动画
-option.WORLD_TIME_ANIMATION.comment=使用游戏时间移动物体。§e[*]§r此选项主要用于制作电影。§c[-]§r此选项会完全停止下界和末地中的动画。
+option.WORLD_TIME_ANIMATION.comment=使用游戏时间移动物体。 §e[*]§r此选项主要用于制作电影。 §c[-]§r此选项会完全停止下界和末地中的动画。
 
 option.ANIMATION_SPEED=动画速度
 option.ANIMATION_SPEED.comment=调整动画速度。
