@@ -18,10 +18,13 @@ screen.SPECULAR=Phản chiếu & Bóng loáng
 screen.NORMALS=Bình thường & Hiệu ứng Parallax
 
 screen.ATMOSPHERICS=Khí quyển
-screen.SKY=Cấu hình Bầu trời
-screen.CLOUDS=Cấu hình Mây
-screen.FOG=Cấu hình Sương mù
-screen.SKYBOX=Cấu hình Hộp trời
+screen.CLOUDS=Mây
+screen.FOG=Sương mù
+screen.FOG_DENSITY=Cấu hình mật độ sương mù
+screen.FOG_HEIGHT=Cấu hình chiều cao sương mù
+screen.FOG_VANILLA=Cấu hình sương mù xa tiêu chuẩn
+screen.SKY=Bầu trời
+screen.SKYBOX=Hộp bầu trời
 
 screen.WATER=Nước
 
@@ -77,7 +80,7 @@ screen.EXTRAS=Phụ
 screen.ANIMATION=Hoạt ảnh
 
 #Cài đặt
-option.ABOUT=BSL v8.2.09p1
+option.ABOUT=BSL v8.2.09
 option.ABOUT.comment=của Capt Tatsu. bitslablab.com
 value.ABOUT.0=của Capt Tatsu
 
@@ -139,6 +142,9 @@ option.SHADOW_BLOCK_ENTITY.comment=Kích hoạt bóng trên các khối sinh v�
 
 option.SHADOW_VEGETATION=Bóng của Thực vật
 option.SHADOW_VEGETATION.comment=Kích hoạt bóng trên cỏ, cây trồng, và hầu hết các loại thực vật khác.
+
+option.SHADOW_CLOUD=Bóng mây
+option.SHADOW_CLOUD.comment=Bật bóng đổ do mây tạo ra.
 
 option.sunPathRotation=Quay Đường đi của Mặt trời
 option.sunPathRotation.comment=Điều chỉnh góc của mặt trời.
@@ -302,15 +308,6 @@ option.NORMAL_PLANTS=Cây Hướng lên*
 option.NORMAL_PLANTS.comment=Điều chỉnh độ sáng cây. §e[*]§rTắt điều này nếu mô hình cây không phẳng hoặc áp dụng bản đồ bình thường trên cây.
 
 #Khí quyển
-option.CLOUDS=Mây
-option.CLOUDS.comment=Kích hoạt mây. §a[+]§rHộp trời và mây thể tích được hưởng lợi từ TAA. §e[*]§rMây vanilla yêu cầu cài đặt mây vanilla được thiết lập mặc định hoặc bật.
-value.CLOUDS.0=§cTẮT
-value.CLOUDS.1=Hộp trời
-value.CLOUDS.2=Thể tích
-value.CLOUDS.3=Vanilla
-
-option.FOG_DENSITY=Mật độ Sương mù
-option.FOG_DENSITY.comment=Điều chỉnh mật độ sương mù. §e[*]§rTùy chọn này bị bỏ qua ở nether.
 
 option.LIGHT_SHAFT=Tia sáng
 option.LIGHT_SHAFT.comment=Thêm tia sáng thể tích từ mặt trời / mặt trăng. §a[+]§rHiệu ứng này được hưởng lợi từ TAA. §e[]§rYêu cầu bóng động thời gian thực. §e[]§rHiệu suất phụ thuộc vào Độ phân giải Bản đồ Bóng.
@@ -324,7 +321,7 @@ option.WEATHER_PERBIOME.comment=Sử dụng màu sắc thời tiết đa dạng 
 option.WEATHER_OPACITY=Độ mờ Thời tiết
 option.WEATHER_OPACITY.comment=Điều chỉnh độ mờ thời tiết.
 
-#Cấu hình Bầu trời
+#Bầu trời
 option.SKY_DENSITY_D=Mật độ Ban ngày
 option.SKY_EXPOSURE_D=Phơi sáng Ban ngày
 option.SKY_DENSITY_N=Mật độ Ban đêm
@@ -352,7 +349,14 @@ option.SHADER_END_SKY.comment=Thay thế bầu trời kết thúc vanilla/mod b�
 option.SKY_DEFERRED=Trì hoãn Bầu trời
 option.SKY_DEFERRED.comment=Vẽ bầu trời sau khi các bề mặt không trong suốt được vẽ thay vì ở đầu. §e[*]§rẢnh hưởng đến việc render bầu trời của gói tài nguyên.
 
-#Cấu hình Mây
+#Mây
+option.CLOUDS=Mây
+option.CLOUDS.comment=Bật mây. §a[+]§rSkybox và mây thể tích hưởng lợi từ TAA. §e[*]§rMây tiêu chuẩn yêu cầu cài đặt mây tiêu chuẩn phải được đặt về mặc định hoặc bật.
+value.CLOUDS.0=§cTẮT
+value.CLOUDS.1=Hộp bầu trời
+value.CLOUDS.2=Thể tích
+value.CLOUDS.3=Tiêu chuẩn
+
 option.CLOUD_BASE=Cơ sở Hình dạng
 option.CLOUD_BASE.comment=Xác định loại nhiễu sử dụng cho hình dạng cơ sở của mây.
 value.CLOUD_BASE.0=Perlin
@@ -413,7 +417,21 @@ value.CLOUD_VOLUMETRIC_SCALE.6.0=Vanilla Cũ
 value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
 value.CLOUD_VOLUMETRIC_SCALE.16.0=Hộp trời Gốc
 
-#Cấu hình Sương mù
+#Sương mù
+option.FOG_DENSITY=Mật độ sương mù
+option.FOG_DENSITY.comment=Điều chỉnh mật độ sương mù. §e[*]§rTùy chọn này bị bỏ qua trong địa ngục.
+
+option.FOG_HEIGHT=Sương mù theo chiều cao
+option.FOG_HEIGHT.comment=Bật sương mù theo chiều cao, giảm lượng sương mù dựa trên chiều cao.
+
+option.FAR_VANILLA_FOG=Sương mù tiêu chuẩn xa
+option.FAR_VANILLA_FOG.comment=Bật sương mù giống tiêu chuẩn. §e[*]§rTùy chọn này bị ảnh hưởng bởi mật độ sương mù.
+value.FAR_VANILLA_FOG.0=§cTẮT
+value.FAR_VANILLA_FOG.1=Chỉ Thế giới thường
+value.FAR_VANILLA_FOG.2=Chỉ Địa ngục & Tận cùng
+value.FAR_VANILLA_FOG.3=Toàn bộ
+
+#Mật độ sương mù
 option.FOG_DENSITY_NIGHT=Mật độ Ban đêm - Thời tiết
 option.FOG_DENSITY_NIGHT.comment=Điều chỉnh bội số mật độ sương mù vào ban đêm và khi mưa.
 
@@ -435,13 +453,14 @@ option.FOG_DENSITY_INDOOR.comment=Điều chỉnh bội số mật độ sương
 option.FOG_DENSITY_DH=Mật độ Chân trời Xa
 option.FOG_DENSITY_DH.comment=Điều chỉnh bội số mật độ sương mù ở thế giới trên mặt đất khi Chân trời Xa được kích hoạt.
 
-option.FAR_VANILLA_FOG=Sương mù Vanilla Xa
-option.FAR_VANILLA_FOG.comment=Kích hoạt sương mù giống như vanilla. §e[*]§rTùy chọn này bị ảnh hưởng bởi mật độ sương mù.
-value.FAR_VANILLA_FOG.0=§cTẮT
-value.FAR_VANILLA_FOG.1=Chỉ Thế giới trên mặt đất
-value.FAR_VANILLA_FOG.2=Chỉ Nether & Kết thúc
-value.FAR_VANILLA_FOG.3=Toàn bộ
+#Sương mù theo chiều cao
+option.FOG_HEIGHT_Y=Chiều cao cơ bản
+option.FOG_HEIGHT_Y.comment=Điều chỉnh chiều cao mà sương mù theo chiều cao bắt đầu xuất hiện.
 
+option.FOG_HEIGHT_FALLOFF=Giảm dần theo chiều cao
+option.FOG_HEIGHT_FALLOFF.comment=Điều chỉnh kích thước của sương mù theo chiều cao.
+
+#Sương mù tiêu chuẩn xa
 option.FAR_VANILLA_FOG_STYLE=Phong cách Sương mù Vanilla Xa
 option.FAR_VANILLA_FOG_STYLE.comment=Spherical hoạt động giống như sương mù vanilla. Cylindrical bỏ qua trục Y.
 value.FAR_VANILLA_FOG_STYLE.0=Hình cầu
@@ -457,7 +476,7 @@ value.FOG_VANILLA_CLOUD.1=Tối thiểu
 value.FOG_VANILLA_CLOUD.2=Giảm bớt
 value.FOG_VANILLA_CLOUD.3=Toàn bộ
 
-#Cấu hình Hộp trời
+#Hộp trời
 option.ROUND_SUN_MOON=Mặt trời & Mặt trăng Tròn
 option.ROUND_SUN_MOON.comment=Kích hoạt mặt trời & mặt trăng dựa trên shader. §e[*]§rTắt mặt trời & mặt trăng vanilla trong Cài đặt Video > Chi tiết > Mặt trời & Mặt trăng trên 1.16.4 hoặc thấp hơn.
 
@@ -505,10 +524,10 @@ option.WATER_PARALLAX=Parallax Nước
 option.WATER_PARALLAX.comment=Kích hoạt sự dịch chuyển của nước.
 
 option.WATER_SHADOW_COLOR=Bóng Màu Nước
-option.WATER_SHADOW_COLOR.comment=Xác định liệu nước có nên tạo ra bóng màu để tô màu không. §e[*]§rKích hoạt điều này sẽ ngăn các đối tượng trong suốt tạo ra bóng màu khi ngập dưới nước.
+option.WATER_SHADOW_COLOR.comment=Xác định liệu nước có nên đổ bóng màu để tạo màu hay không. §e[*]§rBật tùy chọn này sẽ ngăn các vật thể trong suốt đổ bóng màu khi bị chìm dưới nước.
 
 option.WATER_CAUSTICS=Caustic Nước
-option.WATER_CAUSTICS.comment=Xác định liệu nước có nên tạo caustic không. §e[]§rKích hoạt điều này sẽ ngăn các đối tượng trong suốt tạo ra bóng màu khi ngập dưới nước. §e[]§rYêu cầu bóng động thời gian thực.
+option.WATER_CAUSTICS.comment=Xác định liệu nước có nên tạo hiệu ứng caustic hay không. §e[]§rBật tùy chọn này sẽ ngăn các vật thể trong suốt đổ bóng màu khi bị chìm dưới nước. §e[]§rYêu cầu bật bóng thời gian thực.
 
 option.WATER_DETAIL=Chi tiết Nước
 option.WATER_DETAIL.comment=Điều chỉnh tỷ lệ giữa sóng nước lớn và nhỏ.
@@ -913,7 +932,7 @@ option.WORLD_CURVATURE_SIZE.comment=Điều chỉnh kích thước độ cong c�
 
 #Hoạt ảnh
 option.WORLD_TIME_ANIMATION=Hoạt ảnh Thời gian Thế giới
-option.WORLD_TIME_ANIMATION.comment=Sử dụng thời gian trong trò chơi cho các đối tượng di động. §e[*]§rTùy chọn này chủ yếu được sử dụng khi tạo các bản demo phim.
+option.WORLD_TIME_ANIMATION.comment=Sử dụng thời gian trong trò chơi cho các đối tượng chuyển động. §e[*]§rTùy chọn này chủ yếu được sử dụng khi tạo các cảnh quay điện ảnh. §c[-]§rTùy chọn này sẽ dừng hoàn toàn hoạt ảnh trong Địa ngục & Tận cùng.
 
 option.ANIMATION_SPEED=Tốc độ Hoạt ảnh
 option.ANIMATION_SPEED.comment=Điều chỉnh tốc độ hoạt ảnh.
@@ -948,6 +967,3 @@ option.WAVING_FIRE.comment=Cho phép lửa uốn lượn.
 
 option.WAVING_LANTERN=Đèn lồng
 option.WAVING_LANTERN.comment=Cho phép đèn lồng uốn lượn.
-
-
-
