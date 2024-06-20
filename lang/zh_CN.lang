@@ -10,7 +10,7 @@ profile.comment=最低:无阴影，没有额外效果 低:低等质量阴影,无
 
 #Screens
 screen.LIGHTING=光照
-screen.SHADOW=更多阴影配置
+screen.SHADOW_CONFIG=更多阴影配置
 screen.MCBL=有色方块光配置
 
 screen.MATERIAL=材质
@@ -69,7 +69,7 @@ screen.END_COLOR=末地颜色
 
 screen.CGT=颜色分级和色调图
 screen.EXPOSURE_CONFIG=更多曝光设置
-screen.COLOR_GRADING=颜色分级配置
+screen.COLOR_GRADING_CONFIG=颜色分级配置
 screen.CG_R=红通道
 screen.CG_G=绿通道
 screen.CG_B=蓝通道
@@ -342,7 +342,7 @@ value.SKY_GROUND.2=完全
 option.UNDERGROUND_SKY=地下天空修复
 option.UNDERGROUND_SKY.comment=隐藏天空，倘若玩家在暗处并处在海平面(Y: 62)以下. §c[-]§r不适用于低超平坦世界.
 
-option.SHADER_END_SKY=摸底天空着色器
+option.SHADER_END_SKY=末地天空着色器
 option.SHADER_END_SKY.comment=使用基于着色器的末地天空盒替换原版/模组的末地天空盒。
 
 option.SKY_DEFERRED=天空延迟渲染
@@ -832,7 +832,7 @@ option.NETHER_VANILLA.comment=使用原版下界颜色.
 
 #Color Grading & Tonemap
 option.EXPOSURE=曝光
-option.TonemapExposure.comment=调整整体亮度.
+option.EXPOSURE.comment=调整整体亮度.
 
 option.AUTO_EXPOSURE=自动曝光
 option.AUTO_EXPOSURE.comment=启用整体亮度的自动调节.
