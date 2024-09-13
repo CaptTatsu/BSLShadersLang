@@ -15,7 +15,7 @@ screen.MCBL=Cấu hình Ánh sáng Màu Khối
 
 screen.MATERIAL=Vật liệu
 screen.SPECULAR=Phản chiếu & Bóng loáng
-screen.NORMALS=Bình thường & Hiệu ứng Parallax
+screen.NORMALS=Bình thường & Hiệu ứng Thị sai
 
 screen.ATMOSPHERICS=Khí quyển
 screen.CLOUDS=Mây
@@ -25,6 +25,7 @@ screen.FOG_HEIGHT=Cấu hình chiều cao sương mù
 screen.FOG_VANILLA=Cấu hình sương mù xa tiêu chuẩn
 screen.SKY=Bầu trời
 screen.SKYBOX=Hộp bầu trời
+screen.LIGHT_SHAFT=Cấu hình tia sáng
 
 screen.WATER=Nước
 
@@ -80,7 +81,7 @@ screen.EXTRAS=Phụ
 screen.ANIMATION=Hoạt ảnh
 
 #Cài đặt
-option.ABOUT=BSL v8.2.09
+option.ABOUT=BSL v8.3 Nguyên Bản
 option.ABOUT.comment=của Capt Tatsu. bitslablab.com
 value.ABOUT.0=của Capt Tatsu
 
@@ -124,14 +125,14 @@ value.DESATURATION_FACTOR.1.0=Trung bình
 value.DESATURATION_FACTOR.0.5=Cao
 value.DESATURATION_FACTOR.0.0=Rất Cao
 
-option.DYNAMIC_HANDLIGHT=Ánh sáng Tay Động
-option.DYNAMIC_HANDLIGHT.comment=Cho phép ánh sáng khối được phát ra từ quan điểm khi cầm một số vật phẩm.
-
 option.MULTICOLORED_BLOCKLIGHT=Ánh sáng Khối Đa màu
 option.MULTICOLORED_BLOCKLIGHT.comment=Kích hoạt ánh sáng khối đa màu trên màn hình. §e[*]§rChỉ hoạt động trên 1.16.5 trở lên, trừ thiết bị Mac.
 
-option.WHITE_WORLD=Thế giới Trắng
-option.WHITE_WORLD.comment=Thay thế texture bằng màu trắng đồng nhất.
+option.DYNAMIC_HANDLIGHT=Ánh sáng Tay Động
+option.DYNAMIC_HANDLIGHT.comment=Cho phép ánh sáng khối được phát ra từ quan điểm khi cầm một số vật phẩm.
+
+option.HALF_LAMBERT=Nửa đơn vị Độ Sáng
+option.HALF_LAMBERT.comment=Cho phép các bề mặt vuông góc với hướng của mặt trời/mặt trăng nhận ánh sáng. §e[*]§rBuộc chế độ độ lệch bóng đổ sử dụng Pháp tuyến bề mặt.
 
 #Cấu hình Bóng Râm Thêm
 option.SHADOW_ENTITY=Bóng của Sinh vật
@@ -185,6 +186,14 @@ value.EMISSIVE.0=§cTẮT
 value.EMISSIVE.1=Chỉ Vật liệu Nâng cao*
 value.EMISSIVE.2=Toàn bộ
 
+option.EMISSIVE_HARDCODED=Phát sáng mặc định
+option.EMISSIVE_HARDCODED.comment=Xác định cách tính lượng phát sáng.
+value.EMISSIVE_HARDCODED.0=Mặc định
+value.EMISSIVE_HARDCODED.1=Cũ
+
+option.ENTITY_FLASH=Chớp sáng Sinh vật
+option.ENTITY_FLASH.comment=Kích hoạt hiệu ứng chớp sáng cho sinh vật bị hại và creeper gần đó.
+
 option.REFRACTION=Khúc xạ
 option.REFRACTION.comment=Kích hoạt sự méo mó phía sau bề mặt trong suốt có bản đồ bình thường. §c[-]§rBề mặt trong suốt sẽ bị méo mó. §c[-]§rMột số tính năng khác có thể không hoạt động đúng cách với hiệu ứng này được kích hoạt.
 value.REFRACTION.0=TẮT
@@ -199,9 +208,6 @@ option.ALPHA_BLEND.comment=Xác định cách thực hiện pha trộn trong su�
 value.ALPHA_BLEND.0=Gamma
 value.ALPHA_BLEND.1=Tuyến tính
 
-option.ENTITY_FLASH=Chớp sáng Sinh vật
-option.ENTITY_FLASH.comment=Kích hoạt hiệu ứng chớp sáng cho sinh vật bị hại và creeper gần đó.
-
 #Phản chiếu & Bóng loáng
 option.REFLECTION=Phản chiếu
 option.REFLECTION.comment=Kích hoạt phản chiếu trên nước và bề mặt trong suốt.
@@ -211,6 +217,35 @@ value.REFLECTION.2=Toàn bộ
 
 option.REFLECTION_TRANSLUCENT=Phản chiếu Trong suốt
 option.REFLECTION_TRANSLUCENT.comment=Cho phép phản chiếu được hiển thị trên các bề mặt trong suốt, như kính màu, băng, khối slime và hơn thế nữa.
+
+option.REFLECTION_MODE=Chế độ Phản chiếu
+option.REFLECTION_MODE.comment=Điều chỉnh hành vi phản chiếu.
+value.REFLECTION_MODE.0=Ít Trùng lặp
+value.REFLECTION_MODE.1=Cân bằng
+value.REFLECTION_MODE.2=Điền vào khoảng trống Nhiều hơn
+
+option.REFLECTION_PREVIOUS=Phản chiếu Khung hình Trước
+option.REFLECTION_PREVIOUS.comment=Cho phép các bề mặt trong suốt được phản chiếu bằng cách sử dụng thông tin khung hình trước. §c[-]§rCó thể gây thiếu phản chiếu trong ảnh chụp màn hình (do cài đặt kích thước ảnh chụp). §c[-]§rKhông tương thích với một số GPU. §c[-]§rLỗi trong 1.7.10.
+
+option.SPECULAR_HIGHLIGHT_ROUGH=Điểm sáng Đặc biệt Thô
+option.SPECULAR_HIGHLIGHT_ROUGH.comment=Cho phép các bề mặt thô có độ bóng yếu.
+value.SPECULAR_HIGHLIGHT.0=§cTẮT
+value.SPECULAR_HIGHLIGHT.1=Chỉ mờ
+value.SPECULAR_HIGHLIGHT.2=Đầy đủ
+
+option.REFLECTION_PRECISION=Phản xạ có độ chính xác cao
+option.REFLECTION_PRECISION.comment=Giảm độ nhiễu trên phản xạ khi được bật.
+
+option.REFLECTION_SKY_FALLOFF=Suy giảm Phản chiếu Bầu trời
+option.REFLECTION_SKY_FALLOFF.comment=Điều chỉnh mức độ xa mà phản chiếu bầu trời mờ dần dưới ánh sáng trời yếu.
+value.REFLECTION_SKY_FALLOFF.1=Rất Yếu
+value.REFLECTION_SKY_FALLOFF.2=Yếu
+value.REFLECTION_SKY_FALLOFF.4=Cân bằng
+value.REFLECTION_SKY_FALLOFF.8=Mạnh
+value.REFLECTION_SKY_FALLOFF.16=Rất Mạnh
+
+option.REFLECTION_SKYBOX=Phản chiếu Hộp trời
+option.REFLECTION_SKYBOX.comment=Cho phép hộp trời của gói tài nguyên được bao gồm trong phản chiếu. §c[-]§rHộp trời chỉ được áp dụng cho các bề mặt trong suốt.
 
 option.REFLECTION_SPECULAR=Phản chiếu Đặc biệt*
 option.REFLECTION_SPECULAR.comment=Kích hoạt phản chiếu trên các bề mặt nhẵn hoặc kim loại.
@@ -229,38 +264,18 @@ value.REFLECTION_RAIN_AMOUNT.0.6=Trung bình
 value.REFLECTION_RAIN_AMOUNT.0.7=Cao
 value.REFLECTION_RAIN_AMOUNT.1.0=Rất Cao
 
-option.REFLECTION_PREVIOUS=Phản chiếu Khung hình Trước
-option.REFLECTION_PREVIOUS.comment=Cho phép các bề mặt trong suốt được phản chiếu bằng cách sử dụng thông tin khung hình trước. §c[-]§rCó thể gây thiếu phản chiếu trong ảnh chụp màn hình (do cài đặt kích thước ảnh chụp). §c[-]§rKhông tương thích với một số GPU. §c[-]§rLỗi trong 1.7.10.
+option.SPECULAR_HIGHLIGHT_ROUGH=Đánh dấu điểm sáng thô*
+option.SPECULAR_HIGHLIGHT_ROUGH.comment=Cho phép bề mặt thô có độ bóng yếu.
 
-option.SPECULAR_HIGHLIGHT_ROUGH=Điểm sáng Đặc biệt Thô
-option.SPECULAR_HIGHLIGHT_ROUGH.comment=Cho phép các bề mặt thô có độ bóng yếu.
+option.ALBEDO_METAL=labPBR Albedo Kim loại*
+option.ALBEDO_METAL.comment=Áp dụng kết cấu nền như một lớp màu lên các bề mặt kim loại được mã hóa cứng. §e[*]§rChỉ hoạt động trên định dạng vật liệu labPBR.
 
-option.ALBEDO_METAL=Màu Albedo Kim loại Cố định*
-option.ALBEDO_METAL.comment=Áp dụng màu texture cơ bản như màu nhuộm trên các bề mặt kim loại cố định. §e[*]§rChỉ hoạt động với định dạng vật liệu labPBR.
-
-option.REFLECTION_MODE=Chế độ Phản chiếu
-option.REFLECTION_MODE.comment=Điều chỉnh hành vi phản chiếu.
-value.REFLECTION_MODE.0=Ít Trùng lặp
-value.REFLECTION_MODE.1=Cân bằng
-value.REFLECTION_MODE.2=Điền vào khoảng trống Nhiều hơn
-
-option.REFLECTION_SKY_FALLOFF=Suy giảm Phản chiếu Bầu trời
-option.REFLECTION_SKY_FALLOFF.comment=Điều chỉnh mức độ xa mà phản chiếu bầu trời mờ dần dưới ánh sáng trời yếu.
-value.REFLECTION_SKY_FALLOFF.1=Rất Yếu
-value.REFLECTION_SKY_FALLOFF.2=Yếu
-value.REFLECTION_SKY_FALLOFF.4=Cân bằng
-value.REFLECTION_SKY_FALLOFF.8=Mạnh
-value.REFLECTION_SKY_FALLOFF.16=Rất Mạnh
-
-option.REFLECTION_SKYBOX=Phản chiếu Hộp trời
-option.REFLECTION_SKYBOX.comment=Cho phép hộp trời của gói tài nguyên được bao gồm trong phản chiếu. §c[-]§rHộp trời chỉ được áp dụng cho các bề mặt trong suốt.
-
-#Bản đồ bình thường & Parallax
-option.PARALLAX=Ánh xạ Parallax*
+#Bản đồ bình thường & Thị Sai
+option.PARALLAX=Ánh xạ Thị Sai*
 option.PARALLAX.comment=Thêm sự lồi lõm trên bề mặt sử dụng bản đồ độ cao.
 
-option.PARALLAX_DEPTH=Độ sâu Parallax*
-option.PARALLAX_DEPTH.comment=Điều chỉnh độ sâu của parallax.
+option.PARALLAX_DEPTH=Độ sâu Thị Sai*
+option.PARALLAX_DEPTH.comment=Điều chỉnh độ sâu của thị sai.
 value.PARALLAX_DEPTH.0.05=5 cm
 value.PARALLAX_DEPTH.0.10=10 cm
 value.PARALLAX_DEPTH.0.15=15 cm
@@ -272,11 +287,11 @@ value.PARALLAX_DEPTH.0.40=40 cm
 value.PARALLAX_DEPTH.0.45=45 cm
 value.PARALLAX_DEPTH.0.50=50 cm
 
-option.PARALLAX_QUALITY=Mẫu Parallax*
-option.PARALLAX_QUALITY.comment=Điều chỉnh chất lượng của ánh xạ parallax.
+option.PARALLAX_QUALITY=Mẫu Thị Sai*
+option.PARALLAX_QUALITY.comment=Điều chỉnh chất lượng của ánh xạ thị sai.
 
-option.PARALLAX_DISTANCE=Khoảng cách Parallax*
-option.PARALLAX_DISTANCE.comment=Điều chỉnh khoảng cách mà ánh xạ parallax và bóng tự thân có thể được hiển thị.
+option.PARALLAX_DISTANCE=Khoảng cách Thị Sai*
+option.PARALLAX_DISTANCE.comment=Điều chỉnh khoảng cách mà ánh xạ thị sai và bóng tự thân có thể được hiển thị.
 
 option.SELF_SHADOW=Bóng Tự thân*
 option.SELF_SHADOW.comment=Cho phép bề mặt tự tạo bóng cho chính mình sử dụng bản đồ độ cao.
@@ -308,12 +323,8 @@ option.NORMAL_PLANTS=Cây Hướng lên*
 option.NORMAL_PLANTS.comment=Điều chỉnh độ sáng cây. §e[*]§rTắt điều này nếu mô hình cây không phẳng hoặc áp dụng bản đồ bình thường trên cây.
 
 #Khí quyển
-
 option.LIGHT_SHAFT=Tia sáng
 option.LIGHT_SHAFT.comment=Thêm tia sáng thể tích từ mặt trời / mặt trăng. §a[+]§rHiệu ứng này được hưởng lợi từ TAA. §e[]§rYêu cầu bóng động thời gian thực. §e[]§rHiệu suất phụ thuộc vào Độ phân giải Bản đồ Bóng.
-
-option.LIGHT_SHAFT_STRENGTH=Cường độ Tia sáng
-option.LIGHT_SHAFT_STRENGTH.comment=Điều chỉnh cường độ tia sáng.
 
 option.WEATHER_PERBIOME=Thời tiết Theo Biome
 option.WEATHER_PERBIOME.comment=Sử dụng màu sắc thời tiết đa dạng cho các biome khác nhau. §c[-]§rCó thể không hoạt động trong một số trường hợp không xác định.
@@ -361,6 +372,7 @@ option.CLOUD_BASE=Cơ sở Hình dạng
 option.CLOUD_BASE.comment=Xác định loại nhiễu sử dụng cho hình dạng cơ sở của mây.
 value.CLOUD_BASE.0=Perlin
 value.CLOUD_BASE.1=Worley
+value.CLOUD_BASE.2=Khối
 
 option.CLOUD_DENSITY=Mật độ
 option.CLOUD_DENSITY.comment=Điều chỉnh mật độ mây, mật độ cao hơn làm cho các lỗi trở nên rõ ràng hơn.
@@ -371,7 +383,7 @@ value.CLOUD_DENSITY.6=Cao
 value.CLOUD_DENSITY.8=Rất Cao
 
 option.CLOUD_AMOUNT=Số lượng
-option.CLOUD_AMOUNT.comment=Điều chỉnh số lượng mây.
+option.CLOUD_AMOUNT.comment=Điều chỉnh lượng mây. §e[*]§rTùy chọn này bị bỏ qua khi sử dụng hình dạng pixel mềm làm nền.
 value.CLOUD_AMOUNT.12.0=Rất Thấp
 value.CLOUD_AMOUNT.11.0=Thấp
 value.CLOUD_AMOUNT.10.0=Trung bình
@@ -386,6 +398,20 @@ value.CLOUD_HEIGHT.10.0=Trung bình
 value.CLOUD_HEIGHT.12.5=Cao
 value.CLOUD_HEIGHT.15.0=Rất Cao
 
+option.CLOUD_VOLUMETRIC_SCALE=Thang đo Thể tích
+option.CLOUD_VOLUMETRIC_SCALE.comment=Điều chỉnh độ cao và kích thước của mây thể tích
+value.CLOUD_VOLUMETRIC_SCALE.6.0=Vanilla Cũ
+value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
+value.CLOUD_VOLUMETRIC_SCALE.16.0=Hộp trời Gốc
+
+option.CLOUD_STRETCH=Kéo dãn
+option.CLOUD_STRETCH.comment=Điều chỉnh độ kéo dãn của mây.
+value.CLOUD_STRETCH.2.0=Rất thấp
+value.CLOUD_STRETCH.1.4=Thấp
+value.CLOUD_STRETCH.1.0=Trung bình
+value.CLOUD_STRETCH.0.7=Cao
+value.CLOUD_STRETCH.0.5=Rất cao
+
 option.CLOUD_THICKNESS=Độ dày
 option.CLOUD_THICKNESS.comment=Điều chỉnh độ dày của mây.
 value.CLOUD_THICKNESS.2=Rất Thấp
@@ -395,7 +421,7 @@ value.CLOUD_THICKNESS.7=Cao
 value.CLOUD_THICKNESS.10=Rất Cao
 
 option.CLOUD_DETAIL=Chi tiết
-option.CLOUD_DETAIL.comment=Điều chỉnh chi tiết của mây.
+option.CLOUD_DETAIL.comment=Điều chỉnh chi tiết của mây.  §e[*]§rTùy chọn này bị bỏ qua khi sử dụng hình dạng pixel mềm làm nền.
 value.CLOUD_DETAIL.0.3=Rất Thấp
 value.CLOUD_DETAIL.0.7=Thấp
 value.CLOUD_DETAIL.1.0=Trung bình
@@ -411,15 +437,15 @@ option.CLOUD_OPACITY.comment=Điều chỉnh độ mờ của mây.
 option.CLOUD_BRIGHTNESS=Độ sáng
 option.CLOUD_BRIGHTNESS.comment=Điều chỉnh độ sáng của mây.
 
-option.CLOUD_VOLUMETRIC_SCALE=Thang đo Thể tích
-option.CLOUD_VOLUMETRIC_SCALE.comment=Điều chỉnh độ cao và kích thước của mây thể tích
-value.CLOUD_VOLUMETRIC_SCALE.6.0=Vanilla Cũ
-value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
-value.CLOUD_VOLUMETRIC_SCALE.16.0=Hộp trời Gốc
-
 #Sương mù
-option.FOG_DENSITY=Mật độ sương mù
-option.FOG_DENSITY.comment=Điều chỉnh mật độ sương mù. §e[*]§rTùy chọn này bị bỏ qua trong địa ngục.
+option.FOG_DENSITY=Mật độ sương mù Overworld
+option.FOG_DENSITY.comment=Điều chỉnh mật độ sương mù khi ở Overworld.
+
+option.FOG_DENSITY_NETHER=Mật độ Nether
+option.FOG_DENSITY_NETHER.comment=Điều chỉnh mật độ sương mù khi ở Nether.
+
+option.FOG_DENSITY_END=Mật độ End
+option.FOG_DENSITY_END.comment=Điều chỉnh mật độ sương mù khi ở End.
 
 option.FOG_HEIGHT=Sương mù theo chiều cao
 option.FOG_HEIGHT.comment=Bật sương mù theo chiều cao, giảm lượng sương mù dựa trên chiều cao.
@@ -477,11 +503,8 @@ value.FOG_VANILLA_CLOUD.2=Giảm bớt
 value.FOG_VANILLA_CLOUD.3=Toàn bộ
 
 #Hộp trời
-option.ROUND_SUN_MOON=Mặt trời & Mặt trăng Tròn
-option.ROUND_SUN_MOON.comment=Kích hoạt mặt trời & mặt trăng dựa trên shader. §e[*]§rTắt mặt trời & mặt trăng vanilla trong Cài đặt Video > Chi tiết > Mặt trời & Mặt trăng trên 1.16.4 hoặc thấp hơn.
-
-option.ROUND_SUN_MOON_SIZE=Kích thước Mặt trời & Mặt trăng
-option.ROUND_SUN_MOON_SIZE.comment=Điều chỉnh kích thước cho mặt trời & mặt trăng tròn và điểm sáng đặc biệt.
+option.SHADER_SUN_MOON=Mặt trời & Mặt trăng dùng Shader
+option.SHADER_SUN_MOON.comment=Bật mặt trời và mặt trăng dựa trên shader. §e[*]§rTắt mặt trời và mặt trăng mặc định trong Cài đặt video > Chi tiết > Mặt trời & Mặt trăng trên phiên bản 1.16.4 hoặc thấp hơn.
 
 option.STARS=Sao
 option.STARS.comment=Kích hoạt sao.
@@ -501,6 +524,30 @@ option.SUN_INTENSITY.comment=Điều chỉnh cường độ mặt trời hộp t
 option.MOON_INTENSITY=Cường độ Mặt trăng
 option.MOON_INTENSITY.comment=Điều chỉnh cường độ mặt trăng hộp trời. §c[-]§rChỉ có sẵn cho 1.16.5 trở lên.
 
+option.SHADER_SUN_MOON_SHAPE=Hình dạng Mặt trời & Mặt trăng
+option.SHADER_SUN_MOON_SHAPE.comment=Xác định hình dạng của mặt trời & mặt trăng dựa trên shader và điểm nhấn phản chiếu.
+value.SHADER_SUN_MOON_SHAPE.0=Tròn
+value.SHADER_SUN_MOON_SHAPE.1=Vuông
+
+option.SHADER_SUN_MOON_SIZE=Kích thước Mặt trời & Mặt trăng
+option.SHADER_SUN_MOON_SIZE.comment=Điều chỉnh kích thước của mặt trời & mặt trăng tròn và điểm nhấn phản chiếu.
+
+#Tia sáng
+option.LIGHT_SHAFT_STRENGTH=Cường độ Tia sáng
+option.LIGHT_SHAFT_STRENGTH.comment=Điều chỉnh cường độ tia sáng.
+
+option.LIGHT_SHAFT_MORNING_FALLOFF=Giảm dần vào buổi sáng
+option.LIGHT_SHAFT_MORNING_FALLOFF.comment=Điều chỉnh bán kính tia sáng vào lúc bình minh/hoàng hôn.
+
+option.LIGHT_SHAFT_DAY_FALLOFF=Giảm dần vào ban ngày
+option.LIGHT_SHAFT_DAY_FALLOFF.comment=Điều chỉnh bán kính tia sáng vào buổi trưa.
+
+option.LIGHT_SHAFT_NIGHT_FALLOFF=Giảm dần vào ban đêm
+option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=Điều chỉnh bán kính tia sáng vào ban đêm.
+
+option.LIGHT_SHAFT_WEATHER_FALLOFF=Giảm dần theo thời tiết
+option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=Điều chỉnh hệ số bán kính tia sáng khi trời mưa.
+
 #Nước
 option.WATER_MODE=Chế độ Texture Nước
 option.WATER_MODE.comment=Xác định liệu texture nước vanilla có nên được sử dụng hay không. Mặc định: màu nước phẳng của shader, không có texture. Vanilla: texture vanilla. Vanilla Được Tô màu: texture vanilla với màu nước của shader. Vanilla Phẳng: màu nước phẳng của vanilla.
@@ -515,12 +562,13 @@ value.WATER_ALPHA_MODE.0=Phẳng
 value.WATER_ALPHA_MODE.1=Vanilla
 
 option.WATER_NORMALS=Bản đồ Bình thường Nước
-option.WATER_NORMALS.comment=Kích hoạt ánh xạ bình thường được tạo trong thời gian thực cho nước.
-value.WATER_NORMALS.0=§cTẮT
+option.WATER_NORMALS.comment=Bật bản đồ thường (normal mapping) tạo theo thời gian thực cho nước. §e[*]§rBản đồ thường của gói tài nguyên yêu cầu bật vật liệu nâng cao.
+value.WATER_NORMALS.0=§cKhông Có
 value.WATER_NORMALS.1=Worley
 value.WATER_NORMALS.2=Perlin
+value.WATER_NORMALS.3=Gói Tài Nguyên
 
-option.WATER_PARALLAX=Parallax Nước
+option.WATER_PARALLAX=Thị sai Nước
 option.WATER_PARALLAX.comment=Kích hoạt sự dịch chuyển của nước.
 
 option.WATER_SHADOW_COLOR=Bóng Màu Nước
@@ -640,6 +688,7 @@ value.CHROMATIC_ABERRATION.0=TẮT
 value.CHROMATIC_ABERRATION.1=Yếu
 value.CHROMATIC_ABERRATION.2=Mạnh
 
+
 option.UNDERWATER_DISTORTION=Biến dạng Dưới nước
 option.UNDERWATER_DISTORTION.comment=Áp dụng biến dạng màn hình khi dưới nước.
 
@@ -737,6 +786,8 @@ option.WATER_B=Xanh dương
 option.WATER_I=Cường độ
 option.WATER_A=Alpha
 option.WATER_F=Mật độ Sương mù
+option.WATER_VI=Cường độ Vanilla
+option.WATER_VA=Đường cong Alpha Vanilla
 
 option.WEATHER_RR=Đỏ
 option.WEATHER_RG=Xanh lá
@@ -826,6 +877,12 @@ option.SKY_VANILLA.comment=Sử dụng màu bầu trời vanilla.
 
 option.SKY_VANILLA_USE_FOG=Sử dụng Màu Sương mù Vanilla
 option.SKY_VANILLA_USE_FOG.comment=Cho phép sử dụng màu sương mù vanilla trong khi Bầu trời Vanilla được kích hoạt.
+
+option.SKY_VANILLA_SKY_BLEND=Pha trộn Bầu trời Vanilla
+option.SKY_VANILLA_SKY_BLEND.comment=Điều chỉnh sự pha trộn màu sương mù mặc định trên bầu trời.
+
+option.SKY_VANILLA_FOG_BLEND=Pha trộn Sương mù Vanilla
+option.SKY_VANILLA_FOG_BLEND.comment=Điều chỉnh sự pha trộn màu sương mù mặc định trên lớp sương mù.
 
 option.NETHER_VANILLA=Vanilla Nether
 option.NETHER_VANILLA.comment=Sử dụng màu nether vanilla.
@@ -929,6 +986,9 @@ option.WORLD_CURVATURE.comment=Kích hoạt độ cong của thế giới. §e[*
 
 option.WORLD_CURVATURE_SIZE=Kích thước Độ Cong của Thế giới
 option.WORLD_CURVATURE_SIZE.comment=Điều chỉnh kích thước độ cong của thế giới. Các giá trị âm sẽ cong thế giới lên trên.
+
+option.WHITE_WORLD=Thế giới Trắng
+option.WHITE_WORLD.comment=Thay thế các kết cấu bằng màu trắng phẳng.
 
 #Hoạt ảnh
 option.WORLD_TIME_ANIMATION=Hoạt ảnh Thời gian Thế giới
