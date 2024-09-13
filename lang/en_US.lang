@@ -25,6 +25,7 @@ screen.FOG_HEIGHT=Height Fog Config
 screen.FOG_VANILLA=Far Vanilla Fog Config
 screen.SKY=Sky
 screen.SKYBOX=Skybox
+screen.LIGHT_SHAFT=Light Shaft Config
 
 screen.WATER=Water
 
@@ -80,7 +81,7 @@ screen.EXTRAS=Extras
 screen.ANIMATION=Animations
 
 #Settings
-option.ABOUT=BSL v8.2.09
+option.ABOUT=BSL v8.3 Classic
 option.ABOUT.comment=by Capt Tatsu. bitslablab.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -124,14 +125,14 @@ value.DESATURATION_FACTOR.1.0=Medium
 value.DESATURATION_FACTOR.0.5=High
 value.DESATURATION_FACTOR.0.0=Very High
 
-option.DYNAMIC_HANDLIGHT=Dynamic Handlight
-option.DYNAMIC_HANDLIGHT.comment=Allows blocklight to be emitted from view when holding certain objects.
-
 option.MULTICOLORED_BLOCKLIGHT=Multi-Colored Blocklight
 option.MULTICOLORED_BLOCKLIGHT.comment=Enables screen space multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above, non-Mac devices.
 
-option.WHITE_WORLD=White World
-option.WHITE_WORLD.comment=Replaces textures with flat white color.
+option.DYNAMIC_HANDLIGHT=Dynamic Handlight
+option.DYNAMIC_HANDLIGHT.comment=Allows blocklight to be emitted from view when holding certain objects.
+
+option.HALF_LAMBERT=Half Lambert
+option.HALF_LAMBERT.comment=Allows surfaces perpendicular to the sun/moon direction to receive light. §e[*]§rForces Shadow Bias Mode to Surface Normal.
 
 #More Shadow Config
 option.SHADOW_ENTITY=Entity Shadow
@@ -185,6 +186,14 @@ value.EMISSIVE.0=§cOFF
 value.EMISSIVE.1=AdvMat Only*
 value.EMISSIVE.2=Full
 
+option.EMISSIVE_HARDCODED=Hardcoded Emissive
+option.EMISSIVE_HARDCODED.comment=Determines how emissive amount is calculated.
+value.EMISSIVE_HARDCODED.0=Default
+value.EMISSIVE_HARDCODED.1=Legacy
+
+option.ENTITY_FLASH=Entity Flash
+option.ENTITY_FLASH.comment=Enables damaged entities and nearby creeper to flash.
+
 option.REFRACTION=Refraction
 option.REFRACTION.comment=Enables distortion behind normal mapped transparent surfaces. §c[-]§rThe transparent surface itself will be distorted. §c[-]§rSome other features may not work properly with this effect enabled.
 value.REFRACTION.0=OFF
@@ -199,9 +208,6 @@ option.ALPHA_BLEND.comment=Determines how transparency blending is done.
 value.ALPHA_BLEND.0=Gamma
 value.ALPHA_BLEND.1=Linear
 
-option.ENTITY_FLASH=Entity Flash
-option.ENTITY_FLASH.comment=Enables damaged entities and nearby creeper to flash.
-
 #Specular & Reflections
 option.REFLECTION=Reflections
 option.REFLECTION.comment=Enables reflections on water and translucents.
@@ -211,6 +217,35 @@ value.REFLECTION.2=Full
 
 option.REFLECTION_TRANSLUCENT=Translucent Reflections
 option.REFLECTION_TRANSLUCENT.comment=Allows reflection to be rendered on translucent surfaces, such as stained glass, ice, slime blocks, and more.
+
+option.REFLECTION_MODE=Reflection Mode
+option.REFLECTION_MODE.comment=Adjusts reflection behavior.
+value.REFLECTION_MODE.0=Less Duplicates
+value.REFLECTION_MODE.1=Balanced
+value.REFLECTION_MODE.2=More Gap Filling
+
+option.REFLECTION_PREVIOUS=Previous Frame Reflection
+option.REFLECTION_PREVIOUS.comment=Allows translucents to be reflected by using previous frame information. §c[-]§rMay cause missing reflection on screenshot (caused by screenshot size setting). §c[-]§rIncompatible with some GPUs. §c[-]§rBugged in 1.7.10.
+
+option.SPECULAR_HIGHLIGHT=Specular Highlight
+option.SPECULAR_HIGHLIGHT.comment=Enables bright spot which appears on shiny surfaces.
+value.SPECULAR_HIGHLIGHT.0=§cOFF
+value.SPECULAR_HIGHLIGHT.1=Opaque Only
+value.SPECULAR_HIGHLIGHT.2=Full
+
+option.REFLECTION_PRECISION=High Precision Reflection
+option.REFLECTION_PRECISION.comment=Reduces choppiness on reflections when enabled.
+
+option.REFLECTION_SKY_FALLOFF=Sky Reflection Falloff
+option.REFLECTION_SKY_FALLOFF.comment=Adjusts how far sky reflection fades out under low skylight.
+value.REFLECTION_SKY_FALLOFF.1=Very Weak
+value.REFLECTION_SKY_FALLOFF.2=Weak
+value.REFLECTION_SKY_FALLOFF.4=Balanced
+value.REFLECTION_SKY_FALLOFF.8=Strong
+value.REFLECTION_SKY_FALLOFF.16=Very Strong
+
+option.REFLECTION_SKYBOX=Reflect Skybox
+option.REFLECTION_SKYBOX.comment=Allows resource pack skybox to be included in reflections. §c[-]§rSkybox is only applied to transparent surfaces.
 
 option.REFLECTION_SPECULAR=Specular Reflection*
 option.REFLECTION_SPECULAR.comment=Enables reflection on smooth or metallic surfaces.
@@ -227,33 +262,13 @@ value.REFLECTION_RAIN_AMOUNT.0.4=Very Low
 value.REFLECTION_RAIN_AMOUNT.0.5=Low
 value.REFLECTION_RAIN_AMOUNT.0.6=Medium
 value.REFLECTION_RAIN_AMOUNT.0.7=High
-value.REFLECTION_RAIN_AMOUNT.1.0=Very High
+value.REFLECTION_RAIN_AMOUNT.1.0=Very high
 
-option.REFLECTION_PREVIOUS=Previous Frame Reflection
-option.REFLECTION_PREVIOUS.comment=Allows translucents to be reflected by using previous frame information. §c[-]§rMay cause missing reflection on screenshot (caused by screenshot size setting). §c[-]§rIncompatible with some GPUs. §c[-]§rBugged in 1.7.10.
-
-option.SPECULAR_HIGHLIGHT_ROUGH=Rough Specular Highlight
+option.SPECULAR_HIGHLIGHT_ROUGH=Rough Specular Highlight*
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=Allows rough surfaces to have weak gloss.
 
-option.ALBEDO_METAL=Albedo Tinted Hardcoded Metal*
+option.ALBEDO_METAL=labPBR Albedo Metal*
 option.ALBEDO_METAL.comment=Applies base texture as tint on hardcoded metallic surfaces. §e[*]§rWorks on labPBR material format only.
-
-option.REFLECTION_MODE=Reflection Mode
-option.REFLECTION_MODE.comment=Adjusts reflection behavior.
-value.REFLECTION_MODE.0=Less Duplicates
-value.REFLECTION_MODE.1=Balanced
-value.REFLECTION_MODE.2=More Gap Filling
-
-option.REFLECTION_SKY_FALLOFF=Sky Reflection Falloff
-option.REFLECTION_SKY_FALLOFF.comment=Adjusts how far sky reflection fades out under low skylight.
-value.REFLECTION_SKY_FALLOFF.1=Very Weak
-value.REFLECTION_SKY_FALLOFF.2=Weak
-value.REFLECTION_SKY_FALLOFF.4=Balanced
-value.REFLECTION_SKY_FALLOFF.8=Strong
-value.REFLECTION_SKY_FALLOFF.16=Very Strong
-
-option.REFLECTION_SKYBOX=Reflect Skybox
-option.REFLECTION_SKYBOX.comment=Allows resource pack skybox to be included in reflections. §c[-]§rSkybox is only applied to transparent surfaces.
 
 #Normals & Parallax
 option.PARALLAX=Parallax Occlusion Mapping*
@@ -311,9 +326,6 @@ option.NORMAL_PLANTS.comment=Adjusts plant shading. §e[*]§rDisable this if non
 option.LIGHT_SHAFT=Light Shafts
 option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis effect benefits from TAA. §e[*]§rRequires realtime shadows. §e[*]§rPerformance depends on Shadowmap Resolution.
 
-option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
-option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
-
 option.WEATHER_PERBIOME=Per Biome Weather
 option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. §c[-]§rMay not work under unknown conditions.
 
@@ -360,6 +372,7 @@ option.CLOUD_BASE=Base Shape
 option.CLOUD_BASE.comment=Determines which noise type used for the cloud's base shape.
 value.CLOUD_BASE.0=Perlin
 value.CLOUD_BASE.1=Worley
+value.CLOUD_BASE.2=Blocky
 
 option.CLOUD_DENSITY=Density
 option.CLOUD_DENSITY.comment=Adjusts cloud density, higher density makes artifacts more visible.
@@ -370,7 +383,7 @@ value.CLOUD_DENSITY.6=High
 value.CLOUD_DENSITY.8=Very High
 
 option.CLOUD_AMOUNT=Amount
-option.CLOUD_AMOUNT.comment=Adjusts cloud amount.
+option.CLOUD_AMOUNT.comment=Adjusts cloud amount. §e[*]§rThis option is ignored by soft pixel base shape.
 value.CLOUD_AMOUNT.12.0=Very Low
 value.CLOUD_AMOUNT.11.0=Low
 value.CLOUD_AMOUNT.10.0=Medium
@@ -385,6 +398,20 @@ value.CLOUD_HEIGHT.10.0=Medium
 value.CLOUD_HEIGHT.12.5=High
 value.CLOUD_HEIGHT.15.0=Very High
 
+option.CLOUD_VOLUMETRIC_SCALE=Volumetric Scale
+option.CLOUD_VOLUMETRIC_SCALE.comment=Adjusts volumetric cloud altitude and size
+value.CLOUD_VOLUMETRIC_SCALE.6.0=Old Vanilla
+value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
+value.CLOUD_VOLUMETRIC_SCALE.16.0=Original Skybox
+
+option.CLOUD_STRETCH=Stretch
+option.CLOUD_STRETCH.comment=Adjusts cloud stretch.
+value.CLOUD_STRETCH.2.0=Very Low
+value.CLOUD_STRETCH.1.4=Low
+value.CLOUD_STRETCH.1.0=Medium
+value.CLOUD_STRETCH.0.7=High
+value.CLOUD_STRETCH.0.5=Very High
+
 option.CLOUD_THICKNESS=Thickness
 option.CLOUD_THICKNESS.comment=Adjusts cloud thickness.
 value.CLOUD_THICKNESS.2=Very Low
@@ -394,7 +421,7 @@ value.CLOUD_THICKNESS.7=High
 value.CLOUD_THICKNESS.10=Very High
 
 option.CLOUD_DETAIL=Detail
-option.CLOUD_DETAIL.comment=Adjusts cloud detail.
+option.CLOUD_DETAIL.comment=Adjusts cloud detail.  §e[*]§rThis option is ignored by soft pixel base shape.
 value.CLOUD_DETAIL.0.3=Very Low
 value.CLOUD_DETAIL.0.7=Low
 value.CLOUD_DETAIL.1.0=Medium
@@ -410,15 +437,15 @@ option.CLOUD_OPACITY.comment=Adjusts cloud opacity.
 option.CLOUD_BRIGHTNESS=Brightness
 option.CLOUD_BRIGHTNESS.comment=Adjusts cloud brightness.
 
-option.CLOUD_VOLUMETRIC_SCALE=Volumetric Scale
-option.CLOUD_VOLUMETRIC_SCALE.comment=Adjusts volumetric cloud altitude and size
-value.CLOUD_VOLUMETRIC_SCALE.6.0=Old Vanilla
-value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
-value.CLOUD_VOLUMETRIC_SCALE.16.0=Original Skybox
-
 #Fog
-option.FOG_DENSITY=Fog Density
-option.FOG_DENSITY.comment=Adjusts fog density. §e[*]§rThis option is ignored in the nether.
+option.FOG_DENSITY=Overworld Fog Density
+option.FOG_DENSITY.comment=Adjusts fog density while in the overworld.
+
+option.FOG_DENSITY_NETHER=Nether Density
+option.FOG_DENSITY_NETHER.comment=Adjusts fog density while in the nether.
+
+option.FOG_DENSITY_END=End Density
+option.FOG_DENSITY_END.comment=Adjusts fog density while in the end.
 
 option.FOG_HEIGHT=Height Fog
 option.FOG_HEIGHT.comment= Enables height fog, reducing fog amount based on height.
@@ -476,11 +503,8 @@ value.FOG_VANILLA_CLOUD.2=Reduced
 value.FOG_VANILLA_CLOUD.3=Full
 
 #Skybox
-option.ROUND_SUN_MOON=Round Sun & Moon
-option.ROUND_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.16.4 or below.
-
-option.ROUND_SUN_MOON_SIZE=Sun & Moon Size
-option.ROUND_SUN_MOON_SIZE.comment=Adjusts size for round sun & moon and specular highlight.
+option.SHADER_SUN_MOON=Shader Sun & Moon
+option.SHADER_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.16.4 or below.
 
 option.STARS=Stars
 option.STARS.comment=Enables stars.
@@ -500,6 +524,30 @@ option.SUN_INTENSITY.comment=Adjusts skybox sun intensity. §c[-]§rOnly availab
 option.MOON_INTENSITY=Moon Intensity
 option.MOON_INTENSITY.comment=Adjusts skybox moon intensity. §c[-]§rOnly available for 1.16.5 or above.
 
+option.SHADER_SUN_MOON_SHAPE=Sun & Moon Shape
+option.SHADER_SUN_MOON_SHAPE.comment=Determines the shape of shader based sun & moon and specular highlight.
+value.SHADER_SUN_MOON_SHAPE.0=Round
+value.SHADER_SUN_MOON_SHAPE.1=Square
+
+option.SHADER_SUN_MOON_SIZE=Sun & Moon Size
+option.SHADER_SUN_MOON_SIZE.comment=Adjusts size for round sun & moon and specular highlight.
+
+#Light Shaft
+option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
+option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
+
+option.LIGHT_SHAFT_MORNING_FALLOFF=Morning Falloff
+option.LIGHT_SHAFT_MORNING_FALLOFF.comment=Adjusts light shaft radius during sunrise/sunset.
+
+option.LIGHT_SHAFT_DAY_FALLOFF=Day Falloff
+option.LIGHT_SHAFT_DAY_FALLOFF.comment=Adjusts light shaft radius at noon.
+
+option.LIGHT_SHAFT_NIGHT_FALLOFF=Night Falloff
+option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=Adjusts light shaft radius at night.
+
+option.LIGHT_SHAFT_WEATHER_FALLOFF=Weather Falloff
+option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=Adjusts light shaft radius multiplier while raining.
+
 #Water
 option.WATER_MODE=Water Texture Mode
 option.WATER_MODE.comment=Determines whether vanilla water texture should be used. Default : shader's flat water color, no texture. Vanilla : vanilla texture. Tinted Vanilla : vanilla texture with shader's water color. Flat Vanilla : vanilla's flat water color.
@@ -514,10 +562,11 @@ value.WATER_ALPHA_MODE.0=Flat
 value.WATER_ALPHA_MODE.1=Vanilla
 
 option.WATER_NORMALS=Normals
-option.WATER_NORMALS.comment=Enables realtime-generated normal mapping for water.
-value.WATER_NORMALS.0=§cOFF
+option.WATER_NORMALS.comment=Enables realtime-generated normal mapping for water. §e[*]§rResource pack normals requires advanced materials enabled.
+value.WATER_NORMALS.0=None
 value.WATER_NORMALS.1=Worley
 value.WATER_NORMALS.2=Perlin
+value.WATER_NORMALS.3=Resource Pack
 
 option.WATER_PARALLAX=Parallax
 option.WATER_PARALLAX.comment=Enables water displacement.
@@ -737,6 +786,8 @@ option.WATER_B=Blue
 option.WATER_I=Intensity
 option.WATER_A=Alpha
 option.WATER_F=Fog Intensity
+option.WATER_VI=Vanilla Intensity
+option.WATER_VA=Vanilla Alpha Curve
 
 option.WEATHER_RR=Red
 option.WEATHER_RG=Green
@@ -826,6 +877,12 @@ option.SKY_VANILLA.comment=Use vanilla sky color.
 
 option.SKY_VANILLA_USE_FOG=Use Vanilla Fog Color
 option.SKY_VANILLA_USE_FOG.comment=Allows vanilla fog color to be used while Vanilla Sky is enabled.
+
+option.SKY_VANILLA_SKY_BLEND=Vanilla Sky Blend
+option.SKY_VANILLA_SKY_BLEND.comment=Adjusts vanilla fog color blending on the sky.
+
+option.SKY_VANILLA_FOG_BLEND=Vanilla Fog Blend
+option.SKY_VANILLA_FOG_BLEND.comment=Adjusts vanilla fog color blending on the fog.
 
 option.NETHER_VANILLA=Vanilla Nether
 option.NETHER_VANILLA.comment=Use vanilla nether color.
@@ -929,6 +986,9 @@ option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overwo
 
 option.WORLD_CURVATURE_SIZE=World Curvature Size
 option.WORLD_CURVATURE_SIZE.comment=Adjusts world curvature size. Negative values will bend the world upwards.
+
+option.WHITE_WORLD=White World
+option.WHITE_WORLD.comment=Replaces textures with flat white color.
 
 #Animations
 option.WORLD_TIME_ANIMATION=World Time Animation
