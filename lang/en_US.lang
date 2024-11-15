@@ -6,18 +6,20 @@ profile.LOW=Low
 profile.MEDIUM=Medium
 profile.HIGH=High
 profile.ULTRA=Ultra
-profile.comment=Minimum: no shadows, no extra effects. Low : low shadows, no extra effects. Medium : low-medium shadows, no extra effects. High : medium shadows, AO and light shafts. Ultra : high shadows, AO, and light shafts.
+profile.comment=Minimum: no shadows, no extra effects. Low : low shadows, no extra effects. Medium : low-medium shadows, no extra effects. High : medium shadows, AO light shafts, and TAA. Ultra : high shadows, AO, light shafts, and TAA.
 
 #Screens
 screen.LIGHTING=Lighting
-screen.SHADOW_CONFIG=More Shadow Config
+screen.SHADOW=More Shadow Config
+screen.AO=Ambient Occlusion Config
 screen.MCBL=Colored Blocklight Config
 
 screen.MATERIAL=Material
 screen.SPECULAR=Specular & Reflections
 screen.NORMALS=Normals & Parallax
+screen.EMISSIVE=Emissive
 
-screen.ATMOSPHERICS=Atmospherics
+screen.ENVIRONMENT=Environment
 screen.CLOUDS=Clouds
 screen.FOG=Fog
 screen.FOG_DENSITY=More Fog Density Config
@@ -25,13 +27,11 @@ screen.FOG_HEIGHT=Height Fog Config
 screen.FOG_VANILLA=Far Vanilla Fog Config
 screen.SKY=Sky
 screen.SKYBOX=Skybox
+screen.WATER=Water
+screen.ANIMATION=Animations
 screen.LIGHT_SHAFT=Light Shaft Config
 
-screen.WATER=Water
-
 screen.CAMERA=Camera
-
-screen.ANTIALIASING=Anti-aliasing
 
 screen.COLOR=Color
 screen.LIGHT_COLOR=Lighting Color
@@ -69,21 +69,25 @@ screen.NETHER_B=Basalt Deltas
 screen.END_COLOR=End Color
 
 screen.CGT=Color Grading & Tonemap
-screen.EXPOSURE_CONFIG=More Exposure Config
-screen.COLOR_GRADING_CONFIG=Color Grading Config
+screen.EXPOSURE=More Exposure Config
+screen.COLOR_GRADING=Color Grading Config
 screen.CG_R=Red Channel
 screen.CG_G=Green Channel
 screen.CG_B=Blue Channel
 screen.CG_T=Tint
 
+screen.ANTIALIASING=Anti-aliasing
+
 screen.EXTRAS=Extras
 
-screen.ANIMATION=Animations
-
 #Settings
-option.ABOUT=BSL v8.3 Original
-option.ABOUT.comment=by Capt Tatsu. bitslablab.com
+option.ABOUT=BSL v8.4
+option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
+
+option.STYLE=Style
+value.STYLE.0=Original
+value.STYLE.1=Classic
 
 #Lighting
 option.SHADOW=Realtime Shadows
@@ -111,8 +115,8 @@ option.SHADOW_FILTER.comment=Enables shadow filtering.
 option.AO=Ambient Occlusion
 option.AO.comment=Adds soft shadows around surface contact or intersection.
 
-option.AO_STRENGTH=AO Strength
-option.AO_STRENGTH.comment=Adjusts ambient occlusion strength.
+option.MULTICOLORED_BLOCKLIGHT=Multi-Colored Blocklight
+option.MULTICOLORED_BLOCKLIGHT.comment=Enables screen space multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above, non-Mac devices.
 
 option.DESATURATION=Desaturation
 option.DESATURATION.comment=Reduces saturation while adding some tint in darker areas.
@@ -125,14 +129,17 @@ value.DESATURATION_FACTOR.1.0=Medium
 value.DESATURATION_FACTOR.0.5=High
 value.DESATURATION_FACTOR.0.0=Very High
 
-option.MULTICOLORED_BLOCKLIGHT=Multi-Colored Blocklight
-option.MULTICOLORED_BLOCKLIGHT.comment=Enables screen space multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above, non-Mac devices.
-
 option.DYNAMIC_HANDLIGHT=Dynamic Handlight
 option.DYNAMIC_HANDLIGHT.comment=Allows blocklight to be emitted from view when holding certain objects.
+value.DYNAMIC_HANDLIGHT.0=§cOff
+value.DYNAMIC_HANDLIGHT.1=Hand Only
+value.DYNAMIC_HANDLIGHT.2=Full
 
 option.HALF_LAMBERT=Half Lambert
 option.HALF_LAMBERT.comment=Allows surfaces perpendicular to the sun/moon direction to receive light. §e[*]§rForces Shadow Bias Mode to Surface Normal.
+value.HALF_LAMBERT.-1=Use Style
+value.HALF_LAMBERT.0=§cOff
+value.HALF_LAMBERT.1=On
 
 #More Shadow Config
 option.SHADOW_ENTITY=Entity Shadow
@@ -147,8 +154,9 @@ option.SHADOW_VEGETATION.comment=Enables shadow on grass, crops, and most other 
 option.SHADOW_CLOUD=Cloud Shadow
 option.SHADOW_CLOUD.comment=Enables shadow casted by clouds.
 
-option.sunPathRotation=Sun Path Rotation
-option.sunPathRotation.comment=Adjusts sun angle.
+option.SUN_PATH_ROTATION=Sun Path Rotation
+option.SUN_PATH_ROTATION.comment=Adjusts sun angle.
+value.SUN_PATH_ROTATION.-1=Use Style
 
 option.SHADOW_BIAS=Shadow Bias Mode
 option.SHADOW_BIAS.comment=Determines how shadow mapping bias is done. Light direction mode preserves most shadow edges, but shadows look floaty at a distance. Surface normal mode preserves contact point, but shadows look shorter at a distance.
@@ -158,6 +166,21 @@ value.SHADOW_BIAS.1=Surface Normal
 option.SHADOW_PIXEL=Pixel Locked Shadows
 option.SHADOW_PIXEL.comment=Applies pixelation effect on shadows.
 value.SHADOW_PIXEL.0=OFF
+
+option.SHADOW_SKY_FALLOFF=Fake Shadow Falloff
+option.SHADOW_SKY_FALLOFF.comment=Adjusts how sharp the fake shadows look when realtime shadows is disabled.
+value.SHADOW_SKY_FALLOFF.0.6=Very Weak
+value.SHADOW_SKY_FALLOFF.0.6667=Weak
+value.SHADOW_SKY_FALLOFF.0.7333=Balanced
+value.SHADOW_SKY_FALLOFF.0.8=Strong
+value.SHADOW_SKY_FALLOFF.0.8667=Very Strong
+
+#Ambient Occlusion Config
+option.AO_STRENGTH=AO Strength
+option.AO_STRENGTH.comment=Adjusts ambient occlusion strength.
+
+option.ambientOcclusionLevel=Vanilla AO Strength
+option.ambientOcclusionLevel.comment=Adjusts vanilla ambient occlusion strength.
 
 #Colored Blocklight Config
 option.MCBL_ANTI_BLEED=Anti Bleed
@@ -180,17 +203,6 @@ option.SSS.comment=Allows light to penetrate and scatter through blocks. §a[+]�
 option.BASIC_SSS=Basic Scattering
 option.BASIC_SSS.comment=Enables a simplified version of subsurface scattering to certain blocks.
 
-option.EMISSIVE=Emissive
-option.EMISSIVE.comment=Allows certain surfaces to be brighter.
-value.EMISSIVE.0=§cOFF
-value.EMISSIVE.1=AdvMat Only*
-value.EMISSIVE.2=Full
-
-option.EMISSIVE_HARDCODED=Hardcoded Emissive
-option.EMISSIVE_HARDCODED.comment=Determines how emissive amount is calculated.
-value.EMISSIVE_HARDCODED.0=Default
-value.EMISSIVE_HARDCODED.1=Legacy
-
 option.ENTITY_FLASH=Entity Flash
 option.ENTITY_FLASH.comment=Enables damaged entities and nearby creeper to flash.
 
@@ -211,7 +223,7 @@ value.ALPHA_BLEND.1=Linear
 #Specular & Reflections
 option.REFLECTION=Reflections
 option.REFLECTION.comment=Enables reflections on water and translucents.
-value.REFLECTION.0=§cOFF
+value.REFLECTION.0=§cOff
 value.REFLECTION.1=Sky & Specular Only
 value.REFLECTION.2=Full
 
@@ -229,12 +241,15 @@ option.REFLECTION_PREVIOUS.comment=Allows translucents to be reflected by using 
 
 option.SPECULAR_HIGHLIGHT=Specular Highlight
 option.SPECULAR_HIGHLIGHT.comment=Enables bright spot which appears on shiny surfaces.
-value.SPECULAR_HIGHLIGHT.0=§cOFF
+value.SPECULAR_HIGHLIGHT.0=§cOff
 value.SPECULAR_HIGHLIGHT.1=Opaque Only
 value.SPECULAR_HIGHLIGHT.2=Full
 
 option.REFLECTION_PRECISION=High Precision Reflection
 option.REFLECTION_PRECISION.comment=Reduces choppiness on reflections when enabled.
+value.REFLECTION_PRECISION.-1=Use Style
+value.REFLECTION_PRECISION.0=§cOff
+value.REFLECTION_PRECISION.1=On
 
 option.REFLECTION_SKY_FALLOFF=Sky Reflection Falloff
 option.REFLECTION_SKY_FALLOFF.comment=Adjusts how far sky reflection fades out under low skylight.
@@ -322,7 +337,28 @@ option.NORMAL_DAMPENING.comment=Reduces normal map strength to prevent reflectio
 option.NORMAL_PLANTS=Up-facing Plants
 option.NORMAL_PLANTS.comment=Adjusts plant shading. §e[*]§rDisable this if non-flat plant model is used or normal map applied on plants.
 
-#Atmospherics
+#Emissive
+option.EMISSIVE=Emissive
+option.EMISSIVE.comment=Allows certain surfaces to be brighter.
+value.EMISSIVE.0=§cOff
+value.EMISSIVE.1=AdvMat Only*
+value.EMISSIVE.2=Full
+
+option.EMISSIVE_HARDCODED=Hardcoded Emissive
+option.EMISSIVE_HARDCODED.comment=Determines how emissive amount is calculated.
+value.EMISSIVE_HARDCODED.0=Default
+value.EMISSIVE_HARDCODED.1=Legacy
+
+option.GLOWING_ORES=Enhance Ore Visibility
+option.GLOWING_ORES.comment=Adds subtle emission to ores when affected by blocklight.
+
+option.EMISSIVE_INTENSITY=Emissive Intensity
+option.EMISSIVE_INTENSITY.comment=Adjusts peak brightness of emissives.
+
+option.EMISSIVE_CURVE=Emissive Curve
+option.EMISSIVE_CURVE.comment=Adjusts how quickly emissives can reach peak brightness. 
+
+#Environment
 option.LIGHT_SHAFT=Light Shafts
 option.LIGHT_SHAFT.comment=Adds volumetric rays from sun / moon. §a[+]§rThis effect benefits from TAA. §e[*]§rRequires realtime shadows. §e[*]§rPerformance depends on Shadowmap Resolution.
 
@@ -332,44 +368,29 @@ option.WEATHER_PERBIOME.comment=Use varied weather color for different biomes. �
 option.WEATHER_OPACITY=Weather Opacity
 option.WEATHER_OPACITY.comment=Adjusts weather opacity.
 
-#Sky
-option.SKY_DENSITY_D=Day Density
-option.SKY_EXPOSURE_D=Day Exposure
-option.SKY_DENSITY_N=Night Density
-option.SKY_EXPOSURE_N=Night Exposure
-option.SKY_DENSITY_W=Weather Density
-option.SKY_EXPOSURE_W=Weather Exposure
-option.SKY_HORIZON_N=Near Horizon
-option.SKY_HORIZON_F=Far Horizon
-
-option.SKY_DESATURATION=Sky Desaturation
-option.SKY_DESATURATION.comment=Reduces saturation while adding some tint to the skybox at night
-
-option.SKY_GROUND=Sky Ground
-option.SKY_GROUND.comment=Darkens the bottom part of the sky. §e[*]§rThis option is affected by fog density.
-value.SKY_GROUND.0=§cOFF
-value.SKY_GROUND.1=Reflections Only
-value.SKY_GROUND.2=Full
-
-option.UNDERGROUND_SKY=Underground Sky Fix
-option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
-
-option.SHADER_END_SKY=Shader End Sky
-option.SHADER_END_SKY.comment=Replaces vanilla/modded end skybox with shader based end skybox.
-
-option.SKY_DEFERRED=Deferred Sky
-option.SKY_DEFERRED.comment=Renders sky after opaque surfaces are drawn instead of at the beginning. §e[*]§rThis affects resource pack sky rendering.
+option.DH_OVERDRAW=DH Overdraw
+option.DH_OVERDRAW.comment=Adjusts the amount of overlap between regular chunks and distant horizons chunks.
+value.DH_OVERDRAW.1.0=0 chunks
+value.DH_OVERDRAW.2.0=1 chunk
+value.DH_OVERDRAW.3.0=2 chunks
+value.DH_OVERDRAW.4.0=3 chunks
+value.DH_OVERDRAW.5.0=4 chunks
+value.DH_OVERDRAW.6.0=5 chunks
+value.DH_OVERDRAW.7.0=6 chunks
+value.DH_OVERDRAW.8.0=7 chunks
+value.DH_OVERDRAW.9.0=8 chunks
 
 #Cloud
 option.CLOUDS=Clouds
 option.CLOUDS.comment=Enables clouds. §a[+]§rSkybox and volumetric clouds benefit from TAA. §e[*]§rVanilla clouds requires vanilla cloud setting set to default or on.
-value.CLOUDS.0=§cOFF
+value.CLOUDS.0=§cOff
 value.CLOUDS.1=Skybox
 value.CLOUDS.2=Volumetric
 value.CLOUDS.3=Vanilla
 
 option.CLOUD_BASE=Base Shape
 option.CLOUD_BASE.comment=Determines which noise type used for the cloud's base shape.
+value.CLOUD_BASE.-1=Use Style
 value.CLOUD_BASE.0=Perlin
 value.CLOUD_BASE.1=Worley
 value.CLOUD_BASE.2=Blocky
@@ -383,7 +404,7 @@ value.CLOUD_DENSITY.6=High
 value.CLOUD_DENSITY.8=Very High
 
 option.CLOUD_AMOUNT=Amount
-option.CLOUD_AMOUNT.comment=Adjusts cloud amount. §e[*]§rThis option is ignored by soft pixel base shape.
+option.CLOUD_AMOUNT.comment=Adjusts cloud amount. §e[*]§rThis option is ignored by blocky base shape.
 value.CLOUD_AMOUNT.12.0=Very Low
 value.CLOUD_AMOUNT.11.0=Low
 value.CLOUD_AMOUNT.10.0=Medium
@@ -421,7 +442,7 @@ value.CLOUD_THICKNESS.7=High
 value.CLOUD_THICKNESS.10=Very High
 
 option.CLOUD_DETAIL=Detail
-option.CLOUD_DETAIL.comment=Adjusts cloud detail.  §e[*]§rThis option is ignored by soft pixel base shape.
+option.CLOUD_DETAIL.comment=Adjusts cloud detail.  §e[*]§rThis option is ignored by blocky base shape.
 value.CLOUD_DETAIL.0.3=Very Low
 value.CLOUD_DETAIL.0.7=Low
 value.CLOUD_DETAIL.1.0=Medium
@@ -436,6 +457,9 @@ option.CLOUD_OPACITY.comment=Adjusts cloud opacity.
 
 option.CLOUD_BRIGHTNESS=Brightness
 option.CLOUD_BRIGHTNESS.comment=Adjusts cloud brightness.
+
+option.CLOUD_REVEAL=Reveal Sun&Moon
+option.CLOUD_REVEAL.comment=Reduces amount of cloud around sun & moon.
 
 #Fog
 option.FOG_DENSITY=Overworld Fog Density
@@ -452,7 +476,8 @@ option.FOG_HEIGHT.comment= Enables height fog, reducing fog amount based on heig
 
 option.FAR_VANILLA_FOG=Far Vanilla Fog
 option.FAR_VANILLA_FOG.comment=Enables vanilla-like fog. §e[*]§rThis option is affected by fog density.
-value.FAR_VANILLA_FOG.0=§cOFF
+value.FAR_VANILLA_FOG.-1=Use Style
+value.FAR_VANILLA_FOG.0=§cOff
 value.FAR_VANILLA_FOG.1=Overworld Only
 value.FAR_VANILLA_FOG.2=Nether & End Only
 value.FAR_VANILLA_FOG.3=Full
@@ -497,20 +522,54 @@ option.FOG_DENSITY_VANILLA.comment=Adjusts fog density for vanilla fog.
 
 option.FOG_VANILLA_CLOUD=Vanilla Cloud Fog
 option.FOG_VANILLA_CLOUD.comment=Enables fog on vanilla cloud.
-value.FOG_VANILLA_CLOUD.0=§cOFF
+value.FOG_VANILLA_CLOUD.0=§cOff
 value.FOG_VANILLA_CLOUD.1=Minimal
 value.FOG_VANILLA_CLOUD.2=Reduced
 value.FOG_VANILLA_CLOUD.3=Full
 
+#Sky
+option.SKY_DENSITY_D=Day Density
+option.SKY_EXPOSURE_D=Day Exposure
+option.SKY_DENSITY_N=Night Density
+option.SKY_EXPOSURE_N=Night Exposure
+option.SKY_DENSITY_W=Weather Density
+option.SKY_EXPOSURE_W=Weather Exposure
+option.SKY_HORIZON_N=Near Horizon
+option.SKY_HORIZON_F=Far Horizon
+
+option.SKY_DESATURATION=Sky Desaturation
+option.SKY_DESATURATION.comment=Reduces saturation while adding some tint to the skybox at night
+
+option.SKY_GROUND=Sky Ground
+option.SKY_GROUND.comment=Darkens the bottom part of the sky. §e[*]§rThis option is affected by fog density.
+value.SKY_GROUND.0=§cOff
+value.SKY_GROUND.1=Reflections Only
+value.SKY_GROUND.2=Full
+
+option.UNDERGROUND_SKY=Underground Sky Fix
+option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
+
+option.SHADER_END_SKY=Shader End Sky
+option.SHADER_END_SKY.comment=Replaces vanilla/modded end skybox with shader based end skybox.
+
+option.SKY_DEFERRED=Deferred Sky
+option.SKY_DEFERRED.comment=Renders sky after opaque surfaces are drawn instead of at the beginning. §e[*]§rThis affects resource pack sky rendering.
+
 #Skybox
 option.SHADER_SUN_MOON=Shader Sun & Moon
 option.SHADER_SUN_MOON.comment=Enables shader based sun & moon. §e[*]§rDisable vanilla sun & moon in Video Settings > Details > Sun & Moon on 1.16.4 or below.
+
+option.SUN_MOON_GROUND=Sun & Moon Ground
+option.SUN_MOON_GROUND.comment=Fades sun & moon below the horizon when enabled.
 
 option.STARS=Stars
 option.STARS.comment=Enables stars.
 
 option.AURORA=Aurora
 option.AURORA.comment=Enables aurora. §a[+]§rThis effect benefits from TAA.
+value.AURORA.0=Off
+value.AURORA.1=Snow Biomes Only
+value.AURORA.2=Full
 
 option.SKYBOX_INTENSITY=Skybox Intensity
 option.SKYBOX_INTENSITY.comment=Adjusts skybox intensity.
@@ -526,31 +585,17 @@ option.MOON_INTENSITY.comment=Adjusts skybox moon intensity. §c[-]§rOnly avail
 
 option.SHADER_SUN_MOON_SHAPE=Sun & Moon Shape
 option.SHADER_SUN_MOON_SHAPE.comment=Determines the shape of shader based sun & moon and specular highlight.
+value.SHADER_SUN_MOON_SHAPE.-1=Use Style
 value.SHADER_SUN_MOON_SHAPE.0=Round
 value.SHADER_SUN_MOON_SHAPE.1=Square
 
 option.SHADER_SUN_MOON_SIZE=Sun & Moon Size
 option.SHADER_SUN_MOON_SIZE.comment=Adjusts size for round sun & moon and specular highlight.
 
-#Light Shaft
-option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
-option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
-
-option.LIGHT_SHAFT_MORNING_FALLOFF=Morning Falloff
-option.LIGHT_SHAFT_MORNING_FALLOFF.comment=Adjusts light shaft radius during sunrise/sunset.
-
-option.LIGHT_SHAFT_DAY_FALLOFF=Day Falloff
-option.LIGHT_SHAFT_DAY_FALLOFF.comment=Adjusts light shaft radius at noon.
-
-option.LIGHT_SHAFT_NIGHT_FALLOFF=Night Falloff
-option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=Adjusts light shaft radius at night.
-
-option.LIGHT_SHAFT_WEATHER_FALLOFF=Weather Falloff
-option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=Adjusts light shaft radius multiplier while raining.
-
 #Water
 option.WATER_MODE=Water Texture Mode
 option.WATER_MODE.comment=Determines whether vanilla water texture should be used. Default : shader's flat water color, no texture. Vanilla : vanilla texture. Tinted Vanilla : vanilla texture with shader's water color. Flat Vanilla : vanilla's flat water color.
+value.WATER_MODE.-1=Use Style
 value.WATER_MODE.0=Default
 value.WATER_MODE.1=Vanilla
 value.WATER_MODE.2=Tinted Vanilla
@@ -558,11 +603,13 @@ value.WATER_MODE.3=Flat Vanilla
 
 option.WATER_ALPHA_MODE=Water Alpha Mode
 option.WATER_ALPHA_MODE.comment=Determines whether the water uses shader based or texture alpha value. §e[*]§rSome effect will keep using shader based alpha value.
+value.WATER_ALPHA_MODE.-1=Use Style
 value.WATER_ALPHA_MODE.0=Flat
 value.WATER_ALPHA_MODE.1=Vanilla
 
 option.WATER_NORMALS=Normals
 option.WATER_NORMALS.comment=Enables realtime-generated normal mapping for water. §e[*]§rResource pack normals requires advanced materials enabled.
+value.WATER_NORMALS.-1=Use Style
 value.WATER_NORMALS.0=None
 value.WATER_NORMALS.1=Worley
 value.WATER_NORMALS.2=Perlin
@@ -616,6 +663,59 @@ option.WATER_CAUSTICS_STRENGTH.comment=Adjusts water caustics strength.
 option.WATER_PIXEL=Pixel Lock
 option.WATER_PIXEL.comment=Applies pixelation effect on water normals.
 value.WATER_PIXEL.0=OFF
+
+#Animations
+option.WORLD_TIME_ANIMATION=World Time Animation
+option.WORLD_TIME_ANIMATION.comment=Use ingame time for moving objects. §e[*]§rThis option is mostly used when making cinematics. §c[-]§rThis option completely stops animation in the Nether & End.
+
+option.ANIMATION_SPEED=Animation Speed
+option.ANIMATION_SPEED.comment=Adjusts animation speed.
+
+option.WAVING_GRASS=Grass
+option.WAVING_GRASS.comment=Allows grass to wave.
+
+option.WAVING_CROP=Crops
+option.WAVING_CROP.comment=Allows plants on farmlands to wave.
+
+option.WAVING_PLANT=Plants
+option.WAVING_PLANT.comment=Allows various plants to wave.
+
+option.WAVING_TALL_PLANT=Tall Plants
+option.WAVING_TALL_PLANT.comment=Allows 2 block height plants to wave.
+
+option.WAVING_LEAF=Leaves
+option.WAVING_LEAF.comment=Allows leaves to wave.
+
+option.WAVING_VINE=Vines
+option.WAVING_VINE.comment=Allows vines to wave.
+
+option.WAVING_WATER=Water
+option.WAVING_WATER.comment=Allows water to wave.
+
+option.WAVING_LAVA=Lava
+option.WAVING_LAVA.comment=Allows lava to wave.
+
+option.WAVING_FIRE=Fire
+option.WAVING_FIRE.comment=Allows fire to wave.
+
+option.WAVING_LANTERN=Lantern
+option.WAVING_LANTERN.comment=Allows lantern to wave.
+
+#Light Shaft
+option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
+option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
+
+option.LIGHT_SHAFT_MORNING_FALLOFF=Morning Falloff
+option.LIGHT_SHAFT_MORNING_FALLOFF.comment=Adjusts light shaft radius during sunrise/sunset.
+
+option.LIGHT_SHAFT_DAY_FALLOFF=Day Falloff
+option.LIGHT_SHAFT_DAY_FALLOFF.comment=Adjusts light shaft radius at noon.
+
+option.LIGHT_SHAFT_NIGHT_FALLOFF=Night Falloff
+option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=Adjusts light shaft radius at night.
+
+option.LIGHT_SHAFT_WEATHER_FALLOFF=Weather Falloff
+option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=Adjusts light shaft radius multiplier while raining.
 
 #Camera
 option.DOF=Depth of Field
@@ -688,20 +788,19 @@ value.CHROMATIC_ABERRATION.0=OFF
 value.CHROMATIC_ABERRATION.1=Weak
 value.CHROMATIC_ABERRATION.2=Strong
 
-
 option.UNDERWATER_DISTORTION=Underwater Distortion
 option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater.
 
 #Anti-aliasing
 option.FXAA=FXAA
-option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
+option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled (Optifine only).
 
 option.TAA=TAA
-option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled.
+option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled (Optifine only).
 
 option.FXAA_SUBPIXEL=FXAA Subpixel Smoothing
 option.FXAA_SUBPIXEL.comment=Adjusts how much smoothing should FXAA apply to tiny details.
-value.FXAA_SUBPIXEL.0.00=§cOFF
+value.FXAA_SUBPIXEL.0.00=§cOff
 value.FXAA_SUBPIXEL.0.25=Low
 value.FXAA_SUBPIXEL.0.50=Medium
 value.FXAA_SUBPIXEL.0.75=High
@@ -874,6 +973,9 @@ option.EMISSIVE_RECOLOR.comment=Tints certain emissive blocks with blocklight co
 
 option.SKY_VANILLA=Vanilla Sky
 option.SKY_VANILLA.comment=Use vanilla sky color.
+value.SKY_VANILLA.-1=Use Style
+value.SKY_VANILLA.0=§cOff
+value.SKY_VANILLA.1=On
 
 option.SKY_VANILLA_USE_FOG=Use Vanilla Fog Color
 option.SKY_VANILLA_USE_FOG.comment=Allows vanilla fog color to be used while Vanilla Sky is enabled.
@@ -989,41 +1091,3 @@ option.WORLD_CURVATURE_SIZE.comment=Adjusts world curvature size. Negative value
 
 option.WHITE_WORLD=White World
 option.WHITE_WORLD.comment=Replaces textures with flat white color.
-
-#Animations
-option.WORLD_TIME_ANIMATION=World Time Animation
-option.WORLD_TIME_ANIMATION.comment=Use ingame time for moving objects. §e[*]§rThis option is mostly used when making cinematics. §c[-]§rThis option completely stops animation in the Nether & End.
-
-option.ANIMATION_SPEED=Animation Speed
-option.ANIMATION_SPEED.comment=Adjusts animation speed.
-
-#Waving Blocks
-option.WAVING_GRASS=Grass
-option.WAVING_GRASS.comment=Allows grass to wave.
-
-option.WAVING_CROP=Crops
-option.WAVING_CROP.comment=Allows plants on farmlands to wave.
-
-option.WAVING_PLANT=Plants
-option.WAVING_PLANT.comment=Allows various plants to wave.
-
-option.WAVING_TALL_PLANT=Tall Plants
-option.WAVING_TALL_PLANT.comment=Allows 2 block height plants to wave.
-
-option.WAVING_LEAF=Leaves
-option.WAVING_LEAF.comment=Allows leaves to wave.
-
-option.WAVING_VINE=Vines
-option.WAVING_VINE.comment=Allows vines to wave.
-
-option.WAVING_WATER=Water
-option.WAVING_WATER.comment=Allows water to wave.
-
-option.WAVING_LAVA=Lava
-option.WAVING_LAVA.comment=Allows lava to wave.
-
-option.WAVING_FIRE=Fire
-option.WAVING_FIRE.comment=Allows fire to wave.
-
-option.WAVING_LANTERN=Lantern
-option.WAVING_LANTERN.comment=Allows lantern to wave.
