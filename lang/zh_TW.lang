@@ -6,7 +6,7 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=極致
-profile.comment=最低:無陰影，沒有額外效果 低:低等品質陰影，無額外效果 中:中等品質陰影，無額外效果 高:中等品質陰影，環境光遮蔽（AO）和光束 超高:高等品質陰影，環境光遮蔽（AO）和光束
+profile.comment=最低：無陰影，沒有額外效果。低：低等質量陰影，無額外效果。中：中等質量陰影，無額外效果。高：中等質量陰影，環境光遮蔽（AO）、光束，並啟用TAA。極致：高等質量陰影，環境光遮蔽（AO）、光束，並啟用TAA。
 
 #Screens
 screen.LIGHTING=光照
@@ -15,7 +15,7 @@ screen.AO=環境光遮蔽配置
 screen.MCBL=彩色方塊光配置
 
 screen.MATERIAL=材質
-screen.SPECULAR=鏡面反射與反射
+screen.SPECULAR=鏡面與反射
 screen.NORMALS=法線與視差
 screen.EMISSIVE=自發光
 
@@ -29,7 +29,7 @@ screen.SKY=天空配置
 screen.SKYBOX=天空盒
 screen.WATER=水
 screen.ANIMATION=動畫
-screen.LIGHT_SHAFT=光柱配置
+screen.LIGHT_SHAFT=光束配置
 
 screen.CAMERA=鏡頭
 
@@ -76,12 +76,12 @@ screen.CG_G=綠色通道
 screen.CG_B=藍色通道
 screen.CG_T=色調
 
-screen.ANTIALIASING=抗鋸齒
+screen.ANTIALIASING=反鋸齒
 
 screen.EXTRAS=附加項
 
 #Settings
-option.ABOUT=BSL v8.4
+option.ABOUT=BSL v8.4.01.2
 option.ABOUT.comment=作者：Capt Tatsu. capttatsu.com
 value.ABOUT.0=作者：Capt Tatsu
 
@@ -91,7 +91,7 @@ value.STYLE.1=經典
 
 #Lighting
 option.SHADOW=實時陰影
-option.SHADOW.comment=啟用實時動態陰影映射。
+option.SHADOW.comment=啟用即時動態陰影映射。
 
 option.shadowMapResolution=陰影貼圖品質
 option.shadowMapResolution.comment=調整陰影貼圖解析度。 §e[*]§r更高解析度會使陰影更清晰（銳利），但會降低效能。
@@ -107,7 +107,7 @@ option.shadowDistance=陰影距離
 option.shadowDistance.comment=調整陰影距離。
 
 option.SHADOW_COLOR=彩色陰影
-option.SHADOW_COLOR.comment=啟用半透明物體的彩色陰影。 §a[+]§r用於彩色體積光柱。 §c[-]§r使用陰影過濾時效能略有下降。
+option.SHADOW_COLOR.comment=啟用半透明物體的彩色陰影。 §a[+]§r用於彩色體積光束。 §c[-]§r使用陰影過濾時效能略有下降。
 
 option.SHADOW_FILTER=陰影過濾
 option.SHADOW_FILTER.comment=啟用陰影過濾。
@@ -143,10 +143,10 @@ value.HALF_LAMBERT.1=開啟
 
 #More Shadow Config
 option.SHADOW_ENTITY=實體陰影
-option.SHADOW_ENTITY.comment=啟用生物陰影。 §e[*]§r加載大量生物時禁用此項。 §e[*]§r僅適用於1.16.5及以上版本。
+option.SHADOW_ENTITY.comment=啟用生物陰影。 §e[*]§r載入大量生物時禁用此項。 §e[*]§r僅適用於1.16.5及以上版本。
 
 option.SHADOW_BLOCK_ENTITY=方塊實體陰影
-option.SHADOW_BLOCK_ENTITY.comment=啟用方塊實體陰影。 §e[*]§r加載大量方塊實體時禁用此項。 §e[*]§r僅適用於1.16.5及以上版本。
+option.SHADOW_BLOCK_ENTITY.comment=啟用方塊實體陰影。 §e[*]§r載入大量方塊實體時禁用此項。 §e[*]§r僅適用於1.16.5及以上版本。
 
 option.SHADOW_VEGETATION=植被陰影
 option.SHADOW_VEGETATION.comment=啟用草、作物和大多數其他植物的陰影。
@@ -163,12 +163,12 @@ option.SHADOW_BIAS.comment=確定陰影映射偏差的處理方式。光照方�
 value.SHADOW_BIAS.0=光照方向
 value.SHADOW_BIAS.1=表面法線
 
-option.SHADOW_PIXEL=像素鎖定陰影
+option.SHADOW_PIXEL=像素鎖定的陰影
 option.SHADOW_PIXEL.comment=在陰影上應用像素化效果。
 value.SHADOW_PIXEL.0=關閉
 
-option.SHADOW_SKY_FALLOFF=伪阴影衰减
-option.SHADOW_SKY_FALLOFF.comment=調整當實時陰影被禁用時伪阴影的銳利程度。
+option.SHADOW_SKY_FALLOFF=偽陰影衰減
+option.SHADOW_SKY_FALLOFF.comment=調整當實時陰影被禁用時偽陰影的銳利程度。
 value.SHADOW_SKY_FALLOFF.0.6=非常弱
 value.SHADOW_SKY_FALLOFF.0.6667=較弱
 value.SHADOW_SKY_FALLOFF.0.7333=均衡
@@ -193,7 +193,7 @@ option.ADVANCED_MATERIALS=高級材質
 option.ADVANCED_MATERIALS.comment=啟用鏡面反射和法線貼圖，可使各種物體具有更多細節。 §e[*]§r此選項需要包含鏡面反射和/或法線貼圖的資源包，如果當前未使用資源包，請禁用此選項。 §e[*]§r需要高級材質的選項用 * 標識，禁用高級材質時更改這些選項不會影響視覺效果或效能。
 
 option.MATERIAL_FORMAT=材質格式*
-option.MATERIAL_FORMAT.comment=確定資源包使用的鏡面反射和法線貼圖格式。 §e[*]§r紋理藝術家通常會告知其資源包使用的格式，使用錯誤的格式可能會產生奇怪的效果。
+option.MATERIAL_FORMAT.comment=確定資源包使用的鏡面反射和法線貼圖格式。 §e[*]§r材質作者通常會告知其資源包使用的格式，使用錯誤的格式可能會產生奇怪的效果。
 value.MATERIAL_FORMAT.0=SEUS/舊版 PBR
 value.MATERIAL_FORMAT.1=labPBR 1.3
 
@@ -228,7 +228,7 @@ value.REFLECTION.1=僅天空和鏡面反射
 value.REFLECTION.2=完全啟用
 
 option.REFLECTION_TRANSLUCENT=透明反射
-option.REFLECTION_TRANSLUCENT.comment=允許透明表面（如染色玻璃、冰、粘液塊等）上顯示反射。
+option.REFLECTION_TRANSLUCENT.comment=允許透明表面（如染色玻璃、冰、黏液塊等）上顯示反射。
 
 option.REFLECTION_MODE=反射模式
 option.REFLECTION_MODE.comment=調整反射行為。
@@ -237,7 +237,7 @@ value.REFLECTION_MODE.1=平衡
 value.REFLECTION_MODE.2=更多填充
 
 option.REFLECTION_PREVIOUS=上一幀反射
-option.REFLECTION_PREVIOUS.comment=通過使用上一幀資訊允許半透明表面生成反射。§c[-]§r可能導致截圖時反射丟失（與截圖尺寸設置有關）。§c[-]§r與某些顯卡不兼容。§c[-]§r在 1.7.10 中存在問題。
+option.REFLECTION_PREVIOUS.comment=透過使用上一幀資訊允許半透明表面生成反射。§c[-]§r可能導致截圖時反射遺失（與截圖尺寸設置有關）。§c[-]§r與某些顯示卡不相容。§c[-]§r在 1.7.10 中存在問題。
 
 option.SPECULAR_HIGHLIGHT=鏡面高光
 option.SPECULAR_HIGHLIGHT.comment=啟用在光滑表面上出現的亮點效果。
@@ -283,7 +283,7 @@ option.SPECULAR_HIGHLIGHT_ROUGH=粗糙鏡面高光*
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=允許粗糙表面產生弱光澤。
 
 option.ALBEDO_METAL=labPBR Albedo 金屬*
-option.ALBEDO_METAL.comment=將基礎紋理作為硬編碼金屬表面的顏色渲染。§e[*]§r僅適用於 labPBR 材質格式。
+option.ALBEDO_METAL.comment=將基礎紋理作為寫死金屬表面的顏色渲染。§e[*]§r僅適用於 labPBR 材質格式。
 
 #Normals & Parallax
 option.PARALLAX=視差遮蔽映射*
@@ -344,9 +344,9 @@ value.EMISSIVE.0=§c關閉
 value.EMISSIVE.1=僅限 AdvMat*
 value.EMISSIVE.2=完全開啟
 
-option.EMISSIVE_HARDCODED=硬編碼發光
+option.EMISSIVE_HARDCODED=寫死發光
 option.EMISSIVE_HARDCODED.comment=決定發光強度的計算方式。
-value.EMISSIVE_HARDCODED.0=默認
+value.EMISSIVE_HARDCODED.0=預設
 value.EMISSIVE_HARDCODED.1=傳統
 
 option.GLOWING_ORES=增強礦物可見性
@@ -359,7 +359,7 @@ option.EMISSIVE_CURVE=發光曲線
 option.EMISSIVE_CURVE.comment=調整發光效果達到最大亮度的速度。
 
 #Environment
-option.LIGHT_SHAFT=光柱
+option.LIGHT_SHAFT=光束
 option.LIGHT_SHAFT.comment=從太陽/月亮添加體積光線。 §a[+]§r此效果受益於TAA。 §e[*]§r需要實時陰影。 §e[*]§r效能取決於陰影貼圖解析度。
 
 option.WEATHER_PERBIOME=生態域特定天氣
@@ -382,14 +382,14 @@ value.DH_OVERDRAW.9.0=8 個區塊
 
 #Cloud
 option.CLOUDS=雲
-option.CLOUDS.comment=啟用雲。 §a[+]§r天空盒和體積雲受益於TAA。 §e[*]§r原版雲需要在視頻設置 > 細節 > 雲中設置為默認或啟用。
+option.CLOUDS.comment=啟用雲。 §a[+]§r天空盒和體積雲受益於TAA。 §e[*]§r原版雲需要在影片設置 > 細節 > 雲中設置為預設或啟用。
 value.CLOUDS.0=§c關閉
 value.CLOUDS.1=天空盒
 value.CLOUDS.2=體積
 value.CLOUDS.3=原版
 
 option.CLOUD_BASE=基礎形狀
-option.CLOUD_BASE.comment=確定雲的基礎形狀所使用的噪聲類型。Perlin：柔和、連續。Worley：不規則、動態感強。Blocky：像素化風格。
+option.CLOUD_BASE.comment=確定雲的基礎形狀所使用的雜訊類型。Perlin：柔和、連續。Worley：不規則、動態感強。Blocky：像素化風格。
 value.CLOUD_BASE.-1=使用樣式
 value.CLOUD_BASE.0=Perlin
 value.CLOUD_BASE.1=Worley
@@ -493,7 +493,7 @@ option.FOG_DENSITY_COLD=寒冷密度
 option.FOG_DENSITY_COLD.comment=調整站在寒冷生態域時的霧密度倍數。寒冷生態域包括任何會下雪的生態域。 §e[*]§r需要每個生態域的天氣。
 
 option.FOG_DENSITY_DRY=乾燥密度
-option.FOG_DENSITY_DRY.comment=調整站在乾燥生態域時的霧密度倍數。乾燥生態域包括沙漠、惡地/黏土山和莽原。 §e[*]§r需要每個生態域的天氣。
+option.FOG_DENSITY_DRY.comment=調整站在乾燥生態域時的霧密度倍數。乾燥生態域包括沙漠、惡地和莽原。 §e[*]§r需要每個生態域的天氣。
 
 option.FOG_DENSITY_DAMP=潮濕密度
 option.FOG_DENSITY_DAMP.comment=調整站在潮濕生態域時的霧密度倍數。潮濕生態域包括沼澤、蘑菇地和叢林。 §e[*]§r需要每個生態域的天氣。
@@ -501,7 +501,7 @@ option.FOG_DENSITY_DAMP.comment=調整站在潮濕生態域時的霧密度倍數
 option.FOG_DENSITY_INDOOR=室內密度
 option.FOG_DENSITY_INDOOR.comment=調整室內的霧密度倍數。
 
-option.FOG_DENSITY_DH=Distant Horizons 雾密度
+option.FOG_DENSITY_DH=Distant Horizons 霧密度
 option.FOG_DENSITY_DH.comment=調整啟用 Distant Horizons 時主世界霧氣密度的倍數。
 
 #Height Fog
@@ -557,7 +557,7 @@ option.SKY_DEFERRED.comment=在繪製不透明表面後再渲染天空，而不�
 
 #Skybox
 option.SHADER_SUN_MOON=光影的太陽與月亮
-option.SHADER_SUN_MOON.comment=啟用基於光影的太陽和月亮。§e[*]§r在 1.16.4 或更低版本中，請在視頻設置 > 詳細資訊 > 太陽和月亮中禁用原版太陽和月亮。
+option.SHADER_SUN_MOON.comment=啟用基於光影的太陽和月亮。§e[*]§r在 1.16.4 或更低版本中，請在影片設置 > 詳細資訊 > 太陽和月亮中禁用原版太陽和月亮。
 
 option.SUN_MOON_GROUND=太陽與月亮地平線效果
 option.SUN_MOON_GROUND.comment=啟用後將太陽和月亮逐漸淡出至地平線以下。
@@ -566,7 +566,7 @@ option.STARS=星星
 option.STARS.comment=啟用星星。
 
 option.AURORA=極光
-option.AURORA.comment=啟用極光。§a[+]§r此效果受益於時間抗鋸齒TAA。
+option.AURORA.comment=啟用極光。§a[+]§r此效果受益於時間反鋸齒TAA。
 value.AURORA.0=關閉
 value.AURORA.1=僅雪地生態域
 value.AURORA.2=全部
@@ -594,9 +594,9 @@ option.SHADER_SUN_MOON_SIZE.comment=調整圓形太陽與月亮以及鏡面高�
 
 #Water
 option.WATER_MODE=水體紋理模式
-option.WATER_MODE.comment=確定是否使用原版水紋理。默認：光影的平坦水顏色，無紋理。原版：原版紋理。染色原版：帶有光影水顏色的原版紋理。扁平原版：原版的扁平水顏色。
+option.WATER_MODE.comment=確定是否使用原版水紋理。預設：光影的平坦水顏色，無紋理。原版：原版紋理。染色原版：帶有光影水顏色的原版紋理。扁平原版：原版的扁平水顏色。
 value.WATER_MODE.-1=使用樣式
-value.WATER_MODE.0=默認
+value.WATER_MODE.0=預設
 value.WATER_MODE.1=原版
 value.WATER_MODE.2=染色原版
 value.WATER_MODE.3=平坦原版
@@ -608,7 +608,7 @@ value.WATER_ALPHA_MODE.0=平滑
 value.WATER_ALPHA_MODE.1=原版
 
 option.WATER_NORMALS=法線
-option.WATER_NORMALS.comment=啟用實時生成的水面法線貼圖。§e[*]§r資源包法線需要啟用高級材質。
+option.WATER_NORMALS.comment=啟用即時生成的水面法線貼圖。§e[*]§r資源包法線需要啟用高級材質。
 value.WATER_NORMALS.-1=使用樣式
 value.WATER_NORMALS.0=無
 value.WATER_NORMALS.1=Worley
@@ -641,13 +641,13 @@ option.WATER_BUMP=凹凸度
 option.WATER_BUMP.comment=調整水法線的密度。
 
 option.WATER_SHARPNESS=銳度
-option.WATER_SHARPNESS.comment=調整水法線的銳度和光暈的數量。
+option.WATER_SHARPNESS.comment=調整水法線的銳度和焦散的數量。
 value.WATER_SHARPNESS.0.8=低
 value.WATER_SHARPNESS.0.5=中
 value.WATER_SHARPNESS.0.2=高
 
 option.WATER_SPEED=速度
-option.WATER_SPEED.comment=調整水法線的噪聲速度。
+option.WATER_SPEED.comment=調整水法線的雜訊速度。
 
 option.WATER_FOG=水霧
 option.WATER_FOG.comment=確定水霧是僅在水下可見還是始終可見。
@@ -657,8 +657,8 @@ value.WATER_FOG.1=始終可見
 option.WATER_FOG_DENSITY=水霧密度
 option.WATER_FOG_DENSITY.comment=調整水霧密度。
 
-option.WATER_CAUSTICS_STRENGTH=光暈強度
-option.WATER_CAUSTICS_STRENGTH.comment=調整水光暈的強度。
+option.WATER_CAUSTICS_STRENGTH=水體焦散強度
+option.WATER_CAUSTICS_STRENGTH.comment=調整水體焦散的強度。
 
 option.WATER_PIXEL=像素鎖定
 option.WATER_PIXEL.comment=在水法線上應用像素化效果。
@@ -702,20 +702,20 @@ option.WAVING_LANTERN=燈籠
 option.WAVING_LANTERN.comment=允許燈籠搖動。
 
 #Light Shaft
-option.LIGHT_SHAFT_STRENGTH=光柱強度
-option.LIGHT_SHAFT_STRENGTH.comment=調整光柱的強度。
+option.LIGHT_SHAFT_STRENGTH=光束強度
+option.LIGHT_SHAFT_STRENGTH.comment=調整光束的強度。
 
 option.LIGHT_SHAFT_MORNING_FALLOFF=晨光衰減
-option.LIGHT_SHAFT_MORNING_FALLOFF.comment=調整日出/日落時光柱的半徑。
+option.LIGHT_SHAFT_MORNING_FALLOFF.comment=調整日出/日落時光束的半徑。
 
 option.LIGHT_SHAFT_DAY_FALLOFF=白天衰減
-option.LIGHT_SHAFT_DAY_FALLOFF.comment=調整正午時光柱的半徑。
+option.LIGHT_SHAFT_DAY_FALLOFF.comment=調整正午時光束的半徑。
 
 option.LIGHT_SHAFT_NIGHT_FALLOFF=夜間衰減
-option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=調整夜晚時光柱的半徑。
+option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=調整夜晚時光束的半徑。
 
 option.LIGHT_SHAFT_WEATHER_FALLOFF=天氣衰減
-option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=調整下雨時光柱半徑的倍數。
+option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=調整下雨時光束半徑的倍數。
 
 #Camera
 option.DOF=景深
@@ -723,20 +723,20 @@ option.DOF.comment=啟用相機對焦效果。
 option.DOF_STRENGTH=景深強度
 option.DOF_STRENGTH.comment=調整對焦強度，較高的值會更快模糊。
 
-option.MOTION_BLUR=運動模糊
+option.MOTION_BLUR=動態模糊
 option.MOTION_BLUR.comment=啟用基於相機運動的模糊。
 
-option.MOTION_BLUR_STRENGTH=運動模糊強度
-option.MOTION_BLUR_STRENGTH.comment=調整運動模糊的強度。
+option.MOTION_BLUR_STRENGTH=動態模糊強度
+option.MOTION_BLUR_STRENGTH.comment=調整動態模糊的強度。
 
-option.BLOOM=光暈
-option.BLOOM.comment=允許明亮區域發光。
+option.BLOOM=泛光
+option.BLOOM.comment=使明亮區域產生光暈效果。
 
-option.BLOOM_STRENGTH=光暈強度
-option.BLOOM_STRENGTH.comment=調整光暈的強度。
+option.BLOOM_STRENGTH=泛光強度
+option.BLOOM_STRENGTH.comment=調整泛光的強度。
 
-option.BLOOM_CONTRAST=光暈對比
-option.BLOOM_CONTRAST.comment=調整光暈是否應保留顏色對比或細節可見性。較高的值保留顏色對比，而較低的值保留細節可見性。
+option.BLOOM_CONTRAST=泛光對比
+option.BLOOM_CONTRAST.comment=調整泛光是否應保留顏色對比或細節可見性。較高的值保留顏色對比，而較低的值保留細節可見性。
 value.BLOOM_CONTRAST.-4=-1.00
 value.BLOOM_CONTRAST.-3=-0.75
 value.BLOOM_CONTRAST.-2=-0.50
@@ -747,7 +747,7 @@ value.BLOOM_CONTRAST.2=0.50
 value.BLOOM_CONTRAST.3=0.75
 value.BLOOM_CONTRAST.4=1.00
 
-option.BLOOM_RADIUS=光暈半徑
+option.BLOOM_RADIUS=泛光半徑
 option.BLOOM_RADIUS.comment=調整光暈擴散的距離。
 value.BLOOM_RADIUS.1=最小
 value.BLOOM_RADIUS.2=非常低
@@ -757,11 +757,11 @@ value.BLOOM_RADIUS.5=高
 value.BLOOM_RADIUS.6=非常高
 value.BLOOM_RADIUS.7=最大
 
-option.LENS_FLARE=光暈
-option.LENS_FLARE.comment=啟用光暈效果。
+option.LENS_FLARE=鏡頭光暈
+option.LENS_FLARE.comment=啟用鏡頭光暈。
 
-option.LENS_FLARE_STRENGTH=光暈強度
-option.LENS_FLARE_STRENGTH.comment=調整光暈的強度。
+option.LENS_FLARE_STRENGTH=鏡頭光暈強度
+option.LENS_FLARE_STRENGTH.comment=調整鏡頭光暈的強度。
 
 option.VIGNETTE=漸暈
 option.VIGNETTE.comment=(邊飾/暗角)使螢幕邊緣變黑。 §e[*]§r用於360度成像時禁用此項。
@@ -780,7 +780,7 @@ value.VIGNETTE_STRENGTH.1.40=0.9
 value.VIGNETTE_STRENGTH.1.41=1.0
 
 option.DIRTY_LENS=髒鏡頭
-option.DIRTY_LENS.comment=為光暈添加塵埃粒子效果。§e[*]§r需要光暈。
+option.DIRTY_LENS.comment=為泛光添加塵埃粒子效果。§e[*]§r需啟用泛光。
 
 option.CHROMATIC_ABERRATION=色差
 option.CHROMATIC_ABERRATION.comment=在邊界周圍添加色彩失真。
@@ -793,10 +793,10 @@ option.UNDERWATER_DISTORTION.comment=在水下應用螢幕失真。
 
 #Anti-aliasing
 option.FXAA=FXAA
-option.FXAA.comment=啟用快速近似抗鋸齒，通過平滑邊緣實現，效能開銷較低。§e[*]§r請在啟用此選項時禁用光影選單中的抗鋸齒（僅限 Optifine）。
+option.FXAA.comment=啟用快速近似反鋸齒，通過平滑邊緣實現，效能開銷較低。§e[*]§r請在啟用此選項時禁用光影選單中的反鋸齒（僅限 Optifine）。
 
 option.TAA=TAA
-option.TAA.comment=啟用時間抗鋸齒，通過智能幀混合捕捉和改進細節以及部分效果。§e[*]§r包括銳化功能。§e[*]§r請在啟用此選項時禁用光影選單中的抗鋸齒（僅限 Optifine）。
+option.TAA.comment=啟用時間反鋸齒，通過智慧幀混合捕捉和改進細節以及部分效果。§e[*]§r包括銳化功能。§e[*]§r請在啟用此選項時禁用光影選單中的反鋸齒（僅限 Optifine）。
 
 option.FXAA_SUBPIXEL=FXAA 子像素平滑
 option.FXAA_SUBPIXEL.comment=調整FXAA對微小細節的平滑程度。
@@ -818,7 +818,7 @@ value.TAA_MODE.0=平滑
 value.TAA_MODE.1=粗糙
 
 option.TAA_SELECTIVE=選擇性TAA
-option.TAA_SELECTIVE.comment=從時間抗鋸齒中排除實體、粒子和手，以減少鬼影。 §c[-]§r排除的物體需要依賴FXAA。
+option.TAA_SELECTIVE.comment=從時間反鋸齒中排除實體、粒子和手，以減少鬼影。 §c[-]§r排除的物體需要依賴FXAA。
 
 #Color
 option.LIGHT_MR=紅色
@@ -1067,7 +1067,7 @@ option.CG_TM=色調混合值
 
 #Extras
 option.OUTLINE=輪廓
-option.OUTLINE.comment=啟用輪廓效果。§c[-]§r黑色、彩色和1.12更新藝術與體積雲不完全兼容。
+option.OUTLINE.comment=啟用輪廓效果。§c[-]§r黑色、彩色和1.12更新藝術與體積雲不完全相容。
 value.OUTLINE.0=關閉
 value.OUTLINE.1=黑色
 value.OUTLINE.2=彩色
@@ -1078,7 +1078,7 @@ option.TOON_LIGHTMAP=卡通光貼圖
 option.TOON_LIGHTMAP.comment=降低原版光照品質以實現卡通渲染。 §e[*]§r此選項已知會使遊戲「看起來很糟糕」，僅在需要時啟用。
 
 option.RETRO_FILTER=復古濾鏡
-option.RETRO_FILTER.comment=添加像素化和抖動效果。§c[-]§r與抗鋸齒不兼容。
+option.RETRO_FILTER.comment=添加像素化和抖動效果。§c[-]§r與反鋸齒不相容。
 
 option.RETRO_FILTER_SIZE=復古濾鏡尺寸
 option.RETRO_FILTER_SIZE.comment=調整復古濾鏡的像素尺寸。
