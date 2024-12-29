@@ -81,7 +81,7 @@ screen.ANTIALIASING=Anti-aliasing
 screen.EXTRAS=Extras
 
 #Settings
-option.ABOUT=BSL v8.4
+option.ABOUT=BSL v8.4.01.2
 option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
 
