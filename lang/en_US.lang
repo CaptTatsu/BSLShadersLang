@@ -22,7 +22,7 @@ screen.EMISSIVE=Emissive
 screen.ENVIRONMENT=Environment
 screen.CLOUDS=Clouds
 screen.FOG=Fog
-screen.FOG_DENSITY=More Fog Density Config
+screen.FOG_DENSITY_MORE=More Fog Density Config
 screen.FOG_HEIGHT=Height Fog Config
 screen.FOG_VANILLA=Far Vanilla Fog Config
 screen.SKY=Sky
@@ -32,6 +32,8 @@ screen.ANIMATION=Animations
 screen.LIGHT_SHAFT=Light Shaft Config
 
 screen.CAMERA=Camera
+screen.DOF=Depth of Field Config
+screen.BLOOM=Bloom Config
 
 screen.COLOR=Color
 screen.LIGHT_COLOR=Lighting Color
@@ -49,13 +51,13 @@ screen.SKY_COLOR=Sky Color
 screen.WATER_COLOR=Water Color
 screen.WEATHER_COLOR=Weather Color
 screen.WEATHER_R=Rain (Normal)
-screen.WEATHER_C=Snowfall
-screen.WEATHER_D=Desert Sandstorm
-screen.WEATHER_B=Mesa Sandstorm
-screen.WEATHER_S=Swamp Rain
-screen.WEATHER_M=Mushroom Island Rain
-screen.WEATHER_V=Savanna Cloudy
-screen.WEATHER_J=Jungle Rain
+screen.WEATHER_C=Snow (Cold Biomes)
+screen.WEATHER_D=Desert
+screen.WEATHER_B=Mesa
+screen.WEATHER_S=Swamp
+screen.WEATHER_M=Mushroom Island
+screen.WEATHER_V=Savanna
+screen.WEATHER_J=Jungle
 screen.AURORA_COLOR=Aurora Color
 screen.AURORA_L=Low Section Color
 screen.AURORA_H=High Section Color
@@ -81,7 +83,7 @@ screen.ANTIALIASING=Anti-aliasing
 screen.EXTRAS=Extras
 
 #Settings
-option.ABOUT=BSL v8.4.01.2
+option.ABOUT=BSL v8.4.02
 option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -116,7 +118,7 @@ option.AO=Ambient Occlusion
 option.AO.comment=Adds soft shadows around surface contact or intersection.
 
 option.MULTICOLORED_BLOCKLIGHT=Multi-Colored Blocklight
-option.MULTICOLORED_BLOCKLIGHT.comment=Enables screen space multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above, non-Mac devices.
+option.MULTICOLORED_BLOCKLIGHT.comment=Enables screen space multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above.
 
 option.DESATURATION=Desaturation
 option.DESATURATION.comment=Reduces saturation while adding some tint in darker areas.
@@ -176,6 +178,11 @@ value.SHADOW_SKY_FALLOFF.0.8=Strong
 value.SHADOW_SKY_FALLOFF.0.8667=Very Strong
 
 #Ambient Occlusion Config
+option.AO_METHOD=AO Method
+option.AO_METHOD.comment=Determines how AO is calculated. 
+value.AO_METHOD.0=Modern
+value.AO_METHOD.1=Classic
+
 option.AO_STRENGTH=AO Strength
 option.AO_STRENGTH.comment=Adjusts ambient occlusion strength.
 
@@ -458,8 +465,8 @@ option.CLOUD_OPACITY.comment=Adjusts cloud opacity.
 option.CLOUD_BRIGHTNESS=Brightness
 option.CLOUD_BRIGHTNESS.comment=Adjusts cloud brightness.
 
-option.CLOUD_REVEAL=Reveal Sun&Moon
-option.CLOUD_REVEAL.comment=Reduces amount of cloud around sun & moon.
+option.CLOUD_REVEAL=Reveal Sun & Moon
+option.CLOUD_REVEAL.comment=Reduces amount of cloud around sun & moon. §e[*]§rThis option is ignored by blocky base shape.
 
 #Fog
 option.FOG_DENSITY=Overworld Fog Density
@@ -481,6 +488,9 @@ value.FAR_VANILLA_FOG.0=§cOff
 value.FAR_VANILLA_FOG.1=Overworld Only
 value.FAR_VANILLA_FOG.2=Nether & End Only
 value.FAR_VANILLA_FOG.3=Full
+
+option.FOG_INTERIOR=Interior Fog Fix
+option.FOG_INTERIOR.comment=Prevents interior fog removal while the player is above sea level (Y: 62).
 
 #Fog Density
 option.FOG_DENSITY_NIGHT=Night - Weather Density
@@ -546,8 +556,8 @@ value.SKY_GROUND.0=§cOff
 value.SKY_GROUND.1=Reflections Only
 value.SKY_GROUND.2=Full
 
-option.UNDERGROUND_SKY=Underground Sky Fix
-option.UNDERGROUND_SKY.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
+option.SKY_UNDERGROUND=Underground Sky Fix
+option.SKY_UNDERGROUND.comment=Hides the sky when the player is in dark area and under sea level (Y: 62). §c[-]§rNot suitable for low superflat worlds.
 
 option.SHADER_END_SKY=Shader End Sky
 option.SHADER_END_SKY.comment=Replaces vanilla/modded end skybox with shader based end skybox.
@@ -720,8 +730,6 @@ option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=Adjusts light shaft radius multiplier
 #Camera
 option.DOF=Depth of Field
 option.DOF.comment=Enables camera focus effect.
-option.DOF_STRENGTH=DoF Strength
-option.DOF_STRENGTH.comment=Adjusts the focus strength, higher value blurs quicker.
 
 option.MOTION_BLUR=Motion Blur
 option.MOTION_BLUR.comment=Enables camera motion based blurring.
@@ -731,31 +739,6 @@ option.MOTION_BLUR_STRENGTH.comment=Adjusts motion blur intensity.
 
 option.BLOOM=Bloom
 option.BLOOM.comment=Allows bright areas to glow.
-
-option.BLOOM_STRENGTH=Bloom Strength
-option.BLOOM_STRENGTH.comment=Adjusts bloom intensity.
-
-option.BLOOM_CONTRAST=Bloom Contrast
-option.BLOOM_CONTRAST.comment=Adjusts whether the bloom should preserve color contrast or detail visibility. Higher value preserves color contrast while lower value preserves detail visibility.
-value.BLOOM_CONTRAST.-4=-1.00
-value.BLOOM_CONTRAST.-3=-0.75
-value.BLOOM_CONTRAST.-2=-0.50
-value.BLOOM_CONTRAST.-1=-0.25
-value.BLOOM_CONTRAST.0=0.00
-value.BLOOM_CONTRAST.1=0.25
-value.BLOOM_CONTRAST.2=0.50
-value.BLOOM_CONTRAST.3=0.75
-value.BLOOM_CONTRAST.4=1.00
-
-option.BLOOM_RADIUS=Bloom Radius
-option.BLOOM_RADIUS.comment=Adjusts how far the glow spreads.
-value.BLOOM_RADIUS.1=Minimum
-value.BLOOM_RADIUS.2=Very Low
-value.BLOOM_RADIUS.3=Low
-value.BLOOM_RADIUS.4=Medium
-value.BLOOM_RADIUS.5=High
-value.BLOOM_RADIUS.6=Very High
-value.BLOOM_RADIUS.7=Maximum
 
 option.LENS_FLARE=Lens Flare
 option.LENS_FLARE.comment=Enables lens flare.
@@ -791,34 +774,56 @@ value.CHROMATIC_ABERRATION.2=Strong
 option.UNDERWATER_DISTORTION=Underwater Distortion
 option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater.
 
-#Anti-aliasing
-option.FXAA=FXAA
-option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled (Optifine only).
+#Depth of Field
+option.DOF_FOCUS_MODE=DoF Focus Mode
+option.DOF_FOCUS_MODE.comment=Determines how focus distance is calculated. Auto uses center depth. Manual uses focus distance slider. Manual+ uses focus distance slider and brightness slider (in video settings).
+value.DOF_FOCUS_MODE.0=Auto
+value.DOF_FOCUS_MODE.1=Manual
+value.DOF_FOCUS_MODE.2=Manual+
 
-option.TAA=TAA
-option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled (Optifine only).
+option.DOF_STRENGTH=DoF Strength
+option.DOF_STRENGTH.comment=Adjusts the focus strength, higher value blurs quicker.
 
-option.FXAA_SUBPIXEL=FXAA Subpixel Smoothing
-option.FXAA_SUBPIXEL.comment=Adjusts how much smoothing should FXAA apply to tiny details.
-value.FXAA_SUBPIXEL.0.00=§cOff
-value.FXAA_SUBPIXEL.0.25=Low
-value.FXAA_SUBPIXEL.0.50=Medium
-value.FXAA_SUBPIXEL.0.75=High
-value.FXAA_SUBPIXEL.1.00=Very High
+option.DOF_FOCUS_X=Auto Focus X
+option.DOF_FOCUS_X.comment=Adjusts horizontal position of the auto focus point.
 
-option.FXAA_EDGE_SENSITIVITY=FXAA Edge Sensitivity
-option.FXAA_EDGE_SENSITIVITY.comment=Adjusts how much edge contrast and brightness required to apply FXAA.
-value.FXAA_EDGE_SENSITIVITY.0=Low
-value.FXAA_EDGE_SENSITIVITY.1=Medium
-value.FXAA_EDGE_SENSITIVITY.2=High
+option.DOF_FOCUS_Y=Auto Focus Y
+option.DOF_FOCUS_Y.comment=Adjusts vertical position of the auto focus point.
 
-option.TAA_MODE=TAA Mode
-option.TAA_MODE.comment=Determines how TAA should be done. Smooth allows some effects to look better at the cost of ghosting. Coarse have less ghosting but barely improves other effects.
-value.TAA_MODE.0=Smooth
-value.TAA_MODE.1=Coarse
+option.DOF_FOCUS_SPEED=Auto Focus Speed
+option.DOF_FOCUS_SPEED.comment=Adjusts the speed of focus distance smoothing.
 
-option.TAA_SELECTIVE=Selective TAA
-option.TAA_SELECTIVE.comment=Exclude entities, particles, and hand from temporal anti aliasing to reduce ghosting. §c[-]§rExcluded objects will need to rely on FXAA.
+option.DOF_FOCUS_POINT=Show Auto Focus Point
+option.DOF_FOCUS_POINT.comment=Shows focus point as a white dot.
+
+option.DOF_FOCUS_DISTANCE=DoF Focus Distance
+option.DOF_FOCUS_DISTANCE.comment=Determines focus distance while using manual focus mode.
+
+#Bloom
+option.BLOOM_STRENGTH=Bloom Strength
+option.BLOOM_STRENGTH.comment=Adjusts bloom intensity.
+
+option.BLOOM_CONTRAST=Bloom Contrast
+option.BLOOM_CONTRAST.comment=Adjusts whether the bloom should preserve color contrast or detail visibility. Higher value preserves color contrast while lower value preserves detail visibility.
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=Bloom Radius
+option.BLOOM_RADIUS.comment=Adjusts how far the glow spreads.
+value.BLOOM_RADIUS.1=Minimum
+value.BLOOM_RADIUS.2=Very Low
+value.BLOOM_RADIUS.3=Low
+value.BLOOM_RADIUS.4=Medium
+value.BLOOM_RADIUS.5=High
+value.BLOOM_RADIUS.6=Very High
+value.BLOOM_RADIUS.7=Maximum
 
 #Color
 option.LIGHT_MR=Red
@@ -1031,11 +1036,11 @@ value.AUTO_EXPOSURE_RADIUS.0.7=Very High
 
 option.AUTO_EXPOSURE_SPEED=Auto Exposure Speed
 option.AUTO_EXPOSURE_SPEED.comment=Adjusts how fast the exposure change occurs. §c[-]§rFast speed or above may cause flashing in combination with low radius.
-value.AUTO_EXPOSURE_SPEED.0.0033=Very Slow
-value.AUTO_EXPOSURE_SPEED.0.01=Slow
-value.AUTO_EXPOSURE_SPEED.0.033=Medium
-value.AUTO_EXPOSURE_SPEED.0.1=Fast
-value.AUTO_EXPOSURE_SPEED.0.33=Very Fast
+value.AUTO_EXPOSURE_SPEED.0.33=Very Slow
+value.AUTO_EXPOSURE_SPEED.1.00=Slow
+value.AUTO_EXPOSURE_SPEED.3.33=Medium
+value.AUTO_EXPOSURE_SPEED.10.00=Fast
+value.AUTO_EXPOSURE_SPEED.33.33=Very Fast
 
 #Color Grading Config
 option.CG_RR=Red - Red Value
@@ -1064,6 +1069,47 @@ option.CG_TG=Tint - Green Value
 option.CG_TB=Tint - Blue Value
 option.CG_TI=Tint Strength Value
 option.CG_TM=Tint Mix Value
+
+#Anti-aliasing
+option.FXAA=FXAA
+option.FXAA.comment=Enables fast approximate anti-aliasing, done by smoothing out edges with minimal performance cost. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled (Optifine only).
+
+option.TAA=TAA
+option.TAA.comment=Enables temporal anti-aliasing, done by smart frame blending which captures improves tiny details and some effects. §e[*]§rSharpening included. §e[*]§rPlease disable Antialiasing in Shaders menu while this option is enabled (Optifine only).
+
+option.FXAA_SUBPIXEL=FXAA Subpixel Smoothing
+option.FXAA_SUBPIXEL.comment=Adjusts how much smoothing should FXAA apply to tiny details.
+value.FXAA_SUBPIXEL.0.00=§cOff
+value.FXAA_SUBPIXEL.0.25=Low
+value.FXAA_SUBPIXEL.0.50=Medium
+value.FXAA_SUBPIXEL.0.75=High
+value.FXAA_SUBPIXEL.1.00=Very High
+
+option.FXAA_EDGE_SENSITIVITY=FXAA Edge Sensitivity
+option.FXAA_EDGE_SENSITIVITY.comment=Adjusts how much edge contrast and brightness required to apply FXAA.
+value.FXAA_EDGE_SENSITIVITY.0=Low
+value.FXAA_EDGE_SENSITIVITY.1=Medium
+value.FXAA_EDGE_SENSITIVITY.2=High
+
+option.TAA_MODE=TAA Mode
+option.TAA_MODE.comment=Determines how TAA should be done. Smooth allows some effects to look better at the cost of ghosting. Coarse have less ghosting but barely improves other effects.
+value.TAA_MODE.0=Smooth
+value.TAA_MODE.1=Coarse
+
+option.TAA_SELECTIVE=Selective TAA
+option.TAA_SELECTIVE.comment=Exclude entities, particles, and hand from temporal anti aliasing to reduce ghosting. §c[-]§rExcluded objects will need to rely on FXAA.
+
+option.SHARPEN=Sharpen
+option.SHARPEN.comment=Reduces blurring. Auto: 0.50 when FXAA and TAA are enabled, otherwise 0.00. §c[-]§rIncreased sharpening makes noise and flickering more visible.
+value.SHARPEN.-1=Auto
+value.SHARPEN.0=0.00
+value.SHARPEN.1=0.25
+value.SHARPEN.2=0.50
+value.SHARPEN.3=0.75
+value.SHARPEN.4=1.00
+
+option.SHARPEN_CLAMP=Sharpen Clamp
+option.SHARPEN_CLAMP.comment=Prevents increased contrast on edges caused by sharpening.
 
 #Extras
 option.OUTLINE=Outline
