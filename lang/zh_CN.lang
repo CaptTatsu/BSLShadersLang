@@ -22,7 +22,7 @@ screen.EMISSIVE=自发光
 screen.ENVIRONMENT=环境
 screen.CLOUDS=云配置
 screen.FOG=迷雾
-screen.FOG_DENSITY=迷雾密度
+screen.FOG_DENSITY_MORE=更多雾密度配置
 screen.FOG_HEIGHT=迷雾高度
 screen.FOG_VANILLA=原版迷雾
 screen.SKY=天空配置
@@ -32,6 +32,8 @@ screen.ANIMATION=动画
 screen.LIGHT_SHAFT=光束配置
 
 screen.CAMERA=镜头
+screen.DOF=景深配置
+screen.BLOOM=泛光配置
 
 screen.COLOR=颜色
 screen.LIGHT_COLOR=光照颜色
@@ -49,13 +51,13 @@ screen.SKY_COLOR=天空颜色
 screen.WATER_COLOR=水颜色
 screen.WEATHER_COLOR=天气颜色
 screen.WEATHER_R=雨（正常）
-screen.WEATHER_C=雪
-screen.WEATHER_D=沙漠沙尘暴
-screen.WEATHER_B=恶地沙尘暴
-screen.WEATHER_S=沼泽雨
-screen.WEATHER_M=蘑菇岛雨
-screen.WEATHER_V=热带草原多云
-screen.WEATHER_J=丛林雨
+screen.WEATHER_C=雪（寒冷生物群系）
+screen.WEATHER_D=沙漠
+screen.WEATHER_B=恶地
+screen.WEATHER_S=沼泽
+screen.WEATHER_M=蘑菇岛
+screen.WEATHER_V=热带草原
+screen.WEATHER_J=丛林
 screen.AURORA_COLOR=极光颜色
 screen.AURORA_L=低段颜色
 screen.AURORA_H=高段颜色
@@ -81,7 +83,7 @@ screen.ANTIALIASING=抗锯齿
 screen.EXTRAS=附加项
 
 #Settings
-option.ABOUT=BSL v8.4.01.2
+option.ABOUT=BSL v8.4.02.2
 option.ABOUT.comment=作者：Capt Tatsu. capttatsu.com
 value.ABOUT.0=作者： Capt Tatsu
 
@@ -116,7 +118,7 @@ option.AO=环境光遮蔽（AO）
 option.AO.comment=增加表面接触或交叉处的软阴影。
 
 option.MULTICOLORED_BLOCKLIGHT=多彩方块光
-option.MULTICOLORED_BLOCKLIGHT.comment=启用屏幕空间多彩方块光。 §e[*]§r仅适用于1.16.5及以上版本，非Mac设备。
+option.MULTICOLORED_BLOCKLIGHT.comment=启用屏幕空间多彩方块光。 §e[*]§r仅适用于1.16.5及以上版本。
 
 option.DESATURATION=去饱和度
 option.DESATURATION.comment=在较暗区域减少饱和度并增加一些色调。
@@ -176,6 +178,11 @@ value.SHADOW_SKY_FALLOFF.0.8=较强
 value.SHADOW_SKY_FALLOFF.0.8667=非常强
 
 #Ambient Occlusion Config
+option.AO_METHOD=AO 方法
+option.AO_METHOD.comment=确定 AO 的计算方式。
+value.AO_METHOD.0=现代
+value.AO_METHOD.1=经典
+
 option.AO_STRENGTH=环境光遮蔽强度
 option.AO_STRENGTH.comment=调整环境光遮蔽的强度。
 
@@ -228,7 +235,7 @@ value.REFLECTION.1=仅天空和镜面反射
 value.REFLECTION.2=完全启用
 
 option.REFLECTION_TRANSLUCENT=透明反射
-option.REFLECTION_TRANSLUCENT.comment=允许透明表面（如染色玻璃、冰、粘液块等）上显示反射。
+option.REFLECTION_TRANSLUCENT.comment=允许透明表面（如染色玻璃、冰、黏液块等）上显示反射。
 
 option.REFLECTION_MODE=反射模式
 option.REFLECTION_MODE.comment=调整反射行为。
@@ -382,7 +389,7 @@ value.DH_OVERDRAW.9.0=8 个区块
 
 #Cloud
 option.CLOUDS=云
-option.CLOUDS.comment=启用云。 §a[+]§r天空盒和体积云受益于TAA。 §e[*]§r原版云需要在视频设置 > 细节 > 云中设置为默认或启用。
+option.CLOUDS.comment=启用云。 §a[+]§r天空盒和体积云受益于TAA。 §e[*]§r原版云需要在原版云设置中设为默认或开启。
 value.CLOUDS.0=§c关闭
 value.CLOUDS.1=天空盒
 value.CLOUDS.2=体积
@@ -404,7 +411,7 @@ value.CLOUD_DENSITY.6=高
 value.CLOUD_DENSITY.8=非常高
 
 option.CLOUD_AMOUNT=数量
-option.CLOUD_AMOUNT.comment=调整云的数量。§e[*]§r此选项被块状基础形状忽略。
+option.CLOUD_AMOUNT.comment=调整云的数量。§e[*]§r此选项被 Blocky 基础形状忽略。
 value.CLOUD_AMOUNT.12.0=非常低
 value.CLOUD_AMOUNT.11.0=低
 value.CLOUD_AMOUNT.10.0=中
@@ -428,9 +435,9 @@ value.CLOUD_VOLUMETRIC_SCALE.16.0=原始天空盒
 option.CLOUD_STRETCH=拉伸
 option.CLOUD_STRETCH.comment=调整云的拉伸程度。
 value.CLOUD_STRETCH.2.0=非常低
-value.CLOUD_STRETCH.1.4=较低
-value.CLOUD_STRETCH.1.0=中等
-value.CLOUD_STRETCH.0.7=较高
+value.CLOUD_STRETCH.1.4=低
+value.CLOUD_STRETCH.1.0=中
+value.CLOUD_STRETCH.0.7=高
 value.CLOUD_STRETCH.0.5=非常高
 
 option.CLOUD_THICKNESS=厚度
@@ -442,7 +449,7 @@ value.CLOUD_THICKNESS.7=高
 value.CLOUD_THICKNESS.10=非常高
 
 option.CLOUD_DETAIL=细节
-option.CLOUD_DETAIL.comment=调整云的细节。§e[*]§r此选项被块状基础形状忽略。
+option.CLOUD_DETAIL.comment=调整云的细节。§e[*]§r此选项被 Blocky 基础形状忽略。
 value.CLOUD_DETAIL.0.3=非常低
 value.CLOUD_DETAIL.0.7=低
 value.CLOUD_DETAIL.1.0=中
@@ -459,7 +466,7 @@ option.CLOUD_BRIGHTNESS=亮度
 option.CLOUD_BRIGHTNESS.comment=调整云的亮度。
 
 option.CLOUD_REVEAL=显示太阳与月亮
-option.CLOUD_REVEAL.comment=减少太阳和月亮周围的云量。
+option.CLOUD_REVEAL.comment=减少太阳和月亮周围的云量。§e[*]§r此选项被 Blocky 基础形状忽略。
 
 #Fog
 option.FOG_DENSITY=主世界雾密度
@@ -481,6 +488,9 @@ value.FAR_VANILLA_FOG.0=§c关闭
 value.FAR_VANILLA_FOG.1=仅主世界
 value.FAR_VANILLA_FOG.2=仅下界和末地
 value.FAR_VANILLA_FOG.3=全部
+
+option.FOG_INTERIOR=室内雾修复
+option.FOG_INTERIOR.comment=防止玩家在海平面以上（Y: 62）时移除室内雾。
 
 #Fog Density
 option.FOG_DENSITY_NIGHT=夜晚 - 天气密度
@@ -546,8 +556,8 @@ value.SKY_GROUND.0=§c关闭
 value.SKY_GROUND.1=仅反射
 value.SKY_GROUND.2=完全启用
 
-option.UNDERGROUND_SKY=地下天空修复
-option.UNDERGROUND_SKY.comment=当玩家处于黑暗区域并低于海平面 (Y: 62) 时隐藏天空。§c[-]§r不适合低高度平坦世界。
+option.SKY_UNDERGROUND=地下天空修复
+option.SKY_UNDERGROUND.comment=当玩家处于黑暗区域并低于海平面（Y: 62）时隐藏天空。§c[-]§r不适合低超平坦世界。
 
 option.SHADER_END_SKY=光影的末地天空
 option.SHADER_END_SKY.comment=用基于光影的末地天空盒替换原版/模组的末地天空盒。
@@ -720,8 +730,6 @@ option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=调整下雨时光束半径的倍数�
 #Camera
 option.DOF=景深
 option.DOF.comment=启用相机对焦效果。
-option.DOF_STRENGTH=景深强度
-option.DOF_STRENGTH.comment=调整对焦强度，较高的值会更快模糊。
 
 option.MOTION_BLUR=运动模糊
 option.MOTION_BLUR.comment=启用基于相机运动的模糊。
@@ -730,32 +738,7 @@ option.MOTION_BLUR_STRENGTH=运动模糊强度
 option.MOTION_BLUR_STRENGTH.comment=调整运动模糊的强度。
 
 option.BLOOM=泛光
-option.BLOOM.comment=使明亮区域产生光晕效果。
-
-option.BLOOM_STRENGTH=泛光强度
-option.BLOOM_STRENGTH.comment=调整泛光的强度。
-
-option.BLOOM_CONTRAST=泛光对比
-option.BLOOM_CONTRAST.comment=调整泛光是否应保留颜色对比或细节可见性。较高的值保留颜色对比，而较低的值保留细节可见性。
-value.BLOOM_CONTRAST.-4=-1.00
-value.BLOOM_CONTRAST.-3=-0.75
-value.BLOOM_CONTRAST.-2=-0.50
-value.BLOOM_CONTRAST.-1=-0.25
-value.BLOOM_CONTRAST.0=0.00
-value.BLOOM_CONTRAST.1=0.25
-value.BLOOM_CONTRAST.2=0.50
-value.BLOOM_CONTRAST.3=0.75
-value.BLOOM_CONTRAST.4=1.00
-
-option.BLOOM_RADIUS=泛光半径
-option.BLOOM_RADIUS.comment=调整光晕扩散的距离。
-value.BLOOM_RADIUS.1=最小
-value.BLOOM_RADIUS.2=非常低
-value.BLOOM_RADIUS.3=低
-value.BLOOM_RADIUS.4=中
-value.BLOOM_RADIUS.5=高
-value.BLOOM_RADIUS.6=非常高
-value.BLOOM_RADIUS.7=最大
+option.BLOOM.comment=使明亮区域产生辉光效果。
 
 option.LENS_FLARE=镜头光晕
 option.LENS_FLARE.comment=启用镜头光晕效果。
@@ -791,34 +774,56 @@ value.CHROMATIC_ABERRATION.2=强
 option.UNDERWATER_DISTORTION=水下失真
 option.UNDERWATER_DISTORTION.comment=在水下应用屏幕失真。
 
-#Anti-aliasing
-option.FXAA=FXAA
-option.FXAA.comment=启用快速近似抗锯齿，通过平滑边缘实现，性能开销较低。§e[*]§r请在启用此选项时禁用光影菜单中的抗锯齿（仅限 Optifine）。
+#Depth of Field
+option.DOF_FOCUS_MODE=景深焦点模式
+option.DOF_FOCUS_MODE.comment=确定焦点距离的计算方式。自动使用中心深度。手动使用焦点距离滑块。手动+使用焦点距离滑块和亮度滑块（在视频设置中）。
+value.DOF_FOCUS_MODE.0=自动
+value.DOF_FOCUS_MODE.1=手动
+value.DOF_FOCUS_MODE.2=手动+
 
-option.TAA=TAA
-option.TAA.comment=启用时间抗锯齿，通过智能帧混合捕捉和改进细节以及部分效果。§e[*]§r包括锐化功能。§e[*]§r请在启用此选项时禁用光影菜单中的抗锯齿（仅限 Optifine）。
+option.DOF_STRENGTH=景深强度
+option.DOF_STRENGTH.comment=调整对焦强度，较高的值会更快模糊。
 
-option.FXAA_SUBPIXEL=FXAA 子像素平滑
-option.FXAA_SUBPIXEL.comment=调整FXAA对微小细节的平滑程度。
-value.FXAA_SUBPIXEL.0.00=§c关闭
-value.FXAA_SUBPIXEL.0.25=低
-value.FXAA_SUBPIXEL.0.50=中
-value.FXAA_SUBPIXEL.0.75=高
-value.FXAA_SUBPIXEL.1.00=非常高
+option.DOF_FOCUS_X=自动对焦 X
+option.DOF_FOCUS_X.comment=调整自动对焦点的水平位置。
 
-option.FXAA_EDGE_SENSITIVITY=FXAA 边缘敏感度
-option.FXAA_EDGE_SENSITIVITY.comment=调整应用FXAA所需的边缘对比度和亮度。
-value.FXAA_EDGE_SENSITIVITY.0=低
-value.FXAA_EDGE_SENSITIVITY.1=中
-value.FXAA_EDGE_SENSITIVITY.2=高
+option.DOF_FOCUS_Y=自动对焦 Y
+option.DOF_FOCUS_Y.comment=调整自动对焦点的垂直位置。
 
-option.TAA_MODE=TAA 模式
-option.TAA_MODE.comment=确定TAA的处理方式。平滑允许某些效果看起来更好，但会产生鬼影。粗糙减少鬼影，但几乎不改善其他效果。
-value.TAA_MODE.0=平滑
-value.TAA_MODE.1=粗糙
+option.DOF_FOCUS_SPEED=自动对焦速度
+option.DOF_FOCUS_SPEED.comment=调整焦点距离平滑变化的速度
 
-option.TAA_SELECTIVE=选择性TAA
-option.TAA_SELECTIVE.comment=从时间抗锯齿中排除实体、粒子和手，以减少鬼影。 §c[-]§r排除的物体需要依赖FXAA。
+option.DOF_FOCUS_POINT=显示自动对焦点
+option.DOF_FOCUS_POINT.comment=以白色小点显示焦点
+
+option.DOF_FOCUS_DISTANCE=景深对焦距离
+option.DOF_FOCUS_DISTANCE.comment=在使用手动对焦模式时确定焦点距离
+
+#Bloom
+option.BLOOM_STRENGTH=泛光强度
+option.BLOOM_STRENGTH.comment=调整泛光的强度
+
+option.BLOOM_CONTRAST=泛光对比度
+option.BLOOM_CONTRAST.comment=调整泛光效果在颜色对比度与细节可见性之间的平衡。较高的值保留颜色对比度，而较低的值保留细节可见性。
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=泛光半径
+option.BLOOM_RADIUS.comment=调整辉光扩散的范围
+value.BLOOM_RADIUS.1=最小
+value.BLOOM_RADIUS.2=非常低
+value.BLOOM_RADIUS.3=低
+value.BLOOM_RADIUS.4=中
+value.BLOOM_RADIUS.5=高
+value.BLOOM_RADIUS.6=非常高
+value.BLOOM_RADIUS.7=最大
 
 #Color
 option.LIGHT_MR=红色
@@ -1031,11 +1036,11 @@ value.AUTO_EXPOSURE_RADIUS.0.7=非常高
 
 option.AUTO_EXPOSURE_SPEED=自动曝光速度
 option.AUTO_EXPOSURE_SPEED.comment=调整曝光变化的速度。 §c[-]§r快速速度或更快可能会导致与低半径组合时闪烁。
-value.AUTO_EXPOSURE_SPEED.0.0033=非常慢
-value.AUTO_EXPOSURE_SPEED.0.01=慢
-value.AUTO_EXPOSURE_SPEED.0.033=中
-value.AUTO_EXPOSURE_SPEED.0.1=快
-value.AUTO_EXPOSURE_SPEED.0.33=非常快
+value.AUTO_EXPOSURE_SPEED.0.33=非常慢
+value.AUTO_EXPOSURE_SPEED.1.00=慢
+value.AUTO_EXPOSURE_SPEED.3.33=中
+value.AUTO_EXPOSURE_SPEED.10.00=快
+value.AUTO_EXPOSURE_SPEED.33.33=非常快
 
 #Color Grading Config
 option.CG_RR=红色 - 红值
@@ -1064,6 +1069,47 @@ option.CG_TG=色调 - 绿值
 option.CG_TB=色调 - 蓝值
 option.CG_TI=色调强度值
 option.CG_TM=色调混合值
+
+#Anti-aliasing
+option.FXAA=FXAA
+option.FXAA.comment=启用快速近似抗锯齿，通过平滑边缘实现，性能开销较低。§e[*]§r请在启用此选项时禁用光影菜单中的抗锯齿（仅限 Optifine）。
+
+option.TAA=TAA
+option.TAA.comment=启用时间抗锯齿，通过智能帧混合捕捉和改进细节以及部分效果。§e[*]§r包括锐化功能。§e[*]§r请在启用此选项时禁用光影菜单中的抗锯齿（仅限 Optifine）。
+
+option.FXAA_SUBPIXEL=FXAA 子像素平滑
+option.FXAA_SUBPIXEL.comment=调整FXAA对微小细节的平滑程度。
+value.FXAA_SUBPIXEL.0.00=§c关闭
+value.FXAA_SUBPIXEL.0.25=低
+value.FXAA_SUBPIXEL.0.50=中
+value.FXAA_SUBPIXEL.0.75=高
+value.FXAA_SUBPIXEL.1.00=非常高
+
+option.FXAA_EDGE_SENSITIVITY=FXAA 边缘灵敏度
+option.FXAA_EDGE_SENSITIVITY.comment=调整应用FXAA所需的边缘对比度和亮度。
+value.FXAA_EDGE_SENSITIVITY.0=低
+value.FXAA_EDGE_SENSITIVITY.1=中
+value.FXAA_EDGE_SENSITIVITY.2=高
+
+option.TAA_MODE=TAA 模式
+option.TAA_MODE.comment=决定TAA的处理方式。平滑模式：使部分效果更佳，但会产生鬼影。粗糙模式：减少鬼影，但几乎不改善其他效果。
+value.TAA_MODE.0=平滑
+value.TAA_MODE.1=粗糙
+
+option.TAA_SELECTIVE=选择性TAA
+option.TAA_SELECTIVE.comment=从时间抗锯齿中排除实体、粒子和手，以减少鬼影。 §c[-]§r被排除的对象将依赖FXAA处理。
+
+option.SHARPEN=锐化
+option.SHARPEN.comment=减少模糊。自动：当启用 FXAA 和 TAA 时为0.50，否则为0.00。 §c[-]§r增强锐化会使噪点和闪烁更加明显。
+value.SHARPEN.-1=自动
+value.SHARPEN.0=0.00
+value.SHARPEN.1=0.25
+value.SHARPEN.2=0.50
+value.SHARPEN.3=0.75
+value.SHARPEN.4=1.00
+
+option.SHARPEN_CLAMP=锐化限制
+option.SHARPEN_CLAMP.comment=防止因锐化而导致边缘对比度过高。
 
 #Extras
 option.OUTLINE=轮廓
