@@ -83,7 +83,7 @@ screen.ANTIALIASING=反鋸齒
 screen.EXTRAS=附加項
 
 #Settings
-option.ABOUT=BSL v8.4.02
+option.ABOUT=BSL v8.4.02.2
 option.ABOUT.comment=作者：Capt Tatsu. capttatsu.com
 value.ABOUT.0=作者：Capt Tatsu
 
