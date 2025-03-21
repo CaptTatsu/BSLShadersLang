@@ -6,28 +6,34 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=ウルトラ
-profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影、その他の効果なし。 中 : 中低精度の影、 その他の効果なし。 高 : 中精度の影、 AOと光の柱。 ウルトラ : 高精度の影、 AOと光の柱。
+profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影、その他の効果なし。 中 : 中低精度の影、 その他の効果なし。 高 : 中精度の影、 AOと光の柱、TAA。 ウルトラ : 高精度の影、 AOと光の柱、TAA。
 
 #Screens
 screen.LIGHTING=ライティング
-screen.SHADOW_CONFIG=追加の影設定
+screen.SHADOW=追加の影設定
+screen.AO=アンビエントオクルージョンの設定
 screen.MCBL=ブロックライト色設定
 
 screen.MATERIAL=質感
 screen.SPECULAR=反射
 screen.NORMALS=視差
+screen.EMISSIVE=発光
 
-screen.ATMOSPHERICS=天球(太陽など)の設定
-screen.SKY=空の設定
+screen.ENVIRONMENT=環境の設定
 screen.CLOUDS=雲の設定
 screen.FOG=霧の設定
+screen.FOG_DENSITY_MORE=追加の霧の密度の設定
+screen.FOG_HEIGHT=霧の高度の設定
+screen.FOG_VANILLA=遠方のバニラ雲の設定
+screen.SKY=空の設定
 screen.SKYBOX=スカイボックスの設定
-
 screen.WATER=水の設定
+screen.ANIMATION=アニメーションの設定
+screen.LIGHT_SHAFT=光の柱の設定
 
 screen.CAMERA=カメラ
-
-screen.ANTIALIASING=アンチエイリアス
+screen.DOF=DoFの設定
+screen.BLOOM=ブルームの設定
 
 screen.COLOR=色
 screen.LIGHT_COLOR=光の色
@@ -45,13 +51,13 @@ screen.SKY_COLOR=空の色
 screen.WATER_COLOR=水の色
 screen.WEATHER_COLOR=天気別の色
 screen.WEATHER_R=雨 (Normal)
-screen.WEATHER_C=降雪
-screen.WEATHER_D=砂漠の砂嵐
-screen.WEATHER_B=メサの砂嵐
-screen.WEATHER_S=沼地の雨
-screen.WEATHER_M=キノコ島の雨
-screen.WEATHER_V=サバンナの曇天
-screen.WEATHER_J=ジャングルの雨
+screen.WEATHER_C=降雪（寒いバイオーム）
+screen.WEATHER_D=砂漠
+screen.WEATHER_B=メサ
+screen.WEATHER_S=沼地
+screen.WEATHER_M=キノコ島
+screen.WEATHER_V=サバンナ
+screen.WEATHER_J=ジャングル
 screen.AURORA_COLOR=オーロラの色
 screen.AURORA_L=下方の色
 screen.AURORA_H=上方の色
@@ -65,21 +71,25 @@ screen.NETHER_B=玄武岩の三角州
 screen.END_COLOR=エンドの色
 
 screen.CGT=カラーグレーディング & トーンマップ
-screen.EXPOSURE_CONFIG=追加の露出設定
-screen.COLOR_GRADING_CONFIG=カラーグレーディングの設定
+screen.EXPOSURE=追加の露出設定
+screen.COLOR_GRADING=カラーグレーディングの設定
 screen.CG_R=赤(R)
 screen.CG_G=緑(G)
 screen.CG_B=青(B)
 screen.CG_T=色合い
 
+screen.ANTIALIASING=アンチエイリアシング
+
 screen.EXTRAS=その他の設定
 
-screen.ANIMATION=アニメーション設定
-
 #Settings
-option.ABOUT=BSL v8.2.08
-option.ABOUT.comment=by Capt Tatsu. bitslablab.com
+option.ABOUT=BSL v8.4.02.2
+option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
+
+option.STYLE=スタイル
+value.STYLE.0=オリジナル
+value.STYLE.1=クラシック
 
 #Lighting
 option.SHADOW=リアルタイムの影
@@ -107,8 +117,8 @@ option.SHADOW_FILTER.comment=シャドウフィルタリングを有効にしま
 option.AO=アンビエントオクルージョン(AO)
 option.AO.comment=接触している表面や交差した部分に柔らかな影を与えます。
 
-option.AO_STRENGTH=AOの強さ
-option.AO_STRENGTH.comment=アンビエントオクルージョン(AO)の強さを調整します。
+option.MULTICOLORED_BLOCKLIGHT=マルチカラーブロックライト
+option.MULTICOLORED_BLOCKLIGHT.comment=スクリーンスペースのマルチカラーブロックライトを有効にします。 §e[*]§r1.16.5以降でのみ動作します。
 
 option.DESATURATION=低彩度化(desaturation)
 option.DESATURATION.comment=彩度を低下させながら、暗い部分に色合いを追加します。
@@ -123,12 +133,15 @@ value.DESATURATION_FACTOR.0.0=最大
 
 option.DYNAMIC_HANDLIGHT=ダイナミックハンドライト
 option.DYNAMIC_HANDLIGHT.comment=特定のオブジェクトを手に持った場合、視界を光で照らします。
+value.DYNAMIC_HANDLIGHT.0=§cオフ
+value.DYNAMIC_HANDLIGHT.1=手持ちのみ
+value.DYNAMIC_HANDLIGHT.2=全て
 
-option.MULTICOLORED_BLOCKLIGHT=マルチカラーブロックライト
-option.MULTICOLORED_BLOCKLIGHT.comment=スクリーンスペースのマルチカラーブロックライトを有効にします。 §e[*]§rMac以外の1.16.5以降でのみ動作します。
-
-option.WHITE_WORLD=ホワイトワールド
-option.WHITE_WORLD.comment=テクスチャを真っ白にします。
+option.HALF_LAMBERT=ハーフランバートシェーダー
+option.HALF_LAMBERT.comment=太陽/月の方向に対して垂直な面が光を受けられるようにする。 §e[*]§r影のバイアスモードを表面法線に固定します。
+value.HALF_LAMBERT.-1=スタイルを適用する
+value.HALF_LAMBERT.0=§cオフ
+value.HALF_LAMBERT.1=オン
 
 #More Shadow Config
 option.SHADOW_ENTITY=エンティティの影
@@ -140,8 +153,12 @@ option.SHADOW_BLOCK_ENTITY.comment=ブロックエンティティの影を有効
 option.SHADOW_VEGETATION=植物の影
 option.SHADOW_VEGETATION.comment=草や小麦、その他の植物の影を有効にします。
 
-option.sunPathRotation=黄道角度
-option.sunPathRotation.comment=太陽がめぐる軌道の角度を設定します。
+option.SHADOW_CLOUD=雲の影
+option.SHADOW_CLOUD.comment=雲によって投影される影を有効にする
+
+option.SUN_PATH_ROTATION=黄道角度
+option.SUN_PATH_ROTATION.comment=太陽がめぐる軌道の角度を設定します。
+value.SUN_PATH_ROTATION.-1=Use Style
 
 option.SHADOW_BIAS=影の向き
 option.SHADOW_BIAS.comment=シャドウマッピングの方向を設定します。光の方向に設定すると、ほとんどの影のエッジは維持されますが、遠景では影が浮いて見えます。表面の法線方向に設定すると、影の接点は維持されますが、遠景では影が短く見えます。
@@ -151,6 +168,26 @@ value.SHADOW_BIAS.1=表面の法線方向
 option.SHADOW_PIXEL=ピクセル固定の影
 option.SHADOW_PIXEL.comment=影にピクセル化エフェクトを適用します。
 value.SHADOW_PIXEL.0=オフ
+
+option.SHADOW_SKY_FALLOFF=擬似的な影の減衰
+option.SHADOW_SKY_FALLOFF.comment=リアルタイムの影を無効にしたとき、擬似的な影の鮮明さを調整します
+value.SHADOW_SKY_FALLOFF.0.6=微弱
+value.SHADOW_SKY_FALLOFF.0.6667=弱
+value.SHADOW_SKY_FALLOFF.0.7333=バランス
+value.SHADOW_SKY_FALLOFF.0.8=強
+value.SHADOW_SKY_FALLOFF.0.8667=最大
+
+#Ambient Occlusion Config
+option.AO_METHOD=AOの方式
+option.AO_METHOD.comment=AOの算出方式を設定します
+value.AO_METHOD.0=モダン
+value.AO_METHOD.1=クラシック
+
+option.AO_STRENGTH=AOの強さ
+option.AO_STRENGTH.comment=アンビエントオクルージョンの強さを設定します
+
+option.ambientOcclusionLevel=バニラのAOの強さ
+option.ambientOcclusionLevel.comment=バニラのAOの強さを設定します
 
 #Colored Blocklight Config
 option.MCBL_ANTI_BLEED=アンチブリード
@@ -173,11 +210,8 @@ option.SSS.comment=光がブロックを通過して散乱するのを設定し�
 option.BASIC_SSS=簡易スキャッタリング
 option.BASIC_SSS.comment=特定のブロックに対しての簡易的なサブサーフェススキャッタリングを有効にします。
 
-option.EMISSIVE=発光
-option.EMISSIVE.comment=特定のブロックの表面を明るくします。
-value.EMISSIVE.0=§cオフ
-value.EMISSIVE.1=質感の強化のみ*
-value.EMISSIVE.2=全て
+option.ENTITY_FLASH=エンティティの点滅
+option.ENTITY_FLASH.comment=ダメージを受けたエンティティや近づいたクリーパーを点滅させます。
 
 option.REFRACTION=屈折
 option.REFRACTION.comment=法線マッピングを持つ透明な面の向こう側のゆがみを有効にします。 §c[-]§r透明な面そのものがゆがんでしまいます。 §c[-]§rこのエフェクトを有効にすると、他の一部の機能が正しく動作しない場合があります。
@@ -193,9 +227,6 @@ option.ALPHA_BLEND.comment=透明度のブレンドをどのように処理す�
 value.ALPHA_BLEND.0=ガンマ
 value.ALPHA_BLEND.1=リニア
 
-option.ENTITY_FLASH=エンティティの点滅
-option.ENTITY_FLASH.comment=ダメージを受けたエンティティや近づいたクリーパーを点滅させます。
-
 #Specular & Reflections
 option.REFLECTION=反射
 option.REFLECTION.comment=水面と半透明オブジェクトの反射を有効にします。
@@ -206,29 +237,26 @@ value.REFLECTION.2=フル
 option.REFLECTION_TRANSLUCENT=半透明オブジェクトの反射
 option.REFLECTION_TRANSLUCENT.comment=半透明オブジェクト(色付きガラス、氷、スライムブロックなど)表面の反射を描画します。
 
-option.REFLECTION_SPECULAR=鏡面反射*
-option.REFLECTION_SPECULAR.comment=滑らかな、または金属の表面の反射を有効にします。
-
-option.REFLECTION_RAIN=雨の反射*
-option.REFLECTION_RAIN.comment=雨が降っているとき、表面をぬれた状態にします。 §e[*]§r鏡面反射を有効にする必要があります。
-
-option.REFLECTION_ROUGH=粗い反射*
-option.REFLECTION_ROUGH.comment=粗いオブジェクトの表面にぼやけた反射を描写します。 §c[-]§r小さな歪みが含まれるでしょう。
+option.REFLECTION_MODE=反射モード
+option.REFLECTION_MODE.comment=反射のふるまいを調整します。
+value.REFLECTION_MODE.0=二重像を減らす
+value.REFLECTION_MODE.1=バランス
+value.REFLECTION_MODE.2=よりギャップを埋める
 
 option.REFLECTION_PREVIOUS=直前フレームの反射
 option.REFLECTION_PREVIOUS.comment=半透明オブジェクトの反射に直前のフレーム情報を利用します。 §c[-]§rスクリーンショットでは反射が失われます(スクリーンショットの解像度設定による)。 §c[-]§r一部のGPUと互換性がありません。§c[-]§r1.7.10のバグ。
 
 option.SPECULAR_HIGHLIGHT_ROUGH=粗い反射のハイライト
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=粗い反射面に弱い光沢を加えます
+value.SPECULAR_HIGHLIGHT.0=§cオフ
+value.SPECULAR_HIGHLIGHT.1=不透明のみ
+value.SPECULAR_HIGHLIGHT.2=フル
 
-option.ALBEDO_METAL=組み込みの金属反射*
-option.ALBEDO_METAL.comment=組み込みの金属表面を色合いとしてベーステクスチャに使用します。 §e[*]§rlabPBR準拠の(リソースパック)でのみ動作します。
-
-option.REFLECTION_MODE=反射モード
-option.REFLECTION_MODE.comment=反射のふるまいを調整します。
-value.REFLECTION_MODE.0=二重像を減らす
-value.REFLECTION_MODE.1=バランス
-value.REFLECTION_MODE.2=よりギャップを埋める
+option.REFLECTION_PRECISION=高精度の反射
+option.REFLECTION_PRECISION.comment=有効にすると、反射の粗さを軽減します。
+value.REFLECTION_PRECISION.-1=スタイルを適用する
+value.REFLECTION_PRECISION.0=§cオフ
+value.REFLECTION_PRECISION.1=オン
 
 option.REFLECTION_SKY_FALLOFF=空の光の反射の低下
 option.REFLECTION_SKY_FALLOFF.comment=空の光が弱い場合に、空の反射をどの程度フェードアウトさせるかを調整します。
@@ -240,6 +268,29 @@ value.REFLECTION_SKY_FALLOFF.16=とても強い
 
 option.REFLECTION_SKYBOX=スカイボックスの反射
 option.REFLECTION_SKYBOX.comment=リソースパックのスカイボックスを空の反射に含めます。§c[-]§rスカイボックスは、透明な表面にのみ適用されます。
+
+option.REFLECTION_SPECULAR=鏡面反射*
+option.REFLECTION_SPECULAR.comment=滑らかな、または金属の表面の反射を有効にします。
+
+option.REFLECTION_ROUGH=粗い反射*
+option.REFLECTION_ROUGH.comment=粗いオブジェクトの表面にぼやけた反射を描写します。 §c[-]§r小さな歪みが含まれるでしょう。
+
+option.REFLECTION_RAIN=雨の反射*
+option.REFLECTION_RAIN.comment=雨が降っているとき、表面をぬれた状態にします。 §e[*]§r鏡面反射を有効にする必要があります。
+
+option.REFLECTION_RAIN_AMOUNT=水たまりの量
+option.REFLECTION_RAIN_AMOUNT.comment=雨が降っているときに生成される水たまりの量を設定します。
+value.REFLECTION_RAIN_AMOUNT.0.4=とても少ない
+value.REFLECTION_RAIN_AMOUNT.0.5=少ない
+value.REFLECTION_RAIN_AMOUNT.0.6=中程度
+value.REFLECTION_RAIN_AMOUNT.0.7=多い
+value.REFLECTION_RAIN_AMOUNT.1.0=とても多い
+
+option.SPECULAR_HIGHLIGHT_ROUGH=粗い表面の鏡面反射*
+option.SPECULAR_HIGHLIGHT_ROUGH.comment=粗い表面に弱い光沢を持たせます。
+
+option.ALBEDO_METAL=labPBR金属反射*
+option.ALBEDO_METAL.comment=組み込みの金属表面を色合いとしてベーステクスチャに使用します。 §e[*]§rlabPBR準拠の(リソースパック)でのみ動作します。
 
 #Normals & Parallax
 option.PARALLAX=視差遮蔽マッピング(POM)*
@@ -293,22 +344,30 @@ option.NORMAL_DAMPENING.comment=法線マッピングの強度を下げて、反
 option.NORMAL_PLANTS=植物の影
 option.NORMAL_PLANTS.comment=植物の影を調整します。 §e[*]§r平坦でない植物のモデルや、法線マップを持つ植物のモデルを使用している場合には、これをオフにしてください。
 
-#Atmospherics
-option.CLOUDS=雲
-option.CLOUDS.comment=雲を有効にします。 §a[+]§rスカイボックスと立体的な雲はTAAの恩恵を受けます。 §e[*]§rバニラの雲はバニラの雲設定をデフォルトかオンにする必要があります。
-value.CLOUDS.0=§cオフ
-value.CLOUDS.1=スカイボックス
-value.CLOUDS.2=立体的な雲
-value.CLOUDS.3=バニラ
+#Emissive
+option.EMISSIVE=発光
+option.EMISSIVE.comment=特定のブロックの表面を明るくします。
+value.EMISSIVE.0=§cオフ
+value.EMISSIVE.1=質感の強化のみ*
+value.EMISSIVE.2=フル
 
-option.FOG_DENSITY=霧の密度
-option.FOG_DENSITY.comment=霧の密度（深さ）を調整します。 §e[*]§rこのオプションはネザーでは無視されます。
+option.EMISSIVE_HARDCODED=組み込みの発光
+option.EMISSIVE_HARDCODED.comment=光の強さの計算方式を設定します。
+value.EMISSIVE_HARDCODED.0=デフォルト
+value.EMISSIVE_HARDCODED.1=レガシー
 
+option.GLOWING_ORES=鉱石の発光の設定
+option.GLOWING_ORES.comment=ブロックライトに照らされた鉱石にわずかな発光を加えます。
+
+option.EMISSIVE_INTENSITY=発光の強さ
+option.EMISSIVE_INTENSITY.comment=発光の最大の強さを設定します。
+
+option.EMISSIVE_CURVE=発光のカーブ
+option.EMISSIVE_CURVE.comment=発光体が最大の明るさに達する速度を調整します。
+
+#Environment
 option.LIGHT_SHAFT=ライトシャフト
 option.LIGHT_SHAFT.comment=太陽/月からの立体的な光の柱を追加します。 §a[+]§rこの効果はTAAの恩恵を受けます。 §e[*]§rリアルタイムの影が必要です §e[*]§rパフォーマンスはシャドウマップの解像度に依存します。
-
-option.LIGHT_SHAFT_STRENGTH=ライトシャフトの強さ
-option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。
 
 option.WEATHER_PERBIOME=バイオーム毎の天候
 option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を使用します。 §c[-]§r未知の条件下では動作しない可能性があります。
@@ -316,7 +375,169 @@ option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を
 option.WEATHER_OPACITY=天候の不透明度
 option.WEATHER_OPACITY.comment=天候の不透明度を調整します。
 
-#Sky Config
+option.DH_OVERDRAW=遠方の地平線の重なり
+option.DH_OVERDRAW.comment=通常チャンクと遠方地平線チャンクの重なり具合を調整します。
+value.DH_OVERDRAW.1.0=0チャンク
+value.DH_OVERDRAW.2.0=1チャンク
+value.DH_OVERDRAW.3.0=2チャンク
+value.DH_OVERDRAW.4.0=3チャンク
+value.DH_OVERDRAW.5.0=4チャンク
+value.DH_OVERDRAW.6.0=5チャンク
+value.DH_OVERDRAW.7.0=6チャンク
+value.DH_OVERDRAW.8.0=7チャンク
+value.DH_OVERDRAW.9.0=8チャンク
+
+#Cloud
+option.CLOUDS=雲
+option.CLOUDS.comment=雲を有効にします。 §a[+]§rスカイボックスと立体的な雲はTAAの恩恵を受けます。 §e[*]§rバニラの雲はバニラの雲設定をデフォルトかオンにする必要があります。
+value.CLOUDS.0=§cオフ
+value.CLOUDS.1=スカイボックス
+value.CLOUDS.2=立体的な雲
+value.CLOUDS.3=バニラ
+
+option.CLOUD_BASE=ベース形状
+option.CLOUD_BASE.comment=雲のベースに使用するノイズの種類を設定します。
+value.CLOUD_BASE.-1=スタイルを適用する
+value.CLOUD_BASE.0=Perlinノイズ
+value.CLOUD_BASE.1=Worleyノイズ
+value.CLOUD_BASE.2=ブロックスタイル
+
+option.CLOUD_DENSITY=密度
+option.CLOUD_DENSITY.comment=雲の密度を設定します。密度が高いほどアーティファクトが目立ちます。
+value.CLOUD_DENSITY.1=とても薄い
+value.CLOUD_DENSITY.2=薄い
+value.CLOUD_DENSITY.4=中程度
+value.CLOUD_DENSITY.6=厚い
+value.CLOUD_DENSITY.8=とても厚い
+
+option.CLOUD_AMOUNT=量
+option.CLOUD_AMOUNT.comment=雲の量を調整します。 §e[*]§rこのオプションはブロックスタイルの雲では無効です。
+value.CLOUD_AMOUNT.12.0=とても少ない
+value.CLOUD_AMOUNT.11.0=少ない
+value.CLOUD_AMOUNT.10.0=中程度
+value.CLOUD_AMOUNT.9.0=多い
+value.CLOUD_AMOUNT.8.0=とても多い
+
+option.CLOUD_HEIGHT=高度
+option.CLOUD_HEIGHT.comment=雲の高度を調整します。
+value.CLOUD_HEIGHT.5.0=とても低い
+value.CLOUD_HEIGHT.7.5=低い
+value.CLOUD_HEIGHT.10.0=中程度
+value.CLOUD_HEIGHT.12.5=高い
+value.CLOUD_HEIGHT.15.0=とても高い
+
+option.CLOUD_VOLUMETRIC_SCALE=立体的な雲の規模
+option.CLOUD_VOLUMETRIC_SCALE.comment=立体的な雲の高度とサイズを調整します。
+value.CLOUD_VOLUMETRIC_SCALE.6.0=旧バニラ
+value.CLOUD_VOLUMETRIC_SCALE.12.4=バニラ
+value.CLOUD_VOLUMETRIC_SCALE.16.0=オリジナルスカイボックス
+
+option.CLOUD_STRETCH=雲の伸び具合
+option.CLOUD_STRETCH.comment=雲の伸び具合を調整します
+value.CLOUD_STRETCH.2.0=超低
+value.CLOUD_STRETCH.1.4=低
+value.CLOUD_STRETCH.1.0=中
+value.CLOUD_STRETCH.0.7=高
+value.CLOUD_STRETCH.0.5=超高
+
+option.CLOUD_THICKNESS=厚み
+option.CLOUD_THICKNESS.comment=雲の厚みを調整します。
+value.CLOUD_THICKNESS.1 =とても薄い
+value.CLOUD_THICKNESS.2 =薄い
+value.CLOUD_THICKNESS.4 =中程度
+value.CLOUD_THICKNESS.8 =厚い
+value.CLOUD_THICKNESS.16=とても厚い
+
+option.CLOUD_DETAIL=ディティール
+option.CLOUD_DETAIL.comment=雲のディティールを設定します。 §e[*]§rこのオプションはブロックスタイルの雲では無効です。
+value.CLOUD_DETAIL.0.3=とても粗い
+value.CLOUD_DETAIL.0.7=粗い
+value.CLOUD_DETAIL.1.0=中程度
+value.CLOUD_DETAIL.1.3=細かい
+value.CLOUD_DETAIL.1.7=とても細かい
+
+option.CLOUD_SPEED=速度
+option.CLOUD_SPEED.comment=雲の流れる速度を調整します。
+
+option.CLOUD_OPACITY=不透明度
+option.CLOUD_OPACITY.comment=雲の不透明度を調整します。
+
+option.CLOUD_BRIGHTNESS=輝度
+option.CLOUD_BRIGHTNESS.comment=雲の輝度を調整します。
+
+option.CLOUD_REVEAL=太陽と月の雲隠れ
+option.CLOUD_REVEAL.comment=太陽と月の周囲の雲を減らします。§e[*]§rこのオプションはブロックスタイルの雲では無効です。
+
+#Fog
+option.FOG_DENSITY=オーバーワールドの霧の密度
+option.FOG_DENSITY.comment=オーバーワールドの霧の密度（深さ）を調整します。
+
+option.FOG_DENSITY_NETHER=ネザーの霧の密度
+option.FOG_DENSITY_NETHER.comment=ネザーの霧の密度（深さ）を調整します。
+
+option.FOG_DENSITY_END=エンドの霧の密度
+option.FOG_DENSITY_END.comment=エンドの霧の密度（深さ）を調整します。
+
+option.FOG_HEIGHT=高所の霧
+option.FOG_HEIGHT.comment=高さが高いほど霧を薄くします。
+
+option.FAR_VANILLA_FOG=遠距離の霧
+option.FAR_VANILLA_FOG.comment=バニラライクな霧を有効にするワールドを設定します。 §e[*]§rこのオプションは霧の密度に影響されます。
+value.FAR_VANILLA_FOG.-1=スタイルを適用する
+value.FAR_VANILLA_FOG.0=§cオフ
+value.FAR_VANILLA_FOG.1=オーバーワールドのみ
+value.FAR_VANILLA_FOG.2=ネザーとエンドのみ
+value.FAR_VANILLA_FOG.3=全て
+
+option.FOG_INTERIOR=屋内の霧の修正
+option.FOG_INTERIOR.comment=プレイヤーが海面レベル（Y: 62）より高い位置にいる間、屋内の霧の除去を防ぎます。
+
+#Fog Density
+option.FOG_DENSITY_NIGHT=夜間 - 霧の密度
+option.FOG_DENSITY_NIGHT.comment=夜間に雨が降っているときの霧の密度係数を調整します。
+
+option.FOG_DENSITY_WEATHER=霧の密度
+option.FOG_DENSITY_WEATHER.comment=雨が降っているときの霧の密度係数を調整します。
+
+option.FOG_DENSITY_COLD=寒冷地での霧の密度
+option.FOG_DENSITY_COLD.comment=寒いバイオームにいるときの霧の密度係数を調整します。寒いバイオームとは、全ての雪が降るバイオームのことです。 §e[*]§rバイオーム毎の天候オプションが必要です。
+
+option.FOG_DENSITY_DRY=乾燥地での霧の密度
+option.FOG_DENSITY_DRY.comment=乾燥したバイオームにいるときの霧の密度係数を調整します。乾燥したバイオームとは、砂漠、メサ、サバンナです。 §e[*]§rバイオーム毎の天候オプションが必要です。
+
+option.FOG_DENSITY_DAMP=多湿地での霧の密度
+option.FOG_DENSITY_DAMP.comment=湿ったバイオームにいるときの霧の密度係数を調整します。湿ったバイオームとは、沼地、キノコ島、ジャングルです。§e[*]§rバイオーム毎の天候オプションが必要です。
+
+ption.FOG_DENSITY_INDOOR=屋内の霧の密度
+option.FOG_DENSITY_INDOOR.comment=屋内の霧の密度係数を調整します。
+
+option.FOG_DENSITY_DH=遠方の地平線の霧の密度
+option.FOG_DENSITY_DH.comment=遠方の地平線が有効な時の、オーバーワールドの霧の密度係数を調整します。
+
+#Height Fog
+option.FOG_HEIGHT_Y=基準高さ
+option.FOG_HEIGHT_Y.comment=高所の霧が現れる高さを調整します。
+
+option.FOG_HEIGHT_FALLOFF=高所の霧の減衰
+option.FOG_HEIGHT_FALLOFF.comment=高所の霧の大きさを調整します。
+
+#Far Vanilla Fog
+option.FAR_VANILLA_FOG_STYLE=遠距離の霧のスタイル
+option.FAR_VANILLA_FOG_STYLE.comment=球面はバニラの霧のように働きます。円筒面はY軸を無視します。
+value.FAR_VANILLA_FOG_STYLE.0=球面
+value.FAR_VANILLA_FOG_STYLE.1=円筒面
+
+option.FOG_DENSITY_VANILLA=バニラの霧の密度
+option.FOG_DENSITY_VANILLA.comment=バニラの霧の密度を調整します。
+
+option.FOG_VANILLA_CLOUD=バニラ雲の霧の密度
+option.FOG_VANILLA_CLOUD.comment=バニラ雲の中にいるときの霧を有効にします。
+value.FOG_VANILLA_CLOUD.0=§cオフ
+value.FOG_VANILLA_CLOUD.1=最小限
+value.FOG_VANILLA_CLOUD.2=少なめ
+value.FOG_VANILLA_CLOUD.3=フル
+
+#Sky
 option.SKY_DENSITY_D=日中の空の深度
 option.SKY_EXPOSURE_D=日中の空の露出
 option.SKY_DENSITY_N=夜空の深度
@@ -339,122 +560,26 @@ option.UNDERGROUND_SKY=地下の空の修正
 option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
 
 option.SHADER_END_SKY=エンドの空のシェーダー
-option.SHADER_END_SKY.comment=バニラ・MODによるエンドのスカイボックスをシェーダーベースドのものに置換えます。
+option.SHADER_END_SKY.comment=バニラ/MODで適用されたエンドのスカイボックスをシェーダーによるものと置換えます。
 
 option.SKY_DEFERRED=空の遅延レンダリング
 option.SKY_DEFERRED.comment=最初から不透明な面が描画されたあとに、空がレンダリングされます。 §e[*]§rこのオプションはリソースパックの空のレンダリングに影響します。
 
-#Cloud Config
-option.CLOUD_BASE=ベース形状
-option.CLOUD_BASE.comment=雲のベースに使用するノイズの種類を設定します。
-value.CLOUD_BASE.0=Perlinノイズ
-value.CLOUD_BASE.1=Worleyノイズ
+#Skybox
+option.SHADER_SUN_MOON=シェーダーの太陽と月
+option.SHADER_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月(1.16.4以前)
 
-option.CLOUD_DENSITY=密度
-option.CLOUD_DENSITY.comment=雲の密度を設定します。密度が高いほどアーティファクトが目立ちます。
-value.CLOUD_DENSITY.1=とても薄い
-value.CLOUD_DENSITY.2=薄い
-value.CLOUD_DENSITY.4=中程度
-value.CLOUD_DENSITY.6=厚い
-value.CLOUD_DENSITY.8=とても厚い
-
-option.CLOUD_AMOUNT=量
-option.CLOUD_AMOUNT.comment=雲の量を調整します。
-value.CLOUD_AMOUNT.12.0=とても少ない
-value.CLOUD_AMOUNT.11.0=少ない
-value.CLOUD_AMOUNT.10.0=中程度
-value.CLOUD_AMOUNT.9.0=多い
-value.CLOUD_AMOUNT.8.0=とても多い
-
-option.CLOUD_HEIGHT=高度
-option.CLOUD_HEIGHT.comment=雲の高度を調整します。
-value.CLOUD_HEIGHT.5.0=とても低い
-value.CLOUD_HEIGHT.7.5=低い
-value.CLOUD_HEIGHT.10.0=中程度
-value.CLOUD_HEIGHT.12.5=高い
-value.CLOUD_HEIGHT.15.0=とても高い
-
-option.CLOUD_THICKNESS=厚み
-option.CLOUD_THICKNESS.comment=雲の厚みを調整します。
-value.CLOUD_THICKNESS.1 =とても薄い
-value.CLOUD_THICKNESS.2 =薄い
-value.CLOUD_THICKNESS.4 =中程度
-value.CLOUD_THICKNESS.8 =厚い
-value.CLOUD_THICKNESS.16=とても厚い
-
-option.CLOUD_DETAIL=ディティール
-option.CLOUD_DETAIL.comment=雲のディティールを設定します
-value.CLOUD_DETAIL.0.3=とても粗い
-value.CLOUD_DETAIL.0.7=粗い
-value.CLOUD_DETAIL.1.0=中程度
-value.CLOUD_DETAIL.1.3=細かい
-value.CLOUD_DETAIL.1.7=とても細かい
-
-option.CLOUD_SPEED=速度
-option.CLOUD_SPEED.comment=雲の流れる速度を調整します。
-
-option.CLOUD_OPACITY=不透明度
-option.CLOUD_OPACITY.comment=雲の不透明度を調整します。
-
-option.CLOUD_BRIGHTNESS=輝度
-option.CLOUD_BRIGHTNESS.comment=雲の輝度を調整します。
-
-option.CLOUD_VOLUMETRIC_SCALE=立体的な雲の規模
-option.CLOUD_VOLUMETRIC_SCALE.comment=立体的な雲の高度とサイズを調整します。
-value.CLOUD_VOLUMETRIC_SCALE.6.0=旧バニラ
-value.CLOUD_VOLUMETRIC_SCALE.12.4=バニラ
-value.CLOUD_VOLUMETRIC_SCALE.16.0=オリジナルスカイボックス
-
-#Fog Config
-option.FOG_DENSITY_NIGHT=夜間 - 霧の密度
-option.FOG_DENSITY_NIGHT.comment=夜間に雨が降っているときの霧の密度係数を調整します。
-
-option.FOG_DENSITY_WEATHER=霧の密度
-option.FOG_DENSITY_WEATHER.comment=雨が降っているときの霧の密度係数を調整します。
-
-option.FOG_DENSITY_COLD=寒冷地での霧の密度
-option.FOG_DENSITY_COLD.comment=寒いバイオームにいるときの霧の密度係数を調整します。 §e[*]§rバイオーム毎の天候オプションが必要です。
-
-option.FOG_DENSITY_DRY=乾燥地での霧の密度
-option.FOG_DENSITY_DRY.comment=乾燥したバイオームにいるときの霧の密度係数を調整します。 §e[*]§rバイオーム毎の天候オプションが必要です。
-
-option.FOG_DENSITY_DAMP=多湿地での霧の密度
-option.FOG_DENSITY_DAMP.comment=湿ったバイオームにいるときの霧の密度係数を調整します。 §e[*]§rバイオーム毎の天候オプションが必要です。
-
-option.FAR_VANILLA_FOG=遠距離の霧
-option.FAR_VANILLA_FOG.comment=バニラライクな霧を有効にするワールドを設定します。 §e[*]§rこのオプションは霧の密度に影響されます。
-value.FAR_VANILLA_FOG.0=§cオフ
-value.FAR_VANILLA_FOG.1=オーバーワールドのみ
-value.FAR_VANILLA_FOG.2=ネザーとエンドのみ
-value.FAR_VANILLA_FOG.3=全て
-
-option.FAR_VANILLA_FOG_STYLE=遠距離の霧のスタイル
-option.FAR_VANILLA_FOG_STYLE.comment=球面はバニラの霧のように働きます。円筒面はY軸を無視します。
-value.FAR_VANILLA_FOG_STYLE.0=球面
-value.FAR_VANILLA_FOG_STYLE.1=円筒面
-
-option.FOG_DENSITY_VANILLA=バニラの霧の密度
-option.FOG_DENSITY_VANILLA.comment=バニラの霧の密度を調整します。
-
-option.FOG_VANILLA_CLOUD=バニラ雲の霧の密度
-option.FOG_VANILLA_CLOUD.comment=バニラ雲の中にいるときの霧を有効にします。
-value.FOG_VANILLA_CLOUD.0=§cオフ
-value.FOG_VANILLA_CLOUD.1=最小限
-value.FOG_VANILLA_CLOUD.2=少なめ
-value.FOG_VANILLA_CLOUD.3=フル
-
-#Skybox Config
-option.ROUND_SUN_MOON=丸い太陽と月
-option.ROUND_SUN_MOON.comment=シェーダーの太陽と月を有効にします。 §e[*]§rバニラの太陽と月の設定を無効にしてください。ビデオ設定 > 細部の設定 > 太陽と月(1.16.4以前)
-
-option.ROUND_SUN_MOON_SIZE=太陽と月のサイズ
-option.ROUND_SUN_MOON_SIZE.comment=丸い太陽と月のサイズと、鏡面反射のハイライトを調整します。
+option.SUN_MOON_GROUND=地平線下の太陽と月
+option.SUN_MOON_GROUND.comment=有効にすると、太陽と月が地平線下で徐々に消えます。
 
 option.STARS=星
 option.STARS.comment=星の表示を有効にします。
 
 option.AURORA=オーロラ
 option.AURORA.comment=オーロラを有効にします。 §a[+]§rこの効果はTAAの恩恵を受けます。
+value.AURORA.0=オフ
+value.AURORA.1=雪のバイオームのみ
+value.AURORA.2=フル
 
 option.SKYBOX_INTENSITY=スカイボックスの強度
 option.SKYBOX_INTENSITY.comment=スカイボックスの強度を調整します。
@@ -468,9 +593,19 @@ option.SUN_INTENSITY.comment=スカイボックスの太陽の強度を調整し
 option.MOON_INTENSITY=月の強度
 option.MOON_INTENSITY.comment=スカイボックスの月の強度を調整します。 §c[-]§r1.16.5以降でのみ動作します。
 
+option.SHADER_SUN_MOON_SHAPE=太陽と月の形
+option.SHADER_SUN_MOON_SHAPE.comment=シェーダーの太陽と月、鏡面ハイライトの形を決定します。
+value.SHADER_SUN_MOON_SHAPE.-1=スタイルを適用する
+value.SHADER_SUN_MOON_SHAPE.0=丸
+value.SHADER_SUN_MOON_SHAPE.1=四角
+
+option.SHADER_SUN_MOON_SIZE=太陽と月のサイズ
+option.SHADER_SUN_MOON_SIZE.comment=丸い太陽と月のサイズと、鏡面反射のハイライトを調整します。
+
 #Water
 option.WATER_MODE=水のテクスチャ表示
 option.WATER_MODE.comment=バニラの水のテクスチャを使用するかどうか設定します。 デフォルト : シェーダーのフラットな水の色、テクスチャ無し。 バニラ : バニラのテクスチャ。 色付きのバニラ : バニラのテクスチャ、シェーダーの色。 フラットバニラ : バニラのフラットな水の色。
+value.WATER_MODE.-1=スタイルを適用する
 value.WATER_MODE.0=デフォルト
 value.WATER_MODE.1=バニラ
 value.WATER_MODE.2=色付きのバニラ
@@ -478,14 +613,17 @@ value.WATER_MODE.3=フラットバニラ
 
 option.WATER_ALPHA_MODE=水のアルファモード
 option.WATER_ALPHA_MODE.comment=水がシェーダーのアルファ値か、テクスチャのアルファ値を使うかを設定します。 §e[*]§rいくつかのアルファ値はシェーダーによるアルファ値を使い続けます。
+value.WATER_ALPHA_MODE.-1=スタイルを適用する
 value.WATER_ALPHA_MODE.0=フラット
 value.WATER_ALPHA_MODE.1=バニラ
 
 option.WATER_NORMALS=水の法線マッピング
-option.WATER_NORMALS.comment=リアルタイムに生成される水の法線マッピングを有効にします。
+option.WATER_NORMALS.comment=リアルタイムに生成される水の法線マッピングを有効にします。§e[*]§rリソースパックの法線反射は、質感の強化が有効になっている必要があります。
+value.WATER_NORMALS.-1=スタイルを適用する
 value.WATER_NORMALS.0=§cオフ
 value.WATER_NORMALS.1=Worleyノイズ
 value.WATER_NORMALS.2=Perlinノイズ
+value.WATER_NORMALS.3=リソースパック
 
 option.WATER_PARALLAX=視差
 option.WATER_PARALLAX.comment=水の視差変位を有効にします。
@@ -536,11 +674,62 @@ option.WATER_PIXEL=ピクセル化
 option.WATER_PIXEL.comment=水面の法線マッピングにピクセル化エフェクトを適用します。
 value.WATER_PIXEL.0=オフ
 
+#Animations
+option.WORLD_TIME_ANIMATION=世界時間アニメーション
+option.WORLD_TIME_ANIMATION.comment=移動するオブジェクトにゲーム内時間を使用します。 §e[*]§rこのオプションは動画撮影時によく使われます。§c[-]§rこのオプションは、ネザーとエンドのアニメーションを完全に停止します。
+
+option.ANIMATION_SPEED=アニメーション速度
+option.ANIMATION_SPEED.comment=アニメーション速度を調整します。
+
+option.WAVING_GRASS=草
+option.WAVING_GRASS.comment=草が揺れるのを許可します。
+
+option.WAVING_CROP=作物
+option.WAVING_CROP.comment=畑の作物が揺れるのを許可します。
+
+option.WAVING_PLANT=植物
+option.WAVING_PLANT.comment=いろいろな植物が揺れるのを許可します。
+
+option.WAVING_TALL_PLANT=背の高い植物
+option.WAVING_TALL_PLANT.comment=2ブロックの高さの植物が揺れるのを許可します。
+
+option.WAVING_LEAF=木の葉
+option.WAVING_LEAF.comment=木の葉が揺れるのを許可します。
+
+option.WAVING_VINE=ツタ
+option.WAVING_VINE.comment=ツタが揺れるのを許可します。
+
+option.WAVING_WATER=水面
+option.WAVING_WATER.comment=水面が揺れるのを許可します。
+
+option.WAVING_LAVA=溶岩
+option.WAVING_LAVA.comment=溶岩が揺れるのを許可します。
+
+option.WAVING_FIRE=炎
+option.WAVING_FIRE.comment=炎が揺れるのを許可します。
+
+option.WAVING_LANTERN=ランタン
+option.WAVING_LANTERN.comment=ランタンが揺れるのを許可します。
+
+#Light Shaft
+option.LIGHT_SHAFT_STRENGTH=ライトシャフトの強さ
+option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。
+
+option.LIGHT_SHAFT_MORNING_FALLOFF=薄暮時の減衰
+option.LIGHT_SHAFT_MORNING_FALLOFF.comment=日の出/日没の間のライトシャフトの半径を調節します。
+
+option.LIGHT_SHAFT_DAY_FALLOFF=日中の減衰
+option.LIGHT_SHAFT_DAY_FALLOFF.comment=日中のライトシャフトの半径を調節します。
+
+option.LIGHT_SHAFT_NIGHT_FALLOFF=夜間の減衰
+option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=夜間のライトシャフトの半径を調節します。
+
+option.LIGHT_SHAFT_WEATHER_FALLOFF=天候による減衰
+option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=降雨時のライトシャフトの半径の係数を調節します。
+
 #Camera
 option.DOF=被写界深度(DoF)
 option.DOF.comment=カメラフォーカスのエフェクトを有効にします。
-option.DOF_STRENGTH=DoF強度
-option.DOF_STRENGTH.comment=フォーカスの強度を調整します。強くすればより素早くぼけます。
 
 option.MOTION_BLUR=モーションブラー
 option.MOTION_BLUR.comment=カメラモーションによるぼけを有効にします。
@@ -550,31 +739,6 @@ option.MOTION_BLUR_STRENGTH.comment=モーションブラーの強度を調整�
 
 option.BLOOM=ブルーム効果
 option.BLOOM.comment=明るい部分から光を拡散させる効果を有効にします。
-
-option.BLOOM_STRENGTH=ブルームの強さ
-option.BLOOM_STRENGTH.comment=ブルームの強度を設定します
-
-option.BLOOM_CONTRAST=ブルームのコントラスト
-option.BLOOM_CONTRAST.comment=ブルームで色のコントラストを維持するか、ディテールの視認性を維持するかを調整します。設定値が高いほど色のコントラストが保たれ、低いとディティールの視認性が保たれます。
-value.BLOOM_CONTRAST.-4=-1.00
-value.BLOOM_CONTRAST.-3=-0.75
-value.BLOOM_CONTRAST.-2=-0.50
-value.BLOOM_CONTRAST.-1=-0.25
-value.BLOOM_CONTRAST.0=0.00
-value.BLOOM_CONTRAST.1=0.25
-value.BLOOM_CONTRAST.2=0.50
-value.BLOOM_CONTRAST.3=0.75
-value.BLOOM_CONTRAST.4=1.00
-
-option.BLOOM_RADIUS=ブルーム半径
-option.BLOOM_RADIUS.comment=輝きの広がりがどれだけ遠いかを設定します
-value.BLOOM_RADIUS.1=最低
-value.BLOOM_RADIUS.2=超低
-value.BLOOM_RADIUS.3=低
-value.BLOOM_RADIUS.4=中
-value.BLOOM_RADIUS.5=高
-value.BLOOM_RADIUS.6=超高
-value.BLOOM_RADIUS.7=最高
 
 option.LENS_FLARE=レンズフレア
 option.LENS_FLARE.comment=レンズフレアを有効にします。
@@ -607,38 +771,59 @@ value.CHROMATIC_ABERRATION.0=オフ
 value.CHROMATIC_ABERRATION.1=弱い
 value.CHROMATIC_ABERRATION.2=強い
 
-
 option.UNDERWATER_DISTORTION=水中でのゆがみ
 option.UNDERWATER_DISTORTION.comment=水中での画面のゆがみを適用します
 
-#Anti-aliasing
-option.FXAA=FXAA
-option.FXAA.comment=高速な近似アンチエイリアシングを有効にします。パフォーマンスへの影響を抑えながら映像のエッジを滑らかにします。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
+#Depth of Field
+option.DOF_FOCUS_MODE=被写界深度(DoF)モード
+option.DOF_FOCUS_MODE.comment=焦点距離の計算方式を設定します。オートでは、中心の深度を使用します。マニュアルは焦点距離のスライダーで調節します。マニュアル＋では、焦点距離のスライダーと、（ビデオ設定内の）明るさのスライダーを使用します。
+value.DOF_FOCUS_MODE.0=オート
+value.DOF_FOCUS_MODE.1=マニュアル
+value.DOF_FOCUS_MODE.2=マニュアル＋
 
-option.TAA=TAA
-option.TAA.comment=TAA(Temporal Anti-Aliasing)を有効にします。高度なフレームブレンディングによって、微細なディティールやいくつかの効果を改善します。 §e[*]§rイメージシャーペン(鮮鋭化)が含まれています。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください。
+option.DOF_STRENGTH=DoF強度
+option.DOF_STRENGTH.comment=DoFの強度を調節します。高い値ほど、素早くボケます。
 
-option.FXAA_SUBPIXEL=FXAAサブピクセルスムージング
-option.FXAA_SUBPIXEL.comment=FXAAが微少なディテールに適用するスムージングの度合いを調整します。
-value.FXAA_SUBPIXEL.0.00=§cオフ
-value.FXAA_SUBPIXEL.0.25=弱
-value.FXAA_SUBPIXEL.0.50=中
-value.FXAA_SUBPIXEL.0.75=強
-value.FXAA_SUBPIXEL.1.00=最大
+option.DOF_FOCUS_X=オートフォーカスX
+option.DOF_FOCUS_X.comment=オートフォーカスポイントの水平位置を調節します。
 
-option.FXAA_EDGE_SENSITIVITY=FXAAエッジ感度
-option.FXAA_EDGE_SENSITIVITY.comment=FXAAを適用するために必要なエッジのコントラストと明るさの量を調整します。
-value.FXAA_EDGE_SENSITIVITY.0=弱
-value.FXAA_EDGE_SENSITIVITY.1=中
-value.FXAA_EDGE_SENSITIVITY.2=強
+option.DOF_FOCUS_Y=オートフォーカスY
+option.DOF_FOCUS_Y.comment=オートフォーカスポイントの垂直位置を調節します。
 
-option.TAA_MODE=TAAモード
-option.TAA_MODE.comment=TAAの動作を設定します。細かいに設定するとゴーストがでますが、いくつかのエフェクトはより良くなります。粗い設定では、ゴーストを少なくしますが、他のエフェクトは改善されません。
-value.TAA_MODE.0=細かい
-value.TAA_MODE.1=粗い
+option.DOF_FOCUS_SPEED=オートフォーカス速度
+option.DOF_FOCUS_SPEED.comment=焦点を合わせる速度のスムーズさを調節します。
 
-option.TAA_SELECTIVE=選択的TAA
-option.TAA_SELECTIVE.comment=エンティティ、パーティクル、手をTAAから除外し、ゴーストを低減します。 §c[-]§r除外されたオブジェクトはFXAAでの処理が必要です。
+option.DOF_FOCUS_POINT=オートフォーカスポイントの表示
+option.DOF_FOCUS_POINT.comment=フォーカスポイントを白いドットで表示します
+
+option.DOF_FOCUS_DISTANCE=DoF焦点距離
+option.DOF_FOCUS_DISTANCE.comment=マニュアルフォーカスモードの使用しているときの焦点距離を調節します。
+
+#Bloom
+option.BLOOM_STRENGTH=ブルームの強さ
+option.BLOOM_STRENGTH.comment=ブルームの強度を設定します
+
+option.BLOOM_CONTRAST=ブルームのコントラスト
+option.BLOOM_CONTRAST.comment=ブルームで色のコントラストを維持するか、ディテールの視認性を維持するかを調整します。設定値が高いほど色のコントラストが保たれ、低いとディティールの視認性が保たれます。
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.BLOOM_RADIUS=ブルーム半径
+option.BLOOM_RADIUS.comment=輝きの広がりがどれだけ遠いかを設定します
+value.BLOOM_RADIUS.1=最低
+value.BLOOM_RADIUS.2=とても低い
+value.BLOOM_RADIUS.3=低
+value.BLOOM_RADIUS.4=中
+value.BLOOM_RADIUS.5=高
+value.BLOOM_RADIUS.6=とても高い
+value.BLOOM_RADIUS.7=最高
 
 #Color
 option.LIGHT_MR=赤
@@ -705,6 +890,8 @@ option.WATER_B=青
 option.WATER_I=強さ
 option.WATER_A=アルファ
 option.WATER_F=霧の強さ
+option.WATER_VI=バニラの強さ
+option.WATER_VA=バニラのアルファカーブ
 
 option.WEATHER_RR=赤
 option.WEATHER_RG=緑
@@ -791,9 +978,18 @@ option.EMISSIVE_RECOLOR.comment=ブロックライトの色で特定の発光ブ
 
 option.SKY_VANILLA=バニラスカイ
 option.SKY_VANILLA.comment=バニラの空の色を使用します。
+value.SKY_VANILLA.-1=スタイルを適用する
+value.SKY_VANILLA.0=§cオフ
+value.SKY_VANILLA.1=オン
 
 option.SKY_VANILLA_USE_FOG=バニラの霧の色
 option.SKY_VANILLA_USE_FOG.comment=バニラスカイが有効な時、バニラの霧の色を使用します。
+
+option.SKY_VANILLA_SKY_BLEND=バニラスカイブレンド
+option.SKY_VANILLA_SKY_BLEND.comment=バニラの霧の色を空の色に混ぜます。
+
+option.SKY_VANILLA_FOG_BLEND=バニラ霧ブレンド
+option.SKY_VANILLA_FOG_BLEND.comment=バニラの霧の色を霧の色に混ぜます。
 
 option.NETHER_VANILLA=バニラネザー
 option.NETHER_VANILLA.comment=バニラのネザーの色を使用します。
@@ -840,11 +1036,11 @@ value.AUTO_EXPOSURE_RADIUS.0.7=極大
 
 option.AUTO_EXPOSURE_SPEED=自動露出の速度
 option.AUTO_EXPOSURE_SPEED.comment=自動露出の変化の速度を調整します。 §c[-]§r速い以上の速度では、半径小と組み合わせるとフラッシュを起こす可能性があります。
-value.AUTO_EXPOSURE_SPEED.0.0033=とても遅い
-value.AUTO_EXPOSURE_SPEED.0.01=遅い
-value.AUTO_EXPOSURE_SPEED.0.033=中
-value.AUTO_EXPOSURE_SPEED.0.1=速い
-value.AUTO_EXPOSURE_SPEED.0.33=とても速い
+value.AUTO_EXPOSURE_SPEED.0.033=とても遅い
+value.AUTO_EXPOSURE_SPEED.1.00=遅い
+value.AUTO_EXPOSURE_SPEED.3.33=中
+value.AUTO_EXPOSURE_SPEED.10.00=速い
+value.AUTO_EXPOSURE_SPEED.33.33=とても速い
 
 #Color Grading Config
 option.CG_RR=赤 - 赤 の値
@@ -874,6 +1070,47 @@ option.CG_TB=色合い - 青 の値
 option.CG_TI=色合いの強さ
 option.CG_TM=色合いのミックス値
 
+#Anti-aliasing
+option.FXAA=FXAA
+option.FXAA.comment=高速な近似アンチエイリアシングを有効にします。パフォーマンスへの影響を抑えながら映像のエッジを滑らかにします。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください（Optifineのみ）。
+
+option.TAA=TAA
+option.TAA.comment=TAA(Temporal Anti-Aliasing)を有効にします。高度なフレームブレンディングによって、微細なディティールやいくつかの効果を改善します。 §e[*]§rイメージシャーペン(鮮鋭化)が含まれています。 §e[*]§rこのオプションを有効にするときはシェーダーメニューのアンチエイリアスをオフにしてください（Optifineのみ）。
+
+option.FXAA_SUBPIXEL=FXAAサブピクセルスムージング
+option.FXAA_SUBPIXEL.comment=FXAAが微少なディテールに適用するスムージングの度合いを調整します。
+value.FXAA_SUBPIXEL.0.00=§cオフ
+value.FXAA_SUBPIXEL.0.25=弱
+value.FXAA_SUBPIXEL.0.50=中
+value.FXAA_SUBPIXEL.0.75=強
+value.FXAA_SUBPIXEL.1.00=最大
+
+option.FXAA_EDGE_SENSITIVITY=FXAAエッジ感度
+option.FXAA_EDGE_SENSITIVITY.comment=FXAAを適用するために必要なエッジのコントラストと明るさの量を調整します。
+value.FXAA_EDGE_SENSITIVITY.0=弱
+value.FXAA_EDGE_SENSITIVITY.1=中
+value.FXAA_EDGE_SENSITIVITY.2=強
+
+option.TAA_MODE=TAAモード
+option.TAA_MODE.comment=TAAの動作を設定します。細かいに設定するとゴーストがでますが、いくつかのエフェクトはより良くなります。粗い設定では、ゴーストを少なくしますが、他のエフェクトは改善されません。
+value.TAA_MODE.0=細かい
+value.TAA_MODE.1=粗い
+
+option.TAA_SELECTIVE=選択的TAA
+option.TAA_SELECTIVE.comment=エンティティ、パーティクル、手をTAAから除外し、ゴーストを低減します。 §c[-]§r除外されたオブジェクトはFXAAでの処理が必要です。
+
+option.SHARPEN=シャープネス処理
+option.SHARPEN.comment=ボケを軽減します。FXAAとTAAが有効な時、オート: 0.50、それ以外は0.00. §c[-]§rシャープネスを強くすると、ノイズやちらつきがより現れます。
+value.SHARPEN.-1=オート
+value.SHARPEN.0=0.00
+value.SHARPEN.1=0.25
+value.SHARPEN.2=0.50
+value.SHARPEN.3=0.75
+value.SHARPEN.4=1.00
+
+option.SHARPEN_CLAMP=エッジコントラストの抑制
+option.SHARPEN_CLAMP.comment=シャープネス処理によって生じるエッジのコントラストの増大を抑制します。
+
 #Extras
 option.OUTLINE=アウトライン
 option.OUTLINE.comment=アウトラインのエフェクトを有効にします。§c[-]§r黒、色付き、1.12アップデートは立体的な雲と互換性がありません。
@@ -888,6 +1125,7 @@ option.TOON_LIGHTMAP.comment=セルシェーディング用にバニラの照明
 
 option.RETRO_FILTER=レトロフィルター
 option.RETRO_FILTER.comment=ピクセル化とディザリングを加えます。 §e[*]§rピクセル化をより強くするためにレンダリング品質を下げます。 §c[-]§rアンチエイリアシングと互換性がありません。
+
 option.RETRO_FILTER_SIZE=レトロフィルターのサイズ
 option.RETRO_FILTER_SIZE.comment=レトロフィルターのピクセルサイズを調整します。
 
@@ -897,40 +1135,5 @@ option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§r
 option.WORLD_CURVATURE_SIZE=世界球のサイズ
 option.WORLD_CURVATURE_SIZE.comment=世界球のサイズを設定します。負の値では世界が逆に曲がります(球の内側になります)。
 
-#Animations
-option.WORLD_TIME_ANIMATION=世界時間アニメーション
-option.WORLD_TIME_ANIMATION.comment=移動するオブジェクトにゲーム内時間を使用します。 §e[*]§rこのオプションは動画撮影時によく使われます。
-
-option.ANIMATION_SPEED=アニメーション速度
-option.ANIMATION_SPEED.comment=アニメーション速度を調整します。
-
-#Waving Blocks
-option.WAVING_GRASS=草
-option.WAVING_GRASS.comment=草が揺れるのを許可します。
-
-option.WAVING_CROP=作物
-option.WAVING_CROP.comment=畑の作物が揺れるのを許可します。
-
-option.WAVING_PLANT=植物
-option.WAVING_PLANT.comment=いろいろな植物が揺れるのを許可します。
-
-option.WAVING_TALL_PLANT=背の高い植物
-option.WAVING_TALL_PLANT.comment=2ブロックの高さの植物が揺れるのを許可します。
-
-option.WAVING_LEAF=木の葉
-option.WAVING_LEAF.comment=木の葉が揺れるのを許可します。
-
-option.WAVING_VINE=ツタ
-option.WAVING_VINE.comment=ツタが揺れるのを許可します。
-
-option.WAVING_WATER=水面
-option.WAVING_WATER.comment=水面が揺れるのを許可します。
-
-option.WAVING_LAVA=溶岩
-option.WAVING_LAVA.comment=溶岩が揺れるのを許可します。
-
-option.WAVING_FIRE=炎
-option.WAVING_FIRE.comment=炎が揺れるのを許可します。
-
-option.WAVING_LANTERN=ランタン
-option.WAVING_LANTERN.comment=ランタンが揺れるのを許可します。
+option.WHITE_WORLD=ホワイトワールド
+option.WHITE_WORLD.comment=テクスチャを真っ白にします。
