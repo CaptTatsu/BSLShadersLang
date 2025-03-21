@@ -158,7 +158,7 @@ option.SHADOW_CLOUD.comment=雲によって投影される影を有効にする
 
 option.SUN_PATH_ROTATION=黄道角度
 option.SUN_PATH_ROTATION.comment=太陽がめぐる軌道の角度を設定します。
-value.SUN_PATH_ROTATION.-1=Use Style
+value.SUN_PATH_ROTATION.-1=スタイルを適用する
 
 option.SHADOW_BIAS=影の向き
 option.SHADOW_BIAS.comment=シャドウマッピングの方向を設定します。光の方向に設定すると、ほとんどの影のエッジは維持されますが、遠景では影が浮いて見えます。表面の法線方向に設定すると、影の接点は維持されますが、遠景では影が短く見えます。
@@ -508,7 +508,7 @@ option.FOG_DENSITY_DRY.comment=乾燥したバイオームにいるときの霧�
 option.FOG_DENSITY_DAMP=多湿地での霧の密度
 option.FOG_DENSITY_DAMP.comment=湿ったバイオームにいるときの霧の密度係数を調整します。湿ったバイオームとは、沼地、キノコ島、ジャングルです。§e[*]§rバイオーム毎の天候オプションが必要です。
 
-ption.FOG_DENSITY_INDOOR=屋内の霧の密度
+option.FOG_DENSITY_INDOOR=屋内の霧の密度
 option.FOG_DENSITY_INDOOR.comment=屋内の霧の密度係数を調整します。
 
 option.FOG_DENSITY_DH=遠方の地平線の霧の密度
@@ -556,8 +556,8 @@ value.SKY_GROUND.0=§cオフ
 value.SKY_GROUND.1=反射のみ
 value.SKY_GROUND.2=フル
 
-option.UNDERGROUND_SKY=地下の空の修正
-option.UNDERGROUND_SKY.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
+option.SKY_UNDERGROUND=地下の空の修正
+option.SKY_UNDERGROUND.comment=プレイヤーが暗いエリアや水面より低い高さ(Y: 62)に居るときに空を隠します。
 
 option.SHADER_END_SKY=エンドの空のシェーダー
 option.SHADER_END_SKY.comment=バニラ/MODで適用されたエンドのスカイボックスをシェーダーによるものと置換えます。
@@ -596,7 +596,7 @@ option.MOON_INTENSITY.comment=スカイボックスの月の強度を調整し�
 option.SHADER_SUN_MOON_SHAPE=太陽と月の形
 option.SHADER_SUN_MOON_SHAPE.comment=シェーダーの太陽と月、鏡面ハイライトの形を決定します。
 value.SHADER_SUN_MOON_SHAPE.-1=スタイルを適用する
-value.SHADER_SUN_MOON_SHAPE.0=丸
+value.SHADER_SUN_MOON_SHAPE.0=円形
 value.SHADER_SUN_MOON_SHAPE.1=四角
 
 option.SHADER_SUN_MOON_SIZE=太陽と月のサイズ
