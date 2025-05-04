@@ -6,18 +6,18 @@ profile.LOW=Thấp
 profile.MEDIUM=Trung bình
 profile.HIGH=Cao
 profile.ULTRA=Siêu
-profile.comment=Tối thiểu: không đổ bóng, không hiệu ứng bổ sung. Thấp: đổ bóng thấp, không hiệu ứng bổ sung. Trung bình: đổ bóng thấp-trung bình, không hiệu ứng bổ sung. Cao: đổ bóng trung bình, trục ánh sáng AO và TAA. Cực cao: đổ bóng cao, AO, trục ánh sáng và TAA.
+profile.comment=Tối thiểu: không đổ bóng, không hiệu ứng bổ sung. Thấp: đổ bóng thấp, không hiệu ứng bổ sung. Trung bình: đổ bóng thấp-trung bình, Đổ bóng môi trường. Cao: đổ bóng trung bình, trục ánh sáng AO và TAA. Cực cao: đổ bóng cao, AO, trục ánh sáng và TAA.
 
 #Màn hình
 screen.LIGHTING=Chiếu sáng
 screen.SHADOW=Cấu hình đổ bóng chi tiết
-screen.AO=Cấu hình Ambient Occlusion (tạo bóng môi trường)
+screen.AO=Cấu hình Đổ bóng môi trường
 screen.MCBL=Cấu hình Ánh sáng Màu Khối
 
 screen.MATERIAL=Vật liệu
 screen.SPECULAR=Phản chiếu & Bóng loáng
 screen.NORMALS=Bình thường & Hiệu ứng Thị sai
-screen.EMISSIVE=Phát sáng
+screen.EMISSIVE=Độ phát xạ
 
 screen.ENVIRONMENT=Môi trường
 screen.CLOUDS=Mây
@@ -32,8 +32,7 @@ screen.ANIMATION=Hoạt ảnh
 screen.LIGHT_SHAFT=Cấu hình trục ánh sáng
 
 screen.CAMERA=Camera
-screen.DOF=Cấu hình độ sâu trường ảnh
-screen.BLOOM=Cấu hình hiệu ứng phát sáng (Bloom)
+screen.DOF=Cấu Hình Độ Sâu Trường Ảnh
 
 screen.COLOR=Màu sắc
 screen.LIGHT_COLOR=Màu sắc Ánh sáng
@@ -47,7 +46,9 @@ screen.LIGHT_N=Ánh sáng (Đêm)
 screen.AMBIENT_N=Môi trường (Đêm)
 screen.MINLIGHT=Ánh sáng Tối thiểu
 screen.BLOCKLIGHT_COLOR=Màu Ánh sáng Khối
+screen.ATMOSPHERE_COLOR=Màu sắc Khí quyển
 screen.SKY_COLOR=Màu Bầu trời
+screen.FOG_COLOR=Màu sắc Sương mù
 screen.WATER_COLOR=Màu Nước
 screen.WEATHER_COLOR=Màu Thời tiết
 screen.WEATHER_R=Mưa (Bình thường)
@@ -56,18 +57,18 @@ screen.WEATHER_D=Sa mạc
 screen.WEATHER_B=Cao nguyên Mesa
 screen.WEATHER_S=Đầm lầy
 screen.WEATHER_M=Đảo Nấm
-screen.WEATHER_V=Savanna (Xa van)
-screen.WEATHER_J=Rừng nhiệt đới
-screen.AURORA_COLOR=Màu Aurora
+screen.WEATHER_V=Xa van
+screen.WEATHER_J=Rừng
+screen.AURORA_COLOR=Màu Cực Quang
 screen.AURORA_L=Màu Đoạn thấp
 screen.AURORA_H=Màu Đoạn cao
 screen.DIMENSION_COLOR=Màu Kích thước
 screen.NETHER_COLOR=Màu Nether
-screen.NETHER_N=Hoang mạc Nether
+screen.NETHER_N=Vùng Nether Hoang Vu
 screen.NETHER_V=Thung lũng Cát hồn
-screen.NETHER_C=Rừng Đỏ
-screen.NETHER_W=Rừng Xanh lè
-screen.NETHER_B=Đồng bằng Basalt
+screen.NETHER_C=Rừng Đỏ Thẫm
+screen.NETHER_W=Rừng Kì Dị
+screen.NETHER_B=Châu Thổ Đá Bazan
 screen.END_COLOR=Màu Kết thúc
 
 screen.CGT=Điều chỉnh Màu sắc & Tông màu
@@ -83,7 +84,7 @@ screen.ANTIALIASING=Khử răng cưa
 screen.EXTRAS=Bổ sung thêm
 
 #Cài đặt
-option.ABOUT=BSL v8.4.02.2
+option.ABOUT=BSL v10
 option.ABOUT.comment=của Capt Tatsu. capttatsu.com
 value.ABOUT.0=của Capt Tatsu
 
@@ -97,16 +98,23 @@ option.SHADOW.comment=Kích hoạt ánh sáng động và bản đồ bóng đ�
 
 option.shadowMapResolution=Chất lượng Bản đồ bóng
 option.shadowMapResolution.comment=Điều chỉnh kích thước bản đồ bóng. §e[*]§rĐộ phân giải cao hơn cho bóng nét hơn, nhưng giảm hiệu suất.
-value.shadowMapResolution.512=Rất Thấp (512)
-value.shadowMapResolution.1024=Thấp (1024)
-value.shadowMapResolution.1536=Trung bình Thấp (1536)
-value.shadowMapResolution.2048=Trung bình (2048)
-value.shadowMapResolution.3072=Cao (3072)
-value.shadowMapResolution.4096=Rất Cao (4096)
-value.shadowMapResolution.8192=Siêu Cao (8192)
+value.shadowMapResolution.512=Rất Thấp (0.5K)
+value.shadowMapResolution.1024=Thấp (1K)
+value.shadowMapResolution.1536=Trung bình Thấp (1K5)
+value.shadowMapResolution.2048=Trung bình (2K)
+value.shadowMapResolution.3072=Cao (3K)
+value.shadowMapResolution.4096=Rất Cao (4K)
+value.shadowMapResolution.8192=Siêu Cao (8K)
 
 option.shadowDistance=Khoảng cách Bóng
 option.shadowDistance.comment=Điều chỉnh khoảng cách bóng.
+value.shadowDistance.128=8 chunks
+value.shadowDistance.192=12 chunks
+value.shadowDistance.256=16 chunks
+value.shadowDistance.384=24 chunks
+value.shadowDistance.512=32 chunks
+value.shadowDistance.768=48 chunks
+value.shadowDistance.1024=64 chunks
 
 option.SHADOW_COLOR=Bóng Màu
 option.SHADOW_COLOR.comment=Kích hoạt bóng nhuộm từ vật liệu trong suốt. §a[+]§rDùng cho tia sáng khối lượng màu. §c[-]§rChi phí hiệu suất cao hơn khi sử dụng lọc bóng.
@@ -114,11 +122,11 @@ option.SHADOW_COLOR.comment=Kích hoạt bóng nhuộm từ vật liệu trong s
 option.SHADOW_FILTER=Lọc Bóng
 option.SHADOW_FILTER.comment=Kích hoạt lọc bóng.
 
-option.AO=Che khuất Môi trường
+option.AO=Đổ Bóng Môi Trường
 option.AO.comment=Thêm bóng mềm xung quanh tiếp xúc hoặc giao nhau bề mặt.
 
 option.MULTICOLORED_BLOCKLIGHT=Ánh sáng khối đa màu
-option.MULTICOLORED_BLOCKLIGHT.comment=Bật ánh sáng khối đa màu trong không gian màn hình. §e[*]§rChỉ hoạt động trên phiên bản 1.16.5 trở lên.
+option.MULTICOLORED_BLOCKLIGHT.comment=Bật ánh sáng khối đa màu dựa trên voxel. §e[]§rYêu cầu bóng đổ thời gian thực. §e[]§rKhông tương thích với các thiết bị Mac.
 
 option.DESATURATION=Giảm bão hòa
 option.DESATURATION.comment=Giảm bão hòa trong khi thêm một số màu nhuộm ở khu vực tối.
@@ -190,10 +198,36 @@ option.ambientOcclusionLevel=Cường độ AO gốc
 option.ambientOcclusionLevel.comment=Điều chỉnh cường độ hiệu ứng tạo bóng môi trường (AO) gốc.
 
 #Cấu hình Ánh sáng Màu Khối
-option.MCBL_ANTI_BLEED=Chống Phai màu
-option.MCBL_ANTI_BLEED.comment=Giảm sự lan truyền màu ánh sáng khối không mong muốn. §c[-]§rCó thể khiến lỗi undersampling trở nên dễ nhận thấy hơn.
-option.MCBL_LEGACY_COLOR=Màu Cổ điển
-option.MCBL_LEGACY_COLOR.comment=Sử dụng phương pháp cũ để tính toán màu ánh sáng khối.
+option.MCBL_FOG=Sương mù Ánh sáng Khối
+option.MCBL_FOG.comment=Cho phép ánh sáng khối phát ra sương mù thể tích. §e[*]§rYêu cầu tia sáng.
+
+option.MCBL_FOG_STRENGTH=Cường độ Sương mù Ánh sáng Khối
+option.MCBL_FOG_STRENGTH.comment=Điều chỉnh cường độ sương mù ánh sáng khối.
+
+option.MCBL_DISTANCE=Khoảng cách
+option.MCBL_DISTANCE.comment=Điều chỉnh khoảng cách ánh sáng khối đa màu. §e[*]§rKích thước dọc (Y) tối đa là 256 khối.
+value.MCBL_DISTANCE.128=4 chunk
+value.MCBL_DISTANCE.192=6 chunk
+value.MCBL_DISTANCE.256=8 chunk
+value.MCBL_DISTANCE.384=12 chunk
+value.MCBL_DISTANCE.512=16 chunk
+
+option.MCBL_HALF_HEIGHT=Nửa Chiều cao
+option.MCBL_HALF_HEIGHT.comment=Giảm một nửa khoảng cách dọc của ánh sáng khối đa màu.
+
+option.MCBL_RANDOM=Màu sắc Ngẫu nhiên
+option.MCBL_RANDOM.comment=Áp dụng màu sắc ngẫu nhiên cho mỗi khối.
+
+option.MCBL_SS=MCBL Không gian Màn hình
+option.MCBL_SS.comment=Bật ánh sáng khối đa màu không gian màn hình. §e[*]§rChỉ hoạt động trên phiên bản 1.16.5 trở lên.
+
+option.MCBL_SS_MODE=Chế độ MCBL Không gian Màn hình
+option.MCBL_SS_MODE.comment=Xác định cách MCBL cũ hoạt động. "Mở rộng" chỉ áp dụng ánh sáng màu không gian màn hình khi nằm ngoài khoảng cách MCBL. "Ghi đè" luôn áp dụng ánh sáng màu không gian màn hình bất kể khoảng cách. Rất khuyến khích dùng "Mở rộng", "Ghi đè" chỉ dành cho người dùng nâng cao.
+value.MCBL_SS_MODE.0=Mở rộng
+value.MCBL_SS_MODE.1=Ghi đè
+
+option.MCBL_SS_ANTI_BLEED=Chống Lem Không gian Màn hình
+option.MCBL_SS_ANTI_BLEED.comment=Giảm sự lan màu không mong muốn của ánh sáng khối. §c[-]§rCó thể làm cho hiện tượng răng cưa do lấy mẫu thiếu trở nên rõ ràng hơn.
 
 #Vật liệu
 option.ADVANCED_MATERIALS=Vật liệu Nâng cao
@@ -211,7 +245,7 @@ option.BASIC_SSS=Lan truyền Cơ bản
 option.BASIC_SSS.comment=Kích hoạt phiên bản đơn giản của lan truyền dưới bề mặt đối với một số khối.
 
 option.ENTITY_FLASH=Chớp sáng Sinh vật
-option.ENTITY_FLASH.comment=Kích hoạt hiệu ứng chớp sáng cho sinh vật bị hại và creeper gần đó.
+option.ENTITY_FLASH.comment=Bật lớp phủ màu trên các thực thể bị hư hại và creeper nhấp nháy.
 
 option.REFRACTION=Khúc xạ
 option.REFRACTION.comment=Kích hoạt sự méo mó phía sau bề mặt trong suốt có bản đồ bình thường. §c[-]§rBề mặt trong suốt sẽ bị méo mó. §c[-]§rMột số tính năng khác có thể không hoạt động đúng cách với hiệu ứng này được kích hoạt.
@@ -315,6 +349,9 @@ option.PARALLAX_QUALITY.comment=Điều chỉnh chất lượng của ánh xạ 
 option.PARALLAX_DISTANCE=Khoảng cách Thị Sai*
 option.PARALLAX_DISTANCE.comment=Điều chỉnh khoảng cách mà ánh xạ thị sai và bóng tự thân có thể được hiển thị.
 
+option.PARALLAX_PORTAL=Thị sai Cổng dịch chuyển
+option.PARALLAX_PORTAL.comment=Bật hiệu ứng thị sai trên cổng Nether và End.
+
 option.SELF_SHADOW=Bóng Tự thân*
 option.SELF_SHADOW.comment=Cho phép bề mặt tự tạo bóng cho chính mình sử dụng bản đồ độ cao.
 
@@ -389,7 +426,7 @@ value.DH_OVERDRAW.9.0=8 chunk
 
 #Mây
 option.CLOUDS=Mây
-option.CLOUDS.comment=Bật mây. §a[+]§rSkybox và mây thể tích hưởng lợi từ TAA. §e[*]§rMây tiêu chuẩn yêu cầu cài đặt mây tiêu chuẩn phải được đặt về mặc định hoặc bật.
+option.CLOUDS.comment=Bật mây. §a[+]§rHộp Trời và mây thể tích hưởng lợi từ TAA. §e[*]§rMây tiêu chuẩn yêu cầu cài đặt mây tiêu chuẩn phải được đặt về mặc định hoặc bật.
 value.CLOUDS.0=§cTẮT
 value.CLOUDS.1=Hộp bầu trời
 value.CLOUDS.2=Thể tích
@@ -420,17 +457,10 @@ value.CLOUD_AMOUNT.8.0=Rất Cao
 
 option.CLOUD_HEIGHT=Độ cao
 option.CLOUD_HEIGHT.comment=Điều chỉnh độ cao của mây.
-value.CLOUD_HEIGHT.5.0=Rất Thấp
-value.CLOUD_HEIGHT.7.5=Thấp
-value.CLOUD_HEIGHT.10.0=Trung bình
-value.CLOUD_HEIGHT.12.5=Cao
-value.CLOUD_HEIGHT.15.0=Rất Cao
+value.CLOUD_HEIGHT.-1=Tự Động
 
-option.CLOUD_VOLUMETRIC_SCALE=Thang đo Thể tích
-option.CLOUD_VOLUMETRIC_SCALE.comment=Điều chỉnh độ cao và kích thước của mây thể tích
-value.CLOUD_VOLUMETRIC_SCALE.6.0=Vanilla Cũ
-value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
-value.CLOUD_VOLUMETRIC_SCALE.16.0=Hộp trời Gốc
+option.CLOUD_SCALE=Tỷ lệ Khối lượng
+option.CLOUD_SCALE.comment=Điều chỉnh kích thước mây thể tích.
 
 option.CLOUD_STRETCH=Kéo dãn
 option.CLOUD_STRETCH.comment=Điều chỉnh độ kéo dãn của mây.
@@ -702,8 +732,8 @@ option.WAVING_VINE.comment=Cho phép dây leo uốn lượn.
 option.WAVING_WATER=Nước
 option.WAVING_WATER.comment=Cho phép nước uốn lượn.
 
-option.WAVING_LAVA=Lava
-option.WAVING_LAVA.comment=Cho phép lava uốn lượn.
+option.WAVING_LAVA=Dung Nham
+option.WAVING_LAVA.comment=Cho phép dung Nham uốn lượn.
 
 option.WAVING_FIRE=Lửa
 option.WAVING_FIRE.comment=Cho phép lửa uốn lượn.
@@ -737,8 +767,29 @@ option.MOTION_BLUR.comment=Kích hoạt mờ dựa trên chuyển động của 
 option.MOTION_BLUR_STRENGTH=Cường độ Mờ Chuyển động
 option.MOTION_BLUR_STRENGTH.comment=Điều chỉnh độ mạnh của mờ chuyển động.
 
-option.BLOOM=Bóng Loá
-option.BLOOM.comment=Cho phép các khu vực sáng tỏa sáng.
+option.BLOOM_RADIUS=Bán kính Bóng Loá
+option.BLOOM_RADIUS.comment=Điều chỉnh độ rộng của ánh sáng lan tỏa.
+value.BLOOM_RADIUS.1=Thấp
+value.BLOOM_RADIUS.2=Trung bình
+value.BLOOM_RADIUS.3=Cao
+
+option.BLOOM_STRENGTH=Cường độ Bóng Loá
+option.BLOOM_STRENGTH.comment=Điều chỉnh độ mạnh của bóng loá.
+
+option.BLOOM_CONTRAST=Độ Tương phản Bóng Loá
+option.BLOOM_CONTRAST.comment=Điều chỉnh liệu bóng loá nên giữ nguyên độ tương phản màu sắc hay khả năng nhìn thấy chi tiết. Giá trị cao hơn giữ nguyên độ tương phản màu sắc trong khi giá trị thấp hơn giữ nguyên khả năng nhìn thấy chi tiết.
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.DIRTY_LENS=Ống kính Bẩn
+option.DIRTY_LENS.comment=Thêm hiệu ứng hạt bụi vào hiệu ứng lóa sáng.
 
 option.LENS_FLARE=Loá Kính
 option.LENS_FLARE.comment=Kích hoạt hiệu ứng loá kính.
@@ -762,14 +813,13 @@ value.VIGNETTE_STRENGTH.1.36=0.8
 value.VIGNETTE_STRENGTH.1.40=0.9
 value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.DIRTY_LENS=Ống kính Bẩn
-option.DIRTY_LENS.comment=Thêm hiệu ứng hạt bụi vào bóng loá. §e[*]§rYêu cầu bóng loá.
-
 option.CHROMATIC_ABERRATION=Biến dạng Sắc màu
 option.CHROMATIC_ABERRATION.comment=Thêm biến dạng màu ở các cạnh.
 value.CHROMATIC_ABERRATION.0=TẮT
-value.CHROMATIC_ABERRATION.1=Yếu
-value.CHROMATIC_ABERRATION.2=Mạnh
+value.CHROMATIC_ABERRATION.1=Rất Yếu
+value.CHROMATIC_ABERRATION.2=Yếu
+value.CHROMATIC_ABERRATION.3=Trung bình
+value.CHROMATIC_ABERRATION.4=Mạnh
 
 option.UNDERWATER_DISTORTION=Biến dạng Dưới nước
 option.UNDERWATER_DISTORTION.comment=Áp dụng biến dạng màn hình khi dưới nước.
@@ -798,32 +848,6 @@ option.DOF_FOCUS_POINT.comment=Hiển thị điểm lấy nét dưới dạng d�
 
 option.DOF_FOCUS_DISTANCE=Khoảng cách lấy nét DoF
 option.DOF_FOCUS_DISTANCE.comment=Xác định khoảng cách lấy nét khi sử dụng chế độ lấy nét thủ công.
-
-#Hiệu Ứng Phát Sáng
-option.BLOOM_STRENGTH=Cường độ Bóng Loá
-option.BLOOM_STRENGTH.comment=Điều chỉnh độ mạnh của bóng loá.
-
-option.BLOOM_CONTRAST=Độ Tương phản Bóng Loá
-option.BLOOM_CONTRAST.comment=Điều chỉnh liệu bóng loá nên giữ nguyên độ tương phản màu sắc hay khả năng nhìn thấy chi tiết. Giá trị cao hơn giữ nguyên độ tương phản màu sắc trong khi giá trị thấp hơn giữ nguyên khả năng nhìn thấy chi tiết.
-value.BLOOM_CONTRAST.-4=-1.00
-value.BLOOM_CONTRAST.-3=-0.75
-value.BLOOM_CONTRAST.-2=-0.50
-value.BLOOM_CONTRAST.-1=-0.25
-value.BLOOM_CONTRAST.0=0.00
-value.BLOOM_CONTRAST.1=0.25
-value.BLOOM_CONTRAST.2=0.50
-value.BLOOM_CONTRAST.3=0.75
-value.BLOOM_CONTRAST.4=1.00
-
-option.BLOOM_RADIUS=Bán kính Bóng Loá
-option.BLOOM_RADIUS.comment=Điều chỉnh độ rộng của ánh sáng lan tỏa.
-value.BLOOM_RADIUS.1=Tối thiểu
-value.BLOOM_RADIUS.2=Rất Thấp
-value.BLOOM_RADIUS.3=Thấp
-value.BLOOM_RADIUS.4=Trung bình
-value.BLOOM_RADIUS.5=Cao
-value.BLOOM_RADIUS.6=Rất Cao
-value.BLOOM_RADIUS.7=Tối đa
 
 #Màu sắc
 option.LIGHT_MR=Đỏ
@@ -883,6 +907,11 @@ option.SKY_R=Đỏ
 option.SKY_G=Xanh lá
 option.SKY_B=Xanh dương
 option.SKY_I=Cường độ
+
+option.FOG_R=Đỏ
+option.FOG_G=Xanh lá
+option.FOG_B=Xanh dương
+option.FOG_I=Cường độ
 
 option.WATER_R=Đỏ
 option.WATER_G=Xanh lá
@@ -973,8 +1002,11 @@ option.END_G=Xanh lá
 option.END_B=Xanh dương
 option.END_I=Cường độ
 
+option.NIGHT_MOON_PHASE=Sử dụng Pha Mặt Trăng
+option.NIGHT_MOON_PHASE.comment=Cho phép pha mặt trăng ảnh hưởng đến cường độ ánh sáng và môi trường vào ban đêm.
+
 option.EMISSIVE_RECOLOR=Tô màu Phát quang lại
-option.EMISSIVE_RECOLOR.comment=Tô màu một số khối phát quang với màu ánh sáng khối.
+option.EMISSIVE_RECOLOR.comment=Tô màu một số khối phát sáng bằng màu ánh sáng khối. §c[-]§rKhông tương thích với ánh sáng khối đa màu.
 
 option.SKY_VANILLA=Bầu trời Vanilla
 option.SKY_VANILLA.comment=Sử dụng màu bầu trời vanilla.
@@ -982,14 +1014,14 @@ value.SKY_VANILLA.-1=Sử dụng Kiểu hiển thị
 value.SKY_VANILLA.0=§cTắt
 value.SKY_VANILLA.1=Bật
 
-option.SKY_VANILLA_USE_FOG=Sử dụng Màu Sương mù Vanilla
-option.SKY_VANILLA_USE_FOG.comment=Cho phép sử dụng màu sương mù vanilla trong khi Bầu trời Vanilla được kích hoạt.
+option.USE_FOG_COLOR=Sử dụng Màu Sương mù
+option.USE_FOG_COLOR.comment=Cho phép sử dụng màu sương mù vanilla trong khi Bầu trời Vanilla được kích hoạt.
 
-option.SKY_VANILLA_SKY_BLEND=Pha trộn Bầu trời Vanilla
-option.SKY_VANILLA_SKY_BLEND.comment=Điều chỉnh sự pha trộn màu sương mù mặc định trên bầu trời.
+option.SKY_BLEND=Pha trộn Bầu trời
+option.SKY_BLEND.comment=Điều chỉnh sự pha trộn màu sương mù trên bầu trời.
 
-option.SKY_VANILLA_FOG_BLEND=Pha trộn Sương mù Vanilla
-option.SKY_VANILLA_FOG_BLEND.comment=Điều chỉnh sự pha trộn màu sương mù mặc định trên lớp sương mù.
+option.FOG_BLEND=Pha trộn Sương mù
+option.FOG_BLEND.comment=Điều chỉnh sự pha trộn màu sương mù mặc định trên lớp sương mù.
 
 option.NETHER_VANILLA=Vanilla Nether
 option.NETHER_VANILLA.comment=Sử dụng màu nether vanilla.
@@ -1097,7 +1129,7 @@ value.TAA_MODE.0=Mượt mà
 value.TAA_MODE.1=Thô
 
 option.TAA_SELECTIVE=TAA Lựa chọn
-option.TAA_SELECTIVE.comment=Loại trừ các sinh vật, hạt và tay khỏi Khử răng cưa tạm thời để giảm ghosting. §c[-]§rCác đối tượng bị loại trừ sẽ cần phải dựa vào FXAA.
+option.TAA_SELECTIVE.comment=Loại trừ thực thể và bàn tay khỏi khử răng cưa tạm thời để giảm bóng ma. §c[-]§rCác đối tượng bị loại trừ sẽ cần dựa vào FXAA.
 
 option.SHARPEN=Độ sắc nét
 option.SHARPEN.comment=Giảm mờ. Tự động: 0.50 khi FXAA và TAA được bật, nếu không là 0.00. §c[-]§rTăng độ sắc nét làm cho nhiễu và nhấp nháy dễ thấy hơn.
@@ -1123,11 +1155,20 @@ value.OUTLINE.4=Dungeons
 option.TOON_LIGHTMAP=Bản đồ Ánh sáng Kiểu Toon
 option.TOON_LIGHTMAP.comment=Giảm chất lượng ánh sáng vanilla cho hiệu ứng cel shading. §e[*]§rTùy chọn này được biết đến với việc "làm xấu" trò chơi, chỉ kích hoạt khi cần thiết.
 
-option.RETRO_FILTER=Bộ lọc Retro
+option.RETRO_FILTER=Bộ lọc Hoài Cổ
 option.RETRO_FILTER.comment=Thêm hiệu ứng pixel hóa và dithering. §c[-]§rKhông tương thích với Khử răng cưa.
 
-option.RETRO_FILTER_SIZE=Kích thước Bộ lọc Retro
-option.RETRO_FILTER_SIZE.comment=Điều chỉnh kích thước pixel cho bộ lọc retro.
+option.RETRO_FILTER_SIZE=Kích thước Bộ lọc Hoài Cổ
+option.RETRO_FILTER_SIZE.comment=Điều chỉnh kích thước pixel cho bộ lọc Hoài Cổ.
+
+option.RETRO_FILTER_DEPTH=Độ sâu Màu Bộ lọc Hoài Cổ
+option.RETRO_FILTER_DEPTH.comment=Điều chỉnh độ sâu màu khi sử dụng bộ lọc hoài cổ.
+value.RETRO_FILTER_DEPTH.1=3-bit
+value.RETRO_FILTER_DEPTH.3=6-bit
+value.RETRO_FILTER_DEPTH.7=9-bit
+value.RETRO_FILTER_DEPTH.15=12-bit
+value.RETRO_FILTER_DEPTH.31=15-bit
+value.RETRO_FILTER_DEPTH.63=18-bit
 
 option.WORLD_CURVATURE=Độ Cong của Thế giới
 option.WORLD_CURVATURE.comment=Kích hoạt độ cong của thế giới. §e[*]§rChỉ hoạt động ở thế giới trên mặt đất. §c[-]§rCác chunk thiếu được xử lý bởi Minecraft mà tôi không thể sửa. §c[-]§rCó thể làm hỏng đánh dấu lựa chọn khối trên 1.17.
