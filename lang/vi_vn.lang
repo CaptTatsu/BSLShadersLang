@@ -17,7 +17,7 @@ screen.MCBL=Cấu hình Ánh sáng Màu Khối
 screen.MATERIAL=Vật liệu
 screen.SPECULAR=Phản chiếu & Bóng loáng
 screen.NORMALS=Bình thường & Hiệu ứng Thị sai
-screen.EMISSIVE=Độ phát xạ
+screen.EMISSIVE=Độ phát sáng
 
 screen.ENVIRONMENT=Môi trường
 screen.CLOUDS=Mây
