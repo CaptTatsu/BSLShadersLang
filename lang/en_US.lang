@@ -6,7 +6,7 @@ profile.LOW=Low
 profile.MEDIUM=Medium
 profile.HIGH=High
 profile.ULTRA=Ultra
-profile.comment=Minimum: no shadows, no extra effects. Low : low shadows, no extra effects. Medium : low-medium shadows, no extra effects. High : medium shadows, AO light shafts, and TAA. Ultra : high shadows, AO, light shafts, and TAA.
+profile.comment=Minimum: no shadows, no extra effects. Low : low shadows, no extra effects. Medium : low-medium shadows, and ambient occlusion. High : medium shadows, AO light shafts, and TAA. Ultra : high shadows, AO, light shafts, and TAA.
 
 #Screens
 screen.LIGHTING=Lighting
@@ -33,7 +33,6 @@ screen.LIGHT_SHAFT=Light Shaft Config
 
 screen.CAMERA=Camera
 screen.DOF=Depth of Field Config
-screen.BLOOM=Bloom Config
 
 screen.COLOR=Color
 screen.LIGHT_COLOR=Lighting Color
@@ -47,7 +46,9 @@ screen.LIGHT_N=Light (Night)
 screen.AMBIENT_N=Ambient (Night)
 screen.MINLIGHT=Minimum Light
 screen.BLOCKLIGHT_COLOR=Blocklight Color
+screen.ATMOSPHERE_COLOR=Atmosphere Color
 screen.SKY_COLOR=Sky Color
+screen.FOG_COLOR=Fog Color
 screen.WATER_COLOR=Water Color
 screen.WEATHER_COLOR=Weather Color
 screen.WEATHER_R=Rain (Normal)
@@ -83,7 +84,7 @@ screen.ANTIALIASING=Anti-aliasing
 screen.EXTRAS=Extras
 
 #Settings
-option.ABOUT=BSL v8.4.02.2
+option.ABOUT=BSL v10.0
 option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -97,16 +98,23 @@ option.SHADOW.comment=Enables realtime, dynamic shadow mapping.
 
 option.shadowMapResolution=Shadowmap Quality
 option.shadowMapResolution.comment=Adjusts shadowmap size. §e[*]§rHigher resolution gives sharper shadows, but reduces performance.
-value.shadowMapResolution.512=Very Low (512)
-value.shadowMapResolution.1024=Low (1024)
-value.shadowMapResolution.1536=Low Medium (1536)
-value.shadowMapResolution.2048=Medium (2048)
-value.shadowMapResolution.3072=High (3072)
-value.shadowMapResolution.4096=Very High (4096)
-value.shadowMapResolution.8192=Ultra High (8192)
+value.shadowMapResolution.512=Very Low (0.5K)
+value.shadowMapResolution.1024=Low (1K)
+value.shadowMapResolution.1536=Low Medium (1.5K)
+value.shadowMapResolution.2048=Medium (2K)
+value.shadowMapResolution.3072=High (3K)
+value.shadowMapResolution.4096=Very High (4K)
+value.shadowMapResolution.8192=Ultra High (8K)
 
 option.shadowDistance=Shadow Distance
 option.shadowDistance.comment=Adjusts shadow distance.
+value.shadowDistance.128=8 chunks
+value.shadowDistance.192=12 chunks
+value.shadowDistance.256=16 chunks
+value.shadowDistance.384=24 chunks
+value.shadowDistance.512=32 chunks
+value.shadowDistance.768=48 chunks
+value.shadowDistance.1024=64 chunks
 
 option.SHADOW_COLOR=Colored Shadow
 option.SHADOW_COLOR.comment=Enables tinted shadow from translucents. §a[+]§rUsed for colored volumetric light shafts. §c[-]§rSlightly higher performance cost when using shadow filtering.
@@ -118,7 +126,7 @@ option.AO=Ambient Occlusion
 option.AO.comment=Adds soft shadows around surface contact or intersection.
 
 option.MULTICOLORED_BLOCKLIGHT=Multi-Colored Blocklight
-option.MULTICOLORED_BLOCKLIGHT.comment=Enables screen space multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above.
+option.MULTICOLORED_BLOCKLIGHT.comment=Enables voxel based multi-colored blocklight. §e[*]§rRequires realtime shadows. §e[*]§rIncompatible with Mac devices.
 
 option.DESATURATION=Desaturation
 option.DESATURATION.comment=Reduces saturation while adding some tint in darker areas.
@@ -190,10 +198,36 @@ option.ambientOcclusionLevel=Vanilla AO Strength
 option.ambientOcclusionLevel.comment=Adjusts vanilla ambient occlusion strength.
 
 #Colored Blocklight Config
-option.MCBL_ANTI_BLEED=Anti Bleed
-option.MCBL_ANTI_BLEED.comment=Reduce unwanted blocklight color spread. §c[-]§rMay cause undersampling artifact to be more noticeable.
-option.MCBL_LEGACY_COLOR=Legacy Color
-option.MCBL_LEGACY_COLOR.comment=Use the old method of calculating blocklight color.
+option.MCBL_FOG=Blocklight Fog
+option.MCBL_FOG.comment=Allows blocklight to emit volumetric fog. §e[*]§rRequires light shafts.
+
+option.MCBL_FOG_STRENGTH=Blocklight Fog Strength
+option.MCBL_FOG_STRENGTH.comment=Adjusts blocklight fog strength.
+
+option.MCBL_DISTANCE=Distance
+option.MCBL_DISTANCE.comment=Adjusts multi-colored blocklight distance. §e[*]§rVertical (Y) size is capped to 256 blocks.
+value.MCBL_DISTANCE.128=4 chunks
+value.MCBL_DISTANCE.192=6 chunks
+value.MCBL_DISTANCE.256=8 chunks
+value.MCBL_DISTANCE.384=12 chunks
+value.MCBL_DISTANCE.512=16 chunks
+
+option.MCBL_HALF_HEIGHT=Half Height
+option.MCBL_HALF_HEIGHT.comment=Reduces multi-colored blocklight vertical distance by half.
+
+option.MCBL_RANDOM=Random Colors
+option.MCBL_RANDOM.comment=Applies random color to each block.
+
+option.MCBL_SS=Screen Space MCBL
+option.MCBL_SS.comment=Enables screen space multi-colored blocklight. §e[*]§rOnly works on 1.16.5 and above.
+
+option.MCBL_SS_MODE=Screen Space MCBL Mode
+option.MCBL_SS_MODE.comment=Determines how legacy MCBL behaves. Extend applies screen space colored light only when out of MCBL distance. Override always apply screen space colored light regardless of distance. Extend is highly recommended, Override is for advanced users only.
+value.MCBL_SS_MODE.0=Extend
+value.MCBL_SS_MODE.1=Override
+
+option.MCBL_SS_ANTI_BLEED=Screen Space Anti Bleed
+option.MCBL_SS_ANTI_BLEED.comment=Reduce unwanted blocklight color spread. §c[-]§rMay cause undersampling artifact to be more noticeable.
 
 #Material
 option.ADVANCED_MATERIALS=Advanced Materials
@@ -211,7 +245,7 @@ option.BASIC_SSS=Basic Scattering
 option.BASIC_SSS.comment=Enables a simplified version of subsurface scattering to certain blocks.
 
 option.ENTITY_FLASH=Entity Flash
-option.ENTITY_FLASH.comment=Enables damaged entities and nearby creeper to flash.
+option.ENTITY_FLASH.comment=Enables color overlay on damaged entities and flashing creepers.
 
 option.REFRACTION=Refraction
 option.REFRACTION.comment=Enables distortion behind normal mapped transparent surfaces. §c[-]§rThe transparent surface itself will be distorted. §c[-]§rSome other features may not work properly with this effect enabled.
@@ -284,7 +318,7 @@ value.REFLECTION_RAIN_AMOUNT.0.4=Very Low
 value.REFLECTION_RAIN_AMOUNT.0.5=Low
 value.REFLECTION_RAIN_AMOUNT.0.6=Medium
 value.REFLECTION_RAIN_AMOUNT.0.7=High
-value.REFLECTION_RAIN_AMOUNT.1.0=Very high
+value.REFLECTION_RAIN_AMOUNT.1.0=Very High
 
 option.SPECULAR_HIGHLIGHT_ROUGH=Rough Specular Highlight*
 option.SPECULAR_HIGHLIGHT_ROUGH.comment=Allows rough surfaces to have weak gloss.
@@ -314,6 +348,9 @@ option.PARALLAX_QUALITY.comment=Adjusts the quality of parallax occlusion mappin
 
 option.PARALLAX_DISTANCE=Parallax Distance*
 option.PARALLAX_DISTANCE.comment=Adjusts how far parallax occlusion mapping and self shadows can be rendered.
+
+option.PARALLAX_PORTAL=Portal Parallax
+option.PARALLAX_PORTAL.comment=Enables parallax effect on nether & end portal.
 
 option.SELF_SHADOW=Self Shadows*
 option.SELF_SHADOW.comment=Allows a surface to cast shadow to itself using heightmap.
@@ -420,17 +457,10 @@ value.CLOUD_AMOUNT.8.0=Very High
 
 option.CLOUD_HEIGHT=Height
 option.CLOUD_HEIGHT.comment=Adjusts cloud height.
-value.CLOUD_HEIGHT.5.0=Very Low
-value.CLOUD_HEIGHT.7.5=Low
-value.CLOUD_HEIGHT.10.0=Medium
-value.CLOUD_HEIGHT.12.5=High
-value.CLOUD_HEIGHT.15.0=Very High
+value.CLOUD_HEIGHT.-1=Auto
 
-option.CLOUD_VOLUMETRIC_SCALE=Volumetric Scale
-option.CLOUD_VOLUMETRIC_SCALE.comment=Adjusts volumetric cloud altitude and size
-value.CLOUD_VOLUMETRIC_SCALE.6.0=Old Vanilla
-value.CLOUD_VOLUMETRIC_SCALE.12.4=Vanilla
-value.CLOUD_VOLUMETRIC_SCALE.16.0=Original Skybox
+option.CLOUD_SCALE=Volumetric Scale
+option.CLOUD_SCALE.comment=Adjusts volumetric cloud size.
 
 option.CLOUD_STRETCH=Stretch
 option.CLOUD_STRETCH.comment=Adjusts cloud stretch.
@@ -737,8 +767,29 @@ option.MOTION_BLUR.comment=Enables camera motion based blurring.
 option.MOTION_BLUR_STRENGTH=Motion Blur Strength
 option.MOTION_BLUR_STRENGTH.comment=Adjusts motion blur intensity.
 
-option.BLOOM=Bloom
-option.BLOOM.comment=Allows bright areas to glow.
+option.BLOOM_RADIUS=Bloom Radius
+option.BLOOM_RADIUS.comment=Adjusts how far the glow spreads.
+value.BLOOM_RADIUS.1=Low
+value.BLOOM_RADIUS.2=Medium
+value.BLOOM_RADIUS.3=High
+
+option.BLOOM_STRENGTH=Bloom Strength
+option.BLOOM_STRENGTH.comment=Adjusts bloom intensity.
+
+option.BLOOM_CONTRAST=Bloom Contrast
+option.BLOOM_CONTRAST.comment=Adjusts whether the bloom should preserve color contrast or detail visibility. Higher value preserves color contrast while lower value preserves detail visibility.
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.DIRTY_LENS=Dirty Lens
+option.DIRTY_LENS.comment=Adds dusty particle effect to bloom.
 
 option.LENS_FLARE=Lens Flare
 option.LENS_FLARE.comment=Enables lens flare.
@@ -762,14 +813,13 @@ value.VIGNETTE_STRENGTH.1.36=0.8
 value.VIGNETTE_STRENGTH.1.40=0.9
 value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.DIRTY_LENS=Dirty Lens
-option.DIRTY_LENS.comment=Adds dusty particle effect to bloom. §e[*]§rRequires bloom.
-
 option.CHROMATIC_ABERRATION=Chromatic Aberration
 option.CHROMATIC_ABERRATION.comment=Adds color distortion around the borders.
 value.CHROMATIC_ABERRATION.0=OFF
-value.CHROMATIC_ABERRATION.1=Weak
-value.CHROMATIC_ABERRATION.2=Strong
+value.CHROMATIC_ABERRATION.1=Very Weak
+value.CHROMATIC_ABERRATION.2=Weak
+value.CHROMATIC_ABERRATION.3=Moderate
+value.CHROMATIC_ABERRATION.4=Strong
 
 option.UNDERWATER_DISTORTION=Underwater Distortion
 option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater.
@@ -798,32 +848,6 @@ option.DOF_FOCUS_POINT.comment=Shows focus point as a white dot.
 
 option.DOF_FOCUS_DISTANCE=DoF Focus Distance
 option.DOF_FOCUS_DISTANCE.comment=Determines focus distance while using manual focus mode.
-
-#Bloom
-option.BLOOM_STRENGTH=Bloom Strength
-option.BLOOM_STRENGTH.comment=Adjusts bloom intensity.
-
-option.BLOOM_CONTRAST=Bloom Contrast
-option.BLOOM_CONTRAST.comment=Adjusts whether the bloom should preserve color contrast or detail visibility. Higher value preserves color contrast while lower value preserves detail visibility.
-value.BLOOM_CONTRAST.-4=-1.00
-value.BLOOM_CONTRAST.-3=-0.75
-value.BLOOM_CONTRAST.-2=-0.50
-value.BLOOM_CONTRAST.-1=-0.25
-value.BLOOM_CONTRAST.0=0.00
-value.BLOOM_CONTRAST.1=0.25
-value.BLOOM_CONTRAST.2=0.50
-value.BLOOM_CONTRAST.3=0.75
-value.BLOOM_CONTRAST.4=1.00
-
-option.BLOOM_RADIUS=Bloom Radius
-option.BLOOM_RADIUS.comment=Adjusts how far the glow spreads.
-value.BLOOM_RADIUS.1=Minimum
-value.BLOOM_RADIUS.2=Very Low
-value.BLOOM_RADIUS.3=Low
-value.BLOOM_RADIUS.4=Medium
-value.BLOOM_RADIUS.5=High
-value.BLOOM_RADIUS.6=Very High
-value.BLOOM_RADIUS.7=Maximum
 
 #Color
 option.LIGHT_MR=Red
@@ -883,6 +907,11 @@ option.SKY_R=Red
 option.SKY_G=Green
 option.SKY_B=Blue
 option.SKY_I=Intensity
+
+option.FOG_R=Red
+option.FOG_G=Green
+option.FOG_B=Blue
+option.FOG_I=Intensity
 
 option.WATER_R=Red
 option.WATER_G=Green
@@ -973,8 +1002,11 @@ option.END_G=Green
 option.END_B=Blue
 option.END_I=Intensity
 
+option.NIGHT_MOON_PHASE=Use Moon Phase
+option.NIGHT_MOON_PHASE.comment=Allows moon phase to affect light & ambient intensity at night.
+
 option.EMISSIVE_RECOLOR=Emissive Recolor
-option.EMISSIVE_RECOLOR.comment=Tints certain emissive blocks with blocklight color.
+option.EMISSIVE_RECOLOR.comment=Tints certain emissive blocks with blocklight color. §c[-]§rIncompatible with multi-colored blocklight.
 
 option.SKY_VANILLA=Vanilla Sky
 option.SKY_VANILLA.comment=Use vanilla sky color.
@@ -982,14 +1014,14 @@ value.SKY_VANILLA.-1=Use Style
 value.SKY_VANILLA.0=§cOff
 value.SKY_VANILLA.1=On
 
-option.SKY_VANILLA_USE_FOG=Use Vanilla Fog Color
-option.SKY_VANILLA_USE_FOG.comment=Allows vanilla fog color to be used while Vanilla Sky is enabled.
+option.USE_FOG_COLOR=Use Fog Color
+option.USE_FOG_COLOR.comment=Allows vanilla fog color to be used while Vanilla Sky is enabled.
 
-option.SKY_VANILLA_SKY_BLEND=Vanilla Sky Blend
-option.SKY_VANILLA_SKY_BLEND.comment=Adjusts vanilla fog color blending on the sky.
+option.SKY_BLEND=Sky Blend
+option.SKY_BLEND.comment=Adjusts fog color blending on the sky.
 
-option.SKY_VANILLA_FOG_BLEND=Vanilla Fog Blend
-option.SKY_VANILLA_FOG_BLEND.comment=Adjusts vanilla fog color blending on the fog.
+option.FOG_BLEND=Fog Blend
+option.FOG_BLEND.comment=Adjusts fog color blending on the fog.
 
 option.NETHER_VANILLA=Vanilla Nether
 option.NETHER_VANILLA.comment=Use vanilla nether color.
@@ -1097,7 +1129,7 @@ value.TAA_MODE.0=Smooth
 value.TAA_MODE.1=Coarse
 
 option.TAA_SELECTIVE=Selective TAA
-option.TAA_SELECTIVE.comment=Exclude entities, particles, and hand from temporal anti aliasing to reduce ghosting. §c[-]§rExcluded objects will need to rely on FXAA.
+option.TAA_SELECTIVE.comment=Exclude entities and hand from temporal anti aliasing to reduce ghosting. §c[-]§rExcluded objects will need to rely on FXAA.
 
 option.SHARPEN=Sharpen
 option.SHARPEN.comment=Reduces blurring. Auto: 0.50 when FXAA and TAA are enabled, otherwise 0.00. §c[-]§rIncreased sharpening makes noise and flickering more visible.
@@ -1128,6 +1160,15 @@ option.RETRO_FILTER.comment=Adds pixelation and dithering. §c[-]§rIncompatible
 
 option.RETRO_FILTER_SIZE=Retro Filter Size
 option.RETRO_FILTER_SIZE.comment=Adjusts pixel size for retro filter.
+
+option.RETRO_FILTER_DEPTH=Retro Filter Depth
+option.RETRO_FILTER_DEPTH.comment=Adjusts color depth while using retro filter.
+value.RETRO_FILTER_DEPTH.1=3-bit
+value.RETRO_FILTER_DEPTH.3=6-bit
+value.RETRO_FILTER_DEPTH.7=9-bit
+value.RETRO_FILTER_DEPTH.15=12-bit
+value.RETRO_FILTER_DEPTH.31=15-bit
+value.RETRO_FILTER_DEPTH.63=18-bit
 
 option.WORLD_CURVATURE=World Curvature
 option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §c[-]§rMissing chunks are handled by Minecraft itself which I can't fix. §c[-]§rMay break block selection highlight on 1.17.
