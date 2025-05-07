@@ -6,7 +6,7 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=極致
-profile.comment=最低：無陰影，沒有額外效果。低：低等質量陰影，無額外效果。中：中等質量陰影，無額外效果。高：中等質量陰影，環境光遮蔽（AO）、光束，並啟用TAA。極致：高等質量陰影，環境光遮蔽（AO）、光束，並啟用TAA。
+profile.comment=最低：無陰影，沒有額外效果。低：低等質量陰影，無額外效果。中：中等質量陰影和環境光遮蔽。高：中等質量陰影，環境光遮蔽（AO）、光束，並啟用TAA。極致：高等質量陰影，環境光遮蔽（AO）、光束，並啟用TAA。
 
 #Screens
 screen.LIGHTING=光照
@@ -33,7 +33,6 @@ screen.LIGHT_SHAFT=光束配置
 
 screen.CAMERA=鏡頭
 screen.DOF=景深配置
-screen.BLOOM=泛光配置
 
 screen.COLOR=顏色
 screen.LIGHT_COLOR=光照顏色
@@ -47,7 +46,9 @@ screen.LIGHT_N=光照（夜晚）
 screen.AMBIENT_N=環境光（夜晚）
 screen.MINLIGHT=最小光照
 screen.BLOCKLIGHT_COLOR=方塊光顏色
+screen.ATMOSPHERE_COLOR=大氣顏色
 screen.SKY_COLOR=天空顏色
+screen.FOG_COLOR=霧顏色
 screen.WATER_COLOR=水顏色
 screen.WEATHER_COLOR=天氣顏色
 screen.WEATHER_R=雨（正常）
@@ -83,7 +84,7 @@ screen.ANTIALIASING=反鋸齒
 screen.EXTRAS=附加項
 
 #Settings
-option.ABOUT=BSL v8.4.02.2
+option.ABOUT=BSL v10.0
 option.ABOUT.comment=作者：Capt Tatsu. capttatsu.com
 value.ABOUT.0=作者：Capt Tatsu
 
@@ -97,16 +98,23 @@ option.SHADOW.comment=啟用實時動態陰影映射。
 
 option.shadowMapResolution=陰影貼圖品質
 option.shadowMapResolution.comment=調整陰影貼圖解析度。 §e[*]§r更高解析度會使陰影更清晰（銳利），但會降低效能。
-value.shadowMapResolution.512=非常低（512）
-value.shadowMapResolution.1024=低（1024）
-value.shadowMapResolution.1536=中低（1536）
-value.shadowMapResolution.2048=中（2048）
-value.shadowMapResolution.3072=高（3072）
-value.shadowMapResolution.4096=非常高（4096）
-value.shadowMapResolution.8192=超高（8192）
+value.shadowMapResolution.512=非常低 (0.5K)
+value.shadowMapResolution.1024=低 (1K)
+value.shadowMapResolution.1536=中低 (1.5K)
+value.shadowMapResolution.2048=中 (2K)
+value.shadowMapResolution.3072=高 (3K)
+value.shadowMapResolution.4096=非常高 (4K)
+value.shadowMapResolution.8192=超高 (8K)
 
 option.shadowDistance=陰影距離
 option.shadowDistance.comment=調整陰影距離。
+value.shadowDistance.128=8 區塊
+value.shadowDistance.192=12 區塊
+value.shadowDistance.256=16 區塊
+value.shadowDistance.384=24 區塊
+value.shadowDistance.512=32 區塊
+value.shadowDistance.768=48 區塊
+value.shadowDistance.1024=64 區塊
 
 option.SHADOW_COLOR=彩色陰影
 option.SHADOW_COLOR.comment=啟用半透明物體的彩色陰影。 §a[+]§r用於彩色體積光束。 §c[-]§r使用陰影過濾時效能略有下降。
@@ -118,7 +126,7 @@ option.AO=環境光遮蔽（AO）
 option.AO.comment=增加表面接觸或交叉處的軟陰影。
 
 option.MULTICOLORED_BLOCKLIGHT=多彩方塊光
-option.MULTICOLORED_BLOCKLIGHT.comment=啟用螢幕空間多彩方塊光。 §e[*]§r僅適用於1.16.5及以上版本。
+option.MULTICOLORED_BLOCKLIGHT.comment=啟用基於體素的多彩方塊光。 §e[*]§r需要實時陰影。§e[*]§r與 Mac 設備不相容。
 
 option.DESATURATION=去飽和度
 option.DESATURATION.comment=在較暗區域減少飽和度並增加一些色調。
@@ -190,10 +198,36 @@ option.ambientOcclusionLevel=原版環境光遮蔽強度
 option.ambientOcclusionLevel.comment=調整原版環境光遮蔽的強度。
 
 #Colored Blocklight Config
-option.MCBL_ANTI_BLEED=防止溢出
-option.MCBL_ANTI_BLEED.comment=減少不需要的方塊光顏色擴散。 §c[-]§r可能會使欠採樣偽影更加明顯。
-option.MCBL_LEGACY_COLOR=舊版顏色
-option.MCBL_LEGACY_COLOR.comment=使用舊方法計算方塊光顏色。
+option.MCBL_FOG=多彩方塊光照霧
+option.MCBL_FOG.comment=允許方塊光發出體積霧。§e[*]§r需要光束效果。
+
+option.MCBL_FOG_STRENGTH=方塊光照霧強度
+option.MCBL_FOG_STRENGTH.comment=調整方塊光照霧強度。
+
+option.MCBL_DISTANCE=距離
+option.MCBL_DISTANCE.comment=調整多彩方塊光距離。§e[*]§r垂直（Y）大小限制為256個區塊。
+value.MCBL_DISTANCE.128=4 區塊
+value.MCBL_DISTANCE.192=6 區塊
+value.MCBL_DISTANCE.256=8 區塊
+value.MCBL_DISTANCE.384=12 區塊
+value.MCBL_DISTANCE.512=16 區塊
+
+option.MCBL_HALF_HEIGHT=半高度
+option.MCBL_HALF_HEIGHT.comment=將多彩方塊光的垂直距離減半。
+
+option.MCBL_RANDOM=隨機顏色
+option.MCBL_RANDOM.comment=為每個方塊應用隨機顏色。
+
+option.MCBL_SS=螢幕空間 MCBL（多彩方塊光）
+option.MCBL_SS.comment=啟用螢幕空間多彩方塊光。§e[*]§r僅適用於1.16.5及以上版本。
+
+option.MCBL_SS_MODE=螢幕空間 MCBL 模式
+option.MCBL_SS_MODE.comment=確定傳統 MCBL 的行為。擴展僅在超出 MCBL 距離時應用螢幕空間著色光。覆蓋無論距離如何始終應用。強烈推薦使用擴展，覆蓋僅適合高級用戶。
+value.MCBL_SS_MODE.0=擴展
+value.MCBL_SS_MODE.1=覆蓋
+
+option.MCBL_SS_ANTI_BLEED=螢幕空間防溢色
+option.MCBL_SS_ANTI_BLEED.comment=減少不需要的方塊光顏色擴散。 §c[-]§r可能會使欠採樣偽影更加明顯。
 
 #Material
 option.ADVANCED_MATERIALS=高級材質
@@ -211,7 +245,7 @@ option.BASIC_SSS=基本散射
 option.BASIC_SSS.comment=啟用某些方塊的簡化次表面散射。
 
 option.ENTITY_FLASH=實體閃爍
-option.ENTITY_FLASH.comment=啟用受傷實體和附近的苦力怕閃爍效果。
+option.ENTITY_FLASH.comment=啟用受傷實體與閃爍的爬行者的顏色覆蓋。
 
 option.REFRACTION=折射
 option.REFRACTION.comment=啟用法線貼圖透明表面後的失真。 §c[-]§r透明表面本身會失真。 §c[-]§r啟用此效果時某些其他功能可能無法正常工作。
@@ -314,6 +348,9 @@ option.PARALLAX_QUALITY.comment=調整視差遮蔽映射的品質。
 
 option.PARALLAX_DISTANCE=視差距離*
 option.PARALLAX_DISTANCE.comment=調整視差遮蔽映射和自陰影渲染的距離。
+
+option.PARALLAX_PORTAL=傳送門視差
+option.PARALLAX_PORTAL.comment=啟用地獄與終界傳送門的視差效果。
 
 option.SELF_SHADOW=自陰影*
 option.SELF_SHADOW.comment=允許表面使用高度圖投射自身陰影。
@@ -420,17 +457,10 @@ value.CLOUD_AMOUNT.8.0=非常高
 
 option.CLOUD_HEIGHT=高度
 option.CLOUD_HEIGHT.comment=調整雲的高度。
-value.CLOUD_HEIGHT.5.0=非常低
-value.CLOUD_HEIGHT.7.5=低
-value.CLOUD_HEIGHT.10.0=中
-value.CLOUD_HEIGHT.12.5=高
-value.CLOUD_HEIGHT.15.0=非常高
+value.CLOUD_HEIGHT.-1=自動
 
-option.CLOUD_VOLUMETRIC_SCALE=體積雲比例
-option.CLOUD_VOLUMETRIC_SCALE.comment=調整體積雲的高度和大小。
-value.CLOUD_VOLUMETRIC_SCALE.6.0=舊版原版
-value.CLOUD_VOLUMETRIC_SCALE.12.4=原版
-value.CLOUD_VOLUMETRIC_SCALE.16.0=原始天空盒
+option.CLOUD_SCALE=體積雲比例
+option.CLOUD_SCALE.comment=調整體積雲的大小。
 
 option.CLOUD_STRETCH=拉伸
 option.CLOUD_STRETCH.comment=調整雲的拉伸程度。
@@ -737,8 +767,29 @@ option.MOTION_BLUR.comment=啟用基於相機運動的模糊。
 option.MOTION_BLUR_STRENGTH=動態模糊強度
 option.MOTION_BLUR_STRENGTH.comment=調整動態模糊的強度。
 
-option.BLOOM=泛光
-option.BLOOM.comment=使明亮區域產生輝光效果。
+option.BLOOM_RADIUS=泛光半徑
+option.BLOOM_RADIUS.comment=調整輝光擴散的範圍
+value.BLOOM_RADIUS.1=低
+value.BLOOM_RADIUS.2=中
+value.BLOOM_RADIUS.3=高
+
+option.BLOOM_STRENGTH=泛光強度
+option.BLOOM_STRENGTH.comment=調整泛光的強度
+
+option.BLOOM_CONTRAST=泛光對比度
+option.BLOOM_CONTRAST.comment=調整泛光效果在顏色對比度與細節可見性之間的平衡。較高的值保留顏色對比度，而較低的值保留細節可見性。
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.DIRTY_LENS=髒鏡頭
+option.DIRTY_LENS.comment=為泛光添加塵埃粒子效果。
 
 option.LENS_FLARE=鏡頭光暈
 option.LENS_FLARE.comment=啟用鏡頭光暈。
@@ -762,14 +813,13 @@ value.VIGNETTE_STRENGTH.1.36=0.8
 value.VIGNETTE_STRENGTH.1.40=0.9
 value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.DIRTY_LENS=髒鏡頭
-option.DIRTY_LENS.comment=為泛光添加塵埃粒子效果。§e[*]§r需啟用泛光。
-
 option.CHROMATIC_ABERRATION=色差
 option.CHROMATIC_ABERRATION.comment=在邊界周圍添加色彩失真。
 value.CHROMATIC_ABERRATION.0=關閉
-value.CHROMATIC_ABERRATION.1=弱
-value.CHROMATIC_ABERRATION.2=強
+value.CHROMATIC_ABERRATION.1=非常弱
+value.CHROMATIC_ABERRATION.2=弱
+value.CHROMATIC_ABERRATION.3=適中
+value.CHROMATIC_ABERRATION.4=強
 
 option.UNDERWATER_DISTORTION=水下失真
 option.UNDERWATER_DISTORTION.comment=在水下應用螢幕失真。
@@ -798,32 +848,6 @@ option.DOF_FOCUS_POINT.comment=以白色小點顯示焦點
 
 option.DOF_FOCUS_DISTANCE=景深對焦距離
 option.DOF_FOCUS_DISTANCE.comment=在使用手動對焦模式時確定焦點距離
-
-#Bloom
-option.BLOOM_STRENGTH=泛光強度
-option.BLOOM_STRENGTH.comment=調整泛光的強度
-
-option.BLOOM_CONTRAST=泛光對比度
-option.BLOOM_CONTRAST.comment=調整泛光效果在顏色對比度與細節可見性之間的平衡。較高的值保留顏色對比度，而較低的值保留細節可見性。
-value.BLOOM_CONTRAST.-4=-1.00
-value.BLOOM_CONTRAST.-3=-0.75
-value.BLOOM_CONTRAST.-2=-0.50
-value.BLOOM_CONTRAST.-1=-0.25
-value.BLOOM_CONTRAST.0=0.00
-value.BLOOM_CONTRAST.1=0.25
-value.BLOOM_CONTRAST.2=0.50
-value.BLOOM_CONTRAST.3=0.75
-value.BLOOM_CONTRAST.4=1.00
-
-option.BLOOM_RADIUS=泛光半徑
-option.BLOOM_RADIUS.comment=調整輝光擴散的範圍
-value.BLOOM_RADIUS.1=最小
-value.BLOOM_RADIUS.2=非常低
-value.BLOOM_RADIUS.3=低
-value.BLOOM_RADIUS.4=中
-value.BLOOM_RADIUS.5=高
-value.BLOOM_RADIUS.6=非常高
-value.BLOOM_RADIUS.7=最大
 
 #Color
 option.LIGHT_MR=紅色
@@ -883,6 +907,11 @@ option.SKY_R=紅色
 option.SKY_G=綠色
 option.SKY_B=藍色
 option.SKY_I=強度
+
+option.FOG_R=紅色
+option.FOG_G=綠色
+option.FOG_B=藍色
+option.FOG_I=強度
 
 option.WATER_R=紅色
 option.WATER_G=綠色
@@ -973,8 +1002,11 @@ option.END_G=綠色
 option.END_B=藍色
 option.END_I=強度
 
-option.EMISSIVE_RECOLOR=發光重著色
-option.EMISSIVE_RECOLOR.comment=將某些發光方塊調整為受方塊光顏色影響的色調。
+option.NIGHT_MOON_PHASE=使用月相
+option.NIGHT_MOON_PHASE.comment=允許月相影響夜間的光照和環境光強度。
+
+option.EMISSIVE_RECOLOR=自發光重著色
+option.EMISSIVE_RECOLOR.comment=用方塊光顏色為某些自發光方塊著色。§c[-]§r與多彩方塊光不相容。
 
 option.SKY_VANILLA=原版天空
 option.SKY_VANILLA.comment=使用原版天空顏色。
@@ -982,14 +1014,14 @@ value.SKY_VANILLA.-1=使用樣式
 value.SKY_VANILLA.0=§c關閉
 value.SKY_VANILLA.1=開啟
 
-option.SKY_VANILLA_USE_FOG=使用原版霧顏色
-option.SKY_VANILLA_USE_FOG.comment=啟用原版天空時允許使用原版霧顏色。
+option.USE_FOG_COLOR=使用霧顏色
+option.USE_FOG_COLOR.comment=啟用原版天空時允許使用原版霧顏色。
 
-option.SKY_VANILLA_SKY_BLEND=原版天空混合
-option.SKY_VANILLA_SKY_BLEND.comment=調整原版霧顏色與天空的混合效果。
+option.SKY_BLEND=天空混合
+option.SKY_BLEND.comment=調整霧顏色與天空的混合效果。
 
-option.SKY_VANILLA_FOG_BLEND=原版霧混合
-option.SKY_VANILLA_FOG_BLEND.comment=調整原版霧顏色與霧的混合效果。
+option.FOG_BLEND=霧混合
+option.FOG_BLEND.comment=調整霧顏色與霧的混合效果。
 
 option.NETHER_VANILLA=原版地獄
 option.NETHER_VANILLA.comment=使用原版地獄顏色。
@@ -1097,7 +1129,7 @@ value.TAA_MODE.0=平滑
 value.TAA_MODE.1=粗糙
 
 option.TAA_SELECTIVE=選擇性TAA
-option.TAA_SELECTIVE.comment=從時間反鋸齒中排除實體、粒子和手，以減少鬼影。 §c[-]§r被排除的物件將依賴 FXAA 處理。
+option.TAA_SELECTIVE.comment=從時間反鋸齒中排除實體和手，以減少鬼影。 §c[-]§r被排除的物件將依賴 FXAA 處理。
 
 option.SHARPEN=銳化
 option.SHARPEN.comment=減少模糊。自動：當啟用 FXAA 和 TAA 時為0.50，否則為0.00。 §c[-]§r增強銳化會使雜訊和閃爍更加明顯。
@@ -1128,6 +1160,15 @@ option.RETRO_FILTER.comment=添加像素化和抖動效果。§c[-]§r與反鋸�
 
 option.RETRO_FILTER_SIZE=復古濾鏡尺寸
 option.RETRO_FILTER_SIZE.comment=調整復古濾鏡的像素尺寸。
+
+option.RETRO_FILTER_DEPTH=復古濾鏡色深
+option.RETRO_FILTER_DEPTH.comment=調整使用復古濾鏡時的色彩深度。
+value.RETRO_FILTER_DEPTH.1=3 位
+value.RETRO_FILTER_DEPTH.3=6 位
+value.RETRO_FILTER_DEPTH.7=9 位
+value.RETRO_FILTER_DEPTH.15=12 位
+value.RETRO_FILTER_DEPTH.31=15 位
+value.RETRO_FILTER_DEPTH.63=18 位
 
 option.WORLD_CURVATURE=世界曲率
 option.WORLD_CURVATURE.comment=啟用世界曲率。§e[*]§r僅適用於主世界。§c[-]§r遺失的區塊由Minecraft本身處理，我無法修復。§c[-]§r在1.17中可能會破壞方塊選擇高亮。
