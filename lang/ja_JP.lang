@@ -1,4 +1,4 @@
-ウルトラ#shaders/lang/ja_JP.lang
+#shaders/lang/ja_JP.lang
 
 #Profiles
 profile.MINIMUM=ミニマム
@@ -6,7 +6,7 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=ウルトラ
-profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影とアンビエントオクルージョン。 中 : 中低精度の影とアンビエントオクルージョン。 高 : 中精度の影、 AOと光の柱、TAA。 ウルトラ : 高精度の影、 AOと光の柱、TAA。
+profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影とその他の効果なし。 中 : 中低精度の影とアンビエントオクルージョン。 高 : 中精度の影、 AOと光の柱、TAA。 ウルトラ : 高精度の影、 AOと光の柱、TAA。
 
 #Screens
 screen.LIGHTING=ライティング
