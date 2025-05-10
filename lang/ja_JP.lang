@@ -6,7 +6,7 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=ウルトラ
-profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影、その他の効果なし。 中 : 中低精度の影、 その他の効果なし。 高 : 中精度の影、 AOと光の柱、TAA。 ウルトラ : 高精度の影、 AOと光の柱、TAA。
+profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影とその他の効果なし。 中 : 中低精度の影とアンビエントオクルージョン。 高 : 中精度の影、 AOと光の柱、TAA。 ウルトラ : 高精度の影、 AOと光の柱、TAA。
 
 #Screens
 screen.LIGHTING=ライティング
@@ -15,8 +15,8 @@ screen.AO=アンビエントオクルージョンの設定
 screen.MCBL=ブロックライト色設定
 
 screen.MATERIAL=質感
-screen.SPECULAR=反射
-screen.NORMALS=視差
+screen.SPECULAR=鏡面反射
+screen.NORMALS=法線反射と視差
 screen.EMISSIVE=発光
 
 screen.ENVIRONMENT=環境の設定
@@ -33,7 +33,6 @@ screen.LIGHT_SHAFT=光の柱の設定
 
 screen.CAMERA=カメラ
 screen.DOF=DoFの設定
-screen.BLOOM=ブルームの設定
 
 screen.COLOR=色
 screen.LIGHT_COLOR=光の色
@@ -46,8 +45,10 @@ screen.AMBIENT_E=空気の色 (夕)
 screen.LIGHT_N=光の色(夜)
 screen.AMBIENT_N=空気の色(夜)
 screen.MINLIGHT=最低限の光
-screen.BLOCKLIGHT_COLOR=ブロックの光の色
+screen.BLOCKLIGHT_COLOR=ブロックライトの色
+screen.ATMOSPHERE_COLOR=大気の色
 screen.SKY_COLOR=空の色
+screen.FOG_COLOR=霧の色
 screen.WATER_COLOR=水の色
 screen.WEATHER_COLOR=天気別の色
 screen.WEATHER_R=雨 (Normal)
@@ -83,7 +84,7 @@ screen.ANTIALIASING=アンチエイリアシング
 screen.EXTRAS=その他の設定
 
 #Settings
-option.ABOUT=BSL v8.4.02.2
+option.ABOUT=BSL v10.0
 option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -97,16 +98,23 @@ option.SHADOW.comment=リアルタイムの動的影マッピングを有効に�
 
 option.shadowMapResolution=シャドウマップの解像度
 option.shadowMapResolution.comment=シャドウマップのサイズを調整します。 §e[*]§r高解像度にするほど影がシャープになりますが、パフォーマンスは低下します。
-value.shadowMapResolution.512=超低解像度(512)
-value.shadowMapResolution.1024=低解像度 (1024)
-value.shadowMapResolution.1536=低中解像度 (1536)
-value.shadowMapResolution.2048=中解像度 (2048)
-value.shadowMapResolution.3072=高解像度 (3072)
-value.shadowMapResolution.4096=超高解像度 (4096)
-value.shadowMapResolution.8192=最大解像度(8192)
+value.shadowMapResolution.512=超低解像度(0.5K)
+value.shadowMapResolution.1024=低解像度 (1K)
+value.shadowMapResolution.1536=低中解像度 (1.5K)
+value.shadowMapResolution.2048=中解像度 (2K)
+value.shadowMapResolution.3072=高解像度 (3K)
+value.shadowMapResolution.4096=超高解像度 (4K)
+value.shadowMapResolution.8192=最大解像度(8K)
 
 option.shadowDistance=影の距離
 option.shadowDistance.comment=影の距離を調整します。
+value.shadowDistance.128=8チャンク
+value.shadowDistance.192=12チャンク
+value.shadowDistance.256=16チャンク
+value.shadowDistance.384=24チャンク
+value.shadowDistance.512=32チャンク
+value.shadowDistance.768=48チャンク
+value.shadowDistance.1024=64チャンク
 
 option.SHADOW_COLOR=色付きの影
 option.SHADOW_COLOR.comment=半透明の物体からの色付きの影。 §a[+]§r色付きの太いライトシャフトで使われます。 §c[-]§rシャドウフィルタリングを使用した場合、パフォーマンスコストが若干高くなります。
@@ -118,7 +126,7 @@ option.AO=アンビエントオクルージョン(AO)
 option.AO.comment=接触している表面や交差した部分に柔らかな影を与えます。
 
 option.MULTICOLORED_BLOCKLIGHT=マルチカラーブロックライト
-option.MULTICOLORED_BLOCKLIGHT.comment=スクリーンスペースのマルチカラーブロックライトを有効にします。 §e[*]§r1.16.5以降でのみ動作します。
+option.MULTICOLORED_BLOCKLIGHT.comment=ボクセルベースのマルチカラーブロックライトを有効にします。 §e[*]§rリアルタイムの影が必要です。§e[*]§rMacとの互換性はありません。
 
 option.DESATURATION=低彩度化(desaturation)
 option.DESATURATION.comment=彩度を低下させながら、暗い部分に色合いを追加します。
@@ -190,10 +198,36 @@ option.ambientOcclusionLevel=バニラのAOの強さ
 option.ambientOcclusionLevel.comment=バニラのAOの強さを設定します
 
 #Colored Blocklight Config
-option.MCBL_ANTI_BLEED=アンチブリード
-option.MCBL_ANTI_BLEED.comment=望まないブロックライト色の拡散を低減します。 §c[-]§rアンダーサンプリングのアーティファクトがより目立つようになることがあります。
-option.MCBL_LEGACY_COLOR=レガシーカラー
-option.MCBL_LEGACY_COLOR.comment=ブロックライトの色を従来の方法で計算します。
+option.MCBL_FOG=ブロックライトの霧
+option.MCBL_FOG.comment=ブロックライトが立体的な霧を発光させるのを許可します。§e[*]§rライトシャフトが必要です。
+
+option.MCBL_FOG_STRENGTH=ブロックライトの霧の強さ
+option.MCBL_FOG_STRENGTH.comment=ブロックライトの霧の強さを調整します
+
+option.MCBL_DISTANCE=距離
+option.MCBL_DISTANCE.comment=マルチカラーのブロックライトの距離を調整します。 §e[*]§r垂直方向(Y)のサイズは256ブロックに制限されています。
+value.MCBL_DISTANCE.128=4チャンク
+value.MCBL_DISTANCE.192=6チャンク
+value.MCBL_DISTANCE.256=8チャンク
+value.MCBL_DISTANCE.384=12チャンク
+value.MCBL_DISTANCE.512=16チャンク
+
+option.MCBL_HALF_HEIGHT=半分の高さ
+option.MCBL_HALF_HEIGHT.comment=マルチカラーのブロックライトの垂直方向の距離を半分にします。
+
+option.MCBL_RANDOM=ランダムな色
+option.MCBL_RANDOM.comment=ブロック毎にランダムな色を適用します。
+
+option.MCBL_SS=スクリーンスペースのMCBL
+option.MCBL_SS.comment=スクリーンスペースのマルチカラーのブロックライトを有効にします。 §e[*]§r1.16.5以降でのみ有効
+
+option.MCBL_SS_MODE=スクリーンスペースのMCBLモード
+option.MCBL_SS_MODE.comment=旧式のMCBLの動作を設定します。拡張は、MCBLの距離外でのみ。上書きは、距離に関わらず、常にスクリーンスペースのMCBLを適用します。拡張を強く推奨します。上書きは上級者のみが使用してください。
+value.MCBL_SS_MODE.0=拡張
+value.MCBL_SS_MODE.1=上書き
+
+option.MCBL_SS_ANTI_BLEED=スクリーンスペースのアンチブリード
+option.MCBL_SS_ANTI_BLEED.comment=望まないブロックライト色の拡散を低減します。 §c[-]§rアンダーサンプリングのアーティファクトがより目立つようになることがあります。
 
 #Material
 option.ADVANCED_MATERIALS=質感の強化
@@ -211,7 +245,7 @@ option.BASIC_SSS=簡易スキャッタリング
 option.BASIC_SSS.comment=特定のブロックに対しての簡易的なサブサーフェススキャッタリングを有効にします。
 
 option.ENTITY_FLASH=エンティティの点滅
-option.ENTITY_FLASH.comment=ダメージを受けたエンティティや近づいたクリーパーを点滅させます。
+option.ENTITY_FLASH.comment=ダメージを受けたエンティティや点滅するクリーパーへの色のオーバーレイを有効にします。
 
 option.REFRACTION=屈折
 option.REFRACTION.comment=法線マッピングを持つ透明な面の向こう側のゆがみを有効にします。 §c[-]§r透明な面そのものがゆがんでしまいます。 §c[-]§rこのエフェクトを有効にすると、他の一部の機能が正しく動作しない場合があります。
@@ -246,8 +280,8 @@ value.REFLECTION_MODE.2=よりギャップを埋める
 option.REFLECTION_PREVIOUS=直前フレームの反射
 option.REFLECTION_PREVIOUS.comment=半透明オブジェクトの反射に直前のフレーム情報を利用します。 §c[-]§rスクリーンショットでは反射が失われます(スクリーンショットの解像度設定による)。 §c[-]§r一部のGPUと互換性がありません。§c[-]§r1.7.10のバグ。
 
-option.SPECULAR_HIGHLIGHT_ROUGH=粗い反射のハイライト
-option.SPECULAR_HIGHLIGHT_ROUGH.comment=粗い反射面に弱い光沢を加えます
+option.SPECULAR_HIGHLIGHT=鏡面反射のハイライト
+option.SPECULAR_HIGHLIGHT.comment=光っている反射面で明るいスポットを有効にします。
 value.SPECULAR_HIGHLIGHT.0=§cオフ
 value.SPECULAR_HIGHLIGHT.1=不透明のみ
 value.SPECULAR_HIGHLIGHT.2=フル
@@ -314,6 +348,9 @@ option.PARALLAX_QUALITY.comment=視差遮蔽マッピング(POM)の品質を調�
 
 option.PARALLAX_DISTANCE=視差距離*
 option.PARALLAX_DISTANCE.comment=視差遮蔽マッピング(POM)とセルフシャドウのレンダリング可能な距離を調整します。
+
+option.PARALLAX_PORTAL=ポータルの視差
+option.PARALLAX_PORTAL.comment=ネザーやエンドのポータルの視差エフェクトを有効にします。
 
 option.SELF_SHADOW=セルフシャドウ*
 option.SELF_SHADOW.comment=高さ情報を使用して自身の影をオブジェクト表面に投影します。
@@ -420,17 +457,10 @@ value.CLOUD_AMOUNT.8.0=とても多い
 
 option.CLOUD_HEIGHT=高度
 option.CLOUD_HEIGHT.comment=雲の高度を調整します。
-value.CLOUD_HEIGHT.5.0=とても低い
-value.CLOUD_HEIGHT.7.5=低い
-value.CLOUD_HEIGHT.10.0=中程度
-value.CLOUD_HEIGHT.12.5=高い
-value.CLOUD_HEIGHT.15.0=とても高い
+value.CLOUD_HEIGHT.-1=自動
 
-option.CLOUD_VOLUMETRIC_SCALE=立体的な雲の規模
-option.CLOUD_VOLUMETRIC_SCALE.comment=立体的な雲の高度とサイズを調整します。
-value.CLOUD_VOLUMETRIC_SCALE.6.0=旧バニラ
-value.CLOUD_VOLUMETRIC_SCALE.12.4=バニラ
-value.CLOUD_VOLUMETRIC_SCALE.16.0=オリジナルスカイボックス
+option.CLOUD_SCALE=立体的な雲の規模
+option.CLOUD_SCALE.comment=立体的な雲のサイズを調整します。
 
 option.CLOUD_STRETCH=雲の伸び具合
 option.CLOUD_STRETCH.comment=雲の伸び具合を調整します
@@ -737,8 +767,29 @@ option.MOTION_BLUR.comment=カメラモーションによるぼけを有効に�
 option.MOTION_BLUR_STRENGTH=モーションブラーの強度
 option.MOTION_BLUR_STRENGTH.comment=モーションブラーの強度を調整します。
 
-option.BLOOM=ブルーム効果
-option.BLOOM.comment=明るい部分から光を拡散させる効果を有効にします。
+option.BLOOM_RADIUS=ブルームの半径
+option.BLOOM_RADIUS.comment=輝きがどれくらい遠くまで広がるかを調整します。
+value.BLOOM_RADIUS.1=近
+value.BLOOM_RADIUS.2=中
+value.BLOOM_RADIUS.3=遠
+
+option.BLOOM_STRENGTH=ブルームの強さ
+option.BLOOM_STRENGTH.comment=ブルームの強度を調整します。
+
+option.BLOOM_CONTRAST=ブルームのコントラスト
+option.BLOOM_CONTRAST.comment=ブルームの処理で、色のコントラストを優先するか、細部のディティールを優先するかを調整します。高い値では色のコントラストが維持され、低い値では、細部のディティールが維持されます。
+value.BLOOM_CONTRAST.-4=-1.00
+value.BLOOM_CONTRAST.-3=-0.75
+value.BLOOM_CONTRAST.-2=-0.50
+value.BLOOM_CONTRAST.-1=-0.25
+value.BLOOM_CONTRAST.0=0.00
+value.BLOOM_CONTRAST.1=0.25
+value.BLOOM_CONTRAST.2=0.50
+value.BLOOM_CONTRAST.3=0.75
+value.BLOOM_CONTRAST.4=1.00
+
+option.DIRTY_LENS=レンズ汚れ
+option.DIRTY_LENS.comment=ブルームに汚れた粒子のエフェクトを追加します。
 
 option.LENS_FLARE=レンズフレア
 option.LENS_FLARE.comment=レンズフレアを有効にします。
@@ -762,14 +813,13 @@ value.VIGNETTE_STRENGTH.1.36=0.8
 value.VIGNETTE_STRENGTH.1.40=0.9
 value.VIGNETTE_STRENGTH.1.41=1.0
 
-option.DIRTY_LENS=汚れたレンズ
-option.DIRTY_LENS.comment=ブルームに汚れた粒子のエフェクトを加えます。 §e[*]§rブルームが必要です。
-
 option.CHROMATIC_ABERRATION=色収差
 option.CHROMATIC_ABERRATION.comment=境界線に色のゆがみを追加します。
 value.CHROMATIC_ABERRATION.0=オフ
-value.CHROMATIC_ABERRATION.1=弱い
-value.CHROMATIC_ABERRATION.2=強い
+value.CHROMATIC_ABERRATION.1=ごく弱い
+value.CHROMATIC_ABERRATION.2=弱い
+value.CHROMATIC_ABERRATION.3=標準
+value.CHROMATIC_ABERRATION.4=強い
 
 option.UNDERWATER_DISTORTION=水中でのゆがみ
 option.UNDERWATER_DISTORTION.comment=水中での画面のゆがみを適用します
@@ -798,32 +848,6 @@ option.DOF_FOCUS_POINT.comment=フォーカスポイントを白いドットで�
 
 option.DOF_FOCUS_DISTANCE=DoF焦点距離
 option.DOF_FOCUS_DISTANCE.comment=マニュアルフォーカスモードの使用しているときの焦点距離を調節します。
-
-#Bloom
-option.BLOOM_STRENGTH=ブルームの強さ
-option.BLOOM_STRENGTH.comment=ブルームの強度を設定します
-
-option.BLOOM_CONTRAST=ブルームのコントラスト
-option.BLOOM_CONTRAST.comment=ブルームで色のコントラストを維持するか、ディテールの視認性を維持するかを調整します。設定値が高いほど色のコントラストが保たれ、低いとディティールの視認性が保たれます。
-value.BLOOM_CONTRAST.-4=-1.00
-value.BLOOM_CONTRAST.-3=-0.75
-value.BLOOM_CONTRAST.-2=-0.50
-value.BLOOM_CONTRAST.-1=-0.25
-value.BLOOM_CONTRAST.0=0.00
-value.BLOOM_CONTRAST.1=0.25
-value.BLOOM_CONTRAST.2=0.50
-value.BLOOM_CONTRAST.3=0.75
-value.BLOOM_CONTRAST.4=1.00
-
-option.BLOOM_RADIUS=ブルーム半径
-option.BLOOM_RADIUS.comment=輝きの広がりがどれだけ遠いかを設定します
-value.BLOOM_RADIUS.1=最低
-value.BLOOM_RADIUS.2=とても低い
-value.BLOOM_RADIUS.3=低
-value.BLOOM_RADIUS.4=中
-value.BLOOM_RADIUS.5=高
-value.BLOOM_RADIUS.6=とても高い
-value.BLOOM_RADIUS.7=最高
 
 #Color
 option.LIGHT_MR=赤
@@ -883,6 +907,11 @@ option.SKY_R=赤
 option.SKY_G=緑
 option.SKY_B=青
 option.SKY_I=強さ
+
+option.FOG_R=赤
+option.FOG_G=緑
+option.FOG_B=青
+option.FOG_I=強さ
 
 option.WATER_R=赤
 option.WATER_G=緑
@@ -973,8 +1002,11 @@ option.END_G=緑
 option.END_B=青
 option.END_I=強さ
 
+option.NIGHT_MOON_PHASE=月の満ち欠けによる明るさ
+option.NIGHT_MOON_PHASE.comment=月の満ち欠けによる明るさが、夜間の光と空気の色の強さに影響するようにします。
+
 option.EMISSIVE_RECOLOR=発光ブロックの色
-option.EMISSIVE_RECOLOR.comment=ブロックライトの色で特定の発光ブロックに色を付けます。
+option.EMISSIVE_RECOLOR.comment=ブロックライトの色で特定の発光ブロックに色を付けます。§c[-]§rマルチカラーのブロックライトと互換性がありません
 
 option.SKY_VANILLA=バニラスカイ
 option.SKY_VANILLA.comment=バニラの空の色を使用します。
@@ -982,14 +1014,14 @@ value.SKY_VANILLA.-1=スタイルを適用する
 value.SKY_VANILLA.0=§cオフ
 value.SKY_VANILLA.1=オン
 
-option.SKY_VANILLA_USE_FOG=バニラの霧の色
-option.SKY_VANILLA_USE_FOG.comment=バニラスカイが有効な時、バニラの霧の色を使用します。
+option.USE_FOG_COLOR=霧の色
+option.USE_FOG_COLOR.comment=バニラスカイが有効なとき、バニラの霧の色が使われるようにします。
 
-option.SKY_VANILLA_SKY_BLEND=バニラスカイブレンド
-option.SKY_VANILLA_SKY_BLEND.comment=バニラの霧の色を空の色に混ぜます。
+option.SKY_BLEND=空の色とのブレンド
+option.SKY_BLEND.comment=霧の色が空の色とブレンドされる度合いを調整します。
 
-option.SKY_VANILLA_FOG_BLEND=バニラ霧ブレンド
-option.SKY_VANILLA_FOG_BLEND.comment=バニラの霧の色を霧の色に混ぜます。
+option.FOG_BLEND=霧の色のブレンド
+option.FOG_BLEND.comment=霧の色のブレンドを調整します
 
 option.NETHER_VANILLA=バニラネザー
 option.NETHER_VANILLA.comment=バニラのネザーの色を使用します。
@@ -1097,7 +1129,7 @@ value.TAA_MODE.0=細かい
 value.TAA_MODE.1=粗い
 
 option.TAA_SELECTIVE=選択的TAA
-option.TAA_SELECTIVE.comment=エンティティ、パーティクル、手をTAAから除外し、ゴーストを低減します。 §c[-]§r除外されたオブジェクトはFXAAでの処理が必要です。
+option.TAA_SELECTIVE.comment=エンティティ、手をTAAから除外し、ゴーストを低減します。 §c[-]§r除外されたオブジェクトはFXAAでの処理が必要です。
 
 option.SHARPEN=シャープネス処理
 option.SHARPEN.comment=ボケを軽減します。FXAAとTAAが有効な時、オート: 0.50、それ以外は0.00. §c[-]§rシャープネスを強くすると、ノイズやちらつきがより現れます。
@@ -1128,6 +1160,15 @@ option.RETRO_FILTER.comment=ピクセル化とディザリングを加えます�
 
 option.RETRO_FILTER_SIZE=レトロフィルターのサイズ
 option.RETRO_FILTER_SIZE.comment=レトロフィルターのピクセルサイズを調整します。
+
+option.RETRO_FILTER_DEPTH=レトロフィルターの色深度
+option.RETRO_FILTER_DEPTH.comment=レトロフィルター使用時の色深度を調整します。
+value.RETRO_FILTER_DEPTH.1=3-bit
+value.RETRO_FILTER_DEPTH.3=6-bit
+value.RETRO_FILTER_DEPTH.7=9-bit
+value.RETRO_FILTER_DEPTH.15=12-bit
+value.RETRO_FILTER_DEPTH.31=15-bit
+value.RETRO_FILTER_DEPTH.63=18-bit
 
 option.WORLD_CURVATURE=世界の曲率
 option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[-]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[-]§r1.17でブロック選択のハイライトを壊すことがあります。
