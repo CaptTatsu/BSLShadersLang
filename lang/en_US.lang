@@ -84,7 +84,7 @@ screen.ANTIALIASING=Anti-aliasing
 screen.EXTRAS=Extras
 
 #Settings
-option.ABOUT=BSL v10.0
+option.ABOUT=BSL v10.1
 option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -147,9 +147,6 @@ value.DYNAMIC_HANDLIGHT.2=Full
 
 option.HALF_LAMBERT=Half Lambert
 option.HALF_LAMBERT.comment=Allows surfaces perpendicular to the sun/moon direction to receive light. §e[*]§rForces Shadow Bias Mode to Surface Normal.
-value.HALF_LAMBERT.-1=Use Style
-value.HALF_LAMBERT.0=§cOff
-value.HALF_LAMBERT.1=On
 
 #More Shadow Config
 option.SHADOW_ENTITY=Entity Shadow
@@ -164,9 +161,11 @@ option.SHADOW_VEGETATION.comment=Enables shadow on grass, crops, and most other 
 option.SHADOW_CLOUD=Cloud Shadow
 option.SHADOW_CLOUD.comment=Enables shadow casted by clouds.
 
-option.SUN_PATH_ROTATION=Sun Path Rotation
-option.SUN_PATH_ROTATION.comment=Adjusts sun angle.
-value.SUN_PATH_ROTATION.-1=Use Style
+option.SHADOW_LOD=LOD Shadow
+option.SHADOW_LOD.comment=Enables screen space shadow for Distant Horizons and Voxy.
+
+option.sunPathRotation=Sun Path Rotation
+option.sunPathRotation.comment=Adjusts sun angle.
 
 option.SHADOW_BIAS=Shadow Bias Mode
 option.SHADOW_BIAS.comment=Determines how shadow mapping bias is done. Light direction mode preserves most shadow edges, but shadows look floaty at a distance. Surface normal mode preserves contact point, but shadows look shorter at a distance.
@@ -179,11 +178,11 @@ value.SHADOW_PIXEL.0=OFF
 
 option.SHADOW_SKY_FALLOFF=Fake Shadow Falloff
 option.SHADOW_SKY_FALLOFF.comment=Adjusts how sharp the fake shadows look when realtime shadows is disabled.
-value.SHADOW_SKY_FALLOFF.0.6=Very Weak
-value.SHADOW_SKY_FALLOFF.0.6667=Weak
+value.SHADOW_SKY_FALLOFF.0.6=Very Soft
+value.SHADOW_SKY_FALLOFF.0.6667=Soft
 value.SHADOW_SKY_FALLOFF.0.7333=Balanced
-value.SHADOW_SKY_FALLOFF.0.8=Strong
-value.SHADOW_SKY_FALLOFF.0.8667=Very Strong
+value.SHADOW_SKY_FALLOFF.0.8=Sharp
+value.SHADOW_SKY_FALLOFF.0.8667=Very Sharp
 
 #Ambient Occlusion Config
 option.AO_METHOD=AO Method
@@ -286,19 +285,18 @@ value.SPECULAR_HIGHLIGHT.0=§cOff
 value.SPECULAR_HIGHLIGHT.1=Opaque Only
 value.SPECULAR_HIGHLIGHT.2=Full
 
-option.REFLECTION_PRECISION=High Precision Reflection
-option.REFLECTION_PRECISION.comment=Reduces choppiness on reflections when enabled.
-value.REFLECTION_PRECISION.-1=Use Style
-value.REFLECTION_PRECISION.0=§cOff
-value.REFLECTION_PRECISION.1=On
+option.REFLECTION_LOD=LOD Reflection
+option.REFLECTION_LOD.comment=Determines the quality of DH and Voxy chunks in reflections.
+value.REFLECTION_LOD.0=Fast
+value.REFLECTION_LOD.1=Fancy
 
 option.REFLECTION_SKY_FALLOFF=Sky Reflection Falloff
 option.REFLECTION_SKY_FALLOFF.comment=Adjusts how far sky reflection fades out under low skylight.
-value.REFLECTION_SKY_FALLOFF.1=Very Weak
-value.REFLECTION_SKY_FALLOFF.2=Weak
+value.REFLECTION_SKY_FALLOFF.1=Very Soft
+value.REFLECTION_SKY_FALLOFF.2=Soft
 value.REFLECTION_SKY_FALLOFF.4=Balanced
-value.REFLECTION_SKY_FALLOFF.8=Strong
-value.REFLECTION_SKY_FALLOFF.16=Very Strong
+value.REFLECTION_SKY_FALLOFF.8=Sharp
+value.REFLECTION_SKY_FALLOFF.16=Very Sharp
 
 option.REFLECTION_SKYBOX=Reflect Skybox
 option.REFLECTION_SKYBOX.comment=Allows resource pack skybox to be included in reflections. §c[-]§rSkybox is only applied to transparent surfaces.
@@ -434,7 +432,6 @@ value.CLOUDS.3=Vanilla
 
 option.CLOUD_BASE=Base Shape
 option.CLOUD_BASE.comment=Determines which noise type used for the cloud's base shape.
-value.CLOUD_BASE.-1=Use Style
 value.CLOUD_BASE.0=Perlin
 value.CLOUD_BASE.1=Worley
 value.CLOUD_BASE.2=Blocky
@@ -513,7 +510,6 @@ option.FOG_HEIGHT.comment= Enables height fog, reducing fog amount based on heig
 
 option.FAR_VANILLA_FOG=Far Vanilla Fog
 option.FAR_VANILLA_FOG.comment=Enables vanilla-like fog. §e[*]§rThis option is affected by fog density.
-value.FAR_VANILLA_FOG.-1=Use Style
 value.FAR_VANILLA_FOG.0=§cOff
 value.FAR_VANILLA_FOG.1=Overworld Only
 value.FAR_VANILLA_FOG.2=Nether & End Only
@@ -541,15 +537,15 @@ option.FOG_DENSITY_DAMP.comment=Adjusts fog density multiplier while standing on
 option.FOG_DENSITY_INDOOR=Indoor Density
 option.FOG_DENSITY_INDOOR.comment=Adjusts fog density multiplier while indoors.
 
-option.FOG_DENSITY_DH=Distant Horizons Density
-option.FOG_DENSITY_DH.comment=Adjusts overworld fog density multiplier while Distant Horizons is enabled.
+option.FOG_DENSITY_LOD=LOD Density
+option.FOG_DENSITY_LOD.comment=Adjusts overworld fog density multiplier while using Distant Horizons or Voxy.
 
 #Height Fog
 option.FOG_HEIGHT_Y=Base Height
 option.FOG_HEIGHT_Y.comment=Adjusts the height where height fog starts occuring.
 
 option.FOG_HEIGHT_FALLOFF=Height Falloff
-option.FOG_HEIGHT_FALLOFF.comment=Adjusts height fog's size.
+option.FOG_HEIGHT_FALLOFF.comment=Adjusts height fog's size. Lower value reduces the amount of fog on mountains.
 
 #Far Vanilla Fog
 option.FAR_VANILLA_FOG_STYLE=Far Vanilla Fog Style
@@ -561,11 +557,12 @@ option.FOG_DENSITY_VANILLA=Vanilla Density
 option.FOG_DENSITY_VANILLA.comment=Adjusts fog density for vanilla fog.
 
 option.FOG_VANILLA_CLOUD=Vanilla Cloud Fog
-option.FOG_VANILLA_CLOUD.comment=Enables fog on vanilla cloud.
+option.FOG_VANILLA_CLOUD.comment=Enables fog on vanilla cloud. Auto uses "Minimal" on 1.21.6 or above, otherwise "Full".
 value.FOG_VANILLA_CLOUD.0=§cOff
 value.FOG_VANILLA_CLOUD.1=Minimal
 value.FOG_VANILLA_CLOUD.2=Reduced
 value.FOG_VANILLA_CLOUD.3=Full
+value.FOG_VANILLA_CLOUD.4=Auto
 
 #Sky
 option.SKY_DENSITY_D=Day Density
@@ -625,7 +622,6 @@ option.MOON_INTENSITY.comment=Adjusts skybox moon intensity. §c[-]§rOnly avail
 
 option.SHADER_SUN_MOON_SHAPE=Sun & Moon Shape
 option.SHADER_SUN_MOON_SHAPE.comment=Determines the shape of shader based sun & moon and specular highlight.
-value.SHADER_SUN_MOON_SHAPE.-1=Use Style
 value.SHADER_SUN_MOON_SHAPE.0=Round
 value.SHADER_SUN_MOON_SHAPE.1=Square
 
@@ -635,7 +631,6 @@ option.SHADER_SUN_MOON_SIZE.comment=Adjusts size for round sun & moon and specul
 #Water
 option.WATER_MODE=Water Texture Mode
 option.WATER_MODE.comment=Determines whether vanilla water texture should be used. Default : shader's flat water color, no texture. Vanilla : vanilla texture. Tinted Vanilla : vanilla texture with shader's water color. Flat Vanilla : vanilla's flat water color.
-value.WATER_MODE.-1=Use Style
 value.WATER_MODE.0=Default
 value.WATER_MODE.1=Vanilla
 value.WATER_MODE.2=Tinted Vanilla
@@ -643,13 +638,11 @@ value.WATER_MODE.3=Flat Vanilla
 
 option.WATER_ALPHA_MODE=Water Alpha Mode
 option.WATER_ALPHA_MODE.comment=Determines whether the water uses shader based or texture alpha value. §e[*]§rSome effect will keep using shader based alpha value.
-value.WATER_ALPHA_MODE.-1=Use Style
 value.WATER_ALPHA_MODE.0=Flat
 value.WATER_ALPHA_MODE.1=Vanilla
 
 option.WATER_NORMALS=Normals
 option.WATER_NORMALS.comment=Enables realtime-generated normal mapping for water. §e[*]§rResource pack normals requires advanced materials enabled.
-value.WATER_NORMALS.-1=Use Style
 value.WATER_NORMALS.0=None
 value.WATER_NORMALS.1=Worley
 value.WATER_NORMALS.2=Perlin
@@ -705,11 +698,14 @@ option.WATER_PIXEL.comment=Applies pixelation effect on water normals.
 value.WATER_PIXEL.0=OFF
 
 #Animations
-option.WORLD_TIME_ANIMATION=World Time Animation
-option.WORLD_TIME_ANIMATION.comment=Use ingame time for moving objects. §e[*]§rThis option is mostly used when making cinematics. §c[-]§rThis option completely stops animation in the Nether & End.
+option.ANIMATION_STRENGTH=Animation Strength
+option.ANIMATION_STRENGTH.comment=Adjusts animation strength. §c[-]§rHigher strength may increase the chance of clipping to occur.
 
 option.ANIMATION_SPEED=Animation Speed
 option.ANIMATION_SPEED.comment=Adjusts animation speed.
+
+option.WORLD_TIME_ANIMATION=World Time Animation
+option.WORLD_TIME_ANIMATION.comment=Use ingame time for moving objects. §e[*]§rThis option is mostly used when making cinematics. §c[-]§rThis option completely stops animation in the Nether & End.
 
 option.WAVING_GRASS=Grass
 option.WAVING_GRASS.comment=Allows grass to wave.
@@ -746,13 +742,13 @@ option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
 option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
 
 option.LIGHT_SHAFT_MORNING_FALLOFF=Morning Falloff
-option.LIGHT_SHAFT_MORNING_FALLOFF.comment=Adjusts light shaft radius during sunrise/sunset.
+option.LIGHT_SHAFT_MORNING_FALLOFF.comment=Adjusts light shaft radius during sunrise/sunset. Higher value causes light shaft to appear wider.
 
 option.LIGHT_SHAFT_DAY_FALLOFF=Day Falloff
-option.LIGHT_SHAFT_DAY_FALLOFF.comment=Adjusts light shaft radius at noon.
+option.LIGHT_SHAFT_DAY_FALLOFF.comment=Adjusts light shaft radius at noon. Higher value causes light shaft to appear wider.
 
 option.LIGHT_SHAFT_NIGHT_FALLOFF=Night Falloff
-option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=Adjusts light shaft radius at night.
+option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=Adjusts light shaft radius at night. Higher value causes light shaft to appear wider.
 
 option.LIGHT_SHAFT_WEATHER_FALLOFF=Weather Falloff
 option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=Adjusts light shaft radius multiplier while raining.
@@ -826,22 +822,23 @@ option.UNDERWATER_DISTORTION.comment=Applies screen distortion while underwater.
 
 #Depth of Field
 option.DOF_FOCUS_MODE=DoF Focus Mode
-option.DOF_FOCUS_MODE.comment=Determines how focus distance is calculated. Auto uses center depth. Manual uses focus distance slider. Manual+ uses focus distance slider and brightness slider (in video settings).
+option.DOF_FOCUS_MODE.comment=Determines how focus distance is calculated. Auto uses center depth. Auto adjustable uses depth on Auto Focus X & Y. Manual uses focus distance slider. Manual+ uses focus distance slider and brightness slider (in video settings).
 value.DOF_FOCUS_MODE.0=Auto
-value.DOF_FOCUS_MODE.1=Manual
-value.DOF_FOCUS_MODE.2=Manual+
+value.DOF_FOCUS_MODE.1=Auto Adjustable
+value.DOF_FOCUS_MODE.2=Manual
+value.DOF_FOCUS_MODE.3=Manual+
 
 option.DOF_STRENGTH=DoF Strength
 option.DOF_STRENGTH.comment=Adjusts the focus strength, higher value blurs quicker.
 
 option.DOF_FOCUS_X=Auto Focus X
-option.DOF_FOCUS_X.comment=Adjusts horizontal position of the auto focus point.
+option.DOF_FOCUS_X.comment=Adjusts horizontal position of the auto focus point. §c[-]§rThis option is ignored in Auto mode.
 
 option.DOF_FOCUS_Y=Auto Focus Y
-option.DOF_FOCUS_Y.comment=Adjusts vertical position of the auto focus point.
+option.DOF_FOCUS_Y.comment=Adjusts vertical position of the auto focus point. §c[-]§rThis option is ignored in Auto mode.
 
 option.DOF_FOCUS_SPEED=Auto Focus Speed
-option.DOF_FOCUS_SPEED.comment=Adjusts the speed of focus distance smoothing.
+option.DOF_FOCUS_SPEED.comment=Adjusts the speed of focus distance smoothing. §c[-]§rThis option is ignored in Auto mode.
 
 option.DOF_FOCUS_POINT=Show Auto Focus Point
 option.DOF_FOCUS_POINT.comment=Shows focus point as a white dot.
@@ -1010,9 +1007,6 @@ option.EMISSIVE_RECOLOR.comment=Tints certain emissive blocks with blocklight co
 
 option.SKY_VANILLA=Vanilla Sky
 option.SKY_VANILLA.comment=Use vanilla sky color.
-value.SKY_VANILLA.-1=Use Style
-value.SKY_VANILLA.0=§cOff
-value.SKY_VANILLA.1=On
 
 option.USE_FOG_COLOR=Use Fog Color
 option.USE_FOG_COLOR.comment=Allows vanilla fog color to be used while Vanilla Sky is enabled.
@@ -1129,7 +1123,7 @@ value.TAA_MODE.0=Smooth
 value.TAA_MODE.1=Coarse
 
 option.TAA_SELECTIVE=Selective TAA
-option.TAA_SELECTIVE.comment=Exclude entities and hand from temporal anti aliasing to reduce ghosting. §c[-]§rExcluded objects will need to rely on FXAA.
+option.TAA_SELECTIVE.comment=Exclude entities and hand from temporal anti aliasing to reduce ghosting. §c[-]§rExcluded objects will need to rely on FXAA. §c[-]§rMay cause flickering with some resource packs, data packs, or mods.
 
 option.SHARPEN=Sharpen
 option.SHARPEN.comment=Reduces blurring. Auto: 0.50 when FXAA and TAA are enabled, otherwise 0.00. §c[-]§rIncreased sharpening makes noise and flickering more visible.
