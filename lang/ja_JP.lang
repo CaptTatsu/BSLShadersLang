@@ -6,7 +6,7 @@ profile.LOW=低
 profile.MEDIUM=中
 profile.HIGH=高
 profile.ULTRA=ウルトラ
-profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影とその他の効果なし。 中 : 中低精度の影とアンビエントオクルージョン。 高 : 中精度の影、 AOと光の柱、TAA。 ウルトラ : 高精度の影、 AOと光の柱、TAA。
+profile.comment=ミニマム : 影なし、その他の効果なし。低 : 低精度の影、その他の効果なし。 中 : 中低精度の影とアンビエントオクルージョン。 高 : 中精度の影、 AOと光の柱、TAA。 ウルトラ : 高精度の影、 AOと光の柱、TAA。
 
 #Screens
 screen.LIGHTING=ライティング
@@ -84,13 +84,9 @@ screen.ANTIALIASING=アンチエイリアシング
 screen.EXTRAS=その他の設定
 
 #Settings
-option.ABOUT=BSL v10.0
+option.ABOUT=BSL v10.1
 option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
-
-option.STYLE=スタイル
-value.STYLE.0=オリジナル
-value.STYLE.1=クラシック
 
 #Lighting
 option.SHADOW=リアルタイムの影
@@ -147,9 +143,6 @@ value.DYNAMIC_HANDLIGHT.2=全て
 
 option.HALF_LAMBERT=ハーフランバートシェーダー
 option.HALF_LAMBERT.comment=太陽/月の方向に対して垂直な面が光を受けられるようにする。 §e[*]§r影のバイアスモードを表面法線に固定します。
-value.HALF_LAMBERT.-1=スタイルを適用する
-value.HALF_LAMBERT.0=§cオフ
-value.HALF_LAMBERT.1=オン
 
 #More Shadow Config
 option.SHADOW_ENTITY=エンティティの影
@@ -164,9 +157,11 @@ option.SHADOW_VEGETATION.comment=草や小麦、その他の植物の影を有�
 option.SHADOW_CLOUD=雲の影
 option.SHADOW_CLOUD.comment=雲によって投影される影を有効にする
 
-option.SUN_PATH_ROTATION=黄道角度
-option.SUN_PATH_ROTATION.comment=太陽がめぐる軌道の角度を設定します。
-value.SUN_PATH_ROTATION.-1=スタイルを適用する
+option.SHADOW_LOD=LODシャドウ
+option.SHADOW_LOD.comment=Distant HorizonsやVoxyのMODでスクリーンスペースシャドウを有効にします。
+
+option.sunPathRotation=黄道角度
+option.sunPathRotation.comment=太陽がめぐる軌道の角度を設定します。
 
 option.SHADOW_BIAS=影の向き
 option.SHADOW_BIAS.comment=シャドウマッピングの方向を設定します。光の方向に設定すると、ほとんどの影のエッジは維持されますが、遠景では影が浮いて見えます。表面の法線方向に設定すると、影の接点は維持されますが、遠景では影が短く見えます。
@@ -179,11 +174,11 @@ value.SHADOW_PIXEL.0=オフ
 
 option.SHADOW_SKY_FALLOFF=擬似的な影の減衰
 option.SHADOW_SKY_FALLOFF.comment=リアルタイムの影を無効にしたとき、擬似的な影の鮮明さを調整します
-value.SHADOW_SKY_FALLOFF.0.6=微弱
-value.SHADOW_SKY_FALLOFF.0.6667=弱
+value.SHADOW_SKY_FALLOFF.0.6=さらにソフト
+value.SHADOW_SKY_FALLOFF.0.6667=ソフト
 value.SHADOW_SKY_FALLOFF.0.7333=バランス
-value.SHADOW_SKY_FALLOFF.0.8=強
-value.SHADOW_SKY_FALLOFF.0.8667=最大
+value.SHADOW_SKY_FALLOFF.0.8=シャープ
+value.SHADOW_SKY_FALLOFF.0.8667=さらにシャープ
 
 #Ambient Occlusion Config
 option.AO_METHOD=AOの方式
@@ -286,19 +281,18 @@ value.SPECULAR_HIGHLIGHT.0=§cオフ
 value.SPECULAR_HIGHLIGHT.1=不透明のみ
 value.SPECULAR_HIGHLIGHT.2=フル
 
-option.REFLECTION_PRECISION=高精度の反射
-option.REFLECTION_PRECISION.comment=有効にすると、反射の粗さを軽減します。
-value.REFLECTION_PRECISION.-1=スタイルを適用する
-value.REFLECTION_PRECISION.0=§cオフ
-value.REFLECTION_PRECISION.1=オン
+option.REFLECTION_LOD=LOD反射
+option.REFLECTION_LOD.comment=Distant HorizonsやVoxyのMODのチャンクへの反射の品質を設定します。
+value.REFLECTION_LOD.0=高速
+value.REFLECTION_LOD.1=精細
 
 option.REFLECTION_SKY_FALLOFF=空の光の反射の低下
 option.REFLECTION_SKY_FALLOFF.comment=空の光が弱い場合に、空の反射をどの程度フェードアウトさせるかを調整します。
-value.REFLECTION_SKY_FALLOFF.1=とても弱い
-value.REFLECTION_SKY_FALLOFF.2=弱い
+value.REFLECTION_SKY_FALLOFF.1=さらにソフト
+value.REFLECTION_SKY_FALLOFF.2=ソフト
 value.REFLECTION_SKY_FALLOFF.4=バランス
-value.REFLECTION_SKY_FALLOFF.8=強い
-value.REFLECTION_SKY_FALLOFF.16=とても強い
+value.REFLECTION_SKY_FALLOFF.8=シャープ
+value.REFLECTION_SKY_FALLOFF.16=更にシャープ
 
 option.REFLECTION_SKYBOX=スカイボックスの反射
 option.REFLECTION_SKYBOX.comment=リソースパックのスカイボックスを空の反射に含めます。§c[-]§rスカイボックスは、透明な表面にのみ適用されます。
@@ -412,8 +406,8 @@ option.WEATHER_PERBIOME.comment=異なるバイオームに様々な天候色を
 option.WEATHER_OPACITY=天候の不透明度
 option.WEATHER_OPACITY.comment=天候の不透明度を調整します。
 
-option.DH_OVERDRAW=遠方の地平線の重なり
-option.DH_OVERDRAW.comment=通常チャンクと遠方地平線チャンクの重なり具合を調整します。
+option.DH_OVERDRAW=Distant Horizons MODの上書き
+option.DH_OVERDRAW.comment=通常チャンクとDistant Horizons MODチャンクの重なり具合を調整します。
 value.DH_OVERDRAW.1.0=0チャンク
 value.DH_OVERDRAW.2.0=1チャンク
 value.DH_OVERDRAW.3.0=2チャンク
@@ -434,7 +428,6 @@ value.CLOUDS.3=バニラ
 
 option.CLOUD_BASE=ベース形状
 option.CLOUD_BASE.comment=雲のベースに使用するノイズの種類を設定します。
-value.CLOUD_BASE.-1=スタイルを適用する
 value.CLOUD_BASE.0=Perlinノイズ
 value.CLOUD_BASE.1=Worleyノイズ
 value.CLOUD_BASE.2=ブロックスタイル
@@ -513,7 +506,6 @@ option.FOG_HEIGHT.comment=高さが高いほど霧を薄くします。
 
 option.FAR_VANILLA_FOG=遠距離の霧
 option.FAR_VANILLA_FOG.comment=バニラライクな霧を有効にするワールドを設定します。 §e[*]§rこのオプションは霧の密度に影響されます。
-value.FAR_VANILLA_FOG.-1=スタイルを適用する
 value.FAR_VANILLA_FOG.0=§cオフ
 value.FAR_VANILLA_FOG.1=オーバーワールドのみ
 value.FAR_VANILLA_FOG.2=ネザーとエンドのみ
@@ -541,15 +533,15 @@ option.FOG_DENSITY_DAMP.comment=湿ったバイオームにいるときの霧の
 option.FOG_DENSITY_INDOOR=屋内の霧の密度
 option.FOG_DENSITY_INDOOR.comment=屋内の霧の密度係数を調整します。
 
-option.FOG_DENSITY_DH=遠方の地平線の霧の密度
-option.FOG_DENSITY_DH.comment=遠方の地平線が有効な時の、オーバーワールドの霧の密度係数を調整します。
+option.FOG_DENSITY_LOD=LOD密度
+option.FOG_DENSITY_LOD.comment=Distant HorizonやVoxy MODが有効な時の、オーバーワールドの霧の密度係数を調整します。
 
 #Height Fog
 option.FOG_HEIGHT_Y=基準高さ
 option.FOG_HEIGHT_Y.comment=高所の霧が現れる高さを調整します。
 
 option.FOG_HEIGHT_FALLOFF=高所の霧の減衰
-option.FOG_HEIGHT_FALLOFF.comment=高所の霧の大きさを調整します。
+option.FOG_HEIGHT_FALLOFF.comment=高所の霧の大きさを調整します。低い値は山地での霧の量を減らします。
 
 #Far Vanilla Fog
 option.FAR_VANILLA_FOG_STYLE=遠距離の霧のスタイル
@@ -561,11 +553,12 @@ option.FOG_DENSITY_VANILLA=バニラの霧の密度
 option.FOG_DENSITY_VANILLA.comment=バニラの霧の密度を調整します。
 
 option.FOG_VANILLA_CLOUD=バニラ雲の霧の密度
-option.FOG_VANILLA_CLOUD.comment=バニラ雲の中にいるときの霧を有効にします。
+option.FOG_VANILLA_CLOUD.comment=バニラ雲の中にいるときの霧を有効にします。オートでは、1.21.6以前では「少なめ」、それ以外では「フル」を使用します。
 value.FOG_VANILLA_CLOUD.0=§cオフ
 value.FOG_VANILLA_CLOUD.1=最小限
 value.FOG_VANILLA_CLOUD.2=少なめ
 value.FOG_VANILLA_CLOUD.3=フル
+value.FOG_VANILLA_CLOUD.4=オート
 
 #Sky
 option.SKY_DENSITY_D=日中の空の深度
@@ -625,7 +618,6 @@ option.MOON_INTENSITY.comment=スカイボックスの月の強度を調整し�
 
 option.SHADER_SUN_MOON_SHAPE=太陽と月の形
 option.SHADER_SUN_MOON_SHAPE.comment=シェーダーの太陽と月、鏡面ハイライトの形を決定します。
-value.SHADER_SUN_MOON_SHAPE.-1=スタイルを適用する
 value.SHADER_SUN_MOON_SHAPE.0=円形
 value.SHADER_SUN_MOON_SHAPE.1=四角
 
@@ -635,7 +627,6 @@ option.SHADER_SUN_MOON_SIZE.comment=丸い太陽と月のサイズと、鏡面�
 #Water
 option.WATER_MODE=水のテクスチャ表示
 option.WATER_MODE.comment=バニラの水のテクスチャを使用するかどうか設定します。 デフォルト : シェーダーのフラットな水の色、テクスチャ無し。 バニラ : バニラのテクスチャ。 色付きのバニラ : バニラのテクスチャ、シェーダーの色。 フラットバニラ : バニラのフラットな水の色。
-value.WATER_MODE.-1=スタイルを適用する
 value.WATER_MODE.0=デフォルト
 value.WATER_MODE.1=バニラ
 value.WATER_MODE.2=色付きのバニラ
@@ -643,13 +634,11 @@ value.WATER_MODE.3=フラットバニラ
 
 option.WATER_ALPHA_MODE=水のアルファモード
 option.WATER_ALPHA_MODE.comment=水がシェーダーのアルファ値か、テクスチャのアルファ値を使うかを設定します。 §e[*]§rいくつかのアルファ値はシェーダーによるアルファ値を使い続けます。
-value.WATER_ALPHA_MODE.-1=スタイルを適用する
 value.WATER_ALPHA_MODE.0=フラット
 value.WATER_ALPHA_MODE.1=バニラ
 
 option.WATER_NORMALS=水の法線マッピング
 option.WATER_NORMALS.comment=リアルタイムに生成される水の法線マッピングを有効にします。§e[*]§rリソースパックの法線反射は、質感の強化が有効になっている必要があります。
-value.WATER_NORMALS.-1=スタイルを適用する
 value.WATER_NORMALS.0=§cオフ
 value.WATER_NORMALS.1=Worleyノイズ
 value.WATER_NORMALS.2=Perlinノイズ
@@ -705,11 +694,14 @@ option.WATER_PIXEL.comment=水面の法線マッピングにピクセル化エ�
 value.WATER_PIXEL.0=オフ
 
 #Animations
-option.WORLD_TIME_ANIMATION=世界時間アニメーション
-option.WORLD_TIME_ANIMATION.comment=移動するオブジェクトにゲーム内時間を使用します。 §e[*]§rこのオプションは動画撮影時によく使われます。§c[-]§rこのオプションは、ネザーとエンドのアニメーションを完全に停止します。
+option.ANIMATION_STRENGTH=アニメーション強度
+option.ANIMATION_STRENGTH.comment=アニメーションの強度を調整します。 §c[-]§r高い値では、クリッピングが発生する可能性が高くなります。
 
 option.ANIMATION_SPEED=アニメーション速度
 option.ANIMATION_SPEED.comment=アニメーション速度を調整します。
+
+option.WORLD_TIME_ANIMATION=世界時間アニメーション
+option.WORLD_TIME_ANIMATION.comment=移動するオブジェクトにゲーム内時間を使用します。 §e[*]§rこのオプションは動画撮影時によく使われます。§c[-]§rこのオプションは、ネザーとエンドのアニメーションを完全に停止します。
 
 option.WAVING_GRASS=草
 option.WAVING_GRASS.comment=草が揺れるのを許可します。
@@ -743,16 +735,16 @@ option.WAVING_LANTERN.comment=ランタンが揺れるのを許可します。
 
 #Light Shaft
 option.LIGHT_SHAFT_STRENGTH=ライトシャフトの強さ
-option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。
+option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。高い値はライトシャフトの幅をより広くします。
 
 option.LIGHT_SHAFT_MORNING_FALLOFF=薄暮時の減衰
 option.LIGHT_SHAFT_MORNING_FALLOFF.comment=日の出/日没の間のライトシャフトの半径を調節します。
 
 option.LIGHT_SHAFT_DAY_FALLOFF=日中の減衰
-option.LIGHT_SHAFT_DAY_FALLOFF.comment=日中のライトシャフトの半径を調節します。
+option.LIGHT_SHAFT_DAY_FALLOFF.comment=日中のライトシャフトの半径を調節します。高い値はライトシャフトの幅をより広くします。
 
 option.LIGHT_SHAFT_NIGHT_FALLOFF=夜間の減衰
-option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=夜間のライトシャフトの半径を調節します。
+option.LIGHT_SHAFT_NIGHT_FALLOFF.comment=夜間のライトシャフトの半径を調節します。高い値はライトシャフトの幅をより広くします。
 
 option.LIGHT_SHAFT_WEATHER_FALLOFF=天候による減衰
 option.LIGHT_SHAFT_WEATHER_FALLOFF.comment=降雨時のライトシャフトの半径の係数を調節します。
@@ -826,22 +818,23 @@ option.UNDERWATER_DISTORTION.comment=水中での画面のゆがみを適用し�
 
 #Depth of Field
 option.DOF_FOCUS_MODE=被写界深度(DoF)モード
-option.DOF_FOCUS_MODE.comment=焦点距離の計算方式を設定します。オートでは、中心の深度を使用します。マニュアルは焦点距離のスライダーで調節します。マニュアル＋では、焦点距離のスライダーと、（ビデオ設定内の）明るさのスライダーを使用します。
+option.DOF_FOCUS_MODE.comment=焦点距離の計算方式を設定します。オート(調整可能)では、オートフォーカスのX/Yの深度を使用します。オートでは、中心の深度を使用します。マニュアルは焦点距離のスライダーで調節します。マニュアル＋では、焦点距離のスライダーと、（ビデオ設定内の）明るさのスライダーを使用します。
 value.DOF_FOCUS_MODE.0=オート
-value.DOF_FOCUS_MODE.1=マニュアル
-value.DOF_FOCUS_MODE.2=マニュアル＋
+value.DOF_FOCUS_MODE.1=オート(調整可能)
+value.DOF_FOCUS_MODE.2=マニュアル
+value.DOF_FOCUS_MODE.3=マニュアル＋
 
 option.DOF_STRENGTH=DoF強度
 option.DOF_STRENGTH.comment=DoFの強度を調節します。高い値ほど、素早くボケます。
 
 option.DOF_FOCUS_X=オートフォーカスX
-option.DOF_FOCUS_X.comment=オートフォーカスポイントの水平位置を調節します。
+option.DOF_FOCUS_X.comment=オートフォーカスポイントの水平位置を調節します。§c[-]§rこのオプションはオートモードでは無視されます
 
 option.DOF_FOCUS_Y=オートフォーカスY
-option.DOF_FOCUS_Y.comment=オートフォーカスポイントの垂直位置を調節します。
+option.DOF_FOCUS_Y.comment=オートフォーカスポイントの垂直位置を調節します。§c[-]§rこのオプションはオートモードでは無視されます
 
 option.DOF_FOCUS_SPEED=オートフォーカス速度
-option.DOF_FOCUS_SPEED.comment=焦点を合わせる速度のスムーズさを調節します。
+option.DOF_FOCUS_SPEED.comment=焦点を合わせる速度のスムーズさを調節します。§c[-]§rこのオプションはオートモードでは無視されます
 
 option.DOF_FOCUS_POINT=オートフォーカスポイントの表示
 option.DOF_FOCUS_POINT.comment=フォーカスポイントを白いドットで表示します
@@ -1010,9 +1003,6 @@ option.EMISSIVE_RECOLOR.comment=ブロックライトの色で特定の発光ブ
 
 option.SKY_VANILLA=バニラスカイ
 option.SKY_VANILLA.comment=バニラの空の色を使用します。
-value.SKY_VANILLA.-1=スタイルを適用する
-value.SKY_VANILLA.0=§cオフ
-value.SKY_VANILLA.1=オン
 
 option.USE_FOG_COLOR=霧の色
 option.USE_FOG_COLOR.comment=バニラスカイが有効なとき、バニラの霧の色が使われるようにします。
@@ -1129,7 +1119,7 @@ value.TAA_MODE.0=細かい
 value.TAA_MODE.1=粗い
 
 option.TAA_SELECTIVE=選択的TAA
-option.TAA_SELECTIVE.comment=エンティティ、手をTAAから除外し、ゴーストを低減します。 §c[-]§r除外されたオブジェクトはFXAAでの処理が必要です。
+option.TAA_SELECTIVE.comment=エンティティ、手をTAAから除外し、ゴーストを低減します。 §c[-]§r除外されたオブジェクトはFXAAでの処理が必要です。§c[-]§rいくつかのリソースパック、データパック、MODでは、フリッカーを引き起こすことがあります。
 
 option.SHARPEN=シャープネス処理
 option.SHARPEN.comment=ボケを軽減します。FXAAとTAAが有効な時、オート: 0.50、それ以外は0.00. §c[-]§rシャープネスを強くすると、ノイズやちらつきがより現れます。
