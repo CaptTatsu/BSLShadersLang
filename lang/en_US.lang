@@ -70,6 +70,7 @@ screen.NETHER_C=Crimson Forest
 screen.NETHER_W=Warped Forest
 screen.NETHER_B=Basalt Deltas
 screen.END_COLOR=End Color
+screen.SELECTION_COLOR=Block Selection Color
 
 screen.CGT=Color Grading & Tonemap
 screen.EXPOSURE=More Exposure Config
@@ -84,13 +85,9 @@ screen.ANTIALIASING=Anti-aliasing
 screen.EXTRAS=Extras
 
 #Settings
-option.ABOUT=BSL v10.1
+option.ABOUT=BSL v10.1.3
 option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
-
-option.STYLE=Style
-value.STYLE.0=Original
-value.STYLE.1=Classic
 
 #Lighting
 option.SHADOW=Realtime Shadows
@@ -741,6 +738,9 @@ option.WAVING_LANTERN.comment=Allows lantern to wave.
 option.LIGHT_SHAFT_STRENGTH=Light Shaft Strength
 option.LIGHT_SHAFT_STRENGTH.comment=Adjusts light shaft strength.
 
+option.LIGHT_SHAFT_END_SMOKE=End Smoke
+option.LIGHT_SHAFT_END_SMOKE.comment=Adjusts the amount of smoke on light shafts while in the end dimension.
+
 option.LIGHT_SHAFT_MORNING_FALLOFF=Morning Falloff
 option.LIGHT_SHAFT_MORNING_FALLOFF.comment=Adjusts light shaft radius during sunrise/sunset. Higher value causes light shaft to appear wider.
 
@@ -999,6 +999,12 @@ option.END_G=Green
 option.END_B=Blue
 option.END_I=Intensity
 
+option.SELECTION_R=Red
+option.SELECTION_G=Green
+option.SELECTION_B=Blue
+option.SELECTION_I=Intensity
+option.SELECTION_A=Alpha
+
 option.NIGHT_MOON_PHASE=Use Moon Phase
 option.NIGHT_MOON_PHASE.comment=Allows moon phase to affect light & ambient intensity at night.
 
@@ -1165,7 +1171,7 @@ value.RETRO_FILTER_DEPTH.31=15-bit
 value.RETRO_FILTER_DEPTH.63=18-bit
 
 option.WORLD_CURVATURE=World Curvature
-option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §c[-]§rMissing chunks are handled by Minecraft itself which I can't fix. §c[-]§rMay break block selection highlight on 1.17.
+option.WORLD_CURVATURE.comment=Enables world curvature. §e[*]§rWorks in overworld only. §c[-]§rMissing chunks are handled by Minecraft itself which I can't fix. §c[-]§rMay break block selection highlight on 1.17. §c[-]§rNot compatible with Voxy.
 
 option.WORLD_CURVATURE_SIZE=World Curvature Size
 option.WORLD_CURVATURE_SIZE.comment=Adjusts world curvature size. Negative values will bend the world upwards.
