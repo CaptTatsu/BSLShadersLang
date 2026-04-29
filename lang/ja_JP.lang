@@ -1171,7 +1171,7 @@ value.RETRO_FILTER_DEPTH.31=15-bit
 value.RETRO_FILTER_DEPTH.63=18-bit
 
 option.WORLD_CURVATURE=世界の曲率
-option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[-]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[-]§r1.17でブロック選択のハイライトを壊すことがあります。
+option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[-]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[-]§r1.17でブロック選択のハイライトを壊すことがあります。§c[-]§rVoxyと互換性はありません。
 
 option.WORLD_CURVATURE_SIZE=世界球のサイズ
 option.WORLD_CURVATURE_SIZE.comment=世界球のサイズを設定します。負の値では世界が逆に曲がります(球の内側になります)。
