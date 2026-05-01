@@ -70,6 +70,7 @@ screen.NETHER_C=真紅の森
 screen.NETHER_W=歪んだ森
 screen.NETHER_B=玄武岩の三角州
 screen.END_COLOR=エンドの色
+screen.SELECTION_COLOR=ブロック選択時の色
 
 screen.CGT=カラーグレーディング & トーンマップ
 screen.EXPOSURE=追加の露出設定
@@ -84,7 +85,7 @@ screen.ANTIALIASING=アンチエイリアシング
 screen.EXTRAS=その他の設定
 
 #Settings
-option.ABOUT=BSL v10.1
+option.ABOUT=BSL v10.1.3
 option.ABOUT.comment=by Capt Tatsu. capttatsu.com
 value.ABOUT.0=by Capt Tatsu
 
@@ -251,7 +252,7 @@ value.REFRACTION.2=全て
 option.ALBEDO_BALANCING=アルベドバランス
 option.ALBEDO_BALANCING.comment=非常に明るい表面のまぶしさを低減します。
 
-option.ALPHA_BLEND=アルファブレンディング
+option.ALPHA_BLEND=透明度ブレンディング
 option.ALPHA_BLEND.comment=透明度のブレンドをどのように処理するかを設定します。 
 value.ALPHA_BLEND.0=ガンマ
 value.ALPHA_BLEND.1=リニア
@@ -465,11 +466,11 @@ value.CLOUD_STRETCH.0.5=超高
 
 option.CLOUD_THICKNESS=厚み
 option.CLOUD_THICKNESS.comment=雲の厚みを調整します。
-value.CLOUD_THICKNESS.1 =とても薄い
-value.CLOUD_THICKNESS.2 =薄い
-value.CLOUD_THICKNESS.4 =中程度
-value.CLOUD_THICKNESS.8 =厚い
-value.CLOUD_THICKNESS.16=とても厚い
+value.CLOUD_THICKNESS.2 =とても薄い
+value.CLOUD_THICKNESS.4 =薄い
+value.CLOUD_THICKNESS.5 =中程度
+value.CLOUD_THICKNESS.7 =厚い
+value.CLOUD_THICKNESS.10=とても厚い
 
 option.CLOUD_DETAIL=ディティール
 option.CLOUD_DETAIL.comment=雲のディティールを設定します。 §e[*]§rこのオプションはブロックスタイルの雲では無効です。
@@ -632,7 +633,7 @@ value.WATER_MODE.1=バニラ
 value.WATER_MODE.2=色付きのバニラ
 value.WATER_MODE.3=フラットバニラ
 
-option.WATER_ALPHA_MODE=水のアルファモード
+option.WATER_ALPHA_MODE=水の透明度モード
 option.WATER_ALPHA_MODE.comment=水がシェーダーのアルファ値か、テクスチャのアルファ値を使うかを設定します。 §e[*]§rいくつかのアルファ値はシェーダーによるアルファ値を使い続けます。
 value.WATER_ALPHA_MODE.0=フラット
 value.WATER_ALPHA_MODE.1=バニラ
@@ -736,6 +737,9 @@ option.WAVING_LANTERN.comment=ランタンが揺れるのを許可します。
 #Light Shaft
 option.LIGHT_SHAFT_STRENGTH=ライトシャフトの強さ
 option.LIGHT_SHAFT_STRENGTH.comment=ライトシャフトの強さを調整します。高い値はライトシャフトの幅をより広くします。
+
+option.LIGHT_SHAFT_END_SMOKE=エンドの煙
+option.LIGHT_SHAFT_END_SMOKE.comment=エンドにいるときの、ライトシャフト上の煙の量を調整します。
 
 option.LIGHT_SHAFT_MORNING_FALLOFF=薄暮時の減衰
 option.LIGHT_SHAFT_MORNING_FALLOFF.comment=日の出/日没の間のライトシャフトの半径を調節します。
@@ -910,10 +914,10 @@ option.WATER_R=赤
 option.WATER_G=緑
 option.WATER_B=青
 option.WATER_I=強さ
-option.WATER_A=アルファ
+option.WATER_A=透明度
 option.WATER_F=霧の強さ
 option.WATER_VI=バニラの強さ
-option.WATER_VA=バニラのアルファカーブ
+option.WATER_VA=バニラの透明度カーブ
 
 option.WEATHER_RR=赤
 option.WEATHER_RG=緑
@@ -994,6 +998,12 @@ option.END_R=赤
 option.END_G=緑
 option.END_B=青
 option.END_I=強さ
+
+option.SELECTION_R=赤
+option.SELECTION_G=緑
+option.SELECTION_B=青
+option.SELECTION_I=強さ
+option.SELECTION_A=透明度
 
 option.NIGHT_MOON_PHASE=月の満ち欠けによる明るさ
 option.NIGHT_MOON_PHASE.comment=月の満ち欠けによる明るさが、夜間の光と空気の色の強さに影響するようにします。
@@ -1161,7 +1171,7 @@ value.RETRO_FILTER_DEPTH.31=15-bit
 value.RETRO_FILTER_DEPTH.63=18-bit
 
 option.WORLD_CURVATURE=世界の曲率
-option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[-]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[-]§r1.17でブロック選択のハイライトを壊すことがあります。
+option.WORLD_CURVATURE.comment=世界の曲率を有効にします。 §e[*]§rオーバーワールドでのみ働きます。 §e[-]§r見えないチャンクはマインクラフト自身による問題で修正することはできません。 §e[-]§r1.17でブロック選択のハイライトを壊すことがあります。§c[-]§rVoxyと互換性はありません。
 
 option.WORLD_CURVATURE_SIZE=世界球のサイズ
 option.WORLD_CURVATURE_SIZE.comment=世界球のサイズを設定します。負の値では世界が逆に曲がります(球の内側になります)。
