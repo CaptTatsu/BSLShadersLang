@@ -70,6 +70,7 @@ screen.NETHER_C=緋紅森林
 screen.NETHER_W=扭曲森林
 screen.NETHER_B=玄武岩三角洲
 screen.END_COLOR=終界顏色
+screen.SELECTION_COLOR=方塊選擇顏色
 
 screen.CGT=色彩分級與色調映射
 screen.EXPOSURE=更多曝光配置
@@ -84,13 +85,9 @@ screen.ANTIALIASING=反鋸齒
 screen.EXTRAS=附加項
 
 #Settings
-option.ABOUT=BSL v10.1
+option.ABOUT=BSL v10.1.3
 option.ABOUT.comment=作者：Capt Tatsu. capttatsu.com
 value.ABOUT.0=作者：Capt Tatsu
-
-option.STYLE=樣式
-value.STYLE.0=原版
-value.STYLE.1=經典
 
 #Lighting
 option.SHADOW=實時陰影
@@ -741,6 +738,9 @@ option.WAVING_LANTERN.comment=允許燈籠搖動。
 option.LIGHT_SHAFT_STRENGTH=光束強度
 option.LIGHT_SHAFT_STRENGTH.comment=調整光束的強度。
 
+option.LIGHT_SHAFT_END_SMOKE=終界煙霧
+option.LIGHT_SHAFT_END_SMOKE.comment=調整終界維度中光束上的煙霧量。
+
 option.LIGHT_SHAFT_MORNING_FALLOFF=晨光衰減
 option.LIGHT_SHAFT_MORNING_FALLOFF.comment=調整日出/日落時光束的半徑。較高的值會使光束顯得更寬。
 
@@ -999,6 +999,12 @@ option.END_G=綠色
 option.END_B=藍色
 option.END_I=強度
 
+option.SELECTION_R=紅色
+option.SELECTION_G=綠色
+option.SELECTION_B=藍色
+option.SELECTION_I=強度
+option.SELECTION_A=透明度
+
 option.NIGHT_MOON_PHASE=使用月相
 option.NIGHT_MOON_PHASE.comment=允許月相影響夜間的光照和環境光強度。
 
@@ -1165,7 +1171,7 @@ value.RETRO_FILTER_DEPTH.31=15 位
 value.RETRO_FILTER_DEPTH.63=18 位
 
 option.WORLD_CURVATURE=世界曲率
-option.WORLD_CURVATURE.comment=啟用世界曲率。§e[*]§r僅適用於主世界。§c[-]§r遺失的區塊由 Minecraft 本身處理，我無法修復。§c[-]§r在 1.17 中可能會破壞方塊選擇高亮。
+option.WORLD_CURVATURE.comment=啟用世界曲率。§e[*]§r僅適用於主世界。§c[-]§r遺失的區塊由 Minecraft 本身處理，我無法修復。§c[-]§r在 1.17 中可能會破壞方塊選擇高亮。§c[-]§r與 Voxy 不相容。
 
 option.WORLD_CURVATURE_SIZE=世界曲率大小
 option.WORLD_CURVATURE_SIZE.comment=調整世界曲率大小。負值將使世界向上彎曲。
